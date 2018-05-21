@@ -1,0 +1,15 @@
+PODS:
+  - ScrollableSegmentedControl (1.3.0)
+  - SwipeCellKit (2.0.1)
+
+DEPENDENCIES:
+  - ScrollableSegmentedControl (~> 1.3.0)
+  - SwipeCellKit
+
+SPEC CHECKSUMS:
+  ScrollableSegmentedControl: a90ae91537fd670a46b177301d035223e3bd149e
+  SwipeCellKit: 76888d93d1843dc568fdf38fff21b15dbbcf6b28
+
+PODFILE CHECKSUM: b8c08afc97280d4c937624e04ca88d175f9591e2
+
+COCOAPODS: 1.4.0
