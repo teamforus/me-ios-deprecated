@@ -16,6 +16,9 @@
         <array key="SF-Pro-Text-Bold.otf">
             <string>SFProText-Bold</string>
         </array>
+        <array key="SF-Pro-Text-Light.otf">
+            <string>SFProText-Light</string>
+        </array>
         <array key="SF-Pro-Text-Medium.otf">
             <string>SFProText-Medium</string>
         </array>
@@ -24,7 +27,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Walet-->
+        <!--Eigendom-->
         <scene sceneID="6O1-wD-pbo">
             <objects>
                 <viewController id="AFR-4S-uKC" customClass="WalletViewController" customModule="MeApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -65,8 +68,8 @@
                                 <rect key="frame" x="0.0" y="125" width="375" height="61"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.21568627450980393" green="0.58431372549019611" blue="0.67450980392156867" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="17"/>
-                                <state key="normal" title="Search Asset">
+                                <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="15"/>
+                                <state key="normal" title="Zoek valuta">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -74,6 +77,7 @@
                                 <rect key="frame" x="0.0" y="177" width="375" height="441"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="98" id="oxR-wL-Ypn" customClass="WaletTableViewCell" customModule="MeApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="98"/>
@@ -86,25 +90,25 @@
                                                     <rect key="frame" x="6" y="0.0" width="363" height="90"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Valid 2 days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhB-qt-TL9">
-                                                            <rect key="frame" x="18" y="52" width="80" height="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2 dagen geldig" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhB-qt-TL9">
+                                                            <rect key="frame" x="18" y="52" width="99" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
-                                                            <color key="textColor" red="0.35294117647058826" green="0.70588235294117652" blue="0.87450980392156863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" red="0.31764705882352939" green="0.69019607843137254" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="€ 200,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGt-KH-Mtf">
                                                             <rect key="frame" x="258" y="24" width="89" height="26"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="21"/>
-                                                            <color key="textColor" red="0.20784313730000001" green="0.2470588235" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" red="0.25490196079999999" green="0.28627450980000002" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kindpakket" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJm-4f-9lp">
                                                             <rect key="frame" x="18" y="24" width="106" height="26"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="21"/>
-                                                            <color key="textColor" red="0.20784313725490197" green="0.24705882352941178" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" red="0.25490196078431371" green="0.28627450980392155" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -118,8 +122,74 @@
                                             <outlet property="priceUILabel" destination="XGt-KH-Mtf" id="JbO-XO-OVE"/>
                                             <outlet property="titleWalteCategory" destination="BJm-4f-9lp" id="5jD-WY-ZWt"/>
                                             <outlet property="validatioDays" destination="bhB-qt-TL9" id="5t1-KC-i6k"/>
-                                            <segue destination="kLj-dM-zdT" kind="modal" id="0fK-KO-7TZ"/>
+                                            <segue destination="kLj-dM-zdT" kind="presentation" id="0fK-KO-7TZ"/>
                                         </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell2" rowHeight="98" id="EBA-Ux-kKV" customClass="WalletSecondTableViewCell" customModule="MeApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="126" width="375" height="98"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EBA-Ux-kKV" id="3Uo-0N-jkI">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="98"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RjX-1I-Oso">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2 dagen geldig" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQY-p9-Ecc">
+                                                            <rect key="frame" x="138" y="52" width="98" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="SFProText-Light" family="SF Pro Text" pointSize="14"/>
+                                                            <color key="textColor" red="0.31764705879999999" green="0.69019607839999997" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t8d-Ch-TQB">
+                                                            <rect key="frame" x="0.0" y="0.0" width="60" height="90"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" red="0.99215686274509807" green="0.41568627450980394" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Zend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zK6-Ra-sYf">
+                                                            <rect key="frame" x="10" y="53" width="29" height="14"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="11.5"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="forma1White" translatesAutoresizingMaskIntoConstraints="NO" id="WnS-j8-Yh6">
+                                                            <rect key="frame" x="14" y="29" width="24.5" height="13.5"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3nP-xH-Dxc">
+                                                            <rect key="frame" x="315" y="0.0" width="60" height="90"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vraag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cds-X8-G5W">
+                                                                    <rect key="frame" x="14" y="53" width="33" height="14"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                                    <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="11.5"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="forma1White" translatesAutoresizingMaskIntoConstraints="NO" id="X1b-iz-YNg">
+                                                                    <rect key="frame" x="18" y="29" width="24" height="13"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                                </imageView>
+                                                            </subviews>
+                                                            <color key="backgroundColor" red="0.31764705882352939" green="0.69019607843137254" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="225,50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sq3-gV-qtI">
+                                                            <rect key="frame" x="152" y="23" width="70" height="26"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="21"/>
+                                                            <color key="textColor" red="0.25490196079999999" green="0.28627450980000002" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -136,11 +206,12 @@
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="hwB-GR-nD2"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Walet" image="wallet" id="0jC-Xi-Id5">
+                    <tabBarItem key="tabBarItem" title="Eigendom" image="wallet" id="0jC-Xi-Id5">
                         <color key="badgeColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
                     </tabBarItem>
                     <connections>
                         <outlet property="segmentedControl" destination="23n-Ck-4dG" id="bzw-Ye-qcj"/>
+                        <outlet property="tableView" destination="WHB-Dg-CPc" id="L2T-jh-YzW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zm9-Ex-VsL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -155,7 +226,7 @@
             </objects>
             <point key="canvasLocation" x="887" y="49"/>
         </scene>
-        <!--Records-->
+        <!--Eigenschappen-->
         <scene sceneID="4wx-QL-c3a">
             <objects>
                 <viewController id="Q8j-LA-r22" sceneMemberID="viewController">
@@ -165,7 +236,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="OsV-sq-hZP"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Records" image="records" id="Df2-rM-6yN"/>
+                    <tabBarItem key="tabBarItem" title="Eigenschappen" image="records" id="Df2-rM-6yN"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pgD-eG-udy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -210,6 +281,7 @@
     </scenes>
     <resources>
         <image name="bg" width="857" height="946"/>
+        <image name="forma1White" width="24" height="13"/>
         <image name="micro" width="24" height="38"/>
         <image name="profileIcon" width="37" height="41"/>
         <image name="records" width="20" height="24"/>

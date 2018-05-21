@@ -52,6 +52,11 @@
 		65A51FE720B3012C0010DB33 /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 65A51FC920B3012B0010DB33 /* SF-Pro-Text-Medium.otf */; };
 		65A51FE820B3012C0010DB33 /* SF-Pro-Display-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 65A51FCA20B3012B0010DB33 /* SF-Pro-Display-BoldItalic.otf */; };
 		65A51FE920B3012C0010DB33 /* SF-Pro-Text-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 65A51FCB20B3012B0010DB33 /* SF-Pro-Text-SemiboldItalic.otf */; };
+		65A51FEB20B31FB30010DB33 /* WalletSecondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A51FEA20B31FB30010DB33 /* WalletSecondTableViewCell.swift */; };
+		65B89A8C20B3342E0024DC51 /* MATransactionRedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65B89A8A20B3342E0024DC51 /* MATransactionRedViewController.xib */; };
+		65B89A8D20B3342E0024DC51 /* MATransactionRedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89A8B20B3342E0024DC51 /* MATransactionRedViewController.swift */; };
+		65B89A9120B334860024DC51 /* MATransactionBlueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89A8F20B334860024DC51 /* MATransactionBlueViewController.swift */; };
+		65B89A9220B334860024DC51 /* MATransactionBlueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65B89A9020B334860024DC51 /* MATransactionBlueViewController.xib */; };
 		C114624949C2AA90B4E6615B /* Pods_MeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F47A758BD471D52C424FBAA /* Pods_MeApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -126,6 +131,11 @@
 		65A51FC920B3012B0010DB33 /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
 		65A51FCA20B3012B0010DB33 /* SF-Pro-Display-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-BoldItalic.otf"; sourceTree = "<group>"; };
 		65A51FCB20B3012B0010DB33 /* SF-Pro-Text-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-SemiboldItalic.otf"; sourceTree = "<group>"; };
+		65A51FEA20B31FB30010DB33 /* WalletSecondTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletSecondTableViewCell.swift; sourceTree = "<group>"; };
+		65B89A8A20B3342E0024DC51 /* MATransactionRedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MATransactionRedViewController.xib; sourceTree = "<group>"; };
+		65B89A8B20B3342E0024DC51 /* MATransactionRedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MATransactionRedViewController.swift; sourceTree = "<group>"; };
+		65B89A8F20B334860024DC51 /* MATransactionBlueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MATransactionBlueViewController.swift; sourceTree = "<group>"; };
+		65B89A9020B334860024DC51 /* MATransactionBlueViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MATransactionBlueViewController.xib; sourceTree = "<group>"; };
 		943F5D718F7DE6BD4631AAC7 /* Pods-MeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeApp/Pods-MeApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E27D041A0DD7ADE32B282550 /* Pods-MeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeApp/Pods-MeApp.release.xcconfig"; sourceTree = "<group>"; };
 		E4647894AE9F75A5A5B1672E /* Pods_MeAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -201,10 +211,10 @@
 			children = (
 				65A51F6A20B2FFF10010DB33 /* AppDelegate.swift */,
 				65A51FA220B300EA0010DB33 /* TabBarController.swift */,
-				65A51FA320B300EA0010DB33 /* Walet */,
-				65A51F9E20B300EA0010DB33 /* Pass */,
+				65B89A8E20B3344C0024DC51 /* ViewControllers */,
 				65A51FA120B300EA0010DB33 /* Main.storyboard */,
 				65A51F9D20B300E90010DB33 /* PassStoryboard.storyboard */,
+				65A51FF320B333D10010DB33 /* PopUps */,
 				65A51F7420B2FFF40010DB33 /* Assets.xcassets */,
 				65A51F7620B2FFF40010DB33 /* LaunchScreen.storyboard */,
 				65A51F7920B2FFF40010DB33 /* Info.plist */,
@@ -235,8 +245,8 @@
 		65A51F9E20B300EA0010DB33 /* Pass */ = {
 			isa = PBXGroup;
 			children = (
-				65A51F9F20B300EA0010DB33 /* PassTableViewCell.swift */,
 				65A51FA020B300EA0010DB33 /* PassViewController.swift */,
+				65A51FEC20B31FBC0010DB33 /* Cell */,
 			);
 			path = Pass;
 			sourceTree = "<group>";
@@ -245,7 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				65A51FA420B300EA0010DB33 /* WalletViewController.swift */,
-				65A51FA520B300EA0010DB33 /* WaletTableViewCell.swift */,
+				65A51FED20B3200F0010DB33 /* Cells */,
 			);
 			path = Walet;
 			sourceTree = "<group>";
@@ -285,6 +295,51 @@
 				65A51FCB20B3012B0010DB33 /* SF-Pro-Text-SemiboldItalic.otf */,
 			);
 			path = "SF Pro";
+			sourceTree = "<group>";
+		};
+		65A51FEC20B31FBC0010DB33 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				65A51F9F20B300EA0010DB33 /* PassTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		65A51FED20B3200F0010DB33 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				65A51FA520B300EA0010DB33 /* WaletTableViewCell.swift */,
+				65A51FEA20B31FB30010DB33 /* WalletSecondTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		65A51FF320B333D10010DB33 /* PopUps */ = {
+			isa = PBXGroup;
+			children = (
+				65B89A8F20B334860024DC51 /* MATransactionBlueViewController.swift */,
+				65B89A9020B334860024DC51 /* MATransactionBlueViewController.xib */,
+				65A51FF420B333E30010DB33 /* TransactionRed */,
+			);
+			path = PopUps;
+			sourceTree = "<group>";
+		};
+		65A51FF420B333E30010DB33 /* TransactionRed */ = {
+			isa = PBXGroup;
+			children = (
+				65B89A8B20B3342E0024DC51 /* MATransactionRedViewController.swift */,
+				65B89A8A20B3342E0024DC51 /* MATransactionRedViewController.xib */,
+			);
+			path = TransactionRed;
+			sourceTree = "<group>";
+		};
+		65B89A8E20B3344C0024DC51 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				65A51FA320B300EA0010DB33 /* Walet */,
+				65A51F9E20B300EA0010DB33 /* Pass */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		E0AFDA27FA04C0CFC0E2156C /* Frameworks */ = {
@@ -421,10 +476,12 @@
 				65A51FCE20B3012C0010DB33 /* SF-Pro-Text-Heavy.otf in Resources */,
 				65A51FE020B3012C0010DB33 /* SF-Pro-Display-Black.otf in Resources */,
 				65A51FE920B3012C0010DB33 /* SF-Pro-Text-SemiboldItalic.otf in Resources */,
+				65B89A9220B334860024DC51 /* MATransactionBlueViewController.xib in Resources */,
 				65A51FDF20B3012C0010DB33 /* SF-Pro-Display-BlackItalic.otf in Resources */,
 				65A51FDD20B3012C0010DB33 /* SF-Pro-Display-UltralightItalic.otf in Resources */,
 				65A51FD020B3012C0010DB33 /* SF-Pro-Display-Light.otf in Resources */,
 				65A51FCF20B3012C0010DB33 /* SF-Pro-Display-RegularItalic.otf in Resources */,
+				65B89A8C20B3342E0024DC51 /* MATransactionRedViewController.xib in Resources */,
 				65A51FDC20B3012C0010DB33 /* SF-Pro-Display-Ultralight.otf in Resources */,
 				65A51FD920B3012C0010DB33 /* SF-Pro-Text-Bold.otf in Resources */,
 				65A51FD720B3012C0010DB33 /* SF-Pro-Display-Semibold.otf in Resources */,
@@ -501,11 +558,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MeApp/Pods-MeApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Presentr/Presentr.framework",
 				"${BUILT_PRODUCTS_DIR}/ScrollableSegmentedControl/ScrollableSegmentedControl.framework",
 				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Presentr.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ScrollableSegmentedControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
 			);
@@ -623,9 +682,12 @@
 				65A51FA720B300EA0010DB33 /* PassTableViewCell.swift in Sources */,
 				65A51FA820B300EA0010DB33 /* PassViewController.swift in Sources */,
 				65A51F7320B2FFF20010DB33 /* MeApp.xcdatamodeld in Sources */,
+				65B89A9120B334860024DC51 /* MATransactionBlueViewController.swift in Sources */,
 				65A51FAA20B300EA0010DB33 /* TabBarController.swift in Sources */,
 				65A51F6B20B2FFF10010DB33 /* AppDelegate.swift in Sources */,
+				65B89A8D20B3342E0024DC51 /* MATransactionRedViewController.swift in Sources */,
 				65A51FAC20B300EA0010DB33 /* WaletTableViewCell.swift in Sources */,
+				65A51FEB20B31FB30010DB33 /* WalletSecondTableViewCell.swift in Sources */,
 				65A51FAB20B300EA0010DB33 /* WalletViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

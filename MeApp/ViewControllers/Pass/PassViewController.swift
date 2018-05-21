@@ -7,18 +7,23 @@
 //
 
 import UIKit
+import Presentr
 
 class PassViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    let dynamicSizePresenter: Presentr = {
+        let presentationType = PresentationType.dynamic(center: .center)
+        let presenter = Presentr(presentationType: presentationType)
+        return presenter
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
@@ -54,6 +59,17 @@ class PassViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath.row == 0){
+            let popupTransction =  MATransactionRedViewController(nibName: "MATransactionRedViewController", bundle: nil)
+            customPresentViewController(dynamicSizePresenter, viewController: popupTransction, animated: true, completion: nil)
+        }else{
+            let popupTransction =  MATransactionBlueViewController(nibName: "MATransactionBlueViewController", bundle: nil)
+            customPresentViewController(dynamicSizePresenter, viewController: popupTransction, animated: true, completion: nil)
+        }
+       
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -65,3 +81,4 @@ class PassViewController: UIViewController, UITableViewDataSource, UITableViewDe
     */
 
 }
+

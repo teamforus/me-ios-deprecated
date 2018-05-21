@@ -15,6 +15,9 @@ class TabBarController: UITabBarController {
 
         self.addCenterButton(withImage: UIImage.init(named: "qrButton")!, highlightImage: UIImage.init(named: "qrButton")!)
         self.tabBar.barTintColor = UIColor.white
+        let largerRedTextSelectAttributes = [NSAttributedStringKey.font: UIFont(name: "SFProText-Semibold", size: 10.0),
+                                             NSAttributedStringKey.foregroundColor: UIColor.white]
+        self.tabBarItem.setTitleTextAttributes(largerRedTextSelectAttributes as Any as? [NSAttributedStringKey : Any], for: .normal)
     }
     
     @objc func handleTouchTabbarCenter(sender : UIButton)

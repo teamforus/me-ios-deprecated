@@ -6,6 +6,7 @@ target 'MeApp' do
   use_frameworks!
 pod 'SwipeCellKit'
 pod 'ScrollableSegmentedControl', '~> 1.3.0'
+pod 'Presentr'
 
   # Pods for MeApp
 
