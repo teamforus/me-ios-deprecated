@@ -7,6 +7,7 @@ target 'MeApp' do
 pod 'SwipeCellKit'
 pod 'ScrollableSegmentedControl', '~> 1.3.0'
 pod 'Presentr'
+pod 'ExpandableCell'
 
   # Pods for MeApp
 

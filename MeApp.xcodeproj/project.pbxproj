@@ -57,6 +57,30 @@
 		65B89A8D20B3342E0024DC51 /* MATransactionRedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89A8B20B3342E0024DC51 /* MATransactionRedViewController.swift */; };
 		65B89A9120B334860024DC51 /* MATransactionBlueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89A8F20B334860024DC51 /* MATransactionBlueViewController.swift */; };
 		65B89A9220B334860024DC51 /* MATransactionBlueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65B89A9020B334860024DC51 /* MATransactionBlueViewController.xib */; };
+		65B89A9420B408C00024DC51 /* MARecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89A9320B408C00024DC51 /* MARecordsViewController.swift */; };
+		65B89A9720B4128C0024DC51 /* MARecordsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89A9620B4128C0024DC51 /* MARecordsTableViewCell.swift */; };
+		65B89A9C20B422D30024DC51 /* MAWaitingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89A9A20B422D30024DC51 /* MAWaitingViewController.swift */; };
+		65B89A9D20B422D30024DC51 /* MAWaitingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65B89A9B20B422D30024DC51 /* MAWaitingViewController.xib */; };
+		65B89AA120B42A6F0024DC51 /* MARegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89A9F20B42A6F0024DC51 /* MARegistrationViewController.swift */; };
+		65B89AA220B42A6F0024DC51 /* MARegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65B89AA020B42A6F0024DC51 /* MARegistrationViewController.xib */; };
+		65B89AA620B432CC0024DC51 /* MARegistrationSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89AA420B432CC0024DC51 /* MARegistrationSuccessViewController.swift */; };
+		65B89AA720B432CC0024DC51 /* MARegistrationSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65B89AA520B432CC0024DC51 /* MARegistrationSuccessViewController.xib */; };
+		65B89AAB20B4363D0024DC51 /* MAEmailForMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89AA920B4363D0024DC51 /* MAEmailForMeViewController.swift */; };
+		65B89AAC20B4363D0024DC51 /* MAEmailForMeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65B89AAA20B4363D0024DC51 /* MAEmailForMeViewController.xib */; };
+		65B89AB020B43A3D0024DC51 /* MAValidationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89AAE20B43A3D0024DC51 /* MAValidationViewController.swift */; };
+		65B89AB120B43A3D0024DC51 /* MAValidationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65B89AAF20B43A3D0024DC51 /* MAValidationViewController.xib */; };
+		65B89AB520B43FA50024DC51 /* MAValidationSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89AB320B43FA50024DC51 /* MAValidationSuccessViewController.swift */; };
+		65B89AB620B43FA50024DC51 /* MAValidationSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65B89AB420B43FA50024DC51 /* MAValidationSuccessViewController.xib */; };
+		65B89ABA20B442C60024DC51 /* MAFailValidationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89AB820B442C60024DC51 /* MAFailValidationViewController.swift */; };
+		65B89ABB20B442C60024DC51 /* MAFailValidationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65B89AB920B442C60024DC51 /* MAFailValidationViewController.xib */; };
+		65B89ABF20B448CB0024DC51 /* MAAllowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89ABD20B448CB0024DC51 /* MAAllowViewController.swift */; };
+		65B89AC020B448CB0024DC51 /* MAAllowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65B89ABE20B448CB0024DC51 /* MAAllowViewController.xib */; };
+		65B89AC420B44B1B0024DC51 /* MAShareVaucherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89AC220B44B1B0024DC51 /* MAShareVaucherViewController.swift */; };
+		65B89AC520B44B1B0024DC51 /* MAShareVaucherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65B89AC320B44B1B0024DC51 /* MAShareVaucherViewController.xib */; };
+		65B89ACA20B44D210024DC51 /* MASignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89AC820B44D210024DC51 /* MASignUpViewController.swift */; };
+		65B89ACB20B44D210024DC51 /* MASignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65B89AC920B44D210024DC51 /* MASignUpViewController.xib */; };
+		65B89ACD20B4761C0024DC51 /* NewProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B89ACC20B4761C0024DC51 /* NewProfile.storyboard */; };
+		65B89ACF20B480470024DC51 /* MANewProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89ACE20B480470024DC51 /* MANewProfileViewController.swift */; };
 		C114624949C2AA90B4E6615B /* Pods_MeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F47A758BD471D52C424FBAA /* Pods_MeApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -136,6 +160,31 @@
 		65B89A8B20B3342E0024DC51 /* MATransactionRedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MATransactionRedViewController.swift; sourceTree = "<group>"; };
 		65B89A8F20B334860024DC51 /* MATransactionBlueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MATransactionBlueViewController.swift; sourceTree = "<group>"; };
 		65B89A9020B334860024DC51 /* MATransactionBlueViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MATransactionBlueViewController.xib; sourceTree = "<group>"; };
+		65B89A9320B408C00024DC51 /* MARecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MARecordsViewController.swift; sourceTree = "<group>"; };
+		65B89A9620B4128C0024DC51 /* MARecordsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MARecordsTableViewCell.swift; sourceTree = "<group>"; };
+		65B89A9A20B422D30024DC51 /* MAWaitingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAWaitingViewController.swift; sourceTree = "<group>"; };
+		65B89A9B20B422D30024DC51 /* MAWaitingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAWaitingViewController.xib; sourceTree = "<group>"; };
+		65B89A9F20B42A6F0024DC51 /* MARegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MARegistrationViewController.swift; sourceTree = "<group>"; };
+		65B89AA020B42A6F0024DC51 /* MARegistrationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MARegistrationViewController.xib; sourceTree = "<group>"; };
+		65B89AA420B432CC0024DC51 /* MARegistrationSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MARegistrationSuccessViewController.swift; sourceTree = "<group>"; };
+		65B89AA520B432CC0024DC51 /* MARegistrationSuccessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MARegistrationSuccessViewController.xib; sourceTree = "<group>"; };
+		65B89AA920B4363D0024DC51 /* MAEmailForMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAEmailForMeViewController.swift; sourceTree = "<group>"; };
+		65B89AAA20B4363D0024DC51 /* MAEmailForMeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAEmailForMeViewController.xib; sourceTree = "<group>"; };
+		65B89AAE20B43A3D0024DC51 /* MAValidationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAValidationViewController.swift; sourceTree = "<group>"; };
+		65B89AAF20B43A3D0024DC51 /* MAValidationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAValidationViewController.xib; sourceTree = "<group>"; };
+		65B89AB320B43FA50024DC51 /* MAValidationSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAValidationSuccessViewController.swift; sourceTree = "<group>"; };
+		65B89AB420B43FA50024DC51 /* MAValidationSuccessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAValidationSuccessViewController.xib; sourceTree = "<group>"; };
+		65B89AB820B442C60024DC51 /* MAFailValidationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAFailValidationViewController.swift; sourceTree = "<group>"; };
+		65B89AB920B442C60024DC51 /* MAFailValidationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAFailValidationViewController.xib; sourceTree = "<group>"; };
+		65B89ABD20B448CB0024DC51 /* MAAllowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAAllowViewController.swift; sourceTree = "<group>"; };
+		65B89ABE20B448CB0024DC51 /* MAAllowViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAAllowViewController.xib; sourceTree = "<group>"; };
+		65B89AC220B44B1B0024DC51 /* MAShareVaucherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAShareVaucherViewController.swift; sourceTree = "<group>"; };
+		65B89AC320B44B1B0024DC51 /* MAShareVaucherViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAShareVaucherViewController.xib; sourceTree = "<group>"; };
+		65B89AC820B44D210024DC51 /* MASignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MASignUpViewController.swift; sourceTree = "<group>"; };
+		65B89AC920B44D210024DC51 /* MASignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MASignUpViewController.xib; sourceTree = "<group>"; };
+		65B89ACC20B4761C0024DC51 /* NewProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewProfile.storyboard; sourceTree = "<group>"; };
+		65B89ACE20B480470024DC51 /* MANewProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MANewProfileViewController.swift; sourceTree = "<group>"; };
+		65B89AD320B48B9B0024DC51 /* MeApp-Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MeApp-Swift.h"; sourceTree = "<group>"; };
 		943F5D718F7DE6BD4631AAC7 /* Pods-MeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeApp/Pods-MeApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E27D041A0DD7ADE32B282550 /* Pods-MeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeApp/Pods-MeApp.release.xcconfig"; sourceTree = "<group>"; };
 		E4647894AE9F75A5A5B1672E /* Pods_MeAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -214,11 +263,13 @@
 				65B89A8E20B3344C0024DC51 /* ViewControllers */,
 				65A51FA120B300EA0010DB33 /* Main.storyboard */,
 				65A51F9D20B300E90010DB33 /* PassStoryboard.storyboard */,
+				65B89ACC20B4761C0024DC51 /* NewProfile.storyboard */,
 				65A51FF320B333D10010DB33 /* PopUps */,
 				65A51F7420B2FFF40010DB33 /* Assets.xcassets */,
 				65A51F7620B2FFF40010DB33 /* LaunchScreen.storyboard */,
 				65A51F7920B2FFF40010DB33 /* Info.plist */,
 				65A51F7120B2FFF20010DB33 /* MeApp.xcdatamodeld */,
+				65B89AD320B48B9B0024DC51 /* MeApp-Swift.h */,
 				65A51FAD20B3012B0010DB33 /* SF Pro */,
 			);
 			path = MeApp;
@@ -317,9 +368,18 @@
 		65A51FF320B333D10010DB33 /* PopUps */ = {
 			isa = PBXGroup;
 			children = (
-				65B89A8F20B334860024DC51 /* MATransactionBlueViewController.swift */,
-				65B89A9020B334860024DC51 /* MATransactionBlueViewController.xib */,
+				65B89A9920B422290024DC51 /* TransactionBlue */,
 				65A51FF420B333E30010DB33 /* TransactionRed */,
+				65B89A9E20B427180024DC51 /* WaitingPopUp */,
+				65B89AA320B431820024DC51 /* RegistrationPopUp */,
+				65B89AA820B432D20024DC51 /* RegistrationSuccess */,
+				65B89AAD20B439860024DC51 /* EmailForMe */,
+				65B89AB220B43F220024DC51 /* ValidationPopUp */,
+				65B89AB720B440F00024DC51 /* ValidationSuccess */,
+				65B89ABC20B447F30024DC51 /* FailValidation */,
+				65B89AC120B44A6F0024DC51 /* AllowPopUp */,
+				65B89AC720B44CF80024DC51 /* ShareVoucher */,
+				65B89AC620B44C8D0024DC51 /* SignUp */,
 			);
 			path = PopUps;
 			sourceTree = "<group>";
@@ -338,8 +398,134 @@
 			children = (
 				65A51FA320B300EA0010DB33 /* Walet */,
 				65A51F9E20B300EA0010DB33 /* Pass */,
+				65B89A9520B408CC0024DC51 /* Records */,
+				65B89AD020B4804C0024DC51 /* NewProfile */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		65B89A9520B408CC0024DC51 /* Records */ = {
+			isa = PBXGroup;
+			children = (
+				65B89A9320B408C00024DC51 /* MARecordsViewController.swift */,
+				65B89A9820B412920024DC51 /* Cell */,
+			);
+			path = Records;
+			sourceTree = "<group>";
+		};
+		65B89A9820B412920024DC51 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				65B89A9620B4128C0024DC51 /* MARecordsTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		65B89A9920B422290024DC51 /* TransactionBlue */ = {
+			isa = PBXGroup;
+			children = (
+				65B89A8F20B334860024DC51 /* MATransactionBlueViewController.swift */,
+				65B89A9020B334860024DC51 /* MATransactionBlueViewController.xib */,
+			);
+			path = TransactionBlue;
+			sourceTree = "<group>";
+		};
+		65B89A9E20B427180024DC51 /* WaitingPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				65B89A9A20B422D30024DC51 /* MAWaitingViewController.swift */,
+				65B89A9B20B422D30024DC51 /* MAWaitingViewController.xib */,
+			);
+			path = WaitingPopUp;
+			sourceTree = "<group>";
+		};
+		65B89AA320B431820024DC51 /* RegistrationPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				65B89A9F20B42A6F0024DC51 /* MARegistrationViewController.swift */,
+				65B89AA020B42A6F0024DC51 /* MARegistrationViewController.xib */,
+			);
+			path = RegistrationPopUp;
+			sourceTree = "<group>";
+		};
+		65B89AA820B432D20024DC51 /* RegistrationSuccess */ = {
+			isa = PBXGroup;
+			children = (
+				65B89AA420B432CC0024DC51 /* MARegistrationSuccessViewController.swift */,
+				65B89AA520B432CC0024DC51 /* MARegistrationSuccessViewController.xib */,
+			);
+			path = RegistrationSuccess;
+			sourceTree = "<group>";
+		};
+		65B89AAD20B439860024DC51 /* EmailForMe */ = {
+			isa = PBXGroup;
+			children = (
+				65B89AA920B4363D0024DC51 /* MAEmailForMeViewController.swift */,
+				65B89AAA20B4363D0024DC51 /* MAEmailForMeViewController.xib */,
+			);
+			path = EmailForMe;
+			sourceTree = "<group>";
+		};
+		65B89AB220B43F220024DC51 /* ValidationPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				65B89AAE20B43A3D0024DC51 /* MAValidationViewController.swift */,
+				65B89AAF20B43A3D0024DC51 /* MAValidationViewController.xib */,
+			);
+			path = ValidationPopUp;
+			sourceTree = "<group>";
+		};
+		65B89AB720B440F00024DC51 /* ValidationSuccess */ = {
+			isa = PBXGroup;
+			children = (
+				65B89AB320B43FA50024DC51 /* MAValidationSuccessViewController.swift */,
+				65B89AB420B43FA50024DC51 /* MAValidationSuccessViewController.xib */,
+			);
+			path = ValidationSuccess;
+			sourceTree = "<group>";
+		};
+		65B89ABC20B447F30024DC51 /* FailValidation */ = {
+			isa = PBXGroup;
+			children = (
+				65B89AB820B442C60024DC51 /* MAFailValidationViewController.swift */,
+				65B89AB920B442C60024DC51 /* MAFailValidationViewController.xib */,
+			);
+			path = FailValidation;
+			sourceTree = "<group>";
+		};
+		65B89AC120B44A6F0024DC51 /* AllowPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				65B89ABD20B448CB0024DC51 /* MAAllowViewController.swift */,
+				65B89ABE20B448CB0024DC51 /* MAAllowViewController.xib */,
+			);
+			name = AllowPopUp;
+			sourceTree = "<group>";
+		};
+		65B89AC620B44C8D0024DC51 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				65B89AC820B44D210024DC51 /* MASignUpViewController.swift */,
+				65B89AC920B44D210024DC51 /* MASignUpViewController.xib */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		65B89AC720B44CF80024DC51 /* ShareVoucher */ = {
+			isa = PBXGroup;
+			children = (
+				65B89AC220B44B1B0024DC51 /* MAShareVaucherViewController.swift */,
+				65B89AC320B44B1B0024DC51 /* MAShareVaucherViewController.xib */,
+			);
+			path = ShareVoucher;
+			sourceTree = "<group>";
+		};
+		65B89AD020B4804C0024DC51 /* NewProfile */ = {
+			isa = PBXGroup;
+			children = (
+				65B89ACE20B480470024DC51 /* MANewProfileViewController.swift */,
+			);
+			name = NewProfile;
 			sourceTree = "<group>";
 		};
 		E0AFDA27FA04C0CFC0E2156C /* Frameworks */ = {
@@ -470,6 +656,8 @@
 				65A51FA620B300EA0010DB33 /* PassStoryboard.storyboard in Resources */,
 				65A51FDA20B3012C0010DB33 /* SF-Pro-Display-MediumItalic.otf in Resources */,
 				65A51FE720B3012C0010DB33 /* SF-Pro-Text-Medium.otf in Resources */,
+				65B89A9D20B422D30024DC51 /* MAWaitingViewController.xib in Resources */,
+				65B89AC020B448CB0024DC51 /* MAAllowViewController.xib in Resources */,
 				65A51FD320B3012C0010DB33 /* SF-Pro-Display-Bold.otf in Resources */,
 				65A51FD420B3012C0010DB33 /* SF-Pro-Display-Medium.otf in Resources */,
 				65A51FCD20B3012C0010DB33 /* SF-Pro-Display-SemiboldItalic.otf in Resources */,
@@ -477,7 +665,10 @@
 				65A51FE020B3012C0010DB33 /* SF-Pro-Display-Black.otf in Resources */,
 				65A51FE920B3012C0010DB33 /* SF-Pro-Text-SemiboldItalic.otf in Resources */,
 				65B89A9220B334860024DC51 /* MATransactionBlueViewController.xib in Resources */,
+				65B89AAC20B4363D0024DC51 /* MAEmailForMeViewController.xib in Resources */,
+				65B89ABB20B442C60024DC51 /* MAFailValidationViewController.xib in Resources */,
 				65A51FDF20B3012C0010DB33 /* SF-Pro-Display-BlackItalic.otf in Resources */,
+				65B89AA220B42A6F0024DC51 /* MARegistrationViewController.xib in Resources */,
 				65A51FDD20B3012C0010DB33 /* SF-Pro-Display-UltralightItalic.otf in Resources */,
 				65A51FD020B3012C0010DB33 /* SF-Pro-Display-Light.otf in Resources */,
 				65A51FCF20B3012C0010DB33 /* SF-Pro-Display-RegularItalic.otf in Resources */,
@@ -486,11 +677,13 @@
 				65A51FD920B3012C0010DB33 /* SF-Pro-Text-Bold.otf in Resources */,
 				65A51FD720B3012C0010DB33 /* SF-Pro-Display-Semibold.otf in Resources */,
 				65A51FE620B3012C0010DB33 /* SF-Pro-Text-LightItalic.otf in Resources */,
+				65B89ACB20B44D210024DC51 /* MASignUpViewController.xib in Resources */,
 				65A51FE820B3012C0010DB33 /* SF-Pro-Display-BoldItalic.otf in Resources */,
 				65A51FA920B300EA0010DB33 /* Main.storyboard in Resources */,
 				65A51FD520B3012C0010DB33 /* SF-Pro-Display-Heavy.otf in Resources */,
 				65A51FD220B3012C0010DB33 /* SF-Pro-Text-MediumItalic.otf in Resources */,
 				65A51F7820B2FFF40010DB33 /* LaunchScreen.storyboard in Resources */,
+				65B89AB620B43FA50024DC51 /* MAValidationSuccessViewController.xib in Resources */,
 				65A51FE320B3012C0010DB33 /* SF-Pro-Text-Semibold.otf in Resources */,
 				65A51FD820B3012C0010DB33 /* SF-Pro-Text-Regular.otf in Resources */,
 				65A51FD120B3012C0010DB33 /* SF-Pro-Display-Regular.otf in Resources */,
@@ -500,7 +693,11 @@
 				65A51FD620B3012C0010DB33 /* SF-Pro-Text-Light.otf in Resources */,
 				65A51FE220B3012C0010DB33 /* SF-Pro-Text-RegularItalic.otf in Resources */,
 				65A51FE520B3012C0010DB33 /* SF-Pro-Display-ThinItalic.otf in Resources */,
+				65B89AB120B43A3D0024DC51 /* MAValidationViewController.xib in Resources */,
 				65A51FDB20B3012C0010DB33 /* SF-Pro-Display-HeavyItalic.otf in Resources */,
+				65B89ACD20B4761C0024DC51 /* NewProfile.storyboard in Resources */,
+				65B89AC520B44B1B0024DC51 /* MAShareVaucherViewController.xib in Resources */,
+				65B89AA720B432CC0024DC51 /* MARegistrationSuccessViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,12 +755,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MeApp/Pods-MeApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ExpandableCell/ExpandableCell.framework",
 				"${BUILT_PRODUCTS_DIR}/Presentr/Presentr.framework",
 				"${BUILT_PRODUCTS_DIR}/ScrollableSegmentedControl/ScrollableSegmentedControl.framework",
 				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ExpandableCell.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Presentr.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ScrollableSegmentedControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
@@ -679,13 +878,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65B89A9420B408C00024DC51 /* MARecordsViewController.swift in Sources */,
+				65B89AB020B43A3D0024DC51 /* MAValidationViewController.swift in Sources */,
+				65B89ACF20B480470024DC51 /* MANewProfileViewController.swift in Sources */,
 				65A51FA720B300EA0010DB33 /* PassTableViewCell.swift in Sources */,
+				65B89AAB20B4363D0024DC51 /* MAEmailForMeViewController.swift in Sources */,
 				65A51FA820B300EA0010DB33 /* PassViewController.swift in Sources */,
+				65B89ABA20B442C60024DC51 /* MAFailValidationViewController.swift in Sources */,
 				65A51F7320B2FFF20010DB33 /* MeApp.xcdatamodeld in Sources */,
+				65B89AA620B432CC0024DC51 /* MARegistrationSuccessViewController.swift in Sources */,
 				65B89A9120B334860024DC51 /* MATransactionBlueViewController.swift in Sources */,
 				65A51FAA20B300EA0010DB33 /* TabBarController.swift in Sources */,
+				65B89ABF20B448CB0024DC51 /* MAAllowViewController.swift in Sources */,
+				65B89A9720B4128C0024DC51 /* MARecordsTableViewCell.swift in Sources */,
+				65B89AA120B42A6F0024DC51 /* MARegistrationViewController.swift in Sources */,
 				65A51F6B20B2FFF10010DB33 /* AppDelegate.swift in Sources */,
+				65B89ACA20B44D210024DC51 /* MASignUpViewController.swift in Sources */,
 				65B89A8D20B3342E0024DC51 /* MATransactionRedViewController.swift in Sources */,
+				65B89AC420B44B1B0024DC51 /* MAShareVaucherViewController.swift in Sources */,
+				65B89AB520B43FA50024DC51 /* MAValidationSuccessViewController.swift in Sources */,
+				65B89A9C20B422D30024DC51 /* MAWaitingViewController.swift in Sources */,
 				65A51FAC20B300EA0010DB33 /* WaletTableViewCell.swift in Sources */,
 				65A51FEB20B31FB30010DB33 /* WalletSecondTableViewCell.swift in Sources */,
 				65A51FAB20B300EA0010DB33 /* WalletViewController.swift in Sources */,
@@ -862,6 +1074,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = RokectMinds.MeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -880,6 +1094,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = RokectMinds.MeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

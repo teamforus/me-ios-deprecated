@@ -64,10 +64,9 @@ class PassViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let popupTransction =  MATransactionRedViewController(nibName: "MATransactionRedViewController", bundle: nil)
             customPresentViewController(dynamicSizePresenter, viewController: popupTransction, animated: true, completion: nil)
         }else{
-            let popupTransction =  MATransactionBlueViewController(nibName: "MATransactionBlueViewController", bundle: nil)
+            let popupTransction =  MASignUpViewController(nibName: "MASignUpViewController", bundle: nil)
             customPresentViewController(dynamicSizePresenter, viewController: popupTransction, animated: true, completion: nil)
         }
-       
     }
     
     /*

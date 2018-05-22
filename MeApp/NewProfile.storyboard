@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3xj-xT-Ref">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Heavy.otf">
+            <string>SFProDisplay-Heavy</string>
+        </array>
+        <array key="SF-Pro-Text-Bold.otf">
+            <string>SFProText-Bold</string>
+        </array>
+        <array key="SF-Pro-Text-Heavy.otf">
+            <string>SFProText-Heavy</string>
+        </array>
+        <array key="SF-Pro-Text-Regular.otf">
+            <string>SFProText-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--New Profile View Controller-->
+        <scene sceneID="MKh-Js-M7z">
+            <objects>
+                <viewController id="3xj-xT-Ref" customClass="MANewProfileViewController" customModule="MeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HEl-Oq-fiG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baseNewProfile" translatesAutoresizingMaskIntoConstraints="NO" id="gpd-EH-qVr">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="142"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="142" id="sdA-v9-MRv"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SrT-EG-tvJ">
+                                <rect key="frame" x="12" y="35" width="16" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="backIcon"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nieuw profiel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uxz-dS-5ik">
+                                <rect key="frame" x="16" y="66" width="199" height="40"/>
+                                <fontDescription key="fontDescription" name="SFProText-Heavy" family="SF Pro Text" pointSize="34"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vul uw gegevens in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCQ-Si-BCg">
+                                <rect key="frame" x="16" y="114" width="137" height="18"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3sZ-GN-a62">
+                                <rect key="frame" x="11" y="27" width="42" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="back:" destination="3xj-xT-Ref" eventType="touchUpInside" id="ZOD-6y-exg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fv-bm-KSW">
+                                <rect key="frame" x="17" y="612" width="341" height="51"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Heavy" family="SF Pro Display" pointSize="15"/>
+                                <state key="normal" title="PROFIEL TOEVOEGEN" backgroundImage="baseButtonRegistration">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zqa-Ql-Yho">
+                                <rect key="frame" x="0.0" y="140" width="375" height="474"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sKe-eH-hmn">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="474"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LxC-iw-Dsk">
+                                                <rect key="frame" x="16" y="180" width="341" height="1"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.80000000000000004" green="0.81960784310000001" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="uw burger service nummer (BSN)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q54-Qj-nQc">
+                                                <rect key="frame" x="16" y="213" width="343" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="19"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ACHTERNAAM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0v-db-Bow">
+                                                <rect key="frame" x="16" y="111" width="204" height="10"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="SFProDisplay-Heavy" family="SF Pro Display" pointSize="13"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cca-k9-PGl">
+                                                <rect key="frame" x="16" y="86" width="341" height="1"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.80000000000000004" green="0.81960784310000001" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="uw achternaam" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c5E-Tc-QyJ">
+                                                <rect key="frame" x="16" y="120" width="343" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="19"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BSN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXK-Mm-81V">
+                                                <rect key="frame" x="16" y="204" width="204" height="10"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="SFProDisplay-Heavy" family="SF Pro Display" pointSize="13"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Hw-1B-Olj">
+                                                <rect key="frame" x="16" y="274" width="341" height="1"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.80000000000000004" green="0.81960784310000001" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3wb-nl-fz8">
+                                                <rect key="frame" x="16" y="456" width="341" height="1"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.80000000000000004" green="0.81960784310000001" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TELEFOONNUMMER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5V1-UG-6Zo">
+                                                <rect key="frame" x="16" y="387" width="204" height="10"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="SFProDisplay-Heavy" family="SF Pro Display" pointSize="13"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="uw voornaam" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MZx-wB-jHy">
+                                                <rect key="frame" x="16" y="26" width="343" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="19"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="uw telefoonnummer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8cv-Un-tRY">
+                                                <rect key="frame" x="16" y="396" width="343" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="19"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4ip-RS-JFn">
+                                                <rect key="frame" x="16" y="364" width="341" height="1"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.80000000000000004" green="0.81960784310000001" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="E-MAIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sU1-bt-ahc">
+                                                <rect key="frame" x="16" y="296" width="204" height="10"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="SFProDisplay-Heavy" family="SF Pro Display" pointSize="13"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="uw e-mailadres" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PB4-N5-hCk">
+                                                <rect key="frame" x="16" y="305" width="343" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="19"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VOORNAAM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DfZ-Ef-9ff">
+                                                <rect key="frame" x="16" y="17" width="204" height="10"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="SFProDisplay-Heavy" family="SF Pro Display" pointSize="13"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="sKe-eH-hmn" firstAttribute="leading" secondItem="Zqa-Ql-Yho" secondAttribute="leading" id="1iM-6N-YZe"/>
+                                    <constraint firstItem="sKe-eH-hmn" firstAttribute="centerX" secondItem="Zqa-Ql-Yho" secondAttribute="centerX" id="UiI-bd-UMX"/>
+                                    <constraint firstAttribute="bottom" secondItem="sKe-eH-hmn" secondAttribute="bottom" id="guc-jl-OzL"/>
+                                    <constraint firstItem="sKe-eH-hmn" firstAttribute="top" secondItem="Zqa-Ql-Yho" secondAttribute="top" id="hFQ-5J-WUb"/>
+                                    <constraint firstItem="sKe-eH-hmn" firstAttribute="centerY" secondItem="Zqa-Ql-Yho" secondAttribute="centerY" id="pQG-5x-g22"/>
+                                    <constraint firstAttribute="trailing" secondItem="sKe-eH-hmn" secondAttribute="trailing" id="vfs-YC-Ji4"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KaF-V2-Lfa" firstAttribute="trailing" secondItem="KCQ-Si-BCg" secondAttribute="trailing" constant="222" id="50a-p9-6Wd"/>
+                            <constraint firstItem="Zqa-Ql-Yho" firstAttribute="centerX" secondItem="0fv-bm-KSW" secondAttribute="centerX" id="9L5-nH-mup"/>
+                            <constraint firstItem="KCQ-Si-BCg" firstAttribute="top" secondItem="HEl-Oq-fiG" secondAttribute="top" constant="114" id="BQX-bQ-YlD"/>
+                            <constraint firstItem="0fv-bm-KSW" firstAttribute="leading" secondItem="KaF-V2-Lfa" secondAttribute="leading" constant="17" id="EcX-e3-KAg"/>
+                            <constraint firstItem="Zqa-Ql-Yho" firstAttribute="trailing" secondItem="KaF-V2-Lfa" secondAttribute="trailing" id="Nuk-my-YLv"/>
+                            <constraint firstItem="Zqa-Ql-Yho" firstAttribute="leading" secondItem="KaF-V2-Lfa" secondAttribute="leading" id="ShF-z7-rbq"/>
+                            <constraint firstItem="KCQ-Si-BCg" firstAttribute="leading" secondItem="HEl-Oq-fiG" secondAttribute="leadingMargin" id="XeY-AF-mxG"/>
+                            <constraint firstItem="KaF-V2-Lfa" firstAttribute="bottom" secondItem="0fv-bm-KSW" secondAttribute="bottom" constant="4" id="am6-nX-i7H"/>
+                            <constraint firstItem="KCQ-Si-BCg" firstAttribute="leading" secondItem="Uxz-dS-5ik" secondAttribute="leading" id="bak-Ix-oQs"/>
+                            <constraint firstItem="KCQ-Si-BCg" firstAttribute="top" secondItem="Uxz-dS-5ik" secondAttribute="bottom" constant="8" symbolic="YES" id="bpS-fH-HPJ"/>
+                            <constraint firstItem="gpd-EH-qVr" firstAttribute="width" secondItem="HEl-Oq-fiG" secondAttribute="width" id="dZo-2L-BTU"/>
+                            <constraint firstItem="Zqa-Ql-Yho" firstAttribute="leading" secondItem="gpd-EH-qVr" secondAttribute="leading" id="f5t-7X-Q9k"/>
+                            <constraint firstItem="gpd-EH-qVr" firstAttribute="top" secondItem="HEl-Oq-fiG" secondAttribute="top" id="kHR-Ss-iuk"/>
+                            <constraint firstItem="Zqa-Ql-Yho" firstAttribute="top" secondItem="KCQ-Si-BCg" secondAttribute="bottom" constant="8" id="q3R-o2-yfI"/>
+                            <constraint firstItem="KaF-V2-Lfa" firstAttribute="bottom" secondItem="Zqa-Ql-Yho" secondAttribute="bottom" constant="53" id="trd-zw-ebz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KaF-V2-Lfa"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mbp-d0-TXb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="839.20000000000005" y="-487.10644677661173"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="backIcon" width="17" height="17"/>
+        <image name="baseButtonRegistration" width="304" height="51"/>
+        <image name="baseNewProfile" width="375" height="141"/>
+    </resources>
+</document>

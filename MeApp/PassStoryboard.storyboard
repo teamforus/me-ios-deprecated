@@ -248,7 +248,7 @@
     </scenes>
     <resources>
         <image name="arrow" width="16" height="28"/>
-        <image name="backIcon" width="34" height="35"/>
+        <image name="backIcon" width="17" height="17"/>
         <image name="base" width="375" height="56"/>
         <image name="bg" width="857" height="946"/>
         <image name="mailIcon" width="80" height="80"/>

@@ -1,18 +1,21 @@
 PODS:
+  - ExpandableCell (1.2.2)
   - Presentr (1.3)
   - ScrollableSegmentedControl (1.3.0)
   - SwipeCellKit (2.0.1)
 
 DEPENDENCIES:
+  - ExpandableCell
   - Presentr
   - ScrollableSegmentedControl (~> 1.3.0)
   - SwipeCellKit
 
 SPEC CHECKSUMS:
+  ExpandableCell: f2d99f9ae03a8c393e268adddaeb7f6d2525a76e
   Presentr: 3f0825a42cb32ecd8fc6b6d0b0de87d7d0b42482
   ScrollableSegmentedControl: a90ae91537fd670a46b177301d035223e3bd149e
   SwipeCellKit: 76888d93d1843dc568fdf38fff21b15dbbcf6b28
 
-PODFILE CHECKSUM: 9009f254597802c884ad3bafc511ad310dd02fc6
+PODFILE CHECKSUM: 204312783e794606de3e8cf8135d43605d324c4b
 
 COCOAPODS: 1.4.0
