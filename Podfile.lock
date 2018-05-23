@@ -1,21 +1,33 @@
 PODS:
+  - DropDown (2.3.1)
   - ExpandableCell (1.2.2)
+  - PopupWindow (0.1.0)
   - Presentr (1.3)
+  - QRCodeReader.swift (8.1.1)
   - ScrollableSegmentedControl (1.3.0)
   - SwipeCellKit (2.0.1)
+  - UICheckbox.Swift (1.0.0)
 
 DEPENDENCIES:
+  - DropDown
   - ExpandableCell
+  - PopupWindow
   - Presentr
+  - QRCodeReader.swift
   - ScrollableSegmentedControl (~> 1.3.0)
   - SwipeCellKit
+  - UICheckbox.Swift
 
 SPEC CHECKSUMS:
+  DropDown: 20499c7b2731b0d21609af924e47c7677a2be50d
   ExpandableCell: f2d99f9ae03a8c393e268adddaeb7f6d2525a76e
+  PopupWindow: 2f3a33001295435a3ab568e42a970d51539ed6e9
   Presentr: 3f0825a42cb32ecd8fc6b6d0b0de87d7d0b42482
+  QRCodeReader.swift: b164a681887de276d405ff02bce854d82cd6360b
   ScrollableSegmentedControl: a90ae91537fd670a46b177301d035223e3bd149e
   SwipeCellKit: 76888d93d1843dc568fdf38fff21b15dbbcf6b28
+  UICheckbox.Swift: 85715689206fac5bae38b308f19c2a3e00442c3b
 
-PODFILE CHECKSUM: 204312783e794606de3e8cf8135d43605d324c4b
+PODFILE CHECKSUM: 258b1d6d94e2349f0eecdc74f50806614599bfb5
 
 COCOAPODS: 1.4.0

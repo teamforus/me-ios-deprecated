@@ -28,7 +28,7 @@ class PassViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
 
     @IBAction func back(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     

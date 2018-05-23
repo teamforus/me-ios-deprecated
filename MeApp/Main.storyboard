@@ -27,7 +27,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Eigendom-->
+        <!--Wallet View Controller-->
         <scene sceneID="6O1-wD-pbo">
             <objects>
                 <viewController id="AFR-4S-uKC" customClass="WalletViewController" customModule="MeApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -57,7 +57,7 @@
                                     </button>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="23n-Ck-4dG" customClass="ScrollableSegmentedControl" customModule="ScrollableSegmentedControl">
                                         <rect key="frame" x="25" y="76" width="350" height="49"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
@@ -69,25 +69,26 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.21568627450980393" green="0.58431372549019611" blue="0.67450980392156867" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="15"/>
-                                <state key="normal" title="Zoek valuta">
+                                <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="98" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WHB-Dg-CPc">
-                                <rect key="frame" x="0.0" y="177" width="375" height="441"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                <rect key="frame" x="0.0" y="186" width="375" height="432"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="98" id="oxR-wL-Ypn" customClass="WaletTableViewCell" customModule="MeApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="98"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="102" id="oxR-wL-Ypn" customClass="WaletTableViewCell" customModule="MeApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="102"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oxR-wL-Ypn" id="5bR-4a-8Db">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="97.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="102"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Yk-ah-eKx">
-                                                    <rect key="frame" x="6" y="0.0" width="363" height="90"/>
+                                                    <rect key="frame" x="6" y="7" width="363" height="90"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2 dagen geldig" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhB-qt-TL9">
@@ -122,14 +123,14 @@
                                             <outlet property="priceUILabel" destination="XGt-KH-Mtf" id="JbO-XO-OVE"/>
                                             <outlet property="titleWalteCategory" destination="BJm-4f-9lp" id="5jD-WY-ZWt"/>
                                             <outlet property="validatioDays" destination="bhB-qt-TL9" id="5t1-KC-i6k"/>
-                                            <segue destination="kLj-dM-zdT" kind="presentation" id="0fK-KO-7TZ"/>
+                                            <segue destination="kLj-dM-zdT" kind="show" id="0fK-KO-7TZ"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell2" rowHeight="98" id="EBA-Ux-kKV" customClass="WalletSecondTableViewCell" customModule="MeApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="126" width="375" height="98"/>
+                                        <rect key="frame" x="0.0" y="130" width="375" height="98"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EBA-Ux-kKV" id="3Uo-0N-jkI">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="97.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="98"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RjX-1I-Oso">
@@ -202,21 +203,28 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="micro"/>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oED-1u-1hd">
+                                <rect key="frame" x="0.0" y="125" width="375" height="61"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="hwB-GR-nD2"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Eigendom" image="wallet" id="0jC-Xi-Id5">
-                        <color key="badgeColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="UnD-ca-UAZ"/>
                     <connections>
+                        <outlet property="searchField" destination="oED-1u-1hd" id="iMq-QG-iVt"/>
                         <outlet property="segmentedControl" destination="23n-Ck-4dG" id="bzw-Ye-qcj"/>
                         <outlet property="tableView" destination="WHB-Dg-CPc" id="L2T-jh-YzW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zm9-Ex-VsL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-16.800000000000001" y="210.04497751124438"/>
+            <point key="canvasLocation" x="924" y="966"/>
         </scene>
         <!--PassStoryboard-->
         <scene sceneID="Wmc-G1-sBm">
@@ -224,9 +232,9 @@
                 <viewControllerPlaceholder storyboardName="PassStoryboard" id="kLj-dM-zdT" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JMc-uu-dyU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="887" y="49"/>
+            <point key="canvasLocation" x="1855" y="965"/>
         </scene>
-        <!--Eigenschappen-->
+        <!--Records View Controller-->
         <scene sceneID="4wx-QL-c3a">
             <objects>
                 <viewController id="Q8j-LA-r22" customClass="MARecordsViewController" customModule="MeApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -346,7 +354,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="OsV-sq-hZP"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Eigenschappen" image="records" id="Df2-rM-6yN"/>
+                    <navigationItem key="navigationItem" id="yBV-g0-y0z"/>
                     <connections>
                         <outlet property="tableView" destination="pyW-6j-7ya" id="ivQ-c4-7HU"/>
                         <segue destination="sy2-nj-KFO" kind="show" identifier="goToNewProfile" id="qbC-Qc-Km0"/>
@@ -354,7 +362,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pgD-eG-udy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15.199999999999999" y="-530.28485757121439"/>
+            <point key="canvasLocation" x="924" y="-530.28485757121439"/>
         </scene>
         <!--NewProfile-->
         <scene sceneID="uK7-yh-mo9">
@@ -362,23 +370,33 @@
                 <viewControllerPlaceholder storyboardName="NewProfile" id="sy2-nj-KFO" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Q7-my-ZEY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749" y="-663"/>
+            <point key="canvasLocation" x="1721" y="-531"/>
         </scene>
-        <!--View Controller-->
+        <!--Code Reader View Controller-->
         <scene sceneID="s6p-hV-QEf">
             <objects>
-                <viewController id="Yx9-nY-Sea" sceneMemberID="viewController">
+                <viewController id="Yx9-nY-Sea" customClass="MAQRCodeReaderViewController" customModule="MeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1yp-So-mmF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Zn-11-HGk" customClass="QRCodeReaderView" customModule="QRCodeReader">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="TWr-5y-fj4"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="fBY-X5-wug"/>
+                    <connections>
+                        <outlet property="previewQR" destination="6Zn-11-HGk" id="D7j-c6-9OC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hmp-3F-Enb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15" y="998"/>
+            <point key="canvasLocation" x="-15" y="211"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="5Hi-kT-km0">
@@ -391,14 +409,52 @@
                         <color key="selectedImageTintColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
                     </tabBar>
                     <connections>
-                        <segue destination="AFR-4S-uKC" kind="relationship" relationship="viewControllers" id="bIG-kA-bLu"/>
+                        <segue destination="5nc-Vq-8KD" kind="relationship" relationship="viewControllers" id="bIG-kA-bLu"/>
                         <segue destination="Yx9-nY-Sea" kind="relationship" relationship="viewControllers" id="ezV-FA-oIy"/>
-                        <segue destination="Q8j-LA-r22" kind="relationship" relationship="viewControllers" id="gH4-G0-cTc"/>
+                        <segue destination="xZ5-n7-V9o" kind="relationship" relationship="viewControllers" id="gH4-G0-cTc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2mN-53-BsI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1037" y="211"/>
+        </scene>
+        <!--Eigendom-->
+        <scene sceneID="a3q-UP-cbL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="5nc-Vq-8KD" customClass="HiddenNavBarNavigationController" customModule="MeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Eigendom" image="wallet" id="0jC-Xi-Id5">
+                        <color key="badgeColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ofg-Jw-gwz">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AFR-4S-uKC" kind="relationship" relationship="rootViewController" id="y73-sk-xGB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x93-QG-W8i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-15" y="966"/>
+        </scene>
+        <!--Eigenschappen-->
+        <scene sceneID="RgF-Dc-85y">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="xZ5-n7-V9o" customClass="HiddenNavBarNavigationController" customModule="MeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Eigenschappen" image="records" id="Df2-rM-6yN"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="F3U-pG-UFr">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Q8j-LA-r22" kind="relationship" relationship="rootViewController" id="NkC-aH-zNF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O6A-gZ-9SP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-15.199999999999999" y="-530.28485757121439"/>
         </scene>
     </scenes>
     <resources>

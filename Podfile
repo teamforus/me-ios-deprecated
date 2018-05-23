@@ -8,17 +8,18 @@ pod 'SwipeCellKit'
 pod 'ScrollableSegmentedControl', '~> 1.3.0'
 pod 'Presentr'
 pod 'ExpandableCell'
+pod 'QRCodeReader.swift'
+pod 'UICheckbox.Swift'
+pod 'DropDown'
+pod 'PopupWindow'
 
-  # Pods for MeApp
 
   target 'MeAppTests' do
     inherit! :search_paths
-    # Pods for testing
   end
 
   target 'MeAppUITests' do
     inherit! :search_paths
-    # Pods for testing
   end
 
 end

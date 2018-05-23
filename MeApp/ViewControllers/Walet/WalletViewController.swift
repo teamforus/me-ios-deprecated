@@ -17,6 +17,7 @@ enum WalletCase {
 
 class WalletViewController: UIViewController{
     
+    @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     var walletCase : WalletCase! = WalletCase.token
     
@@ -36,12 +37,20 @@ class WalletViewController: UIViewController{
         segmentedControl.underlineSelected = true
         segmentedControl.selectedSegmentContentColor = UIColor.white
         segmentedControl.selectedSegmentIndex = 0
-        
         segmentedControl.addTarget(self, action: #selector(self.segmentSelected(sender:)), for: .valueChanged)
+        searchField.attributedPlaceholder = colorPlaceholder(text: "Zoek valuta")
+    }
+    
+    func colorPlaceholder(text: String) -> NSAttributedString {
+         return NSAttributedString(string: text ,attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @IBAction func dismissKeyboard(_ sender: Any) {
+    self.view.endEditing(true)
     }
     
     @objc func segmentSelected(sender:ScrollableSegmentedControl) {

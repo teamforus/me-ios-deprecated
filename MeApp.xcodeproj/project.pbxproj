@@ -81,6 +81,24 @@
 		65B89ACB20B44D210024DC51 /* MASignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65B89AC920B44D210024DC51 /* MASignUpViewController.xib */; };
 		65B89ACD20B4761C0024DC51 /* NewProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B89ACC20B4761C0024DC51 /* NewProfile.storyboard */; };
 		65B89ACF20B480470024DC51 /* MANewProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89ACE20B480470024DC51 /* MANewProfileViewController.swift */; };
+		65FC85F820B56FA2001FECA5 /* MANavicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC85F720B56FA2001FECA5 /* MANavicationController.swift */; };
+		65FC85FA20B57642001FECA5 /* MAQRCodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC85F920B57642001FECA5 /* MAQRCodeReaderViewController.swift */; };
+		65FC85FE20B58426001FECA5 /* MAValidationQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC85FC20B58426001FECA5 /* MAValidationQRViewController.swift */; };
+		65FC85FF20B58426001FECA5 /* MAValidationQRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65FC85FD20B58426001FECA5 /* MAValidationQRViewController.xib */; };
+		65FC860220B5A2DA001FECA5 /* MAOfficeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC860120B5A2DA001FECA5 /* MAOfficeViewController.swift */; };
+		65FC860620B5B340001FECA5 /* MASwitchProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC860520B5B340001FECA5 /* MASwitchProfileViewController.swift */; };
+		65FC862420B5D02C001FECA5 /* RegisterPopupCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC861F20B5D02C001FECA5 /* RegisterPopupCompletionView.swift */; };
+		65FC862520B5D02C001FECA5 /* RegisterPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC862020B5D02C001FECA5 /* RegisterPopupView.swift */; };
+		65FC862620B5D02C001FECA5 /* RegisterPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65FC862120B5D02C001FECA5 /* RegisterPopupView.xib */; };
+		65FC862720B5D02C001FECA5 /* RegisterPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC862220B5D02C001FECA5 /* RegisterPopupViewController.swift */; };
+		65FC862820B5D02C001FECA5 /* RegisterPopupCompletionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65FC862320B5D02C001FECA5 /* RegisterPopupCompletionView.xib */; };
+		65FC865C20B5D8C5001FECA5 /* Nibable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC865B20B5D8C5001FECA5 /* Nibable.swift */; };
+		65FC866020B5D8F5001FECA5 /* UIColor+Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC865E20B5D8F5001FECA5 /* UIColor+Background.swift */; };
+		65FC866120B5D8F5001FECA5 /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC865F20B5D8F5001FECA5 /* UIView+Shadow.swift */; };
+		65FC866420B5DF81001FECA5 /* MASwitchProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC866220B5DF81001FECA5 /* MASwitchProfileTableViewCell.swift */; };
+		65FC866520B5DF81001FECA5 /* MASwitchProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65FC866320B5DF81001FECA5 /* MASwitchProfileTableViewCell.xib */; };
+		65FC866820B5EB2A001FECA5 /* MAAddProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC866620B5EB2A001FECA5 /* MAAddProfileTableViewCell.swift */; };
+		65FC866920B5EB2A001FECA5 /* MAAddProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65FC866720B5EB2A001FECA5 /* MAAddProfileTableViewCell.xib */; };
 		C114624949C2AA90B4E6615B /* Pods_MeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F47A758BD471D52C424FBAA /* Pods_MeApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -185,6 +203,24 @@
 		65B89ACC20B4761C0024DC51 /* NewProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewProfile.storyboard; sourceTree = "<group>"; };
 		65B89ACE20B480470024DC51 /* MANewProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MANewProfileViewController.swift; sourceTree = "<group>"; };
 		65B89AD320B48B9B0024DC51 /* MeApp-Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MeApp-Swift.h"; sourceTree = "<group>"; };
+		65FC85F720B56FA2001FECA5 /* MANavicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MANavicationController.swift; sourceTree = "<group>"; };
+		65FC85F920B57642001FECA5 /* MAQRCodeReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAQRCodeReaderViewController.swift; sourceTree = "<group>"; };
+		65FC85FC20B58426001FECA5 /* MAValidationQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAValidationQRViewController.swift; sourceTree = "<group>"; };
+		65FC85FD20B58426001FECA5 /* MAValidationQRViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAValidationQRViewController.xib; sourceTree = "<group>"; };
+		65FC860120B5A2DA001FECA5 /* MAOfficeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAOfficeViewController.swift; sourceTree = "<group>"; };
+		65FC860520B5B340001FECA5 /* MASwitchProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MASwitchProfileViewController.swift; sourceTree = "<group>"; };
+		65FC861F20B5D02C001FECA5 /* RegisterPopupCompletionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPopupCompletionView.swift; sourceTree = "<group>"; };
+		65FC862020B5D02C001FECA5 /* RegisterPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPopupView.swift; sourceTree = "<group>"; };
+		65FC862120B5D02C001FECA5 /* RegisterPopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterPopupView.xib; sourceTree = "<group>"; };
+		65FC862220B5D02C001FECA5 /* RegisterPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPopupViewController.swift; sourceTree = "<group>"; };
+		65FC862320B5D02C001FECA5 /* RegisterPopupCompletionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterPopupCompletionView.xib; sourceTree = "<group>"; };
+		65FC865B20B5D8C5001FECA5 /* Nibable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nibable.swift; sourceTree = "<group>"; };
+		65FC865E20B5D8F5001FECA5 /* UIColor+Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Background.swift"; sourceTree = "<group>"; };
+		65FC865F20B5D8F5001FECA5 /* UIView+Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
+		65FC866220B5DF81001FECA5 /* MASwitchProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MASwitchProfileTableViewCell.swift; sourceTree = "<group>"; };
+		65FC866320B5DF81001FECA5 /* MASwitchProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MASwitchProfileTableViewCell.xib; sourceTree = "<group>"; };
+		65FC866620B5EB2A001FECA5 /* MAAddProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAAddProfileTableViewCell.swift; sourceTree = "<group>"; };
+		65FC866720B5EB2A001FECA5 /* MAAddProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAAddProfileTableViewCell.xib; sourceTree = "<group>"; };
 		943F5D718F7DE6BD4631AAC7 /* Pods-MeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeApp/Pods-MeApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E27D041A0DD7ADE32B282550 /* Pods-MeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeApp/Pods-MeApp.release.xcconfig"; sourceTree = "<group>"; };
 		E4647894AE9F75A5A5B1672E /* Pods_MeAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -260,10 +296,12 @@
 			children = (
 				65A51F6A20B2FFF10010DB33 /* AppDelegate.swift */,
 				65A51FA220B300EA0010DB33 /* TabBarController.swift */,
+				65FC85F720B56FA2001FECA5 /* MANavicationController.swift */,
 				65B89A8E20B3344C0024DC51 /* ViewControllers */,
 				65A51FA120B300EA0010DB33 /* Main.storyboard */,
 				65A51F9D20B300E90010DB33 /* PassStoryboard.storyboard */,
 				65B89ACC20B4761C0024DC51 /* NewProfile.storyboard */,
+				65FC865D20B5D8F5001FECA5 /* Extension */,
 				65A51FF320B333D10010DB33 /* PopUps */,
 				65A51F7420B2FFF40010DB33 /* Assets.xcassets */,
 				65A51F7620B2FFF40010DB33 /* LaunchScreen.storyboard */,
@@ -368,6 +406,7 @@
 		65A51FF320B333D10010DB33 /* PopUps */ = {
 			isa = PBXGroup;
 			children = (
+				65FC861E20B5D02C001FECA5 /* Register */,
 				65B89A9920B422290024DC51 /* TransactionBlue */,
 				65A51FF420B333E30010DB33 /* TransactionRed */,
 				65B89A9E20B427180024DC51 /* WaitingPopUp */,
@@ -380,6 +419,7 @@
 				65B89AC120B44A6F0024DC51 /* AllowPopUp */,
 				65B89AC720B44CF80024DC51 /* ShareVoucher */,
 				65B89AC620B44C8D0024DC51 /* SignUp */,
+				65FC860020B58431001FECA5 /* ValidationWithQR */,
 			);
 			path = PopUps;
 			sourceTree = "<group>";
@@ -400,6 +440,9 @@
 				65A51F9E20B300EA0010DB33 /* Pass */,
 				65B89A9520B408CC0024DC51 /* Records */,
 				65B89AD020B4804C0024DC51 /* NewProfile */,
+				65FC85FB20B57646001FECA5 /* QrCode */,
+				65FC860420B5B2DC001FECA5 /* Office */,
+				65FC860720B5B349001FECA5 /* SwitchProfile */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -526,6 +569,65 @@
 				65B89ACE20B480470024DC51 /* MANewProfileViewController.swift */,
 			);
 			name = NewProfile;
+			sourceTree = "<group>";
+		};
+		65FC85FB20B57646001FECA5 /* QrCode */ = {
+			isa = PBXGroup;
+			children = (
+				65FC85F920B57642001FECA5 /* MAQRCodeReaderViewController.swift */,
+			);
+			path = QrCode;
+			sourceTree = "<group>";
+		};
+		65FC860020B58431001FECA5 /* ValidationWithQR */ = {
+			isa = PBXGroup;
+			children = (
+				65FC85FC20B58426001FECA5 /* MAValidationQRViewController.swift */,
+				65FC85FD20B58426001FECA5 /* MAValidationQRViewController.xib */,
+			);
+			path = ValidationWithQR;
+			sourceTree = "<group>";
+		};
+		65FC860420B5B2DC001FECA5 /* Office */ = {
+			isa = PBXGroup;
+			children = (
+				65FC860120B5A2DA001FECA5 /* MAOfficeViewController.swift */,
+			);
+			path = Office;
+			sourceTree = "<group>";
+		};
+		65FC860720B5B349001FECA5 /* SwitchProfile */ = {
+			isa = PBXGroup;
+			children = (
+				65FC860520B5B340001FECA5 /* MASwitchProfileViewController.swift */,
+			);
+			path = SwitchProfile;
+			sourceTree = "<group>";
+		};
+		65FC861E20B5D02C001FECA5 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				65FC865B20B5D8C5001FECA5 /* Nibable.swift */,
+				65FC861F20B5D02C001FECA5 /* RegisterPopupCompletionView.swift */,
+				65FC862020B5D02C001FECA5 /* RegisterPopupView.swift */,
+				65FC862120B5D02C001FECA5 /* RegisterPopupView.xib */,
+				65FC866220B5DF81001FECA5 /* MASwitchProfileTableViewCell.swift */,
+				65FC866320B5DF81001FECA5 /* MASwitchProfileTableViewCell.xib */,
+				65FC866620B5EB2A001FECA5 /* MAAddProfileTableViewCell.swift */,
+				65FC866720B5EB2A001FECA5 /* MAAddProfileTableViewCell.xib */,
+				65FC862220B5D02C001FECA5 /* RegisterPopupViewController.swift */,
+				65FC862320B5D02C001FECA5 /* RegisterPopupCompletionView.xib */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		65FC865D20B5D8F5001FECA5 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				65FC865E20B5D8F5001FECA5 /* UIColor+Background.swift */,
+				65FC865F20B5D8F5001FECA5 /* UIView+Shadow.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		E0AFDA27FA04C0CFC0E2156C /* Frameworks */ = {
@@ -655,10 +757,12 @@
 				65A51FCC20B3012C0010DB33 /* SF-Pro-Display-Thin.otf in Resources */,
 				65A51FA620B300EA0010DB33 /* PassStoryboard.storyboard in Resources */,
 				65A51FDA20B3012C0010DB33 /* SF-Pro-Display-MediumItalic.otf in Resources */,
+				65FC862820B5D02C001FECA5 /* RegisterPopupCompletionView.xib in Resources */,
 				65A51FE720B3012C0010DB33 /* SF-Pro-Text-Medium.otf in Resources */,
 				65B89A9D20B422D30024DC51 /* MAWaitingViewController.xib in Resources */,
 				65B89AC020B448CB0024DC51 /* MAAllowViewController.xib in Resources */,
 				65A51FD320B3012C0010DB33 /* SF-Pro-Display-Bold.otf in Resources */,
+				65FC85FF20B58426001FECA5 /* MAValidationQRViewController.xib in Resources */,
 				65A51FD420B3012C0010DB33 /* SF-Pro-Display-Medium.otf in Resources */,
 				65A51FCD20B3012C0010DB33 /* SF-Pro-Display-SemiboldItalic.otf in Resources */,
 				65A51FCE20B3012C0010DB33 /* SF-Pro-Text-Heavy.otf in Resources */,
@@ -676,7 +780,9 @@
 				65A51FDC20B3012C0010DB33 /* SF-Pro-Display-Ultralight.otf in Resources */,
 				65A51FD920B3012C0010DB33 /* SF-Pro-Text-Bold.otf in Resources */,
 				65A51FD720B3012C0010DB33 /* SF-Pro-Display-Semibold.otf in Resources */,
+				65FC866520B5DF81001FECA5 /* MASwitchProfileTableViewCell.xib in Resources */,
 				65A51FE620B3012C0010DB33 /* SF-Pro-Text-LightItalic.otf in Resources */,
+				65FC866920B5EB2A001FECA5 /* MAAddProfileTableViewCell.xib in Resources */,
 				65B89ACB20B44D210024DC51 /* MASignUpViewController.xib in Resources */,
 				65A51FE820B3012C0010DB33 /* SF-Pro-Display-BoldItalic.otf in Resources */,
 				65A51FA920B300EA0010DB33 /* Main.storyboard in Resources */,
@@ -696,6 +802,7 @@
 				65B89AB120B43A3D0024DC51 /* MAValidationViewController.xib in Resources */,
 				65A51FDB20B3012C0010DB33 /* SF-Pro-Display-HeavyItalic.otf in Resources */,
 				65B89ACD20B4761C0024DC51 /* NewProfile.storyboard in Resources */,
+				65FC862620B5D02C001FECA5 /* RegisterPopupView.xib in Resources */,
 				65B89AC520B44B1B0024DC51 /* MAShareVaucherViewController.xib in Resources */,
 				65B89AA720B432CC0024DC51 /* MARegistrationSuccessViewController.xib in Resources */,
 			);
@@ -755,17 +862,25 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MeApp/Pods-MeApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/ExpandableCell/ExpandableCell.framework",
+				"${BUILT_PRODUCTS_DIR}/PopupWindow/PopupWindow.framework",
 				"${BUILT_PRODUCTS_DIR}/Presentr/Presentr.framework",
+				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
 				"${BUILT_PRODUCTS_DIR}/ScrollableSegmentedControl/ScrollableSegmentedControl.framework",
 				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
+				"${BUILT_PRODUCTS_DIR}/UICheckbox.Swift/UICheckbox_Swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ExpandableCell.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupWindow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Presentr.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ScrollableSegmentedControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICheckbox_Swift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -878,27 +993,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65FC85FA20B57642001FECA5 /* MAQRCodeReaderViewController.swift in Sources */,
 				65B89A9420B408C00024DC51 /* MARecordsViewController.swift in Sources */,
 				65B89AB020B43A3D0024DC51 /* MAValidationViewController.swift in Sources */,
 				65B89ACF20B480470024DC51 /* MANewProfileViewController.swift in Sources */,
 				65A51FA720B300EA0010DB33 /* PassTableViewCell.swift in Sources */,
+				65FC866820B5EB2A001FECA5 /* MAAddProfileTableViewCell.swift in Sources */,
 				65B89AAB20B4363D0024DC51 /* MAEmailForMeViewController.swift in Sources */,
 				65A51FA820B300EA0010DB33 /* PassViewController.swift in Sources */,
 				65B89ABA20B442C60024DC51 /* MAFailValidationViewController.swift in Sources */,
 				65A51F7320B2FFF20010DB33 /* MeApp.xcdatamodeld in Sources */,
 				65B89AA620B432CC0024DC51 /* MARegistrationSuccessViewController.swift in Sources */,
+				65FC866120B5D8F5001FECA5 /* UIView+Shadow.swift in Sources */,
 				65B89A9120B334860024DC51 /* MATransactionBlueViewController.swift in Sources */,
 				65A51FAA20B300EA0010DB33 /* TabBarController.swift in Sources */,
 				65B89ABF20B448CB0024DC51 /* MAAllowViewController.swift in Sources */,
 				65B89A9720B4128C0024DC51 /* MARecordsTableViewCell.swift in Sources */,
+				65FC862720B5D02C001FECA5 /* RegisterPopupViewController.swift in Sources */,
+				65FC860620B5B340001FECA5 /* MASwitchProfileViewController.swift in Sources */,
 				65B89AA120B42A6F0024DC51 /* MARegistrationViewController.swift in Sources */,
 				65A51F6B20B2FFF10010DB33 /* AppDelegate.swift in Sources */,
+				65FC862420B5D02C001FECA5 /* RegisterPopupCompletionView.swift in Sources */,
 				65B89ACA20B44D210024DC51 /* MASignUpViewController.swift in Sources */,
 				65B89A8D20B3342E0024DC51 /* MATransactionRedViewController.swift in Sources */,
+				65FC865C20B5D8C5001FECA5 /* Nibable.swift in Sources */,
 				65B89AC420B44B1B0024DC51 /* MAShareVaucherViewController.swift in Sources */,
+				65FC866020B5D8F5001FECA5 /* UIColor+Background.swift in Sources */,
 				65B89AB520B43FA50024DC51 /* MAValidationSuccessViewController.swift in Sources */,
+				65FC85FE20B58426001FECA5 /* MAValidationQRViewController.swift in Sources */,
+				65FC860220B5A2DA001FECA5 /* MAOfficeViewController.swift in Sources */,
 				65B89A9C20B422D30024DC51 /* MAWaitingViewController.swift in Sources */,
 				65A51FAC20B300EA0010DB33 /* WaletTableViewCell.swift in Sources */,
+				65FC862520B5D02C001FECA5 /* RegisterPopupView.swift in Sources */,
+				65FC85F820B56FA2001FECA5 /* MANavicationController.swift in Sources */,
+				65FC866420B5DF81001FECA5 /* MASwitchProfileTableViewCell.swift in Sources */,
 				65A51FEB20B31FB30010DB33 /* WalletSecondTableViewCell.swift in Sources */,
 				65A51FAB20B300EA0010DB33 /* WalletViewController.swift in Sources */,
 			);
@@ -1067,7 +1195,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7L2RMARLH9;
 				INFOPLIST_FILE = MeApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1087,7 +1217,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7L2RMARLH9;
 				INFOPLIST_FILE = MeApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
