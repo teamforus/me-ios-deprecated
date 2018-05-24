@@ -9,12 +9,18 @@
 import UIKit
 
 class MAValidationQRViewController: UIViewController {
-
+    @IBOutlet weak var qrCodeImage: UIImageView!
+    @IBOutlet weak var viewBody: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+      qrCodeImage.generateQRCode(from: "MeApp")
+        viewBody.layer.masksToBounds = true
+        viewBody.layer.cornerRadius = 8.0
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

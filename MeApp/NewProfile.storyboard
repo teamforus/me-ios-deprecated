@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="04k-YM-Iaf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lrT-Iw-r8g">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -19,6 +18,9 @@
         </array>
         <array key="SF-Pro-Text-Heavy.otf">
             <string>SFProText-Heavy</string>
+        </array>
+        <array key="SF-Pro-Text-Light.otf">
+            <string>SFProText-Light</string>
         </array>
         <array key="SF-Pro-Text-Medium.otf">
             <string>SFProText-Medium</string>
@@ -48,7 +50,7 @@
                                 <state key="normal" image="backIcon"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nieuw profiel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uxz-dS-5ik">
-                                <rect key="frame" x="16" y="65" width="235.5" height="41"/>
+                                <rect key="frame" x="16" y="65" width="236" height="41"/>
                                 <fontDescription key="fontDescription" name="SFProText-Heavy" family="SF Pro Text" pointSize="34"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -63,7 +65,7 @@
                                 <rect key="frame" x="11" y="27" width="42" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="back:" destination="3xj-xT-Ref" eventType="touchUpInside" id="ZOD-6y-exg"/>
+                                    <action selector="back:" destination="3xj-xT-Ref" eventType="touchUpInside" id="fey-Ac-2M4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fv-bm-KSW">
@@ -76,115 +78,156 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zqa-Ql-Yho">
                                 <rect key="frame" x="0.0" y="140" width="375" height="474"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sKe-eH-hmn">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="474"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LxC-iw-Dsk">
-                                                <rect key="frame" x="16" y="180" width="341" height="1"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="0.80000000000000004" green="0.81960784310000001" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </view>
-                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="uw burger service nummer (BSN)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q54-Qj-nQc">
-                                                <rect key="frame" x="16" y="213" width="343" height="60"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="19"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ACHTERNAAM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0v-db-Bow">
-                                                <rect key="frame" x="16" y="111" width="204" height="10"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="SFProDisplay-Heavy" family="SF Pro Display" pointSize="13"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cca-k9-PGl">
-                                                <rect key="frame" x="16" y="86" width="341" height="1"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="0.80000000000000004" green="0.81960784310000001" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </view>
-                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="uw achternaam" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c5E-Tc-QyJ">
-                                                <rect key="frame" x="16" y="120" width="343" height="60"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="19"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BSN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXK-Mm-81V">
-                                                <rect key="frame" x="16" y="204" width="204" height="10"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="SFProDisplay-Heavy" family="SF Pro Display" pointSize="13"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Hw-1B-Olj">
-                                                <rect key="frame" x="16" y="274" width="341" height="1"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="0.80000000000000004" green="0.81960784310000001" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </view>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3wb-nl-fz8">
-                                                <rect key="frame" x="16" y="456" width="341" height="1"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="0.80000000000000004" green="0.81960784310000001" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TELEFOONNUMMER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5V1-UG-6Zo">
-                                                <rect key="frame" x="16" y="387" width="204" height="10"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="SFProDisplay-Heavy" family="SF Pro Display" pointSize="13"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="uw voornaam" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MZx-wB-jHy">
-                                                <rect key="frame" x="16" y="26" width="343" height="60"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="19"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="uw telefoonnummer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8cv-Un-tRY">
-                                                <rect key="frame" x="16" y="396" width="343" height="60"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="19"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4ip-RS-JFn">
-                                                <rect key="frame" x="16" y="364" width="341" height="1"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="0.80000000000000004" green="0.81960784310000001" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="E-MAIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sU1-bt-ahc">
-                                                <rect key="frame" x="16" y="296" width="204" height="10"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="SFProDisplay-Heavy" family="SF Pro Display" pointSize="13"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="uw e-mailadres" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PB4-N5-hCk">
-                                                <rect key="frame" x="16" y="305" width="343" height="60"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="19"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VOORNAAM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DfZ-Ef-9ff">
-                                                <rect key="frame" x="16" y="17" width="204" height="10"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="SFProDisplay-Heavy" family="SF Pro Display" pointSize="13"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="uw achternaam" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F5Z-tq-PJW">
+                                        <rect key="frame" x="16" y="120" width="343" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="6N1-qt-MVb"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BSN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0z-bX-9qG">
+                                        <rect key="frame" x="16" y="204" width="204" height="10"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="0eg-xW-MNm"/>
+                                            <constraint firstAttribute="width" constant="204" id="RDK-HC-ffw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Heavy" family="SF Pro Display" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iu2-lw-wSN">
+                                        <rect key="frame" x="16" y="456" width="341" height="1"/>
+                                        <color key="backgroundColor" red="0.80000000000000004" green="0.81960784310000001" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TELEFOONNUMMER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m99-I5-8vC">
+                                        <rect key="frame" x="16" y="387" width="204" height="16"/>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Heavy" family="SF Pro Display" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GY6-d2-63c">
+                                        <rect key="frame" x="16" y="86" width="341" height="1"/>
+                                        <color key="backgroundColor" red="0.80000000000000004" green="0.81960784310000001" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dgr-ft-ej2">
+                                        <rect key="frame" x="16" y="274" width="341" height="1"/>
+                                        <color key="backgroundColor" red="0.80000000000000004" green="0.81960784310000001" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACHTERNAAM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnK-No-2Ig">
+                                        <rect key="frame" x="16" y="111" width="92" height="10"/>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Heavy" family="SF Pro Display" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="uw burger service nummer (BSN)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kJC-tf-8DA">
+                                        <rect key="frame" x="16" y="213" width="343" height="60"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6xh-MM-m7T">
+                                        <rect key="frame" x="16" y="364" width="341" height="1"/>
+                                        <color key="backgroundColor" red="0.80000000000000004" green="0.81960784310000001" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="Vnt-MP-L9b"/>
+                                        </constraints>
+                                    </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="uw telefoonnummer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tP6-jO-BMo">
+                                        <rect key="frame" x="16" y="396" width="343" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="clf-HE-p4F"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VOORNAAM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oE3-Tx-Mnd">
+                                        <rect key="frame" x="16" y="17" width="204" height="16"/>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Heavy" family="SF Pro Display" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="uw voornaam" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dxf-eQ-fhi">
+                                        <rect key="frame" x="16" y="32" width="343" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="CJS-eC-Lfz"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jkp-6f-gqg">
+                                        <rect key="frame" x="16" y="180" width="341" height="1"/>
+                                        <color key="backgroundColor" red="0.80000000000000004" green="0.81960784310000001" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-MAIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cin-I3-2aD">
+                                        <rect key="frame" x="16" y="290" width="204" height="16"/>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Heavy" family="SF Pro Display" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="uw e-mailadres" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FhZ-3c-JCj">
+                                        <rect key="frame" x="16" y="303" width="343" height="62"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="sKe-eH-hmn" firstAttribute="leading" secondItem="Zqa-Ql-Yho" secondAttribute="leading" id="1iM-6N-YZe"/>
-                                    <constraint firstItem="sKe-eH-hmn" firstAttribute="centerX" secondItem="Zqa-Ql-Yho" secondAttribute="centerX" id="UiI-bd-UMX"/>
-                                    <constraint firstAttribute="bottom" secondItem="sKe-eH-hmn" secondAttribute="bottom" id="guc-jl-OzL"/>
-                                    <constraint firstItem="sKe-eH-hmn" firstAttribute="top" secondItem="Zqa-Ql-Yho" secondAttribute="top" id="hFQ-5J-WUb"/>
-                                    <constraint firstItem="sKe-eH-hmn" firstAttribute="centerY" secondItem="Zqa-Ql-Yho" secondAttribute="centerY" id="pQG-5x-g22"/>
-                                    <constraint firstAttribute="trailing" secondItem="sKe-eH-hmn" secondAttribute="trailing" id="vfs-YC-Ji4"/>
+                                    <constraint firstItem="dxf-eQ-fhi" firstAttribute="top" secondItem="oE3-Tx-Mnd" secondAttribute="bottom" constant="-1" id="25F-m9-FvT"/>
+                                    <constraint firstItem="tP6-jO-BMo" firstAttribute="top" secondItem="Zqa-Ql-Yho" secondAttribute="top" constant="396" id="3B1-pr-ZTy"/>
+                                    <constraint firstItem="z0z-bX-9qG" firstAttribute="trailing" secondItem="Cin-I3-2aD" secondAttribute="trailing" id="78e-qm-62Q"/>
+                                    <constraint firstItem="F5Z-tq-PJW" firstAttribute="leading" secondItem="Jkp-6f-gqg" secondAttribute="leading" id="7d2-sT-07G"/>
+                                    <constraint firstItem="m99-I5-8vC" firstAttribute="top" secondItem="6xh-MM-m7T" secondAttribute="bottom" constant="22" id="7hN-Mk-UI3"/>
+                                    <constraint firstItem="F5Z-tq-PJW" firstAttribute="leading" secondItem="hnK-No-2Ig" secondAttribute="leading" id="82R-7s-Mjq"/>
+                                    <constraint firstItem="hnK-No-2Ig" firstAttribute="top" secondItem="GY6-d2-63c" secondAttribute="bottom" constant="24" id="8f3-Pp-5Xf"/>
+                                    <constraint firstItem="F5Z-tq-PJW" firstAttribute="trailing" secondItem="tP6-jO-BMo" secondAttribute="trailing" id="8mv-k4-4JV"/>
+                                    <constraint firstItem="6xh-MM-m7T" firstAttribute="trailing" secondItem="dgr-ft-ej2" secondAttribute="trailing" id="ALB-2a-Jdt"/>
+                                    <constraint firstItem="6xh-MM-m7T" firstAttribute="bottom" secondItem="FhZ-3c-JCj" secondAttribute="bottom" id="Be9-wQ-BN0"/>
+                                    <constraint firstItem="6xh-MM-m7T" firstAttribute="trailing" secondItem="Jkp-6f-gqg" secondAttribute="trailing" id="CDE-nN-Nfk"/>
+                                    <constraint firstItem="F5Z-tq-PJW" firstAttribute="leading" secondItem="Zqa-Ql-Yho" secondAttribute="leading" constant="16" id="CcH-rJ-cYJ"/>
+                                    <constraint firstItem="F5Z-tq-PJW" firstAttribute="leading" secondItem="z0z-bX-9qG" secondAttribute="leading" id="Chk-e9-Qio"/>
+                                    <constraint firstItem="F5Z-tq-PJW" firstAttribute="leading" secondItem="kJC-tf-8DA" secondAttribute="leading" id="ESU-9k-srX"/>
+                                    <constraint firstItem="F5Z-tq-PJW" firstAttribute="leading" secondItem="FhZ-3c-JCj" secondAttribute="leading" id="FEa-KF-FgD"/>
+                                    <constraint firstItem="F5Z-tq-PJW" firstAttribute="leading" secondItem="GY6-d2-63c" secondAttribute="leading" id="IZ2-e9-gSD"/>
+                                    <constraint firstItem="F5Z-tq-PJW" firstAttribute="leading" secondItem="6xh-MM-m7T" secondAttribute="leading" id="Iv6-ZD-W6d"/>
+                                    <constraint firstItem="F5Z-tq-PJW" firstAttribute="trailing" secondItem="FhZ-3c-JCj" secondAttribute="trailing" id="NTM-2q-iqJ"/>
+                                    <constraint firstItem="Cin-I3-2aD" firstAttribute="top" secondItem="dgr-ft-ej2" secondAttribute="bottom" constant="15" id="Ok0-ZO-w9K"/>
+                                    <constraint firstAttribute="bottom" secondItem="F5Z-tq-PJW" secondAttribute="bottom" constant="294" id="RtQ-Wt-nbm"/>
+                                    <constraint firstItem="F5Z-tq-PJW" firstAttribute="leading" secondItem="dxf-eQ-fhi" secondAttribute="leading" id="TZx-IU-1D1"/>
+                                    <constraint firstItem="z0z-bX-9qG" firstAttribute="top" secondItem="Jkp-6f-gqg" secondAttribute="bottom" constant="23" id="Tkg-tS-StO"/>
+                                    <constraint firstItem="kJC-tf-8DA" firstAttribute="top" secondItem="z0z-bX-9qG" secondAttribute="bottom" constant="-1" id="UPN-Bj-BcF"/>
+                                    <constraint firstItem="6xh-MM-m7T" firstAttribute="top" secondItem="Cin-I3-2aD" secondAttribute="bottom" constant="58" id="W7u-om-aQZ"/>
+                                    <constraint firstItem="F5Z-tq-PJW" firstAttribute="trailing" secondItem="kJC-tf-8DA" secondAttribute="trailing" id="WqK-YB-Shw"/>
+                                    <constraint firstItem="F5Z-tq-PJW" firstAttribute="leading" secondItem="dgr-ft-ej2" secondAttribute="leading" id="Yno-08-fZa"/>
+                                    <constraint firstItem="F5Z-tq-PJW" firstAttribute="leading" secondItem="Iu2-lw-wSN" secondAttribute="leading" id="Zls-BM-kTl"/>
+                                    <constraint firstItem="F5Z-tq-PJW" firstAttribute="trailing" secondItem="dxf-eQ-fhi" secondAttribute="trailing" id="ZvM-iX-hqO"/>
+                                    <constraint firstItem="F5Z-tq-PJW" firstAttribute="top" secondItem="GY6-d2-63c" secondAttribute="bottom" constant="33" id="a2f-BP-BZ5"/>
+                                    <constraint firstItem="tP6-jO-BMo" firstAttribute="top" secondItem="6xh-MM-m7T" secondAttribute="bottom" constant="31" id="a3F-Pr-5pa"/>
+                                    <constraint firstItem="F5Z-tq-PJW" firstAttribute="leading" secondItem="tP6-jO-BMo" secondAttribute="leading" id="bjL-kA-UDT"/>
+                                    <constraint firstItem="z0z-bX-9qG" firstAttribute="top" secondItem="Zqa-Ql-Yho" secondAttribute="top" constant="204" id="ctI-F1-s9E"/>
+                                    <constraint firstItem="z0z-bX-9qG" firstAttribute="trailing" secondItem="oE3-Tx-Mnd" secondAttribute="trailing" id="eTA-9J-NsY"/>
+                                    <constraint firstAttribute="trailing" secondItem="6xh-MM-m7T" secondAttribute="trailing" constant="18" id="fRn-kn-uQ8"/>
+                                    <constraint firstItem="6xh-MM-m7T" firstAttribute="trailing" secondItem="Iu2-lw-wSN" secondAttribute="trailing" id="gZM-BN-uql"/>
+                                    <constraint firstItem="6xh-MM-m7T" firstAttribute="trailing" secondItem="GY6-d2-63c" secondAttribute="trailing" id="geY-0v-X5o"/>
+                                    <constraint firstItem="F5Z-tq-PJW" firstAttribute="centerX" secondItem="Zqa-Ql-Yho" secondAttribute="centerX" id="h9p-xP-823"/>
+                                    <constraint firstItem="F5Z-tq-PJW" firstAttribute="top" secondItem="hnK-No-2Ig" secondAttribute="bottom" constant="-1" id="hD6-3c-rOo"/>
+                                    <constraint firstItem="FhZ-3c-JCj" firstAttribute="top" secondItem="Cin-I3-2aD" secondAttribute="bottom" constant="-3" id="haq-Fz-00i"/>
+                                    <constraint firstItem="F5Z-tq-PJW" firstAttribute="leading" secondItem="Cin-I3-2aD" secondAttribute="leading" id="hiR-kK-WeO"/>
+                                    <constraint firstItem="dgr-ft-ej2" firstAttribute="top" secondItem="z0z-bX-9qG" secondAttribute="bottom" constant="60" id="i5h-wb-Kri"/>
+                                    <constraint firstItem="Iu2-lw-wSN" firstAttribute="top" secondItem="tP6-jO-BMo" secondAttribute="bottom" id="jee-qs-IU9"/>
+                                    <constraint firstItem="dgr-ft-ej2" firstAttribute="top" secondItem="kJC-tf-8DA" secondAttribute="bottom" constant="1" id="m8i-qQ-tz8"/>
+                                    <constraint firstItem="F5Z-tq-PJW" firstAttribute="leading" secondItem="oE3-Tx-Mnd" secondAttribute="leading" id="mVa-ag-JlR"/>
+                                    <constraint firstItem="F5Z-tq-PJW" firstAttribute="leading" secondItem="m99-I5-8vC" secondAttribute="leading" id="nhI-vF-tUr"/>
+                                    <constraint firstItem="z0z-bX-9qG" firstAttribute="trailing" secondItem="m99-I5-8vC" secondAttribute="trailing" id="ofZ-hL-VQm"/>
+                                    <constraint firstAttribute="bottom" secondItem="Iu2-lw-wSN" secondAttribute="bottom" constant="17" id="pl6-hP-tqr"/>
+                                    <constraint firstItem="F5Z-tq-PJW" firstAttribute="top" secondItem="Zqa-Ql-Yho" secondAttribute="top" constant="120" id="qUF-2c-12l"/>
+                                    <constraint firstItem="GY6-d2-63c" firstAttribute="top" secondItem="dxf-eQ-fhi" secondAttribute="bottom" constant="-1" id="rSp-nU-tpv"/>
+                                    <constraint firstAttribute="trailing" secondItem="F5Z-tq-PJW" secondAttribute="trailing" constant="16" id="w5v-Bf-TeL"/>
+                                    <constraint firstItem="oE3-Tx-Mnd" firstAttribute="top" secondItem="Zqa-Ql-Yho" secondAttribute="top" constant="17" id="wNX-OQ-iLz"/>
+                                    <constraint firstItem="Jkp-6f-gqg" firstAttribute="top" secondItem="F5Z-tq-PJW" secondAttribute="bottom" id="xO2-Av-0RD"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -416,7 +459,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Opvragen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqb-QW-FwK">
-                                <rect key="frame" x="15" y="75" width="342" height="40"/>
+                                <rect key="frame" x="15" y="67" width="342" height="40"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="SFProText-Heavy" family="SF Pro Text" pointSize="34"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -486,7 +529,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vfW-Um-Rhg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2874" y="-487"/>
+            <point key="canvasLocation" x="2872.8000000000002" y="-487.10644677661173"/>
         </scene>
         <!--Office View Controller-->
         <scene sceneID="HZQ-cx-33r">
@@ -501,7 +544,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kantoor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQx-zm-0Yy">
-                                <rect key="frame" x="15" y="75" width="342" height="40"/>
+                                <rect key="frame" x="15" y="75" width="342" height="26"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="SFProText-Heavy" family="SF Pro Text" pointSize="34"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -596,82 +639,366 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="baseNewProfile" translatesAutoresizingMaskIntoConstraints="NO" id="VTm-0Y-e5n">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="254"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XvO-ta-xuv">
+                                <rect key="frame" x="0.0" y="-20" width="375" height="687"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VTP-vN-dKl">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1m-OI-5Js">
+                                                <rect key="frame" x="0.0" y="427" width="375" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <string key="text">Laat iemand uw persoonlijke QR-code scannen om u 
+valuta, bezit of vouchers te sturen</string>
+                                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14.5"/>
+                                                <color key="textColor" red="0.4039215686" green="0.42745098040000001" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRr-qJ-NyF">
+                                                <rect key="frame" x="17" y="491" width="340" height="81"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <connections>
+                                                    <action selector="showAlertSheedSwitchProfile:" destination="04k-YM-Iaf" eventType="touchUpInside" id="bRf-aF-5tD"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rocket Minds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UwI-Fv-45w">
+                                                <rect key="frame" x="78" y="537" width="146" height="15"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="19"/>
+                                                <color key="textColor" red="0.1450980392" green="0.40000000000000002" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="baseNewProfile" translatesAutoresizingMaskIntoConstraints="NO" id="9xc-eY-N3k">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="254"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="qrCode" translatesAutoresizingMaskIntoConstraints="NO" id="9GD-pZ-vOM">
+                                                <rect key="frame" x="94" y="152" width="205" height="205"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrowBlue" translatesAutoresizingMaskIntoConstraints="NO" id="2K6-W8-TwG">
+                                                <rect key="frame" x="335" y="525" width="9" height="13"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WISSEL VAN IDENTITEIT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZzC-BT-0LN">
+                                                <rect key="frame" x="46" y="511" width="164" height="16"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="SFProText-Heavy" family="SF Pro Text" pointSize="13"/>
+                                                <color key="textColor" red="0.25490196079999999" green="0.28627450980000002" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="baseChangeProfile" translatesAutoresizingMaskIntoConstraints="NO" id="WuQ-oR-DIV">
+                                                <rect key="frame" x="17" y="492" width="341" height="80"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backIcon" translatesAutoresizingMaskIntoConstraints="NO" id="X3b-xr-nKI">
+                                                <rect key="frame" x="12" y="35" width="16" height="16.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="QR-CODE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sY2-Ve-yFu">
+                                                <rect key="frame" x="15" y="75" width="342" height="26"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="SFProText-Heavy" family="SF Pro Text" pointSize="34"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFH-sh-1Y8">
+                                                <rect key="frame" x="12" y="27" width="67" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <connections>
+                                                    <action selector="back:" destination="04k-YM-Iaf" eventType="touchUpInside" id="eCZ-eJ-MUA"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tyu-Wk-sj2">
+                                                <rect key="frame" x="350" y="39" width="18" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="profileIcon"/>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hier is je persoonlijke QR-Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWc-XR-Xum">
+                                                <rect key="frame" x="58" y="397" width="256" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="667" id="LvL-Y7-nMr"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="VTP-vN-dKl" firstAttribute="leading" secondItem="XvO-ta-xuv" secondAttribute="leading" id="3SQ-Dn-ozU"/>
+                                    <constraint firstItem="VTP-vN-dKl" firstAttribute="centerX" secondItem="XvO-ta-xuv" secondAttribute="centerX" id="Xid-nr-9LL"/>
+                                    <constraint firstItem="VTP-vN-dKl" firstAttribute="top" secondItem="XvO-ta-xuv" secondAttribute="top" id="hUD-P2-fkb"/>
+                                    <constraint firstAttribute="trailing" secondItem="VTP-vN-dKl" secondAttribute="trailing" id="jkB-G1-Nbo"/>
+                                    <constraint firstAttribute="bottom" secondItem="VTP-vN-dKl" secondAttribute="bottom" constant="20" id="jm9-Oo-BfP"/>
+                                    <constraint firstAttribute="height" constant="687" id="nv1-XA-gob"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XvO-ta-xuv" firstAttribute="trailing" secondItem="Pqx-Yd-nSv" secondAttribute="trailing" id="CpK-gd-bI1"/>
+                            <constraint firstItem="Pqx-Yd-nSv" firstAttribute="top" secondItem="XvO-ta-xuv" secondAttribute="bottom" constant="-647" id="DTI-5u-QsK"/>
+                            <constraint firstItem="XvO-ta-xuv" firstAttribute="bottom" secondItem="Pqx-Yd-nSv" secondAttribute="bottom" id="Ltl-YX-IOx"/>
+                            <constraint firstItem="XvO-ta-xuv" firstAttribute="top" secondItem="tgu-PO-daU" secondAttribute="top" constant="-20" id="ekv-Og-2Pd"/>
+                            <constraint firstItem="XvO-ta-xuv" firstAttribute="leading" secondItem="Pqx-Yd-nSv" secondAttribute="leading" id="xWv-IS-zwQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Pqx-Yd-nSv"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageQR" destination="9GD-pZ-vOM" id="EXU-2V-5dV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dxM-lK-J5c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4329" y="-487"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0vM-b4-khS">
+            <objects>
+                <viewController id="zrX-45-4am" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FME-Wf-PKC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="baseNewProfile" translatesAutoresizingMaskIntoConstraints="NO" id="llL-HJ-IV4">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="142"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="QR-CODE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qpp-ez-g63">
-                                <rect key="frame" x="15" y="75" width="342" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Versturen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nui-va-Ebw">
+                                <rect key="frame" x="15" y="75" width="342" height="26"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="SFProText-Heavy" family="SF Pro Text" pointSize="34"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Q87-Qi-vOr">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Bg5-WH-JCk">
                                 <rect key="frame" x="11.5" y="34.5" width="16" height="16.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9k-4S-LsO">
-                                <rect key="frame" x="350" y="39" width="18" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="profileIcon"/>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="qrCode" translatesAutoresizingMaskIntoConstraints="NO" id="1wl-5P-9fB">
-                                <rect key="frame" x="94" y="151.5" width="205" height="205"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hier is je persoonlijke QR-Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFu-zg-vC4">
-                                <rect key="frame" x="58" y="397" width="256" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vul de gegevens van uw betaling in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdH-Ii-raZ">
+                                <rect key="frame" x="16" y="115" width="341" height="15"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjr-4k-mv4">
-                                <rect key="frame" x="0.0" y="427" width="375" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVa-DB-UZg">
+                                <rect key="frame" x="195" y="607" width="164" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Heavy" family="SF Pro Display" pointSize="15"/>
+                                <state key="normal" title="SCAN QR-CODE" backgroundImage="baseButtonRegistration">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjk-Jr-C5G">
+                                <rect key="frame" x="17" y="607" width="164" height="51"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Heavy" family="SF Pro Display" pointSize="15"/>
+                                <state key="normal" title="ADRES" backgroundImage="baseSend">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OMSCHRIJVING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U72-Z9-4db">
+                                <rect key="frame" x="16" y="165" width="109" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="SFProText-Heavy" family="SF Pro Text" pointSize="13"/>
+                                <color key="textColor" red="0.25490196079999999" green="0.28627450980000002" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Z6-lm-KZs">
+                                <rect key="frame" x="16" y="237" width="341" height="1"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <string key="text">Laat iemand uw persoonlijke QR-code scannen om u valuta, bezit of vouchers te sturen</string>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.81960784310000001" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BEDRAG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORR-4J-Qe4">
+                                <rect key="frame" x="16" y="259" width="57" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="SFProText-Heavy" family="SF Pro Text" pointSize="13"/>
+                                <color key="textColor" red="0.25490196079999999" green="0.28627450980000002" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bdv-ok-JRC">
+                                <rect key="frame" x="16" y="330" width="341" height="1"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.81960784310000001" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Vul de beschrijving in " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nDe-Vn-y9W">
+                                <rect key="frame" x="16" y="178" width="343" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.70196078429999997" green="0.72941176470000002" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="19"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Vul het bedrag in" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4dB-fM-naf">
+                                <rect key="frame" x="16" y="271" width="343" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.70196078429999997" green="0.72941176470000002" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="19"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="foi-5y-b1a"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yQi-mU-OEV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5002" y="-486"/>
+        </scene>
+        <!--Set Up Pin View Controller-->
+        <scene sceneID="Cws-8N-BVj">
+            <objects>
+                <viewController id="Xjz-L6-Rso" customClass="MASetUpPinViewController" customModule="MeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HX8-k2-sDj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="baseNewProfile" translatesAutoresizingMaskIntoConstraints="NO" id="bDN-wt-fpt">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="210"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PIN instellen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBV-3W-6JM">
+                                <rect key="frame" x="15" y="74" width="342" height="26"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="SFProText-Heavy" family="SF Pro Text" pointSize="34"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backIcon" translatesAutoresizingMaskIntoConstraints="NO" id="tW6-BU-YCx">
+                                <rect key="frame" x="11.5" y="34.5" width="16" height="16.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Maak een 4 cijferige pincode aan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4CW-pA-obL">
+                                <rect key="frame" x="16" y="114" width="341" height="15"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kie-12-h4c">
+                                <rect key="frame" x="195" y="607" width="164" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Heavy" family="SF Pro Display" pointSize="15"/>
+                                <state key="normal" title="BEVESTIGEN" backgroundImage="baseButtonRegistration">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iIe-CD-niQ">
+                                <rect key="frame" x="17" y="607" width="164" height="51"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Heavy" family="SF Pro Display" pointSize="15"/>
+                                <state key="normal" title="CANCEL" backgroundImage="baseValidation">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3IB-16-jqu">
+                                <rect key="frame" x="50" y="277" width="274" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Vul een 4 cijferige toegangscode in. 
+Dit is uw persoonlijke pincode</string>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14.5"/>
                                 <color key="textColor" red="0.40392156862745099" green="0.42745098039215684" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="baseChangeProfile" translatesAutoresizingMaskIntoConstraints="NO" id="29S-Mz-ovP">
-                                <rect key="frame" x="17" y="492" width="341" height="80"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="basePinCodeDigit" translatesAutoresizingMaskIntoConstraints="NO" id="EbJ-AE-B29">
+                                <rect key="frame" x="17" y="172" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrowBlue" translatesAutoresizingMaskIntoConstraints="NO" id="6fQ-ZR-N3U">
-                                <rect key="frame" x="335" y="525" width="9" height="13"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="basePinCodeDigit" translatesAutoresizingMaskIntoConstraints="NO" id="PWI-mN-S39">
+                                <rect key="frame" x="105" y="172" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WISSEL VAN IDENTITEIT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnq-f8-wxo">
-                                <rect key="frame" x="46" y="511" width="164" height="16"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="basePinCodeDigit" translatesAutoresizingMaskIntoConstraints="NO" id="nwL-Ot-o3D">
+                                <rect key="frame" x="194" y="172" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fts-H4-oPx">
+                                <rect key="frame" x="217" y="222" width="28" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.81960784313725488" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="basePinCodeDigit" translatesAutoresizingMaskIntoConstraints="NO" id="xKF-Yc-zTL">
+                                <rect key="frame" x="283" y="172" width="75" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rvy-b3-CGz">
+                                <rect key="frame" x="306" y="222" width="28" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.81960784313725488" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lI7-TJ-X51">
+                                <rect key="frame" x="41" y="222" width="28" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.81960784313725488" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6x0-B0-QBU">
+                                <rect key="frame" x="128" y="222" width="28" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.81960784313725488" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h0U-Kn-s8S">
+                                <rect key="frame" x="40" y="186" width="28" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="SFProText-Light" family="SF Pro Text" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zdP-S4-J11">
+                                <rect key="frame" x="128" y="186" width="28" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="SFProText-Light" family="SF Pro Text" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5oa-mV-5jG">
+                                <rect key="frame" x="217" y="186" width="28" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="SFProText-Light" family="SF Pro Text" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7fm-kB-wMx">
+                                <rect key="frame" x="306" y="186" width="28" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="SFProText-Light" family="SF Pro Text" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dV7-lu-e0Y">
+                                <rect key="frame" x="29" y="189" width="314" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="SFProText-Heavy" family="SF Pro Text" pointSize="13"/>
-                                <color key="textColor" red="0.25490196078431371" green="0.28627450980392155" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rocket Minds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phi-If-DjA">
-                                <rect key="frame" x="78" y="537" width="146" height="15"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9g-Bk-nKZ">
+                                <rect key="frame" x="9" y="27" width="43" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="19"/>
-                                <color key="textColor" red="0.14509803921568629" green="0.40000000000000002" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MfL-j6-FPY">
-                                <rect key="frame" x="17" y="491" width="340" height="81"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <action selector="showAlertSheedSwitchProfile:" destination="04k-YM-Iaf" eventType="touchUpInside" id="1P3-rf-n2y"/>
+                                    <action selector="back:" destination="Xjz-L6-Rso" eventType="touchUpInside" id="lUC-b5-tjR"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Pqx-Yd-nSv"/>
+                        <viewLayoutGuide key="safeArea" id="GxU-70-BQ3"/>
                     </view>
+                    <connections>
+                        <outlet property="codeUITextField" destination="dV7-lu-e0Y" id="Vat-ij-45j"/>
+                        <outlet property="pin1" destination="h0U-Kn-s8S" id="S5a-lV-hDy"/>
+                        <outlet property="pin2" destination="zdP-S4-J11" id="8pe-Y3-ZYU"/>
+                        <outlet property="pin3" destination="5oa-mV-5jG" id="I2j-SJ-CcT"/>
+                        <outlet property="pin4" destination="7fm-kB-wMx" id="EFQ-Qm-tzI"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dxM-lK-J5c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vp2-mO-wa2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4353" y="-487"/>
+            <point key="canvasLocation" x="5752.8000000000002" y="-485.30734632683664"/>
         </scene>
     </scenes>
     <resources>
@@ -681,6 +1008,8 @@
         <image name="baseButtonRegistration" width="304" height="51"/>
         <image name="baseChangeProfile" width="341" height="80"/>
         <image name="baseNewProfile" width="375" height="141"/>
+        <image name="basePinCodeDigit" width="93" height="93"/>
+        <image name="baseSend" width="164" height="51"/>
         <image name="baseValidation" width="146" height="51"/>
         <image name="iconHome" width="78" height="78"/>
         <image name="profileIcon" width="37" height="41"/>

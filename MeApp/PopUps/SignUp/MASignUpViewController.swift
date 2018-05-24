@@ -23,8 +23,13 @@ class MASignUpViewController: UIViewController,UITextFieldDelegate {
         viewBody.layer.masksToBounds = true
         viewBody.layer.cornerRadius = 8.0
         codeUITextField.delegate = self
-        codeUITextField.becomeFirstResponder()
         
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        codeUITextField.becomeFirstResponder()
     }
     
     //    private func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
@@ -50,7 +55,7 @@ class MASignUpViewController: UIViewController,UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let code = textField.text! + string
-        switch code.characters.count{
+        switch code.count{
         case 1:
             digit1UITextField.text = string
         case 2:
@@ -65,7 +70,7 @@ class MASignUpViewController: UIViewController,UITextFieldDelegate {
             digit6UITextField.text = string
         default: break
         }
-        return textField.text!.characters.count + (string.characters.count - range.length) <= 6;
+        return (textField.text?.count)! + (string.count - range.length) <= 6;
     }
     
     

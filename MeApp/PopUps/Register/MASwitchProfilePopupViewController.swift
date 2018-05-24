@@ -8,9 +8,8 @@
 
 
 import UIKit
-import PopupWindow
 
-class RegisterPopupViewController: BasePopupViewController {
+class MASwitchProfilePopupViewController: BasePopupViewController {
     enum Const {
         static let popupDuration: TimeInterval = 0.3
         static let transformDuration: TimeInterval = 0.4
@@ -20,13 +19,13 @@ class RegisterPopupViewController: BasePopupViewController {
         static let popupCompletionOption = PopupOption(shapeType: .roundedCornerTop(cornerSize: 8), viewType: .toast, direction: .bottom, hasBlur: false)
     }
 
-    private let registerPopupView = RegisterPopupView.view()
-    private let registerPopupCompletionView = RegisterPopupCompletionView.view()
+    private let registerPopupView = MASwitchProfilePopupView.view()
+    private let registerPopupCompletionView = MASwitchProfilePopupCompletionView.view()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let popupItem = PopupItem(view: registerPopupView, height: RegisterPopupView.Const.height, maxWidth: Const.maxWidth, landscapeSize: Const.landscapeSize, popupOption: Const.popupOption)
+        let popupItem = PopupItem(view: registerPopupView, height: MASwitchProfilePopupView.Const.height, maxWidth: Const.maxWidth, landscapeSize: Const.landscapeSize, popupOption: Const.popupOption)
         configurePopupItem(popupItem)
 
         registerPopupView.closeButtonTapHandler = { [weak self] in
@@ -46,7 +45,7 @@ class RegisterPopupViewController: BasePopupViewController {
     }
 
     private func showCompletionView() {
-        let popupItem = PopupItem(view: registerPopupCompletionView, height: RegisterPopupCompletionView.Const.height, maxWidth: Const.maxWidth, popupOption: Const.popupCompletionOption)
+        let popupItem = PopupItem(view: registerPopupCompletionView, height: MASwitchProfilePopupCompletionView.Const.height, maxWidth: Const.maxWidth, popupOption: Const.popupCompletionOption)
         transformPopupView(duration: Const.transformDuration, curve: .easeInOut, popupItem: popupItem) { [weak self] _ in
             guard let me = self else { return }
             me.replacePopupView(with: popupItem)

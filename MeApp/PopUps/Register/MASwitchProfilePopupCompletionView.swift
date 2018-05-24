@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import PopupWindow
 
-class RegisterPopupCompletionView: UIView, PopupViewContainable, Nibable {
+class MASwitchProfilePopupCompletionView: UIView, PopupViewContainable, Nibable {
     enum Const {
         static let height: CGFloat = 64
     }

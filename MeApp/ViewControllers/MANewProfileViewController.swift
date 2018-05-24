@@ -7,24 +7,20 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
-
-class MANewProfileViewController: UIViewController,UITextFieldDelegate, UIPopoverPresentationControllerDelegate {
-
+class MANewProfileViewController: MABaseViewController,UITextFieldDelegate, UIPopoverPresentationControllerDelegate {
+    fileprivate var returnKeyHandler : IQKeyboardReturnKeyHandler!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        IQKeyboardManager.sharedManager().enable = true
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func back(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
     
     
     /*

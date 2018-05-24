@@ -9,17 +9,25 @@
 import UIKit
 import ScrollableSegmentedControl
 import SwipeCellKit
+import Speech
 enum WalletCase {
     case token
     case assets
     case passes
 }
 
-class WalletViewController: UIViewController{
+class WalletViewController: UIViewController,SFSpeechRecognizerDelegate{
     
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var microUIButton: UIButton!
     var walletCase : WalletCase! = WalletCase.token
+    
+    private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "ro"))!
+    
+    private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
+    private var recognitionTask: SFSpeechRecognitionTask?
+    private let audioEngine = AVAudioEngine()
     
     
     @IBOutlet weak var segmentedControl: ScrollableSegmentedControl!
@@ -28,7 +36,6 @@ class WalletViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         segmentedControl.segmentStyle = .textOnly
         segmentedControl.insertSegment(withTitle: "Valuta", image: nil, at: 0)
         segmentedControl.insertSegment(withTitle: "Bezit", image: nil, at: 1)
@@ -38,29 +45,32 @@ class WalletViewController: UIViewController{
         segmentedControl.selectedSegmentContentColor = UIColor.white
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.addTarget(self, action: #selector(self.segmentSelected(sender:)), for: .valueChanged)
-        searchField.attributedPlaceholder = colorPlaceholder(text: "Zoek valuta")
+        searchField.placeholderColor(text: "Zoek valuta", withColor: .white)
     }
     
-    func colorPlaceholder(text: String) -> NSAttributedString {
-         return NSAttributedString(string: text ,attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
-    }
+  
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    
+    
     @IBAction func dismissKeyboard(_ sender: Any) {
-    self.view.endEditing(true)
+        self.view.endEditing(true)
     }
     
     @objc func segmentSelected(sender:ScrollableSegmentedControl) {
         print("Segment at index \(sender.selectedSegmentIndex)  selected")
         if (sender.selectedSegmentIndex == 0 ){
             walletCase = WalletCase.token
+            searchField.placeholderColor(text: "Zoek valuta", withColor: .white)
         }else if (sender.selectedSegmentIndex == 1){
             walletCase = WalletCase.assets
+            searchField.placeholderColor(text: "Zoek vermongen", withColor: .white)
         }else if (sender.selectedSegmentIndex == 2){
             walletCase = WalletCase.passes
+            searchField.placeholderColor(text: "Zoek vouchers", withColor: .white)
         }
         self.tableView.reloadData()
     }
@@ -74,6 +84,92 @@ class WalletViewController: UIViewController{
      // Pass the selected object to the new view controller.
      }
      */
+    
+    // MARK: Speach
+    
+    @IBAction func microphoneTapped(_ sender: AnyObject) {
+        if audioEngine.isRunning {
+            audioEngine.stop()
+            recognitionRequest?.endAudio()
+            microUIButton.isEnabled = false
+            microUIButton.setTitle("Start Recording", for: .normal)
+        } else {
+            startRecording()
+            microUIButton.setTitle("Stop Recording", for: .normal)
+        }
+    }
+    
+    func startRecording() {
+        
+        if recognitionTask != nil {
+            recognitionTask?.cancel()
+            recognitionTask = nil
+        }
+        
+        let audioSession = AVAudioSession.sharedInstance()
+        do {
+            try audioSession.setCategory(AVAudioSessionCategoryRecord)
+            try audioSession.setMode(AVAudioSessionModeMeasurement)
+            try audioSession.setActive(true, with: .notifyOthersOnDeactivation)
+        } catch {
+            print("audioSession properties weren't set because of an error.")
+        }
+        
+        recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
+        
+         let inputNode = audioEngine.inputNode
+        
+        guard let recognitionRequest = recognitionRequest else {
+            fatalError("Unable to create an SFSpeechAudioBufferRecognitionRequest object")
+        }
+        
+        recognitionRequest.shouldReportPartialResults = true
+        
+        recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest, resultHandler: { (result, error) in
+            
+            var isFinal = false
+            
+            if result != nil {
+                
+                self.searchField.text = result?.bestTranscription.formattedString
+                isFinal = (result?.isFinal)!
+            }
+            
+            if error != nil || isFinal {
+                self.audioEngine.stop()
+                inputNode.removeTap(onBus: 0)
+                
+                self.recognitionRequest = nil
+                self.recognitionTask = nil
+                
+                self.microUIButton.isEnabled = true
+            }
+        })
+        
+        let recordingFormat = inputNode.outputFormat(forBus: 0)
+        inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer, when) in
+            self.recognitionRequest?.append(buffer)
+        }
+        
+        audioEngine.prepare()
+        
+        do {
+            try audioEngine.start()
+        } catch {
+            print("audioEngine couldn't start because of an error.")
+        }
+        
+        searchField.text = "Say something, I'm listening!"
+        
+    }
+    
+    func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
+        if available {
+            microUIButton.isEnabled = true
+        } else {
+            microUIButton.isEnabled = false
+        }
+    }
     
 }
 
@@ -94,7 +190,7 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
         var cell : UITableViewCell! = nil
         
         switch walletCase {
-        case .passes:
+        case .token:
             let cellWalletSecond = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! WalletSecondTableViewCell
             
             cell = cellWalletSecond
@@ -113,6 +209,10 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
             cell = cellWallet
         }
         return cell
+    }
+    
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     
@@ -134,19 +234,19 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
         deleteAction.font =  UIFont(name: "SFUIText-Bold", size: 10.0)
         
         switch walletCase {
-        case .token:
+        case .token: break
+        case .assets:
+            if orientation == .right {
+                return [deleteAction,transctionAction]
+            }
+            
+        case .passes:
             if orientation == .left {
                 return [transctionAction]
             }else {
                 return [deleteAction]
             }
             
-        case .assets:
-            if orientation == .right {
-                return [deleteAction,transctionAction]
-            }
-            
-        case .passes: break
         default: break
             
         }

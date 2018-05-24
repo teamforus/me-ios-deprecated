@@ -11,7 +11,7 @@ pod 'ExpandableCell'
 pod 'QRCodeReader.swift'
 pod 'UICheckbox.Swift'
 pod 'DropDown'
-pod 'PopupWindow'
+pod 'IQKeyboardManagerSwift'
 
 
   target 'MeAppTests' do

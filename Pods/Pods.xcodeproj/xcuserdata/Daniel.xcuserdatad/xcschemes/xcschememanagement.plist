@@ -18,28 +18,28 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>Pods-MeApp.xcscheme</key>
+		<key>IQKeyboardManagerSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
-		<key>Pods-MeAppTests.xcscheme</key>
+		<key>Pods-MeApp.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
-		<key>Pods-MeAppUITests.xcscheme</key>
+		<key>Pods-MeAppTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
-		<key>PopupWindow.xcscheme</key>
+		<key>Pods-MeAppUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

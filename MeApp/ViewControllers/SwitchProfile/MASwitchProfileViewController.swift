@@ -7,12 +7,13 @@
 //
 
 import UIKit
-import PopupWindow
 
-class MASwitchProfileViewController: UIViewController {
+class MASwitchProfileViewController: MABaseViewController {
 
+    @IBOutlet weak var imageQR: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageQR.generateQRCode(from: "ios")
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,7 +21,6 @@ class MASwitchProfileViewController: UIViewController {
     }
     
     @IBAction func showAlertSheedSwitchProfile(_ sender: Any) {
-    PopupWindowManager.shared.changeKeyWindow(rootViewController: RegisterPopupViewController())
+    PopupWindowManager.shared.changeKeyWindow(rootViewController: MASwitchProfilePopupViewController())
     }
-
 }

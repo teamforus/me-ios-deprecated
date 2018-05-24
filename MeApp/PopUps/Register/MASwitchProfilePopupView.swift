@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import PopupWindow
 
-class RegisterPopupView: UIView, PopupViewContainable, Nibable, UITableViewDataSource, UITableViewDelegate  {
+class MASwitchProfilePopupView: UIView, PopupViewContainable, Nibable, UITableViewDataSource, UITableViewDelegate  {
     enum Const {
         static let height: CGFloat = 369
     }
@@ -82,6 +81,13 @@ class RegisterPopupView: UIView, PopupViewContainable, Nibable, UITableViewDataS
             cell = cellSwitchProfile
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 2 {
+            return 59
+        }
+        return 90
     }
     
     

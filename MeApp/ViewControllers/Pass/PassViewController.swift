@@ -10,15 +10,27 @@ import UIKit
 import Presentr
 
 class PassViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    @IBOutlet weak var searchField: UITextField!
+    @IBOutlet weak var imageQR: UIImageView!
+    
     let dynamicSizePresenter: Presentr = {
         let presentationType = PresentationType.dynamic(center: .center)
+        
         let presenter = Presentr(presentationType: presentationType)
+       
+        return presenter
+    }()
+    let presenter: Presentr = {
+        let presenter = Presentr(presentationType: .alert)
+        presenter.transitionType = TransitionType.coverHorizontalFromRight
+        presenter.dismissOnSwipe = true
         return presenter
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchField.placeholderColor(text: "Zoek transacties", withColor: .white)
+        imageQR.generateQRCode(from: "456,66")
         
     }
 
@@ -61,11 +73,15 @@ class PassViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (indexPath.row == 0){
-            let popupTransction =  MATransactionRedViewController(nibName: "MATransactionRedViewController", bundle: nil)
+            let popupTransction =  MAValidationQRViewController(nibName: "MAValidationQRViewController", bundle: nil)
             customPresentViewController(dynamicSizePresenter, viewController: popupTransction, animated: true, completion: nil)
         }else{
             let popupTransction =  MASignUpViewController(nibName: "MASignUpViewController", bundle: nil)
-            customPresentViewController(dynamicSizePresenter, viewController: popupTransction, animated: true, completion: nil)
+            presenter.presentationType = .popup
+            presenter.transitionType = nil
+            presenter.dismissTransitionType = nil
+            presenter.keyboardTranslationType = .compress
+            customPresentViewController(presenter, viewController: popupTransction, animated: true, completion: nil)
         }
     }
     
