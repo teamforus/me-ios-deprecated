@@ -212,7 +212,7 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
     }
     
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: false)
     }
     
     

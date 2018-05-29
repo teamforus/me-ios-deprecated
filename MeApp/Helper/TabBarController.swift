@@ -33,9 +33,25 @@ class TabBarController: UITabBarController {
         super.didReceiveMemoryWarning()
     }
     
+//    -(void)viewDidLayoutSubviews
+//    {
+//    [super viewDidLayoutSubviews];
+//    [self.tabBar invalidateIntrinsicContentSize];
+//    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.tabBar.invalidateIntrinsicContentSize()
+    }
+    
     func addCenterButton(withImage buttonImage : UIImage, highlightImage: UIImage) {
         
-        let paddingBottom : CGFloat = 10.0
+        let paddingBottom : CGFloat!
+        if UIScreen.main.nativeBounds.height == 2436 {
+            paddingBottom  = 15.0
+        }else{
+            paddingBottom = 20.0
+        }
         
         let button = UIButton(type: .custom)
         button.autoresizingMask = [.flexibleRightMargin, .flexibleTopMargin, .flexibleLeftMargin, .flexibleBottomMargin]
@@ -45,7 +61,13 @@ class TabBarController: UITabBarController {
         
         let rectBoundTabbar = self.tabBar.bounds
         let xx = rectBoundTabbar.midX
-        let yy = rectBoundTabbar.midY - paddingBottom
+        let yy : CGFloat!
+        if UIScreen.main.nativeBounds.height == 2436 {
+            yy = rectBoundTabbar.midY + paddingBottom
+        }else{
+            yy = rectBoundTabbar.midY - paddingBottom
+        }
+        
         button.center = CGPoint(x: xx, y: yy)
         
         self.tabBar.addSubview(button)
@@ -61,6 +83,7 @@ class TabBarController: UITabBarController {
         }
     }
     
+
 
     /*
     // MARK: - Navigation

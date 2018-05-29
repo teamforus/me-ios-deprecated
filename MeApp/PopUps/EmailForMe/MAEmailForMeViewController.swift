@@ -20,6 +20,4 @@ class MAEmailForMeViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-
 }

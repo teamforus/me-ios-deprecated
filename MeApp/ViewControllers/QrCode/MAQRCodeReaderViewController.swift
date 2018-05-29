@@ -43,7 +43,11 @@ class MAQRCodeReaderViewController: UIViewController {
                 alert.addAction(UIAlertAction(title: "Setting", style: .default, handler: { (_) in
                     DispatchQueue.main.async {
                         if let settingsURL = URL(string: UIApplicationOpenSettingsURLString) {
-                            UIApplication.shared.openURL(settingsURL)
+                            UIApplication.shared.open(settingsURL, options: [:],
+                                                      completionHandler: {
+                                                        (success) in
+                                                        print(" \(success)")
+                            })
                         }
                     }
                 }))

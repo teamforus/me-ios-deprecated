@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		0A65F25EEA98774E5C653D5B /* Pods_MeAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359D8C1359DA91F5C44FDB1A /* Pods_MeAppTests.framework */; };
 		5F68B5C602170CD49C3FA1CD /* Pods_MeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4647894AE9F75A5A5B1672E /* Pods_MeAppUITests.framework */; };
+		65467FA520B821E7009E99CC /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65467FA420B821E7009E99CC /* Authorization.swift */; };
+		65467FAA20B827EC009E99CC /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65467FA920B827EC009E99CC /* Category.swift */; };
+		65467FAD20B829C0009E99CC /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65467FAC20B829C0009E99CC /* Record.swift */; };
+		65467FB020B86C57009E99CC /* MALoginWithQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65467FAF20B86C57009E99CC /* MALoginWithQRViewController.swift */; };
 		6556375420B6DE8300E45487 /* PopupWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6556374720B6DE7F00E45487 /* PopupWindowManager.swift */; };
 		6556375520B6DE8300E45487 /* ShapeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6556374820B6DE7F00E45487 /* ShapeType.swift */; };
 		6556375620B6DE8300E45487 /* PopupContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6556374920B6DE7F00E45487 /* PopupContainerView.swift */; };
@@ -140,6 +144,10 @@
 		2F47A758BD471D52C424FBAA /* Pods_MeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		359D8C1359DA91F5C44FDB1A /* Pods_MeAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3746D2C9865CEDCD6876FC18 /* Pods-MeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeAppUITests/Pods-MeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		65467FA420B821E7009E99CC /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
+		65467FA920B827EC009E99CC /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		65467FAC20B829C0009E99CC /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		65467FAF20B86C57009E99CC /* MALoginWithQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MALoginWithQRViewController.swift; sourceTree = "<group>"; };
 		6556374720B6DE7F00E45487 /* PopupWindowManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupWindowManager.swift; sourceTree = "<group>"; };
 		6556374820B6DE7F00E45487 /* ShapeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeType.swift; sourceTree = "<group>"; };
 		6556374920B6DE7F00E45487 /* PopupContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupContainerView.swift; sourceTree = "<group>"; };
@@ -302,6 +310,48 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		65467FA620B82370009E99CC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				65467FA720B8237A009E99CC /* Authorization */,
+				65467FAB20B8290B009E99CC /* Category */,
+				65467FAE20B82F6E009E99CC /* Record */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		65467FA720B8237A009E99CC /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				65467FA420B821E7009E99CC /* Authorization.swift */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		65467FA820B823B9009E99CC /* Suporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				65A51FAD20B3012B0010DB33 /* SF Pro */,
+			);
+			path = "Suporting Files";
+			sourceTree = "<group>";
+		};
+		65467FAB20B8290B009E99CC /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				65467FA920B827EC009E99CC /* Category.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		65467FAE20B82F6E009E99CC /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				65467FAC20B829C0009E99CC /* Record.swift */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
 		6556374620B6DE0E00E45487 /* PopupWindow */ = {
 			isa = PBXGroup;
 			children = (
@@ -362,13 +412,13 @@
 				65B89ACC20B4761C0024DC51 /* NewProfile.storyboard */,
 				65FC865D20B5D8F5001FECA5 /* Extension */,
 				65A51FF320B333D10010DB33 /* PopUps */,
+				65467FA620B82370009E99CC /* Models */,
+				65467FA820B823B9009E99CC /* Suporting Files */,
+				65A51F7920B2FFF40010DB33 /* Info.plist */,
 				65A51F7420B2FFF40010DB33 /* Assets.xcassets */,
 				65A51F7620B2FFF40010DB33 /* LaunchScreen.storyboard */,
-				65A51F7920B2FFF40010DB33 /* Info.plist */,
 				65A51F7120B2FFF20010DB33 /* MeApp.xcdatamodeld */,
 				65B89AD320B48B9B0024DC51 /* MeApp-Swift.h */,
-				65A51FAD20B3012B0010DB33 /* SF Pro */,
-				6556376520B718DF00E45487 /* MASpeachRecognition.swift */,
 			);
 			path = MeApp;
 			sourceTree = "<group>";
@@ -504,6 +554,7 @@
 				65FC860420B5B2DC001FECA5 /* Office */,
 				65FC860720B5B349001FECA5 /* SwitchProfile */,
 				65D764E120B73940007D7B9D /* PinProfile */,
+				65467FAF20B86C57009E99CC /* MALoginWithQRViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -638,6 +689,7 @@
 				65A51FA220B300EA0010DB33 /* TabBarController.swift */,
 				65FC85F720B56FA2001FECA5 /* MANavicationController.swift */,
 				6556376720B726F700E45487 /* MABaseViewController.swift */,
+				6556376520B718DF00E45487 /* MASpeachRecognition.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -944,23 +996,35 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MeApp/Pods-MeApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/AlertBar/AlertBar.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/ExpandableCell/ExpandableCell.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Presentr/Presentr.framework",
 				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/ScrollableSegmentedControl/ScrollableSegmentedControl.framework",
+				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
 				"${BUILT_PRODUCTS_DIR}/UICheckbox.Swift/UICheckbox_Swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlertBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ExpandableCell.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Presentr.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ScrollableSegmentedControl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICheckbox_Swift.framework",
 			);
@@ -1088,15 +1152,18 @@
 				65A51F7320B2FFF20010DB33 /* MeApp.xcdatamodeld in Sources */,
 				6556375D20B6DE8300E45487 /* PopupViewDirection.swift in Sources */,
 				6556375520B6DE8300E45487 /* ShapeType.swift in Sources */,
+				65467FA520B821E7009E99CC /* Authorization.swift in Sources */,
 				6556375C20B6DE8300E45487 /* PopupItem.swift in Sources */,
 				65B89AA620B432CC0024DC51 /* MARegistrationSuccessViewController.swift in Sources */,
 				65FC866120B5D8F5001FECA5 /* UIView+Shadow.swift in Sources */,
+				65467FAD20B829C0009E99CC /* Record.swift in Sources */,
 				65B89A9120B334860024DC51 /* MATransactionBlueViewController.swift in Sources */,
 				65A51FAA20B300EA0010DB33 /* TabBarController.swift in Sources */,
 				6556375820B6DE8300E45487 /* UIView+Shape.swift in Sources */,
 				65B89ABF20B448CB0024DC51 /* MAAllowViewController.swift in Sources */,
 				65B89A9720B4128C0024DC51 /* MARecordsTableViewCell.swift in Sources */,
 				6556375620B6DE8300E45487 /* PopupContainerView.swift in Sources */,
+				65467FAA20B827EC009E99CC /* Category.swift in Sources */,
 				6556375920B6DE8300E45487 /* PopupContainerWindow.swift in Sources */,
 				6556375720B6DE8300E45487 /* CGRect+Inset.swift in Sources */,
 				6556376220B6FDEB00E45487 /* UIImageView+QRCode.swift in Sources */,
@@ -1115,6 +1182,7 @@
 				6556376620B718DF00E45487 /* MASpeachRecognition.swift in Sources */,
 				6556376420B7078800E45487 /* MASetUpPinViewController.swift in Sources */,
 				65FC85FE20B58426001FECA5 /* MAValidationQRViewController.swift in Sources */,
+				65467FB020B86C57009E99CC /* MALoginWithQRViewController.swift in Sources */,
 				6556375A20B6DE8300E45487 /* PopupViewContainable.swift in Sources */,
 				6556376020B6FB9100E45487 /* UITextField+PlaceholderColor.swift in Sources */,
 				65FC860220B5A2DA001FECA5 /* MAOfficeViewController.swift in Sources */,
@@ -1296,10 +1364,7 @@
 				DEVELOPMENT_TEAM = 7L2RMARLH9;
 				INFOPLIST_FILE = MeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RokectMinds.MeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1318,10 +1383,7 @@
 				DEVELOPMENT_TEAM = 7L2RMARLH9;
 				INFOPLIST_FILE = MeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RokectMinds.MeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1339,11 +1401,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MeAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RokectMinds.MeAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1360,11 +1418,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MeAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RokectMinds.MeAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1380,11 +1434,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MeAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RokectMinds.MeAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1400,11 +1450,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MeAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RokectMinds.MeAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

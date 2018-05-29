@@ -9,7 +9,7 @@
 import UIKit
 import Presentr
 
-class PassViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class PassViewController: MABaseViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var imageQR: UIImageView!
     
@@ -37,12 +37,6 @@ class PassViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-
-    @IBAction func back(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
     
     // MARK: - UITableViewDelegate
     

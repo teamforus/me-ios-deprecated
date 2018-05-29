@@ -9,11 +9,17 @@
 import UIKit
 
 class MASwitchProfileViewController: MABaseViewController {
-
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var imageQR: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         imageQR.generateQRCode(from: "ios")
+        if UIScreen.main.nativeBounds.height == 2436 {
+            topConstraint.constant = -45
+        }else{
+            topConstraint.constant = -20
+        }
     }
 
     override func didReceiveMemoryWarning() {

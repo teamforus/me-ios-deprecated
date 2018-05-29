@@ -12,6 +12,11 @@ pod 'QRCodeReader.swift'
 pod 'UICheckbox.Swift'
 pod 'DropDown'
 pod 'IQKeyboardManagerSwift'
+pod 'Alamofire'
+pod 'AlamofireObjectMapper'
+pod 'ReachabilitySwift'
+pod 'AlertBar'
+pod 'SkyFloatingLabelTextField'
 
 
   target 'MeAppTests' do

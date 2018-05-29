@@ -1,36 +1,52 @@
 PODS:
+  - Alamofire (4.7.0)
+  - AlamofireObjectMapper (5.0.0):
+    - Alamofire (~> 4.1)
+    - ObjectMapper (~> 3.0)
+  - AlertBar (0.4.2)
   - DropDown (2.3.1)
   - ExpandableCell (1.2.2)
   - IQKeyboardManagerSwift (5.0.7)
-  - PopupWindow (0.1.0)
+  - ObjectMapper (3.1.0)
   - Presentr (1.3)
   - QRCodeReader.swift (8.1.1)
+  - ReachabilitySwift (4.1.0)
   - ScrollableSegmentedControl (1.3.0)
+  - SkyFloatingLabelTextField (3.4.0)
   - SwipeCellKit (2.0.1)
   - UICheckbox.Swift (1.0.0)
 
 DEPENDENCIES:
+  - Alamofire
+  - AlamofireObjectMapper
+  - AlertBar
   - DropDown
   - ExpandableCell
   - IQKeyboardManagerSwift
-  - PopupWindow
   - Presentr
   - QRCodeReader.swift
+  - ReachabilitySwift
   - ScrollableSegmentedControl (~> 1.3.0)
+  - SkyFloatingLabelTextField
   - SwipeCellKit
   - UICheckbox.Swift
 
 SPEC CHECKSUMS:
+  Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
+  AlertBar: 0512ccfdc339dbe22c93799682308e93c784358f
   DropDown: 20499c7b2731b0d21609af924e47c7677a2be50d
   ExpandableCell: f2d99f9ae03a8c393e268adddaeb7f6d2525a76e
   IQKeyboardManagerSwift: 30fb3a61de1af53a95e02b80fb54ed0a19d5ede5
-  PopupWindow: 2f3a33001295435a3ab568e42a970d51539ed6e9
+  ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   Presentr: 3f0825a42cb32ecd8fc6b6d0b0de87d7d0b42482
   QRCodeReader.swift: b164a681887de276d405ff02bce854d82cd6360b
+  ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
   ScrollableSegmentedControl: a90ae91537fd670a46b177301d035223e3bd149e
+  SkyFloatingLabelTextField: 703aa1420b697392b1e7dba25571180dde018477
   SwipeCellKit: 76888d93d1843dc568fdf38fff21b15dbbcf6b28
   UICheckbox.Swift: 85715689206fac5bae38b308f19c2a3e00442c3b
 
-PODFILE CHECKSUM: 247eca5c37b3f755a3e394c611f16a3374e0b048
+PODFILE CHECKSUM: 6bf42a3dedd7ec74dfe5714bc406ce523783a32c
 
 COCOAPODS: 1.4.0

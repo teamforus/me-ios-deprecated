@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double PopupWindowVersionNumber;
-FOUNDATION_EXPORT const unsigned char PopupWindowVersionString[];
+FOUNDATION_EXPORT double AlamofireVersionNumber;
+FOUNDATION_EXPORT const unsigned char AlamofireVersionString[];
 
