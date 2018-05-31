@@ -46,8 +46,13 @@ class WalletViewController: UIViewController,SFSpeechRecognizerDelegate{
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.addTarget(self, action: #selector(self.segmentSelected(sender:)), for: .valueChanged)
         searchField.placeholderColor(text: "Zoek valuta", withColor: .white)
+        tableView.keyboardDismissMode = .onDrag
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
   
     
     override func didReceiveMemoryWarning() {

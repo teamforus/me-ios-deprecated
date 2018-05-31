@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MAWaitingViewController: UIViewController {
+class MAWaitingViewController: MABasePopUpViewController {
     @IBOutlet weak var viewBody: UIView!
     
     override func viewDidLoad() {

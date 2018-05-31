@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MATransactionBlueViewController: UIViewController {
+class MATransactionBlueViewController: MABasePopUpViewController {
     
     @IBOutlet weak var viewBody: UIView!
     

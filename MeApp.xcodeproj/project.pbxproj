@@ -9,6 +9,18 @@
 /* Begin PBXBuildFile section */
 		0A65F25EEA98774E5C653D5B /* Pods_MeAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359D8C1359DA91F5C44FDB1A /* Pods_MeAppTests.framework */; };
 		5F68B5C602170CD49C3FA1CD /* Pods_MeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4647894AE9F75A5A5B1672E /* Pods_MeAppUITests.framework */; };
+		6504472420C0239C00D040B9 /* MAKindPakketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6504472320C0239C00D040B9 /* MAKindPakketViewController.swift */; };
+		6504472720C028FD00D040B9 /* MAAllowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6504472520C028FD00D040B9 /* MAAllowTableViewCell.swift */; };
+		6504472820C028FD00D040B9 /* MAAllowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6504472620C028FD00D040B9 /* MAAllowTableViewCell.xib */; };
+		6504472B20C038A900D040B9 /* MABasePopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6504472A20C038A900D040B9 /* MABasePopUpViewController.swift */; };
+		6504472E20C03DAB00D040B9 /* MASwitchProfilePopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6504472C20C03DAB00D040B9 /* MASwitchProfilePopUpViewController.swift */; };
+		6504472F20C03DAB00D040B9 /* MASwitchProfilePopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6504472D20C03DAB00D040B9 /* MASwitchProfilePopUpViewController.xib */; };
+		6504473520C0410400D040B9 /* MASwitchProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6504473420C0410400D040B9 /* MASwitchProfileTableViewCell.xib */; };
+		6504473920C04BD800D040B9 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6504473720C04BD800D040B9 /* AlertViewController.swift */; };
+		6504473A20C04BD800D040B9 /* UIAlertAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6504473820C04BD800D040B9 /* UIAlertAction+Extensions.swift */; };
+		6504473C20C04F4300D040B9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6504473B20C04F4300D040B9 /* User.swift */; };
+		6504473F20C060E000D040B9 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6504473E20C060E000D040B9 /* Validation.swift */; };
+		6504474220C0715C00D040B9 /* MAKindpakketCurrenciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6504474120C0715C00D040B9 /* MAKindpakketCurrenciesViewController.swift */; };
 		65467FA520B821E7009E99CC /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65467FA420B821E7009E99CC /* Authorization.swift */; };
 		65467FAA20B827EC009E99CC /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65467FA920B827EC009E99CC /* Category.swift */; };
 		65467FAD20B829C0009E99CC /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65467FAC20B829C0009E99CC /* Record.swift */; };
@@ -107,16 +119,9 @@
 		65FC85FF20B58426001FECA5 /* MAValidationQRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65FC85FD20B58426001FECA5 /* MAValidationQRViewController.xib */; };
 		65FC860220B5A2DA001FECA5 /* MAOfficeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC860120B5A2DA001FECA5 /* MAOfficeViewController.swift */; };
 		65FC860620B5B340001FECA5 /* MASwitchProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC860520B5B340001FECA5 /* MASwitchProfileViewController.swift */; };
-		65FC862420B5D02C001FECA5 /* MASwitchProfilePopupCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC861F20B5D02C001FECA5 /* MASwitchProfilePopupCompletionView.swift */; };
-		65FC862520B5D02C001FECA5 /* MASwitchProfilePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC862020B5D02C001FECA5 /* MASwitchProfilePopupView.swift */; };
-		65FC862620B5D02C001FECA5 /* MASwitchProfilePopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65FC862120B5D02C001FECA5 /* MASwitchProfilePopupView.xib */; };
-		65FC862720B5D02C001FECA5 /* MASwitchProfilePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC862220B5D02C001FECA5 /* MASwitchProfilePopupViewController.swift */; };
-		65FC862820B5D02C001FECA5 /* MASwitchProfilePopupCompletionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65FC862320B5D02C001FECA5 /* MASwitchProfilePopupCompletionView.xib */; };
-		65FC865C20B5D8C5001FECA5 /* Nibable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC865B20B5D8C5001FECA5 /* Nibable.swift */; };
 		65FC866020B5D8F5001FECA5 /* UIColor+Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC865E20B5D8F5001FECA5 /* UIColor+Background.swift */; };
 		65FC866120B5D8F5001FECA5 /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC865F20B5D8F5001FECA5 /* UIView+Shadow.swift */; };
 		65FC866420B5DF81001FECA5 /* MASwitchProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC866220B5DF81001FECA5 /* MASwitchProfileTableViewCell.swift */; };
-		65FC866520B5DF81001FECA5 /* MASwitchProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65FC866320B5DF81001FECA5 /* MASwitchProfileTableViewCell.xib */; };
 		65FC866820B5EB2A001FECA5 /* MAAddProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC866620B5EB2A001FECA5 /* MAAddProfileTableViewCell.swift */; };
 		65FC866920B5EB2A001FECA5 /* MAAddProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65FC866720B5EB2A001FECA5 /* MAAddProfileTableViewCell.xib */; };
 		C114624949C2AA90B4E6615B /* Pods_MeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F47A758BD471D52C424FBAA /* Pods_MeApp.framework */; };
@@ -144,6 +149,18 @@
 		2F47A758BD471D52C424FBAA /* Pods_MeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		359D8C1359DA91F5C44FDB1A /* Pods_MeAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3746D2C9865CEDCD6876FC18 /* Pods-MeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeAppUITests/Pods-MeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6504472320C0239C00D040B9 /* MAKindPakketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAKindPakketViewController.swift; sourceTree = "<group>"; };
+		6504472520C028FD00D040B9 /* MAAllowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAAllowTableViewCell.swift; sourceTree = "<group>"; };
+		6504472620C028FD00D040B9 /* MAAllowTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAAllowTableViewCell.xib; sourceTree = "<group>"; };
+		6504472A20C038A900D040B9 /* MABasePopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MABasePopUpViewController.swift; sourceTree = "<group>"; };
+		6504472C20C03DAB00D040B9 /* MASwitchProfilePopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MASwitchProfilePopUpViewController.swift; sourceTree = "<group>"; };
+		6504472D20C03DAB00D040B9 /* MASwitchProfilePopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MASwitchProfilePopUpViewController.xib; sourceTree = "<group>"; };
+		6504473420C0410400D040B9 /* MASwitchProfileTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASwitchProfileTableViewCell.xib; sourceTree = "<group>"; };
+		6504473720C04BD800D040B9 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		6504473820C04BD800D040B9 /* UIAlertAction+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertAction+Extensions.swift"; sourceTree = "<group>"; };
+		6504473B20C04F4300D040B9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		6504473E20C060E000D040B9 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		6504474120C0715C00D040B9 /* MAKindpakketCurrenciesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAKindpakketCurrenciesViewController.swift; sourceTree = "<group>"; };
 		65467FA420B821E7009E99CC /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
 		65467FA920B827EC009E99CC /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		65467FAC20B829C0009E99CC /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
@@ -250,16 +267,9 @@
 		65FC85FD20B58426001FECA5 /* MAValidationQRViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAValidationQRViewController.xib; sourceTree = "<group>"; };
 		65FC860120B5A2DA001FECA5 /* MAOfficeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAOfficeViewController.swift; sourceTree = "<group>"; };
 		65FC860520B5B340001FECA5 /* MASwitchProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MASwitchProfileViewController.swift; sourceTree = "<group>"; };
-		65FC861F20B5D02C001FECA5 /* MASwitchProfilePopupCompletionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MASwitchProfilePopupCompletionView.swift; sourceTree = "<group>"; };
-		65FC862020B5D02C001FECA5 /* MASwitchProfilePopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MASwitchProfilePopupView.swift; sourceTree = "<group>"; };
-		65FC862120B5D02C001FECA5 /* MASwitchProfilePopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASwitchProfilePopupView.xib; sourceTree = "<group>"; };
-		65FC862220B5D02C001FECA5 /* MASwitchProfilePopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MASwitchProfilePopupViewController.swift; sourceTree = "<group>"; };
-		65FC862320B5D02C001FECA5 /* MASwitchProfilePopupCompletionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASwitchProfilePopupCompletionView.xib; sourceTree = "<group>"; };
-		65FC865B20B5D8C5001FECA5 /* Nibable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nibable.swift; sourceTree = "<group>"; };
 		65FC865E20B5D8F5001FECA5 /* UIColor+Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Background.swift"; sourceTree = "<group>"; };
 		65FC865F20B5D8F5001FECA5 /* UIView+Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		65FC866220B5DF81001FECA5 /* MASwitchProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MASwitchProfileTableViewCell.swift; sourceTree = "<group>"; };
-		65FC866320B5DF81001FECA5 /* MASwitchProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MASwitchProfileTableViewCell.xib; sourceTree = "<group>"; };
 		65FC866620B5EB2A001FECA5 /* MAAddProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAAddProfileTableViewCell.swift; sourceTree = "<group>"; };
 		65FC866720B5EB2A001FECA5 /* MAAddProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAAddProfileTableViewCell.xib; sourceTree = "<group>"; };
 		943F5D718F7DE6BD4631AAC7 /* Pods-MeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeApp/Pods-MeApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -310,12 +320,67 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		6504472920C0290100D040B9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6504472520C028FD00D040B9 /* MAAllowTableViewCell.swift */,
+				6504472620C028FD00D040B9 /* MAAllowTableViewCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		6504473620C0415A00D040B9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				65FC866220B5DF81001FECA5 /* MASwitchProfileTableViewCell.swift */,
+				6504473420C0410400D040B9 /* MASwitchProfileTableViewCell.xib */,
+				65FC866620B5EB2A001FECA5 /* MAAddProfileTableViewCell.swift */,
+				65FC866720B5EB2A001FECA5 /* MAAddProfileTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		6504473D20C050C100D040B9 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				6504473B20C04F4300D040B9 /* User.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		6504474020C0682600D040B9 /* SwitchProfile */ = {
+			isa = PBXGroup;
+			children = (
+				6504472C20C03DAB00D040B9 /* MASwitchProfilePopUpViewController.swift */,
+				6504472D20C03DAB00D040B9 /* MASwitchProfilePopUpViewController.xib */,
+				6504473620C0415A00D040B9 /* Cell */,
+			);
+			path = SwitchProfile;
+			sourceTree = "<group>";
+		};
+		6504474320C077FE00D040B9 /* LoginWithQR */ = {
+			isa = PBXGroup;
+			children = (
+				65467FAF20B86C57009E99CC /* MALoginWithQRViewController.swift */,
+			);
+			path = LoginWithQR;
+			sourceTree = "<group>";
+		};
+		6504474420C0787C00D040B9 /* KindPaket */ = {
+			isa = PBXGroup;
+			children = (
+				6504472320C0239C00D040B9 /* MAKindPakketViewController.swift */,
+			);
+			path = KindPaket;
+			sourceTree = "<group>";
+		};
 		65467FA620B82370009E99CC /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				65467FA720B8237A009E99CC /* Authorization */,
 				65467FAB20B8290B009E99CC /* Category */,
 				65467FAE20B82F6E009E99CC /* Record */,
+				6504473D20C050C100D040B9 /* User */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -405,6 +470,7 @@
 			isa = PBXGroup;
 			children = (
 				65A51F6A20B2FFF10010DB33 /* AppDelegate.swift */,
+				6504473E20C060E000D040B9 /* Validation.swift */,
 				65D764E020B73933007D7B9D /* Helper */,
 				65B89A8E20B3344C0024DC51 /* ViewControllers */,
 				65A51FA120B300EA0010DB33 /* Main.storyboard */,
@@ -444,6 +510,7 @@
 		65A51F9E20B300EA0010DB33 /* Pass */ = {
 			isa = PBXGroup;
 			children = (
+				6504474120C0715C00D040B9 /* MAKindpakketCurrenciesViewController.swift */,
 				65A51FA020B300EA0010DB33 /* PassViewController.swift */,
 				65A51FEC20B31FBC0010DB33 /* Cell */,
 			);
@@ -516,7 +583,7 @@
 		65A51FF320B333D10010DB33 /* PopUps */ = {
 			isa = PBXGroup;
 			children = (
-				65FC861E20B5D02C001FECA5 /* Register */,
+				6504472A20C038A900D040B9 /* MABasePopUpViewController.swift */,
 				65B89A9920B422290024DC51 /* TransactionBlue */,
 				65A51FF420B333E30010DB33 /* TransactionRed */,
 				65B89A9E20B427180024DC51 /* WaitingPopUp */,
@@ -530,6 +597,7 @@
 				65B89AC720B44CF80024DC51 /* ShareVoucher */,
 				65B89AC620B44C8D0024DC51 /* SignUp */,
 				65FC860020B58431001FECA5 /* ValidationWithQR */,
+				6504474020C0682600D040B9 /* SwitchProfile */,
 			);
 			path = PopUps;
 			sourceTree = "<group>";
@@ -554,7 +622,8 @@
 				65FC860420B5B2DC001FECA5 /* Office */,
 				65FC860720B5B349001FECA5 /* SwitchProfile */,
 				65D764E120B73940007D7B9D /* PinProfile */,
-				65467FAF20B86C57009E99CC /* MALoginWithQRViewController.swift */,
+				6504474320C077FE00D040B9 /* LoginWithQR */,
+				6504474420C0787C00D040B9 /* KindPaket */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -653,6 +722,7 @@
 			children = (
 				65B89ABD20B448CB0024DC51 /* MAAllowViewController.swift */,
 				65B89ABE20B448CB0024DC51 /* MAAllowViewController.xib */,
+				6504472920C0290100D040B9 /* Cell */,
 			);
 			name = AllowPopUp;
 			sourceTree = "<group>";
@@ -735,26 +805,11 @@
 			path = SwitchProfile;
 			sourceTree = "<group>";
 		};
-		65FC861E20B5D02C001FECA5 /* Register */ = {
-			isa = PBXGroup;
-			children = (
-				65FC865B20B5D8C5001FECA5 /* Nibable.swift */,
-				65FC861F20B5D02C001FECA5 /* MASwitchProfilePopupCompletionView.swift */,
-				65FC862020B5D02C001FECA5 /* MASwitchProfilePopupView.swift */,
-				65FC862120B5D02C001FECA5 /* MASwitchProfilePopupView.xib */,
-				65FC866220B5DF81001FECA5 /* MASwitchProfileTableViewCell.swift */,
-				65FC866320B5DF81001FECA5 /* MASwitchProfileTableViewCell.xib */,
-				65FC866620B5EB2A001FECA5 /* MAAddProfileTableViewCell.swift */,
-				65FC866720B5EB2A001FECA5 /* MAAddProfileTableViewCell.xib */,
-				65FC862220B5D02C001FECA5 /* MASwitchProfilePopupViewController.swift */,
-				65FC862320B5D02C001FECA5 /* MASwitchProfilePopupCompletionView.xib */,
-			);
-			path = Register;
-			sourceTree = "<group>";
-		};
 		65FC865D20B5D8F5001FECA5 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				6504473720C04BD800D040B9 /* AlertViewController.swift */,
+				6504473820C04BD800D040B9 /* UIAlertAction+Extensions.swift */,
 				6556374620B6DE0E00E45487 /* PopupWindow */,
 				65FC865E20B5D8F5001FECA5 /* UIColor+Background.swift */,
 				6556376120B6FDEB00E45487 /* UIImageView+QRCode.swift */,
@@ -891,7 +946,6 @@
 				65A51FCC20B3012C0010DB33 /* SF-Pro-Display-Thin.otf in Resources */,
 				65A51FA620B300EA0010DB33 /* PassStoryboard.storyboard in Resources */,
 				65A51FDA20B3012C0010DB33 /* SF-Pro-Display-MediumItalic.otf in Resources */,
-				65FC862820B5D02C001FECA5 /* MASwitchProfilePopupCompletionView.xib in Resources */,
 				65A51FE720B3012C0010DB33 /* SF-Pro-Text-Medium.otf in Resources */,
 				65B89A9D20B422D30024DC51 /* MAWaitingViewController.xib in Resources */,
 				65B89AC020B448CB0024DC51 /* MAAllowViewController.xib in Resources */,
@@ -909,14 +963,16 @@
 				65B89AA220B42A6F0024DC51 /* MARegistrationViewController.xib in Resources */,
 				65A51FDD20B3012C0010DB33 /* SF-Pro-Display-UltralightItalic.otf in Resources */,
 				65A51FD020B3012C0010DB33 /* SF-Pro-Display-Light.otf in Resources */,
+				6504472F20C03DAB00D040B9 /* MASwitchProfilePopUpViewController.xib in Resources */,
 				65A51FCF20B3012C0010DB33 /* SF-Pro-Display-RegularItalic.otf in Resources */,
 				65B89A8C20B3342E0024DC51 /* MATransactionRedViewController.xib in Resources */,
 				65A51FDC20B3012C0010DB33 /* SF-Pro-Display-Ultralight.otf in Resources */,
 				65A51FD920B3012C0010DB33 /* SF-Pro-Text-Bold.otf in Resources */,
+				6504473520C0410400D040B9 /* MASwitchProfileTableViewCell.xib in Resources */,
 				65A51FD720B3012C0010DB33 /* SF-Pro-Display-Semibold.otf in Resources */,
-				65FC866520B5DF81001FECA5 /* MASwitchProfileTableViewCell.xib in Resources */,
 				65A51FE620B3012C0010DB33 /* SF-Pro-Text-LightItalic.otf in Resources */,
 				65FC866920B5EB2A001FECA5 /* MAAddProfileTableViewCell.xib in Resources */,
+				6504472820C028FD00D040B9 /* MAAllowTableViewCell.xib in Resources */,
 				65B89ACB20B44D210024DC51 /* MASignUpViewController.xib in Resources */,
 				65A51FE820B3012C0010DB33 /* SF-Pro-Display-BoldItalic.otf in Resources */,
 				65A51FA920B300EA0010DB33 /* Main.storyboard in Resources */,
@@ -936,7 +992,6 @@
 				65B89AB120B43A3D0024DC51 /* MAValidationViewController.xib in Resources */,
 				65A51FDB20B3012C0010DB33 /* SF-Pro-Display-HeavyItalic.otf in Resources */,
 				65B89ACD20B4761C0024DC51 /* NewProfile.storyboard in Resources */,
-				65FC862620B5D02C001FECA5 /* MASwitchProfilePopupView.xib in Resources */,
 				65B89AC520B44B1B0024DC51 /* MAShareVaucherViewController.xib in Resources */,
 				65B89AA720B432CC0024DC51 /* MARegistrationSuccessViewController.xib in Resources */,
 			);
@@ -1143,12 +1198,16 @@
 				65B89A9420B408C00024DC51 /* MARecordsViewController.swift in Sources */,
 				65B89AB020B43A3D0024DC51 /* MAValidationViewController.swift in Sources */,
 				65B89ACF20B480470024DC51 /* MANewProfileViewController.swift in Sources */,
+				6504473920C04BD800D040B9 /* AlertViewController.swift in Sources */,
+				6504472E20C03DAB00D040B9 /* MASwitchProfilePopUpViewController.swift in Sources */,
 				65A51FA720B300EA0010DB33 /* PassTableViewCell.swift in Sources */,
 				65FC866820B5EB2A001FECA5 /* MAAddProfileTableViewCell.swift in Sources */,
 				65B89AAB20B4363D0024DC51 /* MAEmailForMeViewController.swift in Sources */,
 				65A51FA820B300EA0010DB33 /* PassViewController.swift in Sources */,
 				65B89ABA20B442C60024DC51 /* MAFailValidationViewController.swift in Sources */,
+				6504474220C0715C00D040B9 /* MAKindpakketCurrenciesViewController.swift in Sources */,
 				6556375420B6DE8300E45487 /* PopupWindowManager.swift in Sources */,
+				6504473A20C04BD800D040B9 /* UIAlertAction+Extensions.swift in Sources */,
 				65A51F7320B2FFF20010DB33 /* MeApp.xcdatamodeld in Sources */,
 				6556375D20B6DE8300E45487 /* PopupViewDirection.swift in Sources */,
 				6556375520B6DE8300E45487 /* ShapeType.swift in Sources */,
@@ -1160,6 +1219,8 @@
 				65B89A9120B334860024DC51 /* MATransactionBlueViewController.swift in Sources */,
 				65A51FAA20B300EA0010DB33 /* TabBarController.swift in Sources */,
 				6556375820B6DE8300E45487 /* UIView+Shape.swift in Sources */,
+				6504472720C028FD00D040B9 /* MAAllowTableViewCell.swift in Sources */,
+				6504473C20C04F4300D040B9 /* User.swift in Sources */,
 				65B89ABF20B448CB0024DC51 /* MAAllowViewController.swift in Sources */,
 				65B89A9720B4128C0024DC51 /* MARecordsTableViewCell.swift in Sources */,
 				6556375620B6DE8300E45487 /* PopupContainerView.swift in Sources */,
@@ -1168,14 +1229,12 @@
 				6556375720B6DE8300E45487 /* CGRect+Inset.swift in Sources */,
 				6556376220B6FDEB00E45487 /* UIImageView+QRCode.swift in Sources */,
 				6556376820B726F700E45487 /* MABaseViewController.swift in Sources */,
-				65FC862720B5D02C001FECA5 /* MASwitchProfilePopupViewController.swift in Sources */,
 				65FC860620B5B340001FECA5 /* MASwitchProfileViewController.swift in Sources */,
 				65B89AA120B42A6F0024DC51 /* MARegistrationViewController.swift in Sources */,
 				65A51F6B20B2FFF10010DB33 /* AppDelegate.swift in Sources */,
-				65FC862420B5D02C001FECA5 /* MASwitchProfilePopupCompletionView.swift in Sources */,
 				65B89ACA20B44D210024DC51 /* MASignUpViewController.swift in Sources */,
+				6504472420C0239C00D040B9 /* MAKindPakketViewController.swift in Sources */,
 				65B89A8D20B3342E0024DC51 /* MATransactionRedViewController.swift in Sources */,
-				65FC865C20B5D8C5001FECA5 /* Nibable.swift in Sources */,
 				65B89AC420B44B1B0024DC51 /* MAShareVaucherViewController.swift in Sources */,
 				65FC866020B5D8F5001FECA5 /* UIColor+Background.swift in Sources */,
 				65B89AB520B43FA50024DC51 /* MAValidationSuccessViewController.swift in Sources */,
@@ -1189,12 +1248,13 @@
 				65B89A9C20B422D30024DC51 /* MAWaitingViewController.swift in Sources */,
 				65A51FAC20B300EA0010DB33 /* WaletTableViewCell.swift in Sources */,
 				6556375B20B6DE8300E45487 /* ViewType.swift in Sources */,
-				65FC862520B5D02C001FECA5 /* MASwitchProfilePopupView.swift in Sources */,
 				65FC85F820B56FA2001FECA5 /* MANavicationController.swift in Sources */,
 				65FC866420B5DF81001FECA5 /* MASwitchProfileTableViewCell.swift in Sources */,
 				65A51FEB20B31FB30010DB33 /* WalletSecondTableViewCell.swift in Sources */,
 				6556375E20B6DE8300E45487 /* BasePopupViewController.swift in Sources */,
 				65A51FAB20B300EA0010DB33 /* WalletViewController.swift in Sources */,
+				6504473F20C060E000D040B9 /* Validation.swift in Sources */,
+				6504472B20C038A900D040B9 /* MABasePopUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1364,7 +1424,10 @@
 				DEVELOPMENT_TEAM = 7L2RMARLH9;
 				INFOPLIST_FILE = MeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = RokectMinds.MeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1383,7 +1446,10 @@
 				DEVELOPMENT_TEAM = 7L2RMARLH9;
 				INFOPLIST_FILE = MeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = RokectMinds.MeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1401,7 +1467,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MeAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = RokectMinds.MeAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1418,7 +1488,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MeAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = RokectMinds.MeAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1434,7 +1508,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MeAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = RokectMinds.MeAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1450,7 +1528,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MeAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = RokectMinds.MeAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

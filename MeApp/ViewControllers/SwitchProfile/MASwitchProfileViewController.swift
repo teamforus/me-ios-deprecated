@@ -7,9 +7,19 @@
 //
 
 import UIKit
+import Presentr
 
-class MASwitchProfileViewController: MABaseViewController {
+class MASwitchProfileViewController: MABaseViewController,MASwitchProfilePopUpViewControllerDelegate {
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
+    @IBOutlet weak var profileName: UILabel!
+    let dynamicSizePresenter: Presentr = {
+        let presentationType = PresentationType.dynamic(center: .center)
+        
+        let presenter = Presentr(presentationType: presentationType)
+        
+        return presenter
+    }()
+    @IBOutlet weak var profileImage: UIImageView!
     
     @IBOutlet weak var imageQR: UIImageView!
     override func viewDidLoad() {
@@ -27,6 +37,14 @@ class MASwitchProfileViewController: MABaseViewController {
     }
     
     @IBAction func showAlertSheedSwitchProfile(_ sender: Any) {
-    PopupWindowManager.shared.changeKeyWindow(rootViewController: MASwitchProfilePopupViewController())
+        let popupTransction =  MASwitchProfilePopUpViewController(nibName: "MASwitchProfilePopUpViewController", bundle: nil)
+        popupTransction.delegate = self
+        dynamicSizePresenter.presentationType = .bottomHalf
+        customPresentViewController(dynamicSizePresenter, viewController: popupTransction, animated: true, completion: nil)
+    }
+    
+    func switchProfile(_ controller: MASwitchProfilePopUpViewController, user: User) {
+        profileName.text = user.name
+        profileImage.image = user.image
     }
 }

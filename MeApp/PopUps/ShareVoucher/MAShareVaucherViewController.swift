@@ -7,11 +7,18 @@
 //
 
 import UIKit
+import SkyFloatingLabelTextField
 
-class MAShareVaucherViewController: UIViewController {
-
+class MAShareVaucherViewController: MABasePopUpViewController {
+    @IBOutlet weak var amount: SkyFloatingLabelTextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        amount.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {

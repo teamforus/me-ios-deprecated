@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MATransactionRedViewController: UIViewController {
+class MATransactionRedViewController: MABasePopUpViewController {
     @IBOutlet weak var viewBody: UIView!
     
     override func viewDidLoad() {

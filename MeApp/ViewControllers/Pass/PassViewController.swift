@@ -9,7 +9,7 @@
 import UIKit
 import Presentr
 
-class PassViewController: MABaseViewController, UITableViewDataSource, UITableViewDelegate {
+class PassViewController: MABaseViewController {
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var imageQR: UIImageView!
     
@@ -33,12 +33,40 @@ class PassViewController: MABaseViewController, UITableViewDataSource, UITableVi
         imageQR.generateQRCode(from: "456,66")
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    // MARK: - UITableViewDelegate
+    @IBAction func showEmailToMe(_ sender: Any) {
+        let popupTransction =  MAEmailForMeViewController(nibName: "MAEmailForMeViewController", bundle: nil)
+        presenter.presentationType = .popup
+        presenter.transitionType = nil
+        presenter.dismissTransitionType = nil
+        presenter.keyboardTranslationType = .compress
+        customPresentViewController(presenter, viewController: popupTransction, animated: true, completion: nil)
+    }
+    
+    @IBAction func showAmmount(_ sender: Any) {
+        let popupTransction =  MAShareVaucherViewController(nibName: "MAShareVaucherViewController", bundle: nil)
+        presenter.presentationType = .popup
+        presenter.transitionType = nil
+        presenter.dismissTransitionType = nil
+        presenter.keyboardTranslationType = .compress
+        customPresentViewController(presenter, viewController: popupTransction, animated: true, completion: nil)
+    }
+    
+}
+
+
+
+// MARK: - UITableViewDelegate
+extension PassViewController: UITableViewDataSource, UITableViewDelegate{
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -67,27 +95,12 @@ class PassViewController: MABaseViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (indexPath.row == 0){
-            let popupTransction =  MAValidationQRViewController(nibName: "MAValidationQRViewController", bundle: nil)
+            let popupTransction =  MATransactionBlueViewController(nibName: "MATransactionBlueViewController", bundle: nil)
             customPresentViewController(dynamicSizePresenter, viewController: popupTransction, animated: true, completion: nil)
         }else{
-            let popupTransction =  MASignUpViewController(nibName: "MASignUpViewController", bundle: nil)
-            presenter.presentationType = .popup
-            presenter.transitionType = nil
-            presenter.dismissTransitionType = nil
-            presenter.keyboardTranslationType = .compress
-            customPresentViewController(presenter, viewController: popupTransction, animated: true, completion: nil)
+            let popupTransction =  MATransactionBlueViewController(nibName: "MATransactionBlueViewController", bundle: nil)
+            customPresentViewController(dynamicSizePresenter, viewController: popupTransction, animated: true, completion: nil)
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 

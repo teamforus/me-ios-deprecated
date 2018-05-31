@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MAValidationSuccessViewController: UIViewController {
+class MAValidationSuccessViewController: MABasePopUpViewController {
     @IBOutlet weak var viewBody: UIView!
     
     override func viewDidLoad() {

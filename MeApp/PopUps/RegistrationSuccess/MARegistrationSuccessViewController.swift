@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MARegistrationSuccessViewController: UIViewController {
+class MARegistrationSuccessViewController: MABasePopUpViewController {
     @IBOutlet weak var viewBody: UIView!
     
     override func viewDidLoad() {

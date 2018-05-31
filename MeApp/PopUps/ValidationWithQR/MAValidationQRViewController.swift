@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MAValidationQRViewController: UIViewController {
+class MAValidationQRViewController: MABasePopUpViewController {
     @IBOutlet weak var qrCodeImage: UIImageView!
     @IBOutlet weak var viewBody: UIView!
     

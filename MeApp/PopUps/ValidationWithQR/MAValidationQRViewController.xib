@@ -79,6 +79,9 @@
                             <state key="normal" title="Sluit">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="dismiss:" destination="-1" eventType="touchUpInside" id="sa3-HS-6Ud"/>
+                            </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="qrCodeValidate" translatesAutoresizingMaskIntoConstraints="NO" id="70a-Oh-Y7A">
                             <rect key="frame" x="68" y="118" width="205" height="205"/>
