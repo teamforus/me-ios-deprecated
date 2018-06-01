@@ -19,7 +19,11 @@ class MAOfficeViewController: UIViewController {
         setupCenteredDropDown()
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+    }
+
     func setupCenteredDropDown() {
         chooseArticleDropDown.anchorView = dropDownButton
         chooseArticleDropDown.bottomOffset = CGPoint(x: 0, y: dropDownButton.bounds.height)

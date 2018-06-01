@@ -31,6 +31,11 @@ class MASwitchProfileViewController: MABaseViewController,MASwitchProfilePopUpVi
             topConstraint.constant = -20
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

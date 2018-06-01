@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P1o-sl-MnT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P1o-sl-MnT">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -159,11 +159,6 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wch-eo-gKn">
-                                        <rect key="frame" x="343" y="414" width="14" height="22"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="micro"/>
-                                    </button>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C9F-8g-OQf">
                                         <rect key="frame" x="-1" y="392" width="375" height="61"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -193,6 +188,11 @@
                                             <action selector="showAmmount:" destination="P1o-sl-MnT" eventType="touchUpInside" id="W6a-dF-fbZ"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zlr-ns-FQR" customClass="VoiceButtonView" customModule="MeApp" customModuleProvider="target">
+                                        <rect key="frame" x="344" y="411" width="14" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.25098039220000001" green="0.72549019609999998" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -275,6 +275,7 @@
                     <connections>
                         <outlet property="imageQR" destination="be5-K4-b8z" id="Gbz-rk-GLN"/>
                         <outlet property="searchField" destination="C9F-8g-OQf" id="eYG-5e-zDA"/>
+                        <outlet property="voiceButton" destination="Zlr-ns-FQR" id="VWG-Ok-P6H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pQF-2Z-J5L" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -319,11 +320,6 @@
                                         <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAD-0d-mhR">
-                                        <rect key="frame" x="343" y="232" width="14" height="22"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="micro"/>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QVd-Iv-6Z0">
                                         <rect key="frame" x="11" y="36" width="52" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -371,6 +367,11 @@
                                         <rect key="frame" x="324" y="162" width="24" height="12"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="19q-PJ-coP" customClass="VoiceButtonView" customModule="MeApp" customModuleProvider="target">
+                                        <rect key="frame" x="344" y="229" width="14" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.25098039220000001" green="0.72549019609999998" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -451,8 +452,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="fbk-I4-xhc"/>
                     <connections>
-                        <outlet property="searchField" destination="YBn-Qk-w8U" id="fZ0-RP-hKo"/>
+                        <outlet property="searchField" destination="YBn-Qk-w8U" id="KMl-lk-dcw"/>
                         <outlet property="tableView" destination="tpq-Lo-hPZ" id="YAN-6t-Hhc"/>
+                        <outlet property="voiceButton" destination="19q-PJ-coP" id="W8E-2L-mR3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9mN-Eq-5Wy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2000,7 +2002,6 @@ AAFkcQABZHkAAWR8AAFkjgABZJEAAWSWAAAAAAAABAEAAAAAAAAAWQAAAAAAAAAAAAAAAAABZJg
 </mutableData>
         </image>
         <image name="mailIcon" width="80" height="80"/>
-        <image name="micro" width="24" height="38"/>
         <image name="profileIcon" width="37" height="41"/>
         <image name="purpleEarth" width="120" height="120"/>
         <image name="qrCode" width="178" height="178"/>

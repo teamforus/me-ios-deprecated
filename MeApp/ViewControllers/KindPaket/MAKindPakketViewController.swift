@@ -9,7 +9,7 @@
 import UIKit
 import Presentr
 
-class MAKindPakketViewController: UIViewController, MAAllowViewControllerDelegate {
+class MAKindPakketViewController: MABaseViewController, MAAllowViewControllerDelegate {
     let presenter: Presentr = {
         let presenter = Presentr(presentationType: .alert)
         presenter.transitionType = TransitionType.coverHorizontalFromRight
@@ -20,6 +20,11 @@ class MAKindPakketViewController: UIViewController, MAAllowViewControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {

@@ -9,8 +9,9 @@
 import UIKit
 import Presentr
 
-class MALoginWithQRViewController: MABaseViewController, MARegistrationViewControllerDelegate {
+class MALoginWithQRViewController: MABaseViewController, MARegistrationViewControllerDelegate, MASignUpViewControllerDelegate {
    
+    var newIndetity: NewIdentity!
     let presenter: Presentr = {
         let presenter = Presentr(presentationType: .alert)
         presenter.transitionType = TransitionType.coverHorizontalFromRight
@@ -19,6 +20,7 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
     }()
     
     @IBOutlet weak var qrCodeImage: UIImageView!
+    var pinCode: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +34,7 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
 
     @IBAction func loginWithPinCode(_ sender: Any) {
         let popupTransction =  MASignUpViewController(nibName: "MASignUpViewController", bundle: nil)
+        popupTransction.delegate = self
         presenter.presentationType = .popup
         presenter.transitionType = nil
         presenter.dismissTransitionType = nil
@@ -49,18 +52,26 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
         customPresentViewController(presenter, viewController: popupTransction, animated: true, completion: nil)
     }
     
+    func confirmPinCode(_ controller: MASignUpViewController, pinCode: String) {
+        print(pinCode)
+        self.pinCode = pinCode
+    }
+    
     
     //MARK : MARegistrationViewControllerDelegate
     
-    func confirmationEmail(_ controller: MARegistrationViewController, confirmationSuccess: Bool) {
+    func confirmationEmail(_ controller: MARegistrationViewController, confirmationSuccess: Bool, email:String) {
         controller.dismiss(animated: true, completion: nil)
         if confirmationSuccess {
-            let popupTransction =  MARegistrationSuccessViewController(nibName: "MARegistrationSuccessViewController", bundle: nil)
-            presenter.presentationType = .popup
-            presenter.transitionType = nil
-            presenter.dismissTransitionType = nil
-            presenter.keyboardTranslationType = .compress
-            customPresentViewController(presenter, viewController: popupTransction, animated: true, completion: nil)
+            let authorizationEmail = AuthorizationEmail(email: email, source: "app.me_app")
+            AuthorizationEmailRequest.atuhorizeEmail(email: authorizationEmail)
+            self.performSegue(withIdentifier: "enterToWallet", sender: nil)
+//            let popupTransction =  MARegistrationSuccessViewController(nibName: "MARegistrationSuccessViewController", bundle: nil)
+//            presenter.presentationType = .popup
+//            presenter.transitionType = nil
+//            presenter.dismissTransitionType = nil
+//            presenter.keyboardTranslationType = .compress
+//            customPresentViewController(presenter, viewController: popupTransction, animated: true, completion: nil)
         }else{
             let popupTransction =  MAFailValidationViewController(nibName: "MAFailValidationViewController", bundle: nil)
             presenter.presentationType = .popup

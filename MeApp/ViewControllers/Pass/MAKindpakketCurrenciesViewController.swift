@@ -10,7 +10,9 @@ import UIKit
 import Presentr
 
 class MAKindpakketCurrenciesViewController: MABaseViewController {
+    
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var voiceButton: VoiceButtonView!
     @IBOutlet weak var searchField: UITextField!
     
     let dynamicSizePresenter: Presentr = {
@@ -23,10 +25,32 @@ class MAKindpakketCurrenciesViewController: MABaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchField.placeholderColor(text: "Zoek transacties", withColor: .white)
+        voiceButton.voiceButtonDelegate = self
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+}
+
+// MARK: - VoiceButtonDelegate
+
+extension MAKindpakketCurrenciesViewController: VoiceButtonDelegate{
+    func updateSpeechText(_ text: String) {
+        searchField.text = text
+    }
+    
+    func startedRecording() {
+        
+    }
+    
+    func stoppedRecording() {
+        
+    }
+    
+    func notifyError(_ error: String) {
+        
     }
 }
 

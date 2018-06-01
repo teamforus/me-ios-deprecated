@@ -16,18 +16,16 @@ enum WalletCase {
     case passes
 }
 
-class WalletViewController: UIViewController,SFSpeechRecognizerDelegate{
+class WalletViewController: UIViewController{
     
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var microUIButton: UIButton!
     var walletCase : WalletCase! = WalletCase.token
     
+    @IBOutlet weak var voiceButton: VoiceButtonView!
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "ro"))!
     
-    private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
-    private var recognitionTask: SFSpeechRecognitionTask?
-    private let audioEngine = AVAudioEngine()
     
     
     @IBOutlet weak var segmentedControl: ScrollableSegmentedControl!
@@ -36,6 +34,7 @@ class WalletViewController: UIViewController,SFSpeechRecognizerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        voiceButton.voiceButtonDelegate = self
         segmentedControl.segmentStyle = .textOnly
         segmentedControl.insertSegment(withTitle: "Valuta", image: nil, at: 0)
         segmentedControl.insertSegment(withTitle: "Bezit", image: nil, at: 1)
@@ -79,103 +78,28 @@ class WalletViewController: UIViewController,SFSpeechRecognizerDelegate{
         }
         self.tableView.reloadData()
     }
+}
+
+// MARK: - VoiceButtonDelegate
+
+extension WalletViewController: VoiceButtonDelegate{
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
-    // MARK: Speach
-    
-    @IBAction func microphoneTapped(_ sender: AnyObject) {
-        if audioEngine.isRunning {
-            audioEngine.stop()
-            recognitionRequest?.endAudio()
-            microUIButton.isEnabled = false
-            microUIButton.setTitle("Start Recording", for: .normal)
-        } else {
-            startRecording()
-            microUIButton.setTitle("Stop Recording", for: .normal)
-        }
+    func updateSpeechText(_ text: String) {
+        searchField.text = text
     }
     
-    func startRecording() {
-        
-        if recognitionTask != nil {
-            recognitionTask?.cancel()
-            recognitionTask = nil
-        }
-        
-        let audioSession = AVAudioSession.sharedInstance()
-        do {
-            try audioSession.setCategory(AVAudioSessionCategoryRecord)
-            try audioSession.setMode(AVAudioSessionModeMeasurement)
-            try audioSession.setActive(true, with: .notifyOthersOnDeactivation)
-        } catch {
-            print("audioSession properties weren't set because of an error.")
-        }
-        
-        recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
-        
-         let inputNode = audioEngine.inputNode
-        
-        guard let recognitionRequest = recognitionRequest else {
-            fatalError("Unable to create an SFSpeechAudioBufferRecognitionRequest object")
-        }
-        
-        recognitionRequest.shouldReportPartialResults = true
-        
-        recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest, resultHandler: { (result, error) in
-            
-            var isFinal = false
-            
-            if result != nil {
-                
-                self.searchField.text = result?.bestTranscription.formattedString
-                isFinal = (result?.isFinal)!
-            }
-            
-            if error != nil || isFinal {
-                self.audioEngine.stop()
-                inputNode.removeTap(onBus: 0)
-                
-                self.recognitionRequest = nil
-                self.recognitionTask = nil
-                
-                self.microUIButton.isEnabled = true
-            }
-        })
-        
-        let recordingFormat = inputNode.outputFormat(forBus: 0)
-        inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer, when) in
-            self.recognitionRequest?.append(buffer)
-        }
-        
-        audioEngine.prepare()
-        
-        do {
-            try audioEngine.start()
-        } catch {
-            print("audioEngine couldn't start because of an error.")
-        }
-        
-        searchField.text = "Say something, I'm listening!"
-        
+    func startedRecording() {
+        print("")
     }
     
-    func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
-        if available {
-            microUIButton.isEnabled = true
-        } else {
-            microUIButton.isEnabled = false
-        }
+    func stoppedRecording() {
+        print("")
     }
     
+    func notifyError(_ error: String) {
+        print(error)
+    }
 }
 
     // MARK: UITableViewDelegate

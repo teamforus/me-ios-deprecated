@@ -7,7 +7,7 @@
 //
 
 protocol MARegistrationViewControllerDelegate:class {
-    func confirmationEmail(_ controller: MARegistrationViewController, confirmationSuccess: Bool)
+    func confirmationEmail(_ controller: MARegistrationViewController, confirmationSuccess: Bool, email:String)
 }
 
 import UIKit
@@ -37,7 +37,7 @@ class MARegistrationViewController: MABasePopUpViewController, UITextFieldDelega
             if emailAddressField.text?.count != 0 {
                 emailAddressField.errorMessage = nil
                 if emailAddressField.text == reapeatEmailField.text{
-                    delegate?.confirmationEmail(self, confirmationSuccess: true)
+                    delegate?.confirmationEmail(self, confirmationSuccess: true,email: emailAddressField.text!)
                     reapeatEmailField.errorMessage = nil
                 }else{
                     reapeatEmailField.errorMessage = "Repeat Password field is not valid"

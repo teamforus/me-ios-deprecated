@@ -12,6 +12,7 @@ import Presentr
 class PassViewController: MABaseViewController {
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var imageQR: UIImageView!
+    @IBOutlet weak var voiceButton: VoiceButtonView!
     
     let dynamicSizePresenter: Presentr = {
         let presentationType = PresentationType.dynamic(center: .center)
@@ -29,6 +30,7 @@ class PassViewController: MABaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        voiceButton.voiceButtonDelegate = self
         searchField.placeholderColor(text: "Zoek transacties", withColor: .white)
         imageQR.generateQRCode(from: "456,66")
         
@@ -60,10 +62,28 @@ class PassViewController: MABaseViewController {
         presenter.keyboardTranslationType = .compress
         customPresentViewController(presenter, viewController: popupTransction, animated: true, completion: nil)
     }
-    
 }
 
+// MARK: - VoiceButtonDelegate
 
+extension PassViewController: VoiceButtonDelegate{
+    
+    func updateSpeechText(_ text: String) {
+        searchField.text = text
+    }
+    
+    func startedRecording() {
+        print("")
+    }
+    
+    func stoppedRecording() {
+        print("")
+    }
+    
+    func notifyError(_ error: String) {
+        print(error)
+    }
+}
 
 // MARK: - UITableViewDelegate
 extension PassViewController: UITableViewDataSource, UITableViewDelegate{

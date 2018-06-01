@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ofq-Zs-ITw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lM2-hz-Eye">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -216,14 +216,11 @@
                                 <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XGX-E0-t8D">
-                                <rect key="frame" x="343" y="147" width="14" height="22"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1VX-yP-knf" customClass="VoiceButtonView" customModule="MeApp" customModuleProvider="target">
+                                <rect key="frame" x="344" y="144" width="14" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="micro"/>
-                                <connections>
-                                    <action selector="microphoneTapped:" destination="AFR-4S-uKC" eventType="touchUpInside" id="oWX-bW-PHV"/>
-                                </connections>
-                            </button>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -231,10 +228,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="UnD-ca-UAZ"/>
                     <connections>
-                        <outlet property="microUIButton" destination="XGX-E0-t8D" id="jLG-M4-g3w"/>
                         <outlet property="searchField" destination="oED-1u-1hd" id="iMq-QG-iVt"/>
                         <outlet property="segmentedControl" destination="23n-Ck-4dG" id="bzw-Ye-qcj"/>
                         <outlet property="tableView" destination="WHB-Dg-CPc" id="L2T-jh-YzW"/>
+                        <outlet property="voiceButton" destination="1VX-yP-knf" id="GC9-uG-zD1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zm9-Ex-VsL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -419,7 +416,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hmp-3F-Enb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15" y="211"/>
+            <point key="canvasLocation" x="924" y="210.94452773613196"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="uvu-eQ-gQB">
@@ -462,15 +459,19 @@
                                 <state key="normal" title="IK HEB EEN ME IDENTITEIT" backgroundImage="baseLogin">
                                     <color key="titleColor" red="0.52156862745098043" green="0.57647058823529407" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="JBJ-8c-Pkg" kind="show" id="1Fs-W9-EKf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="7tB-pP-SWU"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Xsb-bY-p58"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ru-Rh-PyB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2983" y="211"/>
+            <point key="canvasLocation" x="-2044" y="210.94452773613196"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="5Hi-kT-km0">
@@ -490,7 +491,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2mN-53-BsI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1037" y="211"/>
+            <point key="canvasLocation" x="-98.400000000000006" y="210.94452773613196"/>
         </scene>
         <!--Eigendom-->
         <scene sceneID="a3q-UP-cbL">
@@ -542,7 +543,7 @@
                                 <rect key="frame" x="18" y="527" width="341" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Heavy" family="SF Pro Display" pointSize="15"/>
-                                <state key="normal" title="NIEUWE AANMAKEN" backgroundImage="baseButtonRegistration">
+                                <state key="normal" title="INLOGGEN MET PINCODE" backgroundImage="baseButtonRegistration">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -553,11 +554,12 @@
                                 <rect key="frame" x="18" y="595" width="341" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="15"/>
-                                <state key="normal" title="IK HEB EEN ME IDENTITEIT" backgroundImage="baseLogin">
+                                <state key="normal" title="INLOGGEN VIA E-MAIL" backgroundImage="baseLogin">
                                     <color key="titleColor" red="0.52156862749999999" green="0.57647058819999997" blue="0.65098039220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="loginWithEmail:" destination="JBJ-8c-Pkg" eventType="touchUpInside" id="2or-fD-i1X"/>
+                                    <segue destination="ofq-Zs-ITw" kind="presentation" identifier="enterToWallet" id="X9H-EV-j1k"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="baseNewProfile" translatesAutoresizingMaskIntoConstraints="NO" id="Cl5-XC-xcj">
@@ -617,7 +619,24 @@ apparaat waar u al op aangemeld bent</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mee-gd-9An" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2244" y="210.94452773613196"/>
+            <point key="canvasLocation" x="-1304.8" y="210.94452773613196"/>
+        </scene>
+        <!--Hidden Nav Bar Navigation Controller-->
+        <scene sceneID="Q6C-y1-Lua">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="lM2-hz-Eye" customClass="HiddenNavBarNavigationController" customModule="MeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="R8a-7L-kzz">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3bo-TV-QfP" kind="relationship" relationship="rootViewController" id="MuP-9X-Oh9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6RY-Z3-W6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2983.1999999999998" y="210.94452773613196"/>
         </scene>
     </scenes>
     <resources>
@@ -631,7 +650,6 @@ apparaat waar u al op aangemeld bent</string>
         <image name="iconNotes" width="60" height="60"/>
         <image name="information" width="20" height="20"/>
         <image name="logoLogin" width="100" height="86"/>
-        <image name="micro" width="24" height="38"/>
         <image name="profileIcon" width="37" height="41"/>
         <image name="records" width="20" height="24"/>
         <image name="shape1" width="21" height="21"/>
