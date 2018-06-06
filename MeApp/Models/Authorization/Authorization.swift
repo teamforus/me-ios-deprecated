@@ -13,6 +13,8 @@ class Authorization: Mappable {
     var accessToken : String?
     var success : Bool?
     var authenticationCode : NSNumber?
+    var message : String?
+    var error: Error?
     
     required init?(map: Map) {}
     
@@ -20,6 +22,8 @@ class Authorization: Mappable {
         self.accessToken <- map["access_token"]
         self.success <- map["success"]
         self.authenticationCode <- map["auth_code"]
+        self.message <- map["message"]
+        self.error <- map["errors"]
     }
     
 

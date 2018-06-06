@@ -31,6 +31,6 @@ class Erros: Mappable {
     }
     
     func mapping(map: Map) {
-        self.recordMessage <- map["records.email"]
+        self.recordMessage <- map["email"]
     }
 }

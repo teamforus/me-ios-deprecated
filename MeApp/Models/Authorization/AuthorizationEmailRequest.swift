@@ -22,6 +22,7 @@ class AuthorizationEmailRequest {
             case .success:
                 print(response)
                 let newIdentityResponse = Mapper<Authorization>().map(JSONObject:response.result.value)
+                print(newIdentityResponse)
                 break
             case .failure(let error):
                 

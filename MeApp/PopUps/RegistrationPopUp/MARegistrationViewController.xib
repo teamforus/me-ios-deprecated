@@ -41,7 +41,7 @@
             <subviews>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1rv-MO-7M1">
                     <rect key="frame" x="0.0" y="0.0" width="341" height="438"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="baseRegistration" translatesAutoresizingMaskIntoConstraints="NO" id="l7v-Rg-WMO">
                             <rect key="frame" x="0.0" y="-7" width="341" height="132"/>

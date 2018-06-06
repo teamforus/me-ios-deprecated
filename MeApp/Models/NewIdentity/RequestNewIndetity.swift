@@ -22,7 +22,7 @@ class RequestNewIndetity{
             case .success:
                 print(response)
                 let newIdentityResponse = Mapper<Response>().map(JSONObject:response.result.value)
-                print(newIdentityResponse)
+                print(newIdentityResponse as Any)
                 break
             case .failure(let error):
                 
