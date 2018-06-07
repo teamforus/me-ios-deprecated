@@ -17,13 +17,7 @@ pod 'ObjectMapper'
 pod 'ReachabilitySwift'
 pod 'AlertBar'
 pod 'SkyFloatingLabelTextField'
-pod 'TrustCore'
-pod 'TrustKeystore'
-pod 'TrustWeb3Provider'
-pod 'TrustWalletSDK'
-pod 'CryptoSwift', '~> 0.8.0'
-pod 'RealmSwift'
-
+pod 'web3swift', :git => 'https://github.com/MercuryProtocol/web3.swift.git', :branch => 'master'
   target 'MeAppTests' do
     inherit! :search_paths
   end
