@@ -46,7 +46,7 @@ class WalletViewController: UIViewController{
         segmentedControl.addTarget(self, action: #selector(self.segmentSelected(sender:)), for: .valueChanged)
         searchField.placeholderColor(text: "Zoek valuta", withColor: .white)
         tableView.keyboardDismissMode = .onDrag
-        Service.createNewAccount(username: "daniel", password: "123456")
+        Web3Provider.getBalance()
     }
     
     override func viewWillAppear(_ animated: Bool) {
