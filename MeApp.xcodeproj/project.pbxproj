@@ -44,6 +44,10 @@
 		6556376420B7078800E45487 /* MASetUpPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6556376320B7078800E45487 /* MASetUpPinViewController.swift */; };
 		6556376620B718DF00E45487 /* MASpeachRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6556376520B718DF00E45487 /* MASpeachRecognition.swift */; };
 		6556376820B726F700E45487 /* MABaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6556376720B726F700E45487 /* MABaseViewController.swift */; };
+		659B7E2A20D006F50030D903 /* HelloWorld.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 659B7E2920D006F50030D903 /* HelloWorld.storyboard */; };
+		659B7E2C20D007550030D903 /* MAHelloWorldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659B7E2B20D007550030D903 /* MAHelloWorldViewController.swift */; };
+		659B7E2F20D0088A0030D903 /* ResponseMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659B7E2D20D008890030D903 /* ResponseMessages.swift */; };
+		659B7E3020D0088A0030D903 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659B7E2E20D0088A0030D903 /* Messages.swift */; };
 		65A51F6B20B2FFF10010DB33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A51F6A20B2FFF10010DB33 /* AppDelegate.swift */; };
 		65A51F7320B2FFF20010DB33 /* MeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65A51F7120B2FFF20010DB33 /* MeApp.xcdatamodeld */; };
 		65A51F7520B2FFF40010DB33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65A51F7420B2FFF40010DB33 /* Assets.xcassets */; };
@@ -201,6 +205,10 @@
 		6556376320B7078800E45487 /* MASetUpPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MASetUpPinViewController.swift; sourceTree = "<group>"; };
 		6556376520B718DF00E45487 /* MASpeachRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MASpeachRecognition.swift; sourceTree = "<group>"; };
 		6556376720B726F700E45487 /* MABaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MABaseViewController.swift; sourceTree = "<group>"; };
+		659B7E2920D006F50030D903 /* HelloWorld.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HelloWorld.storyboard; sourceTree = "<group>"; };
+		659B7E2B20D007550030D903 /* MAHelloWorldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAHelloWorldViewController.swift; sourceTree = "<group>"; };
+		659B7E2D20D008890030D903 /* ResponseMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseMessages.swift; sourceTree = "<group>"; };
+		659B7E2E20D0088A0030D903 /* Messages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		65A51F6720B2FFF10010DB33 /* MeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A51F6A20B2FFF10010DB33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65A51F7220B2FFF20010DB33 /* MeApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MeApp.xcdatamodel; sourceTree = "<group>"; };
@@ -409,6 +417,8 @@
 		65467FA620B82370009E99CC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				659B7E2E20D0088A0030D903 /* Messages.swift */,
+				659B7E2D20D008890030D903 /* ResponseMessages.swift */,
 				65467FA720B8237A009E99CC /* Authorization */,
 				65467FAB20B8290B009E99CC /* Category */,
 				65467FAE20B82F6E009E99CC /* Record */,
@@ -515,6 +525,7 @@
 				65A51FA120B300EA0010DB33 /* Main.storyboard */,
 				65A51F9D20B300E90010DB33 /* PassStoryboard.storyboard */,
 				65B89ACC20B4761C0024DC51 /* NewProfile.storyboard */,
+				659B7E2920D006F50030D903 /* HelloWorld.storyboard */,
 				65BFF47120C1A61B00F64215 /* VoiceButton */,
 				65FC865D20B5D8F5001FECA5 /* Extension */,
 				65A51FF320B333D10010DB33 /* PopUps */,
@@ -664,6 +675,7 @@
 				65D764E120B73940007D7B9D /* PinProfile */,
 				6504474320C077FE00D040B9 /* LoginWithQR */,
 				6504474420C0787C00D040B9 /* KindPaket */,
+				659B7E2B20D007550030D903 /* MAHelloWorldViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1015,6 +1027,7 @@
 				65B89AC020B448CB0024DC51 /* MAAllowViewController.xib in Resources */,
 				65A51FD320B3012C0010DB33 /* SF-Pro-Display-Bold.otf in Resources */,
 				65FC85FF20B58426001FECA5 /* MAValidationQRViewController.xib in Resources */,
+				659B7E2A20D006F50030D903 /* HelloWorld.storyboard in Resources */,
 				65A51FD420B3012C0010DB33 /* SF-Pro-Display-Medium.otf in Resources */,
 				65A51FCD20B3012C0010DB33 /* SF-Pro-Display-SemiboldItalic.otf in Resources */,
 				65A51FCE20B3012C0010DB33 /* SF-Pro-Text-Heavy.otf in Resources */,
@@ -1124,7 +1137,7 @@
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/ExpandableCell/ExpandableCell.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/JSONCodable/JSONCodable.framework",
 				"${BUILT_PRODUCTS_DIR}/Presentr/Presentr.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
@@ -1145,7 +1158,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ExpandableCell.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONCodable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Presentr.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
@@ -1290,6 +1303,7 @@
 				65BFF46820C16C3C00F64215 /* RequestNewIndetity.swift in Sources */,
 				65BFF46A20C1820A00F64215 /* BaseURL.swift in Sources */,
 				6556375D20B6DE8300E45487 /* PopupViewDirection.swift in Sources */,
+				659B7E3020D0088A0030D903 /* Messages.swift in Sources */,
 				6556375520B6DE8300E45487 /* ShapeType.swift in Sources */,
 				65467FA520B821E7009E99CC /* Authorization.swift in Sources */,
 				6556375C20B6DE8300E45487 /* PopupItem.swift in Sources */,
@@ -1327,6 +1341,7 @@
 				65B89AB520B43FA50024DC51 /* MAValidationSuccessViewController.swift in Sources */,
 				6556376620B718DF00E45487 /* MASpeachRecognition.swift in Sources */,
 				6556376420B7078800E45487 /* MASetUpPinViewController.swift in Sources */,
+				659B7E2C20D007550030D903 /* MAHelloWorldViewController.swift in Sources */,
 				65BFF47D20C1A61C00F64215 /* VoiceButtonView.swift in Sources */,
 				65FC85FE20B58426001FECA5 /* MAValidationQRViewController.swift in Sources */,
 				65467FB020B86C57009E99CC /* MALoginWithQRViewController.swift in Sources */,
@@ -1337,6 +1352,7 @@
 				65B89A9C20B422D30024DC51 /* MAWaitingViewController.swift in Sources */,
 				65A51FAC20B300EA0010DB33 /* WaletTableViewCell.swift in Sources */,
 				6556375B20B6DE8300E45487 /* ViewType.swift in Sources */,
+				659B7E2F20D0088A0030D903 /* ResponseMessages.swift in Sources */,
 				65BFF47A20C1A61C00F64215 /* SpeechRecorder.swift in Sources */,
 				65BFF47020C193A200F64215 /* AuthorizationEmailRequest.swift in Sources */,
 				65FC85F820B56FA2001FECA5 /* MANavicationController.swift in Sources */,

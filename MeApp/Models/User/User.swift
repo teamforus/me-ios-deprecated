@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import ObjectMapper
 
-class User {
+class User{
     var name: String?
     var image: UIImage?
   

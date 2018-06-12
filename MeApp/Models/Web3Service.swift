@@ -40,7 +40,7 @@ public class Service{
     
  
     
-    func signTranasaction() ->String {
+    static func signTranasaction() ->String {
       let signedTx = Service.prepareTransaction()
         let signedTxData = try! signedTx?.encodeRLP()
         print("\(signedTxData!.toHexString())\n\(signedTxData!.bytes)")
@@ -48,17 +48,16 @@ public class Service{
        
     }
     
-     func sendContract( completion: @escaping (String?, Error?) -> Void) {
-        let base64SignedTx = signTranasaction()
+    static func sendContract( completion: @escaping (String?, Error?) -> Void) {
+        let base64SignedTx = Service.signTranasaction()
         let parameters: Parameters = [
             "signedTx" : base64SignedTx as Any,
             ]
-        Alamofire.request(BaseURL.baseURL(url: ""), method: .post, parameters: parameters, encoding: JSONEncoding.default).responseData { (response) in
+        Alamofire.request("http://requestbin.fullcontact.com/1jttdvr1", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseData { (response) in
             if let data = response.result.value {
                 let transactionHash = String(describing: data)
                 completion(transactionHash, nil)
             } else {
-                // Pass appropriate error here
                 completion(nil, nil)
             }
         }

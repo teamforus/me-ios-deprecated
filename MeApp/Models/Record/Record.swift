@@ -7,9 +7,8 @@
 //
 
 import Foundation
-import ObjectMapper
 
-class Record: Mappable {
+class Record{
     var id : NSNumber?
     var value : String?
     var order : NSNumber?
@@ -17,14 +16,14 @@ class Record: Mappable {
     var recordCategoryId : NSNumber?
     var valid : Bool?
     
-    required init?(map: Map) {}
-    
-    func mapping(map: Map) {
-        self.id <- map["id"]
-        self.value <- map["value"]
-        self.order <- map["order"]
-        self.key <- map["key"]
-        self.recordCategoryId <- map["record_category_id"]
-        self.valid <- map["valid"]
-    }
+//    required init?(map: Map) {}
+//
+//    func mapping(map: Map) {
+//        self.id <- map["id"]
+//        self.value <- map["value"]
+//        self.order <- map["order"]
+//        self.key <- map["key"]
+//        self.recordCategoryId <- map["record_category_id"]
+//        self.valid <- map["valid"]
+//    }
 }

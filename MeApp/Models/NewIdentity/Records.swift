@@ -7,19 +7,18 @@
 //
 
 import UIKit
-import ObjectMapper
 
-class Records: Mappable {
+class Records {
     var email : String?
     
-    init(email:String) {
-        self.email = email
-    }
-    
-    required init?(map: Map) {
-    }
-    
-     func mapping(map: Map) {
-        self.email <- map["email"]
-    }
+//    init(email:String) {
+//        self.email = email
+//    }
+//    
+//    required init?(map: Map) {
+//    }
+//    
+//     func mapping(map: Map) {
+//        self.email <- map["email"]
+//    }
 }

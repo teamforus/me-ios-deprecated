@@ -7,18 +7,11 @@
 //
 
 import Foundation
-import ObjectMapper
+import JSONCodable
 
-class Category: Mappable {
+class Category {
     var id : NSNumber?
     var name : String?
     var order : NSNumber?
     
-    required init?(map: Map) {}
-    
-     func mapping(map: Map) {
-        self.id <- map["id"]
-        self.name <- map["name"]
-        self.order <- map["order"]
-    }
 }

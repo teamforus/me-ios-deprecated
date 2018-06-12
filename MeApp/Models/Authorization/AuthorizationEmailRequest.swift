@@ -8,7 +8,6 @@
 
 import Foundation
 import Alamofire
-import ObjectMapper
 
 class AuthorizationEmailRequest {
     
@@ -16,13 +15,13 @@ class AuthorizationEmailRequest {
         let headers: HTTPHeaders = [
             "Accept": "application/json"
         ]
-        Alamofire.request(BaseURL.baseURL(url: "identity/proxy/email"), method: .post, parameters: email.toJSON(),encoding: JSONEncoding.default, headers: headers).responseJSON {
+        Alamofire.request(BaseURL.baseURL(url: "identity/proxy/email"), method: .post, parameters:nil,encoding: JSONEncoding.default, headers: headers).responseJSON {
             response in
             switch response.result {
             case .success:
                 print(response)
-                let newIdentityResponse = Mapper<Authorization>().map(JSONObject:response.result.value)
-                print(newIdentityResponse)
+//                let newIdentityResponse = Mapper<Authorization>().map(JSONObject:response.result.value)
+//                print(newIdentityResponse)
                 break
             case .failure(let error):
                 

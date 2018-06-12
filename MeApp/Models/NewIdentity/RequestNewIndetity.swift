@@ -8,7 +8,6 @@
 
 import Foundation
 import Alamofire
-import ObjectMapper
 
 class RequestNewIndetity{
     
@@ -16,13 +15,13 @@ class RequestNewIndetity{
         let headers: HTTPHeaders = [
             "Accept": "application/json"
         ]
-        Alamofire.request(BaseURL.baseURL(url: "identity"), method: .post, parameters: newIndeity.toJSON(),encoding: JSONEncoding.default, headers: headers).responseJSON {
+        Alamofire.request(BaseURL.baseURL(url: "identity"), method: .post, parameters: nil,encoding: JSONEncoding.default, headers: headers).responseJSON {
             response in
             switch response.result {
             case .success:
                 print(response)
-                let newIdentityResponse = Mapper<Response>().map(JSONObject:response.result.value)
-                print(newIdentityResponse as Any)
+//                let newIdentityResponse = Mapper<Response>().map(JSONObject:response.result.value)
+//                print(newIdentityResponse as Any)
                 break
             case .failure(let error):
                 

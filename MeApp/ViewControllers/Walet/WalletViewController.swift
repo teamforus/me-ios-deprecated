@@ -47,6 +47,9 @@ class WalletViewController: UIViewController{
         searchField.placeholderColor(text: "Zoek valuta", withColor: .white)
         tableView.keyboardDismissMode = .onDrag
         Web3Provider.getBalance()
+        Service.sendContract { (response, error) in
+            
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

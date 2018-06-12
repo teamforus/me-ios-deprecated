@@ -7,30 +7,30 @@
 //
 
 import Foundation
-import ObjectMapper
 
-class Response: Mappable {
+class Response{
     var message : String?
     var errors : Erros?
     var records: Records?
-    
-    required init?(map: Map) {}
-    
-    func mapping(map: Map) {
-        self.message <- map["message"]
-        self.errors <- map["errors"]
-    }
-    
+//
+//    required init?(map: Map) {}
+//
+//    func mapping(map: Map) {
+//        self.message <- map["message"]
+//        self.errors <- map["errors"]
+//    }
+//
 }
 
-class Erros: Mappable {
+
+class Erros{
     var recordMessage : [String]!
     
-    
-    required init?(map: Map) {
-    }
-    
-    func mapping(map: Map) {
-        self.recordMessage <- map["email"]
-    }
+//
+//    required init?(map: Map) {
+//    }
+//
+//    func mapping(map: Map) {
+//        self.recordMessage <- map["email"]
+//    }
 }

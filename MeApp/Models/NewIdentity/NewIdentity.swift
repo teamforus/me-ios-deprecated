@@ -7,26 +7,25 @@
 //
 
 import UIKit
-import ObjectMapper
 
-class NewIdentity: Mappable {
+class NewIdentity {
     var pinCode : String?
     var type : String?
     var records: Records?
     
-    init(pinCode:String, type:String, records: Records) {
-        self.pinCode = pinCode
-        self.type = type
-        self.records = records
-    }
-    
-    required init?(map: Map) {}
-    
-    func mapping(map: Map) {
-        self.pinCode <- map["pin_code"]
-        self.type <- map["type"]
-        self.records <- map["records"]
-    }
+//    init(pinCode:String, type:String, records: Records) {
+//        self.pinCode = pinCode
+//        self.type = type
+//        self.records = records
+//    }
+//    
+//    required init?(map: Map) {}
+//    
+//    func mapping(map: Map) {
+//        self.pinCode <- map["pin_code"]
+//        self.type <- map["type"]
+//        self.records <- map["records"]
+//    }
     
 }
 
