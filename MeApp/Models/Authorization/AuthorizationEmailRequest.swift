@@ -8,20 +8,24 @@
 
 import Foundation
 import Alamofire
+import JSONCodable
 
 class AuthorizationEmailRequest {
     
-    static func atuhorizeEmail(email: AuthorizationEmail){
+    static func atuhorizeEmail(parameters: Parameters, completion: @escaping ((Response) -> Void)){
         let headers: HTTPHeaders = [
             "Accept": "application/json"
         ]
-        Alamofire.request(BaseURL.baseURL(url: "identity/proxy/email"), method: .post, parameters:nil,encoding: JSONEncoding.default, headers: headers).responseJSON {
+        Alamofire.request(BaseURL.baseURL(url: "identity/proxy/email"), method: .post, parameters:parameters,encoding: JSONEncoding.default, headers: headers).responseJSON {
             response in
             switch response.result {
             case .success:
                 print(response)
-//                let newIdentityResponse = Mapper<Authorization>().map(JSONObject:response.result.value)
-//                print(newIdentityResponse)
+                if let json = response.result.value {
+                    let messages = try! Response(object: json as! JSONObject)
+                    print(messages)
+                    completion(messages)
+                }
                 break
             case .failure(let error):
                 

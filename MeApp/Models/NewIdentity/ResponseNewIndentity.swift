@@ -7,30 +7,23 @@
 //
 
 import Foundation
+import JSONCodable
 
-class Response{
+struct Response{
     var message : String?
-    var errors : Erros?
+    var errors : Errors?
     var records: Records?
-//
-//    required init?(map: Map) {}
-//
-//    func mapping(map: Map) {
-//        self.message <- map["message"]
-//        self.errors <- map["errors"]
-//    }
-//
+}
+
+extension Response: JSONDecodable{
+    init(object: JSONObject) throws {
+        let decoder = JSONDecoder(object:object)
+        message = try decoder.decode("message")
+        errors = try decoder.decode("errors")
+        records = try decoder.decode("records")
+    }
 }
 
 
-class Erros{
-    var recordMessage : [String]!
-    
-//
-//    required init?(map: Map) {
-//    }
-//
-//    func mapping(map: Map) {
-//        self.recordMessage <- map["email"]
-//    }
-}
+
+

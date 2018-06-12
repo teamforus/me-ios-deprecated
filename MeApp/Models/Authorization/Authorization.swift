@@ -12,24 +12,31 @@ import JSONCodable
 struct Authorization {
     var accessToken : String?
     var success : Bool?
-    var authenticationCode : NSNumber?
+    var authenticationCode : Int?
     var message : String?
-    var error: Error?
+    var errors: Errors?
     
-//    required init?(map: Map) {}
-//    
-//     func mapping(map: Map) {
-//        self.accessToken <- map["access_token"]
-//        self.success <- map["success"]
-//        self.authenticationCode <- map["auth_code"]
-//        self.message <- map["message"]
-//        self.error <- map["errors"]
-//    }
 }
 
 extension Authorization: JSONDecodable{
     init(object: JSONObject) throws {
+        let decoder = JSONDecoder(object:object)
+        accessToken = try decoder.decode("access_token")
+        success = try decoder.decode("success")
+        authenticationCode = try decoder.decode("auth_code")
+        message = try decoder.decode("message")
+        errors = try decoder.decode("errors")
         
     }
 }
 
+struct Errors{
+    var recordMessage : [String]!
+}
+
+extension Errors: JSONDecodable{
+    init(object: JSONObject) throws {
+        let decoder = JSONDecoder(object:object)
+        recordMessage = try decoder.decode("email")
+    }
+}

@@ -7,18 +7,23 @@
 //
 
 import UIKit
+import JSONCodable
 
-class Records {
+struct Records {
     var email : String?
-    
-//    init(email:String) {
-//        self.email = email
-//    }
-//    
-//    required init?(map: Map) {
-//    }
-//    
-//     func mapping(map: Map) {
-//        self.email <- map["email"]
-//    }
+}
+
+extension Records: JSONDecodable{
+    init(object: JSONObject) throws {
+        let decoder = JSONDecoder(object:object)
+        email = try decoder.decode("email")
+    }
+}
+
+extension Records: JSONEncodable{
+    func toJSON() throws -> Any {
+        return try JSONEncoder.create({ (encoder) -> Void in
+            try encoder.encode(email, key:"email")
+        })
+    }
 }

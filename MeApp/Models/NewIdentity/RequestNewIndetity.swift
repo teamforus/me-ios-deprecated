@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import JSONCodable
 
 class RequestNewIndetity{
     
@@ -20,8 +21,10 @@ class RequestNewIndetity{
             switch response.result {
             case .success:
                 print(response)
-//                let newIdentityResponse = Mapper<Response>().map(JSONObject:response.result.value)
-//                print(newIdentityResponse as Any)
+                if let json = response.result.value {
+                    let messages = try! Response(object: json as! JSONObject)
+                    print(messages)
+                }
                 break
             case .failure(let error):
                 

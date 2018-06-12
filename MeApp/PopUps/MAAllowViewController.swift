@@ -24,8 +24,6 @@ class MAAllowViewController: MABasePopUpViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-  
 }
 
 // MARK: - UITableViewDelegate

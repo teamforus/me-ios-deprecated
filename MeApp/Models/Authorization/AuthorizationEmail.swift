@@ -7,20 +7,26 @@
 //
 
 import Foundation
+import JSONCodable
 
 struct AuthorizationEmail{
     var email : String?
     var source : String?
-    
-//    init(email: String, source: String) {
-//        self.email = email
-//        self.source = source
-//    }
-//
-//    required init?(map: Map) {}
-//
-//    func mapping(map: Map) {
-//        self.email <- map["email"]
-//        self.source <- map["source"]
-//    }
+}
+
+extension AuthorizationEmail: JSONDecodable{
+    init(object: JSONObject) throws {
+        let decoder = JSONDecoder(object:object)
+        email = try decoder.decode("email")
+        source = try decoder.decode("source")
+    }
+}
+
+extension AuthorizationEmail: JSONEncodable{
+    func toJSON() throws -> Any {
+        return try JSONEncoder.create({ (encoder) -> Void in
+            try encoder.encode(email, key:"email")
+            try encoder.encode(source, key:"source")
+        })
+    }
 }

@@ -7,23 +7,39 @@
 //
 
 import Foundation
+import JSONCodable
 
-class Record{
-    var id : NSNumber?
+struct Record{
+    var id : Int?
     var value : String?
-    var order : NSNumber?
+    var order : Int?
     var key : String?
-    var recordCategoryId : NSNumber?
+    var recordCategoryId : Int?
     var valid : Bool?
-    
-//    required init?(map: Map) {}
-//
-//    func mapping(map: Map) {
-//        self.id <- map["id"]
-//        self.value <- map["value"]
-//        self.order <- map["order"]
-//        self.key <- map["key"]
-//        self.recordCategoryId <- map["record_category_id"]
-//        self.valid <- map["valid"]
-//    }
+}
+
+extension Record: JSONDecodable{
+     init(object: JSONObject) throws {
+        let decoder = JSONDecoder(object:object)
+        id = try decoder.decode("id")
+        value = try decoder.decode("value")
+        order = try decoder.decode("order")
+        key = try decoder.decode("key")
+        recordCategoryId = try decoder.decode("record_category_id")
+        valid = try decoder.decode("valid")
+        
+    }
+}
+
+extension Record: JSONEncodable{
+    func toJSON() throws -> Any {
+         return try JSONEncoder.create({ (encoder) -> Void in
+            try encoder.encode(id, key:"id")
+            try encoder.encode(value, key:"value")
+            try encoder.encode(order, key:"order")
+            try encoder.encode(key, key:"key")
+            try encoder.encode(recordCategoryId, key:"record_category_id")
+            try encoder.encode(valid, key:"valid")
+        })
+    }
 }

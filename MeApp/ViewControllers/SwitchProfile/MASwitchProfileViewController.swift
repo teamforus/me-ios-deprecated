@@ -50,6 +50,6 @@ class MASwitchProfileViewController: MABaseViewController,MASwitchProfilePopUpVi
     
     func switchProfile(_ controller: MASwitchProfilePopUpViewController, user: User) {
         profileName.text = user.name
-        profileImage.image = user.image
+//        profileImage.image = user.image
     }
 }

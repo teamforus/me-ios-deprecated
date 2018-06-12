@@ -77,9 +77,9 @@ extension MASwitchProfilePopUpViewController: UITableViewDelegate, UITableViewDa
             alert.addAction(UIAlertAction(title: "YES", style: .default, handler: { (action) -> Void in
                 alert.dismiss(animated: true, completion: nil)
                 self.dismiss(animated: true, completion: nil)
-                let user: User = User()
+                var user: User = User()
                 user.name = cell.profileName.text
-                user.image = cell.profileImage.image
+//                user.image = cell.profileImage.image
                 self.delegate.switchProfile(self, user: user)
             }))
             alert.addAction(action)

@@ -41,10 +41,6 @@ public class MASpeachRecognition: NSObject,SFSpeechRecognizerDelegate {
     
     private func authorize() {
         SFSpeechRecognizer.requestAuthorization { authStatus in
-            /*
-             The callback may not be called on the main thread. Add an
-             operation to the main queue to update the record button's state.
-             */
             OperationQueue.main.addOperation {
                 switch authStatus {
                 case .authorized:
@@ -66,8 +62,6 @@ public class MASpeachRecognition: NSObject,SFSpeechRecognizerDelegate {
     }
     
     private func startRecording() throws {
-        
-        // Cancel the previous task if it's running.
         if let recognitionTask = recognitionTask {
             recognitionTask.cancel()
             self.recognitionTask = nil
@@ -83,16 +77,11 @@ public class MASpeachRecognition: NSObject,SFSpeechRecognizerDelegate {
         let inputNode = audioEngine.inputNode
         guard let recognitionRequest = recognitionRequest else { fatalError("Unable to created a SFSpeechAudioBufferRecognitionRequest object") }
         
-        // Configure request so that results are returned before audio recording is finished
         recognitionRequest.shouldReportPartialResults = true
-        
-        // A recognition task represents a speech recognition session.
-        // We keep a reference to the task so that it can be cancelled.
         recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest) { result, error in
             var isFinal = false
             
             if let result = result {
-                // Do something with result string
                 isFinal = result.isFinal
             }
             

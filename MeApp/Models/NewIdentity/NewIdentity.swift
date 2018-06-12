@@ -7,26 +7,33 @@
 //
 
 import UIKit
+import JSONCodable
 
-class NewIdentity {
+struct NewIdentity {
     var pinCode : String?
     var type : String?
     var records: Records?
-    
-//    init(pinCode:String, type:String, records: Records) {
-//        self.pinCode = pinCode
-//        self.type = type
-//        self.records = records
-//    }
-//    
-//    required init?(map: Map) {}
-//    
-//    func mapping(map: Map) {
-//        self.pinCode <- map["pin_code"]
-//        self.type <- map["type"]
-//        self.records <- map["records"]
-//    }
-    
 }
+
+extension NewIdentity: JSONDecodable{
+    init(object: JSONObject) throws {
+        let decoder = JSONDecoder(object:object)
+        pinCode = try decoder.decode("pin_code")
+        type = try decoder.decode("type")
+        
+    }
+}
+
+extension NewIdentity: JSONEncodable{
+    func toJSON() throws -> Any {
+         return try JSONEncoder.create({ (encoder) -> Void in
+            try encoder.encode(pinCode, key:"pincode")
+            try encoder.encode(type, key:"type")
+            try encoder.encode(records, key:"records")
+        })
+    }
+}
+
+
 
 

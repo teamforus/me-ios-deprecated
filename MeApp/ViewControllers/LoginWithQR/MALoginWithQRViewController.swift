@@ -8,6 +8,7 @@
 
 import UIKit
 import Presentr
+import Alamofire
 
 class MALoginWithQRViewController: MABaseViewController, MARegistrationViewControllerDelegate, MASignUpViewControllerDelegate {
    
@@ -63,9 +64,7 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
     func confirmationEmail(_ controller: MARegistrationViewController, confirmationSuccess: Bool, email:String) {
         controller.dismiss(animated: true, completion: nil)
         if confirmationSuccess {
-            let authorizationEmail = AuthorizationEmail(email: email, source: "app.me_app")
-            AuthorizationEmailRequest.atuhorizeEmail(email: authorizationEmail)
-            self.performSegue(withIdentifier: "enterToWallet", sender: nil)
+            
 //            let popupTransction =  MARegistrationSuccessViewController(nibName: "MARegistrationSuccessViewController", bundle: nil)
 //            presenter.presentationType = .popup
 //            presenter.transitionType = nil
