@@ -34,40 +34,8 @@ class MARecordsViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
 
-//extension MARecordsViewController: UITableViewDelegate,UITableViewDataSource{
-//
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return titles.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MARecordsTableViewCell
-//
-//        cell.titleCategory.text = titles.object(at: indexPath.row) as? String
-//        cell.categoryIcon.image = UIImage(named: images.object(at: indexPath.row) as! String)
-//
-//        return cell
-//
-//    }
-//
-//}
 
 extension MARecordsViewController: ExpandableDelegate {
     func expandableTableView(_ expandableTableView: ExpandableTableView, expandedCellsForRowAt indexPath: IndexPath) -> [UITableViewCell]? {
@@ -87,7 +55,7 @@ extension MARecordsViewController: ExpandableDelegate {
             cell4.titleLabel.text = "E-MAIL"
             cell4.infoCategory.text = "john@forus.io"
             let cell5 = tableView.dequeueReusableCell(withIdentifier: ExpandedCell.ID) as! ExpandedCell
-            cell5.titleLabel.text = "TELWFOONNUMMER "
+            cell5.titleLabel.text = "TELWFOONNUMMER"
             cell5.infoCategory.text = "+315349635"
             return [cell1, cell2, cell3, cell4, cell5]
         }
@@ -98,7 +66,6 @@ extension MARecordsViewController: ExpandableDelegate {
         if indexPath.row == 1 {
             return [55, 55, 55, 55, 55]
         }
-        
         return nil
     }
     
@@ -132,8 +99,6 @@ extension MARecordsViewController: ExpandableDelegate {
             let cell = expandableTableView.dequeueReusableCell(withIdentifier:"cell") as! MARecordsTableViewCell
             cell.titleCategory.text = titles.object(at: indexPath.row) as? String
             cell.categoryIcon.image = UIImage(named: images.object(at: indexPath.row) as! String)
-            
-            
             return cell
         default:
             break

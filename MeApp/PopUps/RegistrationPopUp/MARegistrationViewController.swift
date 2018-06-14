@@ -39,7 +39,7 @@ class MARegistrationViewController: MABasePopUpViewController, UITextFieldDelega
             if emailAddressField.text?.count != 0 {
                 emailAddressField.errorMessage = nil
                 if emailAddressField.text == reapeatEmailField.text{
-//                    delegate?.confirmationEmail(self, confirmationSuccess: true,email: emailAddressField.text!)
+                    delegate?.confirmationEmail(self, confirmationSuccess: true,email: emailAddressField.text!)
                     reapeatEmailField.errorMessage = nil
                     AuthorizationEmailRequest.atuhorizeEmail(parameters: try! AuthorizationEmail(email: emailAddressField.text!, source:"app.me_app").toJSON() as! Parameters) { (response) in
                                     let error = MessageView.viewFromNib(layout: .tabView)

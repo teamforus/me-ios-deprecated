@@ -25,9 +25,6 @@ class WalletViewController: UIViewController{
     
     @IBOutlet weak var voiceButton: VoiceButtonView!
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "ro"))!
-    
-    
-    
     @IBOutlet weak var segmentedControl: ScrollableSegmentedControl!
     let largerRedTextSelectAttributes = [NSAttributedStringKey.font: UIFont(name: "SFProText-Bold", size: 13.0),
                                          NSAttributedStringKey.foregroundColor: UIColor.white]
@@ -127,6 +124,13 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
             let cellWalletSecond = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! WalletSecondTableViewCell
             
             cell = cellWalletSecond
+            break
+            
+        case .assets:
+            let cellWalletOwner = tableView.dequeueReusableCell(withIdentifier: "cell3", for: indexPath) as! MAWalletOwnerTableViewCell
+            cellWalletOwner.delegate = self
+            cell = cellWalletOwner
+            
         default:
             let cellWallet = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! WaletTableViewCell
             cellWallet.delegate = self

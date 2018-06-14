@@ -77,15 +77,13 @@ class VoiceButtonView: UIView {
         buttonContainer = loadViewFromNib()
         buttonContainer.frame = bounds
         // Default Values
-        self.buttonBGColor = UIColor(red:0.15, green:0.45, blue:0.66, alpha:1.0) // #2574A9
+        self.buttonBGColor = UIColor(red:0.15, green:0.45, blue:0.66, alpha:1.0) 
         self.buttonImageColor = .white
         addSubview(buttonContainer)
         spinnerView.isHidden = true
         speechRecorder = SpeechRecorder()
         speechRecorder?.delegate = self
         speechRecorder?.setupSpeechRecorder()
-//
-        
     }
     
     private func loadViewFromNib() -> UIView! {
@@ -98,18 +96,6 @@ class VoiceButtonView: UIView {
             return UIView()
         }
     }
-    
-    
-    //    func scaleView() {
-    //        UIView.animate(withDuration: 0.6, animations: { [weak self] in
-    //            self?.voiceRangeView.transform = CGAffineTransform.identity.scaledBy(x: 0.6, y: 0.6)
-    //        }, completion: { [weak self] (finish) in
-    //            UIView.animate(withDuration: 0.6, animations: {
-    //               self?.voiceRangeView.transform = CGAffineTransform.identity
-    //            })
-    //        })
-    //     }
-    //
     
     // MARK:- Voice Button Actions
     @IBAction func buttonPressed() {
@@ -155,7 +141,5 @@ extension VoiceButtonView : SpeechRecorderDelegate {
     func updateSpeechText(_ text: String) {
         voiceButtonDelegate?.updateSpeechText(text)
     }
-    
+ 
 }
-
-

@@ -203,6 +203,51 @@
                                             <segue destination="345-mK-wFb" kind="show" id="vGH-gZ-R26"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell3" rowHeight="98" id="8vJ-dR-3xb" customClass="MAWalletOwnerTableViewCell" customModule="MeApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="228" width="375" height="98"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8vJ-dR-3xb" id="aea-rp-gXj">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="98"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zpg-qP-8dE">
+                                                    <rect key="frame" x="6" y="7" width="363" height="90"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2 dagen geldig" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DsD-Hq-trd">
+                                                            <rect key="frame" x="90.5" y="54" width="99" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
+                                                            <color key="textColor" red="0.31764705879999999" green="0.69019607839999997" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kindpakket" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hq7-ja-FdQ">
+                                                            <rect key="frame" x="90.5" y="24" width="106" height="26"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="21"/>
+                                                            <color key="textColor" red="0.25490196079999999" green="0.28627450980000002" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iconHomeGray" translatesAutoresizingMaskIntoConstraints="NO" id="u9Y-Hm-Y9a">
+                                                            <rect key="frame" x="14" y="15" width="60" height="60"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" misplaced="YES" image="arrowGray" translatesAutoresizingMaskIntoConstraints="NO" id="TFq-r7-Wgz">
+                                                            <rect key="frame" x="343" y="39" width="8" height="13"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="bodyView" destination="Zpg-qP-8dE" id="gui-xB-vSe"/>
+                                            <outlet property="paketName" destination="hq7-ja-FdQ" id="Tln-jz-pia"/>
+                                            <outlet property="validTimeLabel" destination="DsD-Hq-trd" id="rmx-oh-F8o"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="AFR-4S-uKC" id="08i-Cb-UZR"/>
@@ -236,7 +281,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zm9-Ex-VsL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="924" y="985"/>
+            <point key="canvasLocation" x="924" y="984.55772113943033"/>
         </scene>
         <!--PassStoryboard-->
         <scene sceneID="Wmc-G1-sBm">
@@ -640,6 +685,7 @@ apparaat waar u al op aangemeld bent</string>
         </scene>
     </scenes>
     <resources>
+        <image name="arrowGray" width="8" height="14"/>
         <image name="backIcon" width="17" height="17"/>
         <image name="baseButtonRegistration" width="304" height="51"/>
         <image name="baseLogin" width="341" height="51"/>
@@ -647,6 +693,7 @@ apparaat waar u al op aangemeld bent</string>
         <image name="baseRecords" width="375" height="77"/>
         <image name="bg" width="857" height="946"/>
         <image name="forma1White" width="24" height="13"/>
+        <image name="iconHomeGray" width="60" height="60"/>
         <image name="iconNotes" width="60" height="60"/>
         <image name="information" width="20" height="20"/>
         <image name="logoLogin" width="100" height="86"/>

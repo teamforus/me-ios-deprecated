@@ -25,4 +25,6 @@ class MAShareVaucherViewController: MABasePopUpViewController {
         super.didReceiveMemoryWarning()
     }
 
+    @IBAction func send(_ sender: Any) {
+    }
 }

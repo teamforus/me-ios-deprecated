@@ -12,6 +12,11 @@ import SkyFloatingLabelTextField
 
 class MANewProfileViewController: MABaseViewController,UITextFieldDelegate, UIPopoverPresentationControllerDelegate {
     fileprivate var returnKeyHandler : IQKeyboardReturnKeyHandler!
+    @IBOutlet weak var nameSkyTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var subNameSkyTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var bsnSkyTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var emailSkyTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var phoneNumberSkyTextField: SkyFloatingLabelTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +33,7 @@ class MANewProfileViewController: MABaseViewController,UITextFieldDelegate, UIPo
         super.didReceiveMemoryWarning()
     }
     
-    
-    
+    @IBAction func saveNewProfile(_ sender: Any) {
+    }
 
 }

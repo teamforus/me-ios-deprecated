@@ -22,11 +22,16 @@ class MASetUpPinViewController: MABaseViewController,UITextFieldDelegate {
          codeUITextField.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         codeUITextField.becomeFirstResponder()
         returnHandler = IQKeyboardReturnKeyHandler(controller: self)
-        self.tabBarController?.tabBar.isHidden = true
+        
     }
     
     
@@ -50,4 +55,5 @@ class MASetUpPinViewController: MABaseViewController,UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
 }

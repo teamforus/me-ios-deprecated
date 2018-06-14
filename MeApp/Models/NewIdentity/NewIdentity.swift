@@ -20,14 +20,14 @@ extension NewIdentity: JSONDecodable{
         let decoder = JSONDecoder(object:object)
         pinCode = try decoder.decode("pin_code")
         type = try decoder.decode("type")
-        
+        type = try decoder.decode("records")
     }
 }
 
 extension NewIdentity: JSONEncodable{
     func toJSON() throws -> Any {
          return try JSONEncoder.create({ (encoder) -> Void in
-            try encoder.encode(pinCode, key:"pincode")
+            try encoder.encode(pinCode, key:"pin_code")
             try encoder.encode(type, key:"type")
             try encoder.encode(records, key:"records")
         })
