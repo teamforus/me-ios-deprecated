@@ -10,18 +10,28 @@ import UIKit
 import SwipeCellKit
 
 class MAWalletOwnerTableViewCell: SwipeTableViewCell {
-    @IBOutlet weak var paketName: UILabel!
-    @IBOutlet weak var validTimeLabel: UILabel!
-    @IBOutlet weak var bodyView: UIView!
+    @IBOutlet weak var headNameLabel: UILabel!
+    @IBOutlet weak var productNameLabel: UILabel!
+    @IBOutlet weak var marcLabel: UILabel!
+    @IBOutlet weak var viewBody: UIView!
+    @IBOutlet weak var headView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-         bodyView.layer.cornerRadius = 5.0
+        self.viewBody.layer.cornerRadius = 9.0
+        let path = UIBezierPath(roundedRect:CGRect(x: 0, y: 0, width: headView.frame.size.width + 40, height: headView.frame.size.height),
+                                byRoundingCorners:[.topRight, .topLeft],
+                                cornerRadii: CGSize(width: 9, height:  9))
+        
+        let maskLayer = CAShapeLayer()
+        
+        maskLayer.path = path.cgPath
+        self.headView.layer.mask = maskLayer
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
     }
 
 }

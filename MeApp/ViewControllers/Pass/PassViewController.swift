@@ -14,13 +14,6 @@ class PassViewController: MABaseViewController {
     @IBOutlet weak var imageQR: UIImageView!
     @IBOutlet weak var voiceButton: VoiceButtonView!
     
-    let dynamicSizePresenter: Presentr = {
-        let presentationType = PresentationType.dynamic(center: .center)
-        
-        let presenter = Presentr(presentationType: presentationType)
-       
-        return presenter
-    }()
     let presenter: Presentr = {
         let presenter = Presentr(presentationType: .alert)
         presenter.transitionType = TransitionType.coverHorizontalFromRight
@@ -30,10 +23,7 @@ class PassViewController: MABaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        voiceButton.voiceButtonDelegate = self
-        searchField.placeholderColor(text: "Zoek transacties", withColor: .white)
         imageQR.generateQRCode(from: "456,66")
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,27 +54,6 @@ class PassViewController: MABaseViewController {
     }
 }
 
-// MARK: - VoiceButtonDelegate
-
-extension PassViewController: VoiceButtonDelegate{
-    
-    func updateSpeechText(_ text: String) {
-        searchField.text = text
-    }
-    
-    func startedRecording() {
-        print("")
-    }
-    
-    func stoppedRecording() {
-        print("")
-    }
-    
-    func notifyError(_ error: String) {
-        print(error)
-    }
-}
-
 // MARK: - UITableViewDelegate
 extension PassViewController: UITableViewDataSource, UITableViewDelegate{
     
@@ -100,27 +69,16 @@ extension PassViewController: UITableViewDataSource, UITableViewDelegate{
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PassTableViewCell
         
         if indexPath.row == 0 {
-            cell.imageEarth.image = UIImage.init(named: "purpleEarth")
             cell.companyTitle.text = "RMinds"
         }else if indexPath.row == 1{
-            cell.imageEarth.image = UIImage.init(named: "greenEarth")
             cell.companyTitle.text = "EBIntegrator"
-            cell.price1UILabel.text = "+2"
-            cell.price1UILabel.textColor = UIColor.init(red: 86/255, green: 177/255, blue: 222/255, alpha: 1.0)
-            cell.price2UILabel.textColor = UIColor.init(red: 86/255, green: 177/255, blue: 222/255, alpha: 1.0)
         }
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if (indexPath.row == 0){
-            let popupTransction =  MATransactionBlueViewController(nibName: "MATransactionBlueViewController", bundle: nil)
-            customPresentViewController(dynamicSizePresenter, viewController: popupTransction, animated: true, completion: nil)
-        }else{
-            let popupTransction =  MATransactionBlueViewController(nibName: "MATransactionBlueViewController", bundle: nil)
-            customPresentViewController(dynamicSizePresenter, viewController: popupTransction, animated: true, completion: nil)
-        }
+      
     }
 }
 

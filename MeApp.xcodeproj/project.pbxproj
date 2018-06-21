@@ -9,6 +9,19 @@
 /* Begin PBXBuildFile section */
 		0A65F25EEA98774E5C653D5B /* Pods_MeAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359D8C1359DA91F5C44FDB1A /* Pods_MeAppTests.framework */; };
 		5F68B5C602170CD49C3FA1CD /* Pods_MeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4647894AE9F75A5A5B1672E /* Pods_MeAppUITests.framework */; };
+		6500425820DB97E40092CCDA /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6500424D20DB97E40092CCDA /* OpenSans-SemiBold.ttf */; };
+		6500425920DB97E40092CCDA /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6500424E20DB97E40092CCDA /* OpenSans-Light.ttf */; };
+		6500425A20DB97E40092CCDA /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6500424F20DB97E40092CCDA /* OpenSans-Italic.ttf */; };
+		6500425B20DB97E40092CCDA /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6500425020DB97E40092CCDA /* OpenSans-ExtraBold.ttf */; };
+		6500425C20DB97E40092CCDA /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6500425120DB97E40092CCDA /* OpenSans-LightItalic.ttf */; };
+		6500425D20DB97E40092CCDA /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6500425220DB97E40092CCDA /* OpenSans-Bold.ttf */; };
+		6500425E20DB97E40092CCDA /* OpenSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6500425320DB97E40092CCDA /* OpenSans-SemiBoldItalic.ttf */; };
+		6500425F20DB97E40092CCDA /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6500425420DB97E40092CCDA /* OpenSans-ExtraBoldItalic.ttf */; };
+		6500426020DB97E40092CCDA /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6500425520DB97E40092CCDA /* LICENSE.txt */; };
+		6500426120DB97E40092CCDA /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6500425620DB97E40092CCDA /* OpenSans-Regular.ttf */; };
+		6500426220DB97E40092CCDA /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6500425720DB97E40092CCDA /* OpenSans-BoldItalic.ttf */; };
+		6500426F20DBA3D50092CCDA /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6500426D20DBA3D50092CCDA /* TransactionViewController.swift */; };
+		6500427020DBA3D50092CCDA /* TransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6500426E20DBA3D50092CCDA /* TransactionViewController.xib */; };
 		6504472420C0239C00D040B9 /* MAKindPakketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6504472320C0239C00D040B9 /* MAKindPakketViewController.swift */; };
 		6504472720C028FD00D040B9 /* MAAllowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6504472520C028FD00D040B9 /* MAAllowTableViewCell.swift */; };
 		6504472820C028FD00D040B9 /* MAAllowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6504472620C028FD00D040B9 /* MAAllowTableViewCell.xib */; };
@@ -48,6 +61,7 @@
 		6556376420B7078800E45487 /* MASetUpPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6556376320B7078800E45487 /* MASetUpPinViewController.swift */; };
 		6556376620B718DF00E45487 /* MASpeachRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6556376520B718DF00E45487 /* MASpeachRecognition.swift */; };
 		6556376820B726F700E45487 /* MABaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6556376720B726F700E45487 /* MABaseViewController.swift */; };
+		6558E3DF20DBB6B6001EC568 /* HBSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6558E3DE20DBB6B6001EC568 /* HBSegmentedControl.swift */; };
 		657B074620D27F2B0093930E /* MAWalletOwnerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657B074520D27F2B0093930E /* MAWalletOwnerTableViewCell.swift */; };
 		65A51F6B20B2FFF10010DB33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A51F6A20B2FFF10010DB33 /* AppDelegate.swift */; };
 		65A51F7320B2FFF20010DB33 /* MeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65A51F7120B2FFF20010DB33 /* MeApp.xcdatamodeld */; };
@@ -170,6 +184,19 @@
 		2F47A758BD471D52C424FBAA /* Pods_MeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		359D8C1359DA91F5C44FDB1A /* Pods_MeAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3746D2C9865CEDCD6876FC18 /* Pods-MeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeAppUITests/Pods-MeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6500424D20DB97E40092CCDA /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		6500424E20DB97E40092CCDA /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		6500424F20DB97E40092CCDA /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		6500425020DB97E40092CCDA /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		6500425120DB97E40092CCDA /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		6500425220DB97E40092CCDA /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		6500425320DB97E40092CCDA /* OpenSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		6500425420DB97E40092CCDA /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		6500425520DB97E40092CCDA /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		6500425620DB97E40092CCDA /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		6500425720DB97E40092CCDA /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		6500426D20DBA3D50092CCDA /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
+		6500426E20DBA3D50092CCDA /* TransactionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionViewController.xib; sourceTree = "<group>"; };
 		6504472320C0239C00D040B9 /* MAKindPakketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAKindPakketViewController.swift; sourceTree = "<group>"; };
 		6504472520C028FD00D040B9 /* MAAllowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAAllowTableViewCell.swift; sourceTree = "<group>"; };
 		6504472620C028FD00D040B9 /* MAAllowTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAAllowTableViewCell.xib; sourceTree = "<group>"; };
@@ -210,6 +237,7 @@
 		6556376320B7078800E45487 /* MASetUpPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MASetUpPinViewController.swift; sourceTree = "<group>"; };
 		6556376520B718DF00E45487 /* MASpeachRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MASpeachRecognition.swift; sourceTree = "<group>"; };
 		6556376720B726F700E45487 /* MABaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MABaseViewController.swift; sourceTree = "<group>"; };
+		6558E3DE20DBB6B6001EC568 /* HBSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSegmentedControl.swift; sourceTree = "<group>"; };
 		657B074520D27F2B0093930E /* MAWalletOwnerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAWalletOwnerTableViewCell.swift; sourceTree = "<group>"; };
 		65A51F6720B2FFF10010DB33 /* MeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A51F6A20B2FFF10010DB33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -362,6 +390,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		6500424C20DB97E40092CCDA /* Open_Sans */ = {
+			isa = PBXGroup;
+			children = (
+				6500424D20DB97E40092CCDA /* OpenSans-SemiBold.ttf */,
+				6500424E20DB97E40092CCDA /* OpenSans-Light.ttf */,
+				6500424F20DB97E40092CCDA /* OpenSans-Italic.ttf */,
+				6500425020DB97E40092CCDA /* OpenSans-ExtraBold.ttf */,
+				6500425120DB97E40092CCDA /* OpenSans-LightItalic.ttf */,
+				6500425220DB97E40092CCDA /* OpenSans-Bold.ttf */,
+				6500425320DB97E40092CCDA /* OpenSans-SemiBoldItalic.ttf */,
+				6500425420DB97E40092CCDA /* OpenSans-ExtraBoldItalic.ttf */,
+				6500425520DB97E40092CCDA /* LICENSE.txt */,
+				6500425620DB97E40092CCDA /* OpenSans-Regular.ttf */,
+				6500425720DB97E40092CCDA /* OpenSans-BoldItalic.ttf */,
+			);
+			path = Open_Sans;
+			sourceTree = "<group>";
+		};
 		6504472920C0290100D040B9 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -477,6 +523,7 @@
 		65467FA820B823B9009E99CC /* Suporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6500424C20DB97E40092CCDA /* Open_Sans */,
 				65A51FAD20B3012B0010DB33 /* SF Pro */,
 			);
 			path = "Suporting Files";
@@ -559,6 +606,7 @@
 				65B89ACC20B4761C0024DC51 /* NewProfile.storyboard */,
 				65BFF47120C1A61B00F64215 /* VoiceButton */,
 				65FC865D20B5D8F5001FECA5 /* Extension */,
+				65D39D1520DC057200CA4E41 /* Library */,
 				65A51FF320B333D10010DB33 /* PopUps */,
 				65467FA620B82370009E99CC /* Models */,
 				65467FA820B823B9009E99CC /* Suporting Files */,
@@ -681,6 +729,8 @@
 				65B89AC620B44C8D0024DC51 /* SignUp */,
 				65FC860020B58431001FECA5 /* ValidationWithQR */,
 				6504474020C0682600D040B9 /* SwitchProfile */,
+				6500426D20DBA3D50092CCDA /* TransactionViewController.swift */,
+				6500426E20DBA3D50092CCDA /* TransactionViewController.xib */,
 			);
 			path = PopUps;
 			sourceTree = "<group>";
@@ -862,6 +912,14 @@
 				65BFF47720C1A61B00F64215 /* VoiceButtonView.swift */,
 			);
 			path = VoiceButton;
+			sourceTree = "<group>";
+		};
+		65D39D1520DC057200CA4E41 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				6558E3DE20DBB6B6001EC568 /* HBSegmentedControl.swift */,
+			);
+			path = Library;
 			sourceTree = "<group>";
 		};
 		65D764E020B73933007D7B9D /* Helper */ = {
@@ -1055,14 +1113,19 @@
 			files = (
 				65A51FE120B3012C0010DB33 /* SF-Pro-Text-BoldItalic.otf in Resources */,
 				65A51FCC20B3012C0010DB33 /* SF-Pro-Display-Thin.otf in Resources */,
+				6500425920DB97E40092CCDA /* OpenSans-Light.ttf in Resources */,
+				6500425820DB97E40092CCDA /* OpenSans-SemiBold.ttf in Resources */,
 				65A51FA620B300EA0010DB33 /* PassStoryboard.storyboard in Resources */,
 				65A51FDA20B3012C0010DB33 /* SF-Pro-Display-MediumItalic.otf in Resources */,
 				65A51FE720B3012C0010DB33 /* SF-Pro-Text-Medium.otf in Resources */,
 				65B89A9D20B422D30024DC51 /* MAWaitingViewController.xib in Resources */,
+				6500425E20DB97E40092CCDA /* OpenSans-SemiBoldItalic.ttf in Resources */,
 				65B89AC020B448CB0024DC51 /* MAAllowViewController.xib in Resources */,
+				6500425A20DB97E40092CCDA /* OpenSans-Italic.ttf in Resources */,
 				65A51FD320B3012C0010DB33 /* SF-Pro-Display-Bold.otf in Resources */,
 				65FC85FF20B58426001FECA5 /* MAValidationQRViewController.xib in Resources */,
 				65A51FD420B3012C0010DB33 /* SF-Pro-Display-Medium.otf in Resources */,
+				6500427020DBA3D50092CCDA /* TransactionViewController.xib in Resources */,
 				65A51FCD20B3012C0010DB33 /* SF-Pro-Display-SemiboldItalic.otf in Resources */,
 				65A51FCE20B3012C0010DB33 /* SF-Pro-Text-Heavy.otf in Resources */,
 				65A51FE020B3012C0010DB33 /* SF-Pro-Display-Black.otf in Resources */,
@@ -1071,33 +1134,40 @@
 				65B89A9220B334860024DC51 /* MATransactionBlueViewController.xib in Resources */,
 				65B89AAC20B4363D0024DC51 /* MAEmailForMeViewController.xib in Resources */,
 				65B89ABB20B442C60024DC51 /* MAFailValidationViewController.xib in Resources */,
+				6500425B20DB97E40092CCDA /* OpenSans-ExtraBold.ttf in Resources */,
 				65A51FDF20B3012C0010DB33 /* SF-Pro-Display-BlackItalic.otf in Resources */,
 				65B89AA220B42A6F0024DC51 /* MARegistrationViewController.xib in Resources */,
 				65A51FDD20B3012C0010DB33 /* SF-Pro-Display-UltralightItalic.otf in Resources */,
 				65A51FD020B3012C0010DB33 /* SF-Pro-Display-Light.otf in Resources */,
 				6504472F20C03DAB00D040B9 /* MASwitchProfilePopUpViewController.xib in Resources */,
 				65A51FCF20B3012C0010DB33 /* SF-Pro-Display-RegularItalic.otf in Resources */,
+				6500425F20DB97E40092CCDA /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				65B89A8C20B3342E0024DC51 /* MATransactionRedViewController.xib in Resources */,
 				65A51FDC20B3012C0010DB33 /* SF-Pro-Display-Ultralight.otf in Resources */,
 				65A51FD920B3012C0010DB33 /* SF-Pro-Text-Bold.otf in Resources */,
 				6504473520C0410400D040B9 /* MASwitchProfileTableViewCell.xib in Resources */,
+				6500426220DB97E40092CCDA /* OpenSans-BoldItalic.ttf in Resources */,
 				65A51FD720B3012C0010DB33 /* SF-Pro-Display-Semibold.otf in Resources */,
 				65A51FE620B3012C0010DB33 /* SF-Pro-Text-LightItalic.otf in Resources */,
 				65FC866920B5EB2A001FECA5 /* MAAddProfileTableViewCell.xib in Resources */,
 				6504472820C028FD00D040B9 /* MAAllowTableViewCell.xib in Resources */,
 				65B89ACB20B44D210024DC51 /* MASignUpViewController.xib in Resources */,
 				65A51FE820B3012C0010DB33 /* SF-Pro-Display-BoldItalic.otf in Resources */,
+				6500425D20DB97E40092CCDA /* OpenSans-Bold.ttf in Resources */,
 				65A51FA920B300EA0010DB33 /* Main.storyboard in Resources */,
 				65A51FD520B3012C0010DB33 /* SF-Pro-Display-Heavy.otf in Resources */,
 				65A51FD220B3012C0010DB33 /* SF-Pro-Text-MediumItalic.otf in Resources */,
 				65A51F7820B2FFF40010DB33 /* LaunchScreen.storyboard in Resources */,
+				6500425C20DB97E40092CCDA /* OpenSans-LightItalic.ttf in Resources */,
 				65B89AB620B43FA50024DC51 /* MAValidationSuccessViewController.xib in Resources */,
 				65A51FE320B3012C0010DB33 /* SF-Pro-Text-Semibold.otf in Resources */,
+				6500426020DB97E40092CCDA /* LICENSE.txt in Resources */,
 				65A51FD820B3012C0010DB33 /* SF-Pro-Text-Regular.otf in Resources */,
 				65A51FD120B3012C0010DB33 /* SF-Pro-Display-Regular.otf in Resources */,
 				65A51F7520B2FFF40010DB33 /* Assets.xcassets in Resources */,
 				65A51FDE20B3012C0010DB33 /* SF-Pro-Display-LightItalic.otf in Resources */,
 				65A51FE420B3012C0010DB33 /* SF-Pro-Text-HeavyItalic.otf in Resources */,
+				6500426120DB97E40092CCDA /* OpenSans-Regular.ttf in Resources */,
 				65BFF47C20C1A61C00F64215 /* VoiceButtonView.xib in Resources */,
 				65A51FD620B3012C0010DB33 /* SF-Pro-Text-Light.otf in Resources */,
 				65A51FE220B3012C0010DB33 /* SF-Pro-Text-RegularItalic.otf in Resources */,
@@ -1385,8 +1455,10 @@
 				65467FB020B86C57009E99CC /* MALoginWithQRViewController.swift in Sources */,
 				6556375A20B6DE8300E45487 /* PopupViewContainable.swift in Sources */,
 				657B074620D27F2B0093930E /* MAWalletOwnerTableViewCell.swift in Sources */,
+				6500426F20DBA3D50092CCDA /* TransactionViewController.swift in Sources */,
 				65BFF46E20C191BD00F64215 /* AuthorizationEmail.swift in Sources */,
 				6556376020B6FB9100E45487 /* UITextField+PlaceholderColor.swift in Sources */,
+				6558E3DF20DBB6B6001EC568 /* HBSegmentedControl.swift in Sources */,
 				65FC860220B5A2DA001FECA5 /* MAOfficeViewController.swift in Sources */,
 				65B89A9C20B422D30024DC51 /* MAWaitingViewController.swift in Sources */,
 				65A51FAC20B300EA0010DB33 /* WaletTableViewCell.swift in Sources */,
@@ -1567,6 +1639,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7L2RMARLH9;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1589,6 +1662,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7L2RMARLH9;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

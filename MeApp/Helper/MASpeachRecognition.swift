@@ -18,14 +18,11 @@ public class MASpeachRecognition: NSObject,SFSpeechRecognizerDelegate {
     private let locale = Locale(identifier: "en-US")
     
     func load() {
-        print("load")
         prepareRecognizer(locale: locale)
-        
         authorize()
     }
     
     func start() {
-        print("start")
         if !audioEngine.isRunning {
             try! startRecording()
         }
@@ -34,7 +31,6 @@ public class MASpeachRecognition: NSObject,SFSpeechRecognizerDelegate {
     func stop() {
         if audioEngine.isRunning {
             audioEngine.stop()
-            
             recognitionRequest?.endAudio()
         }
     }

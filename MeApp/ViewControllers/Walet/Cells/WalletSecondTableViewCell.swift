@@ -9,9 +9,11 @@
 import UIKit
 
 class WalletSecondTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var viewBody: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.viewBody.layer.cornerRadius = 9.0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

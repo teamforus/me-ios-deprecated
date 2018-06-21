@@ -33,12 +33,6 @@ class TabBarController: UITabBarController {
         super.didReceiveMemoryWarning()
     }
     
-//    -(void)viewDidLayoutSubviews
-//    {
-//    [super viewDidLayoutSubviews];
-//    [self.tabBar invalidateIntrinsicContentSize];
-//    }
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.tabBar.invalidateIntrinsicContentSize()
@@ -82,17 +76,5 @@ class TabBarController: UITabBarController {
             item.title = ""
         }
     }
-    
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

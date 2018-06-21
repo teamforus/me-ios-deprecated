@@ -26,7 +26,6 @@ extension Authorization: JSONDecodable{
         authenticationCode = try decoder.decode("auth_code")
         message = try decoder.decode("message")
         errors = try decoder.decode("errors")
-        
     }
 }
 

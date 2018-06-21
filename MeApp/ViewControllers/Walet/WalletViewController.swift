@@ -16,32 +16,26 @@ enum WalletCase {
     case passes
 }
 
-class WalletViewController: UIViewController{
+class WalletViewController: MABaseViewController{
     
-    @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var microUIButton: UIButton!
     var walletCase : WalletCase! = WalletCase.token
     
-    @IBOutlet weak var voiceButton: VoiceButtonView!
+//    @IBOutlet weak var voiceButton: VoiceButtonView!
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "ro"))!
-    @IBOutlet weak var segmentedControl: ScrollableSegmentedControl!
+    @IBOutlet weak var segmentedControl: HBSegmentedControl!
     let largerRedTextSelectAttributes = [NSAttributedStringKey.font: UIFont(name: "SFProText-Bold", size: 13.0),
                                          NSAttributedStringKey.foregroundColor: UIColor.white]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        voiceButton.voiceButtonDelegate = self
-        segmentedControl.segmentStyle = .textOnly
-        segmentedControl.insertSegment(withTitle: "Valuta", image: nil, at: 0)
-        segmentedControl.insertSegment(withTitle: "Bezit", image: nil, at: 1)
-        segmentedControl.insertSegment(withTitle: "Vouchers", image: nil, at: 2)
-        segmentedControl.setTitleTextAttributes(largerRedTextSelectAttributes as Any as? [NSAttributedStringKey : Any], for: .normal)
-        segmentedControl.underlineSelected = true
-        segmentedControl.selectedSegmentContentColor = UIColor.white
-        segmentedControl.selectedSegmentIndex = 0
+        tableView.setContentOffset(CGPoint(x: 0, y: 100), animated: true)
+        segmentedControl.items = ["WEEKLY", "MONTHLY", "YEARLY"]
+        segmentedControl.selectedIndex = 0
+        segmentedControl.font = UIFont(name: "Avenir-Black", size: 12)
+//        segmentedControl.borderColor = UIColor(white: 1.0, alpha: 0.3)
+        segmentedControl.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         segmentedControl.addTarget(self, action: #selector(self.segmentSelected(sender:)), for: .valueChanged)
-        searchField.placeholderColor(text: "Zoek valuta", withColor: .white)
         tableView.keyboardDismissMode = .onDrag
         Web3Provider.getBalance()
         Service.sendContract { (response, error) in
@@ -65,17 +59,14 @@ class WalletViewController: UIViewController{
         self.view.endEditing(true)
     }
     
-    @objc func segmentSelected(sender:ScrollableSegmentedControl) {
-        print("Segment at index \(sender.selectedSegmentIndex)  selected")
-        if (sender.selectedSegmentIndex == 0 ){
+    @objc func segmentSelected(sender:HBSegmentedControl) {
+        print("Segment at index \(sender.selectedIndex)  selected")
+        if (sender.selectedIndex == 0 ){
             walletCase = WalletCase.token
-            searchField.placeholderColor(text: "Zoek valuta", withColor: .white)
-        }else if (sender.selectedSegmentIndex == 1){
+        }else if (sender.selectedIndex == 1){
             walletCase = WalletCase.assets
-            searchField.placeholderColor(text: "Zoek vermongen", withColor: .white)
-        }else if (sender.selectedSegmentIndex == 2){
+        }else if (sender.selectedIndex == 2){
             walletCase = WalletCase.passes
-            searchField.placeholderColor(text: "Zoek vouchers", withColor: .white)
         }
         self.tableView.reloadData()
     }
@@ -87,7 +78,6 @@ extension WalletViewController: VoiceButtonDelegate{
     
     
     func updateSpeechText(_ text: String) {
-        searchField.text = text
     }
     
     func startedRecording() {
@@ -122,7 +112,6 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
         switch walletCase {
         case .token:
             let cellWalletSecond = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! WalletSecondTableViewCell
-            
             cell = cellWalletSecond
             break
             
@@ -132,15 +121,15 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
             cell = cellWalletOwner
             
         default:
-            let cellWallet = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! WaletTableViewCell
+            let cellWallet = tableView.dequeueReusableCell(withIdentifier: "cell3", for: indexPath) as! MAWalletOwnerTableViewCell
             cellWallet.delegate = self
             
             if indexPath.row == 0 {
-                cellWallet.titleWalteCategory.text = "Kindpakket"
+//                cellWallet.titleWalteCategory.text = "Kindpakket"
             }else if indexPath.row == 1 {
-                cellWallet.titleWalteCategory.text = "Bike"
+//                cellWallet.titleWalteCategory.text = "Bike"
             }else if indexPath.row == 2 {
-                cellWallet.titleWalteCategory.text = "Kindpakket"
+//                cellWallet.titleWalteCategory.text = "Kindpakket"
             }
             
             cell = cellWallet
@@ -149,7 +138,25 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
     }
     
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if segmentedControl.selectedIndex == 1 {
+            let popupTransction =  TransactionViewController(nibName: "TransactionViewController", bundle: nil)
+            dynamicSizePresenter.presentationType = .bottomHalf
+            customPresentViewController(dynamicSizePresenter, viewController: popupTransction, animated: true, completion: nil)
+        }else if segmentedControl.selectedIndex == 2{
+            self.performSegue(withIdentifier: "goToKindPaket", sender: self)
+        }
         tableView.deselectRow(at: indexPath, animated: false)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch walletCase {
+        case .token:
+            return 130
+            
+        default:
+            break
+        }
+        return 142
     }
     
     

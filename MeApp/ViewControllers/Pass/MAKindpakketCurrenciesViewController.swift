@@ -14,13 +14,7 @@ class MAKindpakketCurrenciesViewController: MABaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var voiceButton: VoiceButtonView!
     @IBOutlet weak var searchField: UITextField!
-    
-    let dynamicSizePresenter: Presentr = {
-        let presentationType = PresentationType.dynamic(center: .center)
-        
-        let presenter = Presentr(presentationType: presentationType)
-        return presenter
-    }()
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +24,6 @@ class MAKindpakketCurrenciesViewController: MABaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
     }
     
     override func didReceiveMemoryWarning() {

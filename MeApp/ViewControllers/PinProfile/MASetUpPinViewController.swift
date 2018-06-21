@@ -31,7 +31,6 @@ class MASetUpPinViewController: MABaseViewController,UITextFieldDelegate {
         super.viewDidAppear(animated)
         codeUITextField.becomeFirstResponder()
         returnHandler = IQKeyboardReturnKeyHandler(controller: self)
-        
     }
     
     

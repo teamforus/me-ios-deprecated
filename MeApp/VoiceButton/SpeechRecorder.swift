@@ -21,8 +21,6 @@ class SpeechRecorder: NSObject, SFSpeechRecognizerDelegate {
     private let audioEngine = AVAudioEngine()
     var delegate: SpeechRecorderDelegate?
 
-
-    /// Initialise speech recogniser
     func setupSpeechRecorder()   {
 
         speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))
@@ -47,7 +45,6 @@ class SpeechRecorder: NSObject, SFSpeechRecognizerDelegate {
 
     }
 
-    /// Function to start recording and capture speech text
     func startRecording()  {
 
         let audioSession = AVAudioSession.sharedInstance()
@@ -56,7 +53,6 @@ class SpeechRecorder: NSObject, SFSpeechRecognizerDelegate {
             try audioSession.setMode(AVAudioSessionModeMeasurement)
             try audioSession.setActive(true, with: .notifyOthersOnDeactivation)
         } catch {
-//            completion (false, "audioSession properties weren't set because of an error.")
         }
 
         recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
@@ -64,7 +60,6 @@ class SpeechRecorder: NSObject, SFSpeechRecognizerDelegate {
          let inputNode = audioEngine.inputNode 
 
         guard let recognitionRequest = recognitionRequest else {
-//            completion (false, "Unable to create an SFSpeechAudioBufferRecognitionRequest object")
             return
         }
 
@@ -100,10 +95,7 @@ class SpeechRecorder: NSObject, SFSpeechRecognizerDelegate {
         do {
             try audioEngine.start()
         } catch {
-//            completion (false, "audioEngine couldn't start because of an error.")
         }
-
-//        completion (true, "Initialised")
     }
 
     func stopRecording() {

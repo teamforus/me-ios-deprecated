@@ -70,8 +70,6 @@ open class BasePopupViewController: UIViewController {
     }
 
     @objc open func tapPopupContainerView(_ gestureRecognizer: UITapGestureRecognizer) {
-        // Processing when PopupContainerView is tapped
-        // For example dismiss processing
     }
 
     public func configurePopupItem(_ popupItem: PopupItem) {

@@ -21,7 +21,6 @@ class VoiceButtonView: UIView {
     
     // MARK:- Public Properties
     
-    /// Button Background Color
     public var buttonBGColor: UIColor? {
         willSet(newColor) {
             if let image = voiceButton.backgroundImage(for: .normal), let color = newColor {
@@ -31,7 +30,6 @@ class VoiceButtonView: UIView {
         }
     }
     
-    /// Button Image Color
     public var buttonImageColor: UIColor? {
         willSet(newColor) {
             if let image = voiceButton.image(for: .normal), let color = newColor {
@@ -41,7 +39,6 @@ class VoiceButtonView: UIView {
         }
     }
     
-    /// Button foreground Image
     public var buttonImage: UIImage {
         set {
             voiceButton.setImage(newValue, for: .normal)
@@ -76,7 +73,6 @@ class VoiceButtonView: UIView {
         backgroundColor = .clear
         buttonContainer = loadViewFromNib()
         buttonContainer.frame = bounds
-        // Default Values
         self.buttonBGColor = UIColor(red:0.15, green:0.45, blue:0.66, alpha:1.0) 
         self.buttonImageColor = .white
         addSubview(buttonContainer)
@@ -101,7 +97,7 @@ class VoiceButtonView: UIView {
     @IBAction func buttonPressed() {
         if self.isRecording == false {
             if let image = self.voiceButton.backgroundImage(for: .normal) {
-                let newImage = image.maskWithColor(color: UIColor(red:0.95, green:0.15, blue:0.07, alpha:1.0)) //F22613
+                let newImage = image.maskWithColor(color: UIColor(red:0.95, green:0.15, blue:0.07, alpha:1.0))
                 self.voiceButton.setBackgroundImage(newImage, for: .normal)
             }
             self.voiceButton.setImage(#imageLiteral(resourceName: "stop_icon"), for: .normal)

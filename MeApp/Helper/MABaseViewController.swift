@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import Presentr
 
 class MABaseViewController: UIViewController {
-
+    let dynamicSizePresenter: Presentr = {
+        let presentationType = PresentationType.dynamic(center: .center)
+        
+        let presenter = Presentr(presentationType: presentationType)
+        
+        return presenter
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
     }

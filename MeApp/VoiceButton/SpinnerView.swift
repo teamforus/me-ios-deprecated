@@ -87,7 +87,6 @@ class SpinnerView : UIView {
         animateKeyPath(keyPath: "strokeEnd", duration: totalSeconds, times: times, values: strokeEnds)
         animateKeyPath(keyPath: "transform.rotation", duration: totalSeconds, times: times, values: rotations)
 
-        //animateStrokeHueWithDuration(duration: totalSeconds * 5)
     }
 
     func animateKeyPath(keyPath: String, duration: CFTimeInterval, times: [CFTimeInterval], values: [CGFloat]) {
