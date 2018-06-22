@@ -52,8 +52,13 @@ extension MAKindpakketCurrenciesViewController: UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            let popupTransction =  TransactionViewController(nibName: "TransactionViewController", bundle: nil)
-            dynamicSizePresenter.presentationType = .bottomHalf
-            customPresentViewController(dynamicSizePresenter, viewController: popupTransction, animated: true, completion: nil)
+//            let popupTransction =  TransactionViewController(nibName: "TransactionViewController", bundle: nil)
+//            dynamicSizePresenter.presentationType = .custom(width: ModalSize.custom(size: 340), height: ModalSize.custom(size: 400), center: .bottomCenter)
+//            customPresentViewController(dynamicSizePresenter, viewController: popupTransction, animated: true, completion: nil)
+        let popOverVC = TransactionViewController(nibName: "TransactionViewController", bundle: nil)
+        self.addChildViewController(popOverVC)
+        popOverVC.view.frame = self.view.frame
+        self.view.addSubview(popOverVC.view)
+        popOverVC.didMove(toParentViewController: self)
     }
 }

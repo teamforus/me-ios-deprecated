@@ -20,6 +20,7 @@ class WalletViewController: MABaseViewController{
     
     @IBOutlet weak var tableView: UITableView!
     var walletCase : WalletCase! = WalletCase.token
+    @IBOutlet weak var segmentView: UIView!
     
 //    @IBOutlet weak var voiceButton: VoiceButtonView!
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "ro"))!
@@ -29,17 +30,18 @@ class WalletViewController: MABaseViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        segmentView.layer.cornerRadius = 7.0
         tableView.setContentOffset(CGPoint(x: 0, y: 100), animated: true)
-        segmentedControl.items = ["WEEKLY", "MONTHLY", "YEARLY"]
+        segmentedControl.items = ["Valuta", "Bezit", "Vouchers"]
         segmentedControl.selectedIndex = 0
         segmentedControl.font = UIFont(name: "Avenir-Black", size: 12)
-//        segmentedControl.borderColor = UIColor(white: 1.0, alpha: 0.3)
-        segmentedControl.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        segmentedControl.unselectedLabelColor = #colorLiteral(red: 0.631372549, green: 0.6509803922, blue: 0.6784313725, alpha: 1)
+        segmentedControl.selectedLabelColor = #colorLiteral(red: 0.2078431373, green: 0.3921568627, blue: 0.968627451, alpha: 1)
         segmentedControl.addTarget(self, action: #selector(self.segmentSelected(sender:)), for: .valueChanged)
+        segmentedControl.borderColor = .clear
         tableView.keyboardDismissMode = .onDrag
         Web3Provider.getBalance()
         Service.sendContract { (response, error) in
-            
         }
     }
     
@@ -139,9 +141,11 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
     
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if segmentedControl.selectedIndex == 1 {
-            let popupTransction =  TransactionViewController(nibName: "TransactionViewController", bundle: nil)
-            dynamicSizePresenter.presentationType = .bottomHalf
-            customPresentViewController(dynamicSizePresenter, viewController: popupTransction, animated: true, completion: nil)
+            let popOverVC = TransactionViewController(nibName: "TransactionViewController", bundle: nil)
+            self.addChildViewController(popOverVC)
+            popOverVC.view.frame = self.view.frame
+            self.view.addSubview(popOverVC.view)
+            popOverVC.didMove(toParentViewController: self)
         }else if segmentedControl.selectedIndex == 2{
             self.performSegue(withIdentifier: "goToKindPaket", sender: self)
         }

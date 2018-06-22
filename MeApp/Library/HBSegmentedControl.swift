@@ -69,7 +69,7 @@ import UIKit
     
     func setupView(){
         
-        layer.cornerRadius = frame.height / 2
+        layer.cornerRadius = 7.0
         layer.borderColor = UIColor(white: 1.0, alpha: 0.5).cgColor
         layer.borderWidth = 2
         
@@ -115,7 +115,7 @@ import UIKit
         selectFrame.size.width = newWidth
         thumbView.frame = selectFrame
         thumbView.backgroundColor = thumbColor
-        thumbView.layer.cornerRadius = thumbView.frame.height / 2
+        thumbView.layer.cornerRadius = 3.0
         
         displayNewSelectedIndex()
         

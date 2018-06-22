@@ -18,6 +18,7 @@ class MASwitchProfileViewController: MABaseViewController,MASwitchProfilePopUpVi
     @IBOutlet weak var buttonSiwtchProfile: UIButton!
     @IBOutlet weak var heighQrConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var topConstraintQrBody: NSLayoutConstraint!
     @IBOutlet weak var heightImageConstraint: NSLayoutConstraint!
     @IBOutlet weak var widthImageConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageQR: UIImageView!
@@ -85,6 +86,7 @@ class MASwitchProfileViewController: MABaseViewController,MASwitchProfilePopUpVi
                 decriptionQRRect.origin.y = 372
                 self.descriptionQr.frame = decriptionQRRect
                 self.heighQrConstraint.constant = 440
+                self.topConstraintQrBody.constant = 83
             }
         }
         else if (scrollOffset + scrollViewHeight == scrollContentSizeHeight)
@@ -104,6 +106,7 @@ class MASwitchProfileViewController: MABaseViewController,MASwitchProfilePopUpVi
                 decriptionQRRect.origin.y = 138
                 self.descriptionQr.frame = decriptionQRRect
                 self.heighQrConstraint.constant = 200
+                self.topConstraintQrBody.constant = 110
             }
         }
     }
