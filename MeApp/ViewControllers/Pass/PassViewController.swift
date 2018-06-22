@@ -78,7 +78,9 @@ extension PassViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      
+        let popupTransction =  TransactionViewController(nibName: "TransactionViewController", bundle: nil)
+        dynamicSizePresenter.presentationType = .bottomHalf
+        customPresentViewController(dynamicSizePresenter, viewController: popupTransction, animated: true, completion: nil)
     }
 }
 

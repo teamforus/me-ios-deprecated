@@ -7,6 +7,7 @@ PODS:
   - ExpandableCell (1.2.2)
   - Geth (1.8.10)
   - IQKeyboardManagerSwift (5.0.7)
+  - ISHPullUp (1.0.7)
   - JSONCodable (3.0.1)
   - Presentr (1.3)
   - PromiseKit/CorePromise (6.2.8)
@@ -42,6 +43,7 @@ DEPENDENCIES:
   - DropDown
   - ExpandableCell
   - IQKeyboardManagerSwift
+  - ISHPullUp
   - JSONCodable
   - Presentr
   - QRCodeReader.swift
@@ -74,6 +76,7 @@ SPEC CHECKSUMS:
   ExpandableCell: f2d99f9ae03a8c393e268adddaeb7f6d2525a76e
   Geth: 0e529ddf97286eca646ab355c080ee0a2337a544
   IQKeyboardManagerSwift: 30fb3a61de1af53a95e02b80fb54ed0a19d5ede5
+  ISHPullUp: eaa91bef06270264e1f923bc764705173d341495
   JSONCodable: bd8616ae881befe2b82fbbf56d98b2dd377ac662
   Presentr: 3f0825a42cb32ecd8fc6b6d0b0de87d7d0b42482
   PromiseKit: 6788ce1a0ed5448b83d4aaf56b9fc49fb7647d32
@@ -88,6 +91,6 @@ SPEC CHECKSUMS:
   Web3: 1f0c38c8508b8487948af1cb597653b018f4b5d3
   web3swift: 9cf4ccef0c7f7e9f9abb3bc5867789b928800af6
 
-PODFILE CHECKSUM: 477c263064a7d8c7c48bbaf112f45c33fac395e5
+PODFILE CHECKSUM: 5720c06380c9e8528c6d13e76cbcae43396d568e
 
 COCOAPODS: 1.4.0

@@ -71,12 +71,12 @@ class MASwitchProfileViewController: MABaseViewController,MASwitchProfilePopUpVi
         
         if (scrollOffset < 0)
         {
-            UIView.animate(withDuration: 0.3) {
+            UIView.animate(withDuration: 0.2) {
                 var imageRect: CGRect = self.imageQR.frame
-                imageRect.size.height = 250;
+                imageRect.size.height = 224;
                 imageRect.size.width = 250;
-                imageRect.origin.x = 63
-                imageRect.origin.y = 57;
+                imageRect.origin.x = 61
+                imageRect.origin.y = 36;
                 self.imageQR.frame = imageRect;
                 var labelQRRect: CGRect = self.labelQr.frame
                 labelQRRect.origin.y = 339
@@ -89,12 +89,12 @@ class MASwitchProfileViewController: MABaseViewController,MASwitchProfilePopUpVi
         }
         else if (scrollOffset + scrollViewHeight == scrollContentSizeHeight)
         {
-            UIView.animate(withDuration: 0.3) {
+            UIView.animate(withDuration: 0.2) {
                 
                 var imageRect: CGRect = self.imageQR.frame
                 imageRect.size.height = 50;
                 imageRect.size.width = 50;
-                imageRect.origin.x = 163
+                imageRect.origin.x = 173
                 imageRect.origin.y = 31;
                 self.imageQR.frame = imageRect;
                 var labelQRRect: CGRect = self.labelQr.frame

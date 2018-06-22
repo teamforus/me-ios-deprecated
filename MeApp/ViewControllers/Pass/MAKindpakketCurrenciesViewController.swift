@@ -12,14 +12,10 @@ import Presentr
 class MAKindpakketCurrenciesViewController: MABaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var voiceButton: VoiceButtonView!
-    @IBOutlet weak var searchField: UITextField!
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchField.placeholderColor(text: "Zoek transacties", withColor: .white)
-        voiceButton.voiceButtonDelegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,27 +27,6 @@ class MAKindpakketCurrenciesViewController: MABaseViewController {
     }
     
 }
-
-// MARK: - VoiceButtonDelegate
-
-extension MAKindpakketCurrenciesViewController: VoiceButtonDelegate{
-    func updateSpeechText(_ text: String) {
-        searchField.text = text
-    }
-    
-    func startedRecording() {
-        
-    }
-    
-    func stoppedRecording() {
-        
-    }
-    
-    func notifyError(_ error: String) {
-        
-    }
-}
-
 
 // MARK: - UITableViewDelegate
 extension MAKindpakketCurrenciesViewController: UITableViewDelegate, UITableViewDataSource{
@@ -68,26 +43,17 @@ extension MAKindpakketCurrenciesViewController: UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PassTableViewCell
         
         if indexPath.row == 0 {
-            cell.imageEarth.image = UIImage.init(named: "purpleEarth")
             cell.companyTitle.text = "RMinds"
         }else if indexPath.row == 1{
-            cell.imageEarth.image = UIImage.init(named: "greenEarth")
             cell.companyTitle.text = "EBIntegrator"
-            cell.price1UILabel.text = "+2"
-            cell.price1UILabel.textColor = UIColor.init(red: 86/255, green: 177/255, blue: 222/255, alpha: 1.0)
-            cell.price2UILabel.textColor = UIColor.init(red: 86/255, green: 177/255, blue: 222/255, alpha: 1.0)
         }
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if (indexPath.row == 0){
-            let popupTransction =  MATransactionBlueViewController(nibName: "MATransactionBlueViewController", bundle: nil)
+            let popupTransction =  TransactionViewController(nibName: "TransactionViewController", bundle: nil)
+            dynamicSizePresenter.presentationType = .bottomHalf
             customPresentViewController(dynamicSizePresenter, viewController: popupTransction, animated: true, completion: nil)
-        }else{
-            let popupTransction =  MATransactionBlueViewController(nibName: "MATransactionBlueViewController", bundle: nil)
-            customPresentViewController(dynamicSizePresenter, viewController: popupTransction, animated: true, completion: nil)
-        }
     }
 }

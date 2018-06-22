@@ -23,11 +23,14 @@ class MARecordsViewController: UIViewController {
         super.viewDidLoad()
         tableView.expandableDelegate = self
         tableView.animation = .automatic
-    }
+     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.title = "Eigenschappen"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,7 +43,7 @@ class MARecordsViewController: UIViewController {
 extension MARecordsViewController: ExpandableDelegate {
     func expandableTableView(_ expandableTableView: ExpandableTableView, expandedCellsForRowAt indexPath: IndexPath) -> [UITableViewCell]? {
         
-        if indexPath.row == 1 {
+        if indexPath.row == 2 {
             let cell1 = tableView.dequeueReusableCell(withIdentifier: ExpandedCell.ID) as! ExpandedCell
             cell1.titleLabel.text = "VOORNAAM"
             cell1.infoCategory.text = "John"
@@ -63,7 +66,7 @@ extension MARecordsViewController: ExpandableDelegate {
     }
     
     func expandableTableView(_ expandableTableView: ExpandableTableView, heightsForExpandedRowAt indexPath: IndexPath) -> [CGFloat]? {
-        if indexPath.row == 1 {
+        if indexPath.row == 2 {
             return [55, 55, 55, 55, 55]
         }
         return nil
@@ -80,6 +83,8 @@ extension MARecordsViewController: ExpandableDelegate {
     func expandableTableView(_ expandableTableView: ExpandableTableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             self.performSegue(withIdentifier: "goToNewProfile", sender: nil)
+        }else if indexPath.row == 1 {
+            self.performSegue(withIdentifier: "goToProfile", sender: nil)
         }
     }
     

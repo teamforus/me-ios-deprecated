@@ -18,6 +18,15 @@ class TabBarController: UITabBarController {
         let largerRedTextSelectAttributes = [NSAttributedStringKey.font: UIFont(name: "SFProText-Semibold", size: 10.0),
                                              NSAttributedStringKey.foregroundColor: UIColor.white]
         self.tabBarItem.setTitleTextAttributes(largerRedTextSelectAttributes as Any as? [NSAttributedStringKey : Any], for: .normal)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(hideTapBar),
+            name: NSNotification.Name(rawValue: "hideTapBar"),
+            object: nil)
+    }
+    
+    @objc func hideTapBar(){
+        self.tabBar.isHidden = true
     }
     
     @objc func handleTouchTabbarCenter(sender : UIButton)
