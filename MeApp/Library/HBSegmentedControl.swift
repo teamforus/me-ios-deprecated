@@ -96,7 +96,7 @@ import UIKit
             label.text = items[index - 1]
             label.backgroundColor = UIColor.clear
             label.textAlignment = .center
-            label.font = UIFont(name: "Avenir-Black", size: 15)
+            label.font = UIFont(name: "SFProText-Bold", size: 14)
             label.textColor = index == 1 ? selectedLabelColor : unselectedLabelColor
             label.translatesAutoresizingMaskIntoConstraints = false
 
@@ -115,7 +115,7 @@ import UIKit
         selectFrame.size.width = newWidth
         thumbView.frame = selectFrame
         thumbView.backgroundColor = thumbColor
-        thumbView.layer.cornerRadius = 3.0
+        thumbView.layer.cornerRadius = 8.0
         
         displayNewSelectedIndex()
         

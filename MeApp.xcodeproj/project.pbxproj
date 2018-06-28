@@ -44,6 +44,9 @@
 		6527C6F820D1579C00009704 /* MAValidationRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6527C6F720D1579C00009704 /* MAValidationRequestViewController.swift */; };
 		6527C6FA20D1626100009704 /* MARequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6527C6F920D1626100009704 /* MARequestViewController.swift */; };
 		6527C6FE20D16BBC00009704 /* MASendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6527C6FD20D16BBC00009704 /* MASendViewController.swift */; };
+		6528F01920E51BEF00DD19C1 /* MAFirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6528F01820E51BEF00DD19C1 /* MAFirstPageViewController.swift */; };
+		6528F01C20E5358900DD19C1 /* MAPinCodeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6528F01B20E5358900DD19C1 /* MAPinCodeLoginViewController.swift */; };
+		6528F01E20E53F3D00DD19C1 /* MALoginEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6528F01D20E53F3D00DD19C1 /* MALoginEmailViewController.swift */; };
 		65467FA520B821E7009E99CC /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65467FA420B821E7009E99CC /* Authorization.swift */; };
 		65467FAA20B827EC009E99CC /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65467FA920B827EC009E99CC /* Category.swift */; };
 		65467FAD20B829C0009E99CC /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65467FAC20B829C0009E99CC /* Record.swift */; };
@@ -65,6 +68,21 @@
 		6556376620B718DF00E45487 /* MASpeachRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6556376520B718DF00E45487 /* MASpeachRecognition.swift */; };
 		6556376820B726F700E45487 /* MABaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6556376720B726F700E45487 /* MABaseViewController.swift */; };
 		6558E3DF20DBB6B6001EC568 /* HBSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6558E3DE20DBB6B6001EC568 /* HBSegmentedControl.swift */; };
+		6579633E20E4D49D001CF29D /* NunitoSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579632F20E4D49C001CF29D /* NunitoSans-LightItalic.ttf */; };
+		6579633F20E4D49D001CF29D /* NunitoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579633020E4D49C001CF29D /* NunitoSans-BoldItalic.ttf */; };
+		6579634020E4D49D001CF29D /* NunitoSans-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579633120E4D49C001CF29D /* NunitoSans-ExtraLight.ttf */; };
+		6579634120E4D49D001CF29D /* NunitoSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579633220E4D49C001CF29D /* NunitoSans-Light.ttf */; };
+		6579634220E4D49D001CF29D /* NunitoSans-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579633320E4D49C001CF29D /* NunitoSans-BlackItalic.ttf */; };
+		6579634320E4D49E001CF29D /* NunitoSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579633420E4D49C001CF29D /* NunitoSans-ExtraBold.ttf */; };
+		6579634420E4D49E001CF29D /* NunitoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579633520E4D49C001CF29D /* NunitoSans-Regular.ttf */; };
+		6579634520E4D49E001CF29D /* NunitoSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579633620E4D49C001CF29D /* NunitoSans-SemiBoldItalic.ttf */; };
+		6579634620E4D49E001CF29D /* NunitoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579633720E4D49C001CF29D /* NunitoSans-Italic.ttf */; };
+		6579634720E4D49E001CF29D /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6579633820E4D49C001CF29D /* OFL.txt */; };
+		6579634820E4D49E001CF29D /* NunitoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579633920E4D49C001CF29D /* NunitoSans-Bold.ttf */; };
+		6579634920E4D49E001CF29D /* NunitoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579633A20E4D49C001CF29D /* NunitoSans-SemiBold.ttf */; };
+		6579634A20E4D49E001CF29D /* NunitoSans-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579633B20E4D49C001CF29D /* NunitoSans-Black.ttf */; };
+		6579634B20E4D49E001CF29D /* NunitoSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579633C20E4D49C001CF29D /* NunitoSans-ExtraBoldItalic.ttf */; };
+		6579634C20E4D49E001CF29D /* NunitoSans-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579633D20E4D49C001CF29D /* NunitoSans-ExtraLightItalic.ttf */; };
 		657B074620D27F2B0093930E /* MAWalletOwnerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657B074520D27F2B0093930E /* MAWalletOwnerTableViewCell.swift */; };
 		65A51F6B20B2FFF10010DB33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A51F6A20B2FFF10010DB33 /* AppDelegate.swift */; };
 		65A51F7320B2FFF20010DB33 /* MeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65A51F7120B2FFF20010DB33 /* MeApp.xcdatamodeld */; };
@@ -222,6 +240,9 @@
 		6527C6F720D1579C00009704 /* MAValidationRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAValidationRequestViewController.swift; sourceTree = "<group>"; };
 		6527C6F920D1626100009704 /* MARequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MARequestViewController.swift; sourceTree = "<group>"; };
 		6527C6FD20D16BBC00009704 /* MASendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MASendViewController.swift; sourceTree = "<group>"; };
+		6528F01820E51BEF00DD19C1 /* MAFirstPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAFirstPageViewController.swift; sourceTree = "<group>"; };
+		6528F01B20E5358900DD19C1 /* MAPinCodeLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAPinCodeLoginViewController.swift; sourceTree = "<group>"; };
+		6528F01D20E53F3D00DD19C1 /* MALoginEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MALoginEmailViewController.swift; sourceTree = "<group>"; };
 		65467FA420B821E7009E99CC /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
 		65467FA920B827EC009E99CC /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		65467FAC20B829C0009E99CC /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
@@ -244,6 +265,21 @@
 		6556376520B718DF00E45487 /* MASpeachRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MASpeachRecognition.swift; sourceTree = "<group>"; };
 		6556376720B726F700E45487 /* MABaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MABaseViewController.swift; sourceTree = "<group>"; };
 		6558E3DE20DBB6B6001EC568 /* HBSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSegmentedControl.swift; sourceTree = "<group>"; };
+		6579632F20E4D49C001CF29D /* NunitoSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		6579633020E4D49C001CF29D /* NunitoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		6579633120E4D49C001CF29D /* NunitoSans-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraLight.ttf"; sourceTree = "<group>"; };
+		6579633220E4D49C001CF29D /* NunitoSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Light.ttf"; sourceTree = "<group>"; };
+		6579633320E4D49C001CF29D /* NunitoSans-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-BlackItalic.ttf"; sourceTree = "<group>"; };
+		6579633420E4D49C001CF29D /* NunitoSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		6579633520E4D49C001CF29D /* NunitoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Regular.ttf"; sourceTree = "<group>"; };
+		6579633620E4D49C001CF29D /* NunitoSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		6579633720E4D49C001CF29D /* NunitoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Italic.ttf"; sourceTree = "<group>"; };
+		6579633820E4D49C001CF29D /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		6579633920E4D49C001CF29D /* NunitoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Bold.ttf"; sourceTree = "<group>"; };
+		6579633A20E4D49C001CF29D /* NunitoSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		6579633B20E4D49C001CF29D /* NunitoSans-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Black.ttf"; sourceTree = "<group>"; };
+		6579633C20E4D49C001CF29D /* NunitoSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		6579633D20E4D49C001CF29D /* NunitoSans-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		657B074520D27F2B0093930E /* MAWalletOwnerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAWalletOwnerTableViewCell.swift; sourceTree = "<group>"; };
 		65A51F6720B2FFF10010DB33 /* MeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A51F6A20B2FFF10010DB33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -510,6 +546,31 @@
 			path = Send;
 			sourceTree = "<group>";
 		};
+		6528F01720E5129C00DD19C1 /* NewTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				6500426D20DBA3D50092CCDA /* TransactionViewController.swift */,
+				6500426E20DBA3D50092CCDA /* TransactionViewController.xib */,
+			);
+			path = NewTransaction;
+			sourceTree = "<group>";
+		};
+		6528F01A20E51BF700DD19C1 /* FirstPage */ = {
+			isa = PBXGroup;
+			children = (
+				6528F01820E51BEF00DD19C1 /* MAFirstPageViewController.swift */,
+			);
+			path = FirstPage;
+			sourceTree = "<group>";
+		};
+		6528F01F20E5461000DD19C1 /* PinCodeLogin */ = {
+			isa = PBXGroup;
+			children = (
+				6528F01B20E5358900DD19C1 /* MAPinCodeLoginViewController.swift */,
+			);
+			path = PinCodeLogin;
+			sourceTree = "<group>";
+		};
 		65467FA620B82370009E99CC /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -539,6 +600,7 @@
 		65467FA820B823B9009E99CC /* Suporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6579632E20E4D49C001CF29D /* Nunito_Sans */,
 				6500424C20DB97E40092CCDA /* Open_Sans */,
 				65A51FAD20B3012B0010DB33 /* SF Pro */,
 			);
@@ -586,6 +648,28 @@
 				6556374C20B6DE8000E45487 /* UIView+Shape.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6579632E20E4D49C001CF29D /* Nunito_Sans */ = {
+			isa = PBXGroup;
+			children = (
+				6579632F20E4D49C001CF29D /* NunitoSans-LightItalic.ttf */,
+				6579633020E4D49C001CF29D /* NunitoSans-BoldItalic.ttf */,
+				6579633120E4D49C001CF29D /* NunitoSans-ExtraLight.ttf */,
+				6579633220E4D49C001CF29D /* NunitoSans-Light.ttf */,
+				6579633320E4D49C001CF29D /* NunitoSans-BlackItalic.ttf */,
+				6579633420E4D49C001CF29D /* NunitoSans-ExtraBold.ttf */,
+				6579633520E4D49C001CF29D /* NunitoSans-Regular.ttf */,
+				6579633620E4D49C001CF29D /* NunitoSans-SemiBoldItalic.ttf */,
+				6579633720E4D49C001CF29D /* NunitoSans-Italic.ttf */,
+				6579633820E4D49C001CF29D /* OFL.txt */,
+				6579633920E4D49C001CF29D /* NunitoSans-Bold.ttf */,
+				6579633A20E4D49C001CF29D /* NunitoSans-SemiBold.ttf */,
+				6579633B20E4D49C001CF29D /* NunitoSans-Black.ttf */,
+				6579633C20E4D49C001CF29D /* NunitoSans-ExtraBoldItalic.ttf */,
+				6579633D20E4D49C001CF29D /* NunitoSans-ExtraLightItalic.ttf */,
+			);
+			path = Nunito_Sans;
 			sourceTree = "<group>";
 		};
 		65A51F5E20B2FFF10010DB33 = {
@@ -745,8 +829,7 @@
 				65B89AC620B44C8D0024DC51 /* SignUp */,
 				65FC860020B58431001FECA5 /* ValidationWithQR */,
 				6504474020C0682600D040B9 /* SwitchProfile */,
-				6500426D20DBA3D50092CCDA /* TransactionViewController.swift */,
-				6500426E20DBA3D50092CCDA /* TransactionViewController.xib */,
+				6528F01720E5129C00DD19C1 /* NewTransaction */,
 			);
 			path = PopUps;
 			sourceTree = "<group>";
@@ -778,6 +861,9 @@
 				6527C6FC20D16BAA00009704 /* Request */,
 				6527C6FF20D1747400009704 /* Send */,
 				651826E820DD1D8700B8963A /* QRPRofile */,
+				6528F01A20E51BF700DD19C1 /* FirstPage */,
+				6528F01F20E5461000DD19C1 /* PinCodeLogin */,
+				6528F01D20E53F3D00DD19C1 /* MALoginEmailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1144,6 +1230,7 @@
 				65A51FD420B3012C0010DB33 /* SF-Pro-Display-Medium.otf in Resources */,
 				6500427020DBA3D50092CCDA /* TransactionViewController.xib in Resources */,
 				65A51FCD20B3012C0010DB33 /* SF-Pro-Display-SemiboldItalic.otf in Resources */,
+				6579634C20E4D49E001CF29D /* NunitoSans-ExtraLightItalic.ttf in Resources */,
 				65A51FCE20B3012C0010DB33 /* SF-Pro-Text-Heavy.otf in Resources */,
 				65A51FE020B3012C0010DB33 /* SF-Pro-Display-Black.otf in Resources */,
 				65BFF47B20C1A61C00F64215 /* VoiceButtonAssets.xcassets in Resources */,
@@ -1157,21 +1244,30 @@
 				65A51FDD20B3012C0010DB33 /* SF-Pro-Display-UltralightItalic.otf in Resources */,
 				65A51FD020B3012C0010DB33 /* SF-Pro-Display-Light.otf in Resources */,
 				6504472F20C03DAB00D040B9 /* MASwitchProfilePopUpViewController.xib in Resources */,
+				6579634820E4D49E001CF29D /* NunitoSans-Bold.ttf in Resources */,
+				6579634220E4D49D001CF29D /* NunitoSans-BlackItalic.ttf in Resources */,
 				65A51FCF20B3012C0010DB33 /* SF-Pro-Display-RegularItalic.otf in Resources */,
 				6500425F20DB97E40092CCDA /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				6579634920E4D49E001CF29D /* NunitoSans-SemiBold.ttf in Resources */,
 				65B89A8C20B3342E0024DC51 /* MATransactionRedViewController.xib in Resources */,
 				65A51FDC20B3012C0010DB33 /* SF-Pro-Display-Ultralight.otf in Resources */,
 				65A51FD920B3012C0010DB33 /* SF-Pro-Text-Bold.otf in Resources */,
+				6579634A20E4D49E001CF29D /* NunitoSans-Black.ttf in Resources */,
 				6504473520C0410400D040B9 /* MASwitchProfileTableViewCell.xib in Resources */,
 				6500426220DB97E40092CCDA /* OpenSans-BoldItalic.ttf in Resources */,
 				65A51FD720B3012C0010DB33 /* SF-Pro-Display-Semibold.otf in Resources */,
+				6579634120E4D49D001CF29D /* NunitoSans-Light.ttf in Resources */,
 				65A51FE620B3012C0010DB33 /* SF-Pro-Text-LightItalic.otf in Resources */,
 				65FC866920B5EB2A001FECA5 /* MAAddProfileTableViewCell.xib in Resources */,
+				6579633F20E4D49D001CF29D /* NunitoSans-BoldItalic.ttf in Resources */,
+				6579634620E4D49E001CF29D /* NunitoSans-Italic.ttf in Resources */,
 				6504472820C028FD00D040B9 /* MAAllowTableViewCell.xib in Resources */,
 				65B89ACB20B44D210024DC51 /* MASignUpViewController.xib in Resources */,
 				65A51FE820B3012C0010DB33 /* SF-Pro-Display-BoldItalic.otf in Resources */,
 				6500425D20DB97E40092CCDA /* OpenSans-Bold.ttf in Resources */,
+				6579634020E4D49D001CF29D /* NunitoSans-ExtraLight.ttf in Resources */,
 				65A51FA920B300EA0010DB33 /* Main.storyboard in Resources */,
+				6579634B20E4D49E001CF29D /* NunitoSans-ExtraBoldItalic.ttf in Resources */,
 				65A51FD520B3012C0010DB33 /* SF-Pro-Display-Heavy.otf in Resources */,
 				65A51FD220B3012C0010DB33 /* SF-Pro-Text-MediumItalic.otf in Resources */,
 				65A51F7820B2FFF40010DB33 /* LaunchScreen.storyboard in Resources */,
@@ -1179,19 +1275,24 @@
 				65B89AB620B43FA50024DC51 /* MAValidationSuccessViewController.xib in Resources */,
 				65A51FE320B3012C0010DB33 /* SF-Pro-Text-Semibold.otf in Resources */,
 				6500426020DB97E40092CCDA /* LICENSE.txt in Resources */,
+				6579634520E4D49E001CF29D /* NunitoSans-SemiBoldItalic.ttf in Resources */,
 				65A51FD820B3012C0010DB33 /* SF-Pro-Text-Regular.otf in Resources */,
 				65A51FD120B3012C0010DB33 /* SF-Pro-Display-Regular.otf in Resources */,
 				65A51F7520B2FFF40010DB33 /* Assets.xcassets in Resources */,
 				65A51FDE20B3012C0010DB33 /* SF-Pro-Display-LightItalic.otf in Resources */,
 				65A51FE420B3012C0010DB33 /* SF-Pro-Text-HeavyItalic.otf in Resources */,
 				6500426120DB97E40092CCDA /* OpenSans-Regular.ttf in Resources */,
+				6579634420E4D49E001CF29D /* NunitoSans-Regular.ttf in Resources */,
 				65BFF47C20C1A61C00F64215 /* VoiceButtonView.xib in Resources */,
 				65A51FD620B3012C0010DB33 /* SF-Pro-Text-Light.otf in Resources */,
+				6579634720E4D49E001CF29D /* OFL.txt in Resources */,
 				65A51FE220B3012C0010DB33 /* SF-Pro-Text-RegularItalic.otf in Resources */,
+				6579634320E4D49E001CF29D /* NunitoSans-ExtraBold.ttf in Resources */,
 				65A51FE520B3012C0010DB33 /* SF-Pro-Display-ThinItalic.otf in Resources */,
 				65B89AB120B43A3D0024DC51 /* MAValidationViewController.xib in Resources */,
 				65A51FDB20B3012C0010DB33 /* SF-Pro-Display-HeavyItalic.otf in Resources */,
 				65B89ACD20B4761C0024DC51 /* NewProfile.storyboard in Resources */,
+				6579633E20E4D49D001CF29D /* NunitoSans-LightItalic.ttf in Resources */,
 				65B89AC520B44B1B0024DC51 /* MAShareVaucherViewController.xib in Resources */,
 				65B89AA720B432CC0024DC51 /* MARegistrationSuccessViewController.xib in Resources */,
 			);
@@ -1435,6 +1536,7 @@
 				65B89AA620B432CC0024DC51 /* MARegistrationSuccessViewController.swift in Sources */,
 				6510D87D20CAEF1400D85BAE /* Web3Provider.swift in Sources */,
 				65FC866120B5D8F5001FECA5 /* UIView+Shadow.swift in Sources */,
+				6528F01920E51BEF00DD19C1 /* MAFirstPageViewController.swift in Sources */,
 				6509EA3620C84CFD004F8BA0 /* NewToken.swift in Sources */,
 				65BFF47820C1A61C00F64215 /* SpinnerView.swift in Sources */,
 				651826E720DD1D8200B8963A /* MABaseQRProfileViewController.swift in Sources */,
@@ -1466,6 +1568,7 @@
 				65B89A8D20B3342E0024DC51 /* MATransactionRedViewController.swift in Sources */,
 				65B89AC420B44B1B0024DC51 /* MAShareVaucherViewController.swift in Sources */,
 				6527C6FE20D16BBC00009704 /* MASendViewController.swift in Sources */,
+				6528F01E20E53F3D00DD19C1 /* MALoginEmailViewController.swift in Sources */,
 				65FC866020B5D8F5001FECA5 /* UIColor+Background.swift in Sources */,
 				65B89AB520B43FA50024DC51 /* MAValidationSuccessViewController.swift in Sources */,
 				6556376620B718DF00E45487 /* MASpeachRecognition.swift in Sources */,
@@ -1484,6 +1587,7 @@
 				65FC860220B5A2DA001FECA5 /* MAOfficeViewController.swift in Sources */,
 				65B89A9C20B422D30024DC51 /* MAWaitingViewController.swift in Sources */,
 				65A51FAC20B300EA0010DB33 /* WaletTableViewCell.swift in Sources */,
+				6528F01C20E5358900DD19C1 /* MAPinCodeLoginViewController.swift in Sources */,
 				6556375B20B6DE8300E45487 /* ViewType.swift in Sources */,
 				65BFF47A20C1A61C00F64215 /* SpeechRecorder.swift in Sources */,
 				65BFF47020C193A200F64215 /* AuthorizationEmailRequest.swift in Sources */,

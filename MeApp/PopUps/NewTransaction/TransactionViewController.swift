@@ -12,6 +12,7 @@ class TransactionViewController: MABasePopUpViewController {
     @IBOutlet weak var viewBody: UIView!
     @IBOutlet weak var companyNameLabel: UILabel!
     @IBOutlet weak var priceTransactionLabel: UILabel!
+    @IBOutlet weak var transactionViewDetail: UIView!
     @IBOutlet weak var confirmationRecieveLabel: UILabel!
     
     
@@ -30,11 +31,16 @@ class TransactionViewController: MABasePopUpViewController {
         viewBody.layer.cornerRadius = 8.0
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
         var viewbodyRect: CGRect = self.viewBody.frame
-        viewbodyRect.size.height = 257
-        viewbodyRect.origin.y = 410
+        viewbodyRect.size.height = 315
+        viewbodyRect.origin.y = self.view.frame.size.height - 315
         self.viewBody.frame = viewbodyRect
-        
+        self.transactionViewDetail.isHidden = true
         self.showAnimate()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     func showAnimate()
@@ -62,6 +68,7 @@ class TransactionViewController: MABasePopUpViewController {
    
     @IBAction func close(_ sender: Any) {
         self.removeAnimate()
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     override func didReceiveMemoryWarning() {
@@ -74,9 +81,13 @@ class TransactionViewController: MABasePopUpViewController {
             isOpen = false
             UIView.animate(withDuration: 0.3) {
                 var viewbodyRect: CGRect = self.viewBody.frame
-                viewbodyRect.size.height = 257
-                viewbodyRect.origin.y = 410
+                viewbodyRect.size.height = 315
+                viewbodyRect.origin.y = self.view.frame.size.height - 315
                 self.viewBody.frame = viewbodyRect
+                var detailButton: CGRect = self.detaiTranscationButton.frame
+                detailButton.size.height = 65
+                self.detaiTranscationButton.frame = detailButton
+                self.transactionViewDetail.isHidden = true
 //                var companyNameFrame: CGRect = self.companyNameLabel.frame
 //                companyNameFrame.origin.x = 135
 //                companyNameFrame.origin.y = 117
@@ -112,9 +123,13 @@ class TransactionViewController: MABasePopUpViewController {
           
             UIView.animate(withDuration: 0.3) {
                 var viewbodyRect: CGRect = self.viewBody.frame
-                viewbodyRect.size.height = 400
-                viewbodyRect.origin.y = viewbodyRect.origin.y - 163
+                viewbodyRect.size.height = 496
+                viewbodyRect.origin.y = self.view.frame.size.height - 496
                 self.viewBody.frame = viewbodyRect
+                var detailButton: CGRect = self.detaiTranscationButton.frame
+                detailButton.size.height = 228
+                self.detaiTranscationButton.frame = detailButton
+                self.transactionViewDetail.isHidden = false
 //                var companyNameFrame: CGRect = self.companyNameLabel.frame
 //                companyNameFrame.origin.x = 18
 //                companyNameFrame.origin.y = 70

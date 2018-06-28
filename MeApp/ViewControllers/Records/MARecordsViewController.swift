@@ -83,8 +83,6 @@ extension MARecordsViewController: ExpandableDelegate {
     func expandableTableView(_ expandableTableView: ExpandableTableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             self.performSegue(withIdentifier: "goToNewProfile", sender: nil)
-        }else if indexPath.row == 1 {
-            self.performSegue(withIdentifier: "goToProfile", sender: nil)
         }
     }
     
