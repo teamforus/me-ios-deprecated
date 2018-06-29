@@ -795,7 +795,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="860"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XvO-ta-xuv">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XvO-ta-xuv" customClass="KRScrollView" customModule="MeApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="860"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTP-vN-dKl">
@@ -806,23 +806,23 @@
                                                 <color key="backgroundColor" red="0.11764705882352941" green="0.12549019607843137" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKs-5t-O0v">
-                                                <rect key="frame" x="12" y="83" width="351" height="428"/>
+                                                <rect key="frame" x="12" y="100" width="351" height="440"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1N4-Kp-O9W">
-                                                        <rect key="frame" x="21" y="336" width="305" height="55"/>
+                                                        <rect key="frame" x="21" y="372" width="305" height="55"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                         <string key="text">Laat iemand uw persoonlijke QR-code scannen om u 
 valuta, bezit of vouchers te sturen</string>
-                                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="12"/>
                                                         <color key="textColor" red="0.4039215686" green="0.42745098040000001" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="imageView:gd1-EJ-EuY:image" translatesAutoresizingMaskIntoConstraints="NO" id="gd1-EJ-EuY">
-                                                        <rect key="frame" x="51" y="36" width="250" height="224"/>
+                                                        <rect key="frame" x="51" y="36" width="250" height="245"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hier is je persoonlijke QR-Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79g-y7-xbL">
-                                                        <rect key="frame" x="19" y="281" width="307" height="28"/>
+                                                        <rect key="frame" x="23" y="339" width="309" height="28"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="20"/>
                                                         <color key="textColor" red="0.20784313730000001" green="0.3921568627" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -831,78 +831,107 @@ valuta, bezit of vouchers te sturen</string>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="428" id="7qH-qa-q12"/>
+                                                    <constraint firstAttribute="height" constant="440" id="7qH-qa-q12"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eeh-G2-Vs3">
-                                                <rect key="frame" x="0.0" y="519" width="375" height="386"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vwc-gF-uFq">
+                                                <rect key="frame" x="0.0" y="544" width="375" height="361"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eXy-4D-BOO">
-                                                        <rect key="frame" x="1" y="226" width="374" height="173"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profiel en instellingen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbY-UJ-gwi">
+                                                        <rect key="frame" x="33" y="165" width="240" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="22"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Organization van identitiet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ci-sL-dMD">
+                                                        <rect key="frame" x="30" y="15" width="298" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="22"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbM-Nh-3X0">
+                                                        <rect key="frame" x="17" y="47" width="339" height="81"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="showAlertSheedSwitchProfile:" destination="04k-YM-Iaf" eventType="touchUpInside" id="fPN-YA-qh4"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Organization van identiteit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULY-Si-jvX">
+                                                        <rect key="frame" x="33" y="62" width="173" height="20"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="14"/>
+                                                        <color key="textColor" red="0.25490196079999999" green="0.28627450980000002" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z8I-nq-WoJ">
+                                                        <rect key="frame" x="0.0" y="204" width="374" height="173"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Night Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvJ-S3-bwB">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Night Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uuk-rR-4gH">
                                                                 <rect key="frame" x="59" y="22" width="73" height="17"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nightMode" translatesAutoresizingMaskIntoConstraints="NO" id="4UN-II-jf8">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nightMode" translatesAutoresizingMaskIntoConstraints="NO" id="qx2-wb-Zfx">
                                                                 <rect key="frame" x="23" y="20" width="20" height="20"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             </imageView>
-                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Poy-nE-gRY">
+                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="83B-yG-B6a">
                                                                 <rect key="frame" x="308" y="15" width="49" height="31"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                                 <color key="onTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </switch>
-                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fyv-Wv-XQe">
+                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3C3-5Q-Ifj">
                                                                 <rect key="frame" x="15" y="55" width="360" height="1"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                                 <color key="backgroundColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </view>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Use Cellular Network" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAg-5h-wkd">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Use Cellular Network" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XG6-s5-JQu">
                                                                 <rect key="frame" x="59" y="77" width="130" height="17"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cellularNetwork" translatesAutoresizingMaskIntoConstraints="NO" id="fvJ-nc-LkJ">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cellularNetwork" translatesAutoresizingMaskIntoConstraints="NO" id="LDC-Qg-9fC">
                                                                 <rect key="frame" x="23" y="75" width="20" height="20"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             </imageView>
-                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m1z-Ze-Nce">
+                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W9L-o1-d6j">
                                                                 <rect key="frame" x="308" y="70" width="49" height="31"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                                 <color key="onTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </switch>
-                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Eg-uz-p96">
+                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q7W-Sw-qNa">
                                                                 <rect key="frame" x="15" y="110" width="360" height="1"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                                 <color key="backgroundColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </view>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bci-hb-41h">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pa8-wl-NX4">
                                                                 <rect key="frame" x="59" y="129" width="79" height="17"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="notifications" translatesAutoresizingMaskIntoConstraints="NO" id="rBo-5e-zfK">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="notifications" translatesAutoresizingMaskIntoConstraints="NO" id="25y-Fw-Rcg">
                                                                 <rect key="frame" x="23" y="127" width="20" height="20"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             </imageView>
-                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fVY-G5-kAm">
+                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wAS-Kr-Dwj">
                                                                 <rect key="frame" x="308" y="122" width="49" height="31"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                                 <color key="onTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </switch>
-                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1QI-kz-Vha">
+                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6lE-e9-OsE">
                                                                 <rect key="frame" x="15" y="162" width="360" height="1"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                                 <color key="backgroundColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -910,66 +939,36 @@ valuta, bezit of vouchers te sturen</string>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.98823529409999999" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Organization van identitiet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5f-8v-1HY">
-                                                        <rect key="frame" x="39" y="37" width="298" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="22"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0iH-lf-aWq">
-                                                        <rect key="frame" x="18" y="69" width="339" height="81"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                                        <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <connections>
-                                                            <action selector="showAlertSheedSwitchProfile:" destination="04k-YM-Iaf" eventType="touchUpInside" id="qTe-2Y-RCq"/>
-                                                        </connections>
-                                                    </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rocket Minds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Hd-38-uFI">
-                                                        <rect key="frame" x="34" y="112" width="236" height="18"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rocket Minds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYt-aF-MwH">
+                                                        <rect key="frame" x="33" y="90" width="236" height="18"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="21"/>
                                                         <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profiel en instellingen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7l-PN-QXP">
-                                                        <rect key="frame" x="34" y="187" width="240" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="22"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Organization van identiteit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CGy-eY-VLj">
-                                                        <rect key="frame" x="34" y="84" width="173" height="20"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="14"/>
-                                                        <color key="textColor" red="0.25490196079999999" green="0.28627450980000002" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="3IP-wY-p7e" secondAttribute="bottom" constant="651" id="0xN-aA-QiA"/>
-                                            <constraint firstItem="eKs-5t-O0v" firstAttribute="top" secondItem="VTP-vN-dKl" secondAttribute="top" constant="83" id="3Mi-BD-PuL"/>
+                                            <constraint firstItem="eKs-5t-O0v" firstAttribute="top" secondItem="VTP-vN-dKl" secondAttribute="top" constant="100" id="3Mi-BD-PuL"/>
                                             <constraint firstItem="eKs-5t-O0v" firstAttribute="leading" secondItem="VTP-vN-dKl" secondAttribute="leading" constant="12" id="468-of-UOg"/>
                                             <constraint firstAttribute="trailing" secondItem="3IP-wY-p7e" secondAttribute="trailing" id="A1b-x1-cCm"/>
-                                            <constraint firstItem="Eeh-G2-Vs3" firstAttribute="leading" secondItem="VTP-vN-dKl" secondAttribute="leading" id="ABF-sB-HjH"/>
                                             <constraint firstItem="3IP-wY-p7e" firstAttribute="leading" secondItem="VTP-vN-dKl" secondAttribute="leading" id="AM6-Ck-NTa"/>
                                             <constraint firstItem="3IP-wY-p7e" firstAttribute="top" secondItem="VTP-vN-dKl" secondAttribute="top" id="BbX-cS-s4V"/>
                                             <constraint firstAttribute="height" constant="905" id="LPC-Hp-lQI"/>
-                                            <constraint firstItem="Eeh-G2-Vs3" firstAttribute="top" secondItem="eKs-5t-O0v" secondAttribute="bottom" constant="8" id="Lpn-a5-4d3"/>
-                                            <constraint firstItem="Eeh-G2-Vs3" firstAttribute="trailing" secondItem="3IP-wY-p7e" secondAttribute="trailing" id="Tjb-Mn-9fQ"/>
-                                            <constraint firstAttribute="trailing" secondItem="Eeh-G2-Vs3" secondAttribute="trailing" id="jry-fQ-ICR"/>
-                                            <constraint firstAttribute="bottom" secondItem="Eeh-G2-Vs3" secondAttribute="bottom" id="qEE-fB-5e7"/>
+                                            <constraint firstItem="vwc-gF-uFq" firstAttribute="leading" secondItem="VTP-vN-dKl" secondAttribute="leading" id="Qwo-f0-ms6"/>
+                                            <constraint firstAttribute="trailing" secondItem="vwc-gF-uFq" secondAttribute="trailing" id="eZr-mC-oOX"/>
+                                            <constraint firstItem="vwc-gF-uFq" firstAttribute="top" secondItem="eKs-5t-O0v" secondAttribute="bottom" constant="4" id="iee-7f-j6v"/>
+                                            <constraint firstAttribute="bottom" secondItem="vwc-gF-uFq" secondAttribute="bottom" id="jud-Xs-P67"/>
                                             <constraint firstAttribute="trailing" secondItem="eKs-5t-O0v" secondAttribute="trailing" constant="12" id="trp-2C-JoE"/>
                                             <constraint firstItem="3IP-wY-p7e" firstAttribute="centerX" secondItem="eKs-5t-O0v" secondAttribute="centerX" id="vxF-Dg-zve"/>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.1176470588" green="0.12549019610000001" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="VTP-vN-dKl" firstAttribute="leading" secondItem="XvO-ta-xuv" secondAttribute="leading" id="3SQ-Dn-ozU"/>
                                     <constraint firstAttribute="height" constant="860" id="Nj8-Z7-xaQ"/>
@@ -982,19 +981,19 @@ valuta, bezit of vouchers te sturen</string>
                                     <outlet property="delegate" destination="04k-YM-Iaf" id="B5y-Ay-5PX"/>
                                 </connections>
                             </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backCopy" translatesAutoresizingMaskIntoConstraints="NO" id="cLI-jy-B7y">
+                                <rect key="frame" x="20" y="29" width="18" height="14"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsV-na-VPN">
-                                <rect key="frame" x="20" y="23" width="67" height="30"/>
+                                <rect key="frame" x="16" y="23" width="67" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="back:" destination="04k-YM-Iaf" eventType="touchUpInside" id="1ie-2o-6Q1"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backIcon" translatesAutoresizingMaskIntoConstraints="NO" id="cLI-jy-B7y">
-                                <rect key="frame" x="20" y="29" width="16" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.11764705882352941" green="0.12549019607843137" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="XvO-ta-xuv" firstAttribute="trailing" secondItem="tgu-PO-daU" secondAttribute="trailing" id="CpK-gd-bI1"/>
                             <constraint firstItem="XvO-ta-xuv" firstAttribute="top" secondItem="tgu-PO-daU" secondAttribute="top" id="ekv-Og-2Pd"/>
@@ -1005,12 +1004,13 @@ valuta, bezit of vouchers te sturen</string>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="860"/>
                     <connections>
-                        <outlet property="buttonSiwtchProfile" destination="0iH-lf-aWq" id="bFp-br-mBk"/>
+                        <outlet property="buttonSiwtchProfile" destination="QbM-Nh-3X0" id="z8b-rS-GaY"/>
                         <outlet property="descriptionQr" destination="1N4-Kp-O9W" id="VAc-pz-69Q"/>
                         <outlet property="heighQrConstraint" destination="7qH-qa-q12" id="8X8-g9-yei"/>
                         <outlet property="imageQR" destination="gd1-EJ-EuY" id="N77-yz-baB"/>
                         <outlet property="labelQr" destination="79g-y7-xbL" id="RHZ-O9-cmG"/>
-                        <outlet property="profileName" destination="3Hd-38-uFI" id="J6B-p5-SZa"/>
+                        <outlet property="profileName" destination="hYt-aF-MwH" id="Jid-9b-htB"/>
+                        <outlet property="scrollView" destination="XvO-ta-xuv" id="wig-cN-5nF"/>
                         <outlet property="topConstraint" destination="hUD-P2-fkb" id="jDY-fJ-vXr"/>
                         <outlet property="topConstraintQrBody" destination="3Mi-BD-PuL" id="rIj-a7-WgJ"/>
                         <outlet property="viewBodyQR" destination="eKs-5t-O0v" id="EwT-7X-nzA"/>
@@ -1439,6 +1439,7 @@ informatie van je identiteit:</string>
     <resources>
         <image name="arrowBlue" width="8" height="13"/>
         <image name="arrowDown" width="13" height="8"/>
+        <image name="backCopy" width="18" height="14"/>
         <image name="backIcon" width="17" height="17"/>
         <image name="baseButtonRegistration" width="304" height="51"/>
         <image name="baseChangeProfile" width="341" height="80"/>

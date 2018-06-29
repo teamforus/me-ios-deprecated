@@ -13,7 +13,7 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.addCenterButton(withImage: UIImage.init(named: "qrButton")!, highlightImage: UIImage.init(named: "qrButton")!)
+//        self.addCenterButton(withImage: UIImage.init(named: "qrButton")!, highlightImage: UIImage.init(named: "qrButton")!)
         self.tabBar.barTintColor = UIColor.white
         let largerRedTextSelectAttributes = [NSAttributedStringKey.font: UIFont(name: "SFProText-Semibold", size: 10.0),
                                              NSAttributedStringKey.foregroundColor: UIColor.white]

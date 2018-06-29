@@ -13,6 +13,7 @@ class PassViewController: MABaseViewController {
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var imageQR: UIImageView!
     @IBOutlet weak var voiceButton: VoiceButtonView!
+    @IBOutlet weak var kindPaketQRView: UIView!
     
     let presenter: Presentr = {
         let presenter = Presentr(presentationType: .alert)
@@ -24,6 +25,12 @@ class PassViewController: MABaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         imageQR.generateQRCode(from: "456,66")
+        kindPaketQRView.layer.cornerRadius = 9.0
+        kindPaketQRView.layer.shadowColor = UIColor.black.cgColor
+        kindPaketQRView.layer.shadowOffset = CGSize(width: 0, height: 5)
+        kindPaketQRView.layer.shadowOpacity = 0.1
+        kindPaketQRView.layer.shadowRadius = 10.0
+        kindPaketQRView.layer.masksToBounds = false
     }
     
     override func viewWillAppear(_ animated: Bool) {

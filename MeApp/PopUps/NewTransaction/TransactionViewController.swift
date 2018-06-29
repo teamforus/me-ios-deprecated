@@ -14,6 +14,7 @@ class TransactionViewController: MABasePopUpViewController {
     @IBOutlet weak var priceTransactionLabel: UILabel!
     @IBOutlet weak var transactionViewDetail: UIView!
     @IBOutlet weak var confirmationRecieveLabel: UILabel!
+    var isVisisbeTabBar: Bool! = false
     
     
     @IBOutlet weak var sendTitleLabel: UILabel!
@@ -28,7 +29,7 @@ class TransactionViewController: MABasePopUpViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewBody.layer.masksToBounds = true
-        viewBody.layer.cornerRadius = 8.0
+        viewBody.layer.cornerRadius = 14.0
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
         var viewbodyRect: CGRect = self.viewBody.frame
         viewbodyRect.size.height = 315
@@ -68,7 +69,9 @@ class TransactionViewController: MABasePopUpViewController {
    
     @IBAction func close(_ sender: Any) {
         self.removeAnimate()
+        if isVisisbeTabBar{
         self.tabBarController?.tabBar.isHidden = false
+        }
     }
     
     override func didReceiveMemoryWarning() {

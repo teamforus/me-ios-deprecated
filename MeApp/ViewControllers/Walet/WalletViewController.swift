@@ -30,11 +30,11 @@ class WalletViewController: MABaseViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        segmentView.layer.cornerRadius = 7.0
+        segmentView.layer.cornerRadius = 8.0
         tableView.setContentOffset(CGPoint(x: 0, y: 100), animated: true)
         segmentedControl.items = ["Valuta", "Bezit", "Vouchers"]
         segmentedControl.selectedIndex = 0
-        segmentedControl.font = UIFont(name: "SFProText-Bold", size: 12)
+        segmentedControl.font = UIFont(name: "NunitoSans-SemiBold", size: 12)
         segmentedControl.unselectedLabelColor = #colorLiteral(red: 0.631372549, green: 0.6509803922, blue: 0.6784313725, alpha: 1)
         segmentedControl.selectedLabelColor = #colorLiteral(red: 0.2078431373, green: 0.3921568627, blue: 0.968627451, alpha: 1)
         segmentedControl.addTarget(self, action: #selector(self.segmentSelected(sender:)), for: .valueChanged)
@@ -144,6 +144,7 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
             let popOverVC = TransactionViewController(nibName: "TransactionViewController", bundle: nil)
             self.addChildViewController(popOverVC)
             popOverVC.view.frame = self.view.frame
+            popOverVC.isVisisbeTabBar = true
             self.view.addSubview(popOverVC.view)
             popOverVC.didMove(toParentViewController: self)
         }else if segmentedControl.selectedIndex == 2{

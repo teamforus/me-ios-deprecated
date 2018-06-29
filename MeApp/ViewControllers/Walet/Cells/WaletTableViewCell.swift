@@ -18,6 +18,7 @@ class WaletTableViewCell: SwipeTableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         bodyUIView.layer.cornerRadius = 5.0
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

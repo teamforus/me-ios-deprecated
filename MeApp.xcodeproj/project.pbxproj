@@ -169,6 +169,7 @@
 		65BFF47B20C1A61C00F64215 /* VoiceButtonAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65BFF47520C1A61B00F64215 /* VoiceButtonAssets.xcassets */; };
 		65BFF47C20C1A61C00F64215 /* VoiceButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65BFF47620C1A61B00F64215 /* VoiceButtonView.xib */; };
 		65BFF47D20C1A61C00F64215 /* VoiceButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BFF47720C1A61B00F64215 /* VoiceButtonView.swift */; };
+		65E3363F20E645B600C0512B /* KRScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E3363E20E645B600C0512B /* KRScrollView.swift */; };
 		65FC85F820B56FA2001FECA5 /* MANavicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC85F720B56FA2001FECA5 /* MANavicationController.swift */; };
 		65FC85FA20B57642001FECA5 /* MAQRCodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC85F920B57642001FECA5 /* MAQRCodeReaderViewController.swift */; };
 		65FC85FE20B58426001FECA5 /* MAValidationQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC85FC20B58426001FECA5 /* MAValidationQRViewController.swift */; };
@@ -373,6 +374,7 @@
 		65BFF47520C1A61B00F64215 /* VoiceButtonAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = VoiceButtonAssets.xcassets; sourceTree = "<group>"; };
 		65BFF47620C1A61B00F64215 /* VoiceButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VoiceButtonView.xib; sourceTree = "<group>"; };
 		65BFF47720C1A61B00F64215 /* VoiceButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceButtonView.swift; sourceTree = "<group>"; };
+		65E3363E20E645B600C0512B /* KRScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KRScrollView.swift; sourceTree = "<group>"; };
 		65FC85F720B56FA2001FECA5 /* MANavicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MANavicationController.swift; sourceTree = "<group>"; };
 		65FC85F920B57642001FECA5 /* MAQRCodeReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAQRCodeReaderViewController.swift; sourceTree = "<group>"; };
 		65FC85FC20B58426001FECA5 /* MAValidationQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAValidationQRViewController.swift; sourceTree = "<group>"; };
@@ -704,6 +706,7 @@
 				65A51FA120B300EA0010DB33 /* Main.storyboard */,
 				65A51F9D20B300E90010DB33 /* PassStoryboard.storyboard */,
 				65B89ACC20B4761C0024DC51 /* NewProfile.storyboard */,
+				65E3363E20E645B600C0512B /* KRScrollView.swift */,
 				65BFF47120C1A61B00F64215 /* VoiceButton */,
 				65FC865D20B5D8F5001FECA5 /* Extension */,
 				65D39D1520DC057200CA4E41 /* Library */,
@@ -1535,6 +1538,7 @@
 				65BFF46C20C1860500F64215 /* ResponseNewIndentity.swift in Sources */,
 				65B89AA620B432CC0024DC51 /* MARegistrationSuccessViewController.swift in Sources */,
 				6510D87D20CAEF1400D85BAE /* Web3Provider.swift in Sources */,
+				65E3363F20E645B600C0512B /* KRScrollView.swift in Sources */,
 				65FC866120B5D8F5001FECA5 /* UIView+Shadow.swift in Sources */,
 				6528F01920E51BEF00DD19C1 /* MAFirstPageViewController.swift in Sources */,
 				6509EA3620C84CFD004F8BA0 /* NewToken.swift in Sources */,

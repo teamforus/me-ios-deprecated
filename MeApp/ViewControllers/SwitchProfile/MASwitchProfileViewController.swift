@@ -17,7 +17,7 @@ class MASwitchProfileViewController: MABaseViewController,MASwitchProfilePopUpVi
     @IBOutlet weak var viewBodyQR: UIView!
     @IBOutlet weak var buttonSiwtchProfile: UIButton!
     @IBOutlet weak var heighQrConstraint: NSLayoutConstraint!
-    
+    @IBOutlet weak var scrollView: KRScrollView!
     @IBOutlet weak var topConstraintQrBody: NSLayoutConstraint!
     @IBOutlet weak var heightImageConstraint: NSLayoutConstraint!
     @IBOutlet weak var widthImageConstraint: NSLayoutConstraint!
@@ -44,7 +44,7 @@ class MASwitchProfileViewController: MABaseViewController,MASwitchProfilePopUpVi
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -58,11 +58,15 @@ class MASwitchProfileViewController: MABaseViewController,MASwitchProfilePopUpVi
     
     func switchProfile(_ controller: MASwitchProfilePopUpViewController, user: User) {
         profileName.text = user.name
-//        profileImage.image = user.image
+        //        profileImage.image = user.image
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        print(size)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -72,12 +76,12 @@ class MASwitchProfileViewController: MABaseViewController,MASwitchProfilePopUpVi
         
         if (scrollOffset < 0)
         {
-            UIView.animate(withDuration: 0.2) {
+            UIView.animate(withDuration: 0.3, animations: {
                 var imageRect: CGRect = self.imageQR.frame
-                imageRect.size.height = 224;
+                imageRect.size.height = 245;
                 imageRect.size.width = 250;
-                imageRect.origin.x = 61
-                imageRect.origin.y = 36;
+                imageRect.origin.x = (self.viewBodyQR.frame.size.width  - imageRect.size.width) / 2
+                imageRect.origin.y = 57;
                 self.imageQR.frame = imageRect;
                 var labelQRRect: CGRect = self.labelQr.frame
                 labelQRRect.origin.y = 339
@@ -85,29 +89,55 @@ class MASwitchProfileViewController: MABaseViewController,MASwitchProfilePopUpVi
                 var decriptionQRRect = self.descriptionQr.frame
                 decriptionQRRect.origin.y = 372
                 self.descriptionQr.frame = decriptionQRRect
+            }, completion: { (true) in
                 self.heighQrConstraint.constant = 440
                 self.topConstraintQrBody.constant = 83
+            })
+        }else if UIScreen.main.nativeBounds.height == 2436 {
+            if ( scrollViewHeight == scrollContentSizeHeight)
+            {
+                UIView.animate(withDuration: 0.3, animations: {
+                    var imageRect: CGRect = self.imageQR.frame
+                    imageRect.size.height = 50;
+                    imageRect.size.width = 50;
+                    imageRect.origin.x = (self.viewBodyQR.frame.size.width  - imageRect.size.width) / 2
+                    imageRect.origin.y = 31;
+                    self.imageQR.frame = imageRect;
+                    var labelQRRect: CGRect = self.labelQr.frame
+                    labelQRRect.origin.y = 104
+                    self.labelQr.frame = labelQRRect
+                    var decriptionQRRect = self.descriptionQr.frame
+                    decriptionQRRect.origin.y = 138
+                    self.descriptionQr.frame = decriptionQRRect
+                }, completion: { (true) in
+                    
+                    self.heighQrConstraint.constant = 200
+                    self.topConstraintQrBody.constant = 150
+                })
             }
-        }
-        else if (scrollOffset + scrollViewHeight == scrollContentSizeHeight)
-        {
-            UIView.animate(withDuration: 0.2) {
+        }else{
+            if (scrollViewHeight + 25 == scrollContentSizeHeight)
+            {
+                UIView.animate(withDuration: 0.3, animations: {
+                    var imageRect: CGRect = self.imageQR.frame
+                    imageRect.size.height = 50;
+                    imageRect.size.width = 50;
+                    imageRect.origin.x = (self.viewBodyQR.frame.size.width  - imageRect.size.width) / 2
+                    imageRect.origin.y = 31;
+                    self.imageQR.frame = imageRect;
+                    var labelQRRect: CGRect = self.labelQr.frame
+                    labelQRRect.origin.y = 104
+                    self.labelQr.frame = labelQRRect
+                    var decriptionQRRect = self.descriptionQr.frame
+                    decriptionQRRect.origin.y = 138
+                    self.descriptionQr.frame = decriptionQRRect
+                }, completion: { (true) in
+                    self.heighQrConstraint.constant = 200
+                    self.topConstraintQrBody.constant = 110
+                })
                 
-                var imageRect: CGRect = self.imageQR.frame
-                imageRect.size.height = 50;
-                imageRect.size.width = 50;
-                imageRect.origin.x = 173
-                imageRect.origin.y = 31;
-                self.imageQR.frame = imageRect;
-                var labelQRRect: CGRect = self.labelQr.frame
-                labelQRRect.origin.y = 104
-                self.labelQr.frame = labelQRRect
-                var decriptionQRRect = self.descriptionQr.frame
-                decriptionQRRect.origin.y = 138
-                self.descriptionQr.frame = decriptionQRRect
-                self.heighQrConstraint.constant = 200
-                self.topConstraintQrBody.constant = 110
             }
         }
+        
     }
 }

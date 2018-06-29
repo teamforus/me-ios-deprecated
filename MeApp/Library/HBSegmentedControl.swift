@@ -69,7 +69,7 @@ import UIKit
     
     func setupView(){
         
-        layer.cornerRadius = 7.0
+        layer.cornerRadius = 6.0
         layer.borderColor = UIColor(white: 1.0, alpha: 0.5).cgColor
         layer.borderWidth = 2
         
@@ -96,7 +96,7 @@ import UIKit
             label.text = items[index - 1]
             label.backgroundColor = UIColor.clear
             label.textAlignment = .center
-            label.font = UIFont(name: "SFProText-Bold", size: 14)
+            label.font = UIFont(name: "SFProText-Bold", size: 12)
             label.textColor = index == 1 ? selectedLabelColor : unselectedLabelColor
             label.translatesAutoresizingMaskIntoConstraints = false
 
@@ -115,7 +115,7 @@ import UIKit
         selectFrame.size.width = newWidth
         thumbView.frame = selectFrame
         thumbView.backgroundColor = thumbColor
-        thumbView.layer.cornerRadius = 8.0
+        thumbView.layer.cornerRadius = 6.0
         
         displayNewSelectedIndex()
         
