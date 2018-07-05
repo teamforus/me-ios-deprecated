@@ -21,7 +21,7 @@ class MALoginEmailViewController: MABaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        confirmButton.layer.cornerRadius = 9.0
+        confirmButton.layer.cornerRadius = 14.0
         confirmButton.layer.shadowColor = UIColor.black.cgColor;
         confirmButton.layer.shadowOffset = CGSize(width: 0, height: 10)
         confirmButton.layer.shadowOpacity = 0.2
@@ -29,6 +29,7 @@ class MALoginEmailViewController: MABaseViewController {
         confirmButton.layer.masksToBounds = false
         IQKeyboardManager.sharedManager().enable = true
         confirmEmailSkyTextField.isEnabled = false
+        emailSkyTextField.becomeFirstResponder()
 //        IQKeyboardManager.sharedManager().enableAutoToolbar = false
        
     }

@@ -10,10 +10,12 @@ import UIKit
 import SkyFloatingLabelTextField
 
 class MAShareVaucherViewController: MABasePopUpViewController {
+    @IBOutlet weak var viewBody: UIView!
     @IBOutlet weak var amount: SkyFloatingLabelTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewBody.layer.cornerRadius = 14.0
     }
     
     override func viewDidAppear(_ animated: Bool) {

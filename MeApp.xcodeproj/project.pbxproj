@@ -68,6 +68,7 @@
 		6556376620B718DF00E45487 /* MASpeachRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6556376520B718DF00E45487 /* MASpeachRecognition.swift */; };
 		6556376820B726F700E45487 /* MABaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6556376720B726F700E45487 /* MABaseViewController.swift */; };
 		6558E3DF20DBB6B6001EC568 /* HBSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6558E3DE20DBB6B6001EC568 /* HBSegmentedControl.swift */; };
+		655BB05720EE442B00BFD06A /* MAQRLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BB05620EE442B00BFD06A /* MAQRLoginViewController.swift */; };
 		6579633E20E4D49D001CF29D /* NunitoSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579632F20E4D49C001CF29D /* NunitoSans-LightItalic.ttf */; };
 		6579633F20E4D49D001CF29D /* NunitoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579633020E4D49C001CF29D /* NunitoSans-BoldItalic.ttf */; };
 		6579634020E4D49D001CF29D /* NunitoSans-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579633120E4D49C001CF29D /* NunitoSans-ExtraLight.ttf */; };
@@ -266,6 +267,7 @@
 		6556376520B718DF00E45487 /* MASpeachRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MASpeachRecognition.swift; sourceTree = "<group>"; };
 		6556376720B726F700E45487 /* MABaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MABaseViewController.swift; sourceTree = "<group>"; };
 		6558E3DE20DBB6B6001EC568 /* HBSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSegmentedControl.swift; sourceTree = "<group>"; };
+		655BB05620EE442B00BFD06A /* MAQRLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAQRLoginViewController.swift; sourceTree = "<group>"; };
 		6579632F20E4D49C001CF29D /* NunitoSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-LightItalic.ttf"; sourceTree = "<group>"; };
 		6579633020E4D49C001CF29D /* NunitoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		6579633120E4D49C001CF29D /* NunitoSans-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraLight.ttf"; sourceTree = "<group>"; };
@@ -509,9 +511,8 @@
 		651826E820DD1D8700B8963A /* QRPRofile */ = {
 			isa = PBXGroup;
 			children = (
-				651826E620DD1D8200B8963A /* MABaseQRProfileViewController.swift */,
-				651826E920DD1DA400B8963A /* MAContentQRProfileViewController.swift */,
-				651826EB20DD1DAF00B8963A /* MABotomQrProfileViewController.swift */,
+				655BB05520EE440C00BFD06A /* Drop_Up */,
+				655BB05620EE442B00BFD06A /* MAQRLoginViewController.swift */,
 			);
 			path = QRPRofile;
 			sourceTree = "<group>";
@@ -650,6 +651,16 @@
 				6556374C20B6DE8000E45487 /* UIView+Shape.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		655BB05520EE440C00BFD06A /* Drop_Up */ = {
+			isa = PBXGroup;
+			children = (
+				651826E620DD1D8200B8963A /* MABaseQRProfileViewController.swift */,
+				651826E920DD1DA400B8963A /* MAContentQRProfileViewController.swift */,
+				651826EB20DD1DAF00B8963A /* MABotomQrProfileViewController.swift */,
+			);
+			path = Drop_Up;
 			sourceTree = "<group>";
 		};
 		6579632E20E4D49C001CF29D /* Nunito_Sans */ = {
@@ -866,7 +877,7 @@
 				651826E820DD1D8700B8963A /* QRPRofile */,
 				6528F01A20E51BF700DD19C1 /* FirstPage */,
 				6528F01F20E5461000DD19C1 /* PinCodeLogin */,
-				6528F01D20E53F3D00DD19C1 /* MALoginEmailViewController.swift */,
+				65E3364020E6BA0300C0512B /* LogimEmail */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1045,6 +1056,14 @@
 				6556376320B7078800E45487 /* MASetUpPinViewController.swift */,
 			);
 			path = PinProfile;
+			sourceTree = "<group>";
+		};
+		65E3364020E6BA0300C0512B /* LogimEmail */ = {
+			isa = PBXGroup;
+			children = (
+				6528F01D20E53F3D00DD19C1 /* MALoginEmailViewController.swift */,
+			);
+			path = LogimEmail;
 			sourceTree = "<group>";
 		};
 		65FC85FB20B57646001FECA5 /* QrCode */ = {
@@ -1586,6 +1605,7 @@
 				657B074620D27F2B0093930E /* MAWalletOwnerTableViewCell.swift in Sources */,
 				6500426F20DBA3D50092CCDA /* TransactionViewController.swift in Sources */,
 				65BFF46E20C191BD00F64215 /* AuthorizationEmail.swift in Sources */,
+				655BB05720EE442B00BFD06A /* MAQRLoginViewController.swift in Sources */,
 				6556376020B6FB9100E45487 /* UITextField+PlaceholderColor.swift in Sources */,
 				6558E3DF20DBB6B6001EC568 /* HBSegmentedControl.swift in Sources */,
 				65FC860220B5A2DA001FECA5 /* MAOfficeViewController.swift in Sources */,

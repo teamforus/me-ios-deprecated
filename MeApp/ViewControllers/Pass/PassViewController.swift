@@ -14,6 +14,9 @@ class PassViewController: MABaseViewController {
     @IBOutlet weak var imageQR: UIImageView!
     @IBOutlet weak var voiceButton: VoiceButtonView!
     @IBOutlet weak var kindPaketQRView: UIView!
+    @IBOutlet weak var emailMeButton: UIButton!
+    @IBOutlet weak var smallerAmount: UIButton!
+    @IBOutlet weak var qrView: UIView!
     
     let presenter: Presentr = {
         let presenter = Presentr(presentationType: .alert)
@@ -31,6 +34,12 @@ class PassViewController: MABaseViewController {
         kindPaketQRView.layer.shadowOpacity = 0.1
         kindPaketQRView.layer.shadowRadius = 10.0
         kindPaketQRView.layer.masksToBounds = false
+        
+        smallerAmount.layer.cornerRadius = 9.0
+        emailMeButton.layer.cornerRadius = 9.0
+        
+        imageQR.generateQRCode(from: "Voucher")
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,7 +83,6 @@ extension PassViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PassTableViewCell
-        
         if indexPath.row == 0 {
             cell.companyTitle.text = "RMinds"
         }else if indexPath.row == 1{
@@ -90,6 +98,7 @@ extension PassViewController: UITableViewDataSource, UITableViewDelegate{
         popOverVC.view.frame = self.view.frame
         self.view.addSubview(popOverVC.view)
         popOverVC.didMove(toParentViewController: self)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

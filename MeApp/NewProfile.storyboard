@@ -568,7 +568,7 @@
         <!--Request View Controller-->
         <scene sceneID="xiQ-lz-eOi">
             <objects>
-                <viewController id="a4A-4w-2jO" customClass="MARequestViewController" customModule="MeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="request" id="a4A-4w-2jO" customClass="MARequestViewController" customModule="MeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qTW-IZ-aGX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -588,8 +588,8 @@
                                 <rect key="frame" x="11.5" y="34.5" width="16" height="16.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CH0-6w-GEj">
-                                <rect key="frame" x="10" y="27" width="42" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CH0-6w-GEj">
+                                <rect key="frame" x="0.0" y="27" width="74" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="back:" destination="a4A-4w-2jO" eventType="touchUpInside" id="IMi-LB-The"/>
@@ -704,7 +704,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGx-U1-LCy">
-                                <rect key="frame" x="10" y="26" width="42" height="30"/>
+                                <rect key="frame" x="0.0" y="26" width="64" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="back:" destination="G87-Oq-gwp" eventType="touchUpInside" id="nRQ-ia-4ux"/>
@@ -1023,7 +1023,7 @@ valuta, bezit of vouchers te sturen</string>
         <!--Send View Controller-->
         <scene sceneID="0vM-b4-khS">
             <objects>
-                <viewController id="zrX-45-4am" customClass="MASendViewController" customModule="MeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="send" id="zrX-45-4am" customClass="MASendViewController" customModule="MeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FME-Wf-PKC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

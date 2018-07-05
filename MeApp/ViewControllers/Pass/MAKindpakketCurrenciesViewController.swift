@@ -10,12 +10,22 @@ import UIKit
 import Presentr
 
 class MAKindpakketCurrenciesViewController: MABaseViewController {
+    @IBOutlet weak var sendButton: UIButton!
     
     @IBOutlet weak var tableView: UITableView!
-   
+    @IBOutlet weak var askButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setBorderWithRadius(button: sendButton)
+        setBorderWithRadius(button: askButton)
+    }
+    
+    func setBorderWithRadius(button: UIButton){
+        button.layer.borderWidth = 1.0
+        button.layer.borderColor = UIColor.black.cgColor
+        button.layer.cornerRadius = 8.0
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,13 +63,11 @@ extension MAKindpakketCurrenciesViewController: UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//            let popupTransction =  TransactionViewController(nibName: "TransactionViewController", bundle: nil)
-//            dynamicSizePresenter.presentationType = .custom(width: ModalSize.custom(size: 340), height: ModalSize.custom(size: 400), center: .bottomCenter)
-//            customPresentViewController(dynamicSizePresenter, viewController: popupTransction, animated: true, completion: nil)
         let popOverVC = TransactionViewController(nibName: "TransactionViewController", bundle: nil)
         self.addChildViewController(popOverVC)
         popOverVC.view.frame = self.view.frame
         self.view.addSubview(popOverVC.view)
         popOverVC.didMove(toParentViewController: self)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
