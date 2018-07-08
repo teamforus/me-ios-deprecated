@@ -9,12 +9,15 @@
 import UIKit
 import Presentr
 import Alamofire
+import ISHPullUp
 
 class MALoginWithQRViewController: MABaseViewController, MARegistrationViewControllerDelegate, MASignUpViewControllerDelegate {
     @IBOutlet weak var qrBodyView: UIView!
     @IBOutlet weak var loginWithQRButton: UIButton!
     @IBOutlet weak var loginWithPinCodeButton: UIButton!
     @IBOutlet weak var loginWithEmailButton: UIButton!
+    weak var pullUpController: ISHPullUpViewController!
+    
     
     var newIndetity: NewIdentity!
     let presenter: Presentr = {
@@ -60,6 +63,7 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
         loginWithEmailButton.layer.shadowOpacity = 0.2
         loginWithEmailButton.layer.shadowRadius = 10.0;
         loginWithEmailButton.layer.masksToBounds = false
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -93,6 +97,9 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
     }
     
     
+    @IBAction func loginWithQr(_ sender: Any) {
+        NotificationCenter.default.post(name: Notification.Name("togleStateWindow"), object: nil)
+    }
     //MARK : MARegistrationViewControllerDelegate
     
     func confirmationEmail(_ controller: MARegistrationViewController, confirmationSuccess: Bool, email:String) {

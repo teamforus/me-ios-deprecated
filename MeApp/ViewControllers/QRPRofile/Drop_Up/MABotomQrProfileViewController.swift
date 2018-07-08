@@ -8,6 +8,7 @@
 
 import UIKit
 import ISHPullUp
+import AssistantKit
 
 class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate, ISHPullUpStateDelegate{
     @IBOutlet private weak var handleView: ISHPullUpHandleView!
@@ -22,9 +23,44 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture))
-        topView.addGestureRecognizer(tapGesture)
+        self.view.isHidden = true
+        topView.layer.cornerRadius = 14.0
+        rootView.layer.cornerRadius = 14.0
+        rootView.layer.shadowColor = UIColor.black.cgColor;
+        rootView.layer.shadowOffset = CGSize(width: 0, height: -2)
+        rootView.layer.shadowOpacity = 0.2
+        rootView.layer.shadowRadius = 23 / 2
         qrCodeImageView.generateQRCode(from: "profileCode")
+        NotificationCenter.default.addObserver(self, selector: #selector(toglePullUpView), name: Notification.Name("togleStateWindow"), object: nil)
+        var rect: CGRect = self.rootView.frame
+             let screen = Device.screen
+        switch screen {
+        case .inches_4_0:
+            rect.size.height = 400
+            break
+        case .inches_4_7:
+            rect.size.height = 500
+            break
+        case .inches_5_5:
+            rect.size.height = 567
+            break
+        case .inches_5_8:
+            rect.size.height = 567
+            break
+        default:
+            break
+            
+        }
+        self.rootView.frame = rect
+    }
+    
+   @objc func toglePullUpView(){
+    if pullUpController.state == .expanded{
+        self.view.isHidden = true
+    }else{
+        self.view.isHidden = false
+    }
+        pullUpController.toggleState(animated: true)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -49,6 +85,7 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
     @IBAction func close(_ sender: Any) {
         if pullUpController.state == .expanded{
              pullUpController.toggleState(animated: true)
+            self.view.isHidden = true
         }
     }
     

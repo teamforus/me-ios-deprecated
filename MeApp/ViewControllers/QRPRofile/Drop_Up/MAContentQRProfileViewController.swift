@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import ISHPullUp
 
 class MAContentQRProfileViewController: MABaseViewController {
+    weak var pullUpController: ISHPullUpViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()

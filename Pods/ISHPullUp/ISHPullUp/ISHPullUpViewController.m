@@ -59,7 +59,7 @@ const CGFloat ISHPullUpViewControllerDefaultTopMargin = 20.0;
     self.snapToEnds = YES;
     self.snapThreshold = ISHPullUpViewControllerDefaultSnapThreshold;
     self.topMargin = ISHPullUpViewControllerDefaultTopMargin;
-    self.dimmingColor = [UIColor colorWithWhite:0 alpha:0.4];
+    self.dimmingColor = [UIColor colorWithWhite:0 alpha:0.0];
     self.dimmingThreshold = 0.5;
     self.bottomHiddenMargin = 10.0;
 
@@ -542,10 +542,11 @@ const CGFloat ISHPullUpViewControllerDefaultTopMargin = 20.0;
 
     if (self.bottomHidden) {
         // hide the bottom view by moving the view below the view and add the bottomHiddenMargin
-        bottomFrame = CGRectOffset(bottomFrame, 0, size.height - bottomFrame.origin.y + self.bottomHiddenMargin);
+//        bottomFrame = CGRectOffset(bottomFrame, 0, size.height - bottomFrame.origin.y + self.bottomHiddenMargin);
     }
 
-    [self.bottomViewController.view setFrame:bottomFrame];
+    self.bottomViewController.view.backgroundColor = UIColor.clearColor;
+    [self.bottomViewController.view setFrame:CGRectMake(10, CGRectGetMaxY(bounds) - clampedBottomHeight, CGRectGetWidth(bounds) - 20, clampedBottomHeight)];
 
     // inform content delegate that edge insets were updated
     if (self.contentViewController) {

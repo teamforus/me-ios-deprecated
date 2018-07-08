@@ -30,3 +30,5 @@ class MAShareVaucherViewController: MABasePopUpViewController {
     @IBAction func send(_ sender: Any) {
     }
 }
+
+

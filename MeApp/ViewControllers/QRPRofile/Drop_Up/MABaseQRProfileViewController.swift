@@ -25,7 +25,7 @@ class MABaseQRProfileViewController: ISHPullUpViewController {
     
     private func commonInit() {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let contentVC = storyBoard.instantiateViewController(withIdentifier: "content") as! MAContentQRProfileViewController
+        let contentVC = storyBoard.instantiateViewController(withIdentifier: "content") as! MALoginWithQRViewController
         let bottomVC = storyBoard.instantiateViewController(withIdentifier: "bottom") as! MABotomQrProfileViewController
         contentViewController = contentVC
         bottomViewController = bottomVC

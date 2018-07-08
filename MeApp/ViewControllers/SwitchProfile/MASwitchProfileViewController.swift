@@ -43,6 +43,7 @@ class MASwitchProfileViewController: MABaseViewController,MASwitchProfilePopUpVi
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
+        UIApplication.shared.statusBarStyle = .lightContent
     }
     
     override func didReceiveMemoryWarning() {

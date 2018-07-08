@@ -20,7 +20,6 @@ class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
     
     override func viewDidLoad() {
     super.viewDidLoad()
-    codeUITextField.delegate = self
         viewPinCode.layer.cornerRadius = 9.0
         viewPinCode.layer.shadowColor = UIColor.black.cgColor
         viewPinCode.layer.shadowOffset = CGSize(width: 0, height: 5)
@@ -31,7 +30,6 @@ class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
     
     override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    codeUITextField.becomeFirstResponder()
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

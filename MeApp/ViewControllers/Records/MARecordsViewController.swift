@@ -31,6 +31,7 @@ class MARecordsViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         self.title = "Eigenschappen"
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        UIApplication.shared.statusBarStyle = .default
     }
     
     override func didReceiveMemoryWarning() {
