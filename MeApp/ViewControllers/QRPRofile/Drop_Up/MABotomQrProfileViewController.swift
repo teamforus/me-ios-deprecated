@@ -36,7 +36,7 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
              let screen = Device.screen
         switch screen {
         case .inches_4_0:
-            rect.size.height = 400
+            rect.size.height = 440
             break
         case .inches_4_7:
             rect.size.height = 500

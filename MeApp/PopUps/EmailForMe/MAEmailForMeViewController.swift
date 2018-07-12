@@ -16,7 +16,7 @@ class MAEmailForMeViewController: MABasePopUpViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewBody.layer.masksToBounds = true
-        viewBody.layer.cornerRadius = 8.0
+        viewBody.layer.cornerRadius = 14.0
     }
     
     override func viewDidAppear(_ animated: Bool) {
