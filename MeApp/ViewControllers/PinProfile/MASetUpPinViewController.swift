@@ -16,10 +16,17 @@ class MASetUpPinViewController: MABaseViewController,UITextFieldDelegate {
     @IBOutlet weak var pin2: UITextField!
     @IBOutlet weak var pin3: UITextField!
     @IBOutlet weak var pin4: UITextField!
+    @IBOutlet weak var pinCodeBody: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
          codeUITextField.delegate = self
+        pinCodeBody.layer.cornerRadius = 9.0
+        pinCodeBody.layer.shadowColor = UIColor.black.cgColor
+        pinCodeBody.layer.shadowOffset = CGSize(width: 0, height: 5)
+        pinCodeBody.layer.shadowOpacity = 0.1
+        pinCodeBody.layer.shadowRadius = 10.0
+        pinCodeBody.layer.masksToBounds = false
     }
     
     override func viewWillAppear(_ animated: Bool) {

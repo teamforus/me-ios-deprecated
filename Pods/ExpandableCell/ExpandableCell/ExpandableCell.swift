@@ -30,8 +30,8 @@ open class ExpandableCell: UITableViewCell {
 
     func initView() {
         arrowImageView = UIImageView()
-        arrowImageView.image = UIImage(named: "expandableCell_arrow", in: Bundle(for: ExpandableCell.self), compatibleWith: nil)
-        self.contentView.addSubview(arrowImageView)
+//        arrowImageView.image = UIImage(named: "expandableCell_arrow", in: Bundle(for: ExpandableCell.self), compatibleWith: nil)
+//        self.contentView.addSubview(arrowImageView)
     }
     
     open override func layoutSubviews() {

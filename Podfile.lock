@@ -3,6 +3,7 @@ PODS:
   - AlertBar (0.4.2)
   - AssistantKit (0.4.1)
   - BigInt.swift (1.0.0)
+  - BWWalkthrough (2.1.2)
   - CryptoSwift (0.10.0)
   - DropDown (2.3.1)
   - ExpandableCell (1.2.2)
@@ -42,6 +43,7 @@ DEPENDENCIES:
   - Alamofire
   - AlertBar
   - AssistantKit
+  - BWWalkthrough
   - DropDown
   - ExpandableCell
   - IQKeyboardManagerSwift
@@ -74,6 +76,7 @@ SPEC CHECKSUMS:
   AlertBar: 0512ccfdc339dbe22c93799682308e93c784358f
   AssistantKit: 9ee71039dffa9dc050de945258e50e3e6bb20d5c
   BigInt.swift: 1e0ddf08d82166e72dfb0fa8d40301d273081afc
+  BWWalkthrough: 6b18dc688ff6b7168383fee07fe199ccaad7e9f7
   CryptoSwift: 6c778d69282bed3b4e975ff97a79d074f20bb011
   DropDown: 20499c7b2731b0d21609af924e47c7677a2be50d
   ExpandableCell: f2d99f9ae03a8c393e268adddaeb7f6d2525a76e
@@ -94,6 +97,6 @@ SPEC CHECKSUMS:
   Web3: 1f0c38c8508b8487948af1cb597653b018f4b5d3
   web3swift: 9cf4ccef0c7f7e9f9abb3bc5867789b928800af6
 
-PODFILE CHECKSUM: a9816e6a81c956108fcf3e919fa39af766cbfef7
+PODFILE CHECKSUM: 810e643490fcc801f51833c718d36a391ba35cca
 
 COCOAPODS: 1.4.0

@@ -22,6 +22,7 @@ pod 'Web3/PromiseKit'
 pod 'Web3'
 pod 'AssistantKit'
 pod 'ISHPullUp'
+pod 'BWWalkthrough'
 pod 'web3swift', :git => 'https://github.com/MercuryProtocol/web3.swift.git', :branch => 'master'
   target 'MeAppTests' do
     inherit! :search_paths

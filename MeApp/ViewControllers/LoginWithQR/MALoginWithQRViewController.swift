@@ -42,27 +42,6 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
         qrBodyView.layer.shadowOpacity = 0.1
         qrBodyView.layer.shadowRadius = 10.0
         qrBodyView.layer.masksToBounds = false
-        //qr button
-        loginWithQRButton.layer.cornerRadius = 9.0
-        loginWithQRButton.layer.shadowColor = UIColor.black.cgColor
-        loginWithQRButton.layer.shadowOffset = CGSize(width: 0, height: 0)
-        loginWithQRButton.layer.shadowOpacity = 0.2
-        loginWithQRButton.layer.shadowRadius = 10.0
-        loginWithQRButton.layer.masksToBounds = false
-        //pin code button
-        loginWithPinCodeButton.layer.cornerRadius = 9.0
-        loginWithPinCodeButton.layer.shadowColor = UIColor.black.cgColor;
-        loginWithPinCodeButton.layer.shadowOffset = CGSize(width: 0, height: 10)
-        loginWithPinCodeButton.layer.shadowOpacity = 0.2
-        loginWithPinCodeButton.layer.shadowRadius = 10.0
-        loginWithPinCodeButton.layer.masksToBounds = false
-        //email button
-        loginWithEmailButton.layer.cornerRadius = 9.0
-        loginWithEmailButton.layer.shadowColor = UIColor.black.cgColor;
-        loginWithEmailButton.layer.shadowOffset = CGSize(width: 0, height: 0)
-        loginWithEmailButton.layer.shadowOpacity = 0.2
-        loginWithEmailButton.layer.shadowRadius = 10.0;
-        loginWithEmailButton.layer.masksToBounds = false
         
     }
 
@@ -106,12 +85,6 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
         controller.dismiss(animated: true, completion: nil)
         if confirmationSuccess {
             self.performSegue(withIdentifier: "enterToWallet", sender: nil)
-//            let popupTransction =  MARegistrationSuccessViewController(nibName: "MARegistrationSuccessViewController", bundle: nil)
-//            presenter.presentationType = .popup
-//            presenter.transitionType = nil
-//            presenter.dismissTransitionType = nil
-//            presenter.keyboardTranslationType = .compress
-//            customPresentViewController(presenter, viewController: popupTransction, animated: true, completion: nil)
         }else{
             let popupTransction =  MAFailValidationViewController(nibName: "MAFailValidationViewController", bundle: nil)
             presenter.presentationType = .popup

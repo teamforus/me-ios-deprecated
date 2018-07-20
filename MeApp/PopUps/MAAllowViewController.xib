@@ -18,37 +18,41 @@
             <connections>
                 <outlet property="tableView" destination="fRg-FS-Qjp" id="q3z-6o-mLh"/>
                 <outlet property="view" destination="S3I-Na-N4D" id="IPZ-CL-vJO"/>
+                <outlet property="viewBody" destination="Rje-NA-NPA" id="F6R-dB-efZ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="S3I-Na-N4D">
-            <rect key="frame" x="0.0" y="0.0" width="341" height="353"/>
+            <rect key="frame" x="0.0" y="0.0" width="341" height="298"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rje-NA-NPA">
-                    <rect key="frame" x="0.0" y="0.0" width="341" height="353"/>
+                    <rect key="frame" x="0.0" y="0.0" width="341" height="298"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fRg-FS-Qjp">
-                            <rect key="frame" x="0.0" y="126" width="341" height="227"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                            <rect key="frame" x="0.0" y="71" width="341" height="191"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="Vba-wl-W4i"/>
                                 <outlet property="delegate" destination="-1" id="Epz-mh-pRa"/>
                             </connections>
                         </tableView>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohf-rn-JS1" userLabel="Button Info">
+                            <rect key="frame" x="300" y="18" width="24" height="24"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="closeIcon"/>
+                            <connections>
+                                <action selector="dismiss:" destination="-1" eventType="touchUpInside" id="lEm-sJ-lta"/>
+                            </connections>
+                        </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Toestaan voor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbx-iA-L3j">
-                            <rect key="frame" x="20" y="77" width="313" height="47"/>
+                            <rect key="frame" x="20" y="6" width="273" height="47"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="34"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohf-rn-JS1" userLabel="Button Info">
-                            <rect key="frame" x="296" y="18" width="24" height="24"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" image="closeIcon"/>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
@@ -56,7 +60,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="j9D-ez-Zdq"/>
-            <point key="canvasLocation" x="20.5" y="29.5"/>
+            <point key="canvasLocation" x="20.5" y="2"/>
         </view>
     </objects>
     <resources>

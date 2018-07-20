@@ -71,9 +71,9 @@ class MASwitchProfileViewController: MABaseViewController,MASwitchProfilePopUpVi
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let scrollViewHeight = scrollView.frame.size.height;
-        let scrollContentSizeHeight = scrollView.contentSize.height;
-        let scrollOffset = scrollView.contentOffset.y;
+        let scrollViewHeight = scrollView.frame.size.height
+        let scrollContentSizeHeight = scrollView.contentSize.height
+        let scrollOffset = scrollView.contentOffset.y
         
         if (scrollOffset < 0)
         {

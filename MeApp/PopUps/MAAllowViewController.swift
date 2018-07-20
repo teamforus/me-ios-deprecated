@@ -13,12 +13,14 @@ import UIKit
 
 class MAAllowViewController: MABasePopUpViewController {
     
+    @IBOutlet weak var viewBody: UIView!
     @IBOutlet weak var tableView: UITableView!
    weak var delegate: MAAllowViewControllerDelegate!
     var previousIndexPath: IndexPath!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "MAAllowTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+        viewBody.layer.cornerRadius = 14.0
     }
     
     override func didReceiveMemoryWarning() {

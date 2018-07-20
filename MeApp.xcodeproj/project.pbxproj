@@ -130,6 +130,13 @@
 		65A51FE820B3012C0010DB33 /* SF-Pro-Display-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 65A51FCA20B3012B0010DB33 /* SF-Pro-Display-BoldItalic.otf */; };
 		65A51FE920B3012C0010DB33 /* SF-Pro-Text-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 65A51FCB20B3012B0010DB33 /* SF-Pro-Text-SemiboldItalic.otf */; };
 		65A51FEB20B31FB30010DB33 /* WalletSecondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A51FEA20B31FB30010DB33 /* WalletSecondTableViewCell.swift */; };
+		65AC32F62101D9E500633187 /* CustomCornerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AC32F52101D9E500633187 /* CustomCornerUIView.swift */; };
+		65AC32FB2102016500633187 /* MAChooseCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AC32FA2102016500633187 /* MAChooseCategoryViewController.swift */; };
+		65AC32FD2102040F00633187 /* MAChooseTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AC32FC2102040F00633187 /* MAChooseTypeViewController.swift */; };
+		65AC32FF2102092100633187 /* MATextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AC32FE2102092100633187 /* MATextViewController.swift */; };
+		65AC33032102126200633187 /* MAChooseCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AC33022102126200633187 /* MAChooseCategoryCollectionViewCell.swift */; };
+		65AC330821023B8B00633187 /* MAPersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AC330721023B8B00633187 /* MAPersonalViewController.swift */; };
+		65AC330A21023E7000633187 /* MAPersonalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AC330921023E7000633187 /* MAPersonalTableViewCell.swift */; };
 		65B89A8C20B3342E0024DC51 /* MATransactionRedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65B89A8A20B3342E0024DC51 /* MATransactionRedViewController.xib */; };
 		65B89A8D20B3342E0024DC51 /* MATransactionRedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89A8B20B3342E0024DC51 /* MATransactionRedViewController.swift */; };
 		65B89A9120B334860024DC51 /* MATransactionBlueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89A8F20B334860024DC51 /* MATransactionBlueViewController.swift */; };
@@ -336,6 +343,13 @@
 		65A51FCA20B3012B0010DB33 /* SF-Pro-Display-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-BoldItalic.otf"; sourceTree = "<group>"; };
 		65A51FCB20B3012B0010DB33 /* SF-Pro-Text-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-SemiboldItalic.otf"; sourceTree = "<group>"; };
 		65A51FEA20B31FB30010DB33 /* WalletSecondTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletSecondTableViewCell.swift; sourceTree = "<group>"; };
+		65AC32F52101D9E500633187 /* CustomCornerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCornerUIView.swift; sourceTree = "<group>"; };
+		65AC32FA2102016500633187 /* MAChooseCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAChooseCategoryViewController.swift; sourceTree = "<group>"; };
+		65AC32FC2102040F00633187 /* MAChooseTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAChooseTypeViewController.swift; sourceTree = "<group>"; };
+		65AC32FE2102092100633187 /* MATextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MATextViewController.swift; sourceTree = "<group>"; };
+		65AC33022102126200633187 /* MAChooseCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAChooseCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		65AC330721023B8B00633187 /* MAPersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAPersonalViewController.swift; sourceTree = "<group>"; };
+		65AC330921023E7000633187 /* MAPersonalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAPersonalTableViewCell.swift; sourceTree = "<group>"; };
 		65B89A8A20B3342E0024DC51 /* MATransactionRedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MATransactionRedViewController.xib; sourceTree = "<group>"; };
 		65B89A8B20B3342E0024DC51 /* MATransactionRedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MATransactionRedViewController.swift; sourceTree = "<group>"; };
 		65B89A8F20B334860024DC51 /* MATransactionBlueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MATransactionBlueViewController.swift; sourceTree = "<group>"; };
@@ -715,6 +729,7 @@
 				65A51F6A20B2FFF10010DB33 /* AppDelegate.swift */,
 				6504473E20C060E000D040B9 /* Validation.swift */,
 				650FA29420F79CD200997261 /* ShadowButton.swift */,
+				65AC32F52101D9E500633187 /* CustomCornerUIView.swift */,
 				65D764E020B73933007D7B9D /* Helper */,
 				65B89A8E20B3344C0024DC51 /* ViewControllers */,
 				65A51FA120B300EA0010DB33 /* Main.storyboard */,
@@ -860,6 +875,49 @@
 			path = TransactionRed;
 			sourceTree = "<group>";
 		};
+		65AC33002102123300633187 /* PagesCategory */ = {
+			isa = PBXGroup;
+			children = (
+				65AC33012102124A00633187 /* Category */,
+				65AC33052102349A00633187 /* ChooseType */,
+				65AC3306210234A900633187 /* Text */,
+			);
+			path = PagesCategory;
+			sourceTree = "<group>";
+		};
+		65AC33012102124A00633187 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				65AC32FA2102016500633187 /* MAChooseCategoryViewController.swift */,
+				65AC33042102126900633187 /* Cell */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		65AC33042102126900633187 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				65AC33022102126200633187 /* MAChooseCategoryCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		65AC33052102349A00633187 /* ChooseType */ = {
+			isa = PBXGroup;
+			children = (
+				65AC32FC2102040F00633187 /* MAChooseTypeViewController.swift */,
+			);
+			path = ChooseType;
+			sourceTree = "<group>";
+		};
+		65AC3306210234A900633187 /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				65AC32FE2102092100633187 /* MATextViewController.swift */,
+			);
+			path = Text;
+			sourceTree = "<group>";
+		};
 		65B89A8E20B3344C0024DC51 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -881,6 +939,9 @@
 				6528F01A20E51BF700DD19C1 /* FirstPage */,
 				6528F01F20E5461000DD19C1 /* PinCodeLogin */,
 				65E3364020E6BA0300C0512B /* LogimEmail */,
+				65AC33002102123300633187 /* PagesCategory */,
+				65AC330721023B8B00633187 /* MAPersonalViewController.swift */,
+				65AC330921023E7000633187 /* MAPersonalTableViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1380,6 +1441,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlertBar/AlertBar.framework",
 				"${BUILT_PRODUCTS_DIR}/AssistantKit/AssistantKit.framework",
+				"${BUILT_PRODUCTS_DIR}/BWWalkthrough/BWWalkthrough.framework",
 				"${BUILT_PRODUCTS_DIR}/BigInt.swift/BigInt.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
@@ -1404,6 +1466,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlertBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AssistantKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BWWalkthrough.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BigInt.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
@@ -1556,10 +1619,12 @@
 				65BFF46820C16C3C00F64215 /* RequestNewIndetity.swift in Sources */,
 				65BFF46A20C1820A00F64215 /* BaseURL.swift in Sources */,
 				6556375D20B6DE8300E45487 /* PopupViewDirection.swift in Sources */,
+				65AC330821023B8B00633187 /* MAPersonalViewController.swift in Sources */,
 				6556375520B6DE8300E45487 /* ShapeType.swift in Sources */,
 				65467FA520B821E7009E99CC /* Authorization.swift in Sources */,
 				6556375C20B6DE8300E45487 /* PopupItem.swift in Sources */,
 				65BFF46C20C1860500F64215 /* ResponseNewIndentity.swift in Sources */,
+				65AC33032102126200633187 /* MAChooseCategoryCollectionViewCell.swift in Sources */,
 				65B89AA620B432CC0024DC51 /* MARegistrationSuccessViewController.swift in Sources */,
 				6510D87D20CAEF1400D85BAE /* Web3Provider.swift in Sources */,
 				65E3363F20E645B600C0512B /* KRScrollView.swift in Sources */,
@@ -1576,6 +1641,7 @@
 				6504472720C028FD00D040B9 /* MAAllowTableViewCell.swift in Sources */,
 				6504473C20C04F4300D040B9 /* User.swift in Sources */,
 				65B89ABF20B448CB0024DC51 /* MAAllowViewController.swift in Sources */,
+				65AC32FD2102040F00633187 /* MAChooseTypeViewController.swift in Sources */,
 				65BFF46320C161B500F64215 /* Records.swift in Sources */,
 				6527C6F820D1579C00009704 /* MAValidationRequestViewController.swift in Sources */,
 				65B89A9720B4128C0024DC51 /* MARecordsTableViewCell.swift in Sources */,
@@ -1609,15 +1675,18 @@
 				65467FB020B86C57009E99CC /* MALoginWithQRViewController.swift in Sources */,
 				6556375A20B6DE8300E45487 /* PopupViewContainable.swift in Sources */,
 				657B074620D27F2B0093930E /* MAWalletOwnerTableViewCell.swift in Sources */,
+				65AC32FB2102016500633187 /* MAChooseCategoryViewController.swift in Sources */,
 				6500426F20DBA3D50092CCDA /* TransactionViewController.swift in Sources */,
 				65BFF46E20C191BD00F64215 /* AuthorizationEmail.swift in Sources */,
 				655BB05720EE442B00BFD06A /* MAQRLoginViewController.swift in Sources */,
 				6556376020B6FB9100E45487 /* UITextField+PlaceholderColor.swift in Sources */,
+				65AC32F62101D9E500633187 /* CustomCornerUIView.swift in Sources */,
 				6558E3DF20DBB6B6001EC568 /* HBSegmentedControl.swift in Sources */,
 				65FC860220B5A2DA001FECA5 /* MAOfficeViewController.swift in Sources */,
 				65B89A9C20B422D30024DC51 /* MAWaitingViewController.swift in Sources */,
 				65A51FAC20B300EA0010DB33 /* WaletTableViewCell.swift in Sources */,
 				6528F01C20E5358900DD19C1 /* MAPinCodeLoginViewController.swift in Sources */,
+				65AC32FF2102092100633187 /* MATextViewController.swift in Sources */,
 				6556375B20B6DE8300E45487 /* ViewType.swift in Sources */,
 				65BFF47A20C1A61C00F64215 /* SpeechRecorder.swift in Sources */,
 				65BFF47020C193A200F64215 /* AuthorizationEmailRequest.swift in Sources */,
@@ -1628,6 +1697,7 @@
 				65A51FAB20B300EA0010DB33 /* WalletViewController.swift in Sources */,
 				6504473F20C060E000D040B9 /* Validation.swift in Sources */,
 				6504472B20C038A900D040B9 /* MABasePopUpViewController.swift in Sources */,
+				65AC330A21023E7000633187 /* MAPersonalTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
