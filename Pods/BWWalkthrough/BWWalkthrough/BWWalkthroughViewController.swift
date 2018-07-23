@@ -61,6 +61,7 @@ import UIKit
     @IBOutlet open var nextButton:UIButton?
     @IBOutlet open var prevButton:UIButton?
     @IBOutlet open var closeButton:UIButton?
+    @IBOutlet open var viewFooter:UIView?
     
     open var currentPage: Int {    // The index of the current page (readonly)
         get{
@@ -97,8 +98,11 @@ import UIKit
         scrollview.showsHorizontalScrollIndicator = false
         scrollview.showsVerticalScrollIndicator = false
         scrollview.isPagingEnabled = true
+       
         super.init(coder: aDecoder)
     }
+    
+    
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -108,11 +112,13 @@ import UIKit
         super.viewDidLoad()
         
         // Initialize UI Elements
-        
+        nextButton?.isEnabled = false
         pageControl?.addTarget(self, action: #selector(BWWalkthroughViewController.pageControlDidTouch), for: UIControlEvents.touchUpInside)
         
         // Scrollview
-        
+         NotificationCenter.default.addObserver(self, selector: #selector(enableNextButton), name: Notification.Name("EnableNextButton"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(disableNextButton), name: Notification.Name("DisableNextButton"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(hidePageNumber), name: Notification.Name("HidePageNumber"), object: nil)
         scrollview.delegate = self
         scrollview.translatesAutoresizingMaskIntoConstraints = false
         
@@ -129,9 +135,24 @@ import UIKit
         super.viewWillAppear(animated);
         
         updateUI()
-        
-        pageControl?.numberOfPages = controllers.count
+        pageControl?.isEnabled = false
+        pageControl?.numberOfPages = controllers.count - 1
         pageControl?.currentPage = 0
+    }
+    
+    @objc func hidePageNumber(){
+        pageControl?.isHidden = true
+        viewFooter?.isHidden = true
+    }
+    
+    @objc func enableNextButton(){
+        nextButton?.isEnabled = true
+        nextButton?.setTitleColor(#colorLiteral(red: 0.2078431373, green: 0.3921568627, blue: 0.9764705882, alpha: 1), for: .normal)
+    }
+    
+    @objc func disableNextButton(){
+        nextButton?.isEnabled = false
+        nextButton?.setTitleColor(#colorLiteral(red: 0.5019607843, green: 0.5019607843, blue: 0.5019607843, alpha: 1), for: .normal)
     }
     
     

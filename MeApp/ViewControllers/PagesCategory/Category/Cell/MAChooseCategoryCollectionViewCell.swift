@@ -8,8 +8,10 @@
 
 import UIKit
 
+
 class MAChooseCategoryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleCategory: UILabel!
     @IBOutlet weak var imageCategory: UIImageView!
+    @IBOutlet weak var viewBody: CustomCornerUIView!
     
 }

@@ -70,6 +70,8 @@
 		6556376820B726F700E45487 /* MABaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6556376720B726F700E45487 /* MABaseViewController.swift */; };
 		6558E3DF20DBB6B6001EC568 /* HBSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6558E3DE20DBB6B6001EC568 /* HBSegmentedControl.swift */; };
 		655BB05720EE442B00BFD06A /* MAQRLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BB05620EE442B00BFD06A /* MAQRLoginViewController.swift */; };
+		656F19872105E22A00923DAF /* MAValidatorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656F19862105E22A00923DAF /* MAValidatorsViewController.swift */; };
+		656F198A2105EFF100923DAF /* MAValidatorCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656F19892105EFF100923DAF /* MAValidatorCellTableViewCell.swift */; };
 		6579633E20E4D49D001CF29D /* NunitoSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579632F20E4D49C001CF29D /* NunitoSans-LightItalic.ttf */; };
 		6579633F20E4D49D001CF29D /* NunitoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579633020E4D49C001CF29D /* NunitoSans-BoldItalic.ttf */; };
 		6579634020E4D49D001CF29D /* NunitoSans-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579633120E4D49C001CF29D /* NunitoSans-ExtraLight.ttf */; };
@@ -277,6 +279,8 @@
 		6556376720B726F700E45487 /* MABaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MABaseViewController.swift; sourceTree = "<group>"; };
 		6558E3DE20DBB6B6001EC568 /* HBSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSegmentedControl.swift; sourceTree = "<group>"; };
 		655BB05620EE442B00BFD06A /* MAQRLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAQRLoginViewController.swift; sourceTree = "<group>"; };
+		656F19862105E22A00923DAF /* MAValidatorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAValidatorsViewController.swift; sourceTree = "<group>"; };
+		656F19892105EFF100923DAF /* MAValidatorCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAValidatorCellTableViewCell.swift; sourceTree = "<group>"; };
 		6579632F20E4D49C001CF29D /* NunitoSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-LightItalic.ttf"; sourceTree = "<group>"; };
 		6579633020E4D49C001CF29D /* NunitoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		6579633120E4D49C001CF29D /* NunitoSans-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraLight.ttf"; sourceTree = "<group>"; };
@@ -679,6 +683,24 @@
 			path = Drop_Up;
 			sourceTree = "<group>";
 		};
+		656F19882105EF0400923DAF /* Validator */ = {
+			isa = PBXGroup;
+			children = (
+				656F19862105E22A00923DAF /* MAValidatorsViewController.swift */,
+				656F19892105EFF100923DAF /* MAValidatorCellTableViewCell.swift */,
+			);
+			path = Validator;
+			sourceTree = "<group>";
+		};
+		656F198B210604B800923DAF /* Personal */ = {
+			isa = PBXGroup;
+			children = (
+				65AC330721023B8B00633187 /* MAPersonalViewController.swift */,
+				65AC330921023E7000633187 /* MAPersonalTableViewCell.swift */,
+			);
+			path = Personal;
+			sourceTree = "<group>";
+		};
 		6579632E20E4D49C001CF29D /* Nunito_Sans */ = {
 			isa = PBXGroup;
 			children = (
@@ -881,6 +903,7 @@
 				65AC33012102124A00633187 /* Category */,
 				65AC33052102349A00633187 /* ChooseType */,
 				65AC3306210234A900633187 /* Text */,
+				656F19882105EF0400923DAF /* Validator */,
 			);
 			path = PagesCategory;
 			sourceTree = "<group>";
@@ -940,8 +963,7 @@
 				6528F01F20E5461000DD19C1 /* PinCodeLogin */,
 				65E3364020E6BA0300C0512B /* LogimEmail */,
 				65AC33002102123300633187 /* PagesCategory */,
-				65AC330721023B8B00633187 /* MAPersonalViewController.swift */,
-				65AC330921023E7000633187 /* MAPersonalTableViewCell.swift */,
+				656F198B210604B800923DAF /* Personal */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1616,6 +1638,7 @@
 				6556375420B6DE8300E45487 /* PopupWindowManager.swift in Sources */,
 				6504473A20C04BD800D040B9 /* UIAlertAction+Extensions.swift in Sources */,
 				65A51F7320B2FFF20010DB33 /* MeApp.xcdatamodeld in Sources */,
+				656F198A2105EFF100923DAF /* MAValidatorCellTableViewCell.swift in Sources */,
 				65BFF46820C16C3C00F64215 /* RequestNewIndetity.swift in Sources */,
 				65BFF46A20C1820A00F64215 /* BaseURL.swift in Sources */,
 				6556375D20B6DE8300E45487 /* PopupViewDirection.swift in Sources */,
@@ -1644,6 +1667,7 @@
 				65AC32FD2102040F00633187 /* MAChooseTypeViewController.swift in Sources */,
 				65BFF46320C161B500F64215 /* Records.swift in Sources */,
 				6527C6F820D1579C00009704 /* MAValidationRequestViewController.swift in Sources */,
+				656F19872105E22A00923DAF /* MAValidatorsViewController.swift in Sources */,
 				65B89A9720B4128C0024DC51 /* MARecordsTableViewCell.swift in Sources */,
 				6556375620B6DE8300E45487 /* PopupContainerView.swift in Sources */,
 				65467FAA20B827EC009E99CC /* Category.swift in Sources */,

@@ -43,6 +43,9 @@ class MARecordsViewController: UIViewController, BWWalkthroughViewControllerDele
     // MARK: - Walkthrough delegate -
     
     func walkthroughPageDidChange(_ pageNumber: Int) {
+        if pageNumber == 3{
+            NotificationCenter.default.post(name: Notification.Name("HidePageNumber"), object: nil)
+        }
     }
     
     func walkthroughCloseButtonPressed() {
@@ -99,11 +102,14 @@ extension MARecordsViewController: ExpandableDelegate {
             let page_zero = stb.instantiateViewController(withIdentifier: "categories")
             let pageOne = stb.instantiateViewController(withIdentifier: "types")
             let pageTwo = stb.instantiateViewController(withIdentifier: "text")
+            let pageThree = stb.instantiateViewController(withIdentifier: "validators")
             
             walkthrough.delegate = self
+            walkthrough.scrollview.isScrollEnabled = false
             walkthrough.add(viewController:page_zero)
             walkthrough.add(viewController:pageOne)
             walkthrough.add(viewController:pageTwo)
+            walkthrough.add(viewController:pageThree)
             self.present(walkthrough, animated: true, completion: nil)
             
         }else if indexPath.row == 1{
