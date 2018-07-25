@@ -17,7 +17,7 @@ struct AuthorizationEmail{
 extension AuthorizationEmail: JSONDecodable{
     init(object: JSONObject) throws {
         let decoder = JSONDecoder(object:object)
-        email = try decoder.decode("email")
+        email = try decoder.decode("primary_email")
         source = try decoder.decode("source")
     }
 }
@@ -25,7 +25,7 @@ extension AuthorizationEmail: JSONDecodable{
 extension AuthorizationEmail: JSONEncodable{
     func toJSON() throws -> Any {
         return try JSONEncoder.create({ (encoder) -> Void in
-            try encoder.encode(email, key:"email")
+            try encoder.encode(email, key:"primary_email")
             try encoder.encode(source, key:"source")
         })
     }

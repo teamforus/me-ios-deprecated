@@ -10,9 +10,10 @@ import Foundation
 import JSONCodable
 
 struct Response{
-    var message : String?
-    var errors : Errors?
-    var records: Records?
+    var message : String!
+    var errors : Errors!
+    var records: Records!
+    var accessToken: String!
 }
 
 extension Response: JSONDecodable{
@@ -21,6 +22,7 @@ extension Response: JSONDecodable{
         message = try decoder.decode("message")
         errors = try decoder.decode("errors")
         records = try decoder.decode("records")
+        accessToken = try decoder.decode("access_token")
     }
 }
 

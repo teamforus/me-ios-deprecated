@@ -41,18 +41,7 @@ class MARegistrationViewController: MABasePopUpViewController, UITextFieldDelega
                 if emailAddressField.text == reapeatEmailField.text{
                     delegate?.confirmationEmail(self, confirmationSuccess: true,email: emailAddressField.text!)
                     reapeatEmailField.errorMessage = nil
-                    AuthorizationEmailRequest.atuhorizeEmail(parameters: try! AuthorizationEmail(email: emailAddressField.text!, source:"app.me_app").toJSON() as! Parameters) { (response) in
-                                    let error = MessageView.viewFromNib(layout: .tabView)
-                                    error.configureTheme(.error)
-                                    error.configureContent(title: "Invalid email", body: response.errors?.recordMessage.first, iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
-                                        SwiftMessages.hide()
-                                        self.navigationController?.popViewController(animated: true)
-                                    }
-                                    error.button?.setTitle("OK", for: .normal)
-                        
-                                    SwiftMessages.show( view: error)
-                        
-                    }
+                  
                   
                 }else{
                     reapeatEmailField.errorMessage = "Repeat Password field is not valid"

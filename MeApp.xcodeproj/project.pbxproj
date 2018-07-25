@@ -49,7 +49,6 @@
 		6528F01C20E5358900DD19C1 /* MAPinCodeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6528F01B20E5358900DD19C1 /* MAPinCodeLoginViewController.swift */; };
 		6528F01E20E53F3D00DD19C1 /* MALoginEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6528F01D20E53F3D00DD19C1 /* MALoginEmailViewController.swift */; };
 		65467FA520B821E7009E99CC /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65467FA420B821E7009E99CC /* Authorization.swift */; };
-		65467FAA20B827EC009E99CC /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65467FA920B827EC009E99CC /* Category.swift */; };
 		65467FAD20B829C0009E99CC /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65467FAC20B829C0009E99CC /* Record.swift */; };
 		65467FB020B86C57009E99CC /* MALoginWithQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65467FAF20B86C57009E99CC /* MALoginWithQRViewController.swift */; };
 		6556375420B6DE8300E45487 /* PopupWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6556374720B6DE7F00E45487 /* PopupWindowManager.swift */; };
@@ -88,6 +87,10 @@
 		6579634B20E4D49E001CF29D /* NunitoSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579633C20E4D49C001CF29D /* NunitoSans-ExtraBoldItalic.ttf */; };
 		6579634C20E4D49E001CF29D /* NunitoSans-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579633D20E4D49C001CF29D /* NunitoSans-ExtraLightItalic.ttf */; };
 		657B074620D27F2B0093930E /* MAWalletOwnerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657B074520D27F2B0093930E /* MAWalletOwnerTableViewCell.swift */; };
+		658BDDC721085AFE00A27EC7 /* MACreateNewIdentityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658BDDC621085AFE00A27EC7 /* MACreateNewIdentityViewController.swift */; };
+		658BDDC92108A76100A27EC7 /* RecordType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658BDDC82108A76100A27EC7 /* RecordType.swift */; };
+		658BDDCB2108AFCC00A27EC7 /* MAChooseTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658BDDCA2108AFCC00A27EC7 /* MAChooseTypeTableViewCell.swift */; };
+		658BDDCE2108B62500A27EC7 /* RecordCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658BDDCD2108B62500A27EC7 /* RecordCategory.swift */; };
 		65A51F6B20B2FFF10010DB33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A51F6A20B2FFF10010DB33 /* AppDelegate.swift */; };
 		65A51F7320B2FFF20010DB33 /* MeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65A51F7120B2FFF20010DB33 /* MeApp.xcdatamodeld */; };
 		65A51F7520B2FFF40010DB33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65A51F7420B2FFF40010DB33 /* Assets.xcassets */; };
@@ -257,7 +260,6 @@
 		6528F01B20E5358900DD19C1 /* MAPinCodeLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAPinCodeLoginViewController.swift; sourceTree = "<group>"; };
 		6528F01D20E53F3D00DD19C1 /* MALoginEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MALoginEmailViewController.swift; sourceTree = "<group>"; };
 		65467FA420B821E7009E99CC /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
-		65467FA920B827EC009E99CC /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		65467FAC20B829C0009E99CC /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		65467FAF20B86C57009E99CC /* MALoginWithQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MALoginWithQRViewController.swift; sourceTree = "<group>"; };
 		6556374720B6DE7F00E45487 /* PopupWindowManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupWindowManager.swift; sourceTree = "<group>"; };
@@ -297,6 +299,10 @@
 		6579633C20E4D49C001CF29D /* NunitoSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		6579633D20E4D49C001CF29D /* NunitoSans-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		657B074520D27F2B0093930E /* MAWalletOwnerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAWalletOwnerTableViewCell.swift; sourceTree = "<group>"; };
+		658BDDC621085AFE00A27EC7 /* MACreateNewIdentityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MACreateNewIdentityViewController.swift; sourceTree = "<group>"; };
+		658BDDC82108A76100A27EC7 /* RecordType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordType.swift; sourceTree = "<group>"; };
+		658BDDCA2108AFCC00A27EC7 /* MAChooseTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAChooseTypeTableViewCell.swift; sourceTree = "<group>"; };
+		658BDDCD2108B62500A27EC7 /* RecordCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCategory.swift; sourceTree = "<group>"; };
 		65A51F6720B2FFF10010DB33 /* MeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A51F6A20B2FFF10010DB33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65A51F7220B2FFF20010DB33 /* MeApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MeApp.xcdatamodel; sourceTree = "<group>"; };
@@ -598,7 +604,6 @@
 			isa = PBXGroup;
 			children = (
 				65467FA720B8237A009E99CC /* Authorization */,
-				65467FAB20B8290B009E99CC /* Category */,
 				65467FAE20B82F6E009E99CC /* Record */,
 				6504473D20C050C100D040B9 /* User */,
 				65BFF46620C16C1E00F64215 /* NewIdentity */,
@@ -630,18 +635,12 @@
 			path = "Suporting Files";
 			sourceTree = "<group>";
 		};
-		65467FAB20B8290B009E99CC /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				65467FA920B827EC009E99CC /* Category.swift */,
-			);
-			path = Category;
-			sourceTree = "<group>";
-		};
 		65467FAE20B82F6E009E99CC /* Record */ = {
 			isa = PBXGroup;
 			children = (
 				65467FAC20B829C0009E99CC /* Record.swift */,
+				658BDDC82108A76100A27EC7 /* RecordType.swift */,
+				658BDDCD2108B62500A27EC7 /* RecordCategory.swift */,
 			);
 			path = Record;
 			sourceTree = "<group>";
@@ -721,6 +720,14 @@
 				6579633D20E4D49C001CF29D /* NunitoSans-ExtraLightItalic.ttf */,
 			);
 			path = Nunito_Sans;
+			sourceTree = "<group>";
+		};
+		658BDDCC2108AFF600A27EC7 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				658BDDCA2108AFCC00A27EC7 /* MAChooseTypeTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		65A51F5E20B2FFF10010DB33 = {
@@ -929,6 +936,7 @@
 			isa = PBXGroup;
 			children = (
 				65AC32FC2102040F00633187 /* MAChooseTypeViewController.swift */,
+				658BDDCC2108AFF600A27EC7 /* Cell */,
 			);
 			path = ChooseType;
 			sourceTree = "<group>";
@@ -964,6 +972,7 @@
 				65E3364020E6BA0300C0512B /* LogimEmail */,
 				65AC33002102123300633187 /* PagesCategory */,
 				656F198B210604B800923DAF /* Personal */,
+				658BDDC621085AFE00A27EC7 /* MACreateNewIdentityViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1634,6 +1643,7 @@
 				65A51FA820B300EA0010DB33 /* PassViewController.swift in Sources */,
 				65BFF46520C161E800F64215 /* NewIdentity.swift in Sources */,
 				65B89ABA20B442C60024DC51 /* MAFailValidationViewController.swift in Sources */,
+				658BDDC92108A76100A27EC7 /* RecordType.swift in Sources */,
 				6504474220C0715C00D040B9 /* MAKindpakketCurrenciesViewController.swift in Sources */,
 				6556375420B6DE8300E45487 /* PopupWindowManager.swift in Sources */,
 				6504473A20C04BD800D040B9 /* UIAlertAction+Extensions.swift in Sources */,
@@ -1649,6 +1659,7 @@
 				65BFF46C20C1860500F64215 /* ResponseNewIndentity.swift in Sources */,
 				65AC33032102126200633187 /* MAChooseCategoryCollectionViewCell.swift in Sources */,
 				65B89AA620B432CC0024DC51 /* MARegistrationSuccessViewController.swift in Sources */,
+				658BDDCB2108AFCC00A27EC7 /* MAChooseTypeTableViewCell.swift in Sources */,
 				6510D87D20CAEF1400D85BAE /* Web3Provider.swift in Sources */,
 				65E3363F20E645B600C0512B /* KRScrollView.swift in Sources */,
 				65FC866120B5D8F5001FECA5 /* UIView+Shadow.swift in Sources */,
@@ -1670,7 +1681,6 @@
 				656F19872105E22A00923DAF /* MAValidatorsViewController.swift in Sources */,
 				65B89A9720B4128C0024DC51 /* MARecordsTableViewCell.swift in Sources */,
 				6556375620B6DE8300E45487 /* PopupContainerView.swift in Sources */,
-				65467FAA20B827EC009E99CC /* Category.swift in Sources */,
 				6556375920B6DE8300E45487 /* PopupContainerWindow.swift in Sources */,
 				651826EC20DD1DAF00B8963A /* MABotomQrProfileViewController.swift in Sources */,
 				6556375720B6DE8300E45487 /* CGRect+Inset.swift in Sources */,
@@ -1705,12 +1715,14 @@
 				655BB05720EE442B00BFD06A /* MAQRLoginViewController.swift in Sources */,
 				6556376020B6FB9100E45487 /* UITextField+PlaceholderColor.swift in Sources */,
 				65AC32F62101D9E500633187 /* CustomCornerUIView.swift in Sources */,
+				658BDDC721085AFE00A27EC7 /* MACreateNewIdentityViewController.swift in Sources */,
 				6558E3DF20DBB6B6001EC568 /* HBSegmentedControl.swift in Sources */,
 				65FC860220B5A2DA001FECA5 /* MAOfficeViewController.swift in Sources */,
 				65B89A9C20B422D30024DC51 /* MAWaitingViewController.swift in Sources */,
 				65A51FAC20B300EA0010DB33 /* WaletTableViewCell.swift in Sources */,
 				6528F01C20E5358900DD19C1 /* MAPinCodeLoginViewController.swift in Sources */,
 				65AC32FF2102092100633187 /* MATextViewController.swift in Sources */,
+				658BDDCE2108B62500A27EC7 /* RecordCategory.swift in Sources */,
 				6556375B20B6DE8300E45487 /* ViewType.swift in Sources */,
 				65BFF47A20C1A61C00F64215 /* SpeechRecorder.swift in Sources */,
 				65BFF47020C193A200F64215 /* AuthorizationEmailRequest.swift in Sources */,

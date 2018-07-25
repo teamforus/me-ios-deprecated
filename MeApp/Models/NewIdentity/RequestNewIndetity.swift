@@ -12,11 +12,11 @@ import JSONCodable
 
 class RequestNewIndetity{
     
-    static func createnewIndentity(newIndeity: NewIdentity){
+    static func createnewIndentity(parameters: Parameters, completion: @escaping ((Response) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
             "Accept": "application/json"
         ]
-        Alamofire.request(BaseURL.baseURL(url: "identity"), method: .post, parameters: nil,encoding: JSONEncoding.default, headers: headers).responseJSON {
+        Alamofire.request(BaseURL.baseURL(url: "identity"), method: .post, parameters: parameters,encoding: JSONEncoding.default, headers: headers).responseJSON {
             response in
             switch response.result {
             case .success:
@@ -27,8 +27,7 @@ class RequestNewIndetity{
                 }
                 break
             case .failure(let error):
-                
-                print(error)
+                failure(error)
             }
         }
     }

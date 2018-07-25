@@ -8,6 +8,7 @@
 
 import Foundation
 import JSONCodable
+import Alamofire
 
 struct Record{
     var id : Int?
@@ -42,4 +43,34 @@ extension Record: JSONEncodable{
             try encoder.encode(valid, key:"valid")
         })
     }
+}
+
+class RecordsRequest {
+    
+    static func getRecordsList(completion: @escaping ((NSMutableArray) -> Void), failure: @escaping ((Error) -> Void)){
+        let headers: HTTPHeaders = [
+            "Accept": "application/json",
+            "Authorization" : "Bearer \(UserDefaults.standard.string(forKey: "access_token")!)"
+        ]
+        Alamofire.request(BaseURL.baseURL(url: "identity/records"), method: .get, parameters:nil,encoding: JSONEncoding.default, headers: headers).responseJSON {
+            response in
+            switch response.result {
+            case .success:
+                if let json = response.result.value {
+                    let recordList: NSMutableArray = NSMutableArray()
+                    if (json as AnyObject).count != 0{
+                        for recordItem in json as! Array<Any>{
+                             let record = try! Record(object: recordItem as! JSONObject)
+                            recordList.add(record)
+                        }
+                    }
+                    completion(recordList)
+                }
+                break
+            case .failure(let error):
+                
+                failure(error)
+            }
+        }
+    }  
 }

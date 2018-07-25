@@ -12,7 +12,7 @@ import JSONCodable
 
 class AuthorizationEmailRequest {
     
-    static func atuhorizeEmail(parameters: Parameters, completion: @escaping ((Response) -> Void)){
+    static func loginWithEmail(parameters: Parameters, completion: @escaping ((Response) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
             "Accept": "application/json"
         ]
@@ -29,7 +29,7 @@ class AuthorizationEmailRequest {
                 break
             case .failure(let error):
                 
-                print(error)
+                failure(error)
             }
         }
     }

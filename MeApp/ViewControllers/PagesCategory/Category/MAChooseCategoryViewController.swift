@@ -15,10 +15,20 @@ class MAChooseCategoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getRecordCategory()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func getRecordCategory(){
+        RecordCategoryRequest.getRecordCategory(completion: { (response) in
+//            self.recordTypeList.addObjects(from: response as! [Any])
+//            self.tableView.reloadData()
+        }) { (error) in
+            
+        }
     }
     
 

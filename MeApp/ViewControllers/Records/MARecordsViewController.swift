@@ -52,6 +52,23 @@ class MARecordsViewController: UIViewController, BWWalkthroughViewControllerDele
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func createRecord(_ sender: Any) {
+        let stb = UIStoryboard(name: "NewProfile", bundle: nil)
+        let walkthrough = stb.instantiateViewController(withIdentifier: "walk") as! BWWalkthroughViewController
+        let page_zero = stb.instantiateViewController(withIdentifier: "categories")
+        let pageOne = stb.instantiateViewController(withIdentifier: "types")
+        let pageTwo = stb.instantiateViewController(withIdentifier: "text")
+        let pageThree = stb.instantiateViewController(withIdentifier: "validators")
+        
+        walkthrough.delegate = self
+        walkthrough.scrollview.isScrollEnabled = false
+        walkthrough.add(viewController:page_zero)
+        walkthrough.add(viewController:pageOne)
+        walkthrough.add(viewController:pageTwo)
+        walkthrough.add(viewController:pageThree)
+        self.present(walkthrough, animated: true, completion: nil)
+    }
+    
 }
 
 
@@ -97,20 +114,7 @@ extension MARecordsViewController: ExpandableDelegate {
     
     func expandableTableView(_ expandableTableView: ExpandableTableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            let stb = UIStoryboard(name: "NewProfile", bundle: nil)
-            let walkthrough = stb.instantiateViewController(withIdentifier: "walk") as! BWWalkthroughViewController
-            let page_zero = stb.instantiateViewController(withIdentifier: "categories")
-            let pageOne = stb.instantiateViewController(withIdentifier: "types")
-            let pageTwo = stb.instantiateViewController(withIdentifier: "text")
-            let pageThree = stb.instantiateViewController(withIdentifier: "validators")
-            
-            walkthrough.delegate = self
-            walkthrough.scrollview.isScrollEnabled = false
-            walkthrough.add(viewController:page_zero)
-            walkthrough.add(viewController:pageOne)
-            walkthrough.add(viewController:pageTwo)
-            walkthrough.add(viewController:pageThree)
-            self.present(walkthrough, animated: true, completion: nil)
+           
             
         }else if indexPath.row == 1{
            self.performSegue(withIdentifier: "goToNewProfile", sender: nil)
