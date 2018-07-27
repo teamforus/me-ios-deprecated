@@ -12,6 +12,7 @@ class MAPersonalTableViewCell: UITableViewCell {
     @IBOutlet weak var cellTypeLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var validationNumber: UILabel!
+    @IBOutlet weak var validateText: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -10,11 +10,14 @@ import UIKit
 import UICheckbox_Swift
 import BWWalkthrough
 
-class MAChooseTypeViewController: UIViewController, BWWalkthroughPage {
+class MAChooseTypeViewController: UIViewController, BWWalkthroughPage, MAChooseTypeTableViewCellDelegate {
     
     @IBOutlet weak var selectedCategory: ShadowButton!
     @IBOutlet weak var tableView: UITableView!
     var recordTypeList: NSMutableArray! = NSMutableArray()
+    var selectedCell : NSMutableArray!
+    var previousIndex: Int!
+    var previousCell: MAChooseTypeTableViewCell!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +40,11 @@ class MAChooseTypeViewController: UIViewController, BWWalkthroughPage {
     }
     
     @objc func setSelectedCategory(){
-        selectedCategory.setTitle(UserDefaults.standard.string(forKey: "category"), for: .normal)
+        if let recordCategory = UserDefaults.standard.value(forKey: "category") as? NSData {
+            let category = try? PropertyListDecoder().decode(RecordCategory.self, from: recordCategory as Data)
+            selectedCategory.setTitle(category?.name, for: .normal)
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,6 +53,23 @@ class MAChooseTypeViewController: UIViewController, BWWalkthroughPage {
     
     func walkthroughDidScroll(to: CGFloat, offset: CGFloat) {
        
+    }
+    
+    func chooseType(cell: MAChooseTypeTableViewCell) {
+        if previousCell != nil {
+            previousCell.viewTypeRecord.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
+            previousCell.checkBox.isSelected = false
+        }
+        if previousCell != cell {
+            cell.viewTypeRecord.backgroundColor = #colorLiteral(red: 0.8901960784, green: 0.8980392157, blue: 0.9725490196, alpha: 1)
+            cell.checkBox.isSelected = true
+        }
+        previousCell = cell
+        let recordType = recordTypeList[cell.tag] as! RecordType
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(recordType), forKey: "type")
+        NotificationCenter.default.post(name: Notification.Name("EnableNextButton"), object: nil)
+        
+        NotificationCenter.default.post(name: Notification.Name("SETSELECTEDCATEGORYTYPE"), object: nil)
     }
     
     @IBAction func selectType(_ sender: Any) {
@@ -69,7 +93,14 @@ extension MAChooseTypeViewController: UITableViewDelegate, UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MAChooseTypeTableViewCell
         let recordType = recordTypeList[indexPath.row] as! RecordType
         cell.titleRecordType.text = recordType.name
+        cell.selectionStyle = .none
+        cell.tag = indexPath.row
+        cell.delegate = self
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      
     }
 }

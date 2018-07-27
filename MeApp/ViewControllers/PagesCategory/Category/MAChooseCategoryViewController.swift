@@ -10,7 +10,7 @@ import UIKit
 
 class MAChooseCategoryViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
-    var arryaTitle : [String] = ["Persoonlijk","Medisch","Persoonlijk","Medisch","Persoonlijk","Medisch"]
+    var recordCategories : NSMutableArray! = NSMutableArray()
     var previusCell: MAChooseCategoryCollectionViewCell!
     
     override func viewDidLoad() {
@@ -24,8 +24,8 @@ class MAChooseCategoryViewController: UIViewController {
     
     func getRecordCategory(){
         RecordCategoryRequest.getRecordCategory(completion: { (response) in
-//            self.recordTypeList.addObjects(from: response as! [Any])
-//            self.tableView.reloadData()
+            self.recordCategories.addObjects(from: response as! [Any])
+            self.collectionView.reloadData()
         }) { (error) in
             
         }
@@ -41,12 +41,13 @@ extension MAChooseCategoryViewController: UICollectionViewDataSource, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return self.recordCategories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MAChooseCategoryCollectionViewCell
-        cell.titleCategory.text = arryaTitle[indexPath.row]
+        let recordCategory = recordCategories[indexPath.row] as! RecordCategory
+        cell.titleCategory.text = recordCategory.name
         return cell
     }
     
@@ -57,7 +58,8 @@ extension MAChooseCategoryViewController: UICollectionViewDataSource, UICollecti
         previusCell.viewBody.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
         }
         previusCell = cell
-        UserDefaults.standard.set(arryaTitle[indexPath.row], forKey: "category")
+        let recordCategory = recordCategories[indexPath.row] as! RecordCategory
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(recordCategory), forKey: "category")
         NotificationCenter.default.post(name: Notification.Name("SETSELECTEDCATEGORY"), object: nil)
         NotificationCenter.default.post(name: Notification.Name("EnableNextButton"), object: nil)
     }

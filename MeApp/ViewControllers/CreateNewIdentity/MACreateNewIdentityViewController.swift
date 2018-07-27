@@ -14,6 +14,9 @@ import SwiftMessages
 class MACreateNewIdentityViewController: MABaseViewController {
     @IBOutlet weak var validateIcon: UIImageView!
     @IBOutlet weak var emailSkyFloatingTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var givenNameField: SkyFloatingLabelTextField!
+    @IBOutlet weak var familyNameField: SkyFloatingLabelTextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -10,7 +10,7 @@ import Foundation
 import JSONCodable
 import Alamofire
 
-struct RecordCategory {
+struct RecordCategory: Codable {
     var id : Int?
     var name : String?
     var order : Int?
@@ -63,4 +63,30 @@ class RecordCategoryRequest {
             }
         }
     }
+    
+    static func createRecordCategory(completion: @escaping ((Response) -> Void), failure: @escaping ((Error) -> Void)){
+        let headers: HTTPHeaders = [
+            "Accept": "application/json",
+            "Authorization" : "Bearer \(UserDefaults.standard.string(forKey: "access_token")!)"
+        ]
+        
+        let parameter: Parameters = ["order": 1,
+                                     "name": "Personal"]
+        
+        Alamofire.request(BaseURL.baseURL(url: "identity/record-categories"), method: .post, parameters:parameter ,encoding: JSONEncoding.default, headers: headers).responseJSON {
+            response in
+            switch response.result {
+            case .success:
+                if let json = response.result.value {
+                    let authorizeCodeResponse = try! Response(object: json as! JSONObject)
+                    completion(authorizeCodeResponse)
+                }
+                break
+            case .failure(let error):
+                
+                failure(error)
+            }
+        }
+    }
+    
 }

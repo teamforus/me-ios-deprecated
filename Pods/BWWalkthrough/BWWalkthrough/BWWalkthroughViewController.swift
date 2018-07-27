@@ -136,7 +136,7 @@ import UIKit
         
         updateUI()
         pageControl?.isEnabled = false
-        pageControl?.numberOfPages = controllers.count - 1
+        pageControl?.numberOfPages = controllers.count 
         pageControl?.currentPage = 0
     }
     

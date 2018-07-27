@@ -25,6 +25,7 @@ class MARecordsViewController: UIViewController, BWWalkthroughViewControllerDele
         super.viewDidLoad()
         tableView.expandableDelegate = self
         tableView.animation = .automatic
+        NotificationCenter.default.addObserver(self, selector: #selector(closePage), name: Notification.Name("CLOSESLIDEPAGE"), object: nil)
      }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,7 +35,17 @@ class MARecordsViewController: UIViewController, BWWalkthroughViewControllerDele
 //        self.title = "Eigenschappen"
 //        self.navigationController?.navigationBar.prefersLargeTitles = true
         UIApplication.shared.statusBarStyle = .default
+//        RecordCategoryRequest.createRecordCategory(completion: { (response) in
+//            
+//        }) { (error) in
+//            
+//        }
     }
+    
+    @objc func closePage(){
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -58,14 +69,12 @@ class MARecordsViewController: UIViewController, BWWalkthroughViewControllerDele
         let page_zero = stb.instantiateViewController(withIdentifier: "categories")
         let pageOne = stb.instantiateViewController(withIdentifier: "types")
         let pageTwo = stb.instantiateViewController(withIdentifier: "text")
-        let pageThree = stb.instantiateViewController(withIdentifier: "validators")
         
         walkthrough.delegate = self
         walkthrough.scrollview.isScrollEnabled = false
         walkthrough.add(viewController:page_zero)
         walkthrough.add(viewController:pageOne)
         walkthrough.add(viewController:pageTwo)
-        walkthrough.add(viewController:pageThree)
         self.present(walkthrough, animated: true, completion: nil)
     }
     

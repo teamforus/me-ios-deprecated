@@ -11,12 +11,12 @@ import JSONCodable
 import Alamofire
 
 struct Record{
-    var id : Int?
-    var value : String?
-    var order : Int?
-    var key : String?
-    var recordCategoryId : Int?
-    var valid : Bool?
+    var id : Int!
+    var value : String!
+    var order : Int!
+    var key : String!
+    var recordCategoryId : Int!
+    var valid : Bool!
 }
 
 extension Record: JSONDecodable{
@@ -72,5 +72,28 @@ class RecordsRequest {
                 failure(error)
             }
         }
-    }  
+    }
+    
+    static func createRecord(parameters: Parameters, completion: @escaping ((Record) -> Void), failure: @escaping ((Error) -> Void)){
+        let headers: HTTPHeaders = [
+            "Accept": "application/json",
+            "Authorization" : "Bearer \(UserDefaults.standard.string(forKey: "access_token")!)"
+        ]
+        
+        
+        Alamofire.request(BaseURL.baseURL(url: "identity/records"), method: .post, parameters:parameters ,encoding: JSONEncoding.default, headers: headers).responseJSON {
+            response in
+            switch response.result {
+            case .success:
+                if let json = response.result.value {
+                    let authorizeCodeResponse = try! Record(object: json as! JSONObject)
+                    completion(authorizeCodeResponse)
+                }
+                break
+            case .failure(let error):
+                
+                failure(error)
+            }
+        }
+    }
 }

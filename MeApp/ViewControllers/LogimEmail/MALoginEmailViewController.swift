@@ -26,8 +26,9 @@ class MALoginEmailViewController: MABaseViewController {
         IQKeyboardManager.sharedManager().enable = true
         confirmEmailSkyTextField.isEnabled = false
         emailSkyTextField.becomeFirstResponder()
-        emailSkyTextField.text = "test3@example.com"
-        confirmEmailSkyTextField.text = "test3@example.com"
+        emailSkyTextField.text = "test4@example.com"
+        confirmEmailSkyTextField.text = "test4@example.com"
+        UserDefaults.standard.setValue("66b962fca6acc70c2dc469450832430d673afd62f37b1a7880de246135deb21011bf87566b0883f745a74a27667bbad8b6401d1f5333193844d5abb02c13c5f3e1f349f2c4bc59f2b77a6178ff3f4de9436c60c35431abd054ff73d3cfefb547b6b1b50a", forKeyPath: "access_token")
         //        IQKeyboardManager.sharedManager().enableAutoToolbar = false
         
     }
@@ -72,8 +73,13 @@ class MALoginEmailViewController: MABaseViewController {
                                                          source:"app.me_app").toJSON() as! Parameters,
                     completion: { (response) in
                     if response.errors == nil {
-                        UserDefaults.standard.setValue(response.accessToken, forKeyPath: "access_token")
-                        self.performSegue(withIdentifier: "goToWalet", sender: self)
+                        UserDefaults.standard.setValue(response.accessToken, forKeyPath: "auth_token")
+                        
+                        AuthorizationEmailRequest.authorizeEmailToken(completion: { (response) in
+                            self.performSegue(withIdentifier: "goToWalet", sender: self)
+                        }, failure: { (error) in
+                            
+                        })
                     }else {
                         let error = MessageView.viewFromNib(layout: .tabView)
                         error.configureTheme(.error)

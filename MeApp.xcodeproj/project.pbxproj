@@ -51,6 +51,8 @@
 		65467FA520B821E7009E99CC /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65467FA420B821E7009E99CC /* Authorization.swift */; };
 		65467FAD20B829C0009E99CC /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65467FAC20B829C0009E99CC /* Record.swift */; };
 		65467FB020B86C57009E99CC /* MALoginWithQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65467FAF20B86C57009E99CC /* MALoginWithQRViewController.swift */; };
+		654CBAB62109E1EC00E56F2E /* AuthorizationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654CBAB52109E1EC00E56F2E /* AuthorizationCode.swift */; };
+		654CBAB92109F84600E56F2E /* String+Substring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654CBAB82109F84600E56F2E /* String+Substring.swift */; };
 		6556375420B6DE8300E45487 /* PopupWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6556374720B6DE7F00E45487 /* PopupWindowManager.swift */; };
 		6556375520B6DE8300E45487 /* ShapeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6556374820B6DE7F00E45487 /* ShapeType.swift */; };
 		6556375620B6DE8300E45487 /* PopupContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6556374920B6DE7F00E45487 /* PopupContainerView.swift */; };
@@ -262,6 +264,8 @@
 		65467FA420B821E7009E99CC /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
 		65467FAC20B829C0009E99CC /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		65467FAF20B86C57009E99CC /* MALoginWithQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MALoginWithQRViewController.swift; sourceTree = "<group>"; };
+		654CBAB52109E1EC00E56F2E /* AuthorizationCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationCode.swift; sourceTree = "<group>"; };
+		654CBAB82109F84600E56F2E /* String+Substring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Substring.swift"; sourceTree = "<group>"; };
 		6556374720B6DE7F00E45487 /* PopupWindowManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupWindowManager.swift; sourceTree = "<group>"; };
 		6556374820B6DE7F00E45487 /* ShapeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeType.swift; sourceTree = "<group>"; };
 		6556374920B6DE7F00E45487 /* PopupContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupContainerView.swift; sourceTree = "<group>"; };
@@ -618,9 +622,8 @@
 		65467FA720B8237A009E99CC /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
-				65467FA420B821E7009E99CC /* Authorization.swift */,
-				65BFF46D20C191BD00F64215 /* AuthorizationEmail.swift */,
-				65BFF46F20C193A200F64215 /* AuthorizationEmailRequest.swift */,
+				654CBAB42109E1D000E56F2E /* AuthorizationWithEmail */,
+				654CBAB72109ED8900E56F2E /* AuthorizationCode */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
@@ -643,6 +646,24 @@
 				658BDDCD2108B62500A27EC7 /* RecordCategory.swift */,
 			);
 			path = Record;
+			sourceTree = "<group>";
+		};
+		654CBAB42109E1D000E56F2E /* AuthorizationWithEmail */ = {
+			isa = PBXGroup;
+			children = (
+				65467FA420B821E7009E99CC /* Authorization.swift */,
+				65BFF46D20C191BD00F64215 /* AuthorizationEmail.swift */,
+				65BFF46F20C193A200F64215 /* AuthorizationEmailRequest.swift */,
+			);
+			path = AuthorizationWithEmail;
+			sourceTree = "<group>";
+		};
+		654CBAB72109ED8900E56F2E /* AuthorizationCode */ = {
+			isa = PBXGroup;
+			children = (
+				654CBAB52109E1EC00E56F2E /* AuthorizationCode.swift */,
+			);
+			path = AuthorizationCode;
 			sourceTree = "<group>";
 		};
 		6556374620B6DE0E00E45487 /* PopupWindow */ = {
@@ -904,6 +925,14 @@
 			path = TransactionRed;
 			sourceTree = "<group>";
 		};
+		65A5A9B9210B64F600CF1C45 /* CreateNewIdentity */ = {
+			isa = PBXGroup;
+			children = (
+				658BDDC621085AFE00A27EC7 /* MACreateNewIdentityViewController.swift */,
+			);
+			path = CreateNewIdentity;
+			sourceTree = "<group>";
+		};
 		65AC33002102123300633187 /* PagesCategory */ = {
 			isa = PBXGroup;
 			children = (
@@ -972,7 +1001,7 @@
 				65E3364020E6BA0300C0512B /* LogimEmail */,
 				65AC33002102123300633187 /* PagesCategory */,
 				656F198B210604B800923DAF /* Personal */,
-				658BDDC621085AFE00A27EC7 /* MACreateNewIdentityViewController.swift */,
+				65A5A9B9210B64F600CF1C45 /* CreateNewIdentity */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1204,6 +1233,7 @@
 				6556376120B6FDEB00E45487 /* UIImageView+QRCode.swift */,
 				6556375F20B6FB9100E45487 /* UITextField+PlaceholderColor.swift */,
 				65FC865F20B5D8F5001FECA5 /* UIView+Shadow.swift */,
+				654CBAB82109F84600E56F2E /* String+Substring.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1659,6 +1689,7 @@
 				65BFF46C20C1860500F64215 /* ResponseNewIndentity.swift in Sources */,
 				65AC33032102126200633187 /* MAChooseCategoryCollectionViewCell.swift in Sources */,
 				65B89AA620B432CC0024DC51 /* MARegistrationSuccessViewController.swift in Sources */,
+				654CBAB92109F84600E56F2E /* String+Substring.swift in Sources */,
 				658BDDCB2108AFCC00A27EC7 /* MAChooseTypeTableViewCell.swift in Sources */,
 				6510D87D20CAEF1400D85BAE /* Web3Provider.swift in Sources */,
 				65E3363F20E645B600C0512B /* KRScrollView.swift in Sources */,
@@ -1685,6 +1716,7 @@
 				651826EC20DD1DAF00B8963A /* MABotomQrProfileViewController.swift in Sources */,
 				6556375720B6DE8300E45487 /* CGRect+Inset.swift in Sources */,
 				6556376220B6FDEB00E45487 /* UIImageView+QRCode.swift in Sources */,
+				654CBAB62109E1EC00E56F2E /* AuthorizationCode.swift in Sources */,
 				6556376820B726F700E45487 /* MABaseViewController.swift in Sources */,
 				65FC860620B5B340001FECA5 /* MASwitchProfileViewController.swift in Sources */,
 				65BFF47920C1A61C00F64215 /* UIImage+Colorize.swift in Sources */,

@@ -14,6 +14,7 @@ struct Response{
     var errors : Errors!
     var records: Records!
     var accessToken: String!
+    var success: Bool!
 }
 
 extension Response: JSONDecodable{
@@ -23,6 +24,7 @@ extension Response: JSONDecodable{
         errors = try decoder.decode("errors")
         records = try decoder.decode("records")
         accessToken = try decoder.decode("access_token")
+        success = try decoder.decode("success")
     }
 }
 

@@ -10,7 +10,7 @@ import Foundation
 import JSONCodable
 import Alamofire
 
-struct RecordType {
+struct RecordType: Codable {
     var key: String!
     var type: String!
     var name: String!
