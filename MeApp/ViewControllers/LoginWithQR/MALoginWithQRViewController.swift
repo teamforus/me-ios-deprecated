@@ -10,6 +10,7 @@ import UIKit
 import Presentr
 import Alamofire
 import ISHPullUp
+import CoreData
 
 class MALoginWithQRViewController: MABaseViewController, MARegistrationViewControllerDelegate, MASignUpViewControllerDelegate {
     @IBOutlet weak var qrBodyView: UIView!
@@ -32,6 +33,14 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        
+        do{
+            let results = try context.fetch(fetchRequest) as? [User]
+            UserShared.shared.currentUser = results![0]
+        } catch{}
     }
     
     override func viewWillAppear(_ animated: Bool) {

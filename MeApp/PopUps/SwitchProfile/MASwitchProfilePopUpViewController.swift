@@ -7,7 +7,7 @@
 //
 
 protocol MASwitchProfilePopUpViewControllerDelegate:class {
-    func switchProfile(_ controller: MASwitchProfilePopUpViewController, user: User)
+    func switchProfile(_ controller: MASwitchProfilePopUpViewController, user: UserLocal)
 }
 
 import UIKit
@@ -77,7 +77,7 @@ extension MASwitchProfilePopUpViewController: UITableViewDelegate, UITableViewDa
             alert.addAction(UIAlertAction(title: "YES", style: .default, handler: { (action) -> Void in
                 alert.dismiss(animated: true, completion: nil)
                 self.dismiss(animated: true, completion: nil)
-                var user: User = User()
+                var user: UserLocal = UserLocal()
                 user.name = cell.profileName.text
 //                user.image = cell.profileImage.image
                 self.delegate.switchProfile(self, user: user)

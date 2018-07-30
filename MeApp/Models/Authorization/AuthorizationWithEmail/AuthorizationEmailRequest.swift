@@ -36,7 +36,8 @@ class AuthorizationEmailRequest {
     
     static func authorizeEmailToken(completion: @escaping ((Response) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
-            "Accept": "application/json"
+            "Accept": "application/json",
+            "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"
         ]
         Alamofire.request(BaseURL.baseURL(url: "identity/proxy/authorize/email/app.me_app/\(UserDefaults.standard.string(forKey: "access_token")!)"), method: .get, parameters:nil ,encoding: JSONEncoding.default, headers: headers).responseJSON {
             response in

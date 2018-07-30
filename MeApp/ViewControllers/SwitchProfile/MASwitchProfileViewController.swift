@@ -57,7 +57,7 @@ class MASwitchProfileViewController: MABaseViewController,MASwitchProfilePopUpVi
         customPresentViewController(dynamicSizePresenter, viewController: popupTransction, animated: true, completion: nil)
     }
     
-    func switchProfile(_ controller: MASwitchProfilePopUpViewController, user: User) {
+    func switchProfile(_ controller: MASwitchProfilePopUpViewController, user: UserLocal) {
         profileName.text = user.name
         //        profileImage.image = user.image
     }

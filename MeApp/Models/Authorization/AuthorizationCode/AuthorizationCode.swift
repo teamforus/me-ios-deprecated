@@ -56,7 +56,7 @@ class AuthorizationCodeRequest{
     static func authorizeCode(completion: @escaping ((Response) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
             "Accept": "application/json",
-            "Authorization" : "Bearer \(UserDefaults.standard.string(forKey: "access_token")!)"
+            "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"
         ]
         let parameter: Parameters = ["auth_code" : UserDefaults.standard.integer(forKey: "auth_code")]
         

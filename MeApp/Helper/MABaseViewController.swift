@@ -8,6 +8,7 @@
 
 import UIKit
 import Presentr
+import CoreData
 
 class MABaseViewController: UIViewController {
     let dynamicSizePresenter: Presentr = {

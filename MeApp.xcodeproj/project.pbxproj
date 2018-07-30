@@ -31,7 +31,7 @@
 		6504473520C0410400D040B9 /* MASwitchProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6504473420C0410400D040B9 /* MASwitchProfileTableViewCell.xib */; };
 		6504473920C04BD800D040B9 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6504473720C04BD800D040B9 /* AlertViewController.swift */; };
 		6504473A20C04BD800D040B9 /* UIAlertAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6504473820C04BD800D040B9 /* UIAlertAction+Extensions.swift */; };
-		6504473C20C04F4300D040B9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6504473B20C04F4300D040B9 /* User.swift */; };
+		6504473C20C04F4300D040B9 /* UserLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6504473B20C04F4300D040B9 /* UserLocal.swift */; };
 		6504473F20C060E000D040B9 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6504473E20C060E000D040B9 /* Validation.swift */; };
 		6504474220C0715C00D040B9 /* MAKindpakketCurrenciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6504474120C0715C00D040B9 /* MAKindpakketCurrenciesViewController.swift */; };
 		6509EA3620C84CFD004F8BA0 /* NewToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6509EA3520C84CFD004F8BA0 /* NewToken.swift */; };
@@ -185,6 +185,11 @@
 		65BFF47B20C1A61C00F64215 /* VoiceButtonAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65BFF47520C1A61B00F64215 /* VoiceButtonAssets.xcassets */; };
 		65BFF47C20C1A61C00F64215 /* VoiceButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65BFF47620C1A61B00F64215 /* VoiceButtonView.xib */; };
 		65BFF47D20C1A61C00F64215 /* VoiceButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BFF47720C1A61B00F64215 /* VoiceButtonView.swift */; };
+		65C0B208210EEB5400FBC254 /* AuthorizationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C0B207210EEB5400FBC254 /* AuthorizationToken.swift */; };
+		65C0B21D210F375B00FBC254 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C0B21B210F375B00FBC254 /* User+CoreDataClass.swift */; };
+		65C0B21E210F375B00FBC254 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C0B21C210F375B00FBC254 /* User+CoreDataProperties.swift */; };
+		65C0B220210F3ACF00FBC254 /* UserShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C0B21F210F3ACF00FBC254 /* UserShared.swift */; };
+		65C0B222210F470F00FBC254 /* MAPersonalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C0B221210F470F00FBC254 /* MAPersonalDetailViewController.swift */; };
 		65E3363F20E645B600C0512B /* KRScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E3363E20E645B600C0512B /* KRScrollView.swift */; };
 		65FC85F820B56FA2001FECA5 /* MANavicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC85F720B56FA2001FECA5 /* MANavicationController.swift */; };
 		65FC85FA20B57642001FECA5 /* MAQRCodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC85F920B57642001FECA5 /* MAQRCodeReaderViewController.swift */; };
@@ -244,7 +249,7 @@
 		6504473420C0410400D040B9 /* MASwitchProfileTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASwitchProfileTableViewCell.xib; sourceTree = "<group>"; };
 		6504473720C04BD800D040B9 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		6504473820C04BD800D040B9 /* UIAlertAction+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertAction+Extensions.swift"; sourceTree = "<group>"; };
-		6504473B20C04F4300D040B9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		6504473B20C04F4300D040B9 /* UserLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocal.swift; sourceTree = "<group>"; };
 		6504473E20C060E000D040B9 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		6504474120C0715C00D040B9 /* MAKindpakketCurrenciesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAKindpakketCurrenciesViewController.swift; sourceTree = "<group>"; };
 		6509EA3520C84CFD004F8BA0 /* NewToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewToken.swift; sourceTree = "<group>"; };
@@ -406,6 +411,11 @@
 		65BFF47520C1A61B00F64215 /* VoiceButtonAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = VoiceButtonAssets.xcassets; sourceTree = "<group>"; };
 		65BFF47620C1A61B00F64215 /* VoiceButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VoiceButtonView.xib; sourceTree = "<group>"; };
 		65BFF47720C1A61B00F64215 /* VoiceButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceButtonView.swift; sourceTree = "<group>"; };
+		65C0B207210EEB5400FBC254 /* AuthorizationToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationToken.swift; sourceTree = "<group>"; };
+		65C0B21B210F375B00FBC254 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		65C0B21C210F375B00FBC254 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		65C0B21F210F3ACF00FBC254 /* UserShared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserShared.swift; sourceTree = "<group>"; };
+		65C0B221210F470F00FBC254 /* MAPersonalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAPersonalDetailViewController.swift; sourceTree = "<group>"; };
 		65E3363E20E645B600C0512B /* KRScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KRScrollView.swift; sourceTree = "<group>"; };
 		65FC85F720B56FA2001FECA5 /* MANavicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MANavicationController.swift; sourceTree = "<group>"; };
 		65FC85F920B57642001FECA5 /* MAQRCodeReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAQRCodeReaderViewController.swift; sourceTree = "<group>"; };
@@ -507,7 +517,7 @@
 		6504473D20C050C100D040B9 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				6504473B20C04F4300D040B9 /* User.swift */,
+				6504473B20C04F4300D040B9 /* UserLocal.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -607,6 +617,8 @@
 		65467FA620B82370009E99CC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				65C0B21B210F375B00FBC254 /* User+CoreDataClass.swift */,
+				65C0B21C210F375B00FBC254 /* User+CoreDataProperties.swift */,
 				65467FA720B8237A009E99CC /* Authorization */,
 				65467FAE20B82F6E009E99CC /* Record */,
 				6504473D20C050C100D040B9 /* User */,
@@ -624,6 +636,7 @@
 			children = (
 				654CBAB42109E1D000E56F2E /* AuthorizationWithEmail */,
 				654CBAB72109ED8900E56F2E /* AuthorizationCode */,
+				65C0B20F210F2B2000FBC254 /* AuthorizationToken */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
@@ -717,6 +730,7 @@
 			children = (
 				65AC330721023B8B00633187 /* MAPersonalViewController.swift */,
 				65AC330921023E7000633187 /* MAPersonalTableViewCell.swift */,
+				65C0B221210F470F00FBC254 /* MAPersonalDetailViewController.swift */,
 			);
 			path = Personal;
 			sourceTree = "<group>";
@@ -797,6 +811,7 @@
 				65A51F7620B2FFF40010DB33 /* LaunchScreen.storyboard */,
 				65A51F7120B2FFF20010DB33 /* MeApp.xcdatamodeld */,
 				65B89AD320B48B9B0024DC51 /* MeApp-Swift.h */,
+				65C0B21F210F3ACF00FBC254 /* UserShared.swift */,
 			);
 			path = MeApp;
 			sourceTree = "<group>";
@@ -1153,6 +1168,14 @@
 				65BFF47720C1A61B00F64215 /* VoiceButtonView.swift */,
 			);
 			path = VoiceButton;
+			sourceTree = "<group>";
+		};
+		65C0B20F210F2B2000FBC254 /* AuthorizationToken */ = {
+			isa = PBXGroup;
+			children = (
+				65C0B207210EEB5400FBC254 /* AuthorizationToken.swift */,
+			);
+			path = AuthorizationToken;
 			sourceTree = "<group>";
 		};
 		65D39D1520DC057200CA4E41 /* Library */ = {
@@ -1662,6 +1685,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65FC85FA20B57642001FECA5 /* MAQRCodeReaderViewController.swift in Sources */,
+				65C0B208210EEB5400FBC254 /* AuthorizationToken.swift in Sources */,
 				65B89A9420B408C00024DC51 /* MARecordsViewController.swift in Sources */,
 				65B89AB020B43A3D0024DC51 /* MAValidationViewController.swift in Sources */,
 				65B89ACF20B480470024DC51 /* MANewProfileViewController.swift in Sources */,
@@ -1689,6 +1713,7 @@
 				65BFF46C20C1860500F64215 /* ResponseNewIndentity.swift in Sources */,
 				65AC33032102126200633187 /* MAChooseCategoryCollectionViewCell.swift in Sources */,
 				65B89AA620B432CC0024DC51 /* MARegistrationSuccessViewController.swift in Sources */,
+				65C0B220210F3ACF00FBC254 /* UserShared.swift in Sources */,
 				654CBAB92109F84600E56F2E /* String+Substring.swift in Sources */,
 				658BDDCB2108AFCC00A27EC7 /* MAChooseTypeTableViewCell.swift in Sources */,
 				6510D87D20CAEF1400D85BAE /* Web3Provider.swift in Sources */,
@@ -1704,7 +1729,7 @@
 				65A51FAA20B300EA0010DB33 /* TabBarController.swift in Sources */,
 				6556375820B6DE8300E45487 /* UIView+Shape.swift in Sources */,
 				6504472720C028FD00D040B9 /* MAAllowTableViewCell.swift in Sources */,
-				6504473C20C04F4300D040B9 /* User.swift in Sources */,
+				6504473C20C04F4300D040B9 /* UserLocal.swift in Sources */,
 				65B89ABF20B448CB0024DC51 /* MAAllowViewController.swift in Sources */,
 				65AC32FD2102040F00633187 /* MAChooseTypeViewController.swift in Sources */,
 				65BFF46320C161B500F64215 /* Records.swift in Sources */,
@@ -1722,6 +1747,7 @@
 				65BFF47920C1A61C00F64215 /* UIImage+Colorize.swift in Sources */,
 				65B89AA120B42A6F0024DC51 /* MARegistrationViewController.swift in Sources */,
 				651E197C20C95B5400A46D71 /* Web3Service.swift in Sources */,
+				65C0B222210F470F00FBC254 /* MAPersonalDetailViewController.swift in Sources */,
 				65A51F6B20B2FFF10010DB33 /* AppDelegate.swift in Sources */,
 				650FA29520F79CD200997261 /* ShadowButton.swift in Sources */,
 				65B89ACA20B44D210024DC51 /* MASignUpViewController.swift in Sources */,
@@ -1755,8 +1781,10 @@
 				6528F01C20E5358900DD19C1 /* MAPinCodeLoginViewController.swift in Sources */,
 				65AC32FF2102092100633187 /* MATextViewController.swift in Sources */,
 				658BDDCE2108B62500A27EC7 /* RecordCategory.swift in Sources */,
+				65C0B21D210F375B00FBC254 /* User+CoreDataClass.swift in Sources */,
 				6556375B20B6DE8300E45487 /* ViewType.swift in Sources */,
 				65BFF47A20C1A61C00F64215 /* SpeechRecorder.swift in Sources */,
+				65C0B21E210F375B00FBC254 /* User+CoreDataProperties.swift in Sources */,
 				65BFF47020C193A200F64215 /* AuthorizationEmailRequest.swift in Sources */,
 				65FC85F820B56FA2001FECA5 /* MANavicationController.swift in Sources */,
 				65FC866420B5DF81001FECA5 /* MASwitchProfileTableViewCell.swift in Sources */,

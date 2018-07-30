@@ -30,7 +30,7 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
         rootView.layer.shadowOffset = CGSize(width: 0, height: -2)
         rootView.layer.shadowOpacity = 0.2
         rootView.layer.shadowRadius = 23 / 2
-        qrCodeImageView.generateQRCode(from: "profileCode")
+        
         NotificationCenter.default.addObserver(self, selector: #selector(toglePullUpView), name: Notification.Name("togleStateWindow"), object: nil)
         var rect: CGRect = self.rootView.frame
              let screen = Device.screen
@@ -66,6 +66,12 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         firstAppearanceCompleted = true;
+        AuthorizeTokenRequest.createToken(completion: { (response) in
+            
+            self.qrCodeImageView.generateQRCode(from: response.authToken)
+        }) { (error) in
+            
+        }
     }
     
     @objc private dynamic func handleTapGesture(gesture: UITapGestureRecognizer) {

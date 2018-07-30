@@ -28,6 +28,13 @@ class MAPersonalViewController: MABaseViewController {
         }) { (error) in
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToDetail"{
+            let detailPersonalVC = segue.destination as! MAPersonalDetailViewController
+            detailPersonalVC.record = self.recordList[(tableView.indexPathForSelectedRow?.row)!] as! Record
+        }
+    }
 }
 
 extension MAPersonalViewController: UITableViewDelegate, UITableViewDataSource{
@@ -63,7 +70,29 @@ extension MAPersonalViewController: UITableViewDelegate, UITableViewDataSource{
         }else if record.key == "gender"{
             cell.cellTypeLabel.text = "Gender"
             cell.nameLabel.text = record.value
+        }else if record.key == "children"{
+            cell.cellTypeLabel.text = "Children"
+            cell.nameLabel.text = record.value
+        }else if record.key == "tax_id"{
+            cell.cellTypeLabel.text = "Tax ID"
+            cell.nameLabel.text = record.value
+        }else if record.key == "birth_date"{
+            cell.cellTypeLabel.text = "Birth date"
+            cell.nameLabel.text = record.value
+        }else if record.key == "spouse"{
+            cell.cellTypeLabel.text = "Birth date"
+            cell.nameLabel.text = record.value
+        }else if record.key == "net_worth"{
+            cell.cellTypeLabel.text = "Net worth"
+            cell.nameLabel.text = record.value
+        }else if record.key == "base_salary"{
+            cell.cellTypeLabel.text = "Base salary"
+            cell.nameLabel.text = record.value
+        }else if record.key == "bsn"{
+            cell.cellTypeLabel.text = "BSN"
+            cell.nameLabel.text = record.value
         }
+        
         return cell
     }
     

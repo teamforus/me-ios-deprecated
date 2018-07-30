@@ -43,6 +43,8 @@ class WalletViewController: MABaseViewController{
         Web3Provider.getBalance()
         Service.sendContract { (response, error) in
         }
+        
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -35,11 +35,6 @@ class MARecordsViewController: UIViewController, BWWalkthroughViewControllerDele
 //        self.title = "Eigenschappen"
 //        self.navigationController?.navigationBar.prefersLargeTitles = true
         UIApplication.shared.statusBarStyle = .default
-//        RecordCategoryRequest.createRecordCategory(completion: { (response) in
-//            
-//        }) { (error) in
-//            
-//        }
     }
     
     @objc func closePage(){

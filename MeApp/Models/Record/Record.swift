@@ -50,7 +50,7 @@ class RecordsRequest {
     static func getRecordsList(completion: @escaping ((NSMutableArray) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
             "Accept": "application/json",
-            "Authorization" : "Bearer \(UserDefaults.standard.string(forKey: "access_token")!)"
+            "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"
         ]
         Alamofire.request(BaseURL.baseURL(url: "identity/records"), method: .get, parameters:nil,encoding: JSONEncoding.default, headers: headers).responseJSON {
             response in
@@ -77,7 +77,7 @@ class RecordsRequest {
     static func createRecord(parameters: Parameters, completion: @escaping ((Record) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
             "Accept": "application/json",
-            "Authorization" : "Bearer \(UserDefaults.standard.string(forKey: "access_token")!)"
+            "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"
         ]
         
         

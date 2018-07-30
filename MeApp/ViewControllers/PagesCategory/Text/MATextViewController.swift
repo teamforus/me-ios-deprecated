@@ -33,6 +33,9 @@ class MATextViewController: UIViewController, UITextViewDelegate {
         if let recordType = UserDefaults.standard.value(forKey: "type") as? NSData {
             self.recordType = try? PropertyListDecoder().decode(RecordType.self, from: recordType as Data)
             selectedType.setTitle(self.recordType?.name, for: .normal)
+            if self.recordType.type == "number" {
+                self.textUITextView.keyboardType = .numberPad
+            }
         }
     }
 
