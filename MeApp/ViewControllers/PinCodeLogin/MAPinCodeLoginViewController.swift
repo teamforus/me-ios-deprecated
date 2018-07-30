@@ -74,7 +74,7 @@ class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
     
     @IBAction func loginWithCode(_ sender: Any) {
         AuthorizationCodeRequest.authorizeCode(completion: { (response) in
-            if response.success {
+            if response.success != nil {
                 self.performSegue(withIdentifier: "goToWallet", sender: nil)
             }
         }) { (error) in
