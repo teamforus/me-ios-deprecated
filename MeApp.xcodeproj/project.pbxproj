@@ -89,6 +89,13 @@
 		6579634B20E4D49E001CF29D /* NunitoSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579633C20E4D49C001CF29D /* NunitoSans-ExtraBoldItalic.ttf */; };
 		6579634C20E4D49E001CF29D /* NunitoSans-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579633D20E4D49C001CF29D /* NunitoSans-ExtraLightItalic.ttf */; };
 		657B074620D27F2B0093930E /* MAWalletOwnerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657B074520D27F2B0093930E /* MAWalletOwnerTableViewCell.swift */; };
+		658BBA4321108D950098E2AC /* MAPsswordEnableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658BBA4221108D950098E2AC /* MAPsswordEnableViewController.swift */; };
+		658BBA522110954C0098E2AC /* AppLocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658BBA44211094BE0098E2AC /* AppLocker.swift */; };
+		658BBA532110954C0098E2AC /* backspaceBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = 658BBA45211094BE0098E2AC /* backspaceBlue.png */; };
+		658BBA542110954C0098E2AC /* backspaceBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 658BBA46211094BE0098E2AC /* backspaceBlue@2x.png */; };
+		658BBA552110954C0098E2AC /* backspaceBlue@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 658BBA47211094BE0098E2AC /* backspaceBlue@3x.png */; };
+		658BBA562110954C0098E2AC /* AppLocker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 658BBA48211094BE0098E2AC /* AppLocker.xib */; };
+		658BBA572110954C0098E2AC /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658BBA49211094BE0098E2AC /* UI.swift */; };
 		658BDDC721085AFE00A27EC7 /* MACreateNewIdentityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658BDDC621085AFE00A27EC7 /* MACreateNewIdentityViewController.swift */; };
 		658BDDC92108A76100A27EC7 /* RecordType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658BDDC82108A76100A27EC7 /* RecordType.swift */; };
 		658BDDCB2108AFCC00A27EC7 /* MAChooseTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658BDDCA2108AFCC00A27EC7 /* MAChooseTypeTableViewCell.swift */; };
@@ -308,6 +315,13 @@
 		6579633C20E4D49C001CF29D /* NunitoSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		6579633D20E4D49C001CF29D /* NunitoSans-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		657B074520D27F2B0093930E /* MAWalletOwnerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAWalletOwnerTableViewCell.swift; sourceTree = "<group>"; };
+		658BBA4221108D950098E2AC /* MAPsswordEnableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAPsswordEnableViewController.swift; sourceTree = "<group>"; };
+		658BBA44211094BE0098E2AC /* AppLocker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppLocker.swift; path = Source/AppLocker/AppLocker.swift; sourceTree = "<group>"; };
+		658BBA45211094BE0098E2AC /* backspaceBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backspaceBlue.png; sourceTree = "<group>"; };
+		658BBA46211094BE0098E2AC /* backspaceBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backspaceBlue@2x.png"; sourceTree = "<group>"; };
+		658BBA47211094BE0098E2AC /* backspaceBlue@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backspaceBlue@3x.png"; sourceTree = "<group>"; };
+		658BBA48211094BE0098E2AC /* AppLocker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AppLocker.xib; path = Source/AppLocker/AppLocker.xib; sourceTree = "<group>"; };
+		658BBA49211094BE0098E2AC /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UI.swift; path = Source/UI.swift; sourceTree = "<group>"; };
 		658BDDC621085AFE00A27EC7 /* MACreateNewIdentityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MACreateNewIdentityViewController.swift; sourceTree = "<group>"; };
 		658BDDC82108A76100A27EC7 /* RecordType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordType.swift; sourceTree = "<group>"; };
 		658BDDCA2108AFCC00A27EC7 /* MAChooseTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAChooseTypeTableViewCell.swift; sourceTree = "<group>"; };
@@ -757,6 +771,19 @@
 			path = Nunito_Sans;
 			sourceTree = "<group>";
 		};
+		658BBA51211094BE0098E2AC /* AppLocker */ = {
+			isa = PBXGroup;
+			children = (
+				658BBA44211094BE0098E2AC /* AppLocker.swift */,
+				658BBA45211094BE0098E2AC /* backspaceBlue.png */,
+				658BBA46211094BE0098E2AC /* backspaceBlue@2x.png */,
+				658BBA47211094BE0098E2AC /* backspaceBlue@3x.png */,
+				658BBA48211094BE0098E2AC /* AppLocker.xib */,
+				658BBA49211094BE0098E2AC /* UI.swift */,
+			);
+			path = AppLocker;
+			sourceTree = "<group>";
+		};
 		658BDDCC2108AFF600A27EC7 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -803,6 +830,7 @@
 				65BFF47120C1A61B00F64215 /* VoiceButton */,
 				65FC865D20B5D8F5001FECA5 /* Extension */,
 				65D39D1520DC057200CA4E41 /* Library */,
+				658BBA51211094BE0098E2AC /* AppLocker */,
 				65A51FF320B333D10010DB33 /* PopUps */,
 				65467FA620B82370009E99CC /* Models */,
 				65467FA820B823B9009E99CC /* Suporting Files */,
@@ -1017,6 +1045,7 @@
 				65AC33002102123300633187 /* PagesCategory */,
 				656F198B210604B800923DAF /* Personal */,
 				65A5A9B9210B64F600CF1C45 /* CreateNewIdentity */,
+				658BBA4221108D950098E2AC /* MAPsswordEnableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1409,6 +1438,7 @@
 				65B89AAC20B4363D0024DC51 /* MAEmailForMeViewController.xib in Resources */,
 				65B89ABB20B442C60024DC51 /* MAFailValidationViewController.xib in Resources */,
 				6500425B20DB97E40092CCDA /* OpenSans-ExtraBold.ttf in Resources */,
+				658BBA532110954C0098E2AC /* backspaceBlue.png in Resources */,
 				65A51FDF20B3012C0010DB33 /* SF-Pro-Display-BlackItalic.otf in Resources */,
 				65B89AA220B42A6F0024DC51 /* MARegistrationViewController.xib in Resources */,
 				65A51FDD20B3012C0010DB33 /* SF-Pro-Display-UltralightItalic.otf in Resources */,
@@ -1422,6 +1452,7 @@
 				65B89A8C20B3342E0024DC51 /* MATransactionRedViewController.xib in Resources */,
 				65A51FDC20B3012C0010DB33 /* SF-Pro-Display-Ultralight.otf in Resources */,
 				65A51FD920B3012C0010DB33 /* SF-Pro-Text-Bold.otf in Resources */,
+				658BBA552110954C0098E2AC /* backspaceBlue@3x.png in Resources */,
 				6579634A20E4D49E001CF29D /* NunitoSans-Black.ttf in Resources */,
 				6504473520C0410400D040B9 /* MASwitchProfileTableViewCell.xib in Resources */,
 				6500426220DB97E40092CCDA /* OpenSans-BoldItalic.ttf in Resources */,
@@ -1442,6 +1473,7 @@
 				65A51FD220B3012C0010DB33 /* SF-Pro-Text-MediumItalic.otf in Resources */,
 				65A51F7820B2FFF40010DB33 /* LaunchScreen.storyboard in Resources */,
 				6500425C20DB97E40092CCDA /* OpenSans-LightItalic.ttf in Resources */,
+				658BBA562110954C0098E2AC /* AppLocker.xib in Resources */,
 				65B89AB620B43FA50024DC51 /* MAValidationSuccessViewController.xib in Resources */,
 				65A51FE320B3012C0010DB33 /* SF-Pro-Text-Semibold.otf in Resources */,
 				6500426020DB97E40092CCDA /* LICENSE.txt in Resources */,
@@ -1453,6 +1485,7 @@
 				65A51FE420B3012C0010DB33 /* SF-Pro-Text-HeavyItalic.otf in Resources */,
 				6500426120DB97E40092CCDA /* OpenSans-Regular.ttf in Resources */,
 				6579634420E4D49E001CF29D /* NunitoSans-Regular.ttf in Resources */,
+				658BBA542110954C0098E2AC /* backspaceBlue@2x.png in Resources */,
 				65BFF47C20C1A61C00F64215 /* VoiceButtonView.xib in Resources */,
 				65A51FD620B3012C0010DB33 /* SF-Pro-Text-Light.otf in Resources */,
 				6579634720E4D49E001CF29D /* OFL.txt in Resources */,
@@ -1685,6 +1718,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65FC85FA20B57642001FECA5 /* MAQRCodeReaderViewController.swift in Sources */,
+				658BBA4321108D950098E2AC /* MAPsswordEnableViewController.swift in Sources */,
 				65C0B208210EEB5400FBC254 /* AuthorizationToken.swift in Sources */,
 				65B89A9420B408C00024DC51 /* MARecordsViewController.swift in Sources */,
 				65B89AB020B43A3D0024DC51 /* MAValidationViewController.swift in Sources */,
@@ -1727,6 +1761,7 @@
 				65467FAD20B829C0009E99CC /* Record.swift in Sources */,
 				65B89A9120B334860024DC51 /* MATransactionBlueViewController.swift in Sources */,
 				65A51FAA20B300EA0010DB33 /* TabBarController.swift in Sources */,
+				658BBA572110954C0098E2AC /* UI.swift in Sources */,
 				6556375820B6DE8300E45487 /* UIView+Shape.swift in Sources */,
 				6504472720C028FD00D040B9 /* MAAllowTableViewCell.swift in Sources */,
 				6504473C20C04F4300D040B9 /* UserLocal.swift in Sources */,
@@ -1742,6 +1777,7 @@
 				6556375720B6DE8300E45487 /* CGRect+Inset.swift in Sources */,
 				6556376220B6FDEB00E45487 /* UIImageView+QRCode.swift in Sources */,
 				654CBAB62109E1EC00E56F2E /* AuthorizationCode.swift in Sources */,
+				658BBA522110954C0098E2AC /* AppLocker.swift in Sources */,
 				6556376820B726F700E45487 /* MABaseViewController.swift in Sources */,
 				65FC860620B5B340001FECA5 /* MASwitchProfileViewController.swift in Sources */,
 				65BFF47920C1A61C00F64215 /* UIImage+Colorize.swift in Sources */,

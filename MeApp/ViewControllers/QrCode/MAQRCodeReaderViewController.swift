@@ -8,6 +8,7 @@
 
 import UIKit
 import QRCodeReader
+import Alamofire
 
 class MAQRCodeReaderViewController: UIViewController {
     lazy var reader: QRCodeReader = QRCodeReader()
@@ -25,6 +26,10 @@ class MAQRCodeReaderViewController: UIViewController {
         
         reader.didFindCode = { result in
             print("Completion with result: \(result.value) of type \(result.metadataType)")
+            let parameter: Parameters = ["auth_token" : result.value]
+            AuthorizeTokenRequest.authorizeToken(parameter: parameter, completion: { (response) in
+            
+            }, failure: { (error) in })
         }
         
         reader.startScanning()

@@ -16,6 +16,7 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
     @IBOutlet private weak var topView: UIView!
     @IBOutlet private weak var buttonLock: UIButton?
     @IBOutlet weak var qrCodeImageView: UIImageView!
+    var timer : Timer!
     
     private var firstAppearanceCompleted = false
     weak var pullUpController: ISHPullUpViewController!
@@ -67,11 +68,13 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
         super.viewDidAppear(animated)
         firstAppearanceCompleted = true;
         AuthorizeTokenRequest.createToken(completion: { (response) in
-            
             self.qrCodeImageView.generateQRCode(from: response.authToken)
-        }) { (error) in
-            
-        }
+            self.timer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(self.checkAuthorizeToken), userInfo: nil, repeats: true)
+        }) { (error) in }
+    }
+    
+    @objc func checkAuthorizeToken(){
+        self.timer.invalidate()
     }
     
     @objc private dynamic func handleTapGesture(gesture: UITapGestureRecognizer) {

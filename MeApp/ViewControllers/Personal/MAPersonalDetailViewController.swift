@@ -14,6 +14,7 @@ class MAPersonalDetailViewController: MABaseViewController {
     @IBOutlet weak var valueRecord: UILabel!
     @IBOutlet weak var validationLabel: UILabel!
     @IBOutlet weak var imageFavorite: UIImageView!
+    @IBOutlet weak var qrCodeImage: UIImageView!
     
 
     override func viewDidLoad() {

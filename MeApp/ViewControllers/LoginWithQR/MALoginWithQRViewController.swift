@@ -36,10 +36,12 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        
+        fetchRequest.predicate = NSPredicate(format:"currentUser == YES")
         do{
             let results = try context.fetch(fetchRequest) as? [User]
-            UserShared.shared.currentUser = results![0]
+            if results?.count != 0 {
+                UserShared.shared.currentUser = results![0]
+            }
         } catch{}
     }
     

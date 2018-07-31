@@ -38,8 +38,30 @@ class MACreateNewIdentityViewController: MABaseViewController {
             if results?.count == 0 {
                 let newUser = NSManagedObject(entity: entity!, insertInto: context)
                 newUser.setValue(self.emailSkyFloatingTextField.text, forKey: "primaryEmail")
+                newUser.setValue(true, forKey: "currentUser")
                 newUser.setValue(pinCode, forKey: "pinCode")
                 newUser.setValue(accessToken, forKey: "accessToken")
+                
+                do {
+                    try context.save()
+                } catch {
+                    print("Failed saving")
+                }
+            }
+        } catch{
+            
+        }
+    }
+    
+    func updateOldIndentity(){
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        fetchRequest.predicate = NSPredicate(format:"currentUser == YES")
+        
+        do{
+            let results = try context.fetch(fetchRequest) as? [NSManagedObject]
+            if results?.count == 0 {
+                results![0].setValue(false, forKey: "currentUser")
                 
                 do {
                     try context.save()
@@ -78,18 +100,22 @@ class MACreateNewIdentityViewController: MABaseViewController {
                                                   completion: { (response) in
                                                     if response.errors == nil {
                                                         self.saveNewIdentity(accessToken: response.accessToken, pinCode: 2460)
+                                                        self.updateOldIndentity()
                                                         self.getCurrentUser(primaryEmai: self.emailSkyFloatingTextField.text)
                                                         RecordCategoryRequest.createRecordCategory(completion: { (response) in
                                                             
                                                         }) { (error) in
                                                             
                                                         }
-
+                                                        if (UserDefaults.standard.string(forKey: ALConstants.kPincode) != ""){
                                                         self.performSegue(withIdentifier: "goToWalet", sender: self)
+                                                        }else{
+                                                        self.performSegue(withIdentifier: "goToPassword", sender: self)
+                                                        }
                                                     }else {
                                                         let error = MessageView.viewFromNib(layout: .tabView)
                                                         error.configureTheme(.error)
-                                                        error.configureContent(title: "Invalid email", body: response.errors?.recordMessage.first, iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
+                                                        error.configureContent(title: "Invalid email", body: response.errors?.recordMessage.first != nil ? response.errors?.recordMessage.first : response.message , iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
                                                             SwiftMessages.hide()
                                                         }
                                                         error.button?.setTitle("OK", for: .normal)
