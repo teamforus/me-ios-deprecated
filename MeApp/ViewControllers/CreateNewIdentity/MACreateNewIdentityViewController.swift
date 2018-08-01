@@ -11,6 +11,7 @@ import SkyFloatingLabelTextField
 import Alamofire
 import SwiftMessages
 import CoreData
+import IQKeyboardManagerSwift
 
 class MACreateNewIdentityViewController: MABaseViewController {
     @IBOutlet weak var validateIcon: UIImageView!
@@ -21,6 +22,7 @@ class MACreateNewIdentityViewController: MABaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        IQKeyboardManager.sharedManager().enable = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -107,7 +109,7 @@ class MACreateNewIdentityViewController: MABaseViewController {
                                                         }) { (error) in
                                                             
                                                         }
-                                                        if (UserDefaults.standard.string(forKey: ALConstants.kPincode) != ""){
+                                                        if UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" && UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil{
                                                         self.performSegue(withIdentifier: "goToWalet", sender: self)
                                                         }else{
                                                         self.performSegue(withIdentifier: "goToPassword", sender: self)
@@ -115,7 +117,7 @@ class MACreateNewIdentityViewController: MABaseViewController {
                                                     }else {
                                                         let error = MessageView.viewFromNib(layout: .tabView)
                                                         error.configureTheme(.error)
-                                                        error.configureContent(title: "Invalid email", body: response.errors?.recordMessage.first != nil ? response.errors?.recordMessage.first : response.message , iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
+                                                        error.configureContent(title: "Invalid data", body: response.errors?.recordMessage != nil ? response.errors?.recordMessage.first : "Email already is used" , iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
                                                             SwiftMessages.hide()
                                                         }
                                                         error.button?.setTitle("OK", for: .normal)

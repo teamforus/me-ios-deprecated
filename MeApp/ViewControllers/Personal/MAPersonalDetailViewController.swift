@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class MAPersonalDetailViewController: MABaseViewController {
     @IBOutlet weak var nameCategory: UILabel!
@@ -19,7 +20,7 @@ class MAPersonalDetailViewController: MABaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        validationLabel.isHidden = true
+//        validationLabel.isHidden = true
         if record.key == "primary_email"{
             nameCategory.text = "Primary E-mail"
             valueRecord.text = record.value
@@ -40,6 +41,11 @@ class MAPersonalDetailViewController: MABaseViewController {
             valueRecord.text = record.value
         }
         
+        let parameter: Parameters = ["record_id" : record.id]
+        
+        RecordsRequest.createValidationTokenRecord(parameters: parameter, completion: { (response) in
+            self.qrCodeImage.generateQRCode(from: "uuid:\(response.uuid!)")
+        }) { (error) in }
     }
 
     override func didReceiveMemoryWarning() {

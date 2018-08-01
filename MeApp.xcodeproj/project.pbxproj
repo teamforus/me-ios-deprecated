@@ -179,6 +179,7 @@
 		65B89ACB20B44D210024DC51 /* MASignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65B89AC920B44D210024DC51 /* MASignUpViewController.xib */; };
 		65B89ACD20B4761C0024DC51 /* NewProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B89ACC20B4761C0024DC51 /* NewProfile.storyboard */; };
 		65B89ACF20B480470024DC51 /* MANewProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89ACE20B480470024DC51 /* MANewProfileViewController.swift */; };
+		65BF9E872111DA5B000B38AF /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BF9E862111DA5B000B38AF /* Status.swift */; };
 		65BFF46320C161B500F64215 /* Records.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BFF46220C161B400F64215 /* Records.swift */; };
 		65BFF46520C161E800F64215 /* NewIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BFF46420C161E800F64215 /* NewIdentity.swift */; };
 		65BFF46820C16C3C00F64215 /* RequestNewIndetity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BFF46720C16C3B00F64215 /* RequestNewIndetity.swift */; };
@@ -412,6 +413,7 @@
 		65B89ACC20B4761C0024DC51 /* NewProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewProfile.storyboard; sourceTree = "<group>"; };
 		65B89ACE20B480470024DC51 /* MANewProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MANewProfileViewController.swift; sourceTree = "<group>"; };
 		65B89AD320B48B9B0024DC51 /* MeApp-Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MeApp-Swift.h"; sourceTree = "<group>"; };
+		65BF9E862111DA5B000B38AF /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		65BFF46220C161B400F64215 /* Records.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Records.swift; sourceTree = "<group>"; };
 		65BFF46420C161E800F64215 /* NewIdentity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewIdentity.swift; sourceTree = "<group>"; };
 		65BFF46720C16C3B00F64215 /* RequestNewIndetity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestNewIndetity.swift; sourceTree = "<group>"; };
@@ -641,6 +643,7 @@
 				6509EA3520C84CFD004F8BA0 /* NewToken.swift */,
 				651E197B20C95B5400A46D71 /* Web3Service.swift */,
 				6510D87C20CAEF1400D85BAE /* Web3Provider.swift */,
+				65BF9E862111DA5B000B38AF /* Status.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1734,6 +1737,7 @@
 				658BDDC92108A76100A27EC7 /* RecordType.swift in Sources */,
 				6504474220C0715C00D040B9 /* MAKindpakketCurrenciesViewController.swift in Sources */,
 				6556375420B6DE8300E45487 /* PopupWindowManager.swift in Sources */,
+				65BF9E872111DA5B000B38AF /* Status.swift in Sources */,
 				6504473A20C04BD800D040B9 /* UIAlertAction+Extensions.swift in Sources */,
 				65A51F7320B2FFF20010DB33 /* MeApp.xcdatamodeld in Sources */,
 				656F198A2105EFF100923DAF /* MAValidatorCellTableViewCell.swift in Sources */,

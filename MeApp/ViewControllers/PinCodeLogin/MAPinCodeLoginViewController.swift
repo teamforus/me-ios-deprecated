@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftMessages
 
 class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
     @IBOutlet weak var codeUITextField: UITextField!
@@ -73,12 +74,23 @@ class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
     }
     
     @IBAction func loginWithCode(_ sender: Any) {
-        AuthorizationCodeRequest.authorizeCode(completion: { (response) in
-            if response.success != nil {
-                self.performSegue(withIdentifier: "goToWallet", sender: nil)
+        if UserShared.shared.currentUser != nil {
+            AuthorizationCodeRequest.authorizeCode(completion: { (response) in
+                if response.success != nil {
+                    self.performSegue(withIdentifier: "goToWallet", sender: nil)
+                }
+            }) { (error) in
+                
             }
-        }) { (error) in
+        }else {
+            let error = MessageView.viewFromNib(layout: .tabView)
+            error.configureTheme(.error)
+            error.configureContent(title: "Warning", body: "This device in not authorize" , iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
+                SwiftMessages.hide()
+            }
+            error.button?.setTitle("OK", for: .normal)
             
+            SwiftMessages.show( view: error)
         }
     }
 }

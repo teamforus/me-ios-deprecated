@@ -23,7 +23,7 @@ enum typeClose: Int {
 
 public enum ALConstants {
   static let nibName = "AppLocker"
-  static let kPincode = "" // Key for saving pincode to UserDefaults
+  static let kPincode = "pinCode" // Key for saving pincode to UserDefaults
   static let kLocalizedReason = "Unlock with sensor" // Your message when sensors must be shown
   static let duration = 0.3 // Duration of indicator filling
   static let maxPinLength = 4
@@ -247,7 +247,7 @@ public extension AppLocker {
         return
     }
 //    if mode == .validate {
-//        if locker.savedPin == "" {
+//        if locker.savedPin == "" || locker.savedPin == nil  {
 //            return
 //        }
 //    }

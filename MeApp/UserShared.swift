@@ -14,6 +14,6 @@ final class UserShared {
     private init() { }
     
     static let shared = UserShared()
-    var currentUser: User = User()
+    var currentUser: User!
     
 }

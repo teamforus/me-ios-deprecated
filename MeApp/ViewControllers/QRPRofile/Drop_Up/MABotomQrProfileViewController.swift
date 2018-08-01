@@ -9,6 +9,7 @@
 import UIKit
 import ISHPullUp
 import AssistantKit
+import CoreData
 
 class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate, ISHPullUpStateDelegate{
     @IBOutlet private weak var handleView: ISHPullUpHandleView!
@@ -16,7 +17,9 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
     @IBOutlet private weak var topView: UIView!
     @IBOutlet private weak var buttonLock: UIButton?
     @IBOutlet weak var qrCodeImageView: UIImageView!
+    var appDelegate = UIApplication.shared.delegate as! AppDelegate
     var timer : Timer!
+    var authorizeToken: AuthorizeToken!
     
     private var firstAppearanceCompleted = false
     weak var pullUpController: ISHPullUpViewController!
@@ -68,13 +71,86 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
         super.viewDidAppear(animated)
         firstAppearanceCompleted = true;
         AuthorizeTokenRequest.createToken(completion: { (response) in
-            self.qrCodeImageView.generateQRCode(from: response.authToken)
-            self.timer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(self.checkAuthorizeToken), userInfo: nil, repeats: true)
+            self.authorizeToken = response
+            self.qrCodeImageView.generateQRCode(from: "authToken:\(response.authToken!)")
+            self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.checkAuthorizeToken), userInfo: nil, repeats: true)
         }) { (error) in }
     }
     
-    @objc func checkAuthorizeToken(){
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         self.timer.invalidate()
+    }
+    
+    @objc func checkAuthorizeToken(){
+        Status.checkStatus(accessToken: self.authorizeToken.accessToken, completion: { (code) in
+            if code == 200 {
+                self.timer.invalidate()
+                self.saveNewIdentity(accessToken: self.authorizeToken.accessToken)
+                self.updateOldIndentity()
+                self.getCurrentUser(accessToken: self.authorizeToken.accessToken)
+                NotificationCenter.default.post(name: Notification.Name("TokenIsValidate"), object: nil)
+            }
+        }) { (error) in }
+    }
+    
+    func saveNewIdentity(accessToken: String){
+        let context = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "User", in: context)
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        fetchRequest.predicate = NSPredicate(format:"accessToken == %@", accessToken)
+        
+        do{
+            let results = try context.fetch(fetchRequest) as? [NSManagedObject]
+            if results?.count == 0 {
+                let newUser = NSManagedObject(entity: entity!, insertInto: context)
+                newUser.setValue(true, forKey: "currentUser")
+                newUser.setValue(accessToken, forKey: "accessToken")
+                
+                do {
+                    try context.save()
+                } catch {
+                    print("Failed saving")
+                }
+            }
+        } catch{
+            
+        }
+    }
+    
+    func updateOldIndentity(){
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        fetchRequest.predicate = NSPredicate(format:"currentUser == YES")
+        
+        do{
+            let results = try context.fetch(fetchRequest) as? [NSManagedObject]
+            if results?.count == 0 {
+                results![0].setValue(false, forKey: "currentUser")
+                
+                do {
+                    try context.save()
+                } catch {
+                    print("Failed saving")
+                }
+            }
+        } catch{
+            
+        }
+    }
+    
+    func getCurrentUser(accessToken: String!){
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        fetchRequest.predicate = NSPredicate(format:"accessToken == %@", accessToken)
+        
+        do{
+            let results = try context.fetch(fetchRequest) as? [User]
+            UserShared.shared.currentUser = results![0]
+            
+        } catch{
+            
+        }
     }
     
     @objc private dynamic func handleTapGesture(gesture: UITapGestureRecognizer) {

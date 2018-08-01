@@ -246,7 +246,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zm9-Ex-VsL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1758" y="985"/>
+            <point key="canvasLocation" x="1758" y="1028"/>
         </scene>
         <!--PassStoryboard-->
         <scene sceneID="Wmc-G1-sBm">
@@ -254,7 +254,7 @@
                 <viewControllerPlaceholder storyboardName="PassStoryboard" id="kLj-dM-zdT" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JMc-uu-dyU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2610" y="941"/>
+            <point key="canvasLocation" x="2623" y="984"/>
         </scene>
         <!--Courrencies-->
         <scene sceneID="YdK-Pe-aCo">
@@ -262,7 +262,7 @@
                 <viewControllerPlaceholder storyboardName="PassStoryboard" referencedIdentifier="Courrencies" id="345-mK-wFb" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ynX-bI-Hkj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2594" y="1028"/>
+            <point key="canvasLocation" x="2608" y="1070"/>
         </scene>
         <!--Records View Controller-->
         <scene sceneID="4wx-QL-c3a">
@@ -687,7 +687,7 @@
                         <outlet property="digit5UILabel" destination="GL1-Fz-0HO" id="Pne-cI-2B1"/>
                         <outlet property="digit6UILabel" destination="acG-5x-qO0" id="3rH-fZ-B4X"/>
                         <outlet property="viewPinCode" destination="Y48-7g-35h" id="8ar-iB-HTD"/>
-                        <segue destination="ofq-Zs-ITw" kind="show" identifier="goToWallet" id="flV-C5-T0u"/>
+                        <segue destination="ofq-Zs-ITw" kind="presentation" identifier="goToWallet" id="flV-C5-T0u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fh2-Am-abe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -987,7 +987,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x93-QG-W8i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="820" y="985"/>
+            <point key="canvasLocation" x="820" y="1028"/>
         </scene>
         <!--Eigenschappen-->
         <scene sceneID="RgF-Dc-85y">
@@ -1154,6 +1154,7 @@
                         <outlet property="loginWithPinCodeButton" destination="YV7-Gb-SHc" id="ZD8-hb-qWp"/>
                         <outlet property="loginWithQRButton" destination="tc3-ez-uND" id="Xyu-mE-x3f"/>
                         <outlet property="qrBodyView" destination="yO0-Rs-6C7" id="FSY-0S-3kB"/>
+                        <segue destination="ofq-Zs-ITw" kind="presentation" identifier="goToWalet" id="bfn-kP-emb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mee-gd-9An" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1200,146 +1201,169 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New profiel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55H-o2-Wdz">
-                                <rect key="frame" x="16" y="75" width="344" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="38"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ya-bD-6nD">
-                                <rect key="frame" x="16" y="132" width="344" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Please provide your e-mail and information below. For registration primary email address is required. When you're finished, click Continue. </string>
-                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="14"/>
-                                <color key="textColor" red="0.43137254899999999" green="0.43921568630000002" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Primary e-mail*" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eHb-0h-cj3" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="26" y="280" width="315" height="60"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" red="0.70196078429999997" green="0.72941176470000002" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="13"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
-                                        <color key="value" red="0.58823529409999997" green="0.61568627450000002" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="validateEmailFieldWithTextField:" destination="tPn-IO-3Tp" eventType="editingChanged" id="TF7-dK-yI4"/>
-                                    <outlet property="delegate" destination="VwV-oF-jRp" id="4yF-H6-yPf"/>
-                                </connections>
-                            </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="CMi-0F-uhy">
-                                <rect key="frame" x="16" y="44" width="24" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhx-4M-3lT">
-                                <rect key="frame" x="16" y="40" width="41" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="back:" destination="tPn-IO-3Tp" eventType="touchUpInside" id="gw0-nf-cRL"/>
-                                </connections>
-                            </button>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="proper" translatesAutoresizingMaskIntoConstraints="NO" id="PFX-cH-4ju">
-                                <rect key="frame" x="317" y="308" width="14" height="14"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bij Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIO-1H-ZVK">
-                                <rect key="frame" x="53" y="48" width="35" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="12"/>
-                                <color key="textColor" red="0.42352941179999998" green="0.42352941179999998" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zC2-mG-Doo" customClass="ShadowButton" customModule="MeApp" customModuleProvider="target">
-                                <rect key="frame" x="25" y="599" width="325" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.20392156859999999" green="0.38823529410000002" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="14"/>
-                                <state key="normal" title="PROFIEL TOEVOEGEN">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedShadowColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="9"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                        <size key="value" width="0.0" height="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="0.29999999999999999"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="create:" destination="tPn-IO-3Tp" eventType="touchUpInside" id="hTX-4I-PTi"/>
-                                    <action selector="loginInApp:" destination="VwV-oF-jRp" eventType="touchUpInside" id="Fyc-4S-c2Y"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Given Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b7h-Du-XYj" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="26" y="403" width="315" height="60"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" red="0.70196078429999997" green="0.72941176470000002" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="13"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
-                                        <color key="value" red="0.58823529409999997" green="0.61568627450000002" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="validateEmailFieldWithTextField:" destination="tPn-IO-3Tp" eventType="editingChanged" id="StX-Hd-dJx"/>
-                                    <outlet property="delegate" destination="VwV-oF-jRp" id="5fg-gi-8ER"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Family Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kR6-1g-yYn" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="26" y="463" width="315" height="60"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" red="0.70196078429999997" green="0.72941176470000002" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="13"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
-                                        <color key="value" red="0.58823529409999997" green="0.61568627450000002" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="validateEmailFieldWithTextField:" destination="tPn-IO-3Tp" eventType="editingChanged" id="Hlb-hq-wB7"/>
-                                    <outlet property="delegate" destination="VwV-oF-jRp" id="H46-fP-fIJ"/>
-                                </connections>
-                            </textField>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uEf-Ly-3BM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WPL-8Y-61m">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Family Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DMr-He-WGt" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                                <rect key="frame" x="25" y="432" width="315" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" red="0.70196078429999997" green="0.72941176470000002" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="13"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                                        <color key="value" red="0.58823529409999997" green="0.61568627450000002" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="validateEmailFieldWithTextField:" destination="tPn-IO-3Tp" eventType="editingChanged" id="hDl-VJ-2hs"/>
+                                                </connections>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBa-Wv-3m9" customClass="ShadowButton" customModule="MeApp" customModuleProvider="target">
+                                                <rect key="frame" x="24" y="568" width="325" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.20392156859999999" green="0.38823529410000002" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="14"/>
+                                                <state key="normal" title="PROFIEL TOEVOEGEN">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedShadowColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="9"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                        <size key="value" width="0.0" height="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                        <real key="value" value="0.29999999999999999"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="create:" destination="tPn-IO-3Tp" eventType="touchUpInside" id="biq-a9-Nfr"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bij Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PzA-yq-3Ed">
+                                                <rect key="frame" x="52" y="17" width="35" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="12"/>
+                                                <color key="textColor" red="0.42352941179999998" green="0.42352941179999998" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New profiel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CtM-Fv-Z9R">
+                                                <rect key="frame" x="15" y="44" width="344" height="52"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="38"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Given Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vwf-mA-VNp" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                                <rect key="frame" x="25" y="372" width="315" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" red="0.70196078429999997" green="0.72941176470000002" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="13"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                                        <color key="value" red="0.58823529409999997" green="0.61568627450000002" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="validateEmailFieldWithTextField:" destination="tPn-IO-3Tp" eventType="editingChanged" id="4AY-ib-RDZ"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGx-Ya-lC9">
+                                                <rect key="frame" x="15" y="101" width="344" height="70"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <string key="text">Please provide your e-mail and information below. For registration primary email address is required. When you're finished, click Continue. </string>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="14"/>
+                                                <color key="textColor" red="0.43137254899999999" green="0.43921568630000002" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="proper" translatesAutoresizingMaskIntoConstraints="NO" id="CrT-Vd-Of7">
+                                                <rect key="frame" x="316" y="277" width="14" height="14"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="pNU-EC-4QL">
+                                                <rect key="frame" x="15" y="13" width="24" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Primary e-mail*" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jMT-7s-AAr" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                                <rect key="frame" x="25" y="249" width="315" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" red="0.70196078429999997" green="0.72941176470000002" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="13"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                                        <color key="value" red="0.58823529409999997" green="0.61568627450000002" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="validateEmailFieldWithTextField:" destination="tPn-IO-3Tp" eventType="editingChanged" id="Hc4-J1-XfK"/>
+                                                </connections>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAA-GB-1zb">
+                                                <rect key="frame" x="15" y="9" width="41" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <connections>
+                                                    <action selector="back:" destination="tPn-IO-3Tp" eventType="touchUpInside" id="3G1-x1-7Qe"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="WPL-8Y-61m" firstAttribute="width" secondItem="uEf-Ly-3BM" secondAttribute="width" id="AMK-LV-5s1"/>
+                                    <constraint firstAttribute="trailing" secondItem="WPL-8Y-61m" secondAttribute="trailing" id="Bcv-Mp-DMD"/>
+                                    <constraint firstItem="WPL-8Y-61m" firstAttribute="top" secondItem="uEf-Ly-3BM" secondAttribute="top" id="HCy-Mc-UYf"/>
+                                    <constraint firstItem="WPL-8Y-61m" firstAttribute="height" secondItem="uEf-Ly-3BM" secondAttribute="height" id="rUD-bq-EAS"/>
+                                    <constraint firstItem="WPL-8Y-61m" firstAttribute="leading" secondItem="uEf-Ly-3BM" secondAttribute="leading" id="zxJ-IK-XuL"/>
+                                    <constraint firstAttribute="bottom" secondItem="WPL-8Y-61m" secondAttribute="bottom" id="zzo-hz-kun"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uEf-Ly-3BM" firstAttribute="leading" secondItem="6dn-ta-i47" secondAttribute="leading" id="0co-Q5-qlu"/>
+                            <constraint firstItem="uEf-Ly-3BM" firstAttribute="height" secondItem="UeD-AX-FBu" secondAttribute="height" id="A9e-MS-MMV"/>
+                            <constraint firstItem="uEf-Ly-3BM" firstAttribute="trailing" secondItem="6dn-ta-i47" secondAttribute="trailing" id="Bl5-DE-jgf"/>
+                            <constraint firstItem="uEf-Ly-3BM" firstAttribute="top" secondItem="UeD-AX-FBu" secondAttribute="top" id="EKl-Mw-lzd"/>
+                            <constraint firstItem="uEf-Ly-3BM" firstAttribute="bottom" secondItem="6dn-ta-i47" secondAttribute="bottom" id="N0K-Pz-1ci"/>
+                            <constraint firstItem="uEf-Ly-3BM" firstAttribute="width" secondItem="UeD-AX-FBu" secondAttribute="width" id="poX-a9-Ap1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6dn-ta-i47"/>
                     </view>
                     <connections>
-                        <outlet property="emailSkyFloatingTextField" destination="eHb-0h-cj3" id="l9z-HE-Tyq"/>
-                        <outlet property="familyNameField" destination="kR6-1g-yYn" id="9rw-mQ-FyF"/>
-                        <outlet property="givenNameField" destination="b7h-Du-XYj" id="81h-b2-39h"/>
-                        <outlet property="validateIcon" destination="PFX-cH-4ju" id="WXg-Pv-VTS"/>
+                        <outlet property="emailSkyFloatingTextField" destination="jMT-7s-AAr" id="iO6-8S-QeL"/>
+                        <outlet property="familyNameField" destination="DMr-He-WGt" id="8dO-pZ-jZn"/>
+                        <outlet property="givenNameField" destination="vwf-mA-VNp" id="rGW-uk-dV2"/>
+                        <outlet property="validateIcon" destination="CrT-Vd-Of7" id="EvL-j3-4fB"/>
                         <segue destination="wRy-It-7jC" kind="show" identifier="goToPassword" id="NPF-AZ-rGQ"/>
-                        <segue destination="ofq-Zs-ITw" kind="show" identifier="goToWalet" id="KPx-Ug-dIw"/>
+                        <segue destination="ofq-Zs-ITw" kind="presentation" identifier="goToWalet" id="KPx-Ug-dIw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7xR-VU-EqI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-218.40000000000001" y="984.55772113943033"/>
+            <point key="canvasLocation" x="-218" y="1028"/>
         </scene>
         <!--Botom Qr Profile View Controller-->
         <scene sceneID="6Jw-HM-cFe">
@@ -1434,7 +1458,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dR6-B0-Hua" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1322" y="964"/>
+            <point key="canvasLocation" x="-1142" y="1028"/>
         </scene>
         <!--Pssword Enable View Controller-->
         <scene sceneID="Gcn-1E-nAS">
@@ -1521,12 +1545,12 @@ log in with Face ID?</string>
                     </view>
                     <navigationItem key="navigationItem" id="8iK-0x-bvQ"/>
                     <connections>
-                        <segue destination="ofq-Zs-ITw" kind="show" identifier="goToWalet" id="m0w-cY-gJb"/>
+                        <segue destination="ofq-Zs-ITw" kind="presentation" identifier="goToWalet" id="m0w-cY-gJb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igB-gu-SVS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-218" y="1745"/>
+            <point key="canvasLocation" x="-218" y="1840"/>
         </scene>
     </scenes>
     <resources>
@@ -1551,6 +1575,6 @@ log in with Face ID?</string>
         <image name="wallet" width="30" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KPx-Ug-dIw"/>
+        <segue reference="bfn-kP-emb"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -21,16 +21,46 @@ class MAQRCodeReaderViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         guard checkScanPermissions(), !reader.isRunning else { return }
         
         reader.didFindCode = { result in
             print("Completion with result: \(result.value) of type \(result.metadataType)")
-            let parameter: Parameters = ["auth_token" : result.value]
-            AuthorizeTokenRequest.authorizeToken(parameter: parameter, completion: { (response) in
-            
-            }, failure: { (error) in })
+            if result.value.range(of:"authToken") != nil {
+                
+                var token = result.value.components(separatedBy: ":")
+                let parameter: Parameters = ["auth_token" : token[1]]
+                AuthorizeTokenRequest.authorizeToken(parameter: parameter, completion: { (response) in
+                    self.reader.startScanning()
+                }, failure: { (error) in
+                    self.reader.startScanning()
+                })
+            }else if result.value.range(of:"uuid") != nil{
+                
+                var token = result.value.components(separatedBy: ":")
+                RecordsRequest.readValidationTokenRecord(token: token[1], completion: { (response) in
+                    
+                    let alert: UIAlertController
+                    alert = UIAlertController(title: response.name, message: response.value, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Aprove", style: .default, handler: { (action) in
+                        self.reader.startScanning()
+                        RecordsRequest.aproveValidationTokenRecord(token: token[1], completion: { (response) in
+                            
+                        }, failure: { (error) in
+                            
+                        })
+                    }))
+                    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+                        self.reader.startScanning()
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                 
+                }, failure: { (error) in
+                    self.reader.startScanning()
+                })
+            }
         }
+        
         
         reader.startScanning()
     }
@@ -68,10 +98,10 @@ class MAQRCodeReaderViewController: UIViewController {
             return false
         }
     }
-
-
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
 }

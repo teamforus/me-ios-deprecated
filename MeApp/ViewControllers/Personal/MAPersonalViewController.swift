@@ -14,6 +14,10 @@ class MAPersonalViewController: MABaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         getRecordList()
     }
 
@@ -50,11 +54,14 @@ extension MAPersonalViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MAPersonalTableViewCell
         let record = recordList[indexPath.row] as! Record
-        if record.valid != nil {
+        if record.validations.count != 0 {
             cell.validateText.isHidden = false
+            cell.validationNumber.text = "\(record.validations.count)"
         }else {
             cell.validateText.isHidden = true
+            cell.validationNumber.isHidden = true
         }
+       
         if record.key == "primary_email"{
             cell.cellTypeLabel.text = "Primary E-mail"
             cell.nameLabel.text = record.value

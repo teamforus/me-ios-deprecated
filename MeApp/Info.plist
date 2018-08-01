@@ -30,9 +30,9 @@
 	<key>NSCameraUsageDescription</key>
 	<string>The camera is needed to scan QR codes</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Your microphone will be used to record your speech when you press the &quot;Start Recording&quot; button.</string>
+	<string>Your microphone will be used to record your speech when you press the "Start Recording" button.</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>Speech recognition will be used to determine which words you speak into this device&apos;s microphone.</string>
+	<string>Speech recognition will be used to determine which words you speak into this device's microphone.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>SF-Pro-Display.otf</string>
@@ -51,8 +51,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

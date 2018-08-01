@@ -15,6 +15,7 @@ class MAFirstPageViewController: MABaseViewController, AppLockerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" && UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil{
         var appearance = ALAppearance()
         appearance.image = UIImage(named: "lock")!
         appearance.title = "Devios Ryasnoy"
@@ -22,6 +23,7 @@ class MAFirstPageViewController: MABaseViewController, AppLockerDelegate {
         appearance.delegate = self
         
         AppLocker.present(with: .validate, and: appearance)
+        }
     }
     
     override func didReceiveMemoryWarning() {

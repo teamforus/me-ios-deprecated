@@ -33,6 +33,7 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(goToWalet), name: Notification.Name("TokenIsValidate"), object: nil)
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
@@ -43,6 +44,10 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
                 UserShared.shared.currentUser = results![0]
             }
         } catch{}
+    }
+    
+    @objc func goToWalet(){
+        performSegue(withIdentifier: "goToWalet", sender: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
