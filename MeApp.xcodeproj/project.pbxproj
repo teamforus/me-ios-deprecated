@@ -179,6 +179,12 @@
 		65B89ACB20B44D210024DC51 /* MASignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65B89AC920B44D210024DC51 /* MASignUpViewController.xib */; };
 		65B89ACD20B4761C0024DC51 /* NewProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B89ACC20B4761C0024DC51 /* NewProfile.storyboard */; };
 		65B89ACF20B480470024DC51 /* MANewProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89ACE20B480470024DC51 /* MANewProfileViewController.swift */; };
+		65BB7C3D2112EF380073352C /* GoogleSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65BB7C372112EF380073352C /* GoogleSans-Italic.ttf */; };
+		65BB7C3E2112EF380073352C /* GoogleSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65BB7C382112EF380073352C /* GoogleSans-Bold.ttf */; };
+		65BB7C3F2112EF380073352C /* GoogleSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65BB7C392112EF380073352C /* GoogleSans-BoldItalic.ttf */; };
+		65BB7C402112EF380073352C /* GoogleSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65BB7C3A2112EF380073352C /* GoogleSans-Regular.ttf */; };
+		65BB7C412112EF380073352C /* GoogleSans-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65BB7C3B2112EF380073352C /* GoogleSans-MediumItalic.ttf */; };
+		65BB7C422112EF380073352C /* GoogleSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65BB7C3C2112EF380073352C /* GoogleSans-Medium.ttf */; };
 		65BF9E872111DA5B000B38AF /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BF9E862111DA5B000B38AF /* Status.swift */; };
 		65BFF46320C161B500F64215 /* Records.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BFF46220C161B400F64215 /* Records.swift */; };
 		65BFF46520C161E800F64215 /* NewIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BFF46420C161E800F64215 /* NewIdentity.swift */; };
@@ -413,6 +419,12 @@
 		65B89ACC20B4761C0024DC51 /* NewProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewProfile.storyboard; sourceTree = "<group>"; };
 		65B89ACE20B480470024DC51 /* MANewProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MANewProfileViewController.swift; sourceTree = "<group>"; };
 		65B89AD320B48B9B0024DC51 /* MeApp-Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MeApp-Swift.h"; sourceTree = "<group>"; };
+		65BB7C372112EF380073352C /* GoogleSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GoogleSans-Italic.ttf"; sourceTree = "<group>"; };
+		65BB7C382112EF380073352C /* GoogleSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GoogleSans-Bold.ttf"; sourceTree = "<group>"; };
+		65BB7C392112EF380073352C /* GoogleSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GoogleSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		65BB7C3A2112EF380073352C /* GoogleSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GoogleSans-Regular.ttf"; sourceTree = "<group>"; };
+		65BB7C3B2112EF380073352C /* GoogleSans-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GoogleSans-MediumItalic.ttf"; sourceTree = "<group>"; };
+		65BB7C3C2112EF380073352C /* GoogleSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GoogleSans-Medium.ttf"; sourceTree = "<group>"; };
 		65BF9E862111DA5B000B38AF /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		65BFF46220C161B400F64215 /* Records.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Records.swift; sourceTree = "<group>"; };
 		65BFF46420C161E800F64215 /* NewIdentity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewIdentity.swift; sourceTree = "<group>"; };
@@ -661,6 +673,7 @@
 		65467FA820B823B9009E99CC /* Suporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				65BB7C362112EF380073352C /* Google-Sans-Font */,
 				6579632E20E4D49C001CF29D /* Nunito_Sans */,
 				6500424C20DB97E40092CCDA /* Open_Sans */,
 				65A51FAD20B3012B0010DB33 /* SF Pro */,
@@ -1178,6 +1191,19 @@
 			name = NewProfile;
 			sourceTree = "<group>";
 		};
+		65BB7C362112EF380073352C /* Google-Sans-Font */ = {
+			isa = PBXGroup;
+			children = (
+				65BB7C372112EF380073352C /* GoogleSans-Italic.ttf */,
+				65BB7C382112EF380073352C /* GoogleSans-Bold.ttf */,
+				65BB7C392112EF380073352C /* GoogleSans-BoldItalic.ttf */,
+				65BB7C3A2112EF380073352C /* GoogleSans-Regular.ttf */,
+				65BB7C3B2112EF380073352C /* GoogleSans-MediumItalic.ttf */,
+				65BB7C3C2112EF380073352C /* GoogleSans-Medium.ttf */,
+			);
+			path = "Google-Sans-Font";
+			sourceTree = "<group>";
+		};
 		65BFF46620C16C1E00F64215 /* NewIdentity */ = {
 			isa = PBXGroup;
 			children = (
@@ -1422,6 +1448,7 @@
 				6500425820DB97E40092CCDA /* OpenSans-SemiBold.ttf in Resources */,
 				65A51FA620B300EA0010DB33 /* PassStoryboard.storyboard in Resources */,
 				65A51FDA20B3012C0010DB33 /* SF-Pro-Display-MediumItalic.otf in Resources */,
+				65BB7C402112EF380073352C /* GoogleSans-Regular.ttf in Resources */,
 				65A51FE720B3012C0010DB33 /* SF-Pro-Text-Medium.otf in Resources */,
 				65B89A9D20B422D30024DC51 /* MAWaitingViewController.xib in Resources */,
 				6500425E20DB97E40092CCDA /* OpenSans-SemiBoldItalic.ttf in Resources */,
@@ -1445,6 +1472,8 @@
 				65A51FDF20B3012C0010DB33 /* SF-Pro-Display-BlackItalic.otf in Resources */,
 				65B89AA220B42A6F0024DC51 /* MARegistrationViewController.xib in Resources */,
 				65A51FDD20B3012C0010DB33 /* SF-Pro-Display-UltralightItalic.otf in Resources */,
+				65BB7C3E2112EF380073352C /* GoogleSans-Bold.ttf in Resources */,
+				65BB7C412112EF380073352C /* GoogleSans-MediumItalic.ttf in Resources */,
 				65A51FD020B3012C0010DB33 /* SF-Pro-Display-Light.otf in Resources */,
 				6504472F20C03DAB00D040B9 /* MASwitchProfilePopUpViewController.xib in Resources */,
 				6579634820E4D49E001CF29D /* NunitoSans-Bold.ttf in Resources */,
@@ -1467,6 +1496,7 @@
 				6579634620E4D49E001CF29D /* NunitoSans-Italic.ttf in Resources */,
 				6504472820C028FD00D040B9 /* MAAllowTableViewCell.xib in Resources */,
 				65B89ACB20B44D210024DC51 /* MASignUpViewController.xib in Resources */,
+				65BB7C422112EF380073352C /* GoogleSans-Medium.ttf in Resources */,
 				65A51FE820B3012C0010DB33 /* SF-Pro-Display-BoldItalic.otf in Resources */,
 				6500425D20DB97E40092CCDA /* OpenSans-Bold.ttf in Resources */,
 				6579634020E4D49D001CF29D /* NunitoSans-ExtraLight.ttf in Resources */,
@@ -1474,12 +1504,14 @@
 				6579634B20E4D49E001CF29D /* NunitoSans-ExtraBoldItalic.ttf in Resources */,
 				65A51FD520B3012C0010DB33 /* SF-Pro-Display-Heavy.otf in Resources */,
 				65A51FD220B3012C0010DB33 /* SF-Pro-Text-MediumItalic.otf in Resources */,
+				65BB7C3F2112EF380073352C /* GoogleSans-BoldItalic.ttf in Resources */,
 				65A51F7820B2FFF40010DB33 /* LaunchScreen.storyboard in Resources */,
 				6500425C20DB97E40092CCDA /* OpenSans-LightItalic.ttf in Resources */,
 				658BBA562110954C0098E2AC /* AppLocker.xib in Resources */,
 				65B89AB620B43FA50024DC51 /* MAValidationSuccessViewController.xib in Resources */,
 				65A51FE320B3012C0010DB33 /* SF-Pro-Text-Semibold.otf in Resources */,
 				6500426020DB97E40092CCDA /* LICENSE.txt in Resources */,
+				65BB7C3D2112EF380073352C /* GoogleSans-Italic.ttf in Resources */,
 				6579634520E4D49E001CF29D /* NunitoSans-SemiBoldItalic.ttf in Resources */,
 				65A51FD820B3012C0010DB33 /* SF-Pro-Text-Regular.otf in Resources */,
 				65A51FD120B3012C0010DB33 /* SF-Pro-Display-Regular.otf in Resources */,

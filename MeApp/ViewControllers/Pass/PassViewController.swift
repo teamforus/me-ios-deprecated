@@ -61,12 +61,13 @@ class PassViewController: MABaseViewController {
     }
     
     @IBAction func showAmmount(_ sender: Any) {
-        let popupTransction =  MAShareVaucherViewController(nibName: "MAShareVaucherViewController", bundle: nil)
-        presenter.presentationType = .popup
-        presenter.transitionType = nil
-        presenter.dismissTransitionType = nil
-        presenter.keyboardTranslationType = .compress
-        customPresentViewController(presenter, viewController: popupTransction, animated: true, completion: nil)
+//        let popupTransction =  MAShareVaucherViewController(nibName: "MAShareVaucherViewController", bundle: nil)
+//        presenter.presentationType = .popup
+//        presenter.transitionType = nil
+//        presenter.dismissTransitionType = nil
+//        presenter.keyboardTranslationType = .compress
+//        customPresentViewController(presenter, viewController: popupTransction, animated: true, completion: nil)
+        
     }
 }
 

@@ -18,8 +18,8 @@ class MARecordsViewController: UIViewController, BWWalkthroughViewControllerDele
         return tableView.dequeueReusableCell(withIdentifier: ExpandedCell.ID)!
     }
     
-    var titles : NSArray = ["Nieuwe","Persoonlijk","Medisch","Zakelijk","Relaties","Certificaten","Other"]
-    var images : NSArray = ["iconNotes","iconPersonal","iconMedical","iconBuissness","iconRelations","iconCertificate","iconOther"]
+    var titles : NSArray = ["Persoonlijk","Medisch","Zakelijk","Relaties","Certificaten","Other"]
+    var images : NSArray = ["iconPersonal","iconMedical","iconBuissness","iconRelations","iconCertificate","iconOther"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,15 +113,15 @@ extension MARecordsViewController: ExpandableDelegate {
     }
     
     func expandableTableView(_ expandableTableView: ExpandableTableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return 6
     }
     
     func expandableTableView(_ expandableTableView: ExpandableTableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-           
+           self.performSegue(withIdentifier: "goToNewProfile", sender: nil)
             
         }else if indexPath.row == 1{
-           self.performSegue(withIdentifier: "goToNewProfile", sender: nil)
+           
         }
     }
     

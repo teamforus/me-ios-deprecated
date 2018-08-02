@@ -67,8 +67,8 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
         pullUpController.toggleState(animated: true)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         firstAppearanceCompleted = true;
         AuthorizeTokenRequest.createToken(completion: { (response) in
             self.authorizeToken = response
