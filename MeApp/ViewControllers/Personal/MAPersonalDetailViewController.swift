@@ -39,35 +39,48 @@ class MAPersonalDetailViewController: MABaseViewController {
         }else if record.key == "children"{
             nameCategory.text = "Children"
             valueRecord.text = record.value
+        }else if record.key == "tax_id"{
+            nameCategory.text = "Tax ID"
+            valueRecord.text = record.value
+        }else if record.key == "birth_date"{
+            nameCategory.text = "Birth date"
+            valueRecord.text = record.value
+        }else if record.key == "spouse"{
+            nameCategory.text = "Birth date"
+            valueRecord.text = record.value
+        }else if record.key == "net_worth"{
+            nameCategory.text = "Net worth"
+            valueRecord.text = record.value
+        }else if record.key == "base_salary"{
+            nameCategory.text = "Base salary"
+            valueRecord.text = record.value
+        }else if record.key == "bsn"{
+            nameCategory.text = "BSN"
+            valueRecord.text = record.value
         }
         
         let parameter: Parameters = ["record_id" : record.id]
         
         RecordsRequest.createValidationTokenRecord(parameters: parameter, completion: { (response) in
             self.qrCodeImage.generateQRCode(from: "uuid:\(response.uuid!)")
-        }) { (error) in }
+        }) { (error) in
+            AlertController.showError()
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func deleteRecord(_ sender: Any) {
+        RecordsRequest.deleteRecord(recordId: record.id, completion: { (response) in
+            self.navigationController?.popViewController(animated: true)
+        }) { (error) in
+            AlertController.showError()
+        }
     }
     
     @IBAction func addFavorite(_ sender: Any) {
     }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

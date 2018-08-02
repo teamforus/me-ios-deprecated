@@ -22,7 +22,6 @@ class MATextViewController: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
         textUITextView.layer.cornerRadius = 6
         NotificationCenter.default.addObserver(self, selector: #selector(setSelectedCategoryType), name: Notification.Name("SETSELECTEDCATEGORYTYPE"), object: nil)
-        
     }
     
     @objc func setSelectedCategoryType(){
@@ -51,6 +50,7 @@ class MATextViewController: UIViewController, UITextViewDelegate {
         RecordsRequest.createRecord(parameters: parameters, completion: { (response) in
             NotificationCenter.default.post(name: Notification.Name("CLOSESLIDEPAGE"), object: nil)
         }) { (error) in
+            AlertController.showError()
         }
     }
     

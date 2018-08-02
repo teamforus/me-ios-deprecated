@@ -27,9 +27,11 @@ class MAPersonalViewController: MABaseViewController {
     
     func getRecordList(){
         RecordsRequest.getRecordsList(completion: { (response) in
+            self.recordList.removeAllObjects()
             self.recordList.addObjects(from: response as! [Any])
             self.tableView.reloadData()
         }) { (error) in
+            AlertController.showError()
         }
     }
     

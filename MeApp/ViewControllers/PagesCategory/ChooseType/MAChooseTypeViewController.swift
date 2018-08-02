@@ -35,7 +35,7 @@ class MAChooseTypeViewController: UIViewController, BWWalkthroughPage, MAChooseT
             self.recordTypeList.addObjects(from: response as! [Any])
             self.tableView.reloadData()
         }) { (error) in
-            
+            AlertController.showError()
         }
     }
     

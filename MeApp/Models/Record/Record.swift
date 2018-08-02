@@ -223,4 +223,27 @@ class RecordsRequest {
             }
         }
     }
+    
+    static func deleteRecord(recordId: Int, completion: @escaping ((Response) -> Void), failure: @escaping ((Error) -> Void)){
+        let headers: HTTPHeaders = [
+            "Accept": "application/json",
+            "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"
+        ]
+        
+        
+        Alamofire.request(BaseURL.baseURL(url: "identity/records/\(recordId)"), method: .delete, parameters:nil ,encoding: JSONEncoding.default, headers: headers).responseJSON {
+            response in
+            switch response.result {
+            case .success:
+                if let json = response.result.value {
+                    let deleteResponse = try! Response(object: json as! JSONObject)
+                    completion(deleteResponse)
+                }
+                break
+            case .failure(let error):
+                
+                failure(error)
+            }
+        }
+    }
 }

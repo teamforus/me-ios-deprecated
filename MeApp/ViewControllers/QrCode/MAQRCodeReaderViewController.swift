@@ -33,6 +33,7 @@ class MAQRCodeReaderViewController: UIViewController {
                 AuthorizeTokenRequest.authorizeToken(parameter: parameter, completion: { (response) in
                     self.reader.startScanning()
                 }, failure: { (error) in
+                    AlertController.showError()
                     self.reader.startScanning()
                 })
             }else if result.value.range(of:"uuid") != nil{
@@ -47,7 +48,7 @@ class MAQRCodeReaderViewController: UIViewController {
                         RecordsRequest.aproveValidationTokenRecord(token: token[1], completion: { (response) in
                             
                         }, failure: { (error) in
-                            
+                            AlertController.showError()
                         })
                     }))
                     alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in

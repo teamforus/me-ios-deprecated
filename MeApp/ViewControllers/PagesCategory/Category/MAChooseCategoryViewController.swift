@@ -27,7 +27,7 @@ class MAChooseCategoryViewController: UIViewController {
             self.recordCategories.addObjects(from: response as! [Any])
             self.collectionView.reloadData()
         }) { (error) in
-            
+            AlertController.showError()
         }
     }
     

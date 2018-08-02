@@ -74,7 +74,9 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
             self.authorizeToken = response
             self.qrCodeImageView.generateQRCode(from: "authToken:\(response.authToken!)")
             self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.checkAuthorizeToken), userInfo: nil, repeats: true)
-        }) { (error) in }
+        }) { (error) in
+            AlertController.showError()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -91,7 +93,9 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
                 self.getCurrentUser(accessToken: self.authorizeToken.accessToken)
                 NotificationCenter.default.post(name: Notification.Name("TokenIsValidate"), object: nil)
             }
-        }) { (error) in }
+        }) { (error) in
+            AlertController.showError()
+        }
     }
     
     func saveNewIdentity(accessToken: String){
@@ -106,7 +110,6 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
                 let newUser = NSManagedObject(entity: entity!, insertInto: context)
                 newUser.setValue(true, forKey: "currentUser")
                 newUser.setValue(accessToken, forKey: "accessToken")
-                
                 do {
                     try context.save()
                 } catch {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftMessages
 
 class AlertController: UIAlertController {
     private(set) var originalTitle: String?
@@ -55,6 +56,17 @@ class AlertController: UIAlertController {
         let lines = (0..<linesCount).map({ _ in "\n" }).reduce("", +)
         spaceAdjustedTitle = lines + (originalTitle ?? "")
         title = spaceAdjustedTitle
+    }
+    
+    static func showError(){
+        let error = MessageView.viewFromNib(layout: .tabView)
+        error.configureTheme(.error)
+        error.configureContent(title: "Warning", body: "Something goes wrong please try again!" , iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
+            SwiftMessages.hide()
+        }
+        error.button?.setTitle("OK", for: .normal)
+        
+        SwiftMessages.show( view: error)
     }
     
     private func newLinesCount(for imageView: UIImageView) -> CGFloat {

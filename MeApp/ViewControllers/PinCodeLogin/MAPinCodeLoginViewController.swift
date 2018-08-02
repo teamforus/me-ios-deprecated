@@ -46,6 +46,7 @@ class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
                 }
             }
         }) { (error) in
+            AlertController.showError()
         }
     }
     
@@ -80,7 +81,7 @@ class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
                     self.performSegue(withIdentifier: "goToWallet", sender: nil)
                 }
             }) { (error) in
-                
+                AlertController.showError()
             }
         }else {
             let error = MessageView.viewFromNib(layout: .tabView)

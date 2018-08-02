@@ -79,7 +79,7 @@ class MALoginEmailViewController: MABaseViewController {
                         AuthorizationEmailRequest.authorizeEmailToken(completion: { (response) in
                             self.performSegue(withIdentifier: "goToWalet", sender: self)
                         }, failure: { (error) in
-                            
+                            AlertController.showError()
                         })
                     }else {
                         let error = MessageView.viewFromNib(layout: .tabView)
