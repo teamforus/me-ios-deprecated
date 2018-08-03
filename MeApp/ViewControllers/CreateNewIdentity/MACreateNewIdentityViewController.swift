@@ -62,7 +62,7 @@ class MACreateNewIdentityViewController: MABaseViewController {
         
         do{
             let results = try context.fetch(fetchRequest) as? [NSManagedObject]
-            if results?.count == 0 {
+            if results?.count != 0 {
                 results![0].setValue(false, forKey: "currentUser")
                 
                 do {
@@ -101,8 +101,8 @@ class MACreateNewIdentityViewController: MABaseViewController {
             RequestNewIndetity.createnewIndentity(parameters: parameters,
                                                   completion: { (response) in
                                                     if response.errors == nil {
-                                                        self.saveNewIdentity(accessToken: response.accessToken, pinCode: 2460)
                                                         self.updateOldIndentity()
+                                                        self.saveNewIdentity(accessToken: response.accessToken, pinCode: 2460)
                                                         self.getCurrentUser(primaryEmai: self.emailSkyFloatingTextField.text)
                                                         RecordCategoryRequest.createRecordCategory(completion: { (response) in
                                                             
