@@ -10,6 +10,9 @@ import UIKit
 
 class WalletSecondTableViewCell: UITableViewCell {
     @IBOutlet weak var viewBody: UIView!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var typeCoinLabel: UILabel!
+    @IBOutlet weak var typeCoinImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -26,14 +26,14 @@ class MARecordsViewController: UIViewController, BWWalkthroughViewControllerDele
         tableView.expandableDelegate = self
         tableView.animation = .automatic
         NotificationCenter.default.addObserver(self, selector: #selector(closePage), name: Notification.Name("CLOSESLIDEPAGE"), object: nil)
-     }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
-//        self.navigationController?.setNavigationBarHidden(false, animated: true)
-//        self.title = "Eigenschappen"
-//        self.navigationController?.navigationBar.prefersLargeTitles = true
+        //        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        //        self.title = "Eigenschappen"
+        //        self.navigationController?.navigationBar.prefersLargeTitles = true
         UIApplication.shared.statusBarStyle = .default
     }
     
@@ -79,32 +79,32 @@ class MARecordsViewController: UIViewController, BWWalkthroughViewControllerDele
 extension MARecordsViewController: ExpandableDelegate {
     func expandableTableView(_ expandableTableView: ExpandableTableView, expandedCellsForRowAt indexPath: IndexPath) -> [UITableViewCell]? {
         
-//        if indexPath.row == 2 {
-//            let cell1 = tableView.dequeueReusableCell(withIdentifier: ExpandedCell.ID) as! ExpandedCell
-//            cell1.titleLabel.text = "VOORNAAM"
-//            cell1.infoCategory.text = "John"
-//            let cell2 = tableView.dequeueReusableCell(withIdentifier: ExpandedCell.ID) as! ExpandedCell
-//            cell2.titleLabel.text = "ACHTERNAAM"
-//            cell2.infoCategory.text = "Doe"
-//            let cell3 = tableView.dequeueReusableCell(withIdentifier: ExpandedCell.ID) as! ExpandedCell
-//            cell3.titleLabel.text = "BSN"
-//            cell3.infoCategory.text = "45547646455"
-//            cell3.validateChekBox.image = UIImage(named: "shape2")
-//            let cell4 = tableView.dequeueReusableCell(withIdentifier: ExpandedCell.ID) as! ExpandedCell
-//            cell4.titleLabel.text = "E-MAIL"
-//            cell4.infoCategory.text = "john@forus.io"
-//            let cell5 = tableView.dequeueReusableCell(withIdentifier: ExpandedCell.ID) as! ExpandedCell
-//            cell5.titleLabel.text = "TELWFOONNUMMER"
-//            cell5.infoCategory.text = "+315349635"
-//            return [cell1, cell2, cell3, cell4, cell5]
-//        }
+        //        if indexPath.row == 2 {
+        //            let cell1 = tableView.dequeueReusableCell(withIdentifier: ExpandedCell.ID) as! ExpandedCell
+        //            cell1.titleLabel.text = "VOORNAAM"
+        //            cell1.infoCategory.text = "John"
+        //            let cell2 = tableView.dequeueReusableCell(withIdentifier: ExpandedCell.ID) as! ExpandedCell
+        //            cell2.titleLabel.text = "ACHTERNAAM"
+        //            cell2.infoCategory.text = "Doe"
+        //            let cell3 = tableView.dequeueReusableCell(withIdentifier: ExpandedCell.ID) as! ExpandedCell
+        //            cell3.titleLabel.text = "BSN"
+        //            cell3.infoCategory.text = "45547646455"
+        //            cell3.validateChekBox.image = UIImage(named: "shape2")
+        //            let cell4 = tableView.dequeueReusableCell(withIdentifier: ExpandedCell.ID) as! ExpandedCell
+        //            cell4.titleLabel.text = "E-MAIL"
+        //            cell4.infoCategory.text = "john@forus.io"
+        //            let cell5 = tableView.dequeueReusableCell(withIdentifier: ExpandedCell.ID) as! ExpandedCell
+        //            cell5.titleLabel.text = "TELWFOONNUMMER"
+        //            cell5.infoCategory.text = "+315349635"
+        //            return [cell1, cell2, cell3, cell4, cell5]
+        //        }
         return nil
     }
     
     func expandableTableView(_ expandableTableView: ExpandableTableView, heightsForExpandedRowAt indexPath: IndexPath) -> [CGFloat]? {
-//        if indexPath.row == 2 {
-//            return [55, 55, 55, 55, 55]
-//        }
+        //        if indexPath.row == 2 {
+        //            return [55, 55, 55, 55, 55]
+        //        }
         return nil
     }
     
@@ -118,10 +118,10 @@ extension MARecordsViewController: ExpandableDelegate {
     
     func expandableTableView(_ expandableTableView: ExpandableTableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-           self.performSegue(withIdentifier: "goToNewProfile", sender: nil)
+            self.performSegue(withIdentifier: "goToNewProfile", sender: nil)
             
         }else if indexPath.row == 1{
-           
+            
         }
     }
     
@@ -140,6 +140,11 @@ extension MARecordsViewController: ExpandableDelegate {
             let cell = expandableTableView.dequeueReusableCell(withIdentifier:"cell") as! MARecordsTableViewCell
             cell.titleCategory.text = titles.object(at: indexPath.row) as? String
             cell.categoryIcon.image = UIImage(named: images.object(at: indexPath.row) as! String)
+            if indexPath.row == 0{
+                cell.subcategoryTitle.text = "3 eigenschappen"
+            }else{
+                cell.subcategoryTitle.text = "0 eigenschappen"
+            }
             return cell
         default:
             break

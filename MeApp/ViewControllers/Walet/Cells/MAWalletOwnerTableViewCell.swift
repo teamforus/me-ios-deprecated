@@ -15,6 +15,7 @@ class MAWalletOwnerTableViewCell: SwipeTableViewCell {
     @IBOutlet weak var marcLabel: UILabel!
     @IBOutlet weak var viewBody: UIView!
     @IBOutlet weak var headView: UIView!
+    @IBOutlet weak var typeIconImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -31,7 +31,7 @@ class WalletViewController: MABaseViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         segmentView.layer.cornerRadius = 8.0
-        tableView.setContentOffset(CGPoint(x: 0, y: 100), animated: true)
+        tableView.setContentOffset(CGPoint(x: 0, y: 44), animated: true)
         segmentedControl.items = ["Valuta", "Bezit", "Vouchers"]
         segmentedControl.selectedIndex = 0
         segmentedControl.font = UIFont(name: "GoogleSans-Medium", size: 12)
@@ -43,8 +43,6 @@ class WalletViewController: MABaseViewController{
         Web3Provider.getBalance()
         Service.sendContract { (response, error) in
         }
-        
-    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,12 +50,9 @@ class WalletViewController: MABaseViewController{
         self.tabBarController?.tabBar.isHidden = false
     }
   
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    
     
     @IBAction func dismissKeyboard(_ sender: Any) {
         self.view.endEditing(true)
@@ -106,6 +101,9 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if walletCase != .token {
+            return 2
+        }
         return 3
     }
     
@@ -116,24 +114,49 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
         switch walletCase {
         case .token:
             let cellWalletSecond = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! WalletSecondTableViewCell
+            if indexPath.row == 0{
+                cellWalletSecond.priceLabel.text = "10,509876"
+                cellWalletSecond.typeCoinLabel.text = "ETH"
+            } else if indexPath.row == 1{
+                cellWalletSecond.priceLabel.text = "200,85"
+                cellWalletSecond.typeCoinLabel.text = "BAT"
+                cellWalletSecond.typeCoinImageView.image = UIImage.init(named: "bat")
+            }else if indexPath.row == 2{
+                cellWalletSecond.priceLabel.text = "225,57"
+                cellWalletSecond.typeCoinLabel.text = "ERC-20 Token"
+                cellWalletSecond.typeCoinImageView.image = UIImage.init(named: "erc")
+            }
+            
             cell = cellWalletSecond
             break
             
         case .assets:
             let cellWalletOwner = tableView.dequeueReusableCell(withIdentifier: "cell3", for: indexPath) as! MAWalletOwnerTableViewCell
             cellWalletOwner.delegate = self
+            if indexPath.row == 0{
+                cellWalletOwner.headNameLabel.text = "APPARTEMENT"
+                cellWalletOwner.productNameLabel.text = "Groningen"
+                cellWalletOwner.marcLabel.text = "Ulgersmaweg 35, 9731BK"
+            }else if indexPath.row == 1{
+                cellWalletOwner.headNameLabel.text = "AUTO"
+                cellWalletOwner.productNameLabel.text = "Mercedes G-Class"
+                cellWalletOwner.marcLabel.text = "9731 EU"
+                cellWalletOwner.typeIconImage.image = UIImage.init(named: "sportsCar")
+            }
             cell = cellWalletOwner
             
         default:
             let cellWallet = tableView.dequeueReusableCell(withIdentifier: "cell3", for: indexPath) as! MAWalletOwnerTableViewCell
             cellWallet.delegate = self
-            
-            if indexPath.row == 0 {
-//                cellWallet.titleWalteCategory.text = "Kindpakket"
-            }else if indexPath.row == 1 {
-//                cellWallet.titleWalteCategory.text = "Bike"
-            }else if indexPath.row == 2 {
-//                cellWallet.titleWalteCategory.text = "Kindpakket"
+            if indexPath.row == 0{
+                cellWallet.headNameLabel.text = "APPARTEMENT"
+                cellWallet.productNameLabel.text = "Groningen"
+                cellWallet.marcLabel.text = "Ulgersmaweg 35, 9731BK"
+            }else if indexPath.row == 1{
+                cellWallet.headNameLabel.text = "AUTO"
+                cellWallet.productNameLabel.text = "Mercedes G-Class"
+                cellWallet.marcLabel.text = "9731 EU"
+                cellWallet.typeIconImage.image = UIImage.init(named: "sportsCar")
             }
             
             cell = cellWallet
