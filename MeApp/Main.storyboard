@@ -1425,8 +1425,8 @@
                         <outlet property="familyNameField" destination="DMr-He-WGt" id="8dO-pZ-jZn"/>
                         <outlet property="givenNameField" destination="vwf-mA-VNp" id="rGW-uk-dV2"/>
                         <outlet property="validateIcon" destination="CrT-Vd-Of7" id="EvL-j3-4fB"/>
-                        <segue destination="wRy-It-7jC" kind="show" identifier="goToPassword" id="NPF-AZ-rGQ"/>
                         <segue destination="ofq-Zs-ITw" kind="presentation" identifier="goToWalet" id="KPx-Ug-dIw"/>
+                        <segue destination="1dn-ZR-SXY" kind="presentation" identifier="goToPassword" id="Efr-Sn-2SK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7xR-VU-EqI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1527,6 +1527,71 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dR6-B0-Hua" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1142" y="1028"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="qgg-kt-6DX">
+            <objects>
+                <viewController id="1dn-ZR-SXY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WR5-V8-iEa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tick" translatesAutoresizingMaskIntoConstraints="NO" id="cdg-gD-ho0">
+                                <rect key="frame" x="138" y="158" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Registration succesful" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gu-KB-Q8z">
+                                <rect key="frame" x="20" y="288" width="337" height="97"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="36"/>
+                                <color key="textColor" red="0.1803921568627451" green="0.19607843137254902" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create a passcode that will be requested to enter the Me app." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPq-Qe-jcq">
+                                <rect key="frame" x="24" y="426" width="333" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKn-SJ-9lB" customClass="ShadowButton" customModule="MeApp" customModuleProvider="target">
+                                <rect key="frame" x="30" y="599" width="315" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.38431372549999998" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="14"/>
+                                <state key="normal" title="CREATE PASSWORD">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedShadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="createPasscode:" destination="wRy-It-7jC" eventType="touchUpInside" id="9vC-m2-7nU"/>
+                                    <segue destination="wRy-It-7jC" kind="presentation" id="3rf-mb-Zwa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="b68-zi-mU4"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dSh-Gv-GrK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1151.2" y="1812.1439280359821"/>
         </scene>
         <!--Pssword Enable View Controller-->
         <scene sceneID="Gcn-1E-nAS">
@@ -1638,11 +1703,12 @@ log in with Face ID?</string>
         <image name="rectangle" width="10" height="7"/>
         <image name="rectangleRed" width="9" height="7"/>
         <image name="shape1" width="21" height="21"/>
+        <image name="tick" width="104" height="104"/>
         <image name="userpicIcon" width="47" height="47"/>
         <image name="voucherIcon" width="52" height="52"/>
         <image name="wallet" width="30" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KPx-Ug-dIw"/>
+        <segue reference="m0w-cY-gJb"/>
     </inferredMetricsTieBreakers>
 </document>
