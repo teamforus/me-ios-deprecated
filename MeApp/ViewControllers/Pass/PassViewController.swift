@@ -8,8 +8,9 @@
 
 import UIKit
 import Presentr
+import SafariServices
 
-class PassViewController: MABaseViewController {
+class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var imageQR: UIImageView!
     @IBOutlet weak var voiceButton: VoiceButtonView!
@@ -65,6 +66,9 @@ class PassViewController: MABaseViewController {
 //        presenter.dismissTransitionType = nil
 //        presenter.keyboardTranslationType = .compress
 //        customPresentViewController(presenter, viewController: popupTransction, animated: true, completion: nil)
+        let safariVC = SFSafariViewController(url: URL(string: "https://www.zuidhorn.nl/kindpakket")!)
+        self.present(safariVC, animated: true, completion: nil)
+        safariVC.delegate = self
         
     }
 }
