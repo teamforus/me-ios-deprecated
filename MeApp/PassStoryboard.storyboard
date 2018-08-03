@@ -79,7 +79,7 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="combinedShapeQR" translatesAutoresizingMaskIntoConstraints="NO" id="5br-KC-Otr">
-                                        <rect key="frame" x="219" y="148" width="141" height="125"/>
+                                        <rect key="frame" x="219" y="148" width="141" height="120"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNc-gw-bh0">
@@ -106,8 +106,8 @@
                                             <action selector="showEmailToMe:" destination="P1o-sl-MnT" eventType="touchUpInside" id="9hd-Az-cAk"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="qrCode" translatesAutoresizingMaskIntoConstraints="NO" id="be5-K4-b8z">
-                                        <rect key="frame" x="249" y="171" width="80" height="80"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="qrV" translatesAutoresizingMaskIntoConstraints="NO" id="be5-K4-b8z">
+                                        <rect key="frame" x="241" y="171" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
@@ -398,7 +398,7 @@
         <image name="back" width="24" height="24"/>
         <image name="baseKindPakket" width="164" height="46"/>
         <image name="combinedShapeQR" width="141" height="120"/>
-        <image name="qrCode" width="178" height="178"/>
+        <image name="qrV" width="81" height="80"/>
         <image name="shapeUp" width="12" height="14"/>
     </resources>
 </document>

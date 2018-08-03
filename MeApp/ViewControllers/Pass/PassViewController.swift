@@ -27,7 +27,6 @@ class PassViewController: MABaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageQR.generateQRCode(from: "456,66")
         kindPaketQRView.layer.cornerRadius = 9.0
         kindPaketQRView.layer.shadowColor = UIColor.black.cgColor
         kindPaketQRView.layer.shadowOffset = CGSize(width: 0, height: 5)
@@ -38,7 +37,6 @@ class PassViewController: MABaseViewController {
         smallerAmount.layer.cornerRadius = 9.0
         emailMeButton.layer.cornerRadius = 9.0
         
-        imageQR.generateQRCode(from: "Voucher")
         
     }
     
