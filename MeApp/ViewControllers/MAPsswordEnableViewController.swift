@@ -34,7 +34,7 @@ class MAPsswordEnableViewController: MABaseViewController, AppLockerDelegate {
     }
     
     @IBAction func cancel(_ sender: UIButton) {
-       self.navigationController?.popViewController(animated: true)
+       performSegue(withIdentifier: "goToWalet", sender: self)
     }
     
     func closePinCodeView(typeClose: typeClose) {

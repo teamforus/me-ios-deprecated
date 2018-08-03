@@ -69,6 +69,7 @@
 		6556376420B7078800E45487 /* MASetUpPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6556376320B7078800E45487 /* MASetUpPinViewController.swift */; };
 		6556376620B718DF00E45487 /* MASpeachRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6556376520B718DF00E45487 /* MASpeachRecognition.swift */; };
 		6556376820B726F700E45487 /* MABaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6556376720B726F700E45487 /* MABaseViewController.swift */; };
+		65588FFA21146B7600806C9E /* MAWaletVoucherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65588FF921146B7600806C9E /* MAWaletVoucherTableViewCell.swift */; };
 		6558E3DF20DBB6B6001EC568 /* HBSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6558E3DE20DBB6B6001EC568 /* HBSegmentedControl.swift */; };
 		655BB05720EE442B00BFD06A /* MAQRLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BB05620EE442B00BFD06A /* MAQRLoginViewController.swift */; };
 		656F19872105E22A00923DAF /* MAValidatorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656F19862105E22A00923DAF /* MAValidatorsViewController.swift */; };
@@ -302,6 +303,7 @@
 		6556376320B7078800E45487 /* MASetUpPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MASetUpPinViewController.swift; sourceTree = "<group>"; };
 		6556376520B718DF00E45487 /* MASpeachRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MASpeachRecognition.swift; sourceTree = "<group>"; };
 		6556376720B726F700E45487 /* MABaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MABaseViewController.swift; sourceTree = "<group>"; };
+		65588FF921146B7600806C9E /* MAWaletVoucherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAWaletVoucherTableViewCell.swift; sourceTree = "<group>"; };
 		6558E3DE20DBB6B6001EC568 /* HBSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSegmentedControl.swift; sourceTree = "<group>"; };
 		655BB05620EE442B00BFD06A /* MAQRLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAQRLoginViewController.swift; sourceTree = "<group>"; };
 		656F19862105E22A00923DAF /* MAValidatorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAValidatorsViewController.swift; sourceTree = "<group>"; };
@@ -948,6 +950,7 @@
 				65A51FA520B300EA0010DB33 /* WaletTableViewCell.swift */,
 				65A51FEA20B31FB30010DB33 /* WalletSecondTableViewCell.swift */,
 				657B074520D27F2B0093930E /* MAWalletOwnerTableViewCell.swift */,
+				65588FF921146B7600806C9E /* MAWaletVoucherTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1839,6 +1842,7 @@
 				65467FB020B86C57009E99CC /* MALoginWithQRViewController.swift in Sources */,
 				6556375A20B6DE8300E45487 /* PopupViewContainable.swift in Sources */,
 				657B074620D27F2B0093930E /* MAWalletOwnerTableViewCell.swift in Sources */,
+				65588FFA21146B7600806C9E /* MAWaletVoucherTableViewCell.swift in Sources */,
 				65AC32FB2102016500633187 /* MAChooseCategoryViewController.swift in Sources */,
 				6500426F20DBA3D50092CCDA /* TransactionViewController.swift in Sources */,
 				65BFF46E20C191BD00F64215 /* AuthorizationEmail.swift in Sources */,

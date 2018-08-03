@@ -146,18 +146,7 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
             cell = cellWalletOwner
             
         default:
-            let cellWallet = tableView.dequeueReusableCell(withIdentifier: "cell3", for: indexPath) as! MAWalletOwnerTableViewCell
-            cellWallet.delegate = self
-            if indexPath.row == 0{
-                cellWallet.headNameLabel.text = "APPARTEMENT"
-                cellWallet.productNameLabel.text = "Groningen"
-                cellWallet.marcLabel.text = "Ulgersmaweg 35, 9731BK"
-            }else if indexPath.row == 1{
-                cellWallet.headNameLabel.text = "AUTO"
-                cellWallet.productNameLabel.text = "Mercedes G-Class"
-                cellWallet.marcLabel.text = "9731 EU"
-                cellWallet.typeIconImage.image = UIImage.init(named: "sportsCar")
-            }
+            let cellWallet = tableView.dequeueReusableCell(withIdentifier: "cell4", for: indexPath) as! MAWaletVoucherTableViewCell
             
             cell = cellWallet
         }
@@ -182,7 +171,8 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
         switch walletCase {
         case .token:
             return 130
-            
+        case .passes:
+            return 130
         default:
             break
         }
