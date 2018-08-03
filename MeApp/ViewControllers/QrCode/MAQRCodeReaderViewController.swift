@@ -65,7 +65,7 @@ class MAQRCodeReaderViewController: UIViewController {
                 do {
                     if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? Dictionary<String,Any>
                     {
-                        if jsonArray["value"] as! String == "auth_token"{
+                        if jsonArray["type"] as! String == "auth_token"{
                         let parameter: Parameters = ["auth_token" : jsonArray["value"] as! String]
                         AuthorizeTokenRequest.authorizeToken(parameter: parameter, completion: { (response) in
                             self.reader.startScanning()
