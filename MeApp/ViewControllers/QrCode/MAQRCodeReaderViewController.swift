@@ -65,6 +65,7 @@ class MAQRCodeReaderViewController: UIViewController {
                 do {
                     if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? Dictionary<String,Any>
                     {
+                        if jsonArray["value"] as! String == "auth_token"{
                         let parameter: Parameters = ["auth_token" : jsonArray["value"] as! String]
                         AuthorizeTokenRequest.authorizeToken(parameter: parameter, completion: { (response) in
                             self.reader.startScanning()
@@ -72,10 +73,34 @@ class MAQRCodeReaderViewController: UIViewController {
                             AlertController.showError()
                             self.reader.startScanning()
                         })
+                        }else{
+                            RecordsRequest.readValidationTokenRecord(token: jsonArray["value"] as! String, completion: { (response) in
+                                self.reader.startScanning()
+                                let alert: UIAlertController
+                                alert = UIAlertController(title: response.name, message: response.value, preferredStyle: .alert)
+                                alert.addAction(UIAlertAction(title: "Aprove", style: .default, handler: { (action) in
+                                    self.reader.startScanning()
+                                    RecordsRequest.aproveValidationTokenRecord(token: jsonArray["value"] as! String, completion: { (response) in
+                                        self.reader.startScanning()
+                                    }, failure: { (error) in
+                                        AlertController.showError()
+                                        self.reader.startScanning()
+                                    })
+                                }))
+                                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+                                    self.reader.startScanning()
+                                }))
+                                self.present(alert, animated: true, completion: nil)
+                                
+                            }, failure: { (error) in
+                                self.reader.startScanning()
+                            })
+                        }
                     } else {
                         self.reader.startScanning()
                     }
                 } catch let error as NSError {
+                    print(error)
                     self.reader.startScanning()
                 }
             }
