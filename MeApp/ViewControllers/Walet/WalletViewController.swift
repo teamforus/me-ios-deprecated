@@ -62,12 +62,15 @@ class WalletViewController: MABaseViewController{
         print("Segment at index \(sender.selectedIndex)  selected")
         if (sender.selectedIndex == 0 ){
             walletCase = WalletCase.token
+            self.tableView.reloadData()
         }else if (sender.selectedIndex == 1){
             walletCase = WalletCase.assets
+            self.tableView.reloadData()
         }else if (sender.selectedIndex == 2){
             walletCase = WalletCase.passes
+            self.tableView.reloadData()
         }
-        self.tableView.reloadData()
+        
     }
 }
 
@@ -149,7 +152,9 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
             
         default:
             let cellWallet = tableView.dequeueReusableCell(withIdentifier: "cell4", for: indexPath) as! MAWaletVoucherTableViewCell
-            
+            if indexPath.row == 1{
+                cellWallet.isHidden = true
+            }
             cell = cellWallet
         }
         return cell
