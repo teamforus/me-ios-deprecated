@@ -48,8 +48,12 @@ extension MAChooseCategoryViewController: UICollectionViewDataSource, UICollecti
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MAChooseCategoryCollectionViewCell
         let recordCategory = recordCategories[indexPath.row] as! RecordCategory
-        cell.imageCategory.image = UIImage.init(named: "iconPersonal")
         cell.titleCategory.text = recordCategory.name
+        if recordCategory.name ==  "Personal"{
+            cell.imageCategory.image = UIImage.init(named: "iconPersonal")
+        }else if recordCategory.name == "Relaties"{
+            cell.imageCategory.image = UIImage.init(named: "iconRelations")
+        }
         return cell
     }
     
