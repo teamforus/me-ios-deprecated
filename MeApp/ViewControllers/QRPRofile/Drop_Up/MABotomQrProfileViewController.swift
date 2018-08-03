@@ -18,7 +18,7 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
     @IBOutlet private weak var buttonLock: UIButton?
     @IBOutlet weak var qrCodeImageView: UIImageView!
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
-    var timer : Timer!
+    var timer : Timer! = Timer()
     var authorizeToken: AuthorizeToken!
     
     private var firstAppearanceCompleted = false

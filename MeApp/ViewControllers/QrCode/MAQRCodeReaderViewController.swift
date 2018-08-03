@@ -27,7 +27,7 @@ class MAQRCodeReaderViewController: UIViewController {
         reader.didFindCode = { result in
             print("Completion with result: \(result.value) of type \(result.metadataType)")
             if result.value.range(of:"authToken") != nil {
-                
+                 self.reader.startScanning()
                 var token = result.value.components(separatedBy: ":")
                 let parameter: Parameters = ["auth_token" : token[1]]
                 AuthorizeTokenRequest.authorizeToken(parameter: parameter, completion: { (response) in
@@ -40,15 +40,16 @@ class MAQRCodeReaderViewController: UIViewController {
                 
                 var token = result.value.components(separatedBy: ":")
                 RecordsRequest.readValidationTokenRecord(token: token[1], completion: { (response) in
-                    
+                     self.reader.startScanning()
                     let alert: UIAlertController
                     alert = UIAlertController(title: response.name, message: response.value, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Aprove", style: .default, handler: { (action) in
                         self.reader.startScanning()
                         RecordsRequest.aproveValidationTokenRecord(token: token[1], completion: { (response) in
-                            
+                             self.reader.startScanning()
                         }, failure: { (error) in
                             AlertController.showError()
+                             self.reader.startScanning()
                         })
                     }))
                     alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
@@ -59,6 +60,24 @@ class MAQRCodeReaderViewController: UIViewController {
                 }, failure: { (error) in
                     self.reader.startScanning()
                 })
+            }else {
+                let data = result.value.data(using: .utf8)!
+                do {
+                    if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? Dictionary<String,Any>
+                    {
+                        let parameter: Parameters = ["auth_token" : jsonArray["value"] as! String]
+                        AuthorizeTokenRequest.authorizeToken(parameter: parameter, completion: { (response) in
+                            self.reader.startScanning()
+                        }, failure: { (error) in
+                            AlertController.showError()
+                            self.reader.startScanning()
+                        })
+                    } else {
+                        self.reader.startScanning()
+                    }
+                } catch let error as NSError {
+                    self.reader.startScanning()
+                }
             }
         }
         

@@ -103,6 +103,8 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if walletCase != .token {
             return 2
+        }else if walletCase == .passes{
+            return 1
         }
         return 3
     }
