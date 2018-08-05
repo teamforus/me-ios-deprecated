@@ -335,16 +335,16 @@
 		658BDDC82108A76100A27EC7 /* RecordType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordType.swift; sourceTree = "<group>"; };
 		658BDDCA2108AFCC00A27EC7 /* MAChooseTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAChooseTypeTableViewCell.swift; sourceTree = "<group>"; };
 		658BDDCD2108B62500A27EC7 /* RecordCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCategory.swift; sourceTree = "<group>"; };
-		65A51F6720B2FFF10010DB33 /* MeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		65A51F6720B2FFF10010DB33 /* Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Me.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A51F6A20B2FFF10010DB33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65A51F7220B2FFF20010DB33 /* MeApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MeApp.xcdatamodel; sourceTree = "<group>"; };
 		65A51F7420B2FFF40010DB33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65A51F7720B2FFF40010DB33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65A51F7920B2FFF40010DB33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		65A51F7E20B2FFF40010DB33 /* MeAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		65A51F7E20B2FFF40010DB33 /* MeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A51F8220B2FFF40010DB33 /* MeAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeAppTests.swift; sourceTree = "<group>"; };
 		65A51F8420B2FFF40010DB33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		65A51F8920B2FFF40010DB33 /* MeAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		65A51F8920B2FFF40010DB33 /* MeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A51F8D20B2FFF40010DB33 /* MeAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeAppUITests.swift; sourceTree = "<group>"; };
 		65A51F8F20B2FFF40010DB33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65A51F9D20B300E90010DB33 /* PassStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PassStoryboard.storyboard; sourceTree = "<group>"; };
@@ -825,9 +825,9 @@
 		65A51F6820B2FFF10010DB33 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				65A51F6720B2FFF10010DB33 /* MeApp.app */,
-				65A51F7E20B2FFF40010DB33 /* MeAppTests.xctest */,
-				65A51F8920B2FFF40010DB33 /* MeAppUITests.xctest */,
+				65A51F6720B2FFF10010DB33 /* Me.app */,
+				65A51F7E20B2FFF40010DB33 /* MeTests.xctest */,
+				65A51F8920B2FFF40010DB33 /* MeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1335,9 +1335,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		65A51F6620B2FFF10010DB33 /* MeApp */ = {
+		65A51F6620B2FFF10010DB33 /* Me */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 65A51F9220B2FFF40010DB33 /* Build configuration list for PBXNativeTarget "MeApp" */;
+			buildConfigurationList = 65A51F9220B2FFF40010DB33 /* Build configuration list for PBXNativeTarget "Me" */;
 			buildPhases = (
 				F0FFD597AF889F62FB117482 /* [CP] Check Pods Manifest.lock */,
 				65A51F6320B2FFF10010DB33 /* Sources */,
@@ -1350,14 +1350,14 @@
 			);
 			dependencies = (
 			);
-			name = MeApp;
+			name = Me;
 			productName = MeApp;
-			productReference = 65A51F6720B2FFF10010DB33 /* MeApp.app */;
+			productReference = 65A51F6720B2FFF10010DB33 /* Me.app */;
 			productType = "com.apple.product-type.application";
 		};
-		65A51F7D20B2FFF40010DB33 /* MeAppTests */ = {
+		65A51F7D20B2FFF40010DB33 /* MeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 65A51F9520B2FFF40010DB33 /* Build configuration list for PBXNativeTarget "MeAppTests" */;
+			buildConfigurationList = 65A51F9520B2FFF40010DB33 /* Build configuration list for PBXNativeTarget "MeTests" */;
 			buildPhases = (
 				F256E43D85D79F01C2F1269C /* [CP] Check Pods Manifest.lock */,
 				65A51F7A20B2FFF40010DB33 /* Sources */,
@@ -1371,14 +1371,14 @@
 			dependencies = (
 				65A51F8020B2FFF40010DB33 /* PBXTargetDependency */,
 			);
-			name = MeAppTests;
+			name = MeTests;
 			productName = MeAppTests;
-			productReference = 65A51F7E20B2FFF40010DB33 /* MeAppTests.xctest */;
+			productReference = 65A51F7E20B2FFF40010DB33 /* MeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		65A51F8820B2FFF40010DB33 /* MeAppUITests */ = {
+		65A51F8820B2FFF40010DB33 /* MeUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 65A51F9820B2FFF40010DB33 /* Build configuration list for PBXNativeTarget "MeAppUITests" */;
+			buildConfigurationList = 65A51F9820B2FFF40010DB33 /* Build configuration list for PBXNativeTarget "MeUITests" */;
 			buildPhases = (
 				ED92827ACBB464997F9E69D2 /* [CP] Check Pods Manifest.lock */,
 				65A51F8520B2FFF40010DB33 /* Sources */,
@@ -1392,9 +1392,9 @@
 			dependencies = (
 				65A51F8B20B2FFF40010DB33 /* PBXTargetDependency */,
 			);
-			name = MeAppUITests;
+			name = MeUITests;
 			productName = MeAppUITests;
-			productReference = 65A51F8920B2FFF40010DB33 /* MeAppUITests.xctest */;
+			productReference = 65A51F8920B2FFF40010DB33 /* MeUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -1405,7 +1405,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
-				ORGANIZATIONNAME = "Tcacenco Daniel";
+				ORGANIZATIONNAME = "Foundation Forus";
 				TargetAttributes = {
 					65A51F6620B2FFF10010DB33 = {
 						CreatedOnToolsVersion = 9.3.1;
@@ -1420,7 +1420,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 65A51F6220B2FFF10010DB33 /* Build configuration list for PBXProject "MeApp" */;
+			buildConfigurationList = 65A51F6220B2FFF10010DB33 /* Build configuration list for PBXProject "Me" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -1433,9 +1433,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				65A51F6620B2FFF10010DB33 /* MeApp */,
-				65A51F7D20B2FFF40010DB33 /* MeAppTests */,
-				65A51F8820B2FFF40010DB33 /* MeAppUITests */,
+				65A51F6620B2FFF10010DB33 /* Me */,
+				65A51F7D20B2FFF40010DB33 /* MeTests */,
+				65A51F8820B2FFF40010DB33 /* MeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -1894,12 +1894,12 @@
 /* Begin PBXTargetDependency section */
 		65A51F8020B2FFF40010DB33 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 65A51F6620B2FFF10010DB33 /* MeApp */;
+			target = 65A51F6620B2FFF10010DB33 /* Me */;
 			targetProxy = 65A51F7F20B2FFF40010DB33 /* PBXContainerItemProxy */;
 		};
 		65A51F8B20B2FFF40010DB33 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 65A51F6620B2FFF10010DB33 /* MeApp */;
+			target = 65A51F6620B2FFF10010DB33 /* Me */;
 			targetProxy = 65A51F8A20B2FFF40010DB33 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -2044,7 +2044,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = RokectMinds.MeApp;
+				PRODUCT_BUNDLE_IDENTIFIER = io.forus.me;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
@@ -2067,7 +2067,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = RokectMinds.MeApp;
+				PRODUCT_BUNDLE_IDENTIFIER = io.forus.me;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
@@ -2093,7 +2093,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeApp.app/MeApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Me.app/Me";
 			};
 			name = Debug;
 		};
@@ -2114,7 +2114,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeApp.app/MeApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Me.app/Me";
 			};
 			name = Release;
 		};
@@ -2161,7 +2161,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		65A51F6220B2FFF10010DB33 /* Build configuration list for PBXProject "MeApp" */ = {
+		65A51F6220B2FFF10010DB33 /* Build configuration list for PBXProject "Me" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				65A51F9020B2FFF40010DB33 /* Debug */,
@@ -2170,7 +2170,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		65A51F9220B2FFF40010DB33 /* Build configuration list for PBXNativeTarget "MeApp" */ = {
+		65A51F9220B2FFF40010DB33 /* Build configuration list for PBXNativeTarget "Me" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				65A51F9320B2FFF40010DB33 /* Debug */,
@@ -2179,7 +2179,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		65A51F9520B2FFF40010DB33 /* Build configuration list for PBXNativeTarget "MeAppTests" */ = {
+		65A51F9520B2FFF40010DB33 /* Build configuration list for PBXNativeTarget "MeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				65A51F9620B2FFF40010DB33 /* Debug */,
@@ -2188,7 +2188,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		65A51F9820B2FFF40010DB33 /* Build configuration list for PBXNativeTarget "MeAppUITests" */ = {
+		65A51F9820B2FFF40010DB33 /* Build configuration list for PBXNativeTarget "MeUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				65A51F9920B2FFF40010DB33 /* Debug */,
