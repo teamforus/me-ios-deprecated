@@ -18,6 +18,7 @@ class MAPersonalViewController: MABaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
         getRecordList()
     }
 
@@ -79,7 +80,7 @@ extension MAPersonalViewController: UITableViewDelegate, UITableViewDataSource{
         }else if record.key == "gender"{
             cell.cellTypeLabel.text = "Gender"
             cell.nameLabel.text = record.value
-        }else if record.key == "children"{
+        }else if record.key == "children_nth"{
             cell.cellTypeLabel.text = "Children"
             cell.nameLabel.text = record.value
         }else if record.key == "tax_id"{
@@ -99,6 +100,9 @@ extension MAPersonalViewController: UITableViewDelegate, UITableViewDataSource{
             cell.nameLabel.text = record.value
         }else if record.key == "bsn"{
             cell.cellTypeLabel.text = "BSN"
+            cell.nameLabel.text = record.value
+        }else if record.key == "kindpakket_2018_eligible"{
+            cell.cellTypeLabel.text = "Kindpakket Eligible"
             cell.nameLabel.text = record.value
         }
         

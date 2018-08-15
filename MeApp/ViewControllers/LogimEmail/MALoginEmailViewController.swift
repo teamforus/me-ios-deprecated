@@ -109,6 +109,9 @@ class MALoginEmailViewController: MABaseViewController {
         
     }
     
+    @IBAction func dismissKeyboard(_ sender: Any) {
+        self.view.endEditing(true)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

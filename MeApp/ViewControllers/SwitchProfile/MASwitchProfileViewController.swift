@@ -22,6 +22,8 @@ class MASwitchProfileViewController: MABaseViewController,MASwitchProfilePopUpVi
     @IBOutlet weak var heightImageConstraint: NSLayoutConstraint!
     @IBOutlet weak var widthImageConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageQR: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewBodyQR.layer.cornerRadius = 9.0
@@ -79,11 +81,11 @@ class MASwitchProfileViewController: MABaseViewController,MASwitchProfilePopUpVi
         {
             UIView.animate(withDuration: 0.3, animations: {
                 var imageRect: CGRect = self.imageQR.frame
-                imageRect.size.height = 245;
-                imageRect.size.width = 250;
+                imageRect.size.height = 245
+                imageRect.size.width = 250
                 imageRect.origin.x = (self.viewBodyQR.frame.size.width  - imageRect.size.width) / 2
-                imageRect.origin.y = 57;
-                self.imageQR.frame = imageRect;
+                imageRect.origin.y = 57
+                self.imageQR.frame = imageRect
                 var labelQRRect: CGRect = self.labelQr.frame
                 labelQRRect.origin.y = 339
                 self.labelQr.frame = labelQRRect
@@ -99,11 +101,11 @@ class MASwitchProfileViewController: MABaseViewController,MASwitchProfilePopUpVi
             {
                 UIView.animate(withDuration: 0.3, animations: {
                     var imageRect: CGRect = self.imageQR.frame
-                    imageRect.size.height = 50;
-                    imageRect.size.width = 50;
+                    imageRect.size.height = 50
+                    imageRect.size.width = 50
                     imageRect.origin.x = (self.viewBodyQR.frame.size.width  - imageRect.size.width) / 2
-                    imageRect.origin.y = 31;
-                    self.imageQR.frame = imageRect;
+                    imageRect.origin.y = 31
+                    self.imageQR.frame = imageRect
                     var labelQRRect: CGRect = self.labelQr.frame
                     labelQRRect.origin.y = 104
                     self.labelQr.frame = labelQRRect
@@ -121,11 +123,11 @@ class MASwitchProfileViewController: MABaseViewController,MASwitchProfilePopUpVi
             {
                 UIView.animate(withDuration: 0.3, animations: {
                     var imageRect: CGRect = self.imageQR.frame
-                    imageRect.size.height = 50;
-                    imageRect.size.width = 50;
+                    imageRect.size.height = 50
+                    imageRect.size.width = 50
                     imageRect.origin.x = (self.viewBodyQR.frame.size.width  - imageRect.size.width) / 2
-                    imageRect.origin.y = 31;
-                    self.imageQR.frame = imageRect;
+                    imageRect.origin.y = 31
+                    self.imageQR.frame = imageRect
                     var labelQRRect: CGRect = self.labelQr.frame
                     labelQRRect.origin.y = 104
                     self.labelQr.frame = labelQRRect

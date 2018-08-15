@@ -53,6 +53,14 @@ extension MAChooseCategoryViewController: UICollectionViewDataSource, UICollecti
             cell.imageCategory.image = UIImage.init(named: "iconPersonal")
         }else if recordCategory.name == "Relaties"{
             cell.imageCategory.image = UIImage.init(named: "iconRelations")
+        }else if recordCategory.name == "Medisch"{
+            cell.imageCategory.image = UIImage.init(named: "iconMedical")
+        }else if recordCategory.name == "Zakelijk"{
+            cell.imageCategory.image = UIImage.init(named: "iconBuissness")
+        }else if recordCategory.name == "Certificaten"{
+            cell.imageCategory.image = UIImage.init(named: "iconCertificate")
+        }else if recordCategory.name == "Anderen"{
+            cell.imageCategory.image = UIImage.init(named: "iconOther")
         }
         return cell
     }

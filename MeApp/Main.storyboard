@@ -15,9 +15,6 @@
         <array key="GoogleSans-Regular.ttf">
             <string>GoogleSans-Regular</string>
         </array>
-        <array key="OpenSans-Bold.ttf">
-            <string>OpenSans-Bold</string>
-        </array>
         <array key="OpenSans-Regular.ttf">
             <string>OpenSans-Regular</string>
         </array>
@@ -29,7 +26,7 @@
         <!--Wallet View Controller-->
         <scene sceneID="6O1-wD-pbo">
             <objects>
-                <viewController id="AFR-4S-uKC" customClass="WalletViewController" customModule="MeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AFR-4S-uKC" customClass="WalletViewController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KJ1-yr-juG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,7 +47,7 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="23n-Ck-4dG" customClass="HBSegmentedControl" customModule="MeApp" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="23n-Ck-4dG" customClass="HBSegmentedControl" customModule="Me" customModuleProvider="target">
                                         <rect key="frame" x="21" y="152" width="330" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -76,7 +73,7 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell2" rowHeight="130" id="EBA-Ux-kKV" customClass="WalletSecondTableViewCell" customModule="MeApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell2" rowHeight="130" id="EBA-Ux-kKV" customClass="WalletSecondTableViewCell" customModule="Me" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="375" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EBA-Ux-kKV" id="3Uo-0N-jkI">
@@ -166,7 +163,7 @@
                                             <segue destination="345-mK-wFb" kind="show" id="vGH-gZ-R26"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell3" rowHeight="142" id="qzb-hb-ki8" customClass="MAWalletOwnerTableViewCell" customModule="MeApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell3" rowHeight="142" id="qzb-hb-ki8" customClass="MAWalletOwnerTableViewCell" customModule="Me" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="202" width="375" height="142"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qzb-hb-ki8" id="QcK-Pa-SCj">
@@ -225,14 +222,14 @@
                                             <outlet property="viewBody" destination="2pl-4k-xGe" id="Knb-e6-4Ru"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell4" rowHeight="124" id="w9T-ql-3Gq" customClass="MAWaletVoucherTableViewCell" customModule="MeApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell4" rowHeight="124" id="w9T-ql-3Gq" customClass="MAWaletVoucherTableViewCell" customModule="Me" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="344" width="375" height="124"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="w9T-ql-3Gq" id="Pwr-5A-b86">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gJ6-Xw-iDb" customClass="CustomCornerUIView" customModule="MeApp" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gJ6-Xw-iDb" customClass="CustomCornerUIView" customModule="Me" customModuleProvider="target">
                                                     <rect key="frame" x="17" y="10" width="341" height="114"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
@@ -325,7 +322,7 @@
         <!--Records View Controller-->
         <scene sceneID="4wx-QL-c3a">
             <objects>
-                <viewController id="Q8j-LA-r22" customClass="MARecordsViewController" customModule="MeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Q8j-LA-r22" customClass="MARecordsViewController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3ZN-Mn-lpc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -335,14 +332,14 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="Bpc-Xa-8YZ" customClass="MARecordsTableViewCell" customModule="MeApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="Bpc-Xa-8YZ" customClass="MARecordsTableViewCell" customModule="Me" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bpc-Xa-8YZ" id="LLv-77-OtK">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="105"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mo6-JE-uHc" customClass="CustomCornerUIView" customModule="MeApp" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mo6-JE-uHc" customClass="CustomCornerUIView" customModule="Me" customModuleProvider="target">
                                                     <rect key="frame" x="17" y="15" width="341" height="90"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                     <subviews>
@@ -391,7 +388,7 @@
                                             <outlet property="titleCategory" destination="32R-Cm-vrb" id="iUh-Sj-1yh"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ExpandedCell" rowHeight="55" id="2aC-mN-ix0" customClass="ExpandedCell" customModule="MeApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ExpandedCell" rowHeight="55" id="2aC-mN-ix0" customClass="ExpandedCell" customModule="Me" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="133" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2aC-mN-ix0" id="mjd-Zq-IHr">
@@ -458,7 +455,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="140" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kz4-hb-Lyj" customClass="CustomCornerUIView" customModule="MeApp" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kz4-hb-Lyj" customClass="CustomCornerUIView" customModule="Me" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="140" height="90"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
@@ -515,7 +512,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.92549019607843142" green="0.94901960784313721" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Y0-Hy-3Ja" customClass="ShadowButton" customModule="MeApp" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Y0-Hy-3Ja" customClass="ShadowButton" customModule="Me" customModuleProvider="target">
                                 <rect key="frame" x="17" y="176" width="341" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.91764705882352937" green="0.94117647058823528" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -559,7 +556,7 @@
         <!--QR-->
         <scene sceneID="s6p-hV-QEf">
             <objects>
-                <viewController id="Yx9-nY-Sea" customClass="MAQRCodeReaderViewController" customModule="MeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Yx9-nY-Sea" customClass="MAQRCodeReaderViewController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1yp-So-mmF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -585,7 +582,7 @@
         <!--Pin Code Login View Controller-->
         <scene sceneID="Axp-KJ-Zun">
             <objects>
-                <viewController id="BbD-Yd-Vgm" customClass="MAPinCodeLoginViewController" customModule="MeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BbD-Yd-Vgm" customClass="MAPinCodeLoginViewController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="34F-2M-yD0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -714,7 +711,7 @@
                                 <color key="textColor" red="0.42352941176470588" green="0.42352941176470588" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JuF-U4-vEH" customClass="ShadowButton" customModule="MeApp" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JuF-U4-vEH" customClass="ShadowButton" customModule="Me" customModuleProvider="target">
                                 <rect key="frame" x="30" y="502" width="315" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.20392156859999999" green="0.38823529410000002" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -765,7 +762,7 @@
         <!--First Page View Controller-->
         <scene sceneID="uvu-eQ-gQB">
             <objects>
-                <viewController id="3bo-TV-QfP" customClass="MAFirstPageViewController" customModule="MeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3bo-TV-QfP" customClass="MAFirstPageViewController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c4Y-xv-XjW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -788,7 +785,7 @@
                                 <color key="textColor" red="0.1803921568627451" green="0.19607843137254902" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HmC-46-6dN" customClass="ShadowButton" customModule="MeApp" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HmC-46-6dN" customClass="ShadowButton" customModule="Me" customModuleProvider="target">
                                 <rect key="frame" x="30" y="437" width="315" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.20392156862745098" green="0.3843137254901961" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -817,7 +814,7 @@
                                     <segue destination="tPn-IO-3Tp" kind="show" id="VnD-jA-0nm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yuH-Kk-zbF" customClass="ShadowButton" customModule="MeApp" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yuH-Kk-zbF" customClass="ShadowButton" customModule="Me" customModuleProvider="target">
                                 <rect key="frame" x="30" y="509" width="315" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -863,7 +860,7 @@
         <!--Login Email View Controller-->
         <scene sceneID="uQ3-01-cKU">
             <objects>
-                <viewController id="VwV-oF-jRp" customClass="MALoginEmailViewController" customModule="MeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="VwV-oF-jRp" customClass="MALoginEmailViewController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ATF-7f-QkH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -871,49 +868,26 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2pV-hm-Mt6">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8YK-Rr-pUm">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ab5-Ew-xWo">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
-                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="proper" translatesAutoresizingMaskIntoConstraints="NO" id="wfU-8p-1l4">
-                                                <rect key="frame" x="316" y="374" width="14" height="14"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Aanmelden" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VvM-7R-niq">
-                                                <rect key="frame" x="15" y="64" width="344" height="49"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Aanmelden" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ya-1g-6TI">
+                                                <rect key="frame" x="14" y="44" width="344" height="49"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="38"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please enter your e-mail address in order to receive your login details." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAs-lD-gDm">
-                                                <rect key="frame" x="15" y="126" width="305" height="58"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please enter your e-mail address in order to receive your login details." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJO-WQ-zli">
+                                                <rect key="frame" x="14" y="106" width="305" height="58"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="14"/>
                                                 <color key="textColor" red="0.43137254899999999" green="0.43921568630000002" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Fc-vu-LMW" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="25" y="280" width="315" height="60"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                                <color key="textColor" red="0.70196078429999997" green="0.72941176470000002" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="18"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
-                                                        <color key="value" red="0.58823529409999997" green="0.61568627450000002" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
-                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="validateEmailFieldWithTextField:" destination="VwV-oF-jRp" eventType="editingChanged" id="La2-OJ-nry"/>
-                                                    <outlet property="delegate" destination="VwV-oF-jRp" id="V7O-lS-0mH"/>
-                                                </connections>
-                                            </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iIv-a6-RH3" customClass="ShadowButton" customModule="MeApp" customModuleProvider="target">
-                                                <rect key="frame" x="25" y="489" width="315" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fac-xa-KgH" customClass="ShadowButton" customModule="Me" customModuleProvider="target">
+                                                <rect key="frame" x="30" y="469" width="315" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.20392156859999999" green="0.38823529410000002" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="14"/>
                                                 <state key="normal" title="BEVESTIGEN">
@@ -937,22 +911,22 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="loginInApp:" destination="VwV-oF-jRp" eventType="touchUpInside" id="cFc-2S-orU"/>
+                                                    <action selector="loginInApp:" destination="VwV-oF-jRp" eventType="touchUpInside" id="OJZ-ZF-w2V"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="sqM-2t-opd">
-                                                <rect key="frame" x="15" y="33" width="24" height="24"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="Cdq-nC-dHT">
+                                                <rect key="frame" x="14" y="13" width="24" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4L3-Nl-QpW">
-                                                <rect key="frame" x="15" y="29" width="41" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YrC-wb-Dox">
+                                                <rect key="frame" x="14" y="9" width="41" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <connections>
-                                                    <action selector="back:" destination="VwV-oF-jRp" eventType="touchUpInside" id="8op-4v-j2p"/>
+                                                    <action selector="back:" destination="VwV-oF-jRp" eventType="touchUpInside" id="W0y-Uz-AKw"/>
                                                 </connections>
                                             </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Herhaal  e-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jbi-iJ-gYw" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="25" y="348" width="315" height="60"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Herhaal  e-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QCB-TQ-Zj0" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                                <rect key="frame" x="24" y="328" width="315" height="60"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" red="0.70196078429999997" green="0.72941176470000002" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="18"/>
@@ -966,34 +940,68 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="validateEmailFieldWithTextField:" destination="VwV-oF-jRp" eventType="editingChanged" id="sU6-05-FTW"/>
-                                                    <outlet property="delegate" destination="VwV-oF-jRp" id="4eW-RA-f6F"/>
+                                                    <action selector="validateEmailFieldWithTextField:" destination="VwV-oF-jRp" eventType="editingChanged" id="0cd-zd-743"/>
+                                                    <outlet property="delegate" destination="VwV-oF-jRp" id="MYY-uF-VKb"/>
                                                 </connections>
                                             </textField>
-                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="proper" translatesAutoresizingMaskIntoConstraints="NO" id="83o-Hd-uo6">
-                                                <rect key="frame" x="316" y="306" width="14" height="14"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Inloggen via E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hF-eF-Ev6">
-                                                <rect key="frame" x="52" y="37" width="102" height="16"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Inloggen via E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Acz-7X-ucB">
+                                                <rect key="frame" x="51" y="17" width="102" height="16"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="12"/>
                                                 <color key="textColor" red="0.42352941179999998" green="0.42352941179999998" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L2x-vd-lfS" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                                <rect key="frame" x="24" y="260" width="315" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" red="0.70196078429999997" green="0.72941176470000002" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                                        <color key="value" red="0.58823529409999997" green="0.61568627450000002" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="validateEmailFieldWithTextField:" destination="VwV-oF-jRp" eventType="editingChanged" id="WX9-XP-BNN"/>
+                                                    <outlet property="delegate" destination="VwV-oF-jRp" id="JHt-JA-JPQ"/>
+                                                </connections>
+                                            </textField>
+                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="proper" translatesAutoresizingMaskIntoConstraints="NO" id="Rxm-Vk-Tmr">
+                                                <rect key="frame" x="315" y="286" width="14" height="14"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="proper" translatesAutoresizingMaskIntoConstraints="NO" id="aQy-zB-fu4">
+                                                <rect key="frame" x="315" y="354" width="14" height="14"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="667" id="Ivu-5q-GA6"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="jRS-Ok-0sS" appends="YES" id="mRf-XC-QX0"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="8YK-Rr-pUm" firstAttribute="leading" secondItem="2pV-hm-Mt6" secondAttribute="leading" id="NFk-IR-zPD"/>
-                                    <constraint firstItem="8YK-Rr-pUm" firstAttribute="top" secondItem="2pV-hm-Mt6" secondAttribute="top" id="UQx-tX-Uta"/>
-                                    <constraint firstAttribute="trailing" secondItem="8YK-Rr-pUm" secondAttribute="trailing" id="eIw-DL-Ocs"/>
-                                    <constraint firstAttribute="bottom" secondItem="8YK-Rr-pUm" secondAttribute="bottom" id="im9-kc-qTV"/>
-                                    <constraint firstItem="8YK-Rr-pUm" firstAttribute="width" secondItem="2pV-hm-Mt6" secondAttribute="width" id="ptO-Jd-AhH"/>
-                                    <constraint firstItem="8YK-Rr-pUm" firstAttribute="height" secondItem="2pV-hm-Mt6" secondAttribute="height" id="rPK-w8-Wjj"/>
+                                    <constraint firstItem="ab5-Ew-xWo" firstAttribute="width" secondItem="2pV-hm-Mt6" secondAttribute="width" id="4Rj-tA-6XM"/>
+                                    <constraint firstItem="ab5-Ew-xWo" firstAttribute="top" secondItem="2pV-hm-Mt6" secondAttribute="top" id="Iz1-pk-909"/>
+                                    <constraint firstAttribute="bottom" secondItem="ab5-Ew-xWo" secondAttribute="bottom" id="TEx-XU-XDh"/>
+                                    <constraint firstAttribute="trailing" secondItem="ab5-Ew-xWo" secondAttribute="trailing" id="aHT-4t-Fj0"/>
+                                    <constraint firstItem="ab5-Ew-xWo" firstAttribute="leading" secondItem="2pV-hm-Mt6" secondAttribute="leading" id="apG-Pf-HKu"/>
                                 </constraints>
                             </scrollView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="feO-Ld-k0c" customClass="StatusView" customModule="Me" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="22"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1005,22 +1013,26 @@
                         <viewLayoutGuide key="safeArea" id="Wb4-ZW-6ZD"/>
                     </view>
                     <connections>
-                        <outlet property="confirmButton" destination="iIv-a6-RH3" id="5yb-gY-89q"/>
-                        <outlet property="confirmEmailSkyTextField" destination="jbi-iJ-gYw" id="ebn-nS-dEJ"/>
-                        <outlet property="emailSkyTextField" destination="0Fc-vu-LMW" id="Uib-Bf-40C"/>
-                        <outlet property="validationConfirmEmail" destination="wfU-8p-1l4" id="ini-xH-In1"/>
-                        <outlet property="validationEmailImage" destination="83o-Hd-uo6" id="DKu-No-HAr"/>
+                        <outlet property="confirmEmailSkyTextField" destination="QCB-TQ-Zj0" id="rli-Kf-ddi"/>
+                        <outlet property="emailSkyTextField" destination="L2x-vd-lfS" id="RFw-3q-aSu"/>
+                        <outlet property="validationConfirmEmail" destination="aQy-zB-fu4" id="zRj-aI-jmh"/>
+                        <outlet property="validationEmailImage" destination="Rxm-Vk-Tmr" id="dgf-7N-egl"/>
                         <segue destination="ofq-Zs-ITw" kind="presentation" identifier="goToWalet" id="8TH-v7-0Rm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ec3-1K-hQV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="jRS-Ok-0sS">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="VwV-oF-jRp" id="Z5L-yU-KND"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-217" y="211"/>
+            <point key="canvasLocation" x="-218.40000000000001" y="210.94452773613196"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="5Hi-kT-km0">
             <objects>
-                <tabBarController id="ofq-Zs-ITw" customClass="TabBarController" customModule="MeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="ofq-Zs-ITw" customClass="TabBarController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IG1-OZ-LyC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1040,7 +1052,7 @@
         <!--Eigendom-->
         <scene sceneID="a3q-UP-cbL">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="5nc-Vq-8KD" customClass="HiddenNavBarNavigationController" customModule="MeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="5nc-Vq-8KD" customClass="HiddenNavBarNavigationController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Eigendom" image="wallet" id="0jC-Xi-Id5">
                         <color key="badgeColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
                     </tabBarItem>
@@ -1060,7 +1072,7 @@
         <!--Eigenschappen-->
         <scene sceneID="RgF-Dc-85y">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="xZ5-n7-V9o" customClass="HiddenNavBarNavigationController" customModule="MeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="xZ5-n7-V9o" customClass="HiddenNavBarNavigationController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Eigenschappen" image="records" id="Df2-rM-6yN"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="F3U-pG-UFr">
@@ -1078,12 +1090,12 @@
         <!--Login WithQR View Controller-->
         <scene sceneID="izQ-qo-Qcl">
             <objects>
-                <viewController storyboardIdentifier="content" id="JBJ-8c-Pkg" customClass="MALoginWithQRViewController" customModule="MeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="content" id="JBJ-8c-Pkg" customClass="MALoginWithQRViewController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VeI-3q-HAI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YV7-Gb-SHc" customClass="ShadowButton" customModule="MeApp" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YV7-Gb-SHc" customClass="ShadowButton" customModule="Me" customModuleProvider="target">
                                 <rect key="frame" x="30" y="509" width="315" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.20392156862745098" green="0.38823529411764707" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1134,7 +1146,7 @@
                                 <rect key="frame" x="15" y="256" width="345" height="219"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tc3-ez-uND" customClass="ShadowButton" customModule="MeApp" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tc3-ez-uND" customClass="ShadowButton" customModule="Me" customModuleProvider="target">
                                         <rect key="frame" x="15" y="153" width="315" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1184,7 +1196,7 @@
                                 <color key="textColor" red="0.42352941179999998" green="0.42352941179999998" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Dt-bS-lP0" customClass="ShadowButton" customModule="MeApp" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Dt-bS-lP0" customClass="ShadowButton" customModule="Me" customModuleProvider="target">
                                 <rect key="frame" x="30" y="581" width="315" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1232,7 +1244,7 @@
         <!--Hidden Nav Bar Navigation Controller-->
         <scene sceneID="Q6C-y1-Lua">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="lM2-hz-Eye" customClass="HiddenNavBarNavigationController" customModule="MeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="lM2-hz-Eye" customClass="HiddenNavBarNavigationController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="R8a-7L-kzz">
                         <autoresizingMask key="autoresizingMask"/>
@@ -1249,7 +1261,7 @@
         <!--BaseQR Profile View Controller-->
         <scene sceneID="9wH-22-eQV">
             <objects>
-                <viewController id="LVM-Kp-RHK" customClass="MABaseQRProfileViewController" customModule="MeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LVM-Kp-RHK" customClass="MABaseQRProfileViewController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NFi-ft-J7Z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1264,7 +1276,7 @@
         <!--Create New Identity View Controller-->
         <scene sceneID="x6B-HP-rbO">
             <objects>
-                <viewController storyboardIdentifier="profile" id="tPn-IO-3Tp" customClass="MACreateNewIdentityViewController" customModule="MeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="profile" id="tPn-IO-3Tp" customClass="MACreateNewIdentityViewController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UeD-AX-FBu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1276,7 +1288,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Family Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DMr-He-WGt" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="25" y="450" width="325" height="60"/>
+                                                <rect key="frame" x="25" y="479" width="325" height="40"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" red="0.70196078429999997" green="0.72941176470000002" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="13"/>
@@ -1293,11 +1305,11 @@
                                                     <action selector="validateEmailFieldWithTextField:" destination="tPn-IO-3Tp" eventType="editingChanged" id="hDl-VJ-2hs"/>
                                                 </connections>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBa-Wv-3m9" customClass="ShadowButton" customModule="MeApp" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="568" width="325" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBa-Wv-3m9" customClass="ShadowButton" customModule="Me" customModuleProvider="target">
+                                                <rect key="frame" x="24" y="593" width="325" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.20392156859999999" green="0.38823529410000002" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="14"/>
                                                 <state key="normal" title="PROFIEL TOEVOEGEN">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -1336,24 +1348,6 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Given Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vwf-mA-VNp" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="25" y="366" width="325" height="60"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                                <color key="textColor" red="0.70196078429999997" green="0.72941176470000002" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="13"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
-                                                        <color key="value" red="0.58823529409999997" green="0.61568627450000002" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
-                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="validateEmailFieldWithTextField:" destination="tPn-IO-3Tp" eventType="editingChanged" id="4AY-ib-RDZ"/>
-                                                </connections>
-                                            </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGx-Ya-lC9">
                                                 <rect key="frame" x="15" y="101" width="344" height="70"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1363,7 +1357,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="proper" translatesAutoresizingMaskIntoConstraints="NO" id="CrT-Vd-Of7">
-                                                <rect key="frame" x="326" y="312" width="14" height="14"/>
+                                                <rect key="frame" x="326" y="303" width="14" height="14"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="pNU-EC-4QL">
@@ -1371,7 +1365,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Primary e-mail*" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jMT-7s-AAr" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="25" y="281" width="325" height="60"/>
+                                                <rect key="frame" x="25" y="281" width="325" height="40"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" red="0.70196078429999997" green="0.72941176470000002" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="13"/>
@@ -1395,28 +1389,55 @@
                                                     <action selector="back:" destination="tPn-IO-3Tp" eventType="touchUpInside" id="3G1-x1-7Qe"/>
                                                 </connections>
                                             </button>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Given Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vwf-mA-VNp" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                                <rect key="frame" x="25" y="380" width="325" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" red="0.70196078429999997" green="0.72941176470000002" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="13"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                                        <color key="value" red="0.58823529409999997" green="0.61568627450000002" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="validateEmailFieldWithTextField:" destination="tPn-IO-3Tp" eventType="editingChanged" id="4AY-ib-RDZ"/>
+                                                </connections>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="667" id="N7H-XU-3Tb"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="5nw-Re-RNc" appends="YES" id="c23-Q1-m8s"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="WPL-8Y-61m" firstAttribute="width" secondItem="uEf-Ly-3BM" secondAttribute="width" id="AMK-LV-5s1"/>
                                     <constraint firstAttribute="trailing" secondItem="WPL-8Y-61m" secondAttribute="trailing" id="Bcv-Mp-DMD"/>
                                     <constraint firstItem="WPL-8Y-61m" firstAttribute="top" secondItem="uEf-Ly-3BM" secondAttribute="top" id="HCy-Mc-UYf"/>
-                                    <constraint firstItem="WPL-8Y-61m" firstAttribute="height" secondItem="uEf-Ly-3BM" secondAttribute="height" id="rUD-bq-EAS"/>
+                                    <constraint firstItem="WPL-8Y-61m" firstAttribute="width" secondItem="uEf-Ly-3BM" secondAttribute="width" id="KWo-hS-wvo"/>
                                     <constraint firstItem="WPL-8Y-61m" firstAttribute="leading" secondItem="uEf-Ly-3BM" secondAttribute="leading" id="zxJ-IK-XuL"/>
                                     <constraint firstAttribute="bottom" secondItem="WPL-8Y-61m" secondAttribute="bottom" id="zzo-hz-kun"/>
                                 </constraints>
                             </scrollView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eDZ-Xb-mUU" customClass="StatusView" customModule="Me" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="22"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="uEf-Ly-3BM" firstAttribute="leading" secondItem="6dn-ta-i47" secondAttribute="leading" id="0co-Q5-qlu"/>
-                            <constraint firstItem="uEf-Ly-3BM" firstAttribute="height" secondItem="UeD-AX-FBu" secondAttribute="height" id="A9e-MS-MMV"/>
                             <constraint firstItem="uEf-Ly-3BM" firstAttribute="trailing" secondItem="6dn-ta-i47" secondAttribute="trailing" id="Bl5-DE-jgf"/>
                             <constraint firstItem="uEf-Ly-3BM" firstAttribute="top" secondItem="UeD-AX-FBu" secondAttribute="top" id="EKl-Mw-lzd"/>
                             <constraint firstItem="uEf-Ly-3BM" firstAttribute="bottom" secondItem="6dn-ta-i47" secondAttribute="bottom" id="N0K-Pz-1ci"/>
-                            <constraint firstItem="uEf-Ly-3BM" firstAttribute="width" secondItem="UeD-AX-FBu" secondAttribute="width" id="poX-a9-Ap1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6dn-ta-i47"/>
                     </view>
@@ -1430,13 +1451,18 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7xR-VU-EqI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="5nw-Re-RNc">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="tPn-IO-3Tp" id="GLy-4c-Bxu"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-218" y="1028"/>
+            <point key="canvasLocation" x="-218" y="913"/>
         </scene>
         <!--Botom Qr Profile View Controller-->
         <scene sceneID="6Jw-HM-cFe">
             <objects>
-                <viewController storyboardIdentifier="bottom" id="U8G-ZS-KDr" customClass="MABotomQrProfileViewController" customModule="MeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="bottom" id="U8G-ZS-KDr" customClass="MABotomQrProfileViewController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5hs-Ew-LxK"/>
                         <viewControllerLayoutGuide type="bottom" id="EGo-1S-2xZ"/>
@@ -1554,7 +1580,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKn-SJ-9lB" customClass="ShadowButton" customModule="MeApp" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKn-SJ-9lB" customClass="ShadowButton" customModule="Me" customModuleProvider="target">
                                 <rect key="frame" x="30" y="599" width="315" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.20392156859999999" green="0.38431372549999998" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1596,7 +1622,7 @@
         <!--Pssword Enable View Controller-->
         <scene sceneID="Gcn-1E-nAS">
             <objects>
-                <viewController id="wRy-It-7jC" customClass="MAPsswordEnableViewController" customModule="MeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wRy-It-7jC" customClass="MAPsswordEnableViewController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jaK-BV-k6X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1605,7 +1631,7 @@
                                 <rect key="frame" x="145" y="240" width="85" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l4O-aX-sP6" customClass="ShadowButton" customModule="MeApp" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l4O-aX-sP6" customClass="ShadowButton" customModule="Me" customModuleProvider="target">
                                 <rect key="frame" x="30" y="437" width="315" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.20392156859999999" green="0.38431372549999998" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1709,6 +1735,6 @@ log in with Face ID?</string>
         <image name="wallet" width="30" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="m0w-cY-gJb"/>
+        <segue reference="8TH-v7-0Rm"/>
     </inferredMetricsTieBreakers>
 </document>

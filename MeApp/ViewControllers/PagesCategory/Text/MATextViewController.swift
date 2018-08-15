@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import IQKeyboardManagerSwift
 
 class MATextViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var textUITextView: UITextView!
@@ -20,6 +21,8 @@ class MATextViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        IQKeyboardManager.sharedManager().enable = true
+        IQKeyboardManager.sharedManager().shouldShowToolbarPlaceholder = false
         textUITextView.layer.cornerRadius = 6
         NotificationCenter.default.addObserver(self, selector: #selector(setSelectedCategoryType), name: Notification.Name("SETSELECTEDCATEGORYTYPE"), object: nil)
     }
@@ -80,5 +83,10 @@ class MATextViewController: UIViewController, UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         textUITextView.text = ""
     }
+    
+    @IBAction func dismissKeyboard(_ sender: Any) {
+        self.view.endEditing(true)
+    }
+    
     
 }

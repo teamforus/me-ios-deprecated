@@ -186,6 +186,7 @@
 		65BB7C402112EF380073352C /* GoogleSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65BB7C3A2112EF380073352C /* GoogleSans-Regular.ttf */; };
 		65BB7C412112EF380073352C /* GoogleSans-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65BB7C3B2112EF380073352C /* GoogleSans-MediumItalic.ttf */; };
 		65BB7C422112EF380073352C /* GoogleSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65BB7C3C2112EF380073352C /* GoogleSans-Medium.ttf */; };
+		65BD691921246C420098CF9F /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BD691821246C420098CF9F /* StatusView.swift */; };
 		65BF9E872111DA5B000B38AF /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BF9E862111DA5B000B38AF /* Status.swift */; };
 		65BFF46320C161B500F64215 /* Records.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BFF46220C161B400F64215 /* Records.swift */; };
 		65BFF46520C161E800F64215 /* NewIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BFF46420C161E800F64215 /* NewIdentity.swift */; };
@@ -427,6 +428,7 @@
 		65BB7C3A2112EF380073352C /* GoogleSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GoogleSans-Regular.ttf"; sourceTree = "<group>"; };
 		65BB7C3B2112EF380073352C /* GoogleSans-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GoogleSans-MediumItalic.ttf"; sourceTree = "<group>"; };
 		65BB7C3C2112EF380073352C /* GoogleSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GoogleSans-Medium.ttf"; sourceTree = "<group>"; };
+		65BD691821246C420098CF9F /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 		65BF9E862111DA5B000B38AF /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		65BFF46220C161B400F64215 /* Records.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Records.swift; sourceTree = "<group>"; };
 		65BFF46420C161E800F64215 /* NewIdentity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewIdentity.swift; sourceTree = "<group>"; };
@@ -837,8 +839,7 @@
 			children = (
 				65A51F6A20B2FFF10010DB33 /* AppDelegate.swift */,
 				6504473E20C060E000D040B9 /* Validation.swift */,
-				650FA29420F79CD200997261 /* ShadowButton.swift */,
-				65AC32F52101D9E500633187 /* CustomCornerUIView.swift */,
+				65BD691721246BD40098CF9F /* Custom */,
 				65D764E020B73933007D7B9D /* Helper */,
 				65B89A8E20B3344C0024DC51 /* ViewControllers */,
 				65A51FA120B300EA0010DB33 /* Main.storyboard */,
@@ -1205,6 +1206,16 @@
 				65BB7C3C2112EF380073352C /* GoogleSans-Medium.ttf */,
 			);
 			path = "Google-Sans-Font";
+			sourceTree = "<group>";
+		};
+		65BD691721246BD40098CF9F /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				650FA29420F79CD200997261 /* ShadowButton.swift */,
+				65AC32F52101D9E500633187 /* CustomCornerUIView.swift */,
+				65BD691821246C420098CF9F /* StatusView.swift */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 		65BFF46620C16C1E00F64215 /* NewIdentity */ = {
@@ -1849,6 +1860,7 @@
 				655BB05720EE442B00BFD06A /* MAQRLoginViewController.swift in Sources */,
 				6556376020B6FB9100E45487 /* UITextField+PlaceholderColor.swift in Sources */,
 				65AC32F62101D9E500633187 /* CustomCornerUIView.swift in Sources */,
+				65BD691921246C420098CF9F /* StatusView.swift in Sources */,
 				658BDDC721085AFE00A27EC7 /* MACreateNewIdentityViewController.swift in Sources */,
 				6558E3DF20DBB6B6001EC568 /* HBSegmentedControl.swift in Sources */,
 				65FC860220B5A2DA001FECA5 /* MAOfficeViewController.swift in Sources */,

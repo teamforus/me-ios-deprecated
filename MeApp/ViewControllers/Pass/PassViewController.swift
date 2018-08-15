@@ -37,8 +37,6 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
         
         smallerAmount.layer.cornerRadius = 9.0
         emailMeButton.layer.cornerRadius = 9.0
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,16 +58,9 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
     }
     
     @IBAction func showAmmount(_ sender: Any) {
-//        let popupTransction =  MAShareVaucherViewController(nibName: "MAShareVaucherViewController", bundle: nil)
-//        presenter.presentationType = .popup
-//        presenter.transitionType = nil
-//        presenter.dismissTransitionType = nil
-//        presenter.keyboardTranslationType = .compress
-//        customPresentViewController(presenter, viewController: popupTransction, animated: true, completion: nil)
         let safariVC = SFSafariViewController(url: URL(string: "https://www.zuidhorn.nl/kindpakket")!)
         self.present(safariVC, animated: true, completion: nil)
         safariVC.delegate = self
-        
     }
 }
 

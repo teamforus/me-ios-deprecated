@@ -36,7 +36,7 @@ class MAPersonalDetailViewController: MABaseViewController {
         }else if record.key == "gender"{
             nameCategory.text = "Gender"
             valueRecord.text = record.value
-        }else if record.key == "children"{
+        }else if record.key == "children_nth"{
             nameCategory.text = "Children"
             valueRecord.text = record.value
         }else if record.key == "tax_id"{
@@ -57,6 +57,9 @@ class MAPersonalDetailViewController: MABaseViewController {
         }else if record.key == "bsn"{
             nameCategory.text = "BSN"
             valueRecord.text = record.value
+        }else if record.key == "kindpakket_2018_eligible"{
+            nameCategory.text = "Kindpakket Eligible"
+            valueRecord.text = record.value
         }
         
         let parameter: Parameters = ["record_id" : record.id]
@@ -66,6 +69,11 @@ class MAPersonalDetailViewController: MABaseViewController {
         }) { (error) in
             AlertController.showError()
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
