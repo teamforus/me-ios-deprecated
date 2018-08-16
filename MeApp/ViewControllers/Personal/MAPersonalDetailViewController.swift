@@ -24,6 +24,9 @@ class MAPersonalDetailViewController: MABaseViewController {
         if record.key == "primary_email"{
             nameCategory.text = "Primary E-mail"
             valueRecord.text = record.value
+        }else if record.key == "email"{
+            nameCategory.text = "E-mail"
+            valueRecord.text = record.value
         }else if record.key == "family_name"{
             nameCategory.text = "Family name"
             valueRecord.text = record.value

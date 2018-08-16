@@ -121,7 +121,7 @@ extension MARecordsViewController: ExpandableDelegate {
             self.performSegue(withIdentifier: "goToNewProfile", sender: nil)
             
         }else if indexPath.row == 1{
-            
+            self.performSegue(withIdentifier: "goToSwitchProfile", sender: nil)
         }
     }
     

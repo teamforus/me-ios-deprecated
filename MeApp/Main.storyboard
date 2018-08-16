@@ -539,6 +539,7 @@
                         <outlet property="collectionView" destination="FMh-6x-KZG" id="bI0-fa-6IH"/>
                         <outlet property="tableView" destination="pyW-6j-7ya" id="ivQ-c4-7HU"/>
                         <segue destination="sy2-nj-KFO" kind="show" identifier="goToNewProfile" id="qbC-Qc-Km0"/>
+                        <segue destination="4GL-iO-Pxh" kind="show" identifier="goToSwitchProfile" id="Wl2-w1-lgF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pgD-eG-udy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -551,7 +552,15 @@
                 <viewControllerPlaceholder storyboardName="NewProfile" id="sy2-nj-KFO" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Q7-my-ZEY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2252" y="-531"/>
+            <point key="canvasLocation" x="2252" y="-641"/>
+        </scene>
+        <!--siwtchProfile-->
+        <scene sceneID="e1Q-yg-JrE">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NewProfile" referencedIdentifier="siwtchProfile" id="4GL-iO-Pxh" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WOd-8c-Ksv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2252" y="-439"/>
         </scene>
         <!--QR-->
         <scene sceneID="s6p-hV-QEf">
@@ -843,6 +852,14 @@
                                     <segue destination="LVM-Kp-RHK" kind="show" id="8aw-KH-XQi"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rectangle2" translatesAutoresizingMaskIntoConstraints="NO" id="yuE-Fa-lhU">
+                                <rect key="frame" x="78" y="480" width="220" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rectangle2" translatesAutoresizingMaskIntoConstraints="NO" id="766-Da-nmg">
+                                <rect key="frame" x="70" y="551" width="220" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="7tB-pP-SWU"/>
@@ -1727,6 +1744,7 @@ log in with Face ID?</string>
         <image name="qrImage2" width="16" height="16"/>
         <image name="records" width="30" height="26"/>
         <image name="rectangle" width="10" height="7"/>
+        <image name="rectangle2" width="316" height="144"/>
         <image name="rectangleRed" width="9" height="7"/>
         <image name="shape1" width="21" height="21"/>
         <image name="tick" width="104" height="104"/>

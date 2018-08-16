@@ -43,6 +43,8 @@ class MACreateNewIdentityViewController: MABaseViewController {
                 newUser.setValue(true, forKey: "currentUser")
                 newUser.setValue(pinCode, forKey: "pinCode")
                 newUser.setValue(accessToken, forKey: "accessToken")
+                newUser.setValue(givenNameField.text, forKey: "firstName")
+                newUser.setValue(familyNameField.text, forKey: "lastName")
                 
                 do {
                     try context.save()

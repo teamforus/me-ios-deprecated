@@ -38,6 +38,10 @@ class MATextViewController: UIViewController, UITextViewDelegate {
             if self.recordType.type == "number" {
                 self.textUITextView.keyboardType = .numberPad
             }
+            
+            if self.recordType.name.contains("E-mail"){
+                self.textUITextView.keyboardType = .emailAddress
+            }
         }
     }
 
@@ -47,6 +51,10 @@ class MATextViewController: UIViewController, UITextViewDelegate {
 
     @IBAction func submit(_ sender: Any) {
         
+        if !Validation.validateEmail(textUITextView.text) {
+            AlertController.showWarning(withText: "E-mail is not valid")
+            return
+        }
         let parameters: Parameters = ["type" : recordType.key,
                                       "record_category_id" : recordCategory.id as Any,
                                       "value" : textUITextView.text]

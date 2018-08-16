@@ -46,6 +46,7 @@ class MASwitchProfileViewController: MABaseViewController,MASwitchProfilePopUpVi
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
         UIApplication.shared.statusBarStyle = .lightContent
+        profileName.text = "\(UserShared.shared.currentUser.firstName!) \(UserShared.shared.currentUser.lastName!)"
     }
     
     override func didReceiveMemoryWarning() {
@@ -59,8 +60,8 @@ class MASwitchProfileViewController: MABaseViewController,MASwitchProfilePopUpVi
         customPresentViewController(dynamicSizePresenter, viewController: popupTransction, animated: true, completion: nil)
     }
     
-    func switchProfile(_ controller: MASwitchProfilePopUpViewController, user: UserLocal) {
-        profileName.text = user.name
+    func switchProfile(_ controller: MASwitchProfilePopUpViewController, user: User) {
+        profileName.text = user.primaryEmail
         //        profileImage.image = user.image
     }
     

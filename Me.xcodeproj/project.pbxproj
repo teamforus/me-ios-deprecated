@@ -336,6 +336,7 @@
 		658BDDC82108A76100A27EC7 /* RecordType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordType.swift; sourceTree = "<group>"; };
 		658BDDCA2108AFCC00A27EC7 /* MAChooseTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAChooseTypeTableViewCell.swift; sourceTree = "<group>"; };
 		658BDDCD2108B62500A27EC7 /* RecordCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCategory.swift; sourceTree = "<group>"; };
+		659EBA6321258A7400162445 /* MeApp 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MeApp 2.xcdatamodel"; sourceTree = "<group>"; };
 		65A51F6720B2FFF10010DB33 /* Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Me.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A51F6A20B2FFF10010DB33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65A51F7220B2FFF20010DB33 /* MeApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MeApp.xcdatamodel; sourceTree = "<group>"; };
@@ -2215,9 +2216,10 @@
 		65A51F7120B2FFF20010DB33 /* MeApp.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				659EBA6321258A7400162445 /* MeApp 2.xcdatamodel */,
 				65A51F7220B2FFF20010DB33 /* MeApp.xcdatamodel */,
 			);
-			currentVersion = 65A51F7220B2FFF20010DB33 /* MeApp.xcdatamodel */;
+			currentVersion = 659EBA6321258A7400162445 /* MeApp 2.xcdatamodel */;
 			path = MeApp.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

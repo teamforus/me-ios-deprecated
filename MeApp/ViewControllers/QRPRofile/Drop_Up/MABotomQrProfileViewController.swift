@@ -71,9 +71,13 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
         super.viewWillAppear(animated)
         firstAppearanceCompleted = true;
         AuthorizeTokenRequest.createToken(completion: { (response) in
+            if response.authToken != nil{
             self.authorizeToken = response
             self.qrCodeImageView.generateQRCode(from: "authToken:\(response.authToken!)")
             self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.checkAuthorizeToken), userInfo: nil, repeats: true)
+            }else{
+                AlertController.showError()
+            }
         }) { (error) in
             AlertController.showError()
         }
@@ -81,7 +85,9 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        if timer != nil {
         self.timer.invalidate()
+        }
     }
     
     @objc func checkAuthorizeToken(){

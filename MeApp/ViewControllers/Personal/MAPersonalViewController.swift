@@ -69,7 +69,10 @@ extension MAPersonalViewController: UITableViewDelegate, UITableViewDataSource{
             cell.cellTypeLabel.text = "Primary E-mail"
             cell.nameLabel.text = record.value
         }else if record.key == "family_name"{
-             cell.cellTypeLabel.text = "Family name"
+            cell.cellTypeLabel.text = "Family name"
+            cell.nameLabel.text = record.value
+        }else if record.key == "email"{
+             cell.cellTypeLabel.text = "E-mail"
             cell.nameLabel.text = record.value
         }else if record.key == "telephone"{
             cell.cellTypeLabel.text = "Phone Number"

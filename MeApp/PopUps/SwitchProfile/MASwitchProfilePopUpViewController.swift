@@ -7,19 +7,36 @@
 //
 
 protocol MASwitchProfilePopUpViewControllerDelegate:class {
-    func switchProfile(_ controller: MASwitchProfilePopUpViewController, user: UserLocal)
+    func switchProfile(_ controller: MASwitchProfilePopUpViewController, user: User)
 }
 
 import UIKit
+import CoreData
 
 class MASwitchProfilePopUpViewController: MABasePopUpViewController {
     @IBOutlet weak var tableView: UITableView!
+    var appDelegate = UIApplication.shared.delegate as! AppDelegate
     weak var delegate: MASwitchProfilePopUpViewControllerDelegate!
+    var users: NSMutableArray! = NSMutableArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "MASwitchProfileTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         tableView.register(UINib(nibName: "MAAddProfileTableViewCell", bundle: nil), forCellReuseIdentifier: "MAAddProfileTableViewCell")
+        getAllUsers()
+    }
+    
+    func getAllUsers(){
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        
+        do{
+            let results = try context.fetch(fetchRequest) as? [User]
+            users.addObjects(from: results!)
+            self.tableView.reloadData()
+        } catch{
+            
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,23 +52,20 @@ extension MASwitchProfilePopUpViewController: UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return self.users.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell : UITableViewCell! = nil
-        if indexPath.row == 2 {
+        if indexPath.row == self.users.count {
             let cellAddProfile  = tableView.dequeueReusableCell(withIdentifier: "MAAddProfileTableViewCell", for: indexPath) as! MAAddProfileTableViewCell
             cell = cellAddProfile
             
         }else{
             let cellSwitchProfile  = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MASwitchProfileTableViewCell
             cellSwitchProfile.profileImage.image = UIImage(named: "iconDigiD")
-            if indexPath.row == 0{
-                cellSwitchProfile.profileName.text = "Daniel Tcacenco"
-            }else{
-                cellSwitchProfile.profileName.text = "Gemeente Zuidhorn"
-            }
+            let user = self.users[indexPath.row] as! User
+            cellSwitchProfile.profileName.text = "\(user.firstName!) \(user.lastName!)"
             
             cell = cellSwitchProfile
         }
@@ -77,9 +91,8 @@ extension MASwitchProfilePopUpViewController: UITableViewDelegate, UITableViewDa
             alert.addAction(UIAlertAction(title: "YES", style: .default, handler: { (action) -> Void in
                 alert.dismiss(animated: true, completion: nil)
                 self.dismiss(animated: true, completion: nil)
-                var user: UserLocal = UserLocal()
-                user.name = cell.profileName.text
-//                user.image = cell.profileImage.image
+                let user = self.users[indexPath.row] as! User
+                UserShared.shared.currentUser = user
                 self.delegate.switchProfile(self, user: user)
             }))
             alert.addAction(action)
