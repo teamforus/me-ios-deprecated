@@ -257,7 +257,9 @@ public extension AppLocker {
     locker.mode = mode
     locker.delegate = config?.delegate
     if config?.isSensorsEnabled ?? false {
-      locker.checkSensors()
+        if UserDefaults.standard.bool(forKey: "isWithTouchID"){
+            locker.checkSensors()
+        }
     }
     
     if let image = config?.image {

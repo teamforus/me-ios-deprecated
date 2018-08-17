@@ -90,6 +90,7 @@
 		6579634B20E4D49E001CF29D /* NunitoSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579633C20E4D49C001CF29D /* NunitoSans-ExtraBoldItalic.ttf */; };
 		6579634C20E4D49E001CF29D /* NunitoSans-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579633D20E4D49C001CF29D /* NunitoSans-ExtraLightItalic.ttf */; };
 		657B074620D27F2B0093930E /* MAWalletOwnerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657B074520D27F2B0093930E /* MAWalletOwnerTableViewCell.swift */; };
+		658370AE2126C357008D76A9 /* MACreatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658370AD2126C357008D76A9 /* MACreatePasswordViewController.swift */; };
 		658BBA4321108D950098E2AC /* MAPsswordEnableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658BBA4221108D950098E2AC /* MAPsswordEnableViewController.swift */; };
 		658BBA522110954C0098E2AC /* AppLocker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658BBA44211094BE0098E2AC /* AppLocker.swift */; };
 		658BBA532110954C0098E2AC /* backspaceBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = 658BBA45211094BE0098E2AC /* backspaceBlue.png */; };
@@ -326,6 +327,7 @@
 		6579633D20E4D49C001CF29D /* NunitoSans-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		657B074520D27F2B0093930E /* MAWalletOwnerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAWalletOwnerTableViewCell.swift; sourceTree = "<group>"; };
 		658370AA2126AD4B008D76A9 /* MeApp 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MeApp 3.xcdatamodel"; sourceTree = "<group>"; };
+		658370AD2126C357008D76A9 /* MACreatePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MACreatePasswordViewController.swift; sourceTree = "<group>"; };
 		658BBA4221108D950098E2AC /* MAPsswordEnableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAPsswordEnableViewController.swift; sourceTree = "<group>"; };
 		658BBA44211094BE0098E2AC /* AppLocker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppLocker.swift; path = Source/AppLocker/AppLocker.swift; sourceTree = "<group>"; };
 		658BBA45211094BE0098E2AC /* backspaceBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backspaceBlue.png; sourceTree = "<group>"; };
@@ -994,6 +996,8 @@
 			isa = PBXGroup;
 			children = (
 				658BDDC621085AFE00A27EC7 /* MACreateNewIdentityViewController.swift */,
+				658370AD2126C357008D76A9 /* MACreatePasswordViewController.swift */,
+				658BBA4221108D950098E2AC /* MAPsswordEnableViewController.swift */,
 			);
 			path = CreateNewIdentity;
 			sourceTree = "<group>";
@@ -1067,7 +1071,6 @@
 				65AC33002102123300633187 /* PagesCategory */,
 				656F198B210604B800923DAF /* Personal */,
 				65A5A9B9210B64F600CF1C45 /* CreateNewIdentity */,
-				658BBA4221108D950098E2AC /* MAPsswordEnableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1883,6 +1886,7 @@
 				65A51FAB20B300EA0010DB33 /* WalletViewController.swift in Sources */,
 				6504473F20C060E000D040B9 /* Validation.swift in Sources */,
 				6504472B20C038A900D040B9 /* MABasePopUpViewController.swift in Sources */,
+				658370AE2126C357008D76A9 /* MACreatePasswordViewController.swift in Sources */,
 				65AC330A21023E7000633187 /* MAPersonalTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2058,7 +2062,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.forus.me;
+				PRODUCT_BUNDLE_IDENTIFIER = MeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
@@ -2081,7 +2085,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.forus.me;
+				PRODUCT_BUNDLE_IDENTIFIER = MeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";

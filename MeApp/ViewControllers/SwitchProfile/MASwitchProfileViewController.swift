@@ -62,6 +62,7 @@ class MASwitchProfileViewController: MABaseViewController,MASwitchProfilePopUpVi
     
     func switchProfile(_ controller: MASwitchProfilePopUpViewController, user: User) {
         profileName.text = user.primaryEmail
+        UserDefaults.standard.set(user.pinCode, forKey: ALConstants.kPincode)
         //        profileImage.image = user.image
     }
     
