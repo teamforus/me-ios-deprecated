@@ -64,6 +64,27 @@ class RecordCategoryRequest {
         }
     }
     
+    static func getCategory(categoryId: Int, completion: @escaping ((RecordCategory) -> Void), failure: @escaping ((Error) -> Void)){
+        let headers: HTTPHeaders = [
+            "Accept": "application/json",
+            "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"
+        ]
+        Alamofire.request(BaseURL.baseURL(url: "identity/record-categories/\(categoryId)"), method: .get, parameters:nil,encoding: JSONEncoding.default, headers: headers).responseJSON {
+            response in
+            switch response.result {
+            case .success:
+                if let json = response.result.value {
+                    let recordType = try! RecordCategory(object: json as! JSONObject)
+                    completion(recordType)
+                }
+                break
+            case .failure(let error):
+                
+                failure(error)
+            }
+        }
+    }
+    
     static func createRecordCategory(completion: @escaping ((Response) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
             "Accept": "application/json",

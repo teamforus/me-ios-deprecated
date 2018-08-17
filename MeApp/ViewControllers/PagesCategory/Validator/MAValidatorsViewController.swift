@@ -7,12 +7,39 @@
 //
 
 import UIKit
+import Alamofire
 
-class MAValidatorsViewController: UIViewController {
+class MAValidatorsViewController: MABaseViewController {
     @IBOutlet weak var tableView: UITableView!
+    var validators: NSMutableArray! = NSMutableArray()
+    var recordType: String!
+    var recordValue: String!
+    var recordCategoryId: Int!
+    var recordID: Int!
+    @IBOutlet weak var categoryName: ShadowButton!
+    @IBOutlet weak var recordTypeName: ShadowButton!
+    @IBOutlet weak var valueRecord: ShadowButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        recordTypeName.setTitle(recordType, for: .normal)
+        valueRecord.setTitle(recordValue, for: .normal)
+//        RecordCategoryRequest.getCategory(categoryId: recordCategoryId, completion: { (response) in
+//            self.categoryName.setTitle(response.name, for: .normal)
+//        }) { (error) in
+//
+//        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        ValidatorsRequest.getValidatorList(completion: { (response) in
+            self.validators.addObjects(from: response as! [Any])
+            self.tableView.reloadData()
+        }) { (error) in
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,23 +55,31 @@ extension MAValidatorsViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return self.validators.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MAValidatorCellTableViewCell
+        let validator = validators[indexPath.row] as! Validator
         
-        if indexPath.row == 0{
-            cell.nameValidator.text = "DigiD"
-            cell.descriptionValidator.text = "Open DigiD app"
-        }else if indexPath.row == 1 {
-            cell.nameValidator.text = "Gemeente Zuidhorn"
-            cell.descriptionValidator.text = "Automatische validatie"
-        }else if indexPath.row == 2 {
-            cell.nameValidator.text = "Gemeente Zuidhorn"
-            cell.descriptionValidator.text = "Verzoek validatie"
-        }
+        cell.nameValidator.text = validator.organization?.name
+        cell.descriptionValidator.text = validator.organization?.identityAddress
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let validator = validators[indexPath.row] as! Validator
+        let parametr: Parameters = ["validator_id" : validator.id!,
+                                    "record_id" : recordID!]
+        ValidatorsRequest.createValidationRequest(parameters: parametr, completion: { (response) in
+            if response.message != nil{
+                AlertController.showWarning(withText: "Sorry request to validate is already send")
+            }else{
+                AlertController.showSuccess(withText: "")
+            }
+        }) { (error) in
+
+        }
     }
 }

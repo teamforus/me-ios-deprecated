@@ -44,16 +44,17 @@ class MATextViewController: UIViewController, UITextViewDelegate {
             }
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
     @IBAction func submit(_ sender: Any) {
-        
-        if !Validation.validateEmail(textUITextView.text) {
-            AlertController.showWarning(withText: "E-mail is not valid")
-            return
+        if self.recordType.name.contains("E-mail"){
+            if !Validation.validateEmail(textUITextView.text) {
+                AlertController.showWarning(withText: "E-mail is not valid")
+                return
+            }
         }
         let parameters: Parameters = ["type" : recordType.key,
                                       "record_category_id" : recordCategory.id as Any,

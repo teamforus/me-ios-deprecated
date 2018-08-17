@@ -70,6 +70,7 @@ class MARecordsViewController: UIViewController, BWWalkthroughViewControllerDele
         walkthrough.add(viewController:page_zero)
         walkthrough.add(viewController:pageOne)
         walkthrough.add(viewController:pageTwo)
+        
         self.present(walkthrough, animated: true, completion: nil)
     }
     

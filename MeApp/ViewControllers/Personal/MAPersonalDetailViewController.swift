@@ -93,5 +93,15 @@ class MAPersonalDetailViewController: MABaseViewController {
     
     @IBAction func addFavorite(_ sender: Any) {
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToValidators" {
+            let validatorsVC = segue.destination as! MAValidatorsViewController
+            validatorsVC.recordType =  nameCategory.text
+            validatorsVC.recordValue = valueRecord.text
+            validatorsVC.recordCategoryId = record.recordCategoryId
+            validatorsVC.recordID = record.id
+        }
+    }
 
 }

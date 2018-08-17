@@ -80,6 +80,17 @@ class AlertController: UIAlertController {
         SwiftMessages.show( view: error)
     }
     
+    static func showSuccess(withText: String){
+        let error = MessageView.viewFromNib(layout: .tabView)
+        error.configureTheme(.success)
+        error.configureContent(title: "Success!", body: "" , iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
+            SwiftMessages.hide()
+        }
+        error.button?.setTitle("OK", for: .normal)
+        
+        SwiftMessages.show( view: error)
+    }
+    
     private func newLinesCount(for imageView: UIImageView) -> CGFloat {
         return ceil(imageView.bounds.height / lineHeight)
     }

@@ -73,6 +73,8 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
         AuthorizeTokenRequest.createToken(completion: { (response) in
             if response.authToken != nil{
             self.authorizeToken = response
+//                {"type":"auth_token","value":"d6a673ae21ff01d2cabd2c58ed4bf46df98ea1cc6459109d6985b112c9ac8c75"}
+                
             self.qrCodeImageView.generateQRCode(from: "authToken:\(response.authToken!)")
             self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.checkAuthorizeToken), userInfo: nil, repeats: true)
             }else{
