@@ -74,6 +74,9 @@ extension MAPersonalViewController: UITableViewDelegate, UITableViewDataSource{
         }else if record.key == "email"{
              cell.cellTypeLabel.text = "E-mail"
             cell.nameLabel.text = record.value
+        }else if record.key == "parent"{
+            cell.cellTypeLabel.text = "Parent"
+            cell.nameLabel.text = record.value
         }else if record.key == "telephone"{
             cell.cellTypeLabel.text = "Phone Number"
             cell.nameLabel.text = record.value
@@ -82,6 +85,9 @@ extension MAPersonalViewController: UITableViewDelegate, UITableViewDataSource{
             cell.nameLabel.text = record.value
         }else if record.key == "gender"{
             cell.cellTypeLabel.text = "Gender"
+            cell.nameLabel.text = record.value
+        }else if record.key == "children"{
+            cell.cellTypeLabel.text = "Children"
             cell.nameLabel.text = record.value
         }else if record.key == "children_nth"{
             cell.cellTypeLabel.text = "Children"
