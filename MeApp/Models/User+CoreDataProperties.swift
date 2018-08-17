@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.swift
 //  Me
 //
-//  Created by Tcacenco Daniel on 8/16/18.
+//  Created by Tcacenco Daniel on 8/17/18.
 //  Copyright © 2018 Foundation Forus. All rights reserved.
 //
 //
@@ -19,9 +19,10 @@ extension User {
 
     @NSManaged public var accessToken: String?
     @NSManaged public var currentUser: Bool
-    @NSManaged public var pinCode: Int32
-    @NSManaged public var primaryEmail: String?
     @NSManaged public var firstName: String?
     @NSManaged public var lastName: String?
+    @NSManaged public var pinCode: Int32
+    @NSManaged public var primaryEmail: String?
+    @NSManaged public var image: NSData?
 
 }

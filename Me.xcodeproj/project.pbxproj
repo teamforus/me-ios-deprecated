@@ -325,6 +325,7 @@
 		6579633C20E4D49C001CF29D /* NunitoSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		6579633D20E4D49C001CF29D /* NunitoSans-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		657B074520D27F2B0093930E /* MAWalletOwnerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAWalletOwnerTableViewCell.swift; sourceTree = "<group>"; };
+		658370AA2126AD4B008D76A9 /* MeApp 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MeApp 3.xcdatamodel"; sourceTree = "<group>"; };
 		658BBA4221108D950098E2AC /* MAPsswordEnableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAPsswordEnableViewController.swift; sourceTree = "<group>"; };
 		658BBA44211094BE0098E2AC /* AppLocker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppLocker.swift; path = Source/AppLocker/AppLocker.swift; sourceTree = "<group>"; };
 		658BBA45211094BE0098E2AC /* backspaceBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backspaceBlue.png; sourceTree = "<group>"; };
@@ -2216,10 +2217,11 @@
 		65A51F7120B2FFF20010DB33 /* MeApp.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				658370AA2126AD4B008D76A9 /* MeApp 3.xcdatamodel */,
 				659EBA6321258A7400162445 /* MeApp 2.xcdatamodel */,
 				65A51F7220B2FFF20010DB33 /* MeApp.xcdatamodel */,
 			);
-			currentVersion = 659EBA6321258A7400162445 /* MeApp 2.xcdatamodel */;
+			currentVersion = 658370AA2126AD4B008D76A9 /* MeApp 3.xcdatamodel */;
 			path = MeApp.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

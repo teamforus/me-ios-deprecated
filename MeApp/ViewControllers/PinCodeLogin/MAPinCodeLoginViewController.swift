@@ -79,6 +79,15 @@ class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
             AuthorizationCodeRequest.authorizeCode(completion: { (response) in
                 if response.success != nil {
                     self.performSegue(withIdentifier: "goToWallet", sender: nil)
+                }else if response.message != nil {
+                    let error = MessageView.viewFromNib(layout: .tabView)
+                    error.configureTheme(.error)
+                    error.configureContent(title: "Warning", body: response.message , iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
+                        SwiftMessages.hide()
+                    }
+                    error.button?.setTitle("OK", for: .normal)
+                    
+                    SwiftMessages.show( view: error)
                 }
             }) { (error) in
                 AlertController.showError()
