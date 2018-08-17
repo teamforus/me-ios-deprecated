@@ -9,6 +9,7 @@
 import UIKit
 import ScrollableSegmentedControl
 import SwipeCellKit
+import CoreData
 import Speech
 enum WalletCase {
     case token
@@ -16,7 +17,11 @@ enum WalletCase {
     case passes
 }
 
-class WalletViewController: MABaseViewController{
+class WalletViewController: MABaseViewController, AppLockerDelegate{
+    func closePinCodeView(typeClose: typeClose) {
+        
+    }
+    
     
     @IBOutlet weak var tableView: UITableView!
     var walletCase : WalletCase! = WalletCase.token
@@ -30,6 +35,15 @@ class WalletViewController: MABaseViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" && UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil{
+            var appearance = ALAppearance()
+            appearance.image = UIImage(named: "lock")!
+            appearance.title = "Devios Ryasnoy"
+            appearance.isSensorsEnabled = true
+            appearance.delegate = self
+            
+            AppLocker.present(with: .validate, and: appearance)
+        }
         segmentView.layer.cornerRadius = 8.0
         tableView.setContentOffset(CGPoint(x: 0, y: 44), animated: true)
         segmentedControl.items = ["Valuta", "Bezit", "Vouchers"]
@@ -43,6 +57,16 @@ class WalletViewController: MABaseViewController{
         Web3Provider.getBalance()
         Service.sendContract { (response, error) in
         }
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        fetchRequest.predicate = NSPredicate(format:"currentUser == YES")
+        do{
+            let results = try context.fetch(fetchRequest) as? [User]
+            if results?.count != 0 {
+                UserShared.shared.currentUser = results![0]
+            }
+        } catch{}
     }
     
     override func viewWillAppear(_ animated: Bool) {

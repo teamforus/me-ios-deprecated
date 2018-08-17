@@ -1049,7 +1049,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="5Hi-kT-km0">
             <objects>
-                <tabBarController id="ofq-Zs-ITw" customClass="TabBarController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="walet" id="ofq-Zs-ITw" customClass="TabBarController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IG1-OZ-LyC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
