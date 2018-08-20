@@ -67,7 +67,11 @@ class MAPersonalDetailViewController: MABaseViewController {
         
         let parameter: Parameters = ["record_id" : record.id]
         
-        RecordsRequest.createValidationTokenRecord(parameters: parameter, completion: { (response) in
+        RecordsRequest.createValidationTokenRecord(parameters: parameter, completion: { (response, statusCode) in
+            if statusCode == 401{
+                self.logOut()
+                return
+            }
             self.qrCodeImage.generateQRCode(from: "uuid:\(response.uuid!)")
         }) { (error) in
             AlertController.showError()
@@ -84,7 +88,11 @@ class MAPersonalDetailViewController: MABaseViewController {
     }
     
     @IBAction func deleteRecord(_ sender: Any) {
-        RecordsRequest.deleteRecord(recordId: record.id, completion: { (response) in
+        RecordsRequest.deleteRecord(recordId: record.id, completion: { (response, statusCode) in
+            if statusCode == 401{
+                self.logOut()
+                return
+            }
             self.navigationController?.popViewController(animated: true)
         }) { (error) in
             AlertController.showError()

@@ -39,7 +39,7 @@ extension RecordType: JSONEncodable{
 
 class RecordTypeRequest {
     
-    static func getRecordType(completion: @escaping ((NSMutableArray) -> Void), failure: @escaping ((Error) -> Void)){
+    static func getRecordType(completion: @escaping ((NSMutableArray, Int) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
             "Accept": "application/json"
         ]
@@ -55,7 +55,7 @@ class RecordTypeRequest {
                             recordTypeList.add(recordType)
                         }
                     }
-                    completion(recordTypeList)
+                    completion(recordTypeList, (response.response?.statusCode)!)
                 }
                 break
             case .failure(let error):

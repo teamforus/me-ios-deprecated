@@ -10,7 +10,7 @@ import UIKit
 import UICheckbox_Swift
 import BWWalkthrough
 
-class MAChooseTypeViewController: UIViewController, BWWalkthroughPage, MAChooseTypeTableViewCellDelegate {
+class MAChooseTypeViewController: MABaseViewController, BWWalkthroughPage, MAChooseTypeTableViewCellDelegate {
     
     @IBOutlet weak var selectedCategory: ShadowButton!
     @IBOutlet weak var tableView: UITableView!
@@ -31,7 +31,11 @@ class MAChooseTypeViewController: UIViewController, BWWalkthroughPage, MAChooseT
     }
     
     func getRecordType(){
-        RecordTypeRequest.getRecordType(completion: { (response) in
+        RecordTypeRequest.getRecordType(completion: { (response, statusCode) in
+            if statusCode == 401{
+                self.logOut()
+                return
+            }
             self.recordTypeList.addObjects(from: response as! [Any])
             self.tableView.reloadData()
         }) { (error) in

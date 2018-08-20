@@ -34,7 +34,7 @@ extension AuthorizeToken: JSONEncodable{
 
 class AuthorizeTokenRequest {
     
-    static func createToken(completion: @escaping ((AuthorizeToken) -> Void), failure: @escaping ((Error) -> Void)){
+    static func createToken(completion: @escaping ((AuthorizeToken, Int) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
             "Accept": "application/json"
         ]
@@ -43,8 +43,8 @@ class AuthorizeTokenRequest {
             switch response.result {
             case .success:
                 if let json = response.result.value {
-                    let response = try! AuthorizeToken(object: json as! JSONObject)
-                    completion(response)
+                    let responses = try! AuthorizeToken(object: json as! JSONObject)
+                    completion(responses, (response.response?.statusCode)!)
                 }
                 break
             case .failure(let error):
@@ -54,7 +54,7 @@ class AuthorizeTokenRequest {
         }
     }
     
-    static func authorizeToken(parameter: Parameters, completion: @escaping ((Response) -> Void), failure: @escaping ((Error) -> Void)){
+    static func authorizeToken(parameter: Parameters, completion: @escaping ((Response, Int) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
             "Accept": "application/json",
             "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"
@@ -64,8 +64,8 @@ class AuthorizeTokenRequest {
             switch response.result {
             case .success:
                 if let json = response.result.value {
-                    let response = try! Response(object: json as! JSONObject)
-                    completion(response)
+                    let responses = try! Response(object: json as! JSONObject)
+                    completion(responses, (response.response?.statusCode)!)
                 }
                 break
             case .failure(let error):

@@ -33,7 +33,7 @@ extension Code: JSONEncodable{
 }
 
 class AuthorizationCodeRequest{
-    static func createAuthorizationCode(completion: @escaping ((Code) -> Void), failure: @escaping ((Error) -> Void)){
+    static func createAuthorizationCode(completion: @escaping ((Code, Int) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
             "Accept": "application/json"
         ]
@@ -43,7 +43,7 @@ class AuthorizationCodeRequest{
             case .success:
                 if let json = response.result.value {
                     let codeResponse = try! Code(object: json as! JSONObject)
-                    completion(codeResponse)
+                    completion(codeResponse, (response.response?.statusCode)!)
                 }
                 break
             case .failure(let error):
@@ -53,7 +53,7 @@ class AuthorizationCodeRequest{
         }
     }
     
-    static func authorizeCode(completion: @escaping ((Response) -> Void), failure: @escaping ((Error) -> Void)){
+    static func authorizeCode(completion: @escaping ((Response, Int) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
             "Accept": "application/json",
             "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"
@@ -66,7 +66,7 @@ class AuthorizationCodeRequest{
             case .success:
                 if let json = response.result.value {
                     let authorizeCodeResponse = try! Response(object: json as! JSONObject)
-                    completion(authorizeCodeResponse)
+                    completion(authorizeCodeResponse, (response.response?.statusCode)!)
                 }
                 break
             case .failure(let error):

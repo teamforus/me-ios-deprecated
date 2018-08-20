@@ -34,7 +34,7 @@ class MAValidatorsViewController: MABaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        ValidatorsRequest.getValidatorList(completion: { (response) in
+        ValidatorsRequest.getValidatorList(completion: { (response, statusCode) in
             self.validators.addObjects(from: response as! [Any])
             self.tableView.reloadData()
         }) { (error) in
@@ -72,7 +72,7 @@ extension MAValidatorsViewController: UITableViewDataSource, UITableViewDelegate
         let validator = validators[indexPath.row] as! Validator
         let parametr: Parameters = ["validator_id" : validator.id!,
                                     "record_id" : recordID!]
-        ValidatorsRequest.createValidationRequest(parameters: parametr, completion: { (response) in
+        ValidatorsRequest.createValidationRequest(parameters: parametr, completion: { (response, statusCode) in
             if response.message != nil{
                 AlertController.showWarning(withText: "Sorry request to validate is already send")
             }else{

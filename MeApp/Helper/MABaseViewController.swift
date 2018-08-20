@@ -27,7 +27,14 @@ class MABaseViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
-    
+   public func logOut(){
+//        self.parent?.dismiss(animated: true, completion: nil)
+    let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+    let navigationController:HiddenNavBarNavigationController = storyboard.instantiateInitialViewController() as! HiddenNavBarNavigationController
+     let firstPageVC:UIViewController = storyboard.instantiateViewController(withIdentifier: "firstPage") as UIViewController
+     navigationController.viewControllers = [firstPageVC]
+    self.present(navigationController, animated: true, completion: nil)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

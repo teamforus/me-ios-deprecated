@@ -9,7 +9,7 @@
 import UIKit
 import SwiftMessages
 
-class MAChooseCategoryViewController: UIViewController {
+class MAChooseCategoryViewController: MABaseViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     var recordCategories : NSMutableArray! = NSMutableArray()
     var previusCell: MAChooseCategoryCollectionViewCell!
@@ -24,7 +24,11 @@ class MAChooseCategoryViewController: UIViewController {
     }
     
     func getRecordCategory(){
-        RecordCategoryRequest.getRecordCategory(completion: { (response) in
+        RecordCategoryRequest.getRecordCategory(completion: { (response, statusCode) in
+            if statusCode == 401{
+                self.logOut()
+                return
+            }
             self.recordCategories.addObjects(from: response as! [Any])
             self.collectionView.reloadData()
         }) { (error) in

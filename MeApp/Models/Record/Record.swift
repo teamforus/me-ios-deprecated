@@ -105,7 +105,7 @@ extension RecordValidation: JSONEncodable{
 
 class RecordsRequest {
     
-    static func getRecordsList(completion: @escaping ((NSMutableArray) -> Void), failure: @escaping ((Error) -> Void)){
+    static func getRecordsList(completion: @escaping ((NSMutableArray, Int) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
             "Accept": "application/json",
             "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"
@@ -122,7 +122,7 @@ class RecordsRequest {
                             recordList.add(record)
                         }
                     }
-                    completion(recordList)
+                    completion(recordList,(response.response?.statusCode)!)
                 }
                 break
             case .failure(let error):
@@ -132,7 +132,7 @@ class RecordsRequest {
         }
     }
     
-    static func createRecord(parameters: Parameters, completion: @escaping ((Record) -> Void), failure: @escaping ((Error) -> Void)){
+    static func createRecord(parameters: Parameters, completion: @escaping ((Record, Int) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
             "Accept": "application/json",
             "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"
@@ -145,7 +145,7 @@ class RecordsRequest {
             case .success:
                 if let json = response.result.value {
                     let authorizeCodeResponse = try! Record(object: json as! JSONObject)
-                    completion(authorizeCodeResponse)
+                    completion(authorizeCodeResponse, (response.response?.statusCode)!)
                 }
                 break
             case .failure(let error):
@@ -155,7 +155,7 @@ class RecordsRequest {
         }
     }
     
-    static func createValidationTokenRecord(parameters: Parameters, completion: @escaping ((RecordValidation) -> Void), failure: @escaping ((Error) -> Void)){
+    static func createValidationTokenRecord(parameters: Parameters, completion: @escaping ((RecordValidation, Int) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
             "Accept": "application/json",
             "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"
@@ -168,7 +168,7 @@ class RecordsRequest {
             case .success:
                 if let json = response.result.value {
                     let authorizeCodeResponse = try! RecordValidation(object: json as! JSONObject)
-                    completion(authorizeCodeResponse)
+                    completion(authorizeCodeResponse, (response.response?.statusCode)!)
                 }
                 break
             case .failure(let error):
@@ -178,7 +178,7 @@ class RecordsRequest {
         }
     }
     
-    static func readValidationTokenRecord(token: String, completion: @escaping ((RecordValidation) -> Void), failure: @escaping ((Error) -> Void)){
+    static func readValidationTokenRecord(token: String, completion: @escaping ((RecordValidation, Int) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
             "Accept": "application/json",
             "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"
@@ -191,7 +191,7 @@ class RecordsRequest {
             case .success:
                 if let json = response.result.value {
                     let authorizeCodeResponse = try! RecordValidation(object: json as! JSONObject)
-                    completion(authorizeCodeResponse)
+                    completion(authorizeCodeResponse, (response.response?.statusCode)!)
                 }
                 break
             case .failure(let error):
@@ -201,7 +201,7 @@ class RecordsRequest {
         }
     }
     
-    static func aproveValidationTokenRecord(token: String, completion: @escaping ((Response) -> Void), failure: @escaping ((Error) -> Void)){
+    static func aproveValidationTokenRecord(token: String, completion: @escaping ((Response, Int) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
             "Accept": "application/json",
             "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"
@@ -214,7 +214,7 @@ class RecordsRequest {
             case .success:
                 if let json = response.result.value {
                     let authorizeCodeResponse = try! Response(object: json as! JSONObject)
-                    completion(authorizeCodeResponse)
+                    completion(authorizeCodeResponse, (response.response?.statusCode)!)
                 }
                 break
             case .failure(let error):
@@ -224,7 +224,7 @@ class RecordsRequest {
         }
     }
     
-    static func deleteRecord(recordId: Int, completion: @escaping ((Response) -> Void), failure: @escaping ((Error) -> Void)){
+    static func deleteRecord(recordId: Int, completion: @escaping ((Response, Int) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
             "Accept": "application/json",
             "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"
@@ -237,7 +237,7 @@ class RecordsRequest {
             case .success:
                 if let json = response.result.value {
                     let deleteResponse = try! Response(object: json as! JSONObject)
-                    completion(deleteResponse)
+                    completion(deleteResponse, (response.response?.statusCode)!)
                 }
                 break
             case .failure(let error):

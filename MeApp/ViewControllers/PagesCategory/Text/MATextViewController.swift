@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import IQKeyboardManagerSwift
 
-class MATextViewController: UIViewController, UITextViewDelegate {
+class MATextViewController: MABaseViewController, UITextViewDelegate {
     @IBOutlet weak var textUITextView: UITextView!
     @IBOutlet weak var selectedCategory: ShadowButton!
     @IBOutlet weak var selectedType: ShadowButton!
@@ -59,7 +59,11 @@ class MATextViewController: UIViewController, UITextViewDelegate {
         let parameters: Parameters = ["type" : recordType.key,
                                       "record_category_id" : recordCategory.id as Any,
                                       "value" : textUITextView.text]
-        RecordsRequest.createRecord(parameters: parameters, completion: { (response) in
+        RecordsRequest.createRecord(parameters: parameters, completion: { (response, statusCode) in
+            if statusCode == 401{
+                self.logOut()
+                return
+            }
             NotificationCenter.default.post(name: Notification.Name("CLOSESLIDEPAGE"), object: nil)
         }) { (error) in
             AlertController.showError()
@@ -67,11 +71,11 @@ class MATextViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func edit(_ sender: Any) {
-        if editUIButton.titleLabel?.text == "Confirm"{
-            textUITextView.resignFirstResponder()
-        }else {
-            textUITextView.becomeFirstResponder()
-        }
+//        if editUIButton.titleLabel?.text == "Confirm"{
+//            textUITextView.resignFirstResponder()
+//        }else {
+//            textUITextView.becomeFirstResponder()
+//        }
     }
     
     @IBAction func clear(_ sender: Any) {

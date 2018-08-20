@@ -11,6 +11,7 @@ import UIKit
 class MAPersonalViewController: MABaseViewController {
     @IBOutlet weak var tableView: UITableView!
     var recordList: NSMutableArray! = NSMutableArray()
+    var recordTypeList: NSMutableArray! = NSMutableArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,7 @@ class MAPersonalViewController: MABaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
+        getRecordType()
         getRecordList()
     }
 
@@ -26,8 +28,24 @@ class MAPersonalViewController: MABaseViewController {
         super.didReceiveMemoryWarning()
     }
     
+    func getRecordType(){
+        RecordTypeRequest.getRecordType(completion: { (response, statusCode) in
+            if statusCode == 401{
+                self.logOut()
+                return
+            }
+            self.recordTypeList.addObjects(from: response as! [Any])
+        }) { (error) in
+            AlertController.showError()
+        }
+    }
+    
     func getRecordList(){
-        RecordsRequest.getRecordsList(completion: { (response) in
+        RecordsRequest.getRecordsList(completion: { (response, statusCode) in
+            if statusCode == 401{
+                self.logOut()
+                return
+            }
             self.recordList.removeAllObjects()
             self.recordList.addObjects(from: response as! [Any])
             self.tableView.reloadData()
@@ -65,56 +83,12 @@ extension MAPersonalViewController: UITableViewDelegate, UITableViewDataSource{
             cell.validationNumber.isHidden = true
         }
        
-        if record.key == "primary_email"{
-            cell.cellTypeLabel.text = "Primary E-mail"
-            cell.nameLabel.text = record.value
-        }else if record.key == "family_name"{
-            cell.cellTypeLabel.text = "Family name"
-            cell.nameLabel.text = record.value
-        }else if record.key == "email"{
-             cell.cellTypeLabel.text = "E-mail"
-            cell.nameLabel.text = record.value
-        }else if record.key == "parent"{
-            cell.cellTypeLabel.text = "Parent"
-            cell.nameLabel.text = record.value
-        }else if record.key == "telephone"{
-            cell.cellTypeLabel.text = "Phone Number"
-            cell.nameLabel.text = record.value
-        }else if record.key == "given_name"{
-            cell.cellTypeLabel.text = "Given Name"
-            cell.nameLabel.text = record.value
-        }else if record.key == "gender"{
-            cell.cellTypeLabel.text = "Gender"
-            cell.nameLabel.text = record.value
-        }else if record.key == "children"{
-            cell.cellTypeLabel.text = "Children"
-            cell.nameLabel.text = record.value
-        }else if record.key == "children_nth"{
-            cell.cellTypeLabel.text = "Children"
-            cell.nameLabel.text = record.value
-        }else if record.key == "tax_id"{
-            cell.cellTypeLabel.text = "Tax ID"
-            cell.nameLabel.text = record.value
-        }else if record.key == "birth_date"{
-            cell.cellTypeLabel.text = "Birth date"
-            cell.nameLabel.text = record.value
-        }else if record.key == "spouse"{
-            cell.cellTypeLabel.text = "Birth date"
-            cell.nameLabel.text = record.value
-        }else if record.key == "net_worth"{
-            cell.cellTypeLabel.text = "Net worth"
-            cell.nameLabel.text = record.value
-        }else if record.key == "base_salary"{
-            cell.cellTypeLabel.text = "Base salary"
-            cell.nameLabel.text = record.value
-        }else if record.key == "bsn"{
-            cell.cellTypeLabel.text = "BSN"
-            cell.nameLabel.text = record.value
-        }else if record.key == "kindpakket_2018_eligible"{
-            cell.cellTypeLabel.text = "Kindpakket Eligible"
-            cell.nameLabel.text = record.value
+        for recordType in recordTypeList{
+            if (recordType as! RecordType).key == record.key{
+                cell.cellTypeLabel.text = (recordType as! RecordType).name
+            }
         }
-        
+        cell.nameLabel.text = record.value
         return cell
     }
     

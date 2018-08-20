@@ -79,13 +79,16 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
                     let parameters: Parameters = ["pin_code" : UserDefaults.standard.string(forKey: ALConstants.kPincode)!,
                                                   "records" : emailObject]
                     RequestNewIndetity.createnewIndentity(parameters: parameters,
-                                                          completion: { (response) in
+                                                          completion: { (response, statusCode) in
+                                                            if statusCode == 401 {
+                                                                
+                                                            }
                                                             if response.errors == nil && response.accessToken != nil{
                                                                 self.updateOldIndentity()
                                                                 self.saveNewIdentity(accessToken: response.accessToken, pinCode: Int16(UserDefaults.standard.integer(forKey: ALConstants.kPincode)))
                                                                 self.getCurrentUser(primaryEmai: self.primaryEmail)
-                                                                RecordCategoryRequest.createRecordCategory(completion: { (response) in
-            
+                                                                RecordCategoryRequest.createRecordCategory(completion: { (response, statusCode) in
+                                                                    
                                                                 }) { (error) in
             
                                                                 }

@@ -96,6 +96,9 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
         }
         
     }
+    @IBAction func logout(_ sender: Any) {
+        self.logOut()
+    }
 }
 
 // MARK: - VoiceButtonDelegate

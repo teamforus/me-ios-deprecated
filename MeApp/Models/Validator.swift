@@ -123,7 +123,7 @@ extension Organization: JSONEncodable{
 
 class ValidatorsRequest {
 
-    static func getValidatorList(completion: @escaping ((NSMutableArray) -> Void), failure: @escaping ((Error) -> Void)){
+    static func getValidatorList(completion: @escaping ((NSMutableArray, Int) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
             "Accept": "application/json",
             "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"
@@ -140,7 +140,7 @@ class ValidatorsRequest {
                             recordList.add(record)
                         }
                     }
-                    completion(recordList)
+                    completion(recordList, (response.response?.statusCode)!)
                 }
                 break
             case .failure(let error):
@@ -150,7 +150,7 @@ class ValidatorsRequest {
         }
     }
     
-    static func createValidationRequest(parameters: Parameters, completion: @escaping ((Validators) -> Void), failure: @escaping ((Error) -> Void)){
+    static func createValidationRequest(parameters: Parameters, completion: @escaping ((Validators, Int) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
             "Accept": "application/json",
             "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"
@@ -165,10 +165,10 @@ class ValidatorsRequest {
                    
                     if (json as AnyObject)["data"]! != nil {
                     let authorizeCodeResponse = try! Validators(object: (json as AnyObject)["data"]  as! JSONObject)
-                        completion(authorizeCodeResponse)
+                        completion(authorizeCodeResponse, (response.response?.statusCode)!)
                     }else {
                        let authorizeCodeResponse = try! Validators(object: json  as! JSONObject)
-                        completion(authorizeCodeResponse)
+                        completion(authorizeCodeResponse, (response.response?.statusCode)!)
                     }
                     
                 }

@@ -70,7 +70,7 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         firstAppearanceCompleted = true;
-        AuthorizeTokenRequest.createToken(completion: { (response) in
+        AuthorizeTokenRequest.createToken(completion: { (response, statusCode) in
             if response.authToken != nil{
             self.authorizeToken = response
 //                {"type":"auth_token","value":"d6a673ae21ff01d2cabd2c58ed4bf46df98ea1cc6459109d6985b112c9ac8c75"}

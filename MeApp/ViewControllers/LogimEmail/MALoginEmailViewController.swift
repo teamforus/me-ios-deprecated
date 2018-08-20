@@ -72,11 +72,11 @@ class MALoginEmailViewController: MABaseViewController {
                 
                 AuthorizationEmailRequest.loginWithEmail(parameters: try! AuthorizationEmail(email: emailSkyTextField.text!,
                                                          source:"app.me_app").toJSON() as! Parameters,
-                    completion: { (response) in
+                    completion: { (response, statusCode) in
                     if response.errors == nil {
                         UserDefaults.standard.setValue(response.accessToken, forKeyPath: "auth_token")
                         
-                        AuthorizationEmailRequest.authorizeEmailToken(completion: { (response) in
+                        AuthorizationEmailRequest.authorizeEmailToken(completion: { (response, statusCode) in
                             self.performSegue(withIdentifier: "goToWalet", sender: self)
                         }, failure: { (error) in
                             AlertController.showError()

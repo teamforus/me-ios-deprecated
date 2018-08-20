@@ -12,7 +12,7 @@ import JSONCodable
 
 class RequestNewIndetity{
     
-    static func createnewIndentity(parameters: Parameters, completion: @escaping ((Response) -> Void), failure: @escaping ((Error) -> Void)){
+    static func createnewIndentity(parameters: Parameters, completion: @escaping ((Response, Int) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
             "Accept": "application/json"
         ]
@@ -22,7 +22,7 @@ class RequestNewIndetity{
             case .success:
                 if let json = response.result.value {
                     let messages = try! Response(object: json as! JSONObject)
-                    completion(messages)
+                    completion(messages, (response.response?.statusCode)!)
                 }
                 break
             case .failure(let error):

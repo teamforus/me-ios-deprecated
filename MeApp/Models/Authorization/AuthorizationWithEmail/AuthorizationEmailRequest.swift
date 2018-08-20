@@ -12,7 +12,7 @@ import JSONCodable
 
 class AuthorizationEmailRequest {
     
-    static func loginWithEmail(parameters: Parameters, completion: @escaping ((Response) -> Void), failure: @escaping ((Error) -> Void)){
+    static func loginWithEmail(parameters: Parameters, completion: @escaping ((Response, Int) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
             "Accept": "application/json"
         ]
@@ -24,7 +24,7 @@ class AuthorizationEmailRequest {
                 if let json = response.result.value {
                     let messages = try! Response(object: json as! JSONObject)
                     print(messages)
-                    completion(messages)
+                    completion(messages, (response.response?.statusCode)!)
                 }
                 break
             case .failure(let error):
@@ -34,7 +34,7 @@ class AuthorizationEmailRequest {
         }
     }
     
-    static func authorizeEmailToken(completion: @escaping ((Response) -> Void), failure: @escaping ((Error) -> Void)){
+    static func authorizeEmailToken(completion: @escaping ((Response, Int) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
             "Accept": "application/json",
             "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"
@@ -47,7 +47,7 @@ class AuthorizationEmailRequest {
                 if let json = response.result.value {
                     let messages = try! Response(object: json as! JSONObject)
                     print(messages)
-                    completion(messages)
+                    completion(messages, (response.response?.statusCode)!)
                 }
                 break
             case .failure(let error):

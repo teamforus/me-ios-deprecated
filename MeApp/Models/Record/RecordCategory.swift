@@ -37,7 +37,7 @@ extension RecordCategory: JSONEncodable{
 
 class RecordCategoryRequest {
     
-    static func getRecordCategory(completion: @escaping ((NSMutableArray) -> Void), failure: @escaping ((Error) -> Void)){
+    static func getRecordCategory(completion: @escaping ((NSMutableArray, Int) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
             "Accept": "application/json",
             "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"
@@ -54,7 +54,7 @@ class RecordCategoryRequest {
                             recordTypeList.add(recordType)
                         }
                     }
-                    completion(recordTypeList)
+                    completion(recordTypeList, (response.response?.statusCode)!)
                 }
                 break
             case .failure(let error):
@@ -64,7 +64,7 @@ class RecordCategoryRequest {
         }
     }
     
-    static func getCategory(categoryId: Int, completion: @escaping ((RecordCategory) -> Void), failure: @escaping ((Error) -> Void)){
+    static func getCategory(categoryId: Int, completion: @escaping ((RecordCategory, Int) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
             "Accept": "application/json",
             "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"
@@ -75,7 +75,7 @@ class RecordCategoryRequest {
             case .success:
                 if let json = response.result.value {
                     let recordType = try! RecordCategory(object: json as! JSONObject)
-                    completion(recordType)
+                    completion(recordType, (response.response?.statusCode)!)
                 }
                 break
             case .failure(let error):
@@ -85,7 +85,7 @@ class RecordCategoryRequest {
         }
     }
     
-    static func createRecordCategory(completion: @escaping ((Response) -> Void), failure: @escaping ((Error) -> Void)){
+    static func createRecordCategory(completion: @escaping ((Response, Int) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
             "Accept": "application/json",
             "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"
@@ -100,7 +100,7 @@ class RecordCategoryRequest {
             case .success:
                 if let json = response.result.value {
                     let authorizeCodeResponse = try! Response(object: json as! JSONObject)
-                    completion(authorizeCodeResponse)
+                    completion(authorizeCodeResponse, (response.response?.statusCode)!)
                 }
                 break
             case .failure(let error):

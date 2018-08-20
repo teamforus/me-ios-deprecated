@@ -45,7 +45,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6kS-ba-3rR">
-                                <rect key="frame" x="8" y="223" width="359" height="28"/>
+                                <rect key="frame" x="8" y="208" width="359" height="28"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y48-OI-bV6" userLabel="first" customClass="Indicator" customModule="Me" customModuleProvider="target">
                                         <rect key="frame" x="120" y="7.5" width="14.5" height="14.5"/>
@@ -113,7 +113,7 @@
                             <constraint firstItem="BiA-iv-5oK" firstAttribute="top" secondItem="hVx-18-l1J" secondAttribute="bottom" constant="8.5" id="dUH-mc-nNL"/>
                             <constraint firstAttribute="trailing" secondItem="6kS-ba-3rR" secondAttribute="trailing" constant="8" id="gi3-Ze-ZlI"/>
                             <constraint firstItem="BiA-iv-5oK" firstAttribute="leading" secondItem="O4o-Ks-4Ii" secondAttribute="leading" constant="20" id="hm6-JS-fkp"/>
-                            <constraint firstItem="6kS-ba-3rR" firstAttribute="top" secondItem="9Yc-zm-CFr" secondAttribute="bottom" constant="3" id="rwf-wn-aLV"/>
+                            <constraint firstItem="6kS-ba-3rR" firstAttribute="top" secondItem="9Yc-zm-CFr" secondAttribute="bottom" constant="-12" id="rwf-wn-aLV"/>
                             <constraint firstItem="6kS-ba-3rR" firstAttribute="leading" secondItem="O4o-Ks-4Ii" secondAttribute="leading" constant="8" id="x0K-gx-1Dy"/>
                             <constraint firstAttribute="trailing" secondItem="9Yc-zm-CFr" secondAttribute="trailing" constant="8" id="y15-Jy-o4e"/>
                         </constraints>

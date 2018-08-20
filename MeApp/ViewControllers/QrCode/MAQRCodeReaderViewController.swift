@@ -10,7 +10,7 @@ import UIKit
 import QRCodeReader
 import Alamofire
 
-class MAQRCodeReaderViewController: UIViewController {
+class MAQRCodeReaderViewController: MABaseViewController {
     lazy var reader: QRCodeReader = QRCodeReader()
     
     
@@ -30,7 +30,7 @@ class MAQRCodeReaderViewController: UIViewController {
                  self.reader.startScanning()
                 var token = result.value.components(separatedBy: ":")
                 let parameter: Parameters = ["auth_token" : token[1]]
-                AuthorizeTokenRequest.authorizeToken(parameter: parameter, completion: { (response) in
+                AuthorizeTokenRequest.authorizeToken(parameter: parameter, completion: { (response, statusCode) in
                     self.reader.startScanning()
                 }, failure: { (error) in
                     AlertController.showError()
@@ -39,13 +39,19 @@ class MAQRCodeReaderViewController: UIViewController {
             }else if result.value.range(of:"uuid") != nil{
                 
                 var token = result.value.components(separatedBy: ":")
-                RecordsRequest.readValidationTokenRecord(token: token[1], completion: { (response) in
+                RecordsRequest.readValidationTokenRecord(token: token[1], completion: { (response, statusCode) in
+                    if statusCode == 401{
+                        self.logOut()
+                    }
                      self.reader.startScanning()
                     let alert: UIAlertController
                     alert = UIAlertController(title: response.name, message: response.value, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Aprove", style: .default, handler: { (action) in
                         self.reader.startScanning()
-                        RecordsRequest.aproveValidationTokenRecord(token: token[1], completion: { (response) in
+                        RecordsRequest.aproveValidationTokenRecord(token: token[1], completion: { (response, statusCode) in
+                            if statusCode == 401{
+                                self.logOut()
+                            }
                              self.reader.startScanning()
                         }, failure: { (error) in
                             AlertController.showError()
@@ -67,20 +73,26 @@ class MAQRCodeReaderViewController: UIViewController {
                     {
                         if jsonArray["type"] as! String == "auth_token"{
                         let parameter: Parameters = ["auth_token" : jsonArray["value"] as! String]
-                        AuthorizeTokenRequest.authorizeToken(parameter: parameter, completion: { (response) in
+                        AuthorizeTokenRequest.authorizeToken(parameter: parameter, completion: { (response, statusCode) in
                             self.reader.startScanning()
                         }, failure: { (error) in
                             AlertController.showError()
                             self.reader.startScanning()
                         })
                         }else{
-                            RecordsRequest.readValidationTokenRecord(token: jsonArray["value"] as! String, completion: { (response) in
+                            RecordsRequest.readValidationTokenRecord(token: jsonArray["value"] as! String, completion: { (response, statusCode) in
+                                if statusCode == 401{
+                                    self.logOut()
+                                }
                                 self.reader.startScanning()
                                 let alert: UIAlertController
                                 alert = UIAlertController(title: response.name, message: response.value, preferredStyle: .alert)
                                 alert.addAction(UIAlertAction(title: "Aprove", style: .default, handler: { (action) in
                                     self.reader.startScanning()
-                                    RecordsRequest.aproveValidationTokenRecord(token: jsonArray["value"] as! String, completion: { (response) in
+                                    RecordsRequest.aproveValidationTokenRecord(token: jsonArray["value"] as! String, completion: { (response, statusCode) in
+                                        if statusCode == 401{
+                                            self.logOut()
+                                        }
                                         self.reader.startScanning()
                                     }, failure: { (error) in
                                         AlertController.showError()

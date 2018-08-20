@@ -32,7 +32,7 @@ class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        AuthorizationCodeRequest.createAuthorizationCode(completion: { (response) in
+        AuthorizationCodeRequest.createAuthorizationCode(completion: { (response, statusCode) in
             if response.authCode != nil{
                 let stringCode: String = "\(response.authCode!)"
                 if stringCode.count == 6{
@@ -76,7 +76,7 @@ class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
     
     @IBAction func loginWithCode(_ sender: Any) {
         if UserShared.shared.currentUser != nil {
-            AuthorizationCodeRequest.authorizeCode(completion: { (response) in
+            AuthorizationCodeRequest.authorizeCode(completion: { (response, statusCode) in
                 if response.success != nil {
                     self.performSegue(withIdentifier: "goToWallet", sender: nil)
                 }else if response.message != nil {
