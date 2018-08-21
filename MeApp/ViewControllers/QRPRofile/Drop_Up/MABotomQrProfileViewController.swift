@@ -10,6 +10,7 @@ import UIKit
 import ISHPullUp
 import AssistantKit
 import CoreData
+import Reachability
 
 class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate, ISHPullUpStateDelegate{
     @IBOutlet private weak var handleView: ISHPullUpHandleView!
@@ -20,6 +21,7 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     var timer : Timer! = Timer()
     var authorizeToken: AuthorizeToken!
+    let reachability =  Reachability()!
     
     private var firstAppearanceCompleted = false
     weak var pullUpController: ISHPullUpViewController!
@@ -37,7 +39,7 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
         
         NotificationCenter.default.addObserver(self, selector: #selector(toglePullUpView), name: Notification.Name("togleStateWindow"), object: nil)
         var rect: CGRect = self.rootView.frame
-             let screen = Device.screen
+        let screen = Device.screen
         switch screen {
         case .inches_4_0:
             rect.size.height = 440
@@ -58,37 +60,41 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
         self.rootView.frame = rect
     }
     
-   @objc func toglePullUpView(){
-    if pullUpController.state == .expanded{
-        self.view.isHidden = true
-    }else{
-        self.view.isHidden = false
-    }
+    @objc func toglePullUpView(){
+        if pullUpController.state == .expanded{
+            self.view.isHidden = true
+        }else{
+            self.view.isHidden = false
+        }
         pullUpController.toggleState(animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         firstAppearanceCompleted = true;
-        AuthorizeTokenRequest.createToken(completion: { (response, statusCode) in
-            if response.authToken != nil{
-            self.authorizeToken = response
-//                {"type":"auth_token","value":"d6a673ae21ff01d2cabd2c58ed4bf46df98ea1cc6459109d6985b112c9ac8c75"}
-                
-            self.qrCodeImageView.generateQRCode(from: "authToken:\(response.authToken!)")
-            self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.checkAuthorizeToken), userInfo: nil, repeats: true)
-            }else{
+        if reachability.connection != .none{
+            AuthorizeTokenRequest.createToken(completion: { (response, statusCode) in
+                if response.authToken != nil{
+                    self.authorizeToken = response
+                    //                {"type":"auth_token","value":"d6a673ae21ff01d2cabd2c58ed4bf46df98ea1cc6459109d6985b112c9ac8c75"}
+                    
+                    self.qrCodeImageView.generateQRCode(from: "authToken:\(response.authToken!)")
+                    self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.checkAuthorizeToken), userInfo: nil, repeats: true)
+                }else{
+                    AlertController.showError()
+                }
+            }) { (error) in
                 AlertController.showError()
             }
-        }) { (error) in
-            AlertController.showError()
+        }else{
+            AlertController.showInternetUnable()
         }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if timer != nil {
-        self.timer.invalidate()
+            self.timer.invalidate()
         }
     }
     
@@ -180,7 +186,7 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
     
     @IBAction func close(_ sender: Any) {
         if pullUpController.state == .expanded{
-             pullUpController.toggleState(animated: true)
+            pullUpController.toggleState(animated: true)
             self.view.isHidden = true
         }
     }

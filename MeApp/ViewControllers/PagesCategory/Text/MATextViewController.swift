@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import IQKeyboardManagerSwift
+import Reachability
 
 class MATextViewController: MABaseViewController, UITextViewDelegate {
     @IBOutlet weak var textUITextView: UITextView!
@@ -17,6 +18,7 @@ class MATextViewController: MABaseViewController, UITextViewDelegate {
     @IBOutlet weak var editUIButton: UIButton!
     @IBOutlet weak var clearUIButton: UIButton!
     var recordType: RecordType!
+    let reachablity = Reachability()!
     var recordCategory: RecordCategory!
     
     override func viewDidLoad() {
@@ -56,26 +58,30 @@ class MATextViewController: MABaseViewController, UITextViewDelegate {
                 return
             }
         }
-        let parameters: Parameters = ["type" : recordType.key,
-                                      "record_category_id" : recordCategory.id as Any,
-                                      "value" : textUITextView.text]
-        RecordsRequest.createRecord(parameters: parameters, completion: { (response, statusCode) in
-            if statusCode == 401{
-                self.logOut()
-                return
+        if reachablity.connection != .none{
+            let parameters: Parameters = ["type" : recordType.key,
+                                          "record_category_id" : recordCategory.id as Any,
+                                          "value" : textUITextView.text]
+            RecordsRequest.createRecord(parameters: parameters, completion: { (response, statusCode) in
+                if statusCode == 401{
+                    self.logOut()
+                    return
+                }
+                NotificationCenter.default.post(name: Notification.Name("CLOSESLIDEPAGE"), object: nil)
+            }) { (error) in
+                AlertController.showError()
             }
-            NotificationCenter.default.post(name: Notification.Name("CLOSESLIDEPAGE"), object: nil)
-        }) { (error) in
-            AlertController.showError()
+        }else {
+            AlertController.showInternetUnable()
         }
     }
     
     @IBAction func edit(_ sender: Any) {
-//        if editUIButton.titleLabel?.text == "Confirm"{
-//            textUITextView.resignFirstResponder()
-//        }else {
-//            textUITextView.becomeFirstResponder()
-//        }
+        //        if editUIButton.titleLabel?.text == "Confirm"{
+        //            textUITextView.resignFirstResponder()
+        //        }else {
+        //            textUITextView.becomeFirstResponder()
+        //        }
     }
     
     @IBAction func clear(_ sender: Any) {
@@ -86,10 +92,10 @@ class MATextViewController: MABaseViewController, UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         if textView.text.count != 0{
             clearUIButton.isHidden = false
-            editUIButton.setTitle("Confirm", for: .normal)
+//            editUIButton.setTitle("Confirm", for: .normal)
         }else {
             clearUIButton.isHidden = true
-            editUIButton.setTitle("Edit", for: .normal)
+//            editUIButton.setTitle("Edit", for: .normal)
         }
     }
     

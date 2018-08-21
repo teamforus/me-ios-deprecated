@@ -11,6 +11,7 @@ import ScrollableSegmentedControl
 import SwipeCellKit
 import CoreData
 import Speech
+import Reachability
 enum WalletCase {
     case token
     case assets
@@ -21,8 +22,7 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
     func closePinCodeView(typeClose: typeClose) {
         
     }
-    
-    
+    let reachability = Reachability()!
     @IBOutlet weak var tableView: UITableView!
     var walletCase : WalletCase! = WalletCase.token
     @IBOutlet weak var segmentView: UIView!
@@ -30,11 +30,12 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
 //    @IBOutlet weak var voiceButton: VoiceButtonView!
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "ro"))!
     @IBOutlet weak var segmentedControl: HBSegmentedControl!
-    let largerRedTextSelectAttributes = [NSAttributedStringKey.font: UIFont(name: "SFProText-Bold", size: 13.0),
+    let largerRedTextSelectAttributes = [NSAttributedStringKey.font: UIFont(name: "GoogleSans-Medium", size: 13.0),
                                          NSAttributedStringKey.foregroundColor: UIColor.white]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" && UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil{
             var appearance = ALAppearance()
             appearance.image = UIImage(named: "lock")!
@@ -42,7 +43,7 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
             appearance.isSensorsEnabled = true
             appearance.delegate = self
             
-            AppLocker.present(with: .validate, and: appearance)
+            AppLocker.present(with: .validate, and: appearance, withController: self)
         }
         segmentView.layer.cornerRadius = 8.0
         tableView.setContentOffset(CGPoint(x: 0, y: 44), animated: true)

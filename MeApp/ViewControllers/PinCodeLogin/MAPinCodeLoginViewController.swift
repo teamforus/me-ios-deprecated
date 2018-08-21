@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftMessages
+import Reachability
 
 class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
     @IBOutlet weak var codeUITextField: UITextField!
@@ -18,6 +19,7 @@ class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
     @IBOutlet weak var digit5UILabel: UILabel!
     @IBOutlet weak var digit6UILabel: UILabel!
     @IBOutlet weak var viewPinCode: UIView!
+    let reachability = Reachability()!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,21 +34,25 @@ class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        AuthorizationCodeRequest.createAuthorizationCode(completion: { (response, statusCode) in
-            if response.authCode != nil{
-                let stringCode: String = "\(response.authCode!)"
-                if stringCode.count == 6{
-                    self.digit1UILabel.text = String(stringCode[0])
-                    self.digit2UILabel.text = String(stringCode[1])
-                    self.digit3UILabel.text = String(stringCode[2])
-                    self.digit4UILabel.text = String(stringCode[3])
-                    self.digit5UILabel.text = String(stringCode[4])
-                    self.digit6UILabel.text = String(stringCode[5])
-                    UserDefaults.standard.setValue(response.authCode, forKey: "auth_code")
+        if reachability.connection != .none{
+            AuthorizationCodeRequest.createAuthorizationCode(completion: { (response, statusCode) in
+                if response.authCode != nil{
+                    let stringCode: String = "\(response.authCode!)"
+                    if stringCode.count == 6{
+                        self.digit1UILabel.text = String(stringCode[0])
+                        self.digit2UILabel.text = String(stringCode[1])
+                        self.digit3UILabel.text = String(stringCode[2])
+                        self.digit4UILabel.text = String(stringCode[3])
+                        self.digit5UILabel.text = String(stringCode[4])
+                        self.digit6UILabel.text = String(stringCode[5])
+                        UserDefaults.standard.setValue(response.authCode, forKey: "auth_code")
+                    }
                 }
+            }) { (error) in
+                AlertController.showError()
             }
-        }) { (error) in
-            AlertController.showError()
+        }else{
+            AlertController.showInternetUnable()
         }
     }
     
@@ -75,32 +81,36 @@ class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
     }
     
     @IBAction func loginWithCode(_ sender: Any) {
-        if UserShared.shared.currentUser != nil {
-            AuthorizationCodeRequest.authorizeCode(completion: { (response, statusCode) in
-                if response.success != nil {
-                    self.performSegue(withIdentifier: "goToWallet", sender: nil)
-                }else if response.message != nil {
-                    let error = MessageView.viewFromNib(layout: .tabView)
-                    error.configureTheme(.error)
-                    error.configureContent(title: "Warning", body: response.message , iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
-                        SwiftMessages.hide()
+        if reachability.connection != .none {
+            if UserShared.shared.currentUser != nil {
+                AuthorizationCodeRequest.authorizeCode(completion: { (response, statusCode) in
+                    if response.success != nil {
+                        self.performSegue(withIdentifier: "goToWallet", sender: nil)
+                    }else if response.message != nil {
+                        let error = MessageView.viewFromNib(layout: .tabView)
+                        error.configureTheme(.error)
+                        error.configureContent(title: "Warning", body: response.message , iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
+                            SwiftMessages.hide()
+                        }
+                        error.button?.setTitle("OK", for: .normal)
+                        
+                        SwiftMessages.show( view: error)
                     }
-                    error.button?.setTitle("OK", for: .normal)
-                    
-                    SwiftMessages.show( view: error)
+                }) { (error) in
+                    AlertController.showError()
                 }
-            }) { (error) in
-                AlertController.showError()
+            }else {
+                let error = MessageView.viewFromNib(layout: .tabView)
+                error.configureTheme(.error)
+                error.configureContent(title: "Warning", body: "This device in not authorize" , iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
+                    SwiftMessages.hide()
+                }
+                error.button?.setTitle("OK", for: .normal)
+                
+                SwiftMessages.show( view: error)
             }
         }else {
-            let error = MessageView.viewFromNib(layout: .tabView)
-            error.configureTheme(.error)
-            error.configureContent(title: "Warning", body: "This device in not authorize" , iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
-                SwiftMessages.hide()
-            }
-            error.button?.setTitle("OK", for: .normal)
-            
-            SwiftMessages.show( view: error)
+            AlertController.showInternetUnable()
         }
     }
 }

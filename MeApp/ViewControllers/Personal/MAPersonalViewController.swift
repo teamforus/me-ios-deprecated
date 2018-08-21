@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Reachability
 
 class MAPersonalViewController: MABaseViewController {
     @IBOutlet weak var tableView: UITableView!
     var recordList: NSMutableArray! = NSMutableArray()
     var recordTypeList: NSMutableArray! = NSMutableArray()
+    let reachablity = Reachability()!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +22,12 @@ class MAPersonalViewController: MABaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
+        if reachablity.connection != .none{
         getRecordType()
         getRecordList()
+        }else {
+            AlertController.showInternetUnable()
+        }
     }
 
     override func didReceiveMemoryWarning() {

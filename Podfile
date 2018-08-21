@@ -1,7 +1,7 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'MeApp' do
+target 'Me' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 pod 'SwipeCellKit'
@@ -23,12 +23,13 @@ pod 'Web3'
 pod 'AssistantKit'
 pod 'ISHPullUp'
 pod 'BWWalkthrough'
+pod 'ReachabilitySwift'
 pod 'web3swift', :git => 'https://github.com/MercuryProtocol/web3.swift.git', :branch => 'master'
-  target 'MeAppTests' do
+  target 'MeTests' do
     inherit! :search_paths
   end
 
-  target 'MeAppUITests' do
+  target 'MeUITests' do
     inherit! :search_paths
   end
 

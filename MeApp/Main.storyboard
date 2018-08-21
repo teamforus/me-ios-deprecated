@@ -570,7 +570,7 @@
         <!--QR-->
         <scene sceneID="s6p-hV-QEf">
             <objects>
-                <viewController id="Yx9-nY-Sea" customClass="MAQRCodeReaderViewController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="qrCodeReader" id="Yx9-nY-Sea" customClass="MAQRCodeReaderViewController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1yp-So-mmF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1631,7 +1631,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a passcode that will be requested to enter the Me app." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPq-Qe-jcq">
-                                <rect key="frame" x="24" y="426" width="333" height="54"/>
+                                <rect key="frame" x="24" y="426" width="333" height="53.5"/>
                                 <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

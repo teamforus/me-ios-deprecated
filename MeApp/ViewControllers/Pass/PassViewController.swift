@@ -18,6 +18,7 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
     @IBOutlet weak var emailMeButton: UIButton!
     @IBOutlet weak var smallerAmount: UIButton!
     @IBOutlet weak var qrView: UIView!
+    var gestureRecognizer: UIGestureRecognizer!
     
     let presenter: Presentr = {
         let presenter = Presentr(presentationType: .alert)
@@ -34,9 +35,15 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
         kindPaketQRView.layer.shadowOpacity = 0.1
         kindPaketQRView.layer.shadowRadius = 10.0
         kindPaketQRView.layer.masksToBounds = false
-        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(goToQRReader))
+        imageQR.isUserInteractionEnabled = true
+        imageQR.addGestureRecognizer(tapGestureRecognizer)
         smallerAmount.layer.cornerRadius = 9.0
         emailMeButton.layer.cornerRadius = 9.0
+    }
+    
+    @objc func goToQRReader(){
+        self.tabBarController?.selectedIndex = 1
     }
     
     override func viewWillAppear(_ animated: Bool) {

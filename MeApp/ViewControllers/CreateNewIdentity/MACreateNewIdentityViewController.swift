@@ -12,6 +12,7 @@ import Alamofire
 import SwiftMessages
 import CoreData
 import IQKeyboardManagerSwift
+import Reachability
 
 class MACreateNewIdentityViewController: MABaseViewController {
     @IBOutlet weak var validateIcon: UIImageView!
@@ -19,6 +20,7 @@ class MACreateNewIdentityViewController: MABaseViewController {
     @IBOutlet weak var givenNameField: SkyFloatingLabelTextField!
     @IBOutlet weak var familyNameField: SkyFloatingLabelTextField!
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let reachablity = Reachability()!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,12 +31,14 @@ class MACreateNewIdentityViewController: MABaseViewController {
         super.didReceiveMemoryWarning()
     }
     
-    
-    
     @IBAction func create(_ sender: Any) {
         if Validation.validateEmail(emailSkyFloatingTextField.text!){
             if Validation.validateFieldEmpty(textField: givenNameField) || Validation.validateFieldEmpty(textField: familyNameField) {
-                self.performSegue(withIdentifier: "goToPassword", sender: self)
+                if reachablity.connection != .none{
+                    self.performSegue(withIdentifier: "goToPassword", sender: self)
+                }else {
+                    AlertController.showInternetUnable()
+                }
             }
         }
     }
@@ -49,14 +53,12 @@ class MACreateNewIdentityViewController: MABaseViewController {
         }
     }
     
-    
     @IBAction func dismissKeyboard(_ sender: Any) {
         self.view.endEditing(true)
     }
     
     
     // MARK: - Navigation
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToPassword"{

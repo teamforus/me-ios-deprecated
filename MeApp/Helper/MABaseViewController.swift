@@ -9,6 +9,7 @@
 import UIKit
 import Presentr
 import CoreData
+import Reachability
 
 class MABaseViewController: UIViewController {
     let dynamicSizePresenter: Presentr = {

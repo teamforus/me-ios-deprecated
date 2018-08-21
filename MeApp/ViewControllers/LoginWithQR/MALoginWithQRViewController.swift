@@ -11,6 +11,7 @@ import Presentr
 import Alamofire
 import ISHPullUp
 import CoreData
+import Reachability
 
 class MALoginWithQRViewController: MABaseViewController, MARegistrationViewControllerDelegate, MASignUpViewControllerDelegate {
     @IBOutlet weak var qrBodyView: UIView!
@@ -18,6 +19,7 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
     @IBOutlet weak var loginWithPinCodeButton: UIButton!
     @IBOutlet weak var loginWithEmailButton: UIButton!
     weak var pullUpController: ISHPullUpViewController!
+    let reachability = Reachability()!
     
     
     var newIndetity: NewIdentity!

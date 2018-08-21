@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import Reachability
 
 class MAValidatorsViewController: MABaseViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -19,29 +20,34 @@ class MAValidatorsViewController: MABaseViewController {
     @IBOutlet weak var categoryName: ShadowButton!
     @IBOutlet weak var recordTypeName: ShadowButton!
     @IBOutlet weak var valueRecord: ShadowButton!
+    let reachablity = Reachability()!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         recordTypeName.setTitle(recordType, for: .normal)
         valueRecord.setTitle(recordValue, for: .normal)
-//        RecordCategoryRequest.getCategory(categoryId: recordCategoryId, completion: { (response) in
-//            self.categoryName.setTitle(response.name, for: .normal)
-//        }) { (error) in
-//
-//        }
+        //        RecordCategoryRequest.getCategory(categoryId: recordCategoryId, completion: { (response) in
+        //            self.categoryName.setTitle(response.name, for: .normal)
+        //        }) { (error) in
+        //
+        //        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        ValidatorsRequest.getValidatorList(completion: { (response, statusCode) in
-            self.validators.addObjects(from: response as! [Any])
-            self.tableView.reloadData()
-        }) { (error) in
-            
+        if reachablity.connection != .none{
+            ValidatorsRequest.getValidatorList(completion: { (response, statusCode) in
+                self.validators.addObjects(from: response as! [Any])
+                self.tableView.reloadData()
+            }) { (error) in
+                
+            }
+        }else {
+            AlertController.showInternetUnable()
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -69,6 +75,7 @@ extension MAValidatorsViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if reachablity.connection != .none{
         let validator = validators[indexPath.row] as! Validator
         let parametr: Parameters = ["validator_id" : validator.id!,
                                     "record_id" : recordID!]
@@ -79,7 +86,10 @@ extension MAValidatorsViewController: UITableViewDataSource, UITableViewDelegate
                 AlertController.showSuccess(withText: "")
             }
         }) { (error) in
-
+            
+        }
+        }else {
+            AlertController.showInternetUnable()
         }
     }
 }

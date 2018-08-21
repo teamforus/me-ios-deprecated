@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "333EE4004B4A6A6D8BD3201A7383BD3D"
+               BlueprintIdentifier = "3F2428A4D637269D45EFE03785378057"
                BlueprintName = "web3swift"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "libweb3swift.a">

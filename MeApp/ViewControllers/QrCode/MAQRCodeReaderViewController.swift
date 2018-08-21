@@ -9,10 +9,11 @@
 import UIKit
 import QRCodeReader
 import Alamofire
+import Reachability
 
 class MAQRCodeReaderViewController: MABaseViewController {
     lazy var reader: QRCodeReader = QRCodeReader()
-    
+    let reachablity = Reachability()!
     
     @IBOutlet weak var previewQR: QRCodeReaderView!{
         didSet {
@@ -26,6 +27,7 @@ class MAQRCodeReaderViewController: MABaseViewController {
         
         reader.didFindCode = { result in
             print("Completion with result: \(result.value) of type \(result.metadataType)")
+            if self.reachablity.connection != .none{
             if result.value.range(of:"authToken") != nil {
                  self.reader.startScanning()
                 var token = result.value.components(separatedBy: ":")
@@ -116,10 +118,18 @@ class MAQRCodeReaderViewController: MABaseViewController {
                     self.reader.startScanning()
                 }
             }
+            }else{
+                AlertController.showInternetUnable()
+            }
         }
         
         
         reader.startScanning()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     private func checkScanPermissions() -> Bool {

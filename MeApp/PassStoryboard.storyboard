@@ -23,7 +23,7 @@
         <!--Item 2-->
         <scene sceneID="gfI-HJ-TEh">
             <objects>
-                <viewController storyboardIdentifier="Pass" id="P1o-sl-MnT" customClass="PassViewController" customModule="MeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Pass" id="P1o-sl-MnT" customClass="PassViewController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JN2-pl-xhh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -107,7 +107,7 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="qrV" translatesAutoresizingMaskIntoConstraints="NO" id="be5-K4-b8z">
-                                        <rect key="frame" x="241" y="171" width="80" height="80"/>
+                                        <rect key="frame" x="246" y="171" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
@@ -119,7 +119,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="xPP-kh-0h3" customClass="PassTableViewCell" customModule="MeApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="xPP-kh-0h3" customClass="PassTableViewCell" customModule="Me" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="98"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xPP-kh-0h3" id="vrH-VP-q3F">
@@ -209,16 +209,25 @@
                         <outlet property="kindPaketQRView" destination="gwF-Q9-Agm" id="6gA-PV-qsT"/>
                         <outlet property="qrView" destination="gwF-Q9-Agm" id="OEW-37-BAY"/>
                         <outlet property="smallerAmount" destination="FNc-gw-bh0" id="FM7-hF-Dqf"/>
+                        <segue destination="vKb-xc-8sb" kind="show" identifier="goToQRCodeReader" id="1cR-YL-eXJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pQF-2Z-J5L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-15.199999999999999" y="210.04497751124438"/>
+            <point key="canvasLocation" x="-502" y="209"/>
+        </scene>
+        <!--qrCodeReader-->
+        <scene sceneID="YIT-Y3-nmL">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="qrCodeReader" id="vKb-xc-8sb" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="crv-QO-t6s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="164" y="121"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="V8a-4D-Cfb">
             <objects>
-                <viewController storyboardIdentifier="Courrencies" id="zzR-08-D2G" customClass="MAKindpakketCurrenciesViewController" customModule="MeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Courrencies" id="zzR-08-D2G" customClass="MAKindpakketCurrenciesViewController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m33-Kv-dHd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -283,7 +292,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="j0k-eu-IVi" customClass="PassTableViewCell" customModule="MeApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="j0k-eu-IVi" customClass="PassTableViewCell" customModule="Me" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="98"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="j0k-eu-IVi" id="RpM-i0-tno">

@@ -9,6 +9,7 @@
 import UIKit
 import UICheckbox_Swift
 import BWWalkthrough
+import Reachability
 
 class MAChooseTypeViewController: MABaseViewController, BWWalkthroughPage, MAChooseTypeTableViewCellDelegate {
     
@@ -18,6 +19,7 @@ class MAChooseTypeViewController: MABaseViewController, BWWalkthroughPage, MACho
     var selectedCell : NSMutableArray!
     var previousIndex: Int!
     var previousCell: MAChooseTypeTableViewCell!
+    let reachablity = Reachability()!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,15 +33,19 @@ class MAChooseTypeViewController: MABaseViewController, BWWalkthroughPage, MACho
     }
     
     func getRecordType(){
-        RecordTypeRequest.getRecordType(completion: { (response, statusCode) in
-            if statusCode == 401{
-                self.logOut()
-                return
+        if reachablity.connection != .none{
+            RecordTypeRequest.getRecordType(completion: { (response, statusCode) in
+                if statusCode == 401{
+                    self.logOut()
+                    return
+                }
+                self.recordTypeList.addObjects(from: response as! [Any])
+                self.tableView.reloadData()
+            }) { (error) in
+                AlertController.showError()
             }
-            self.recordTypeList.addObjects(from: response as! [Any])
-            self.tableView.reloadData()
-        }) { (error) in
-            AlertController.showError()
+        }else{
+            AlertController.showInternetUnable()
         }
     }
     
@@ -56,7 +62,7 @@ class MAChooseTypeViewController: MABaseViewController, BWWalkthroughPage, MACho
     }
     
     func walkthroughDidScroll(to: CGFloat, offset: CGFloat) {
-       
+        
     }
     
     func chooseType(cell: MAChooseTypeTableViewCell) {
@@ -105,6 +111,6 @@ extension MAChooseTypeViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      
+        
     }
 }

@@ -8,35 +8,41 @@
 
 import UIKit
 import SwiftMessages
+import Reachability
 
 class MAChooseCategoryViewController: MABaseViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     var recordCategories : NSMutableArray! = NSMutableArray()
     var previusCell: MAChooseCategoryCollectionViewCell!
+    let reachablity = Reachability()!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getRecordCategory()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
     func getRecordCategory(){
-        RecordCategoryRequest.getRecordCategory(completion: { (response, statusCode) in
-            if statusCode == 401{
-                self.logOut()
-                return
+        if reachablity.connection != .none {
+            RecordCategoryRequest.getRecordCategory(completion: { (response, statusCode) in
+                if statusCode == 401{
+                    self.logOut()
+                    return
+                }
+                self.recordCategories.addObjects(from: response as! [Any])
+                self.collectionView.reloadData()
+            }) { (error) in
+                AlertController.showError()
             }
-            self.recordCategories.addObjects(from: response as! [Any])
-            self.collectionView.reloadData()
-        }) { (error) in
-            AlertController.showError()
+        }else{
+            AlertController.showInternetUnable()
         }
     }
     
-
+    
 }
 
 extension MAChooseCategoryViewController: UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
@@ -94,7 +100,7 @@ extension MAChooseCategoryViewController: UICollectionViewDataSource, UICollecti
         }
     }
     
-     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.view.bounds.size.width / 2 - 25, height: 110)
     }
 }

@@ -239,7 +239,7 @@ extension AppLocker: CAAnimationDelegate {
 // MARK: - Present
 public extension AppLocker {
   // Present AppLocker
-  class func present(with mode: ALMode, and config: ALAppearance? = nil) {
+    class func present(with mode: ALMode, and config: ALAppearance? = nil, withController: UIViewController) {
     
     guard let root = UIApplication.shared.keyWindow?.rootViewController,
 
@@ -268,6 +268,6 @@ public extension AppLocker {
       locker.photoImageView.isHidden = true
     }
     
-    root.present(locker, animated: true, completion: nil)
+    withController.present(locker, animated: true, completion: nil)
   }
 }

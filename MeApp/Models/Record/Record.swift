@@ -117,6 +117,9 @@ class RecordsRequest {
                 if let json = response.result.value {
                     let recordList: NSMutableArray = NSMutableArray()
                     if (json as AnyObject).count != 0{
+                        if (json as AnyObject)["message"] != nil{
+                            return
+                        }
                         for recordItem in json as! Array<Any>{
                              let record = try! Record(object: recordItem as! JSONObject)
                             recordList.add(record)

@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import Alamofire
 import SwiftMessages
-
+import Reachability
 import LocalAuthentication
 
 class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
@@ -19,6 +19,7 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
     var givenName: String!
     var familyName: String!
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let reachability = Reachability()!
     
     var appLocker: AppLocker!
 
@@ -51,7 +52,7 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
         appearance.isSensorsEnabled = true
         appearance.delegate = self
         
-        AppLocker.present(with: .create, and: appearance)
+        AppLocker.present(with: .create, and: appearance, withController: self)
     }
     
     @IBAction func cancel(_ sender: UIButton) {
@@ -64,7 +65,7 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
         appearance.isSensorsEnabled = true
         appearance.delegate = self
         
-        AppLocker.present(with: .create, and: appearance)
+        AppLocker.present(with: .create, and: appearance, withController: self)
     }
     
     func closePinCodeView(typeClose: typeClose) {
@@ -73,6 +74,7 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
             performSegue(withIdentifier: "goToWalet", sender: self)
             break
         case .create:
+            if reachability.connection != .none{
                     let emailObject = ["primary_email" : primaryEmail,
                                        "family_name" : familyName,
                                        "given_name" : givenName]
@@ -114,6 +116,9 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
             
                         SwiftMessages.show( view: error)
                     })
+            }else{
+                AlertController.showInternetUnable()
+            }
             break
         default:
             break

@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import Reachability
 
 class MAPersonalDetailViewController: MABaseViewController {
     @IBOutlet weak var nameCategory: UILabel!
@@ -16,11 +17,11 @@ class MAPersonalDetailViewController: MABaseViewController {
     @IBOutlet weak var validationLabel: UILabel!
     @IBOutlet weak var imageFavorite: UIImageView!
     @IBOutlet weak var qrCodeImage: UIImageView!
+    let reachablity = Reachability()!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
-//        validationLabel.isHidden = true
+        //        validationLabel.isHidden = true
         if record.key == "primary_email"{
             nameCategory.text = "Primary E-mail"
             valueRecord.text = record.value
@@ -82,20 +83,24 @@ class MAPersonalDetailViewController: MABaseViewController {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
     @IBAction func deleteRecord(_ sender: Any) {
-        RecordsRequest.deleteRecord(recordId: record.id, completion: { (response, statusCode) in
-            if statusCode == 401{
-                self.logOut()
-                return
+        if  reachablity.connection != .none{
+            RecordsRequest.deleteRecord(recordId: record.id, completion: { (response, statusCode) in
+                if statusCode == 401{
+                    self.logOut()
+                    return
+                }
+                self.navigationController?.popViewController(animated: true)
+            }) { (error) in
+                AlertController.showError()
             }
-            self.navigationController?.popViewController(animated: true)
-        }) { (error) in
-            AlertController.showError()
+        }else{
+            AlertController.showInternetUnable()
         }
     }
     
@@ -111,5 +116,5 @@ class MAPersonalDetailViewController: MABaseViewController {
             validatorsVC.recordID = record.id
         }
     }
-
+    
 }
