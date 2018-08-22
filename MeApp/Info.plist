@@ -18,8 +18,6 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>0.0.1</string>
-	<key>CFBundleVersion</key>
-	<string>1</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -31,6 +29,8 @@
 			</array>
 		</dict>
 	</array>
+	<key>CFBundleVersion</key>
+	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>LSRequiresIPhoneOS - 2</key>
@@ -43,9 +43,9 @@
 	<key>NSCameraUsageDescription</key>
 	<string>The camera is needed to scan QR codes</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Your microphone will be used to record your speech when you press the &quot;Start Recording&quot; button.</string>
+	<string>Your microphone will be used to record your speech when you press the "Start Recording" button.</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>Speech recognition will be used to determine which words you speak into this device&apos;s microphone.</string>
+	<string>Speech recognition will be used to determine which words you speak into this device's microphone.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>SF-Pro-Display.otf</string>

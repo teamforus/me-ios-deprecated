@@ -224,7 +224,6 @@
 		65FC866420B5DF81001FECA5 /* MASwitchProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC866220B5DF81001FECA5 /* MASwitchProfileTableViewCell.swift */; };
 		65FC866820B5EB2A001FECA5 /* MAAddProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC866620B5EB2A001FECA5 /* MAAddProfileTableViewCell.swift */; };
 		65FC866920B5EB2A001FECA5 /* MAAddProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65FC866720B5EB2A001FECA5 /* MAAddProfileTableViewCell.xib */; };
-		C114624949C2AA90B4E6615B /* Pods_MeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F47A758BD471D52C424FBAA /* Pods_MeApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -486,7 +485,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C114624949C2AA90B4E6615B /* Pods_MeApp.framework in Frameworks */,
 				3A8A98EEC0E536FD3D214EA8 /* Pods_Me.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2082,7 +2080,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = MeApp;
+				PRODUCT_BUNDLE_IDENTIFIER = io.forus.me;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
@@ -2105,7 +2103,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = MeApp;
+				PRODUCT_BUNDLE_IDENTIFIER = io.forus.me;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
