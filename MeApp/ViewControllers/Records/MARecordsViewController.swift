@@ -139,6 +139,13 @@ extension MARecordsViewController: ExpandableDelegate {
             
         }else if indexPath.row == 1{
             self.performSegue(withIdentifier: "goToSwitchProfile", sender: nil)
+        }else{
+            let alert: UIAlertController
+            alert = UIAlertController(title: "", message: "Comming Soon!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+             
+            }))
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
