@@ -190,12 +190,18 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
     
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if segmentedControl.selectedIndex == 1 {
-            let popOverVC = TransactionViewController(nibName: "TransactionViewController", bundle: nil)
-            self.addChildViewController(popOverVC)
-            popOverVC.view.frame = self.view.frame
-            popOverVC.isVisisbeTabBar = true
-            self.view.addSubview(popOverVC.view)
-            popOverVC.didMove(toParentViewController: self)
+//            let popOverVC = TransactionViewController(nibName: "TransactionViewController", bundle: nil)
+//            self.addChildViewController(popOverVC)
+//            popOverVC.view.frame = self.view.frame
+//            popOverVC.isVisisbeTabBar = true
+//            self.view.addSubview(popOverVC.view)
+//            popOverVC.didMove(toParentViewController: self)
+            let alert: UIAlertController
+            alert = UIAlertController(title: "", message: "Comming Soon!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                
+            }))
+            self.present(alert, animated: true, completion: nil)
         }else if segmentedControl.selectedIndex == 2{
             self.performSegue(withIdentifier: "goToKindPaket", sender: self)
         }
