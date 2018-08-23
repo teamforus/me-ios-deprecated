@@ -27,11 +27,19 @@ class MAValidatorsViewController: MABaseViewController {
         super.viewDidLoad()
         recordTypeName.setTitle(recordType, for: .normal)
         valueRecord.setTitle(recordValue, for: .normal)
-        //        RecordCategoryRequest.getCategory(categoryId: recordCategoryId, completion: { (response) in
-        //            self.categoryName.setTitle(response.name, for: .normal)
-        //        }) { (error) in
-        //
-        //        }
+        if reachablity.connection != .none{
+        if recordCategoryId != nil{
+            RecordCategoryRequest.getCategory(categoryId: recordCategoryId, completion: { (response, statusCode) in
+                self.categoryName.setTitle(response.name, for: .normal)
+            }) { (error) in
+                AlertController.showError()
+            }
+        }else{
+            self.categoryName.setTitle("Personal", for: .normal)
+        }
+        }else{
+            AlertController.showInternetUnable()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,7 +49,7 @@ class MAValidatorsViewController: MABaseViewController {
                 self.validators.addObjects(from: response as! [Any])
                 self.tableView.reloadData()
             }) { (error) in
-                
+                AlertController.showError()
             }
         }else {
             AlertController.showInternetUnable()
@@ -76,18 +84,18 @@ extension MAValidatorsViewController: UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if reachablity.connection != .none{
-        let validator = validators[indexPath.row] as! Validator
-        let parametr: Parameters = ["validator_id" : validator.id!,
-                                    "record_id" : recordID!]
-        ValidatorsRequest.createValidationRequest(parameters: parametr, completion: { (response, statusCode) in
-            if response.message != nil{
-                AlertController.showWarning(withText: "Sorry request to validate is already send")
-            }else{
-                AlertController.showSuccess(withText: "")
+            let validator = validators[indexPath.row] as! Validator
+            let parametr: Parameters = ["validator_id" : validator.id!,
+                                        "record_id" : recordID!]
+            ValidatorsRequest.createValidationRequest(parameters: parametr, completion: { (response, statusCode) in
+                if response.message != nil{
+                    AlertController.showWarning(withText: "Sorry request to validate is already send")
+                }else{
+                    AlertController.showSuccess(withText: "")
+                }
+            }) { (error) in
+                
             }
-        }) { (error) in
-            
-        }
         }else {
             AlertController.showInternetUnable()
         }

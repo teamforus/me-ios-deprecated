@@ -18,8 +18,8 @@ class MAKindpakketCurrenciesViewController: MABaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setBorderWithRadius(button: sendButton)
-        setBorderWithRadius(button: askButton)
+//        setBorderWithRadius(button: sendButton)
+//        setBorderWithRadius(button: askButton)
     }
     
     func setBorderWithRadius(button: UIButton){

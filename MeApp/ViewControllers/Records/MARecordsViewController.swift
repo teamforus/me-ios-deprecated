@@ -10,9 +10,10 @@ import UIKit
 import ExpandableCell
 import BWWalkthrough
 
-class MARecordsViewController: UIViewController, BWWalkthroughViewControllerDelegate {
+class MARecordsViewController: MABaseViewController, BWWalkthroughViewControllerDelegate {
     @IBOutlet weak var tableView: ExpandableTableView!
     @IBOutlet weak var collectionView: UICollectionView!
+    var recordList: NSMutableArray! = NSMutableArray()
     
     var cell: UITableViewCell {
         return tableView.dequeueReusableCell(withIdentifier: ExpandedCell.ID)!
@@ -34,7 +35,22 @@ class MARecordsViewController: UIViewController, BWWalkthroughViewControllerDele
         //        self.navigationController?.setNavigationBarHidden(false, animated: true)
         //        self.title = "Eigenschappen"
         //        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.getRecordList()
         UIApplication.shared.statusBarStyle = .default
+    }
+    
+    func getRecordList(){
+        RecordsRequest.getRecordsList(completion: { (response, statusCode) in
+            if statusCode == 401{
+                self.logOut()
+                return
+            }
+            self.recordList.removeAllObjects()
+            self.recordList.addObjects(from: response as! [Any])
+            self.tableView.reloadData()
+        }) { (error) in
+            AlertController.showError()
+        }
     }
     
     @objc func closePage(){
@@ -142,7 +158,7 @@ extension MARecordsViewController: ExpandableDelegate {
             cell.titleCategory.text = titles.object(at: indexPath.row) as? String
             cell.categoryIcon.image = UIImage(named: images.object(at: indexPath.row) as! String)
             if indexPath.row == 0{
-                cell.subcategoryTitle.text = "3 eigenschappen"
+                cell.subcategoryTitle.text = "\(self.recordList.count) eigenschappen"
             }else{
                 cell.subcategoryTitle.text = "0 eigenschappen"
             }

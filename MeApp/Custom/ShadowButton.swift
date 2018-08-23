@@ -40,6 +40,18 @@ class ShadowButton: UIButton {
         }
     }
     
+    @IBInspectable var borderColor :UIColor = UIColor.black {
+        didSet {
+            setSelectBorderColor()
+        }
+    }
+    
+    @IBInspectable var borderWidth : CGFloat = 0 {
+        didSet {
+            setBorderWidth()
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.layer.masksToBounds = false
@@ -58,6 +70,10 @@ class ShadowButton: UIButton {
         self.layer.shadowColor = selectedShadowColor.cgColor
     }
     
+    func setSelectBorderColor(){
+        self.layer.shadowColor = selectedShadowColor.cgColor
+    }
+    
     func setShadowOffset(){
         self.layer.shadowOffset = shadowOffset
     }
@@ -68,6 +84,10 @@ class ShadowButton: UIButton {
     
     func setShadowRadius(){
         self.layer.shadowRadius = shadowRadius
+    }
+    
+    func setBorderWidth(){
+        self.layer.borderWidth = borderWidth
     }
 
 }
