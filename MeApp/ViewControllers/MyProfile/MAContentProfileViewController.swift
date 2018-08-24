@@ -22,6 +22,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     @IBOutlet weak var appVersionLabel: UILabel!
     let reachability = Reachability()!
     
+    @IBOutlet weak var profileImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
          if UserDefaults.standard.bool(forKey: "isWithTouchID"){
@@ -29,6 +30,12 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
          }else {
             switchFaceID.isOn = false
         }
+        
+        profileImage.layer.masksToBounds = false
+        
+        profileImage.layer.cornerRadius = profileImage.frame.height/2
+        profileImage.clipsToBounds = true
+
         
         if !faceIDAvailable(){
             faceIdImage.image = #imageLiteral(resourceName: "touchId")

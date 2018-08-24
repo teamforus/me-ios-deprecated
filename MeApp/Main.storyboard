@@ -54,10 +54,18 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o0L-ep-afS">
-                                        <rect key="frame" x="309" y="84" width="45" height="45"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Resting" translatesAutoresizingMaskIntoConstraints="NO" id="fye-Yp-H6m">
+                                        <rect key="frame" x="311" y="84" width="44" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="userpicIcon"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o0L-ep-afS" customClass="ShadowButton" customModule="Me" customModuleProvider="target">
+                                        <rect key="frame" x="311" y="84" width="44" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="12"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="UYT-0R-HXg" kind="presentation" id="zD0-ak-Hj4"/>
                                         </connections>
@@ -298,6 +306,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="UnD-ca-UAZ"/>
                     <connections>
+                        <outlet property="profileIcon" destination="o0L-ep-afS" id="0kY-be-1jM"/>
+                        <outlet property="profileIconImage" destination="fye-Yp-H6m" id="DhF-jk-RaY"/>
                         <outlet property="segmentView" destination="rW2-94-xVa" id="iPT-Hc-Ikj"/>
                         <outlet property="segmentedControl" destination="23n-Ck-4dG" id="bzw-Ye-qcj"/>
                         <outlet property="tableView" destination="WHB-Dg-CPc" id="L2T-jh-YzW"/>
@@ -1793,6 +1803,7 @@ log in with Face ID?</string>
         </scene>
     </scenes>
     <resources>
+        <image name="Resting" width="210" height="210"/>
         <image name="back" width="24" height="24"/>
         <image name="closeIcon" width="24" height="24"/>
         <image name="eth" width="52" height="52"/>
@@ -1811,7 +1822,6 @@ log in with Face ID?</string>
         <image name="rectangleRed" width="9" height="7"/>
         <image name="shape1" width="21" height="21"/>
         <image name="tick" width="104" height="104"/>
-        <image name="userpicIcon" width="47" height="47"/>
         <image name="voucherIcon" width="52" height="52"/>
         <image name="wallet" width="30" height="26"/>
     </resources>

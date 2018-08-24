@@ -166,7 +166,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pd4-Xl-rAR">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="295"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="userpicIcon" translatesAutoresizingMaskIntoConstraints="NO" id="oal-H1-nuH">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Resting" translatesAutoresizingMaskIntoConstraints="NO" id="oal-H1-nuH">
                                                         <rect key="frame" x="154" y="74" width="86" height="86"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
@@ -252,6 +252,7 @@
                         <outlet property="faceIdImage" destination="iAC-og-Xvt" id="baO-Lb-zHJ"/>
                         <outlet property="faceIdLabel" destination="mcu-8u-YwG" id="ysA-j8-j2x"/>
                         <outlet property="profileEmailLabel" destination="A2b-ot-985" id="T7J-z4-odq"/>
+                        <outlet property="profileImage" destination="oal-H1-nuH" id="33M-CH-eMZ"/>
                         <outlet property="profileNameLabel" destination="Wfm-Qk-FJu" id="ZgP-Sh-KcM"/>
                         <outlet property="switchFaceID" destination="YPI-d9-PAw" id="OQN-cU-HRF"/>
                     </connections>
@@ -371,11 +372,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Resting" width="210" height="210"/>
         <image name="closeIcon" width="24" height="24"/>
         <image name="faceId" width="85" height="85"/>
         <image name="lock24Px" width="24" height="24"/>
         <image name="qrCode" width="178" height="178"/>
         <image name="qrImage2" width="16" height="16"/>
-        <image name="userpicIcon" width="47" height="47"/>
     </resources>
 </document>

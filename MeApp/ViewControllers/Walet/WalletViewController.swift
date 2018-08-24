@@ -22,6 +22,8 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
     func closePinCodeView(typeClose: typeClose) {
         
     }
+    @IBOutlet weak var profileIconImage: UIImageView!
+    @IBOutlet weak var profileIcon: ShadowButton!
     let reachability = Reachability()!
     @IBOutlet weak var tableView: UITableView!
     var walletCase : WalletCase! = WalletCase.token
@@ -45,6 +47,14 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
             
             AppLocker.present(with: .validate, and: appearance, withController: self)
         }
+        // profile icon round
+       
+        profileIconImage.layer.masksToBounds = false
+       
+        profileIconImage.layer.cornerRadius = profileIconImage.frame.height/2
+        profileIconImage.clipsToBounds = true
+
+        
         segmentView.layer.cornerRadius = 8.0
         tableView.setContentOffset(CGPoint(x: 0, y: 44), animated: true)
         segmentedControl.items = ["Valuta", "Bezit", "Vouchers"]
