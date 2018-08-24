@@ -52,6 +52,12 @@
 		6528F01920E51BEF00DD19C1 /* MAFirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6528F01820E51BEF00DD19C1 /* MAFirstPageViewController.swift */; };
 		6528F01C20E5358900DD19C1 /* MAPinCodeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6528F01B20E5358900DD19C1 /* MAPinCodeLoginViewController.swift */; };
 		6528F01E20E53F3D00DD19C1 /* MALoginEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6528F01D20E53F3D00DD19C1 /* MALoginEmailViewController.swift */; };
+		653181AD212FF8210001D24E /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653181AC212FF8210001D24E /* Profile.storyboard */; };
+		653181AF212FF9AD0001D24E /* MAMyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653181AE212FF9AD0001D24E /* MAMyProfileViewController.swift */; };
+		653181B1213010CA0001D24E /* MAQrBottomProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653181B0213010CA0001D24E /* MAQrBottomProfileViewController.swift */; };
+		653181B3213010E70001D24E /* MAContentProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653181B2213010E70001D24E /* MAContentProfileViewController.swift */; };
+		653181B721301B8E0001D24E /* MAGeneralPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653181B621301B8E0001D24E /* MAGeneralPassViewController.swift */; };
+		653181B921301D280001D24E /* MABottomVoucherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653181B821301D280001D24E /* MABottomVoucherViewController.swift */; };
 		65467FA520B821E7009E99CC /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65467FA420B821E7009E99CC /* Authorization.swift */; };
 		65467FAD20B829C0009E99CC /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65467FAC20B829C0009E99CC /* Record.swift */; };
 		65467FB020B86C57009E99CC /* MALoginWithQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65467FAF20B86C57009E99CC /* MALoginWithQRViewController.swift */; };
@@ -291,6 +297,12 @@
 		6528F01820E51BEF00DD19C1 /* MAFirstPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAFirstPageViewController.swift; sourceTree = "<group>"; };
 		6528F01B20E5358900DD19C1 /* MAPinCodeLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAPinCodeLoginViewController.swift; sourceTree = "<group>"; };
 		6528F01D20E53F3D00DD19C1 /* MALoginEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MALoginEmailViewController.swift; sourceTree = "<group>"; };
+		653181AC212FF8210001D24E /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		653181AE212FF9AD0001D24E /* MAMyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAMyProfileViewController.swift; sourceTree = "<group>"; };
+		653181B0213010CA0001D24E /* MAQrBottomProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAQrBottomProfileViewController.swift; sourceTree = "<group>"; };
+		653181B2213010E70001D24E /* MAContentProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAContentProfileViewController.swift; sourceTree = "<group>"; };
+		653181B621301B8E0001D24E /* MAGeneralPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAGeneralPassViewController.swift; sourceTree = "<group>"; };
+		653181B821301D280001D24E /* MABottomVoucherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MABottomVoucherViewController.swift; sourceTree = "<group>"; };
 		65467FA420B821E7009E99CC /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
 		65467FAC20B829C0009E99CC /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		65467FAF20B86C57009E99CC /* MALoginWithQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MALoginWithQRViewController.swift; sourceTree = "<group>"; };
@@ -661,6 +673,26 @@
 			path = PinCodeLogin;
 			sourceTree = "<group>";
 		};
+		653181B4213017A30001D24E /* MyProfile */ = {
+			isa = PBXGroup;
+			children = (
+				653181AE212FF9AD0001D24E /* MAMyProfileViewController.swift */,
+				653181B0213010CA0001D24E /* MAQrBottomProfileViewController.swift */,
+				653181B2213010E70001D24E /* MAContentProfileViewController.swift */,
+			);
+			path = MyProfile;
+			sourceTree = "<group>";
+		};
+		653181B521301AD30001D24E /* Voucher */ = {
+			isa = PBXGroup;
+			children = (
+				65A51FA020B300EA0010DB33 /* PassViewController.swift */,
+				653181B621301B8E0001D24E /* MAGeneralPassViewController.swift */,
+				653181B821301D280001D24E /* MABottomVoucherViewController.swift */,
+			);
+			path = Voucher;
+			sourceTree = "<group>";
+		};
 		65467FA620B82370009E99CC /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -862,6 +894,7 @@
 				65A51FA120B300EA0010DB33 /* Main.storyboard */,
 				65A51F9D20B300E90010DB33 /* PassStoryboard.storyboard */,
 				65B89ACC20B4761C0024DC51 /* NewProfile.storyboard */,
+				653181AC212FF8210001D24E /* Profile.storyboard */,
 				65E3363E20E645B600C0512B /* KRScrollView.swift */,
 				65BFF47120C1A61B00F64215 /* VoiceButton */,
 				65FC865D20B5D8F5001FECA5 /* Extension */,
@@ -902,7 +935,7 @@
 			isa = PBXGroup;
 			children = (
 				6504474120C0715C00D040B9 /* MAKindpakketCurrenciesViewController.swift */,
-				65A51FA020B300EA0010DB33 /* PassViewController.swift */,
+				653181B521301AD30001D24E /* Voucher */,
 				65A51FEC20B31FBC0010DB33 /* Cell */,
 			);
 			path = Pass;
@@ -1084,6 +1117,7 @@
 				65AC33002102123300633187 /* PagesCategory */,
 				656F198B210604B800923DAF /* Personal */,
 				65A5A9B9210B64F600CF1C45 /* CreateNewIdentity */,
+				653181B4213017A30001D24E /* MyProfile */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1507,6 +1541,7 @@
 				65A51FDF20B3012C0010DB33 /* SF-Pro-Display-BlackItalic.otf in Resources */,
 				65B89AA220B42A6F0024DC51 /* MARegistrationViewController.xib in Resources */,
 				65A51FDD20B3012C0010DB33 /* SF-Pro-Display-UltralightItalic.otf in Resources */,
+				653181AD212FF8210001D24E /* Profile.storyboard in Resources */,
 				65BB7C3E2112EF380073352C /* GoogleSans-Bold.ttf in Resources */,
 				65BB7C412112EF380073352C /* GoogleSans-MediumItalic.ttf in Resources */,
 				65A51FD020B3012C0010DB33 /* SF-Pro-Display-Light.otf in Resources */,
@@ -1806,6 +1841,7 @@
 				6556375420B6DE8300E45487 /* PopupWindowManager.swift in Sources */,
 				65BF9E872111DA5B000B38AF /* Status.swift in Sources */,
 				6504473A20C04BD800D040B9 /* UIAlertAction+Extensions.swift in Sources */,
+				653181B721301B8E0001D24E /* MAGeneralPassViewController.swift in Sources */,
 				65A51F7320B2FFF20010DB33 /* MeApp.xcdatamodeld in Sources */,
 				656F198A2105EFF100923DAF /* MAValidatorCellTableViewCell.swift in Sources */,
 				65BFF46820C16C3C00F64215 /* RequestNewIndetity.swift in Sources */,
@@ -1818,6 +1854,7 @@
 				65BFF46C20C1860500F64215 /* ResponseNewIndentity.swift in Sources */,
 				65AC33032102126200633187 /* MAChooseCategoryCollectionViewCell.swift in Sources */,
 				65B89AA620B432CC0024DC51 /* MARegistrationSuccessViewController.swift in Sources */,
+				653181B921301D280001D24E /* MABottomVoucherViewController.swift in Sources */,
 				65C0B220210F3ACF00FBC254 /* UserShared.swift in Sources */,
 				654CBAB92109F84600E56F2E /* String+Substring.swift in Sources */,
 				658BDDCB2108AFCC00A27EC7 /* MAChooseTypeTableViewCell.swift in Sources */,
@@ -1859,6 +1896,7 @@
 				650FA29520F79CD200997261 /* ShadowButton.swift in Sources */,
 				65B89ACA20B44D210024DC51 /* MASignUpViewController.swift in Sources */,
 				6504472420C0239C00D040B9 /* MAKindPakketViewController.swift in Sources */,
+				653181B1213010CA0001D24E /* MAQrBottomProfileViewController.swift in Sources */,
 				65B89A8D20B3342E0024DC51 /* MATransactionRedViewController.swift in Sources */,
 				65B89AC420B44B1B0024DC51 /* MAShareVaucherViewController.swift in Sources */,
 				6527C6FE20D16BBC00009704 /* MASendViewController.swift in Sources */,
@@ -1866,6 +1904,7 @@
 				65FC866020B5D8F5001FECA5 /* UIColor+Background.swift in Sources */,
 				65B89AB520B43FA50024DC51 /* MAValidationSuccessViewController.swift in Sources */,
 				6556376620B718DF00E45487 /* MASpeachRecognition.swift in Sources */,
+				653181B3213010E70001D24E /* MAContentProfileViewController.swift in Sources */,
 				6556376420B7078800E45487 /* MASetUpPinViewController.swift in Sources */,
 				6527C6F520D152F900009704 /* MADestinationAddressViewController.swift in Sources */,
 				6527C6FA20D1626100009704 /* MARequestViewController.swift in Sources */,
@@ -1905,6 +1944,7 @@
 				658370B02126DAB3008D76A9 /* Validator.swift in Sources */,
 				6504472B20C038A900D040B9 /* MABasePopUpViewController.swift in Sources */,
 				658370AE2126C357008D76A9 /* MACreatePasswordViewController.swift in Sources */,
+				653181AF212FF9AD0001D24E /* MAMyProfileViewController.swift in Sources */,
 				65AC330A21023E7000633187 /* MAPersonalTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

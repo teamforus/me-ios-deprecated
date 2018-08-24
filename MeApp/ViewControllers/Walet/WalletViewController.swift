@@ -66,6 +66,8 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
             let results = try context.fetch(fetchRequest) as? [User]
             if results?.count != 0 {
                 UserShared.shared.currentUser = results![0]
+                 UserDefaults.standard.set(UserShared.shared.currentUser.pinCode, forKey: ALConstants.kPincode)
+                 UserDefaults.standard.synchronize()
             }
         } catch{}
     }

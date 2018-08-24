@@ -30,6 +30,7 @@ class MABaseViewController: UIViewController {
     
    public func logOut(){
 //        self.parent?.dismiss(animated: true, completion: nil)
+     UserDefaults.standard.set("", forKey: ALConstants.kPincode)
     let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     let navigationController:HiddenNavBarNavigationController = storyboard.instantiateInitialViewController() as! HiddenNavBarNavigationController
      let firstPageVC:UIViewController = storyboard.instantiateViewController(withIdentifier: "firstPage") as UIViewController

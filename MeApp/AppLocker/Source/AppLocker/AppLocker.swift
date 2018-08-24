@@ -19,6 +19,7 @@ enum typeClose: Int {
     case create = 1
     case validate = 2
     case delete = 3
+    case change = 4
 }
 
 public enum ALConstants {
@@ -82,6 +83,7 @@ public class AppLocker: UIViewController {
       case .create:
         messageLabel.text = "Create passcode" // Your submessage for create mode
       case .change:
+        cancelButton.isHidden = false
         messageLabel.text = "Enter passcode" // Your submessage for change mode
       case .deactive:
         messageLabel.text = "Enter passcode" // Your submessage for deactive mode

@@ -30,4 +30,24 @@ class RequestNewIndetity{
             }
         }
     }
+    
+    static func updatePinCode(parameters: Parameters, completion: @escaping ((Response, Int) -> Void), failure: @escaping ((Error) -> Void)){
+        let headers: HTTPHeaders = [
+            "Accept": "application/json"
+        ]
+        Alamofire.request(BaseURL.baseURL(url: "identity/pin-code"), method: .post, parameters: parameters,encoding: JSONEncoding.default, headers: headers).responseJSON {
+            response in
+            switch response.result {
+            case .success:
+                if let json = response.result.value {
+                    let messages = try! Response(object: json as! JSONObject)
+                    completion(messages, (response.response?.statusCode)!)
+                }
+                break
+            case .failure(let error):
+                failure(error)
+            }
+        }
+    }
+
 }

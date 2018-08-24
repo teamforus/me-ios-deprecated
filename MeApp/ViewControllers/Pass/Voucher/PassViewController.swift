@@ -43,7 +43,8 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
     }
     
     @objc func goToQRReader(){
-        self.tabBarController?.selectedIndex = 1
+//        self.tabBarController?.selectedIndex = 1
+        NotificationCenter.default.post(name: Notification.Name("togleStateWindow"), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {

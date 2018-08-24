@@ -59,7 +59,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="userpicIcon"/>
                                         <connections>
-                                            <action selector="logout:" destination="AFR-4S-uKC" eventType="touchUpInside" id="Qst-gW-gxX"/>
+                                            <segue destination="UYT-0R-HXg" kind="presentation" id="zD0-ak-Hj4"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -307,6 +307,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zm9-Ex-VsL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1757.5999999999999" y="1027.736131934033"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="nx7-jg-F7t">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="UYT-0R-HXg" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jbB-Xx-vDk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2587" y="894"/>
         </scene>
         <!--PassStoryboard-->
         <scene sceneID="Wmc-G1-sBm">
@@ -877,7 +885,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ru-Rh-PyB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2044" y="210.94452773613196"/>
+            <point key="canvasLocation" x="-2148" y="211"/>
         </scene>
         <!--Login Email View Controller-->
         <scene sceneID="uQ3-01-cKU">
@@ -1291,7 +1299,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mee-gd-9An" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1304.8" y="210.94452773613196"/>
+            <point key="canvasLocation" x="-1306" y="211"/>
         </scene>
         <!--Hidden Nav Bar Navigation Controller-->
         <scene sceneID="Q6C-y1-Lua">
@@ -1323,7 +1331,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yaE-9e-gCo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2044" y="1028"/>
+            <point key="canvasLocation" x="-2148" y="1028"/>
         </scene>
         <!--Create New Identity View Controller-->
         <scene sceneID="x6B-HP-rbO">
@@ -1509,7 +1517,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-218" y="913"/>
+            <point key="canvasLocation" x="-218" y="1028"/>
         </scene>
         <!--Botom Qr Profile View Controller-->
         <scene sceneID="6Jw-HM-cFe">
@@ -1699,7 +1707,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="faceId" translatesAutoresizingMaskIntoConstraints="NO" id="O7E-yb-pnN">
-                                <rect key="frame" x="145" y="240" width="84" height="85"/>
+                                <rect key="frame" x="145" y="240" width="85" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l4O-aX-sP6" customClass="ShadowButton" customModule="Me" customModuleProvider="target">
@@ -1808,6 +1816,6 @@ log in with Face ID?</string>
         <image name="wallet" width="30" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bfn-kP-emb"/>
+        <segue reference="m0w-cY-gJb"/>
     </inferredMetricsTieBreakers>
 </document>

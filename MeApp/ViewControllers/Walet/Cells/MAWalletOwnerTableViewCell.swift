@@ -17,6 +17,7 @@ class MAWalletOwnerTableViewCell: SwipeTableViewCell {
     @IBOutlet weak var headView: UIView!
     @IBOutlet weak var typeIconImage: UIImageView!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.viewBody.layer.cornerRadius = 9.0
