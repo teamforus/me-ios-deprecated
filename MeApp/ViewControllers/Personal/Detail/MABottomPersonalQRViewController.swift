@@ -1,9 +1,9 @@
 //
-//  MABotomQrProfileViewController.swift
-//  MeApp
+//  MABottomPersonalQRViewController.swift
+//  Me
 //
-//  Created by Tcacenco Daniel on 6/22/18.
-//  Copyright © 2018 Tcacenco Daniel. All rights reserved.
+//  Created by Tcacenco Daniel on 8/26/18.
+//  Copyright © 2018 Foundation Forus. All rights reserved.
 //
 
 import UIKit
@@ -11,12 +11,14 @@ import ISHPullUp
 import AssistantKit
 import CoreData
 import Reachability
+import Alamofire
 
-class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate, ISHPullUpStateDelegate{
+class MABottomPersonalQRViewController: MABaseViewController, ISHPullUpSizingDelegate, ISHPullUpStateDelegate{
     @IBOutlet private weak var handleView: ISHPullUpHandleView!
     @IBOutlet private weak var rootView: UIView!
     @IBOutlet private weak var topView: UIView!
     @IBOutlet private weak var buttonLock: UIButton?
+    var record: Record!
     @IBOutlet weak var qrCodeImageView: UIImageView!
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     var timer : Timer! = Timer()
@@ -42,16 +44,16 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
         let screen = Device.screen
         switch screen {
         case .inches_4_0:
-            rect.size.height = 440
+            rect.size.height = 404
             break
         case .inches_4_7:
-            rect.size.height = 500
+            rect.size.height = 404
             break
         case .inches_5_5:
-            rect.size.height = 567
+            rect.size.height = 404
             break
         case .inches_5_8:
-            rect.size.height = 567
+            rect.size.height = 404
             break
         default:
             break
@@ -73,16 +75,14 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
         super.viewWillAppear(animated)
         firstAppearanceCompleted = true;
         if reachability.connection != .none{
-            AuthorizeTokenRequest.createToken(completion: { (response, statusCode) in
-                if response.authToken != nil{
-                    self.authorizeToken = response
-                    //                {"type":"auth_token","value":"d6a673ae21ff01d2cabd2c58ed4bf46df98ea1cc6459109d6985b112c9ac8c75"}
-                    
-                    self.qrCodeImageView.generateQRCode(from: "authToken:\(response.authToken!)")
-                    self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.checkAuthorizeToken), userInfo: nil, repeats: true)
-                }else{
-                    AlertController.showError()
+            let parameter: Parameters = ["record_id" : self.record.id]
+            
+            RecordsRequest.createValidationTokenRecord(parameters: parameter, completion: { (response, statusCode) in
+                if statusCode == 401{
+                    self.logOut()
+                    return
                 }
+                self.qrCodeImageView.generateQRCode(from: "uuid:\(response.uuid!)")
             }) { (error) in
                 AlertController.showError()
             }
@@ -221,11 +221,4 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
         handleView.setState(ISHPullUpHandleView.handleState(for: state), animated: firstAppearanceCompleted)
     }
     
-}
-
-class ModalViewController: UIViewController {
-    
-    @IBAction func buttonTappedDone(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
-    }
 }

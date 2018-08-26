@@ -80,18 +80,26 @@ extension PassViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PassTableViewCell
+        var cell: UITableViewCell? = nil
         if indexPath.row == 0 {
-            cell.companyTitle.text = "RMinds"
-        }else if indexPath.row == 1{
-            cell.companyTitle.text = "EBIntegrator"
+            let cell1 = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PassTableViewCell
+            cell = cell1
+        }else if indexPath.row == 1 {
+            let cell2 = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! PassTableViewCell
+            cell = cell2
+        }else if indexPath.row == 2{
+            let cell3 = tableView.dequeueReusableCell(withIdentifier: "cell3", for: indexPath) as! PassTableViewCell
+            cell = cell3
+        }else if indexPath.row == 3{
+            let cell4 = tableView.dequeueReusableCell(withIdentifier: "cell4", for: indexPath) as! PassTableViewCell
+            cell = cell4
         }
         
-        return cell
+        return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

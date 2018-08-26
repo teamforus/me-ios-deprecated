@@ -9,7 +9,10 @@
 import UIKit
 
 class MAWaletVoucherTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var voucherTitleLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var voucherImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -65,18 +65,7 @@ class MAPersonalDetailViewController: MABaseViewController {
             nameCategory.text = "Kindpakket Eligible"
             valueRecord.text = record.value
         }
-        
-        let parameter: Parameters = ["record_id" : record.id]
-        
-        RecordsRequest.createValidationTokenRecord(parameters: parameter, completion: { (response, statusCode) in
-            if statusCode == 401{
-                self.logOut()
-                return
-            }
-            self.qrCodeImage.generateQRCode(from: "uuid:\(response.uuid!)")
-        }) { (error) in
-            AlertController.showError()
-        }
+   
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -115,6 +104,11 @@ class MAPersonalDetailViewController: MABaseViewController {
             validatorsVC.recordCategoryId = record.recordCategoryId
             validatorsVC.recordID = record.id
         }
+    }
+    
+    
+    @IBAction func showQR(_ sender: Any) {
+        NotificationCenter.default.post(name: Notification.Name("togleStateWindow"), object: nil)
     }
     
 }

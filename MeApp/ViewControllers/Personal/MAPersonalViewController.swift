@@ -62,8 +62,10 @@ class MAPersonalViewController: MABaseViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToDetail"{
-            let detailPersonalVC = segue.destination as! MAPersonalDetailViewController
+            let detailPersonalVC = segue.destination as! MAContentPersonalDetailViewController
             detailPersonalVC.record = self.recordList[(tableView.indexPathForSelectedRow?.row)!] as! Record
+            (detailPersonalVC.contentViewController as! MAPersonalDetailViewController).record = self.recordList[(tableView.indexPathForSelectedRow?.row)!] as! Record
+            (detailPersonalVC.bottomViewController as! MABottomPersonalQRViewController).record = self.recordList[(tableView.indexPathForSelectedRow?.row)!] as! Record
         }
     }
 }

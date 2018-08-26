@@ -147,7 +147,7 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
         if walletCase != .token {
             return 2
         }else if walletCase == .passes{
-            return 1
+            return 2
         }
         return 3
     }
@@ -192,8 +192,12 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
             
         default:
             let cellWallet = tableView.dequeueReusableCell(withIdentifier: "cell4", for: indexPath) as! MAWaletVoucherTableViewCell
-            if indexPath.row == 1{
-                cellWallet.isHidden = true
+            if indexPath.row == 0{
+                cellWallet.voucherTitleLabel.text = "Kindpakket"
+                cellWallet.priceLabel.text = "€ 122,67"
+            }else if indexPath.row == 1{
+                cellWallet.voucherTitleLabel.text = "Meedoen"
+                cellWallet.voucherImage.image = #imageLiteral(resourceName: "Logo-Nijmgen-4-3")
             }
             cell = cellWallet
         }

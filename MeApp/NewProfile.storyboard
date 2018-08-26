@@ -13,6 +13,9 @@
         <array key="GoogleSans-Bold.ttf">
             <string>GoogleSans-Bold</string>
         </array>
+        <array key="GoogleSans-Medium.ttf">
+            <string>GoogleSans-Medium</string>
+        </array>
         <array key="GoogleSans-Regular.ttf">
             <string>GoogleSans-Regular</string>
         </array>
@@ -462,7 +465,7 @@
                                             <outlet property="nameLabel" destination="PLB-sJ-Gbc" id="5jK-gi-zYl"/>
                                             <outlet property="validateText" destination="z26-Qp-Uy8" id="ko9-OL-AUU"/>
                                             <outlet property="validationNumber" destination="bLm-Th-fu0" id="CdH-SL-iGl"/>
-                                            <segue destination="PNa-QM-ibs" kind="show" identifier="goToDetail" id="qLS-pf-Os4"/>
+                                            <segue destination="Dg3-7H-BCI" kind="show" identifier="goToDetail" id="vYD-Py-mcC"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -486,6 +489,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="htZ-GM-SlC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="837.60000000000002" y="1127.5862068965519"/>
+        </scene>
+        <!--Content Personal Detail View Controller-->
+        <scene sceneID="RMw-jZ-8bz">
+            <objects>
+                <viewController id="Dg3-7H-BCI" customClass="MAContentPersonalDetailViewController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P0U-zV-enQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="y2p-FR-ask"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0yd-PC-3s8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="751" y="1858"/>
         </scene>
         <!--Choose Category View Controller-->
         <scene sceneID="2MD-vj-eDj">
@@ -2154,7 +2172,7 @@ informatie van je identiteit:</string>
                                     <constraint firstAttribute="height" constant="50" id="FhJ-yv-GaP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="14"/>
-                                <state key="normal" title="VALIDATE LATER">
+                                <state key="normal" title="VALIDEER LATER">
                                     <color key="titleColor" red="0.20784313725490197" green="0.39215686274509803" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -2166,22 +2184,22 @@ informatie van je identiteit:</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JsV-CI-LNe">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="318"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Validators" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAX-85-AHw">
-                                        <rect key="frame" x="18" y="89" width="305" height="49"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kies Validator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAX-85-AHw">
+                                        <rect key="frame" x="18" y="89" width="251" height="49"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="38"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nieuwe Eigenschappen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wg3-9U-j3h">
-                                        <rect key="frame" x="56" y="43" width="127" height="16"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nieuwe Eigenschap" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wg3-9U-j3h">
+                                        <rect key="frame" x="56" y="43" width="106" height="16"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="12"/>
                                         <color key="textColor" red="0.43137254899999999" green="0.43921568630000002" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select the category under which the new record type should be added." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xr1-W6-PzP">
-                                        <rect key="frame" x="18" y="146" width="281" height="52"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kies de categorie waaraan de nieuwe eigenschap toegevoegd wordt." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xr1-W6-PzP">
+                                        <rect key="frame" x="18" y="146" width="332" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="14"/>
                                         <color key="textColor" red="0.43137254899999999" green="0.43921568630000002" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2206,7 +2224,7 @@ informatie van je identiteit:</string>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="14"/>
-                                        <state key="normal" title="Jamal">
+                                        <state key="normal" title="Voornaam">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -2276,7 +2294,7 @@ informatie van je identiteit:</string>
         <!--Personal Detail View Controller-->
         <scene sceneID="a2s-tR-VcP">
             <objects>
-                <viewController id="PNa-QM-ibs" customClass="MAPersonalDetailViewController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="personalDetail" id="PNa-QM-ibs" customClass="MAPersonalDetailViewController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z9E-ym-eQs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2293,7 +2311,7 @@ informatie van je identiteit:</string>
                                                     <constraint firstAttribute="width" constant="314" id="mrV-WW-lVW"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="14"/>
-                                                <state key="normal" title="Delete record" image="delete24Px">
+                                                <state key="normal" title="Verwijder eigenschap" image="delete24Px">
                                                     <color key="titleColor" red="0.51372549020000002" green="0.52549019610000003" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
@@ -2301,7 +2319,7 @@ informatie van je identiteit:</string>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lxJ-MZ-d42" customClass="CustomCornerUIView" customModule="Me" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="168" width="355" height="80"/>
+                                                <rect key="frame" x="10" y="168" width="355" height="140"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SA5-XQ-6F2">
                                                         <rect key="frame" x="19" y="20" width="223" height="18"/>
@@ -2324,10 +2342,27 @@ informatie van je identiteit:</string>
                                                             <segue destination="Hn3-Go-19b" kind="show" identifier="goToValidators" id="G8c-3C-nDR"/>
                                                         </connections>
                                                     </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qc-FC-gzf" customClass="ShadowButton" customModule="Me" customModuleProvider="target">
+                                                        <rect key="frame" x="15" y="90" width="325" height="36"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" red="0.91764705882352937" green="0.94117647058823528" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="GoogleSans-Medium" family="Google Sans" pointSize="13"/>
+                                                        <state key="normal" title="LAAT QR-CODE ZIEN">
+                                                            <color key="titleColor" red="0.20784313725490197" green="0.39215686274509803" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="18"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="showQR:" destination="PNa-QM-ibs" eventType="touchUpInside" id="S67-TP-pdH"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="80" id="lCx-el-jb6"/>
+                                                    <constraint firstAttribute="height" constant="140" id="lCx-el-jb6"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -2336,23 +2371,59 @@ informatie van je identiteit:</string>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V6t-C0-neO">
-                                                <rect key="frame" x="0.0" y="268" width="375" height="306"/>
+                                                <rect key="frame" x="0.0" y="329" width="375" height="245"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Scan deze QR-Code met een ander apparaat waar u al op aangemeld bent" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cc4-dP-pyR">
-                                                        <rect key="frame" x="29" y="8" width="310" height="42"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="15"/>
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Lf-la-doe">
+                                                        <rect key="frame" x="0.0" y="55" width="375" height="190"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <prototypes>
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="88" id="xGc-CT-2lp" customClass="MAValidatorCellTableViewCell" customModule="Me" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="28" width="375" height="88"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xGc-CT-2lp" id="XPw-yN-tYS">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <subviews>
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="userpicIcon" translatesAutoresizingMaskIntoConstraints="NO" id="PDw-b0-wrw">
+                                                                            <rect key="frame" x="17" y="22" width="45" height="45"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        </imageView>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54i-By-tIX">
+                                                                            <rect key="frame" x="70" y="26" width="290" height="25"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                            <fontDescription key="fontDescription" name="OpenSans-SemiBold" family="Open Sans" pointSize="18"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AoI-gT-xBg">
+                                                                            <rect key="frame" x="70" y="50" width="290" height="20"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                            <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="14"/>
+                                                                            <color key="textColor" red="0.56470588239999997" green="0.57647058819999997" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                </tableViewCellContentView>
+                                                                <connections>
+                                                                    <outlet property="descriptionValidator" destination="AoI-gT-xBg" id="ctH-YT-Hjy"/>
+                                                                    <outlet property="iconValidator" destination="PDw-b0-wrw" id="BhQ-dp-CKX"/>
+                                                                    <outlet property="nameValidator" destination="54i-By-tIX" id="D6h-Xi-gGx"/>
+                                                                </connections>
+                                                            </tableViewCell>
+                                                        </prototypes>
+                                                    </tableView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Validatoren" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKX-fb-jHs">
+                                                        <rect key="frame" x="20" y="19" width="210" height="28"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="24"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="qrCode" translatesAutoresizingMaskIntoConstraints="NO" id="0Uh-P3-0cw">
-                                                        <rect key="frame" x="65" y="52" width="246" height="246"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="306" id="0eJ-3P-oOr"/>
+                                                    <constraint firstAttribute="height" constant="245" id="0eJ-3P-oOr"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YI8-UQ-v7m">
@@ -2369,7 +2440,7 @@ informatie van je identiteit:</string>
                                                             <action selector="back:" destination="PNa-QM-ibs" eventType="touchUpInside" id="iHY-Jh-xu6"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Record detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1I-bp-dWe">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Eigenschap detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1I-bp-dWe">
                                                         <rect key="frame" x="16" y="77" width="351" height="49"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="38"/>
@@ -2387,7 +2458,7 @@ informatie van je identiteit:</string>
                                         <constraints>
                                             <constraint firstItem="lxJ-MZ-d42" firstAttribute="top" secondItem="YI8-UQ-v7m" secondAttribute="bottom" constant="14" id="2Ma-Bf-M25"/>
                                             <constraint firstItem="YI8-UQ-v7m" firstAttribute="top" secondItem="XwO-Xs-etO" secondAttribute="top" id="3dA-du-exk"/>
-                                            <constraint firstItem="V6t-C0-neO" firstAttribute="top" secondItem="lxJ-MZ-d42" secondAttribute="bottom" constant="20" id="6wn-Vt-AE6"/>
+                                            <constraint firstItem="V6t-C0-neO" firstAttribute="top" secondItem="lxJ-MZ-d42" secondAttribute="bottom" constant="21" id="6wn-Vt-AE6"/>
                                             <constraint firstAttribute="bottom" secondItem="9T7-YY-cHa" secondAttribute="bottom" constant="24" id="KtL-0X-aaM"/>
                                             <constraint firstItem="V6t-C0-neO" firstAttribute="leading" secondItem="XwO-Xs-etO" secondAttribute="leading" id="Rsn-5C-rxc"/>
                                             <constraint firstItem="YI8-UQ-v7m" firstAttribute="leading" secondItem="XwO-Xs-etO" secondAttribute="leading" id="Z32-cm-xf6"/>
@@ -2429,13 +2500,121 @@ informatie van je identiteit:</string>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="nameCategory" destination="SA5-XQ-6F2" id="Wj8-Uw-D2G"/>
-                        <outlet property="qrCodeImage" destination="0Uh-P3-0cw" id="krj-NW-ATu"/>
                         <outlet property="valueRecord" destination="nwF-9e-IzM" id="Pyf-Z5-ORd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JsP-Au-Ykx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1687.2" y="1126.6866566716642"/>
+        </scene>
+        <!--Bottom PersonalQR View Controller-->
+        <scene sceneID="FdA-6f-wAp">
+            <objects>
+                <viewController storyboardIdentifier="bottomPersonal" id="KSA-Ad-4bj" customClass="MABottomPersonalQRViewController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ECi-Cj-IMh"/>
+                        <viewControllerLayoutGuide type="bottom" id="Rz6-Hz-h7a"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="p2v-yq-hfU" customClass="ISHPullUpRoundedVisualEffectView">
+                        <rect key="frame" x="0.0" y="0.0" width="355" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                        <subviews>
+                            <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cdj-Nl-0c7" userLabel="rootView">
+                                <rect key="frame" x="0.0" y="0.0" width="355" height="527"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iCO-Q0-XHU" userLabel="Topview">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="59"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pwv-ht-VKN" customClass="ISHPullUpHandleView">
+                                                <rect key="frame" x="160" y="6" width="36" height="11"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                                        <color key="value" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhs-C7-rQb" userLabel="Button Info">
+                                                <rect key="frame" x="311" y="17" width="24" height="24"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="closeIcon"/>
+                                                <connections>
+                                                    <action selector="close:" destination="KSA-Ad-4bj" eventType="touchUpInside" id="pdk-YO-FmQ"/>
+                                                </connections>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="qrImage2" translatesAutoresizingMaskIntoConstraints="NO" id="iU1-ve-EWL">
+                                                <rect key="frame" x="24" y="19" width="20" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="QR-CODE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qS-c3-6nh">
+                                                <rect key="frame" x="53" y="20" width="59" height="16"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="12"/>
+                                                <color key="textColor" red="0.20784313730000001" green="0.3921568627" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="topViewHandle"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Laat iemanduw persoonlijke QR-code scannen om u valuta, bezit of vouchers te sturen" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="781-xe-cPJ">
+                                        <rect key="frame" x="8" y="308" width="339" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rHC-r5-RqW">
+                                        <rect key="frame" x="0.0" y="60" width="355" height="198"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="qrCode" translatesAutoresizingMaskIntoConstraints="NO" id="f6U-PA-RM4">
+                                                <rect key="frame" x="98" y="19" width="160" height="160"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hier is je persoonlijke QR-Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1k-hU-QGg">
+                                        <rect key="frame" x="8" y="277" width="339" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bxp-sd-4SJ" userLabel="Overpull">
+                                <rect key="frame" x="0.0" y="458.5" width="375" height="41.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Ffb-0y-nO9"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="14"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="355" height="480"/>
+                    <connections>
+                        <outlet property="handleView" destination="pwv-ht-VKN" id="Vse-pZ-uyb"/>
+                        <outlet property="qrCodeImageView" destination="f6U-PA-RM4" id="Hcq-wm-NDG"/>
+                        <outlet property="rootView" destination="cdj-Nl-0c7" id="a0I-Lj-GuZ"/>
+                        <outlet property="topView" destination="iCO-Q0-XHU" id="C9w-WP-aDM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tON-95-lBQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1703" y="1773"/>
         </scene>
     </scenes>
     <resources>
@@ -4716,6 +4895,7 @@ D+AAAAAAAAAEAQAAAAAAAABWAAAAAAAAAAAAAAAAAAIP4g
         <image name="notifications" width="20" height="20"/>
         <image name="proper" width="14" height="14"/>
         <image name="qrCode" width="178" height="178"/>
+        <image name="qrImage2" width="16" height="16"/>
         <image name="rounded" width="24" height="24"/>
         <image name="userpicIcon" width="47" height="47"/>
     </resources>

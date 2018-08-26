@@ -185,7 +185,7 @@ class MABottomVoucherViewController: MABaseViewController, ISHPullUpSizingDelega
     }
     
     @IBAction func close(_ sender: Any) {
-        if pullUpController.state == .expanded{
+        if pullUpController.state == .expanded || pullUpController.state == .intermediate{
             pullUpController.toggleState(animated: true)
             self.view.isHidden = true
         }
