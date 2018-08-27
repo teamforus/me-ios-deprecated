@@ -19,6 +19,9 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
     @IBOutlet weak var smallerAmount: UIButton!
     @IBOutlet weak var qrView: UIView!
     var gestureRecognizer: UIGestureRecognizer!
+    @IBOutlet weak var voucherTitleLabel: UILabel!
+    @IBOutlet weak var timAvailabelLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
     
     let presenter: Presentr = {
         let presenter = Presentr(presentationType: .alert)

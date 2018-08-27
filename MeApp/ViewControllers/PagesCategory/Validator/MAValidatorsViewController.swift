@@ -20,6 +20,7 @@ class MAValidatorsViewController: MABaseViewController {
     @IBOutlet weak var categoryName: ShadowButton!
     @IBOutlet weak var recordTypeName: ShadowButton!
     @IBOutlet weak var valueRecord: ShadowButton!
+    @IBOutlet weak var categoryNameLabel: UILabel!
     let reachablity = Reachability()!
     
     
@@ -30,12 +31,12 @@ class MAValidatorsViewController: MABaseViewController {
         if reachablity.connection != .none{
         if recordCategoryId != nil{
             RecordCategoryRequest.getCategory(categoryId: recordCategoryId, completion: { (response, statusCode) in
-                self.categoryName.setTitle(response.name, for: .normal)
+                self.categoryNameLabel.text = response.name
             }) { (error) in
                 AlertController.showError()
             }
         }else{
-            self.categoryName.setTitle("Personal", for: .normal)
+             self.categoryNameLabel.text = "Persoonlijk"
         }
         }else{
             AlertController.showInternetUnable()

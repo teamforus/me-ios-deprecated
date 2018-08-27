@@ -474,7 +474,7 @@
                                     <outlet property="delegate" destination="iIB-xh-Ro7" id="sSL-vX-YFX"/>
                                 </connections>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="userpicIcon" translatesAutoresizingMaskIntoConstraints="NO" id="gCD-jC-Ldu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Resting" translatesAutoresizingMaskIntoConstraints="NO" id="gCD-jC-Ldu" customClass="RoundImageView" customModule="Me" customModuleProvider="target">
                                 <rect key="frame" x="314" y="92" width="45" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -2185,7 +2185,7 @@ informatie van je identiteit:</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="318"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kies Validator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAX-85-AHw">
-                                        <rect key="frame" x="18" y="89" width="251" height="49"/>
+                                        <rect key="frame" x="18" y="89" width="332" height="49"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="38"/>
                                         <nil key="textColor"/>
@@ -2210,7 +2210,7 @@ informatie van je identiteit:</string>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="14"/>
-                                        <state key="normal" title="Given Name">
+                                        <state key="normal">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -2258,6 +2258,17 @@ informatie van je identiteit:</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iconPersonal" translatesAutoresizingMaskIntoConstraints="NO" id="raK-PC-NBQ">
+                                        <rect key="frame" x="24" y="239" width="24" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Given Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGq-Vr-EYJ">
+                                        <rect key="frame" x="45" y="241" width="117" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -2282,6 +2293,7 @@ informatie van je identiteit:</string>
                     </view>
                     <connections>
                         <outlet property="categoryName" destination="Grq-3K-FTM" id="eUI-G3-U9y"/>
+                        <outlet property="categoryNameLabel" destination="pGq-Vr-EYJ" id="DRB-Ld-pkX"/>
                         <outlet property="recordTypeName" destination="Nuk-LE-Obv" id="aLW-jP-wLG"/>
                         <outlet property="tableView" destination="4Ne-Tt-uuJ" id="jDy-6Y-6QN"/>
                         <outlet property="valueRecord" destination="aXl-sF-Wag" id="mb2-CB-4JZ"/>
@@ -2329,8 +2341,8 @@ informatie van je identiteit:</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jamal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwF-9e-IzM">
-                                                        <rect key="frame" x="19" y="40" width="215" height="25"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <rect key="frame" x="19" y="40" width="321" height="25"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -2618,6 +2630,7 @@ informatie van je identiteit:</string>
         </scene>
     </scenes>
     <resources>
+        <image name="Resting" width="210" height="210"/>
         <image name="arrowBlue" width="8" height="13"/>
         <image name="arrowDown" width="13" height="8"/>
         <image name="back" width="24" height="24"/>
@@ -2628,6 +2641,7 @@ informatie van je identiteit:</string>
         <image name="closeIcon" width="24" height="24"/>
         <image name="delete24Px" width="24" height="24"/>
         <image name="iconHome" width="78" height="78"/>
+        <image name="iconPersonal" width="52" height="52"/>
         <image name="imageView:gd1-EJ-EuY:image" width="178" height="178">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGUlNYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEQcI

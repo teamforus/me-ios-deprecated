@@ -18,11 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         if  UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" && UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil{
-        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let navigationController:UINavigationController = storyboard.instantiateInitialViewController() as! UINavigationController
+        let storyboard:UIStoryboard = UIStoryboard(name: "Tabs", bundle: nil)
         let rootViewController:UIViewController = storyboard.instantiateViewController(withIdentifier: "walet") as UIViewController
-        navigationController.viewControllers = [rootViewController]
-        self.window?.rootViewController = navigationController
+        self.window?.rootViewController = rootViewController
         }
         return true
     }

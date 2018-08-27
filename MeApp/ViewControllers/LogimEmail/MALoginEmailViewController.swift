@@ -71,12 +71,8 @@ class MALoginEmailViewController: MABaseViewController {
                     completion: { (response, statusCode) in
                     if response.errors == nil {
                         UserDefaults.standard.setValue(response.accessToken, forKeyPath: "auth_token")
-                        
-                        AuthorizationEmailRequest.authorizeEmailToken(completion: { (response, statusCode) in
-                            self.performSegue(withIdentifier: "goToWalet", sender: self)
-                        }, failure: { (error) in
-                            AlertController.showError()
-                        })
+                        self.performSegue(withIdentifier: "goToSuccessMail", sender: self)
+//
                     }else {
                         let error = MessageView.viewFromNib(layout: .tabView)
                         error.configureTheme(.error)

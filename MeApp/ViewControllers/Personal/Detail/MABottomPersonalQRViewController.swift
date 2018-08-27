@@ -93,23 +93,6 @@ class MABottomPersonalQRViewController: MABaseViewController, ISHPullUpSizingDel
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if timer != nil {
-            self.timer.invalidate()
-        }
-    }
-    
-    @objc func checkAuthorizeToken(){
-        Status.checkStatus(accessToken: self.authorizeToken.accessToken, completion: { (code) in
-            if code == 200 {
-                self.timer.invalidate()
-                self.saveNewIdentity(accessToken: self.authorizeToken.accessToken)
-                self.updateOldIndentity()
-                self.getCurrentUser(accessToken: self.authorizeToken.accessToken)
-                NotificationCenter.default.post(name: Notification.Name("TokenIsValidate"), object: nil)
-            }
-        }) { (error) in
-            AlertController.showError()
-        }
     }
     
     func saveNewIdentity(accessToken: String){
@@ -219,6 +202,9 @@ class MABottomPersonalQRViewController: MABaseViewController, ISHPullUpSizingDel
     
     func pullUpViewController(_ pullUpViewController: ISHPullUpViewController, didChangeTo state: ISHPullUpState) {
         handleView.setState(ISHPullUpHandleView.handleState(for: state), animated: firstAppearanceCompleted)
+        if state == .collapsed {
+            self.view.isHidden = true
+        }
     }
     
 }

@@ -17,7 +17,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransactionViewController" customModule="MeApp" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransactionViewController" customModule="Me" customModuleProvider="target">
             <connections>
                 <outlet property="companyNameLabel" destination="YRy-O7-qIg" id="77o-QP-vjl"/>
                 <outlet property="confirmationRecieveLabel" destination="3Rd-ta-Z7O" id="Ua1-04-DVQ"/>
@@ -145,7 +145,7 @@
                             </subviews>
                             <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </view>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="userpicIcon" translatesAutoresizingMaskIntoConstraints="NO" id="LgY-Q3-WTc">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Resting" translatesAutoresizingMaskIntoConstraints="NO" id="LgY-Q3-WTc" customClass="RoundImageView" customModule="Me" customModuleProvider="target">
                             <rect key="frame" x="168" y="72" width="40" height="40"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
@@ -161,7 +161,7 @@
         </view>
     </objects>
     <resources>
+        <image name="Resting" width="210" height="210"/>
         <image name="closeIcon" width="24" height="24"/>
-        <image name="userpicIcon" width="47" height="47"/>
     </resources>
 </document>

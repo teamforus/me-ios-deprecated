@@ -58,6 +58,9 @@
 		653181B3213010E70001D24E /* MAContentProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653181B2213010E70001D24E /* MAContentProfileViewController.swift */; };
 		653181B721301B8E0001D24E /* MAGeneralPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653181B621301B8E0001D24E /* MAGeneralPassViewController.swift */; };
 		653181B921301D280001D24E /* MABottomVoucherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653181B821301D280001D24E /* MABottomVoucherViewController.swift */; };
+		653982752133FC5B003B87FC /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653982742133FC5B003B87FC /* RoundImageView.swift */; };
+		6539827721341E8B003B87FC /* Tabs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6539827621341E8B003B87FC /* Tabs.storyboard */; };
+		6539827921342638003B87FC /* MASuccessEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6539827821342638003B87FC /* MASuccessEmailViewController.swift */; };
 		65467FA520B821E7009E99CC /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65467FA420B821E7009E99CC /* Authorization.swift */; };
 		65467FAD20B829C0009E99CC /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65467FAC20B829C0009E99CC /* Record.swift */; };
 		65467FB020B86C57009E99CC /* MALoginWithQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65467FAF20B86C57009E99CC /* MALoginWithQRViewController.swift */; };
@@ -305,6 +308,9 @@
 		653181B2213010E70001D24E /* MAContentProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAContentProfileViewController.swift; sourceTree = "<group>"; };
 		653181B621301B8E0001D24E /* MAGeneralPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAGeneralPassViewController.swift; sourceTree = "<group>"; };
 		653181B821301D280001D24E /* MABottomVoucherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MABottomVoucherViewController.swift; sourceTree = "<group>"; };
+		653982742133FC5B003B87FC /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
+		6539827621341E8B003B87FC /* Tabs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tabs.storyboard; sourceTree = "<group>"; };
+		6539827821342638003B87FC /* MASuccessEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MASuccessEmailViewController.swift; sourceTree = "<group>"; };
 		65467FA420B821E7009E99CC /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
 		65467FAC20B829C0009E99CC /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		65467FAF20B86C57009E99CC /* MALoginWithQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MALoginWithQRViewController.swift; sourceTree = "<group>"; };
@@ -896,6 +902,7 @@
 				65D764E020B73933007D7B9D /* Helper */,
 				65B89A8E20B3344C0024DC51 /* ViewControllers */,
 				65A51FA120B300EA0010DB33 /* Main.storyboard */,
+				6539827621341E8B003B87FC /* Tabs.storyboard */,
 				65A51F9D20B300E90010DB33 /* PassStoryboard.storyboard */,
 				65B89ACC20B4761C0024DC51 /* NewProfile.storyboard */,
 				653181AC212FF8210001D24E /* Profile.storyboard */,
@@ -1270,6 +1277,7 @@
 				650FA29420F79CD200997261 /* ShadowButton.swift */,
 				65AC32F52101D9E500633187 /* CustomCornerUIView.swift */,
 				65BD691821246C420098CF9F /* StatusView.swift */,
+				653982742133FC5B003B87FC /* RoundImageView.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -1347,6 +1355,7 @@
 			isa = PBXGroup;
 			children = (
 				6528F01D20E53F3D00DD19C1 /* MALoginEmailViewController.swift */,
+				6539827821342638003B87FC /* MASuccessEmailViewController.swift */,
 			);
 			path = LogimEmail;
 			sourceTree = "<group>";
@@ -1562,6 +1571,7 @@
 				6504472F20C03DAB00D040B9 /* MASwitchProfilePopUpViewController.xib in Resources */,
 				6579634820E4D49E001CF29D /* NunitoSans-Bold.ttf in Resources */,
 				6579634220E4D49D001CF29D /* NunitoSans-BlackItalic.ttf in Resources */,
+				6539827721341E8B003B87FC /* Tabs.storyboard in Resources */,
 				65A51FCF20B3012C0010DB33 /* SF-Pro-Display-RegularItalic.otf in Resources */,
 				6500425F20DB97E40092CCDA /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				6579634920E4D49E001CF29D /* NunitoSans-SemiBold.ttf in Resources */,
@@ -1891,6 +1901,7 @@
 				65B89ABF20B448CB0024DC51 /* MAAllowViewController.swift in Sources */,
 				65AC32FD2102040F00633187 /* MAChooseTypeViewController.swift in Sources */,
 				65BFF46320C161B500F64215 /* Records.swift in Sources */,
+				6539827921342638003B87FC /* MASuccessEmailViewController.swift in Sources */,
 				6527C6F820D1579C00009704 /* MAValidationRequestViewController.swift in Sources */,
 				656F19872105E22A00923DAF /* MAValidatorsViewController.swift in Sources */,
 				65B89A9720B4128C0024DC51 /* MARecordsTableViewCell.swift in Sources */,
@@ -1901,6 +1912,7 @@
 				6556376220B6FDEB00E45487 /* UIImageView+QRCode.swift in Sources */,
 				654CBAB62109E1EC00E56F2E /* AuthorizationCode.swift in Sources */,
 				658BBA522110954C0098E2AC /* AppLocker.swift in Sources */,
+				653982752133FC5B003B87FC /* RoundImageView.swift in Sources */,
 				6556376820B726F700E45487 /* MABaseViewController.swift in Sources */,
 				65FC860620B5B340001FECA5 /* MASwitchProfileViewController.swift in Sources */,
 				65BFF47920C1A61C00F64215 /* UIImage+Colorize.swift in Sources */,

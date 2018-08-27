@@ -85,7 +85,7 @@ class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
             if UserShared.shared.currentUser != nil {
                 AuthorizationCodeRequest.authorizeCode(completion: { (response, statusCode) in
                     if response.success != nil {
-                        self.performSegue(withIdentifier: "goToWallet", sender: nil)
+                        self.performSegue(withIdentifier: "goToWalet", sender: nil)
                     }else if response.message != nil {
                         let error = MessageView.viewFromNib(layout: .tabView)
                         error.configureTheme(.error)

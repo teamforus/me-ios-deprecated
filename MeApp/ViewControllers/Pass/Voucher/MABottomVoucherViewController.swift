@@ -42,20 +42,19 @@ class MABottomVoucherViewController: MABaseViewController, ISHPullUpSizingDelega
         let screen = Device.screen
         switch screen {
         case .inches_4_0:
-            rect.size.height = 440
+            rect.size.height = 404
             break
         case .inches_4_7:
-            rect.size.height = 500
+            rect.size.height = 404
             break
         case .inches_5_5:
-            rect.size.height = 567
+            rect.size.height = 404
             break
         case .inches_5_8:
-            rect.size.height = 567
+            rect.size.height = 404
             break
         default:
             break
-            
         }
         self.rootView.frame = rect
     }
@@ -72,44 +71,10 @@ class MABottomVoucherViewController: MABaseViewController, ISHPullUpSizingDelega
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         firstAppearanceCompleted = true;
-        if reachability.connection != .none{
-            AuthorizeTokenRequest.createToken(completion: { (response, statusCode) in
-                if response.authToken != nil{
-                    self.authorizeToken = response
-                    //                {"type":"auth_token","value":"d6a673ae21ff01d2cabd2c58ed4bf46df98ea1cc6459109d6985b112c9ac8c75"}
-                    
-                    self.qrCodeImageView.generateQRCode(from: "authToken:\(response.authToken!)")
-                    self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.checkAuthorizeToken), userInfo: nil, repeats: true)
-                }else{
-                    AlertController.showError()
-                }
-            }) { (error) in
-                AlertController.showError()
-            }
-        }else{
-            AlertController.showInternetUnable()
-        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if timer != nil {
-            self.timer.invalidate()
-        }
-    }
-    
-    @objc func checkAuthorizeToken(){
-        Status.checkStatus(accessToken: self.authorizeToken.accessToken, completion: { (code) in
-            if code == 200 {
-                self.timer.invalidate()
-                self.saveNewIdentity(accessToken: self.authorizeToken.accessToken)
-                self.updateOldIndentity()
-                self.getCurrentUser(accessToken: self.authorizeToken.accessToken)
-                NotificationCenter.default.post(name: Notification.Name("TokenIsValidate"), object: nil)
-            }
-        }) { (error) in
-            AlertController.showError()
-        }
     }
     
     func saveNewIdentity(accessToken: String){
@@ -206,9 +171,9 @@ class MABottomVoucherViewController: MABaseViewController, ISHPullUpSizingDelega
     }
     
     func pullUpViewController(_ pullUpViewController: ISHPullUpViewController, targetHeightForBottomViewController bottomVC: UIViewController, fromCurrentHeight height: CGFloat) -> CGFloat {
-        if abs(height - halfWayPoint) < 30 {
-            return halfWayPoint
-        }
+//        if abs(height - halfWayPoint) < 30 {
+//            return halfWayPoint
+//        }
         return height
     }
     
@@ -219,6 +184,10 @@ class MABottomVoucherViewController: MABaseViewController, ISHPullUpSizingDelega
     
     func pullUpViewController(_ pullUpViewController: ISHPullUpViewController, didChangeTo state: ISHPullUpState) {
         handleView.setState(ISHPullUpHandleView.handleState(for: state), animated: firstAppearanceCompleted)
+        if state == .collapsed {
+            self.view.isHidden = true
+        }
+        
     }
     
 }

@@ -32,7 +32,7 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
 //    @IBOutlet weak var voiceButton: VoiceButtonView!
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "ro"))!
     @IBOutlet weak var segmentedControl: HBSegmentedControl!
-    let largerRedTextSelectAttributes = [NSAttributedStringKey.font: UIFont(name: "GoogleSans-Medium", size: 13.0),
+    let largerRedTextSelectAttributes = [NSAttributedStringKey.font: UIFont(name: "GoogleSans-Medium", size: 14.0),
                                          NSAttributedStringKey.foregroundColor: UIColor.white]
     
     override func viewDidLoad() {
@@ -49,17 +49,14 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
         }
         // profile icon round
        
-        profileIconImage.layer.masksToBounds = false
-       
-        profileIconImage.layer.cornerRadius = profileIconImage.frame.height/2
-        profileIconImage.clipsToBounds = true
+        
 
         
         segmentView.layer.cornerRadius = 8.0
         tableView.setContentOffset(CGPoint(x: 0, y: 44), animated: true)
         segmentedControl.items = ["Valuta", "Bezit", "Vouchers"]
         segmentedControl.selectedIndex = 0
-        segmentedControl.font = UIFont(name: "GoogleSans-Medium", size: 12)
+        segmentedControl.font = UIFont(name: "GoogleSans-Medium", size: 14)
         segmentedControl.unselectedLabelColor = #colorLiteral(red: 0.631372549, green: 0.6509803922, blue: 0.6784313725, alpha: 1)
         segmentedControl.selectedLabelColor = #colorLiteral(red: 0.2078431373, green: 0.3921568627, blue: 0.968627451, alpha: 1)
         segmentedControl.addTarget(self, action: #selector(self.segmentSelected(sender:)), for: .valueChanged)

@@ -30,11 +30,6 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
          }else {
             switchFaceID.isOn = false
         }
-        
-        profileImage.layer.masksToBounds = false
-        
-        profileImage.layer.cornerRadius = profileImage.frame.height/2
-        profileImage.clipsToBounds = true
 
         
         if !faceIDAvailable(){
