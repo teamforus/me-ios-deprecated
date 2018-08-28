@@ -38,29 +38,29 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        if UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" && UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil{
-//            var appearance = ALAppearance()
-//            appearance.image = UIImage(named: "lock")!
-//            appearance.title = "Devios Ryasnoy"
-//            appearance.isSensorsEnabled = true
-//            appearance.delegate = self
-//            
-//            AppLocker.present(with: .validate, and: appearance, withController: self)
-//        }
+        if UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" && UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil{
+            var appearance = ALAppearance()
+            appearance.image = UIImage(named: "lock")!
+            appearance.title = "Devios Ryasnoy"
+            appearance.isSensorsEnabled = true
+            appearance.delegate = self
+            
+            AppLocker.present(with: .validate, and: appearance, withController: self)
+        }
         // profile icon round
        
         
-
+            walletCase = WalletCase.passes
         
-        segmentView.layer.cornerRadius = 8.0
+//        segmentView.layer.cornerRadius = 8.0
         tableView.setContentOffset(CGPoint(x: 0, y: 44), animated: true)
-        segmentedControl.items = ["Valuta", "Bezit", "Vouchers"]
-        segmentedControl.selectedIndex = 0
-        segmentedControl.font = UIFont(name: "GoogleSans-Medium", size: 14)
-        segmentedControl.unselectedLabelColor = #colorLiteral(red: 0.631372549, green: 0.6509803922, blue: 0.6784313725, alpha: 1)
-        segmentedControl.selectedLabelColor = #colorLiteral(red: 0.2078431373, green: 0.3921568627, blue: 0.968627451, alpha: 1)
-        segmentedControl.addTarget(self, action: #selector(self.segmentSelected(sender:)), for: .valueChanged)
-        segmentedControl.borderColor = .clear
+//        segmentedControl.items = ["Valuta", "Bezit", "Vouchers"]
+//        segmentedControl.selectedIndex = 0
+//        segmentedControl.font = UIFont(name: "GoogleSans-Medium", size: 14)
+//        segmentedControl.unselectedLabelColor = #colorLiteral(red: 0.631372549, green: 0.6509803922, blue: 0.6784313725, alpha: 1)
+//        segmentedControl.selectedLabelColor = #colorLiteral(red: 0.2078431373, green: 0.3921568627, blue: 0.968627451, alpha: 1)
+//        segmentedControl.addTarget(self, action: #selector(self.segmentSelected(sender:)), for: .valueChanged)
+//        segmentedControl.borderColor = .clear
         tableView.keyboardDismissMode = .onDrag
         Web3Provider.getBalance()
         Service.sendContract { (response, error) in
@@ -97,20 +97,20 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
         self.view.endEditing(true)
     }
     
-    @objc func segmentSelected(sender:HBSegmentedControl) {
-        print("Segment at index \(sender.selectedIndex)  selected")
-        if (sender.selectedIndex == 0 ){
-            walletCase = WalletCase.token
-            self.tableView.reloadData()
-        }else if (sender.selectedIndex == 1){
-            walletCase = WalletCase.assets
-            self.tableView.reloadData()
-        }else if (sender.selectedIndex == 2){
-            walletCase = WalletCase.passes
-            self.tableView.reloadData()
-        }
-        
-    }
+//    @objc func segmentSelected(sender:HBSegmentedControl) {
+//        print("Segment at index \(sender.selectedIndex)  selected")
+//        if (sender.selectedIndex == 0 ){
+//            walletCase = WalletCase.token
+//            self.tableView.reloadData()
+//        }else if (sender.selectedIndex == 1){
+//            walletCase = WalletCase.assets
+//            self.tableView.reloadData()
+//        }else if (sender.selectedIndex == 2){
+//            walletCase = WalletCase.passes
+//            self.tableView.reloadData()
+//        }
+//
+//    }
     @IBAction func logout(_ sender: Any) {
         self.logOut()
     }
@@ -194,6 +194,7 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
             
         default:
             let cellWallet = tableView.dequeueReusableCell(withIdentifier: "cell4", for: indexPath) as! MAWaletVoucherTableViewCell
+            cellWallet.delegate = self
             if indexPath.row == 0{
                 cellWallet.voucherTitleLabel.text = "Kindpakket"
                 cellWallet.priceLabel.text = "€ 122,67"
@@ -223,6 +224,7 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
         }else if segmentedControl.selectedIndex == 2{
             self.performSegue(withIdentifier: "goToKindPaket", sender: self)
         }
+        self.performSegue(withIdentifier: "goToKindPaket", sender: self)
         tableView.deselectRow(at: indexPath, animated: false)
     }
     

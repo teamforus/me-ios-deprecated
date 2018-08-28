@@ -62,7 +62,7 @@ class MARecordsViewController: MABaseViewController, BWWalkthroughViewController
         super.didReceiveMemoryWarning()
     }
     
-    // MARK: - Walkthrough delegate -
+    // MARK: - Walkthrough delegate 
     
     func walkthroughPageDidChange(_ pageNumber: Int) {
         if pageNumber == 3{

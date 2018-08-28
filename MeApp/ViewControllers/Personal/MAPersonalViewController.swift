@@ -8,8 +8,9 @@
 
 import UIKit
 import Reachability
+import BWWalkthrough
 
-class MAPersonalViewController: MABaseViewController {
+class MAPersonalViewController: MABaseViewController, BWWalkthroughViewControllerDelegate {
     @IBOutlet weak var tableView: UITableView!
     var recordList: NSMutableArray! = NSMutableArray()
     var recordTypeList: NSMutableArray! = NSMutableArray()
@@ -21,7 +22,8 @@ class MAPersonalViewController: MABaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = true
+        self.tabBarController?.tabBar.isHidden = false
+         NotificationCenter.default.addObserver(self, selector: #selector(closePage), name: Notification.Name("CLOSESLIDEPAGE"), object: nil)
         if reachablity.connection != .none{
         getRecordType()
         getRecordList()
@@ -32,6 +34,10 @@ class MAPersonalViewController: MABaseViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @objc func closePage(){
+        self.dismiss(animated: true, completion: nil)
     }
     
     func getRecordType(){
@@ -60,6 +66,18 @@ class MAPersonalViewController: MABaseViewController {
         }
     }
     
+    // MARK: - Walkthrough delegate -
+    
+    func walkthroughPageDidChange(_ pageNumber: Int) {
+        if pageNumber == 3{
+            NotificationCenter.default.post(name: Notification.Name("HidePageNumber"), object: nil)
+        }
+    }
+    
+    func walkthroughCloseButtonPressed() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToDetail"{
             let detailPersonalVC = segue.destination as! MAContentPersonalDetailViewController
@@ -68,6 +86,21 @@ class MAPersonalViewController: MABaseViewController {
             (detailPersonalVC.bottomViewController as! MABottomPersonalQRViewController).record = self.recordList[(tableView.indexPathForSelectedRow?.row)!] as! Record
         }
     }
+    
+    @IBAction func createRecord(_ sender: Any) {
+        let stb = UIStoryboard(name: "NewProfile", bundle: nil)
+        let walkthrough = stb.instantiateViewController(withIdentifier: "walk") as! BWWalkthroughViewController
+        let pageOne = stb.instantiateViewController(withIdentifier: "types")
+        let pageTwo = stb.instantiateViewController(withIdentifier: "text")
+        
+        walkthrough.delegate = self
+        walkthrough.scrollview.isScrollEnabled = false
+        walkthrough.add(viewController:pageOne)
+        walkthrough.add(viewController:pageTwo)
+        
+        self.present(walkthrough, animated: true, completion: nil)
+    }
+    
 }
 
 extension MAPersonalViewController: UITableViewDelegate, UITableViewDataSource{

@@ -60,7 +60,6 @@ class MATextViewController: MABaseViewController, UITextViewDelegate {
         }
         if reachablity.connection != .none{
             let parameters: Parameters = ["type" : recordType.key,
-                                          "record_category_id" : recordCategory.id as Any,
                                           "value" : textUITextView.text]
             RecordsRequest.createRecord(parameters: parameters, completion: { (response, statusCode) in
                 if statusCode == 401{

@@ -388,25 +388,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Persoonlijk" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yg3-ag-Rc6">
-                                <rect key="frame" x="17" y="90" width="231" height="49"/>
+                                <rect key="frame" x="20" y="84" width="231" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="38"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="kFH-DI-XgA">
-                                <rect key="frame" x="17" y="44" width="24" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="as1-It-A0E">
-                                <rect key="frame" x="17" y="41" width="42" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="back:" destination="iIB-xh-Ro7" eventType="touchUpInside" id="CcT-NJ-uu8"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="n6d-eI-MIb">
-                                <rect key="frame" x="0.0" y="167" width="375" height="500"/>
+                                <rect key="frame" x="0.0" y="227" width="375" height="440"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -475,20 +464,38 @@
                                 </connections>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Resting" translatesAutoresizingMaskIntoConstraints="NO" id="gCD-jC-Ldu" customClass="RoundImageView" customModule="Me" customModuleProvider="target">
-                                <rect key="frame" x="314" y="92" width="45" height="45"/>
+                                <rect key="frame" x="314" y="86" width="45" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Kh-AD-Bi5" customClass="ShadowButton" customModule="Me" customModuleProvider="target">
+                                <rect key="frame" x="20" y="176" width="341" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.94117647059999998" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="12"/>
+                                <state key="normal" title="NIEUWE EIGENSCHAP">
+                                    <color key="titleColor" red="0.20784313730000001" green="0.3921568627" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="18"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="createRecord:" destination="iIB-xh-Ro7" eventType="touchUpInside" id="xtq-9Q-7mG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="G9d-xl-ZFL"/>
                     </view>
+                    <navigationItem key="navigationItem" id="g6n-tQ-xul"/>
                     <connections>
                         <outlet property="tableView" destination="n6d-eI-MIb" id="azh-Uo-kaB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="htZ-GM-SlC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="837.60000000000002" y="1127.5862068965519"/>
+            <point key="canvasLocation" x="1776.8" y="1127.5862068965519"/>
         </scene>
         <!--Content Personal Detail View Controller-->
         <scene sceneID="RMw-jZ-8bz">
@@ -1798,7 +1805,7 @@ informatie van je identiteit:</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="58" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ivV-hv-1ci">
-                                <rect key="frame" x="0.0" y="283" width="375" height="260"/>
+                                <rect key="frame" x="0.0" y="234" width="375" height="309"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="58" id="wEJ-pV-6Kw" customClass="MAChooseTypeTableViewCell" customModule="Me" customModuleProvider="target">
@@ -1858,7 +1865,7 @@ informatie van je identiteit:</string>
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cvg-CJ-rjZ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="267"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qQU-sB-Slv">
                                         <rect key="frame" x="14" y="87" width="235" height="49"/>
@@ -1881,7 +1888,7 @@ informatie van je identiteit:</string>
                                         <color key="textColor" red="0.43137254899999999" green="0.43921568630000002" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FdY-2V-2Ef" customClass="ShadowButton" customModule="Me" customModuleProvider="target">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FdY-2V-2Ef" customClass="ShadowButton" customModule="Me" customModuleProvider="target">
                                         <rect key="frame" x="14" y="231" width="131" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1898,7 +1905,7 @@ informatie van je identiteit:</string>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="267" id="A69-Si-zzT"/>
+                                    <constraint firstAttribute="height" constant="216" id="A69-Si-zzT"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lUg-W5-3vB">
@@ -1919,7 +1926,7 @@ informatie van je identiteit:</string>
                             <constraint firstItem="lUg-W5-3vB" firstAttribute="top" secondItem="ivV-hv-1ci" secondAttribute="bottom" constant="18" id="SfR-ck-yEL"/>
                             <constraint firstItem="Cvg-CJ-rjZ" firstAttribute="top" secondItem="97Z-6v-PaU" secondAttribute="top" id="UTo-Aq-TN7"/>
                             <constraint firstItem="ivV-hv-1ci" firstAttribute="leading" secondItem="Sm2-HF-Pfg" secondAttribute="leading" id="ZUR-xZ-hni"/>
-                            <constraint firstItem="ivV-hv-1ci" firstAttribute="top" secondItem="Cvg-CJ-rjZ" secondAttribute="bottom" constant="16" id="kaU-zP-bsq"/>
+                            <constraint firstItem="ivV-hv-1ci" firstAttribute="top" secondItem="Cvg-CJ-rjZ" secondAttribute="bottom" constant="18" id="kaU-zP-bsq"/>
                             <constraint firstItem="Cvg-CJ-rjZ" firstAttribute="leading" secondItem="Sm2-HF-Pfg" secondAttribute="leading" id="nDg-AB-d2x"/>
                             <constraint firstItem="Cvg-CJ-rjZ" firstAttribute="trailing" secondItem="Sm2-HF-Pfg" secondAttribute="trailing" id="xZ6-5m-Nog"/>
                         </constraints>
@@ -2008,7 +2015,7 @@ informatie van je identiteit:</string>
                                                         <color key="textColor" red="0.43137254899999999" green="0.43921568630000002" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hld-sk-69x" customClass="ShadowButton" customModule="Me" customModuleProvider="target">
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hld-sk-69x" customClass="ShadowButton" customModule="Me" customModuleProvider="target">
                                                         <rect key="frame" x="17" y="169" width="165" height="36"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2023,7 +2030,7 @@ informatie van je identiteit:</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2d-ly-Yt9" customClass="ShadowButton" customModule="Me" customModuleProvider="target">
-                                                        <rect key="frame" x="193" y="169" width="165" height="36"/>
+                                                        <rect key="frame" x="18" y="168" width="165" height="36"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="14"/>
@@ -2301,7 +2308,7 @@ informatie van je identiteit:</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bI-mR-d7T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2581.5999999999999" y="1127.5862068965519"/>
+            <point key="canvasLocation" x="3520.8000000000002" y="1127.5862068965519"/>
         </scene>
         <!--Personal Detail View Controller-->
         <scene sceneID="a2s-tR-VcP">
@@ -2517,7 +2524,7 @@ informatie van je identiteit:</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JsP-Au-Ykx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1687.2" y="1126.6866566716642"/>
+            <point key="canvasLocation" x="2626.4000000000001" y="1126.6866566716642"/>
         </scene>
         <!--Bottom PersonalQR View Controller-->
         <scene sceneID="FdA-6f-wAp">

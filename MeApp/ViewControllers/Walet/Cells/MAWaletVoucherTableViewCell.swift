@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SwipeCellKit
 
-class MAWaletVoucherTableViewCell: UITableViewCell {
+class MAWaletVoucherTableViewCell: SwipeTableViewCell {
     @IBOutlet weak var voucherTitleLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var voucherImage: UIImageView!

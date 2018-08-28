@@ -18,6 +18,7 @@ class TabBarController: UITabBarController {
         let largerRedTextSelectAttributes = [NSAttributedStringKey.font: UIFont(name: "GoogleSans-Medium", size: 10.0),
                                              NSAttributedStringKey.foregroundColor: UIColor.white]
         self.tabBarItem.setTitleTextAttributes(largerRedTextSelectAttributes as Any as? [NSAttributedStringKey : Any], for: .normal)
+       
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(hideTapBar),
