@@ -224,6 +224,9 @@
 		65DCA0B7213311850051F6A3 /* MABottomPersonalQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DCA0B6213311850051F6A3 /* MABottomPersonalQRViewController.swift */; };
 		65DCA0B9213311970051F6A3 /* MAContentPersonalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DCA0B8213311970051F6A3 /* MAContentPersonalDetailViewController.swift */; };
 		65E3363F20E645B600C0512B /* KRScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E3363E20E645B600C0512B /* KRScrollView.swift */; };
+		65E88DF421354FE7006D45C0 /* Vouchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E88DF321354FE7006D45C0 /* Vouchers.swift */; };
+		65E88DF621355066006D45C0 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E88DF521355066006D45C0 /* Transaction.swift */; };
+		65E88DFA213551BA006D45C0 /* Found.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E88DF9213551BA006D45C0 /* Found.swift */; };
 		65FC85F820B56FA2001FECA5 /* MANavicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC85F720B56FA2001FECA5 /* MANavicationController.swift */; };
 		65FC85FA20B57642001FECA5 /* MAQRCodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC85F920B57642001FECA5 /* MAQRCodeReaderViewController.swift */; };
 		65FC85FE20B58426001FECA5 /* MAValidationQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC85FC20B58426001FECA5 /* MAValidationQRViewController.swift */; };
@@ -484,6 +487,9 @@
 		65DCA0B6213311850051F6A3 /* MABottomPersonalQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MABottomPersonalQRViewController.swift; sourceTree = "<group>"; };
 		65DCA0B8213311970051F6A3 /* MAContentPersonalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAContentPersonalDetailViewController.swift; sourceTree = "<group>"; };
 		65E3363E20E645B600C0512B /* KRScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KRScrollView.swift; sourceTree = "<group>"; };
+		65E88DF321354FE7006D45C0 /* Vouchers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vouchers.swift; sourceTree = "<group>"; };
+		65E88DF521355066006D45C0 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		65E88DF9213551BA006D45C0 /* Found.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Found.swift; sourceTree = "<group>"; };
 		65FC85F720B56FA2001FECA5 /* MANavicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MANavicationController.swift; sourceTree = "<group>"; };
 		65FC85F920B57642001FECA5 /* MAQRCodeReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAQRCodeReaderViewController.swift; sourceTree = "<group>"; };
 		65FC85FC20B58426001FECA5 /* MAValidationQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAValidationQRViewController.swift; sourceTree = "<group>"; };
@@ -712,6 +718,7 @@
 				65467FAE20B82F6E009E99CC /* Record */,
 				6504473D20C050C100D040B9 /* User */,
 				65BFF46620C16C1E00F64215 /* NewIdentity */,
+				65E88DFB213562A4006D45C0 /* Voucher */,
 				65BFF46920C1820A00F64215 /* BaseURL.swift */,
 				6509EA3520C84CFD004F8BA0 /* NewToken.swift */,
 				651E197B20C95B5400A46D71 /* Web3Service.swift */,
@@ -1360,6 +1367,16 @@
 			path = LogimEmail;
 			sourceTree = "<group>";
 		};
+		65E88DFB213562A4006D45C0 /* Voucher */ = {
+			isa = PBXGroup;
+			children = (
+				65E88DF321354FE7006D45C0 /* Vouchers.swift */,
+				65E88DF521355066006D45C0 /* Transaction.swift */,
+				65E88DF9213551BA006D45C0 /* Found.swift */,
+			);
+			path = Voucher;
+			sourceTree = "<group>";
+		};
 		65FC85FB20B57646001FECA5 /* QrCode */ = {
 			isa = PBXGroup;
 			children = (
@@ -1890,6 +1907,7 @@
 				6509EA3620C84CFD004F8BA0 /* NewToken.swift in Sources */,
 				65BFF47820C1A61C00F64215 /* SpinnerView.swift in Sources */,
 				651826E720DD1D8200B8963A /* MABaseQRProfileViewController.swift in Sources */,
+				65E88DF621355066006D45C0 /* Transaction.swift in Sources */,
 				651826EA20DD1DA400B8963A /* MAContentQRProfileViewController.swift in Sources */,
 				65467FAD20B829C0009E99CC /* Record.swift in Sources */,
 				65B89A9120B334860024DC51 /* MATransactionBlueViewController.swift in Sources */,
@@ -1930,6 +1948,7 @@
 				6528F01E20E53F3D00DD19C1 /* MALoginEmailViewController.swift in Sources */,
 				65FC866020B5D8F5001FECA5 /* UIColor+Background.swift in Sources */,
 				65B89AB520B43FA50024DC51 /* MAValidationSuccessViewController.swift in Sources */,
+				65E88DF421354FE7006D45C0 /* Vouchers.swift in Sources */,
 				6556376620B718DF00E45487 /* MASpeachRecognition.swift in Sources */,
 				653181B3213010E70001D24E /* MAContentProfileViewController.swift in Sources */,
 				6556376420B7078800E45487 /* MASetUpPinViewController.swift in Sources */,
@@ -1961,6 +1980,7 @@
 				65C0B21D210F375B00FBC254 /* User+CoreDataClass.swift in Sources */,
 				6556375B20B6DE8300E45487 /* ViewType.swift in Sources */,
 				65BFF47A20C1A61C00F64215 /* SpeechRecorder.swift in Sources */,
+				65E88DFA213551BA006D45C0 /* Found.swift in Sources */,
 				65C0B21E210F375B00FBC254 /* User+CoreDataProperties.swift in Sources */,
 				65BFF47020C193A200F64215 /* AuthorizationEmailRequest.swift in Sources */,
 				65FC85F820B56FA2001FECA5 /* MANavicationController.swift in Sources */,

@@ -19,6 +19,7 @@ struct Validators {
     var state : String?
     var validator : Validator?
     var message: String!
+    var logo: Logo!
  
 }
 
@@ -118,6 +119,38 @@ extension Organization: JSONEncodable{
             try encoder.encode(kvk, key:"kvk")
             try encoder.encode(btw, key:"btw")
         })
+    }
+}
+
+struct Logo {
+    var uid: Int!
+    var originalName: String!
+    var type: String!
+    var ext: String!
+    var sizes: Size!
+}
+
+extension Logo: JSONDecodable{
+    init(object: JSONObject) throws {
+        let decoder = JSONDecoder(object:object)
+        uid = try decoder.decode("uid")
+        originalName = try decoder.decode("original_name")
+        type = try decoder.decode("type")
+        ext = try decoder.decode("ext")
+        sizes = try decoder.decode("sizes")
+    }
+}
+
+struct Size {
+    var thumbnail: String!
+    var large: String!
+}
+
+extension Size: JSONDecodable{
+    init(object: JSONObject) throws {
+        let decoder = JSONDecoder(object:object)
+        thumbnail = try decoder.decode("thumbnail")
+        large = try decoder.decode("large")
     }
 }
 

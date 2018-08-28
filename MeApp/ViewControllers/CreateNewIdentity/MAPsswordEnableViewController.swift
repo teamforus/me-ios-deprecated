@@ -87,7 +87,7 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
                                                             }
                                                             if response.errors == nil && response.accessToken != nil{
                                                                 self.updateOldIndentity()
-                                                                self.saveNewIdentity(accessToken: response.accessToken, pinCode: Int16(UserDefaults.standard.integer(forKey: ALConstants.kPincode)))
+                                                                self.saveNewIdentity(accessToken: response.accessToken, pinCode:UserDefaults.standard.string(forKey: ALConstants.kPincode)!)
                                                                 self.getCurrentUser(primaryEmai: self.primaryEmail)
                                                                 RecordCategoryRequest.createRecordCategory(completion: { (response, statusCode) in
                                                                     
@@ -127,7 +127,7 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
     
     // MARK: - CoreDataManaged
     
-    func saveNewIdentity(accessToken: String, pinCode: Int16){
+    func saveNewIdentity(accessToken: String, pinCode: String){
         let context = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "User", in: context)
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")

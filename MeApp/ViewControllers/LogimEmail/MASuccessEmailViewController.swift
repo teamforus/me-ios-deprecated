@@ -71,6 +71,14 @@ class MASuccessEmailViewController: MABaseViewController {
                 } catch {
                     print("Failed saving")
                 }
+            }else{
+                results![0].setValue(accessToken, forKey: "accessToken")
+                results![0].setValue(true, forKey: "currentUser")
+                do {
+                    try context.save()
+                } catch {
+                    print("Failed saving")
+                }
             }
         } catch{
             

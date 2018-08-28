@@ -40,6 +40,9 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         profileEmailLabel.text = UserShared.shared.currentUser.primaryEmail
         let nsObject: AnyObject? = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as AnyObject
         appVersionLabel.text = nsObject as? String
+//        UserDefaults.standard.set("0000", forKey: ALConstants.kPincode)
+//        UserDefaults.standard.synchronize()
+//        updateIndentity()
     }
     
     func faceIDAvailable() -> Bool {
@@ -95,7 +98,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         do{
             let results = try context.fetch(fetchRequest) as? [NSManagedObject]
             if results?.count != 0 {
-                results![0].setValue(Int16(UserDefaults.standard.integer(forKey: ALConstants.kPincode)), forKey: "pinCode")
+                results![0].setValue(UserDefaults.standard.string(forKey: ALConstants.kPincode), forKey: "pinCode")
                 
                 do {
                     try context.save()
@@ -112,16 +115,16 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     func closePinCodeView(typeClose: typeClose) {
         if typeClose == .create {
             let parameters: Parameters = ["pin_code" : Int16(UserDefaults.standard.integer(forKey: ALConstants.kPincode)),
-                                          "old_pin_code" : UserShared.shared.currentUser.pinCode]
+                                          "old_pin_code" : UserShared.shared.currentUser.pinCode!]
             RequestNewIndetity.updatePinCode(parameters: parameters, completion: { (response, statusCode) in
                 if statusCode == 401{
-                    self.logOut()
+//                    self.logOut()
                 }
                 
             }) { (error) in
                 
             }
-            self.updateIndentity()
+            
         }
     }
     

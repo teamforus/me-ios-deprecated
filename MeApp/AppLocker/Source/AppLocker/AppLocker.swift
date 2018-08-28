@@ -108,7 +108,7 @@ public class AppLocker: UIViewController {
     UIView.animate(withDuration: ALConstants.duration, animations: {
       pinView?.backgroundColor = isNeedClear ? .clear : #colorLiteral(red: 0.2078431373, green: 0.3921568627, blue: 0.9764705882, alpha: 1)
     }) { _ in
-      isNeedClear ? self.pin = String(self.pin.dropLast()) : self.pincodeChecker(tag ?? 0)
+      isNeedClear ? self.pin = String(self.pin.dropLast()) : self.pincodeChecker(tag ?? -1)
     }
   }
   
