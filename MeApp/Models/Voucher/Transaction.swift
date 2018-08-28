@@ -21,7 +21,7 @@ struct Transactions {
 
 extension Transactions: JSONDecodable{
     init(object: JSONObject) throws {
-        let decoder = try JSONDecoder(object:object)
+        let decoder = JSONDecoder(object:object)
         organizationId = try decoder.decode("organization_id")
         productId = try decoder.decode("product_id")
         amount = try decoder.decode("amount")
@@ -48,7 +48,7 @@ struct Product{
 
 extension Product: JSONDecodable{
     init(object: JSONObject) throws {
-        let decoder = try JSONDecoder(object:object)
+        let decoder =  JSONDecoder(object:object)
         organizationId = try decoder.decode("organization_id")
         id = try decoder.decode("id")
         productCategoryId = try decoder.decode("product_category_id")
@@ -65,12 +65,14 @@ extension Product: JSONDecodable{
 }
 
 class TransactionVoucherRequest {
-    static func getVoucherList(completion: @escaping ((Transactions, Int) -> Void), failure: @escaping ((Error) -> Void)){
+    
+    
+    static func getTransaction(identityAdress: String,completion: @escaping ((Transactions, Int) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
             "Accept": "application/json",
             "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"
         ]
-        Alamofire.request(BaseURL.baseURL(url: "platform/vouchers"), method: .get, parameters:nil,encoding: JSONEncoding.default, headers: headers).responseJSON {
+        Alamofire.request(BaseURL.baseURL(url: "platform/vouchers/\(identityAdress)/transactions"), method: .get, parameters:nil,encoding: JSONEncoding.default, headers: headers).responseJSON {
             response in
             switch response.result {
             case .success:

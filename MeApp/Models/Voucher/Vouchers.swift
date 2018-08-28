@@ -21,7 +21,7 @@ struct Voucher {
 
 extension Voucher: JSONDecodable{
     init(object: JSONObject) throws {
-        let decoder = try JSONDecoder(object:object)
+        let decoder = JSONDecoder(object:object)
         foundID = try decoder.decode("found_id")
         identityAdress = try decoder.decode("identity_address")
         address = try decoder.decode("address")
@@ -51,6 +51,54 @@ class VoucherRequest {
                         }
                     }
                     completion(voucherList, (response.response?.statusCode)!)
+                }
+                break
+            case .failure(let error):
+                
+                failure(error)
+            }
+        }
+    }
+    
+    static func getVoucher(identityAdress: String,completion: @escaping ((Voucher, Int) -> Void), failure: @escaping ((Error) -> Void)){
+        let headers: HTTPHeaders = [
+            "Accept": "application/json",
+            "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"
+        ]
+        Alamofire.request(BaseURL.baseURL(url: "platform/vouchers/\(identityAdress)"), method: .get, parameters:nil,encoding: JSONEncoding.default, headers: headers).responseJSON {
+            response in
+            switch response.result {
+            case .success:
+                var voucher: Voucher!
+                if let json = response.result.value {
+                    
+                    if (json as AnyObject).count != 0 {
+                        voucher = try! Voucher(object: (json as AnyObject) as! JSONObject)
+                    }
+                }
+                completion(voucher, (response.response?.statusCode)!)
+                
+                break
+            case .failure(let error):
+                
+                failure(error)
+            }
+        }
+    }
+    
+    static func createTransaction(parameters: Parameters, identityAdress: String!,completion: @escaping ((Response, Int) -> Void), failure: @escaping ((Error) -> Void)){
+        let headers: HTTPHeaders = [
+            "Accept": "application/json",
+            "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"
+        ]
+        
+        Alamofire.request(BaseURL.baseURL(url: "platform/vouchers/\(identityAdress)/transactions"), method: .post, parameters:parameters ,encoding: JSONEncoding.default, headers: headers).responseJSON {
+            response in
+            switch response.result {
+            case .success:
+                if let json = response.result.value {
+                    let authorizeCodeResponse = try! Response(object: json as! JSONObject)
+                    completion(authorizeCodeResponse, (response.response?.statusCode)!)
                 }
                 break
             case .failure(let error):

@@ -89,11 +89,11 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
                                                                 self.updateOldIndentity()
                                                                 self.saveNewIdentity(accessToken: response.accessToken, pinCode:UserDefaults.standard.string(forKey: ALConstants.kPincode)!)
                                                                 self.getCurrentUser(primaryEmai: self.primaryEmail)
-                                                                RecordCategoryRequest.createRecordCategory(completion: { (response, statusCode) in
-                                                                    
-                                                                }) { (error) in
-            
-                                                                }
+//                                                                RecordCategoryRequest.createRecordCategory(completion: { (response, statusCode) in
+//                                                                    
+//                                                                }) { (error) in
+//            
+//                                                                }
                                                                 self.performSegue(withIdentifier: "goToWalet", sender: self)
                                                             }else {
                                                                 let error = MessageView.viewFromNib(layout: .tabView)

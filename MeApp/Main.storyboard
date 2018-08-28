@@ -492,18 +492,18 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tick" translatesAutoresizingMaskIntoConstraints="NO" id="XD0-lz-pAw">
                                 <rect key="frame" x="137" y="104" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email has been sent to you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVG-jI-CFB">
                                 <rect key="frame" x="30" y="234" width="315" height="97"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="36"/>
                                 <color key="textColor" red="0.18039215689999999" green="0.1960784314" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGB-BZ-Lqb" customClass="ShadowButton" customModule="Me" customModuleProvider="target">
                                 <rect key="frame" x="30" y="435" width="315" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.20392156859999999" green="0.38431372549999998" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="14"/>
                                 <state key="normal" title="Go to mail app">
@@ -533,7 +533,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMC-Xp-5ur" customClass="ShadowButton" customModule="Me" customModuleProvider="target">
                                 <rect key="frame" x="30" y="507" width="315" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="14"/>
                                 <state key="normal" title="Cancel">
@@ -579,7 +579,7 @@
                 <viewControllerPlaceholder storyboardName="Tabs" id="RMo-3g-bFh" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rcK-By-CgG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2151" y="210"/>
+            <point key="canvasLocation" x="2159" y="269"/>
         </scene>
         <!--Login WithQR View Controller-->
         <scene sceneID="izQ-qo-Qcl">
@@ -758,6 +758,7 @@
                         <outlet property="loginWithPinCodeButton" destination="YV7-Gb-SHc" id="ZD8-hb-qWp"/>
                         <outlet property="loginWithQRButton" destination="tc3-ez-uND" id="Xyu-mE-x3f"/>
                         <outlet property="qrBodyView" destination="yO0-Rs-6C7" id="FSY-0S-3kB"/>
+                        <segue destination="RMo-3g-bFh" kind="presentation" identifier="goToWalet" id="sb3-cC-tEC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mee-gd-9An" userLabel="First Responder" sceneMemberID="firstResponder"/>

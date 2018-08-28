@@ -16,7 +16,7 @@ struct Status {
             "Authorization" : "Bearer \(accessToken)"
         ]
         
-        Alamofire.request(BaseURL.baseURL(url: "identity/record-categories"), method: .get, parameters:nil ,encoding: JSONEncoding.default, headers: headers).responseJSON {
+        Alamofire.request(BaseURL.baseURL(url: "identity/proxy/check-token?access_token=\(accessToken)"), method: .get, parameters:nil ,encoding: JSONEncoding.default, headers: headers).responseJSON {
             response in
             switch response.result {
             case .success:

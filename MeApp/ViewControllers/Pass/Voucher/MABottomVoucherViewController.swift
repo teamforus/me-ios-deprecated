@@ -171,9 +171,12 @@ class MABottomVoucherViewController: MABaseViewController, ISHPullUpSizingDelega
     }
     
     func pullUpViewController(_ pullUpViewController: ISHPullUpViewController, targetHeightForBottomViewController bottomVC: UIViewController, fromCurrentHeight height: CGFloat) -> CGFloat {
-//        if abs(height - halfWayPoint) < 30 {
-//            return halfWayPoint
-//        }
+        
+        if abs(height - halfWayPoint) < 30 {
+            pullUpController.toggleState(animated: true)
+            return halfWayPoint
+        }
+        
         return height
     }
     
@@ -186,6 +189,8 @@ class MABottomVoucherViewController: MABaseViewController, ISHPullUpSizingDelega
         handleView.setState(ISHPullUpHandleView.handleState(for: state), animated: firstAppearanceCompleted)
         if state == .collapsed {
             self.view.isHidden = true
+        }else if state == .intermediate {
+            pullUpController.toggleState(animated: true)
         }
         
     }
