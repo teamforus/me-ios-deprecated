@@ -343,7 +343,6 @@
         <!--Records View Controller-->
         <scene sceneID="Zhi-7X-BrG">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dS6-jG-737" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="QaA-8N-JDK" customClass="MARecordsViewController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kT4-gl-fkT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -564,6 +563,7 @@
                         <segue destination="vwC-Qd-X13" kind="show" identifier="goToSwitchProfile" id="3yL-Ay-VOQ"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dS6-jG-737" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1661.5999999999999" y="-530.28485757121439"/>
         </scene>
@@ -571,7 +571,7 @@
         <scene sceneID="3HN-tU-oBk">
             <objects>
                 <viewControllerPlaceholder storyboardName="NewProfile" referencedIdentifier="personalRecord" id="zMH-cq-qpS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="7le-DV-ctU"/>
+                    <tabBarItem key="tabBarItem" title="Eigenschappen" image="records" id="7le-DV-ctU"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Zi-ns-Rdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -684,6 +684,6 @@
         <image name="wallet" width="30" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KRu-cj-hhk"/>
+        <segue reference="9pp-lm-tbg"/>
     </inferredMetricsTieBreakers>
 </document>

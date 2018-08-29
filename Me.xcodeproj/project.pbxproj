@@ -37,6 +37,7 @@
 		6504473C20C04F4300D040B9 /* UserLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6504473B20C04F4300D040B9 /* UserLocal.swift */; };
 		6504473F20C060E000D040B9 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6504473E20C060E000D040B9 /* Validation.swift */; };
 		6504474220C0715C00D040B9 /* MAKindpakketCurrenciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6504474120C0715C00D040B9 /* MAKindpakketCurrenciesViewController.swift */; };
+		6504A4BD2136A0F10064414D /* Tabs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6504A4BC2136A0E80064414D /* Tabs.storyboard */; };
 		6509EA3620C84CFD004F8BA0 /* NewToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6509EA3520C84CFD004F8BA0 /* NewToken.swift */; };
 		650F01FB2126EDEC00484BD1 /* TypeLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650F01FA2126EDEC00484BD1 /* TypeLog.swift */; };
 		650FA29520F79CD200997261 /* ShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650FA29420F79CD200997261 /* ShadowButton.swift */; };
@@ -226,7 +227,6 @@
 		65E88DF421354FE7006D45C0 /* Vouchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E88DF321354FE7006D45C0 /* Vouchers.swift */; };
 		65E88DF621355066006D45C0 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E88DF521355066006D45C0 /* Transaction.swift */; };
 		65E88DFA213551BA006D45C0 /* Found.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E88DF9213551BA006D45C0 /* Found.swift */; };
-		65E88DFF21358027006D45C0 /* Tabs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E88DFE21358026006D45C0 /* Tabs.storyboard */; };
 		65FC85F820B56FA2001FECA5 /* MANavicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC85F720B56FA2001FECA5 /* MANavicationController.swift */; };
 		65FC85FA20B57642001FECA5 /* MAQRCodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC85F920B57642001FECA5 /* MAQRCodeReaderViewController.swift */; };
 		65FC85FE20B58426001FECA5 /* MAValidationQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC85FC20B58426001FECA5 /* MAValidationQRViewController.swift */; };
@@ -290,6 +290,7 @@
 		6504473B20C04F4300D040B9 /* UserLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocal.swift; sourceTree = "<group>"; };
 		6504473E20C060E000D040B9 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		6504474120C0715C00D040B9 /* MAKindpakketCurrenciesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAKindpakketCurrenciesViewController.swift; sourceTree = "<group>"; };
+		6504A4BC2136A0E80064414D /* Tabs.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tabs.storyboard; sourceTree = "<group>"; };
 		6509EA3520C84CFD004F8BA0 /* NewToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewToken.swift; sourceTree = "<group>"; };
 		650F01FA2126EDEC00484BD1 /* TypeLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeLog.swift; sourceTree = "<group>"; };
 		650FA29420F79CD200997261 /* ShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowButton.swift; sourceTree = "<group>"; };
@@ -489,7 +490,6 @@
 		65E88DF321354FE7006D45C0 /* Vouchers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vouchers.swift; sourceTree = "<group>"; };
 		65E88DF521355066006D45C0 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		65E88DF9213551BA006D45C0 /* Found.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Found.swift; sourceTree = "<group>"; };
-		65E88DFE21358026006D45C0 /* Tabs.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Tabs.storyboard; path = "../../../me-ios/MeApp/Tabs.storyboard"; sourceTree = "<group>"; };
 		65FC85F720B56FA2001FECA5 /* MANavicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MANavicationController.swift; sourceTree = "<group>"; };
 		65FC85F920B57642001FECA5 /* MAQRCodeReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAQRCodeReaderViewController.swift; sourceTree = "<group>"; };
 		65FC85FC20B58426001FECA5 /* MAValidationQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAValidationQRViewController.swift; sourceTree = "<group>"; };
@@ -909,7 +909,7 @@
 				65D764E020B73933007D7B9D /* Helper */,
 				65B89A8E20B3344C0024DC51 /* ViewControllers */,
 				65A51FA120B300EA0010DB33 /* Main.storyboard */,
-				65E88DFE21358026006D45C0 /* Tabs.storyboard */,
+				6504A4BC2136A0E80064414D /* Tabs.storyboard */,
 				65A51F9D20B300E90010DB33 /* PassStoryboard.storyboard */,
 				65B89ACC20B4761C0024DC51 /* NewProfile.storyboard */,
 				653181AC212FF8210001D24E /* Profile.storyboard */,
@@ -1580,6 +1580,7 @@
 				658BBA532110954C0098E2AC /* backspaceBlue.png in Resources */,
 				65A51FDF20B3012C0010DB33 /* SF-Pro-Display-BlackItalic.otf in Resources */,
 				65B89AA220B42A6F0024DC51 /* MARegistrationViewController.xib in Resources */,
+				6504A4BD2136A0F10064414D /* Tabs.storyboard in Resources */,
 				65A51FDD20B3012C0010DB33 /* SF-Pro-Display-UltralightItalic.otf in Resources */,
 				653181AD212FF8210001D24E /* Profile.storyboard in Resources */,
 				65BB7C3E2112EF380073352C /* GoogleSans-Bold.ttf in Resources */,
@@ -1610,7 +1611,6 @@
 				65A51FE820B3012C0010DB33 /* SF-Pro-Display-BoldItalic.otf in Resources */,
 				6500425D20DB97E40092CCDA /* OpenSans-Bold.ttf in Resources */,
 				6579634020E4D49D001CF29D /* NunitoSans-ExtraLight.ttf in Resources */,
-				65E88DFF21358027006D45C0 /* Tabs.storyboard in Resources */,
 				65A51FA920B300EA0010DB33 /* Main.storyboard in Resources */,
 				6579634B20E4D49E001CF29D /* NunitoSans-ExtraBoldItalic.ttf in Resources */,
 				65A51FD520B3012C0010DB33 /* SF-Pro-Display-Heavy.otf in Resources */,
