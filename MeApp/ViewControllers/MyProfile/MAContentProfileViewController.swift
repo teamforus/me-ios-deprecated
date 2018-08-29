@@ -36,7 +36,9 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
             faceIdImage.image = #imageLiteral(resourceName: "touchId")
             faceIdLabel.text = "Use Touch ID for login"
         }
+        if UserShared.shared.currentUser.firstName != nil {
         profileNameLabel.text = "\(UserShared.shared.currentUser.firstName!) \(UserShared.shared.currentUser.lastName!)"
+        }
         profileEmailLabel.text = UserShared.shared.currentUser.primaryEmail
         let nsObject: AnyObject? = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as AnyObject
         appVersionLabel.text = nsObject as? String
