@@ -43,14 +43,17 @@ class VoucherRequest {
             switch response.result {
             case .success:
                 if let json = response.result.value {
-                    let voucherList: NSMutableArray = NSMutableArray()
-                    if (json as AnyObject).count != 0 {
-                        for voucherItem in (json as AnyObject)["data"] as! Array<Any>{
-                            let voucher = try! Voucher(object: voucherItem as! JSONObject)
-                            voucherList.add(voucher)
+                    if (json as AnyObject)["message"] == nil {
+                        let voucherList: NSMutableArray = NSMutableArray()
+                        if (json as AnyObject).count != 0 {
+                            for voucherItem in (json as AnyObject)["data"] as! Array<Any>{
+                                let voucher = try! Voucher(object: voucherItem as! JSONObject)
+                                voucherList.add(voucher)
+                            }
                         }
+                        completion(voucherList, (response.response?.statusCode)!)
                     }
-                    completion(voucherList, (response.response?.statusCode)!)
+                    
                 }
                 break
             case .failure(let error):

@@ -76,7 +76,7 @@ class MALoginEmailViewController: MABaseViewController {
                     }else {
                         let error = MessageView.viewFromNib(layout: .tabView)
                         error.configureTheme(.error)
-                        error.configureContent(title: "Invalid email", body: response.errors?.recordMessage.first, iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
+                        error.configureContent(title: "Invalid email", body: "", iconImage: nil, iconText: "Such email not exist!", buttonImage: nil, buttonTitle: "YES") { _ in
                             SwiftMessages.hide()
                         }
                         error.button?.setTitle("OK", for: .normal)
@@ -109,6 +109,11 @@ class MALoginEmailViewController: MABaseViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let succesVC = segue.destination as! MASuccessEmailViewController
+        succesVC.email = emailSkyTextField.text
     }
     
 }

@@ -78,7 +78,7 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
                     let emailObject = ["primary_email" : primaryEmail,
                                        "family_name" : familyName,
                                        "given_name" : givenName]
-                    let parameters: Parameters = ["pin_code" : UserDefaults.standard.string(forKey: ALConstants.kPincode)!,
+                    let parameters: Parameters = ["pin_code" : "1111",
                                                   "records" : emailObject]
                     RequestNewIndetity.createnewIndentity(parameters: parameters,
                                                           completion: { (response, statusCode) in
