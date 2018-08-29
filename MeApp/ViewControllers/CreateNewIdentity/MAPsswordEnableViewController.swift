@@ -22,14 +22,14 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
     let reachability = Reachability()!
     
     var appLocker: AppLocker!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if !faceIDAvailable(){
             headLabel.text = "Would you like to log in with Tocuh ID?"
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -75,47 +75,47 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
             break
         case .create:
             if reachability.connection != .none{
-                    let emailObject = ["primary_email" : primaryEmail,
-                                       "family_name" : familyName,
-                                       "given_name" : givenName]
-                    let parameters: Parameters = ["pin_code" : UserDefaults.standard.string(forKey: ALConstants.kPincode)!,
-                                                  "records" : emailObject]
-                    RequestNewIndetity.createnewIndentity(parameters: parameters,
-                                                          completion: { (response, statusCode) in
-                                                            if statusCode == 401 {
+                let emailObject = ["primary_email" : primaryEmail,
+                                   "family_name" : familyName,
+                                   "given_name" : givenName]
+                let parameters: Parameters = ["pin_code" : "1111",
+                                              "records" : emailObject]
+                RequestNewIndetity.createnewIndentity(parameters: parameters,
+                                                      completion: { (response, statusCode) in
+                                                        if statusCode == 401 {
+                                                            
+                                                        }
+                                                        if response.errors == nil && response.accessToken != nil{
+                                                            self.updateOldIndentity()
+                                                            self.saveNewIdentity(accessToken: response.accessToken, pinCode:UserDefaults.standard.string(forKey: ALConstants.kPincode)!)
+                                                            self.getCurrentUser(primaryEmai: self.primaryEmail)
+                                                            RecordCategoryRequest.createRecordCategory(completion: { (response, statusCode) in
+                                                                
+                                                            }) { (error) in
                                                                 
                                                             }
-                                                            if response.errors == nil && response.accessToken != nil{
-                                                                self.updateOldIndentity()
-                                                                self.saveNewIdentity(accessToken: response.accessToken, pinCode:UserDefaults.standard.string(forKey: ALConstants.kPincode)!)
-                                                                self.getCurrentUser(primaryEmai: self.primaryEmail)
-//                                                                RecordCategoryRequest.createRecordCategory(completion: { (response, statusCode) in
-//                                                                    
-//                                                                }) { (error) in
-//            
-//                                                                }
-                                                                self.performSegue(withIdentifier: "goToWalet", sender: self)
-                                                            }else {
-                                                                let error = MessageView.viewFromNib(layout: .tabView)
-                                                                error.configureTheme(.error)
-                                                                error.configureContent(title: "Invalid data", body: response.errors?.recordMessage != nil ? response.errors?.recordMessage.first : "Email already is used" , iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
-                                                                    SwiftMessages.hide()
-                                                                }
-                                                                error.button?.setTitle("OK", for: .normal)
-            
-                                                                SwiftMessages.show( view: error)
+                                                            self.performSegue(withIdentifier: "goToWalet", sender: self)
+                                                        }else {
+                                                            let error = MessageView.viewFromNib(layout: .tabView)
+                                                            error.configureTheme(.error)
+                                                            error.configureContent(title: "Invalid data", body: response.errors?.recordMessage != nil ? response.errors?.recordMessage.first : "Email already is used" , iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
+                                                                SwiftMessages.hide()
                                                             }
-            
-                    }, failure: { (error) in
-                        let error = MessageView.viewFromNib(layout: .tabView)
-                        error.configureTheme(.error)
-                        error.configureContent(title: "Invalid email", body: "Something go wrong, please try again!", iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
-                            SwiftMessages.hide()
-                        }
-                        error.button?.setTitle("OK", for: .normal)
-            
-                        SwiftMessages.show( view: error)
-                    })
+                                                            error.button?.setTitle("OK", for: .normal)
+                                                            
+                                                            SwiftMessages.show( view: error)
+                                                        }
+                                                        
+                }, failure: { (error) in
+                    let error = MessageView.viewFromNib(layout: .tabView)
+                    error.configureTheme(.error)
+                    error.configureContent(title: "Invalid email", body: "Something go wrong, please try again!", iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
+                        SwiftMessages.hide()
+                    }
+                    error.button?.setTitle("OK", for: .normal)
+                    
+                    SwiftMessages.show( view: error)
+                })
             }else{
                 AlertController.showInternetUnable()
             }
@@ -189,5 +189,5 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
             
         }
     }
-
+    
 }

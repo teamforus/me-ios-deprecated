@@ -9,9 +9,12 @@
 import UIKit
 import CoreData
 
-class MASuccessEmailViewController: MABaseViewController {
+class MASuccessEmailViewController: MABaseViewController, AppLockerDelegate {
+    
+    
     var timer : Timer! = Timer()
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var email: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,12 +45,9 @@ class MASuccessEmailViewController: MABaseViewController {
         Status.checkStatus(accessToken: UserDefaults.standard.string(forKey: "auth_token")!, completion: { (code) in
             if code == 200 {
                 self.timer.invalidate()
-                self.performSegue(withIdentifier: "goToWalet", sender: nil)
+                
                 //check if user exist or no
-                self.saveNewIdentity(accessToken: UserDefaults.standard.string(forKey: "auth_token")!, email: "")
-                self.updateOldIndentity()
-                self.getCurrentUser(accessToken: UserDefaults.standard.string(forKey: "auth_token")!)
-              
+                self.checkPassCode()
             }
         }) { (error) in
             AlertController.showError()
@@ -66,6 +66,7 @@ class MASuccessEmailViewController: MABaseViewController {
                 let newUser = NSManagedObject(entity: entity!, insertInto: context)
                 newUser.setValue(true, forKey: "currentUser")
                 newUser.setValue(accessToken, forKey: "accessToken")
+                newUser.setValue(UserDefaults.standard.string(forKey: ALConstants.kPincode), forKey: "pinCode")
                 do {
                     try context.save()
                 } catch {
@@ -74,11 +75,48 @@ class MASuccessEmailViewController: MABaseViewController {
             }else{
                 results![0].setValue(accessToken, forKey: "accessToken")
                 results![0].setValue(true, forKey: "currentUser")
+                results![0].setValue(UserDefaults.standard.string(forKey: ALConstants.kPincode), forKey: "pinCode")
                 do {
                     try context.save()
                 } catch {
                     print("Failed saving")
                 }
+            }
+        } catch{
+            
+        }
+    }
+    
+    func checkPassCode(){
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        fetchRequest.predicate = NSPredicate(format:"primaryEmail == %@", email)
+        
+        do{
+            let results = try context.fetch(fetchRequest) as? [NSManagedObject]
+            if results?.count != 0 {
+                let user = results![0] as! User
+                if user.pinCode != nil || user.pinCode != "" {
+                    UserDefaults.standard.set(user.pinCode, forKey: ALConstants.kPincode)
+                    var appearance = ALAppearance()
+                    appearance.image = UIImage(named: "lock")!
+                    appearance.title = "Create passcode"
+                    appearance.subtitle = "Your passcode is required"
+                    appearance.isSensorsEnabled = true
+                    appearance.delegate = self
+                    
+                    AppLocker.present(with: .validate, and: appearance, withController: self)
+                }
+            }else{
+                UserDefaults.standard.set("", forKey: ALConstants.kPincode)
+                var appearance = ALAppearance()
+                appearance.image = UIImage(named: "lock")!
+                appearance.title = "Create passcode"
+                appearance.subtitle = "Your passcode is required"
+                appearance.isSensorsEnabled = true
+                appearance.delegate = self
+                
+                AppLocker.present(with: .create, and: appearance, withController: self)
             }
         } catch{
             
@@ -92,7 +130,7 @@ class MASuccessEmailViewController: MABaseViewController {
         
         do{
             let results = try context.fetch(fetchRequest) as? [NSManagedObject]
-            if results?.count == 0 {
+            if results?.count != 0 {
                 results![0].setValue(false, forKey: "currentUser")
                 
                 do {
@@ -118,6 +156,13 @@ class MASuccessEmailViewController: MABaseViewController {
         } catch{
             
         }
+    }
+    
+    func closePinCodeView(typeClose: typeClose) {
+        self.updateOldIndentity()
+        self.saveNewIdentity(accessToken: UserDefaults.standard.string(forKey: "auth_token")!, email: self.email)
+        self.getCurrentUser(accessToken: UserDefaults.standard.string(forKey: "auth_token")!)
+        self.performSegue(withIdentifier: "goToWalet", sender: nil)
     }
     
     @IBAction func cancel(_ sender: Any) {

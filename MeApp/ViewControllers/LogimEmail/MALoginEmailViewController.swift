@@ -66,36 +66,36 @@ class MALoginEmailViewController: MABaseViewController {
             confirmEmailSkyTextField.errorMessage = nil
             if mailIsValid {
                 if reachablity.connection != .none{
-                AuthorizationEmailRequest.loginWithEmail(parameters: try! AuthorizationEmail(email: emailSkyTextField.text!,
-                                                         source:"app.me_app").toJSON() as! Parameters,
-                    completion: { (response, statusCode) in
-                    if response.errors == nil {
-                        UserDefaults.standard.setValue(response.accessToken, forKeyPath: "auth_token")
-                        self.performSegue(withIdentifier: "goToSuccessMail", sender: self)
-//
-                    }else {
+                    AuthorizationEmailRequest.loginWithEmail(parameters: try! AuthorizationEmail(email: emailSkyTextField.text!,
+                                                                                                 source:"app.me_app").toJSON() as! Parameters,
+                                                             completion: { (response, statusCode) in
+                                                                if response.errors == nil {
+                                                                    UserDefaults.standard.setValue(response.accessToken, forKeyPath: "auth_token")
+                                                                    self.performSegue(withIdentifier: "goToSuccessMail", sender: self)
+                                                                    //
+                                                                }else {
+                                                                    let error = MessageView.viewFromNib(layout: .tabView)
+                                                                    error.configureTheme(.error)
+                                                                    error.configureContent(title: "Invalid email", body: "", iconImage: nil, iconText: "Such email not exist!", buttonImage: nil, buttonTitle: "YES") { _ in
+                                                                        SwiftMessages.hide()
+                                                                    }
+                                                                    error.button?.setTitle("OK", for: .normal)
+                                                                    
+                                                                    SwiftMessages.show( view: error)
+                                                                }
+                                                                
+                    }, failure: { (error) in
                         let error = MessageView.viewFromNib(layout: .tabView)
                         error.configureTheme(.error)
-                        error.configureContent(title: "Invalid email", body: response.errors?.recordMessage.first, iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
+                        error.configureContent(title: "Invalid email", body: "Something go wrong, please try again!", iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
                             SwiftMessages.hide()
                         }
                         error.button?.setTitle("OK", for: .normal)
                         
                         SwiftMessages.show( view: error)
-                    }
-                                                            
-                }, failure: { (error) in
-                    let error = MessageView.viewFromNib(layout: .tabView)
-                    error.configureTheme(.error)
-                    error.configureContent(title: "Invalid email", body: "Something go wrong, please try again!", iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
-                        SwiftMessages.hide()
-                    }
-                    error.button?.setTitle("OK", for: .normal)
-                    
-                    SwiftMessages.show( view: error)
-                })
-            }
-            
+                    })
+                }
+                
             }else{
                 AlertController.showInternetUnable()
             }
@@ -109,6 +109,11 @@ class MALoginEmailViewController: MABaseViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let succesVC = segue.destination as! MASuccessEmailViewController
+        succesVC.email = emailSkyTextField.text
     }
     
 }

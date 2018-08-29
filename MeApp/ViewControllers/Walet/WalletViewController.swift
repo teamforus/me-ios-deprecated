@@ -28,6 +28,7 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
     @IBOutlet weak var tableView: UITableView!
     var walletCase : WalletCase! = WalletCase.token
     @IBOutlet weak var segmentView: UIView!
+    var vouhers: NSMutableArray! = NSMutableArray()
     
 //    @IBOutlet weak var voiceButton: VoiceButtonView!
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "ro"))!
@@ -83,7 +84,9 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
         VoucherRequest.getVoucherList(completion: { (response, statusCode) in
-            print(response)
+            self.vouhers.removeAllObjects()
+            self.vouhers.addObjects(from: response as! [Any])
+            self.tableView.reloadData()
         }) { (error) in
             
         }
@@ -146,10 +149,8 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if walletCase != .token {
-            return 2
-        }else if walletCase == .passes{
-            return 2
+         if walletCase == .passes{
+            return vouhers.count
         }
         return 3
     }
@@ -180,18 +181,19 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
         case .assets:
             let cellWalletOwner = tableView.dequeueReusableCell(withIdentifier: "cell3", for: indexPath) as! MAWalletOwnerTableViewCell
             cellWalletOwner.delegate = self
-            if indexPath.row == 0{
                 cellWalletOwner.headNameLabel.text = "APPARTEMENT"
                 cellWalletOwner.productNameLabel.text = "Groningen"
                 cellWalletOwner.marcLabel.text = "Ulgersmaweg 35, 9731BK"
-            }else if indexPath.row == 1{
-                cellWalletOwner.headNameLabel.text = "AUTO"
-                cellWalletOwner.productNameLabel.text = "Mercedes G-Class"
-                cellWalletOwner.marcLabel.text = "9731 EU"
-                cellWalletOwner.typeIconImage.image = UIImage.init(named: "sportsCar")
-            }
+    
             cell = cellWalletOwner
-            
+            break
+        case .passes:
+            let cellWallet = tableView.dequeueReusableCell(withIdentifier: "cell4", for: indexPath) as! MAWaletVoucherTableViewCell
+            cellWallet.delegate = self
+            let voucher = self.vouhers[indexPath.row] as! Voucher
+            cellWallet.voucherTitleLabel.text = voucher.found.name
+            cellWallet.priceLabel.text = "€\(voucher.amount!)"
+            cell = cellWallet
         default:
             let cellWallet = tableView.dequeueReusableCell(withIdentifier: "cell4", for: indexPath) as! MAWaletVoucherTableViewCell
             cellWallet.delegate = self
