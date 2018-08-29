@@ -21,7 +21,7 @@ struct Voucher {
 
 extension Voucher: JSONDecodable{
     init(object: JSONObject) throws {
-        let decoder = try JSONDecoder(object:object)
+        let decoder = JSONDecoder(object:object)
         foundID = try decoder.decode("found_id")
         identityAdress = try decoder.decode("identity_address")
         address = try decoder.decode("address")
@@ -43,7 +43,7 @@ class VoucherRequest {
             switch response.result {
             case .success:
                 if let json = response.result.value {
-                    if (json as AnyObject)["message"] == nil {
+                    if (json as AnyObject)["message"]! == nil {
                         let voucherList: NSMutableArray = NSMutableArray()
                         if (json as AnyObject).count != 0 {
                             for voucherItem in (json as AnyObject)["data"] as! Array<Any>{

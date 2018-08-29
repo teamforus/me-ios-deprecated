@@ -130,7 +130,7 @@ class MASuccessEmailViewController: MABaseViewController, AppLockerDelegate {
         
         do{
             let results = try context.fetch(fetchRequest) as? [NSManagedObject]
-            if results?.count == 0 {
+            if results?.count != 0 {
                 results![0].setValue(false, forKey: "currentUser")
                 
                 do {
