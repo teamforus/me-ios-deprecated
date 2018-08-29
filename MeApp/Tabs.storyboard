@@ -559,8 +559,8 @@
                     <connections>
                         <outlet property="collectionView" destination="mFy-FN-oUx" id="f5T-BZ-sWd"/>
                         <outlet property="tableView" destination="mbL-Sz-kyL" id="ncf-3O-Igq"/>
-                        <segue destination="UWO-gc-dZE" kind="show" identifier="goToNewProfile" id="9pp-lm-tbg"/>
                         <segue destination="vwC-Qd-X13" kind="show" identifier="goToSwitchProfile" id="3yL-Ay-VOQ"/>
+                        <segue destination="zMH-cq-qpS" kind="show" identifier="goToNewProfile" id="VNz-Te-9Ld"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dS6-jG-737" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -575,7 +575,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Zi-ns-Rdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3334" y="-642"/>
+            <point key="canvasLocation" x="2476" y="-644"/>
         </scene>
         <!--siwtchProfile-->
         <scene sceneID="xsG-iS-41E">
@@ -624,7 +624,7 @@
                     <connections>
                         <segue destination="98d-kJ-Qib" kind="relationship" relationship="viewControllers" id="SxY-qd-qHe"/>
                         <segue destination="LjQ-wo-wiu" kind="relationship" relationship="viewControllers" id="GR5-rr-3aq"/>
-                        <segue destination="UWO-gc-dZE" kind="relationship" relationship="viewControllers" id="ZTp-4o-SPw"/>
+                        <segue destination="pjV-fU-lXz" kind="relationship" relationship="viewControllers" id="Ojc-Ap-LVk"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Jf-Qo-3ZK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -669,25 +669,6 @@
             </objects>
             <point key="canvasLocation" x="820" y="-530"/>
         </scene>
-        <!--Eigenschappen-->
-        <scene sceneID="BZa-qN-WeD">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UWO-gc-dZE" customClass="HiddenNavBarNavigationController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Eigenschappen" image="records" id="FLE-yj-gKr"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="E6z-le-hsM">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="zMH-cq-qpS" kind="relationship" relationship="rootViewController" id="lAv-jX-HGs"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VfV-SG-EYV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2679" y="-641"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Resting" width="210" height="210"/>
@@ -702,7 +683,4 @@
         <image name="voucherIcon" width="52" height="52"/>
         <image name="wallet" width="30" height="26"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="ZTp-4o-SPw"/>
-    </inferredMetricsTieBreakers>
 </document>
