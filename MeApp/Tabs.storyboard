@@ -559,7 +559,7 @@
                     <connections>
                         <outlet property="collectionView" destination="mFy-FN-oUx" id="f5T-BZ-sWd"/>
                         <outlet property="tableView" destination="mbL-Sz-kyL" id="ncf-3O-Igq"/>
-                        <segue destination="zMH-cq-qpS" kind="show" identifier="goToNewProfile" id="9pp-lm-tbg"/>
+                        <segue destination="S76-wR-HhB" kind="show" identifier="goToNewProfile" id="9pp-lm-tbg"/>
                         <segue destination="vwC-Qd-X13" kind="show" identifier="goToSwitchProfile" id="3yL-Ay-VOQ"/>
                     </connections>
                 </viewController>
@@ -567,15 +567,15 @@
             </objects>
             <point key="canvasLocation" x="1661.5999999999999" y="-530.28485757121439"/>
         </scene>
-        <!--personalRecord-->
+        <!--personal-->
         <scene sceneID="3HN-tU-oBk">
             <objects>
-                <viewControllerPlaceholder storyboardName="NewProfile" referencedIdentifier="personalRecord" id="zMH-cq-qpS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Eigenschappen" image="records" id="7le-DV-ctU"/>
+                <viewControllerPlaceholder storyboardName="NewProfile" referencedIdentifier="personal" id="zMH-cq-qpS" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="fPu-YC-xJb"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Zi-ns-Rdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2426" y="-878"/>
+            <point key="canvasLocation" x="3364.8000000000002" y="-878.86056971514245"/>
         </scene>
         <!--siwtchProfile-->
         <scene sceneID="xsG-iS-41E">
@@ -624,7 +624,7 @@
                     <connections>
                         <segue destination="98d-kJ-Qib" kind="relationship" relationship="viewControllers" id="SxY-qd-qHe"/>
                         <segue destination="LjQ-wo-wiu" kind="relationship" relationship="viewControllers" id="GR5-rr-3aq"/>
-                        <segue destination="zMH-cq-qpS" kind="relationship" relationship="viewControllers" id="KRu-cj-hhk"/>
+                        <segue destination="S76-wR-HhB" kind="relationship" relationship="viewControllers" id="KRu-cj-hhk"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Jf-Qo-3ZK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -668,6 +668,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Chx-yJ-HH4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="820" y="-530"/>
+        </scene>
+        <!--Eigenschappen-->
+        <scene sceneID="Wdm-Yc-gpO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S76-wR-HhB" customClass="HiddenNavBarNavigationController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Eigenschappen" image="records" id="7le-DV-ctU"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mKl-8Q-pNZ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zMH-cq-qpS" kind="relationship" relationship="rootViewController" id="9sa-Yy-fj7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2hC-Nt-8iK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2424.8000000000002" y="-878.41079460269873"/>
         </scene>
     </scenes>
     <resources>
