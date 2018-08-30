@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 struct Status {
-    static func checkStatus(accessToken: String,completion: @escaping ((Int) -> Void), failure: @escaping ((Error) -> Void)){
+    static func checkStatus(accessToken: String,completion: @escaping ((Int, String) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
             "Accept": "application/json",
             "Authorization" : "Bearer \(accessToken)"
@@ -22,7 +22,7 @@ struct Status {
             case .success:
                 
                 if response.result.value != nil {
-                    completion((response.response?.statusCode)!)
+                    completion((response.response?.statusCode)!,(response.result.value as AnyObject)["message"] as! String)
                 }
                 break
             case .failure(let error):

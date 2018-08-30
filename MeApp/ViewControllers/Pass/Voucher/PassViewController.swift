@@ -14,6 +14,7 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var imageQR: UIImageView!
     @IBOutlet weak var voiceButton: VoiceButtonView!
+    var voucher: Voucher!
     @IBOutlet weak var kindPaketQRView: UIView!
     @IBOutlet weak var emailMeButton: UIButton!
     @IBOutlet weak var smallerAmount: UIButton!

@@ -42,12 +42,14 @@ class MASuccessEmailViewController: MABaseViewController, AppLockerDelegate {
     }
     
     @objc func authorizeToken(){
-        Status.checkStatus(accessToken: UserDefaults.standard.string(forKey: "auth_token")!, completion: { (code) in
+        Status.checkStatus(accessToken: UserDefaults.standard.string(forKey: "auth_token")!, completion: { (code, message) in
             if code == 200 {
-                self.timer.invalidate()
-                
-                //check if user exist or no
-                self.checkPassCode()
+                if message == "active"{
+                    self.timer.invalidate()
+                    
+                    //check if user exist or no
+                    self.checkPassCode()
+                }
             }
         }) { (error) in
             AlertController.showError()

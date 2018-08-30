@@ -54,7 +54,7 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
             walletCase = WalletCase.passes
         
 //        segmentView.layer.cornerRadius = 8.0
-        tableView.setContentOffset(CGPoint(x: 0, y: 44), animated: true)
+//        tableView.setContentOffset(CGPoint(x: 0, y: 44), animated: true)
 //        segmentedControl.items = ["Valuta", "Bezit", "Vouchers"]
 //        segmentedControl.selectedIndex = 0
 //        segmentedControl.font = UIFont(name: "GoogleSans-Medium", size: 14)
@@ -116,6 +116,12 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
 //    }
     @IBAction func logout(_ sender: Any) {
         self.logOut()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToKindPaket"{
+            
+        }
     }
 }
 

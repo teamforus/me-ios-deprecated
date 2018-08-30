@@ -99,13 +99,15 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
     }
     
     @objc func checkAuthorizeToken(){
-        Status.checkStatus(accessToken: self.authorizeToken.accessToken, completion: { (code) in
+        Status.checkStatus(accessToken: self.authorizeToken.accessToken, completion: { (code, message) in
             if code == 200 {
-                self.timer.invalidate()
-                self.updateOldIndentity()
-                self.saveNewIdentity(accessToken: self.authorizeToken.accessToken)
-                self.getCurrentUser(accessToken: self.authorizeToken.accessToken)
-                NotificationCenter.default.post(name: Notification.Name("TokenIsValidate"), object: nil)
+                if message == "active"{
+                    self.timer.invalidate()
+                    self.updateOldIndentity()
+                    self.saveNewIdentity(accessToken: self.authorizeToken.accessToken)
+                    self.getCurrentUser(accessToken: self.authorizeToken.accessToken)
+                    NotificationCenter.default.post(name: Notification.Name("TokenIsValidate"), object: nil)
+                }
             }
         }) { (error) in
             AlertController.showError()

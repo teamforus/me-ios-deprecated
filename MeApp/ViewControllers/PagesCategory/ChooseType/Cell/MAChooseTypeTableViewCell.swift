@@ -16,6 +16,7 @@ import UICheckbox_Swift
 class MAChooseTypeTableViewCell: UITableViewCell {
     @IBOutlet weak var typeButton: ShadowButton!
     @IBOutlet weak var checkBox: UICheckbox!
+    var isSelectedCell: Bool! = false
     @IBOutlet weak var titleRecordType: UILabel!
     @IBOutlet weak var viewTypeRecord: CustomCornerUIView!
     weak var delegate: MAChooseTypeTableViewCellDelegate!

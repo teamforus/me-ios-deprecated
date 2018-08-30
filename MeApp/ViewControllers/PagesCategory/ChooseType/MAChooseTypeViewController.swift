@@ -16,7 +16,7 @@ class MAChooseTypeViewController: MABaseViewController, BWWalkthroughPage, MACho
     @IBOutlet weak var selectedCategory: ShadowButton!
     @IBOutlet weak var tableView: UITableView!
     var recordTypeList: NSMutableArray! = NSMutableArray()
-    var selectedCell : NSMutableArray!
+    var selectedCell : NSMutableArray! = NSMutableArray()
     var previousIndex: Int!
     var previousCell: MAChooseTypeTableViewCell!
     let reachablity = Reachability()!
@@ -69,16 +69,17 @@ class MAChooseTypeViewController: MABaseViewController, BWWalkthroughPage, MACho
         if previousCell != nil {
             previousCell.viewTypeRecord.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
             previousCell.checkBox.isSelected = false
+            selectedCell.remove(previousCell.tag)
         }
         if previousCell != cell {
             cell.viewTypeRecord.backgroundColor = #colorLiteral(red: 0.8901960784, green: 0.8980392157, blue: 0.9725490196, alpha: 1)
             cell.checkBox.isSelected = true
+            selectedCell.add(cell.tag)
         }
         previousCell = cell
         let recordType = recordTypeList[cell.tag] as! RecordType
         UserDefaults.standard.set(try? PropertyListEncoder().encode(recordType), forKey: "type")
         NotificationCenter.default.post(name: Notification.Name("EnableNextButton"), object: nil)
-        
         NotificationCenter.default.post(name: Notification.Name("SETSELECTEDCATEGORYTYPE"), object: nil)
     }
     
@@ -106,6 +107,13 @@ extension MAChooseTypeViewController: UITableViewDelegate, UITableViewDataSource
         cell.selectionStyle = .none
         cell.tag = indexPath.row
         cell.delegate = self
+        if selectedCell.contains(indexPath.row){
+            cell.viewTypeRecord.backgroundColor = #colorLiteral(red: 0.8901960784, green: 0.8980392157, blue: 0.9725490196, alpha: 1)
+            cell.checkBox.isSelected = true
+        }else{
+            cell.viewTypeRecord.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
+            cell.checkBox.isSelected = false
+        }
         
         return cell
     }
