@@ -16,13 +16,24 @@ class MAShareVaucherViewController: MABasePopUpViewController {
     @IBOutlet weak var productNameLabel: UILabel!
     var voucher: Voucher!
     @IBOutlet weak var categoryNameLabel: UILabel!
+    @IBOutlet weak var categoriesLabel: UILabel!
+    var categoryNames: NSMutableString! = NSMutableString()
     @IBOutlet weak var amount: SkyFloatingLabelTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewBody.layer.cornerRadius = 14.0
         organizationName.text = voucher.found.name
-        categoryNameLabel.text = voucher.allowedProductCategories.first?.name
+        for category in voucher.allowedProductCategories{
+            if category.id == voucher.allowedProductCategories.last?.id{
+                categoryNames.append(category.name)
+            }else{
+                categoryNames.append(category.name+", ")
+            }
+            
+        }
+        categoriesLabel.text = "\(categoryNames!)"
+        categoryNameLabel.text = voucher.found.organization.name
         productNameLabel.text = "€\(voucher.amount!)"
         
         
@@ -58,7 +69,7 @@ class MAShareVaucherViewController: MABasePopUpViewController {
             }else{
                 amount.errorMessage = nil
                 let parameters: Parameters = [
-                                  "organization_id" : voucher.allowedOrganizations.first?.id,
+                                  "organization_id" : voucher.found.organization.id,
                                   "amount" : Int(self.amount.text!)]
                 TransactionVoucherRequest.makeTransaction(parameters: parameters, identityAdress: voucher.address, completion: { (transaction, statusCode) in
                     if statusCode == 201{
