@@ -13,6 +13,7 @@ class MAWaletVoucherTableViewCell: SwipeTableViewCell {
     @IBOutlet weak var voucherTitleLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var voucherImage: UIImageView!
+    @IBOutlet weak var organizationNameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

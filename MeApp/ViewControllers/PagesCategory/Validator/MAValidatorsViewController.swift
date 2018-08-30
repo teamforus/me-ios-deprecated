@@ -52,6 +52,7 @@ class MAValidatorsViewController: MABaseViewController {
             }) { (error) in
                 AlertController.showError()
             }
+          
         }else {
             AlertController.showInternetUnable()
         }

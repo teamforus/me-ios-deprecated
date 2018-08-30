@@ -23,7 +23,7 @@ class MAShareVaucherViewController: MABasePopUpViewController {
         viewBody.layer.cornerRadius = 14.0
         organizationName.text = voucher.found.name
         categoryNameLabel.text = voucher.allowedProductCategories.first?.name
-        productNameLabel.text = "\(voucher.amount!)"
+        productNameLabel.text = "€\(voucher.amount!)"
         
         
         

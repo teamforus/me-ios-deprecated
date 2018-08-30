@@ -21,12 +21,16 @@
             <connections>
                 <outlet property="companyNameLabel" destination="YRy-O7-qIg" id="77o-QP-vjl"/>
                 <outlet property="confirmationRecieveLabel" destination="3Rd-ta-Z7O" id="Ua1-04-DVQ"/>
+                <outlet property="dateCreatedLabel" destination="tPz-DD-E9l" id="S4q-83-dtT"/>
+                <outlet property="dateTransactionLabel" destination="GSu-lq-VQU" id="tPK-k7-YFi"/>
                 <outlet property="detaiTranscationButton" destination="vhw-77-hY9" id="Pea-gx-GGw"/>
+                <outlet property="orgnizationNameLabel" destination="jRj-EK-VoE" id="Pli-1j-c9g"/>
                 <outlet property="priceTransactionLabel" destination="Pnd-St-UjP" id="JBY-UV-gdT"/>
                 <outlet property="transactionLabel" destination="EyJ-uc-14t" id="hVT-8R-F9a"/>
                 <outlet property="transactionViewDetail" destination="gBb-Yw-ONi" id="Q1F-WS-AWO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewBody" destination="G1G-Ka-RTk" id="cQ3-QD-PPj"/>
+                <outlet property="voucherLabel" destination="b6J-MH-qcX" id="2oJ-Lk-dVe"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -46,11 +50,11 @@
                                 <action selector="close:" destination="-1" eventType="touchUpInside" id="SgX-5P-TFj"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+ 140.00 € " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pnd-St-UjP">
-                            <rect key="frame" x="112" y="152" width="152" height="25"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+ 140.00 € " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pnd-St-UjP">
+                            <rect key="frame" x="10" y="152" width="355" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="30"/>
-                            <color key="textColor" red="0.2784313725" green="0.44705882349999998" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="0.98039215690000003" green="0.24313725489999999" blue="0.1647058824" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="09/25/2017, 6:23 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPz-DD-E9l">
@@ -108,7 +112,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="19.05.2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSu-lq-VQU">
-                                    <rect key="frame" x="15" y="110" width="70" height="20"/>
+                                    <rect key="frame" x="15" y="110" width="280" height="20"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="15"/>
                                     <color key="textColor" red="0.21960784310000001" green="0.23921568630000001" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

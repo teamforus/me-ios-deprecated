@@ -37,6 +37,7 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
         super.viewDidLoad()
         self.voucherTitleLabel.text = voucher.found.name
         self.priceLabel.text = "€\(voucher.amount!)"
+        self.timAvailabelLabel.text = voucher.found.organization.name
         kindPaketQRView.layer.cornerRadius = 9.0
         kindPaketQRView.layer.shadowColor = UIColor.black.cgColor
         kindPaketQRView.layer.shadowOffset = CGSize(width: 0, height: 5)
@@ -66,7 +67,7 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
     func getTransaction(){
         TransactionVoucherRequest.getTransaction(identityAdress: voucher.address, completion: { (transactions, statusCode) in
             self.transactions.removeAllObjects()
-            self.transactions.addObjects(from: transactions as! [Any])
+             self.transactions.addObjects(from: transactions.sorted(by: { ($0 as! Transactions).created_at.compare(($1 as! Transactions).created_at) == .orderedDescending}))
             self.tableView.reloadData()
         }) { (error) in
             
@@ -114,12 +115,13 @@ extension PassViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let popOverVC = TransactionViewController(nibName: "TransactionViewController", bundle: nil)
-//        self.addChildViewController(popOverVC)
-//        popOverVC.view.frame = self.view.frame
-//        self.view.addSubview(popOverVC.view)
-//        popOverVC.didMove(toParentViewController: self)
-//        tableView.deselectRow(at: indexPath, animated: true)
+        let popOverVC = TransactionViewController(nibName: "TransactionViewController", bundle: nil)
+        popOverVC.transaction = self.transactions[indexPath.row] as! Transactions
+        self.addChildViewController(popOverVC)
+        popOverVC.view.frame = self.view.frame
+        self.view.addSubview(popOverVC.view)
+        popOverVC.didMove(toParentViewController: self)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

@@ -14,7 +14,12 @@ class TransactionViewController: MABasePopUpViewController {
     @IBOutlet weak var priceTransactionLabel: UILabel!
     @IBOutlet weak var transactionViewDetail: UIView!
     @IBOutlet weak var confirmationRecieveLabel: UILabel!
+    var transaction: Transactions!
     var isVisisbeTabBar: Bool! = false
+    @IBOutlet weak var dateCreatedLabel: UILabel!
+    @IBOutlet weak var orgnizationNameLabel: UILabel!
+    @IBOutlet weak var dateTransactionLabel: UILabel!
+    @IBOutlet weak var voucherLabel: UILabel!
     
     
     @IBOutlet weak var sendTitleLabel: UILabel!
@@ -37,6 +42,14 @@ class TransactionViewController: MABasePopUpViewController {
         self.viewBody.frame = viewbodyRect
         self.transactionViewDetail.isHidden = true
         self.showAnimate()
+        orgnizationNameLabel.text = transaction.organization.name
+        companyNameLabel.text = transaction.organization.name
+        if transaction.product != nil {
+            voucherLabel.text = transaction.product.productCategory.name
+        }
+        priceTransactionLabel.text = "- \(transaction.amount!) €"
+        dateCreatedLabel.text = transaction.created_at.dateFormaterNormalDate()
+        dateTransactionLabel.text = transaction.created_at.dateFormaterNormalDate()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,18 +79,18 @@ class TransactionViewController: MABasePopUpViewController {
             }
         });
     }
-   
+    
     @IBAction func close(_ sender: Any) {
         self.removeAnimate()
         if isVisisbeTabBar{
-        self.tabBarController?.tabBar.isHidden = false
+            self.tabBarController?.tabBar.isHidden = false
         }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
     @IBAction func expandTransactionDetail(_ sender: Any) {
         //315
         if isOpen{
@@ -91,39 +104,39 @@ class TransactionViewController: MABasePopUpViewController {
                 detailButton.size.height = 65
                 self.detaiTranscationButton.frame = detailButton
                 self.transactionViewDetail.isHidden = true
-//                var companyNameFrame: CGRect = self.companyNameLabel.frame
-//                companyNameFrame.origin.x = 135
-//                companyNameFrame.origin.y = 117
-//                self.companyNameLabel.frame = companyNameFrame
-//                var priceFrame: CGRect = self.priceTransactionLabel.frame
-//                priceFrame.origin.x = 112
-//                priceFrame.origin.y = 152
-//                self.priceTransactionLabel.frame = priceFrame
-//                var confirmationReceive: CGRect = self.confirmationRecieveLabel.frame
-//                confirmationReceive.origin.x = 146
-//                confirmationReceive.origin.y = 184
-//                self.confirmationRecieveLabel.frame = confirmationReceive
-//                //make view for detail transaction
-//                var detailButton: CGRect = self.detaiTranscationButton.frame
-//                detailButton.origin.y = 301
-//                detailButton.size.height = 45
-//                self.detaiTranscationButton.frame = detailButton
-//                var transactionFrame: CGRect = self.transactionLabel.frame
-//                transactionFrame.origin.y = 315
-//                self.transactionLabel.frame = transactionFrame
-//                self.sendTitleLabel.isHidden = true
-//                self.senderLabel.isHidden = true
-//                self.receiveTitleLabel.isHidden = true
-//                self.receiverLabel.isHidden = true
-//                self.dateTitleLabel.isHidden = true
-//                self.dateLabel.isHidden = true
-//                self.transactionLabel.text = "Transactie"
+                //                var companyNameFrame: CGRect = self.companyNameLabel.frame
+                //                companyNameFrame.origin.x = 135
+                //                companyNameFrame.origin.y = 117
+                //                self.companyNameLabel.frame = companyNameFrame
+                //                var priceFrame: CGRect = self.priceTransactionLabel.frame
+                //                priceFrame.origin.x = 112
+                //                priceFrame.origin.y = 152
+                //                self.priceTransactionLabel.frame = priceFrame
+                //                var confirmationReceive: CGRect = self.confirmationRecieveLabel.frame
+                //                confirmationReceive.origin.x = 146
+                //                confirmationReceive.origin.y = 184
+                //                self.confirmationRecieveLabel.frame = confirmationReceive
+                //                //make view for detail transaction
+                //                var detailButton: CGRect = self.detaiTranscationButton.frame
+                //                detailButton.origin.y = 301
+                //                detailButton.size.height = 45
+                //                self.detaiTranscationButton.frame = detailButton
+                //                var transactionFrame: CGRect = self.transactionLabel.frame
+                //                transactionFrame.origin.y = 315
+                //                self.transactionLabel.frame = transactionFrame
+                //                self.sendTitleLabel.isHidden = true
+                //                self.senderLabel.isHidden = true
+                //                self.receiveTitleLabel.isHidden = true
+                //                self.receiverLabel.isHidden = true
+                //                self.dateTitleLabel.isHidden = true
+                //                self.dateLabel.isHidden = true
+                //                self.transactionLabel.text = "Transactie"
             }
             
-//            self.viewBody.frame = companyNameFrame
+            //            self.viewBody.frame = companyNameFrame
         }else{
             isOpen = true
-          
+            
             UIView.animate(withDuration: 0.3) {
                 var viewbodyRect: CGRect = self.viewBody.frame
                 viewbodyRect.size.height = 496
@@ -133,35 +146,35 @@ class TransactionViewController: MABasePopUpViewController {
                 detailButton.size.height = 228
                 self.detaiTranscationButton.frame = detailButton
                 self.transactionViewDetail.isHidden = false
-//                var companyNameFrame: CGRect = self.companyNameLabel.frame
-//                companyNameFrame.origin.x = 18
-//                companyNameFrame.origin.y = 70
-//                self.companyNameLabel.frame = companyNameFrame
-//                var priceFrame: CGRect = self.priceTransactionLabel.frame
-//                priceFrame.origin.x = self.view.frame.size.width - priceFrame.size.width
-//                priceFrame.origin.y = 70
-//                self.priceTransactionLabel.frame = priceFrame
-//                var confirmationReceive: CGRect = self.confirmationRecieveLabel.frame
-//                confirmationReceive.origin.x = self.view.frame.size.width - confirmationReceive.size.width - 10
-//                confirmationReceive.origin.y = 110
-//                self.confirmationRecieveLabel.frame = confirmationReceive
-//                //make view for detail transaction
-//                var detailButton: CGRect = self.detaiTranscationButton.frame
-//                detailButton.origin.y = 140
-//                detailButton.size.height = 250
-//                self.detaiTranscationButton.frame = detailButton
-//                var transactionFrame: CGRect = self.transactionLabel.frame
-//                transactionFrame.origin.y = 160
-//                self.transactionLabel.frame = transactionFrame
-//                self.sendTitleLabel.isHidden = false
-//                self.senderLabel.isHidden = false
-//                self.receiveTitleLabel.isHidden = false
-//                self.receiverLabel.isHidden = false
-//                self.dateTitleLabel.isHidden = false
-//                self.dateLabel.isHidden = false
-//                self.transactionLabel.text = "De details"
+                //                var companyNameFrame: CGRect = self.companyNameLabel.frame
+                //                companyNameFrame.origin.x = 18
+                //                companyNameFrame.origin.y = 70
+                //                self.companyNameLabel.frame = companyNameFrame
+                //                var priceFrame: CGRect = self.priceTransactionLabel.frame
+                //                priceFrame.origin.x = self.view.frame.size.width - priceFrame.size.width
+                //                priceFrame.origin.y = 70
+                //                self.priceTransactionLabel.frame = priceFrame
+                //                var confirmationReceive: CGRect = self.confirmationRecieveLabel.frame
+                //                confirmationReceive.origin.x = self.view.frame.size.width - confirmationReceive.size.width - 10
+                //                confirmationReceive.origin.y = 110
+                //                self.confirmationRecieveLabel.frame = confirmationReceive
+                //                //make view for detail transaction
+                //                var detailButton: CGRect = self.detaiTranscationButton.frame
+                //                detailButton.origin.y = 140
+                //                detailButton.size.height = 250
+                //                self.detaiTranscationButton.frame = detailButton
+                //                var transactionFrame: CGRect = self.transactionLabel.frame
+                //                transactionFrame.origin.y = 160
+                //                self.transactionLabel.frame = transactionFrame
+                //                self.sendTitleLabel.isHidden = false
+                //                self.senderLabel.isHidden = false
+                //                self.receiveTitleLabel.isHidden = false
+                //                self.receiverLabel.isHidden = false
+                //                self.dateTitleLabel.isHidden = false
+                //                self.dateLabel.isHidden = false
+                //                self.transactionLabel.text = "De details"
             }
         }
-       
+        
     }
 }

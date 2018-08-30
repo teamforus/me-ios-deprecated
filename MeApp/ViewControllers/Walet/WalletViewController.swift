@@ -86,6 +86,11 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
         VoucherRequest.getVoucherList(completion: { (response, statusCode) in
             self.vouhers.removeAllObjects()
             self.vouhers.addObjects(from: response as! [Any])
+            if self.vouhers.count == 0{
+                self.tableView.isHidden = true
+            }else {
+                self.tableView.isHidden = false
+            }
             self.tableView.reloadData()
         }) { (error) in
             
@@ -202,6 +207,7 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
             let voucher = self.vouhers[indexPath.row] as! Voucher
             cellWallet.voucherTitleLabel.text = voucher.found.name
             cellWallet.priceLabel.text = "€\(voucher.amount!)"
+            cellWallet.organizationNameLabel.text = voucher.found.organization.name
             cell = cellWallet
         default:
             let cellWallet = tableView.dequeueReusableCell(withIdentifier: "cell4", for: indexPath) as! MAWaletVoucherTableViewCell

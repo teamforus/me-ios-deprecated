@@ -183,6 +183,33 @@ class ValidatorsRequest {
         }
     }
     
+    static func getValidatorRequestList(completion: @escaping ((NSMutableArray, Int) -> Void), failure: @escaping ((Error) -> Void)){
+        let headers: HTTPHeaders = [
+            "Accept": "application/json",
+            "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"
+        ]
+        Alamofire.request(BaseURL.baseURL(url: "platform/validators"), method: .get, parameters:nil,encoding: JSONEncoding.default, headers: headers).responseJSON {
+            response in
+            switch response.result {
+            case .success:
+                if let json = response.result.value {
+                    let recordList: NSMutableArray = NSMutableArray()
+                    if (json as AnyObject).count != 0 {
+                        for recordItem in (json as AnyObject)["data"] as! Array<Any>{
+                            let record = try! Validator(object: recordItem as! JSONObject)
+                            recordList.add(record)
+                        }
+                    }
+                    completion(recordList, (response.response?.statusCode)!)
+                }
+                break
+            case .failure(let error):
+                
+                failure(error)
+            }
+        }
+    }
+    
     static func createValidationRequest(parameters: Parameters, completion: @escaping ((Validators, Int) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
             "Accept": "application/json",

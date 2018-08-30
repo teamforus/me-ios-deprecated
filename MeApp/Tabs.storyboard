@@ -25,6 +25,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You have no vouchers yet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKt-19-VeG">
+                                <rect key="frame" x="14" y="311" width="346" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cAB-OY-uwK">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="153"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -247,7 +254,7 @@
                                                             <color key="textColor" red="0.1960784314" green="0.21176470589999999" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="voucherIcon" translatesAutoresizingMaskIntoConstraints="NO" id="aUF-1z-wID">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Resting" translatesAutoresizingMaskIntoConstraints="NO" id="aUF-1z-wID" customClass="RoundImageView" customModule="Me" customModuleProvider="target">
                                                             <rect key="frame" x="273" y="18" width="50" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
@@ -280,6 +287,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="organizationNameLabel" destination="ZYv-E9-UR4" id="o1X-qx-wfR"/>
                                             <outlet property="priceLabel" destination="9C1-7W-qbu" id="fsL-IO-2sX"/>
                                             <outlet property="voucherImage" destination="aUF-1z-wID" id="E8x-Nt-3eK"/>
                                             <outlet property="voucherTitleLabel" destination="s5P-PY-YuN" id="HiB-wR-hex"/>
@@ -693,7 +701,6 @@
         <image name="rectangle" width="10" height="7"/>
         <image name="rectangleRed" width="9" height="7"/>
         <image name="shape1" width="21" height="21"/>
-        <image name="voucherIcon" width="52" height="52"/>
         <image name="wallet" width="30" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
