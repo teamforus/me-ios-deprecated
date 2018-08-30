@@ -166,7 +166,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pd4-Xl-rAR">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="295"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Resting" translatesAutoresizingMaskIntoConstraints="NO" id="oal-H1-nuH" customClass="RoundImageView" customModule="Me" customModuleProvider="target">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_launcher_APP" translatesAutoresizingMaskIntoConstraints="NO" id="oal-H1-nuH" customClass="RoundImageView" customModule="Me" customModuleProvider="target">
                                                         <rect key="frame" x="154" y="74" width="86" height="86"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
@@ -372,9 +372,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Resting" width="210" height="210"/>
         <image name="closeIcon" width="24" height="24"/>
         <image name="faceId" width="85" height="85"/>
+        <image name="ic_launcher_APP" width="512" height="512"/>
         <image name="lock24Px" width="24" height="24"/>
         <image name="qrCode" width="178" height="178"/>
         <image name="qrImage2" width="16" height="16"/>

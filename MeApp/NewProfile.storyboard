@@ -463,7 +463,7 @@
                                     <outlet property="delegate" destination="iIB-xh-Ro7" id="sSL-vX-YFX"/>
                                 </connections>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Resting" translatesAutoresizingMaskIntoConstraints="NO" id="gCD-jC-Ldu" customClass="RoundImageView" customModule="Me" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_launcher_APP" translatesAutoresizingMaskIntoConstraints="NO" id="gCD-jC-Ldu" customClass="RoundImageView" customModule="Me" customModuleProvider="target">
                                 <rect key="frame" x="314" y="86" width="45" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -2152,7 +2152,7 @@ informatie van je identiteit:</string>
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Resting" translatesAutoresizingMaskIntoConstraints="NO" id="BV2-Q0-SIa" customClass="RoundImageView" customModule="Me" customModuleProvider="target">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_launcher_APP" translatesAutoresizingMaskIntoConstraints="NO" id="BV2-Q0-SIa" customClass="RoundImageView" customModule="Me" customModuleProvider="target">
                                                     <rect key="frame" x="17" y="22" width="45" height="45"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -2431,7 +2431,7 @@ informatie van je identiteit:</string>
                                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Resting" translatesAutoresizingMaskIntoConstraints="NO" id="PDw-b0-wrw" customClass="RoundImageView" customModule="Me" customModuleProvider="target">
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_launcher_APP" translatesAutoresizingMaskIntoConstraints="NO" id="PDw-b0-wrw" customClass="RoundImageView" customModule="Me" customModuleProvider="target">
                                                                             <rect key="frame" x="17" y="22" width="45" height="45"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         </imageView>
@@ -2464,7 +2464,7 @@ informatie van je identiteit:</string>
                                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Resting" translatesAutoresizingMaskIntoConstraints="NO" id="8qY-rh-SJl" customClass="RoundImageView" customModule="Me" customModuleProvider="target">
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_launcher_APP" translatesAutoresizingMaskIntoConstraints="NO" id="8qY-rh-SJl" customClass="RoundImageView" customModule="Me" customModuleProvider="target">
                                                                             <rect key="frame" x="17" y="22" width="45" height="45"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         </imageView>
@@ -2687,7 +2687,6 @@ informatie van je identiteit:</string>
         </scene>
     </scenes>
     <resources>
-        <image name="Resting" width="210" height="210"/>
         <image name="arrowBlue" width="8" height="13"/>
         <image name="arrowDown" width="13" height="8"/>
         <image name="back" width="24" height="24"/>
@@ -2697,6 +2696,7 @@ informatie van je identiteit:</string>
         <image name="cellularNetwork" width="20" height="20"/>
         <image name="closeIcon" width="24" height="24"/>
         <image name="delete24Px" width="24" height="24"/>
+        <image name="ic_launcher_APP" width="512" height="512"/>
         <image name="iconHome" width="78" height="78"/>
         <image name="iconPersonal" width="52" height="52"/>
         <image name="imageView:gd1-EJ-EuY:image" width="178" height="178">

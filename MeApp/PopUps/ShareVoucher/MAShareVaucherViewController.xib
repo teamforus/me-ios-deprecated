@@ -83,7 +83,7 @@
                                     <color key="textColor" red="0.1960784314" green="0.21176470589999999" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Resting" translatesAutoresizingMaskIntoConstraints="NO" id="wh9-Up-Sb5" customClass="RoundImageView" customModule="Me" customModuleProvider="target">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_launcher_APP" translatesAutoresizingMaskIntoConstraints="NO" id="wh9-Up-Sb5" customClass="RoundImageView" customModule="Me" customModuleProvider="target">
                                     <rect key="frame" x="273" y="18" width="50" height="50"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 </imageView>
@@ -134,7 +134,7 @@
         </view>
     </objects>
     <resources>
-        <image name="Resting" width="210" height="210"/>
         <image name="closeIcon" width="24" height="24"/>
+        <image name="ic_launcher_APP" width="512" height="512"/>
     </resources>
 </document>
