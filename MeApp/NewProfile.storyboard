@@ -484,6 +484,18 @@
                                     <action selector="createRecord:" destination="iIB-xh-Ro7" eventType="touchUpInside" id="xtq-9Q-7mG"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bw-cy-EYk" customClass="ShadowButton" customModule="Me" customModuleProvider="target">
+                                <rect key="frame" x="314" y="87" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="NKb-hp-5dD" kind="presentation" id="7xh-1M-X6G"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="G9d-xl-ZFL"/>
@@ -495,7 +507,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="htZ-GM-SlC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1776.8" y="1127.5862068965519"/>
+            <point key="canvasLocation" x="1518" y="1127"/>
         </scene>
         <!--Content Personal Detail View Controller-->
         <scene sceneID="RMw-jZ-8bz">
@@ -2309,6 +2321,14 @@ informatie van je identiteit:</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bI-mR-d7T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3520.8000000000002" y="1127.5862068965519"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="xFP-mH-QIl">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="NKb-hp-5dD" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X8g-rT-p7D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2004" y="880"/>
         </scene>
         <!--Personal Detail View Controller-->
         <scene sceneID="a2s-tR-VcP">

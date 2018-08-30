@@ -425,6 +425,7 @@
                         <outlet property="priceLabel" destination="9Ca-69-0zZ" id="Fao-wW-3ts"/>
                         <outlet property="qrView" destination="gwF-Q9-Agm" id="OEW-37-BAY"/>
                         <outlet property="smallerAmount" destination="FNc-gw-bh0" id="FM7-hF-Dqf"/>
+                        <outlet property="tableView" destination="pHh-Fp-04m" id="II3-hc-lMR"/>
                         <outlet property="timAvailabelLabel" destination="5de-iy-ft6" id="cw7-qZ-v2J"/>
                         <outlet property="voucherTitleLabel" destination="v0t-au-15P" id="Coe-cn-On4"/>
                         <segue destination="vKb-xc-8sb" kind="show" identifier="goToQRCodeReader" id="1cR-YL-eXJ"/>

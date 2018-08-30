@@ -120,7 +120,9 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToKindPaket"{
-            
+            let passVC = segue.destination as! MAGeneralPassViewController
+            (passVC.contentViewController as! PassViewController).voucher = self.vouhers[(self.tableView.indexPathForSelectedRow?.row)!] as! Voucher
+            (passVC.bottomViewController as! MABottomVoucherViewController).voucher = self.vouhers[(self.tableView.indexPathForSelectedRow?.row)!] as! Voucher
         }
     }
 }
@@ -195,7 +197,8 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
             break
         case .passes:
             let cellWallet = tableView.dequeueReusableCell(withIdentifier: "cell4", for: indexPath) as! MAWaletVoucherTableViewCell
-            cellWallet.delegate = self
+//            cellWallet.delegate = self
+            cellWallet.selectionStyle = .none
             let voucher = self.vouhers[indexPath.row] as! Voucher
             cellWallet.voucherTitleLabel.text = voucher.found.name
             cellWallet.priceLabel.text = "€\(voucher.amount!)"

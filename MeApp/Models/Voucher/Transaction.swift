@@ -17,6 +17,7 @@ struct Transactions {
     var adress: String!
     var organization: Organization!
     var product: Product!
+    var created_at: String!
 }
 
 extension Transactions: JSONDecodable{
@@ -28,6 +29,7 @@ extension Transactions: JSONDecodable{
         adress = try decoder.decode("adress")
         organization = try decoder.decode("organization")
         product = try decoder.decode("product")
+        created_at = try decoder.decode("created_at")
         
     }
 }
@@ -67,7 +69,7 @@ extension Product: JSONDecodable{
 class TransactionVoucherRequest {
     
     
-    static func getTransaction(identityAdress: String,completion: @escaping ((Transactions, Int) -> Void), failure: @escaping ((Error) -> Void)){
+    static func getTransaction(identityAdress: String,completion: @escaping ((NSMutableArray, Int) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
             "Accept": "application/json",
             "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"
@@ -78,12 +80,17 @@ class TransactionVoucherRequest {
             case .success:
                 var transaction: Transactions!
                 if let json = response.result.value {
-                    
-                    if (json as AnyObject).count != 0 {
-                             transaction = try! Transactions(object: (json as AnyObject) as! JSONObject)
+                    if (json as AnyObject)["message"]! == nil {
+                        let voucherList: NSMutableArray = NSMutableArray()
+                        if (json as AnyObject).count != 0 {
+                            for voucherItem in (json as AnyObject)["data"] as! Array<Any>{
+                                let voucher = try! Transactions(object: voucherItem as! JSONObject)
+                                voucherList.add(voucher)
+                            }
                         }
+                        completion(voucherList, (response.response?.statusCode)!)
                     }
-                    completion(transaction, (response.response?.statusCode)!)
+                }
                 
                 break
             case .failure(let error):
@@ -92,4 +99,33 @@ class TransactionVoucherRequest {
             }
         }
     }
+    
+    
+    static func makeTransaction(parameters: Parameters,identityAdress: String,completion: @escaping ((Transactions, Int) -> Void), failure: @escaping ((Error) -> Void)){
+        let headers: HTTPHeaders = [
+            "Accept": "application/json",
+            "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"
+        ]
+        Alamofire.request(BaseURL.baseURL(url: "platform/vouchers/"+identityAdress+"/transactions"), method: .post, parameters:parameters ,encoding: JSONEncoding.default, headers: headers).responseJSON {
+            response in
+            switch response.result {
+            case .success:
+                var transaction: Transactions!
+                if let json = response.result.value {
+                    
+                    if (json as AnyObject).count != 0 {
+                        transaction = try! Transactions(object: (json as AnyObject)["data"] as! JSONObject)
+                    }
+                }
+                completion(transaction, (response.response?.statusCode)!)
+                
+                break
+            case .failure(let error):
+                
+                failure(error)
+            }
+        }
+    }
+    
+    
 }

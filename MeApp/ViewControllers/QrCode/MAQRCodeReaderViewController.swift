@@ -10,10 +10,17 @@ import UIKit
 import QRCodeReader
 import Alamofire
 import Reachability
+import Presentr
 
 class MAQRCodeReaderViewController: MABaseViewController {
     lazy var reader: QRCodeReader = QRCodeReader()
     let reachablity = Reachability()!
+    let presenter: Presentr = {
+        let presenter = Presentr(presentationType: .alert)
+        presenter.transitionType = TransitionType.coverHorizontalFromRight
+        presenter.dismissOnSwipe = true
+        return presenter
+    }()
     
     @IBOutlet weak var previewQR: QRCodeReaderView!{
         didSet {
@@ -68,7 +75,16 @@ class MAQRCodeReaderViewController: MABaseViewController {
                 }, failure: { (error) in
                     self.reader.startScanning()
                 })
-            }else {
+            }else if(result.value.range(of:"voucher") != nil){
+                var token = result.value.components(separatedBy: ":")
+                self.getProvierConfirm(address:token[1])
+                
+                
+                
+                
+                
+               
+            } else {
                 let data = result.value.data(using: .utf8)!
                 do {
                     if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? Dictionary<String,Any>
@@ -166,6 +182,25 @@ class MAQRCodeReaderViewController: MABaseViewController {
         }
     }
     
+    
+    func getProvierConfirm(address:String){
+        VoucherRequest.getProvider(identityAdress: address, completion: { (voucher, statusCode) in
+            if voucher.allowedOrganizations.count != 0 {
+            let popupTransction =  MAShareVaucherViewController(nibName: "MAShareVaucherViewController", bundle: nil)
+            popupTransction.voucher = voucher
+            self.presenter.presentationType = .popup
+            self.presenter.transitionType = nil
+            self.presenter.dismissTransitionType = nil
+            self.presenter.keyboardTranslationType = .compress
+            self.customPresentViewController(self.presenter, viewController: popupTransction, animated: true, completion: nil)
+            self.reader.startScanning()
+            }else{
+                AlertController.showWarning(withText: "Sorry this voucher is not availebel for you!")
+            }
+        }) { (error) in
+            
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

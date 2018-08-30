@@ -221,6 +221,7 @@
 		65C0B21E210F375B00FBC254 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C0B21C210F375B00FBC254 /* User+CoreDataProperties.swift */; };
 		65C0B220210F3ACF00FBC254 /* UserShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C0B21F210F3ACF00FBC254 /* UserShared.swift */; };
 		65C0B222210F470F00FBC254 /* MAPersonalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C0B221210F470F00FBC254 /* MAPersonalDetailViewController.swift */; };
+		65DC02222138314C00FDD4A3 /* Formater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DC02212138314B00FDD4A3 /* Formater.swift */; };
 		65DCA0B7213311850051F6A3 /* MABottomPersonalQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DCA0B6213311850051F6A3 /* MABottomPersonalQRViewController.swift */; };
 		65DCA0B9213311970051F6A3 /* MAContentPersonalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DCA0B8213311970051F6A3 /* MAContentPersonalDetailViewController.swift */; };
 		65E3363F20E645B600C0512B /* KRScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E3363E20E645B600C0512B /* KRScrollView.swift */; };
@@ -484,6 +485,7 @@
 		65C0B21C210F375B00FBC254 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		65C0B21F210F3ACF00FBC254 /* UserShared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserShared.swift; sourceTree = "<group>"; };
 		65C0B221210F470F00FBC254 /* MAPersonalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAPersonalDetailViewController.swift; sourceTree = "<group>"; };
+		65DC02212138314B00FDD4A3 /* Formater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formater.swift; sourceTree = "<group>"; };
 		65DCA0B6213311850051F6A3 /* MABottomPersonalQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MABottomPersonalQRViewController.swift; sourceTree = "<group>"; };
 		65DCA0B8213311970051F6A3 /* MAContentPersonalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAContentPersonalDetailViewController.swift; sourceTree = "<group>"; };
 		65E3363E20E645B600C0512B /* KRScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KRScrollView.swift; sourceTree = "<group>"; };
@@ -1281,6 +1283,7 @@
 		65BD691721246BD40098CF9F /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				65DC02212138314B00FDD4A3 /* Formater.swift */,
 				650FA29420F79CD200997261 /* ShadowButton.swift */,
 				65AC32F52101D9E500633187 /* CustomCornerUIView.swift */,
 				65BD691821246C420098CF9F /* StatusView.swift */,
@@ -1964,6 +1967,7 @@
 				65AC32FB2102016500633187 /* MAChooseCategoryViewController.swift in Sources */,
 				6500426F20DBA3D50092CCDA /* TransactionViewController.swift in Sources */,
 				65BFF46E20C191BD00F64215 /* AuthorizationEmail.swift in Sources */,
+				65DC02222138314C00FDD4A3 /* Formater.swift in Sources */,
 				655BB05720EE442B00BFD06A /* MAQRLoginViewController.swift in Sources */,
 				6556376020B6FB9100E45487 /* UITextField+PlaceholderColor.swift in Sources */,
 				65AC32F62101D9E500633187 /* CustomCornerUIView.swift in Sources */,

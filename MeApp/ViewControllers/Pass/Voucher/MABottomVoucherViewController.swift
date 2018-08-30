@@ -16,6 +16,7 @@ class MABottomVoucherViewController: MABaseViewController, ISHPullUpSizingDelega
     @IBOutlet private weak var handleView: ISHPullUpHandleView!
     @IBOutlet private weak var rootView: UIView!
     @IBOutlet private weak var topView: UIView!
+    var voucher: Voucher!
     @IBOutlet private weak var buttonLock: UIButton?
     @IBOutlet weak var qrCodeImageView: UIImageView!
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -36,7 +37,7 @@ class MABottomVoucherViewController: MABaseViewController, ISHPullUpSizingDelega
         rootView.layer.shadowOffset = CGSize(width: 0, height: -2)
         rootView.layer.shadowOpacity = 0.2
         rootView.layer.shadowRadius = 23 / 2
-        
+        qrCodeImageView.generateQRCode(from: "voucher:"+voucher.address)
         NotificationCenter.default.addObserver(self, selector: #selector(toglePullUpView), name: Notification.Name("togleStateWindow"), object: nil)
         var rect: CGRect = self.rootView.frame
         let screen = Device.screen
@@ -70,7 +71,7 @@ class MABottomVoucherViewController: MABaseViewController, ISHPullUpSizingDelega
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        firstAppearanceCompleted = true;
+        firstAppearanceCompleted = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -82,7 +83,6 @@ class MABottomVoucherViewController: MABaseViewController, ISHPullUpSizingDelega
         let entity = NSEntityDescription.entity(forEntityName: "User", in: context)
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         fetchRequest.predicate = NSPredicate(format:"accessToken == %@", accessToken)
-        
         do{
             let results = try context.fetch(fetchRequest) as? [NSManagedObject]
             if results?.count == 0 {
@@ -104,7 +104,6 @@ class MABottomVoucherViewController: MABaseViewController, ISHPullUpSizingDelega
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         fetchRequest.predicate = NSPredicate(format:"currentUser == YES")
-        
         do{
             let results = try context.fetch(fetchRequest) as? [NSManagedObject]
             if results?.count == 0 {
@@ -125,7 +124,6 @@ class MABottomVoucherViewController: MABaseViewController, ISHPullUpSizingDelega
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         fetchRequest.predicate = NSPredicate(format:"accessToken == %@", accessToken)
-        
         do{
             let results = try context.fetch(fetchRequest) as? [User]
             UserShared.shared.currentUser = results![0]
@@ -139,7 +137,6 @@ class MABottomVoucherViewController: MABaseViewController, ISHPullUpSizingDelega
         if pullUpController.isLocked {
             return
         }
-        
         pullUpController.toggleState(animated: true)
     }
     
