@@ -46,7 +46,6 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
         kindPaketQRView.layer.masksToBounds = false
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(goToQRReader))
         imageQR.isUserInteractionEnabled = true
-        imageQR.generateQRCode(from: "voucher:"+voucher.address)
         imageQR.addGestureRecognizer(tapGestureRecognizer)
         smallerAmount.layer.cornerRadius = 9.0
         emailMeButton.layer.cornerRadius = 9.0
