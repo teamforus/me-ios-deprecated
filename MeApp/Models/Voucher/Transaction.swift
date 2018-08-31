@@ -113,7 +113,7 @@ class TransactionVoucherRequest {
                 var transaction: Transactions! = Transactions()
                 if let json = response.result.value {
                     
-                    if (json as AnyObject)["message"] == nil{
+                    if (json as AnyObject)["message"]! == nil{
                         transaction = try! Transactions(object: (json as AnyObject)["data"] as! JSONObject)
                     }else{
                         AlertController.showWarning(withText: (json as AnyObject)["message"] as! String)

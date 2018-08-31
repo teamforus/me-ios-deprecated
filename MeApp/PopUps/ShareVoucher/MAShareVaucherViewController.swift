@@ -69,7 +69,7 @@ class MAShareVaucherViewController: MABasePopUpViewController {
             }else{
                 amount.errorMessage = nil
                 let parameters: Parameters = [
-                                  "organization_id" : voucher.found.organization.id,
+                                  "organization_id" : voucher.allowedOrganizations.first?.id!,
                                   "amount" : Int(self.amount.text!)]
                 TransactionVoucherRequest.makeTransaction(parameters: parameters, identityAdress: voucher.address, completion: { (transaction, statusCode) in
                     if statusCode == 201{
