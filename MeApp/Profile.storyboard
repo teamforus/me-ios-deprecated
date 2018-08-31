@@ -378,7 +378,7 @@
     <resources>
         <image name="closeIcon" width="24" height="24"/>
         <image name="faceId" width="85" height="85"/>
-        <image name="ic_launcher_APP" width="512" height="512"/>
+        <image name="ic_launcher_APP" width="210" height="210"/>
         <image name="lock24Px" width="24" height="24"/>
         <image name="qrCode" width="178" height="178"/>
         <image name="qrImage2" width="16" height="16"/>

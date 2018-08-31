@@ -2141,6 +2141,12 @@ informatie van je identiteit:</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This record has no validations yet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydy-rz-idj">
+                                <rect key="frame" x="14" y="400" width="346" height="22"/>
+                                <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4Ne-Tt-uuJ">
                                 <rect key="frame" x="0.0" y="349" width="375" height="204"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2299,14 +2305,18 @@ informatie van je identiteit:</string>
                         <constraints>
                             <constraint firstItem="3uo-oj-f1H" firstAttribute="bottom" secondItem="mTy-hz-RrL" secondAttribute="bottom" constant="11" id="0Cz-Vv-NF7"/>
                             <constraint firstItem="JsV-CI-LNe" firstAttribute="trailing" secondItem="3uo-oj-f1H" secondAttribute="trailing" id="81w-QT-aJU"/>
+                            <constraint firstItem="mTy-hz-RrL" firstAttribute="top" secondItem="Ydy-rz-idj" secondAttribute="bottom" constant="184" id="9vj-JI-Lfn"/>
                             <constraint firstItem="4Ne-Tt-uuJ" firstAttribute="leading" secondItem="3uo-oj-f1H" secondAttribute="leading" id="AOV-cR-tnO"/>
                             <constraint firstItem="4Ne-Tt-uuJ" firstAttribute="top" secondItem="JsV-CI-LNe" secondAttribute="bottom" constant="31" id="ATd-Pf-fsl"/>
                             <constraint firstItem="JsV-CI-LNe" firstAttribute="top" secondItem="Ebp-Kl-bZZ" secondAttribute="top" id="FpN-SI-HAi"/>
                             <constraint firstItem="JsV-CI-LNe" firstAttribute="leading" secondItem="3uo-oj-f1H" secondAttribute="leading" id="TeI-WP-hSt"/>
                             <constraint firstItem="mTy-hz-RrL" firstAttribute="leading" secondItem="3uo-oj-f1H" secondAttribute="leading" constant="10" id="cVi-Pb-Bzp"/>
                             <constraint firstItem="mTy-hz-RrL" firstAttribute="top" secondItem="4Ne-Tt-uuJ" secondAttribute="bottom" constant="53" id="eZP-iw-w1F"/>
+                            <constraint firstItem="Ydy-rz-idj" firstAttribute="top" secondItem="JsV-CI-LNe" secondAttribute="bottom" constant="82" id="h6p-8p-Sjo"/>
                             <constraint firstItem="4Ne-Tt-uuJ" firstAttribute="trailing" secondItem="3uo-oj-f1H" secondAttribute="trailing" id="uNH-WY-jK2"/>
+                            <constraint firstItem="Ydy-rz-idj" firstAttribute="leading" secondItem="3uo-oj-f1H" secondAttribute="leading" constant="14" id="yAS-Ny-THT"/>
                             <constraint firstItem="3uo-oj-f1H" firstAttribute="trailing" secondItem="mTy-hz-RrL" secondAttribute="trailing" constant="10" id="yPs-Q6-53Y"/>
+                            <constraint firstItem="3uo-oj-f1H" firstAttribute="trailing" secondItem="Ydy-rz-idj" secondAttribute="trailing" constant="15" id="zLV-Ua-Hbr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3uo-oj-f1H"/>
                     </view>
@@ -2696,7 +2706,7 @@ informatie van je identiteit:</string>
         <image name="cellularNetwork" width="20" height="20"/>
         <image name="closeIcon" width="24" height="24"/>
         <image name="delete24Px" width="24" height="24"/>
-        <image name="ic_launcher_APP" width="512" height="512"/>
+        <image name="ic_launcher_APP" width="210" height="210"/>
         <image name="iconHome" width="78" height="78"/>
         <image name="iconPersonal" width="52" height="52"/>
         <image name="imageView:gd1-EJ-EuY:image" width="178" height="178">

@@ -76,32 +76,13 @@ class MAPersonalDetailViewController: MABaseViewController{
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
         if reachablity.connection != .none{
-            ValidatorsRequest.getValidatorList(completion: { (response, statusCode) in
-                self.validators.removeAllObjects()
-                self.validators.addObjects(from: response as! [Any])
-                if response.count != 0{
-                    self.sectionNumber = self.sectionNumber + 1
-                }
-                if self.sectionNumber == 0{
-                    self.tableView.isHidden = true
-                }else {
-                    self.tableView.isHidden = false
-                }
-                self.tableView.reloadData()
-                
-            }) { (error) in
-                AlertController.showError()
-            }
             ValidatorsRequest.getValidatorRequestList(completion: { (response, statusCode) in
                 self.validatorRequests.removeAllObjects()
                 self.validatorRequests.addObjects(from: response as! [Any])
                 if response.count != 0{
-                    self.sectionNumber = self.sectionNumber + 1
-                }
-                if self.sectionNumber == 0{
-                    self.tableView.isHidden = true
-                }else {
                     self.tableView.isHidden = false
+                }else {
+                    self.tableView.isHidden = true
                 }
                 self.tableView.reloadData()
                 
@@ -157,62 +138,22 @@ class MAPersonalDetailViewController: MABaseViewController{
 
 extension MAPersonalDetailViewController: UITableViewDelegate, UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
-        return sectionNumber
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0{
-            if validators.count == 0 {
-                return validatorRequests.count
-            }else {
-                return validators.count
-            }
-        }else if section == 1{
-            return validatorRequests.count
-        }
-        return 0
+        return validatorRequests.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0{
-            if validators.count != 0 {
-                return "Validators"
-            }else {
-                return "Peer-top-peer validations"
-            }
-            
-        }else if section == 1{
-            return "Peer-top-peer validations"
-        }
-        return ""
+        return "Peer-top-peer validations"
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell: UITableViewCell? = nil
-        
-        if indexPath.section == 0{
-            
-            if validators.count != 0{
-                let validator = validators[indexPath.row] as! Validator
-                let cellValidator =  tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MAValidatorCellTableViewCell
-                cellValidator.nameValidator.text = validator.organization?.name
-                cellValidator.descriptionValidator.text = validator.organization?.identityAddress
-                cell = cellValidator
-            }else {
-                let validator = validatorRequests[indexPath.row] as! Validator
-                let cellValidator =  tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! MAValidatorCellTableViewCell
-                cellValidator.nameValidator.text = validator.organization?.identityAddress
-                cell = cellValidator
-            }
-            
-        }else if indexPath.section == 1{
-            let validator = validatorRequests[indexPath.row] as! Validator
-            let cellValidator =  tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! MAValidatorCellTableViewCell
-            cellValidator.nameValidator.text = validator.organization?.identityAddress
-            cell = cellValidator
-        }
-        
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! MAValidatorCellTableViewCell
+        let validator = validatorRequests[indexPath.row] as! Validator
+        cell.nameValidator.text = validator.organization?.identityAddress
+        return cell
     }
 }

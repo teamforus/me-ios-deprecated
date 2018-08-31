@@ -188,7 +188,7 @@ class ValidatorsRequest {
             "Accept": "application/json",
             "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"
         ]
-        Alamofire.request(BaseURL.baseURL(url: "platform/validators"), method: .get, parameters:nil,encoding: JSONEncoding.default, headers: headers).responseJSON {
+        Alamofire.request(BaseURL.baseURL(url: "platform/validator-requests"), method: .get, parameters:nil,encoding: JSONEncoding.default, headers: headers).responseJSON {
             response in
             switch response.result {
             case .success:

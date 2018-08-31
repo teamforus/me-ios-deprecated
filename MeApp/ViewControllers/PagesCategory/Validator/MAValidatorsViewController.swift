@@ -48,6 +48,11 @@ class MAValidatorsViewController: MABaseViewController {
         if reachablity.connection != .none{
             ValidatorsRequest.getValidatorList(completion: { (response, statusCode) in
                 self.validators.addObjects(from: response as! [Any])
+                if response.count != 0{
+                    self.tableView.isHidden = false
+                }else {
+                    self.tableView.isHidden = true
+                }
                 self.tableView.reloadData()
             }) { (error) in
                 AlertController.showError()

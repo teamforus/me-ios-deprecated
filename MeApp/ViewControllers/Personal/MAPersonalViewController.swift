@@ -43,7 +43,7 @@ class MAPersonalViewController: MABaseViewController, BWWalkthroughViewControlle
     func getRecordType(){
         RecordTypeRequest.getRecordType(completion: { (response, statusCode) in
             if statusCode == 401{
-                self.logOut()
+                AlertController.showError()
                 return
             }
             self.recordTypeList.addObjects(from: response as! [Any])
@@ -55,7 +55,7 @@ class MAPersonalViewController: MABaseViewController, BWWalkthroughViewControlle
     func getRecordList(){
         RecordsRequest.getRecordsList(completion: { (response, statusCode) in
             if statusCode == 401{
-                self.logOut()
+                AlertController.showError()
                 return
             }
             self.recordList.removeAllObjects()

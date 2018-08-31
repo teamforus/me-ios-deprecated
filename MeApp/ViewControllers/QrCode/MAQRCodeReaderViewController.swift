@@ -75,14 +75,9 @@ class MAQRCodeReaderViewController: MABaseViewController {
                 }, failure: { (error) in
                     self.reader.startScanning()
                 })
-            }else if(result.value.range(of:"voucher") != nil){
+            }else if(result.value.range(of:"vouchers") != nil){
                 var token = result.value.components(separatedBy: ":")
                 self.getProvierConfirm(address:token[1])
-                
-                
-                
-                
-                
                
             } else {
                 let data = result.value.data(using: .utf8)!
@@ -97,6 +92,9 @@ class MAQRCodeReaderViewController: MABaseViewController {
                             AlertController.showError()
                             self.reader.startScanning()
                         })
+                            
+                        }else  if jsonArray["type"] as! String == "voucher" {
+                            self.getProvierConfirm(address:jsonArray["value"] as! String)
                         }else{
                             RecordsRequest.readValidationTokenRecord(token: jsonArray["value"] as! String, completion: { (response, statusCode) in
                                 if statusCode == 401{
@@ -193,12 +191,13 @@ class MAQRCodeReaderViewController: MABaseViewController {
             self.presenter.dismissTransitionType = nil
             self.presenter.keyboardTranslationType = .compress
             self.customPresentViewController(self.presenter, viewController: popupTransction, animated: true, completion: nil)
-            self.reader.startScanning()
             }else{
                 AlertController.showWarning(withText: "Sorry this voucher is not availebel for you!")
             }
+            self.reader.startScanning()
         }) { (error) in
-            
+            AlertController.showError()
+            self.reader.startScanning()
         }
     }
     

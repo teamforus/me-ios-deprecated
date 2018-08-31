@@ -63,7 +63,8 @@ class MATextViewController: MABaseViewController, UITextViewDelegate {
                                           "value" : textUITextView.text]
             RecordsRequest.createRecord(parameters: parameters, completion: { (response, statusCode) in
                 if statusCode == 401{
-                    self.logOut()
+//                    self.logOut()
+                    AlertController.showError()
                     return
                 }
                 NotificationCenter.default.post(name: Notification.Name("CLOSESLIDEPAGE"), object: nil)
