@@ -69,7 +69,7 @@ class MAPersonalDetailViewController: MABaseViewController{
             nameCategory.text = "Kindpakket Eligible"
             valueRecord.text = record.value
         }
-   
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -83,11 +83,11 @@ class MAPersonalDetailViewController: MABaseViewController{
                 }
                 if self.sectionNumber == 0{
                     self.tableView.isHidden = true
-                    }else {
+                }else {
                     self.tableView.isHidden = false
                 }
                 self.tableView.reloadData()
-               
+                
             }) { (error) in
                 AlertController.showError()
             }
@@ -98,11 +98,11 @@ class MAPersonalDetailViewController: MABaseViewController{
                 }
                 if self.sectionNumber == 0{
                     self.tableView.isHidden = true
-                    }else {
+                }else {
                     self.tableView.isHidden = false
                 }
                 self.tableView.reloadData()
-               
+                
             }) { (error) in
                 AlertController.showError()
             }
@@ -160,14 +160,18 @@ extension MAPersonalDetailViewController: UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0{
-          return validators.count
+            if validators.count == 0 {
+                return validatorRequests.count
+            }else {
+                return validators.count
+            }
         }else if section == 1{
-          return validatorRequests.count
+            return validatorRequests.count
         }
         return 0
     }
     
-     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0{
             return "Validators"
         }else if section == 1{
@@ -181,12 +185,12 @@ extension MAPersonalDetailViewController: UITableViewDelegate, UITableViewDataSo
         var cell: UITableViewCell? = nil
         let validator = validators[indexPath.row] as! Validator
         if indexPath.section == 0{
-         let cellValidator =  tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MAValidatorCellTableViewCell
-        cellValidator.nameValidator.text = validator.organization?.name
-        cellValidator.descriptionValidator.text = validator.organization?.identityAddress
+            let cellValidator =  tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MAValidatorCellTableViewCell
+            cellValidator.nameValidator.text = validator.organization?.name
+            cellValidator.descriptionValidator.text = validator.organization?.identityAddress
             cell = cellValidator
         }else if indexPath.section == 1{
-           let cellValidator =  tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! MAValidatorCellTableViewCell
+            let cellValidator =  tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! MAValidatorCellTableViewCell
             cellValidator.nameValidator.text = validator.organization?.identityAddress
             cell = cellValidator
         }
