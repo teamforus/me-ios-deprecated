@@ -156,4 +156,23 @@ extension MAPersonalDetailViewController: UITableViewDelegate, UITableViewDataSo
         cell.nameValidator.text = validator.organization?.identityAddress
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if reachablity.connection != .none{
+            let validator = validators[indexPath.row] as! Validator
+            let parametr: Parameters = ["validator_id" : validator.id!,
+                                        "record_id" : record.id!]
+            ValidatorsRequest.createValidationRequest(parameters: parametr, completion: { (response, statusCode) in
+                if response.message != nil{
+                    AlertController.showWarning(withText: "Sorry request to validate is already send")
+                }else{
+                    AlertController.showSuccess(withText: "")
+                }
+            }) { (error) in
+                
+            }
+        }else {
+            AlertController.showInternetUnable()
+        }
+    }
 }
