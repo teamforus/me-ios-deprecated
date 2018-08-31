@@ -75,23 +75,23 @@ class MAPersonalDetailViewController: MABaseViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
-        if reachablity.connection != .none{
-            ValidatorsRequest.getValidatorRequestList(completion: { (response, statusCode) in
-                self.validatorRequests.removeAllObjects()
-                self.validatorRequests.addObjects(from: response as! [Any])
-                if response.count != 0{
-                    self.tableView.isHidden = false
-                }else {
-                    self.tableView.isHidden = true
-                }
-                self.tableView.reloadData()
-                
-            }) { (error) in
-                AlertController.showError()
-            }
-        }else {
-            AlertController.showInternetUnable()
-        }
+//        if reachablity.connection != .none{
+//            ValidatorsRequest.getValidatorRequestList(uuid:record.completion: { (response, statusCode) in
+//                self.validatorRequests.removeAllObjects()
+//                self.validatorRequests.addObjects(from: response as! [Any])
+//                if response.count != 0{
+//                    self.tableView.isHidden = false
+//                }else {
+//                    self.tableView.isHidden = true
+//                }
+//                self.tableView.reloadData()
+//
+//            }) { (error) in
+//                AlertController.showError()
+//            }
+//        }else {
+//            AlertController.showInternetUnable()
+//        }
     }
     
     
@@ -142,7 +142,7 @@ extension MAPersonalDetailViewController: UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return validatorRequests.count
+        return record.validations.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -152,27 +152,27 @@ extension MAPersonalDetailViewController: UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! MAValidatorCellTableViewCell
-        let validator = validatorRequests[indexPath.row] as! Validator
-        cell.nameValidator.text = validator.organization?.identityAddress
+        let validator = record.validations[indexPath.row] 
+        cell.nameValidator.text = validator.identityAddress
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if reachablity.connection != .none{
-            let validator = validators[indexPath.row] as! Validator
-            let parametr: Parameters = ["validator_id" : validator.id!,
-                                        "record_id" : record.id!]
-            ValidatorsRequest.createValidationRequest(parameters: parametr, completion: { (response, statusCode) in
-                if response.message != nil{
-                    AlertController.showWarning(withText: "Sorry request to validate is already send")
-                }else{
-                    AlertController.showSuccess(withText: "")
-                }
-            }) { (error) in
-                
-            }
-        }else {
-            AlertController.showInternetUnable()
-        }
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        if reachablity.connection != .none{
+//            let validator = validators[indexPath.row] as! Validator
+//            let parametr: Parameters = ["validator_id" : validator.id!,
+//                                        "record_id" : record.id!]
+//            ValidatorsRequest.createValidationRequest(parameters: parametr, completion: { (response, statusCode) in
+//                if response.message != nil{
+//                    AlertController.showWarning(withText: "Sorry request to validate is already send")
+//                }else{
+//                    AlertController.showSuccess(withText: "")
+//                }
+//            }) { (error) in
+//
+//            }
+//        }else {
+//            AlertController.showInternetUnable()
+//        }
+//    }
 }
