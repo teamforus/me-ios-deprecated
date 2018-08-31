@@ -75,6 +75,11 @@ class MAPersonalDetailViewController: MABaseViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
+        if record.validations.count == 0{
+            self.tableView.isHidden = true
+        }else{
+             self.tableView.isHidden = false
+        }
 //        if reachablity.connection != .none{
 //            ValidatorsRequest.getValidatorRequestList(uuid:record.completion: { (response, statusCode) in
 //                self.validatorRequests.removeAllObjects()
