@@ -44,10 +44,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="697"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="155-Ic-MfQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="697"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="682"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Va-AE-fRi">
-                                                <rect key="frame" x="16" y="316" width="343" height="134"/>
+                                                <rect key="frame" x="16" y="301" width="343" height="134"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gkg-fA-sZu" customClass="CustomCornerUIView" customModule="Me" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="342" height="56"/>
@@ -117,17 +117,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JEd-BN-6rq">
-                                                <rect key="frame" x="0.0" y="472" width="375" height="225"/>
+                                                <rect key="frame" x="0.0" y="457" width="375" height="225"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="App version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdB-df-WLS">
                                                         <rect key="frame" x="26" y="19" width="237" height="21"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="15"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45u-QI-rkt">
-                                                        <rect key="frame" x="26" y="63" width="237" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="15"/>
                                                         <nil key="textColor"/>
@@ -157,6 +150,17 @@
                                                         <color key="textColor" red="0.2470588235" green="0.47843137250000001" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6T-de-dXb">
+                                                        <rect key="frame" x="26" y="57" width="211" height="32"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="15"/>
+                                                        <state key="normal" title="About Me">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="aboutMe:" destination="LGi-pg-qjE" eventType="touchUpInside" id="2ZD-RT-WEY"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -164,7 +168,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pd4-Xl-rAR">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="295"/>
+                                                <rect key="frame" x="0.0" y="-15" width="375" height="295"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_launcher_APP" translatesAutoresizingMaskIntoConstraints="NO" id="oal-H1-nuH" customClass="RoundImageView" customModule="Me" customModuleProvider="target">
                                                         <rect key="frame" x="145" y="74" width="86" height="86"/>
@@ -216,7 +220,7 @@
                                             <constraint firstItem="pd4-Xl-rAR" firstAttribute="leading" secondItem="155-Ic-MfQ" secondAttribute="leading" id="1Qq-dQ-QP6"/>
                                             <constraint firstAttribute="trailing" secondItem="8Va-AE-fRi" secondAttribute="trailing" constant="16" id="AdM-wF-FI7"/>
                                             <constraint firstItem="JEd-BN-6rq" firstAttribute="leading" secondItem="155-Ic-MfQ" secondAttribute="leading" id="CL6-6B-0i7"/>
-                                            <constraint firstItem="pd4-Xl-rAR" firstAttribute="top" secondItem="155-Ic-MfQ" secondAttribute="top" id="Et3-h8-KeY"/>
+                                            <constraint firstItem="pd4-Xl-rAR" firstAttribute="top" secondItem="155-Ic-MfQ" secondAttribute="top" constant="-15" id="Et3-h8-KeY"/>
                                             <constraint firstItem="8Va-AE-fRi" firstAttribute="top" secondItem="pd4-Xl-rAR" secondAttribute="bottom" constant="21" id="G9Y-oK-YtD"/>
                                             <constraint firstAttribute="trailing" secondItem="JEd-BN-6rq" secondAttribute="trailing" id="H8N-wz-Rdd"/>
                                             <constraint firstItem="8Va-AE-fRi" firstAttribute="leading" secondItem="155-Ic-MfQ" secondAttribute="leading" constant="16" id="O0p-TG-zWc"/>

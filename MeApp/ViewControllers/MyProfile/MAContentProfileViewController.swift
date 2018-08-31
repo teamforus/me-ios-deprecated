@@ -11,6 +11,7 @@ import LocalAuthentication
 import CoreData
 import Alamofire
 import Reachability
+import Presentr
 
 class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -21,6 +22,12 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     @IBOutlet weak var profileEmailLabel: UILabel!
     @IBOutlet weak var appVersionLabel: UILabel!
     let reachability = Reachability()!
+    let presenter: Presentr = {
+        let presenter = Presentr(presentationType: .alert)
+        presenter.transitionType = TransitionType.coverHorizontalFromRight
+        presenter.dismissOnSwipe = true
+        return presenter
+    }()
     
     @IBOutlet weak var profileImage: UIImageView!
     override func viewDidLoad() {
@@ -90,6 +97,16 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     
     @IBAction func logOut(_ sender: Any) {
         self.logOut()
+    }
+    
+    
+    @IBAction func aboutMe(_ sender: Any) {
+        let popupTransction =  MAAboutMeViewController(nibName: "MAAboutMeViewController", bundle: nil)
+        self.presenter.presentationType = .popup
+        self.presenter.transitionType = nil
+        self.presenter.dismissTransitionType = nil
+        self.presenter.keyboardTranslationType = .compress
+        self.customPresentViewController(self.presenter, viewController: popupTransction, animated: true, completion: nil)
     }
     
     func updateIndentity(){
