@@ -37,7 +37,7 @@ class MABottomVoucherViewController: MABaseViewController, ISHPullUpSizingDelega
         rootView.layer.shadowOffset = CGSize(width: 0, height: -2)
         rootView.layer.shadowOpacity = 0.2
         rootView.layer.shadowRadius = 23 / 2
-        qrCodeImageView.generateQRCode(from: "vouchers:"+voucher.address)
+         self.qrCodeImageView.generateQRCode(from: "{ type: \"voucher\",value:"+voucher.address+" }")
         NotificationCenter.default.addObserver(self, selector: #selector(toglePullUpView), name: Notification.Name("togleStateWindow"), object: nil)
         var rect: CGRect = self.rootView.frame
         let screen = Device.screen

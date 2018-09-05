@@ -2355,7 +2355,7 @@ informatie van je identiteit:</string>
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9T7-YY-cHa">
-                                                <rect key="frame" x="31" y="619" width="314" height="24"/>
+                                                <rect key="frame" x="31" y="600" width="314" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="314" id="mrV-WW-lVW"/>
                                                 </constraints>
@@ -2537,10 +2537,10 @@ informatie van je identiteit:</string>
                                             <constraint firstItem="lxJ-MZ-d42" firstAttribute="top" secondItem="YI8-UQ-v7m" secondAttribute="bottom" constant="14" id="2Ma-Bf-M25"/>
                                             <constraint firstItem="YI8-UQ-v7m" firstAttribute="top" secondItem="XwO-Xs-etO" secondAttribute="top" id="3dA-du-exk"/>
                                             <constraint firstItem="V6t-C0-neO" firstAttribute="top" secondItem="lxJ-MZ-d42" secondAttribute="bottom" constant="21" id="6wn-Vt-AE6"/>
-                                            <constraint firstAttribute="bottom" secondItem="9T7-YY-cHa" secondAttribute="bottom" constant="24" id="KtL-0X-aaM"/>
+                                            <constraint firstAttribute="bottom" secondItem="9T7-YY-cHa" secondAttribute="bottom" constant="43" id="KtL-0X-aaM"/>
                                             <constraint firstItem="V6t-C0-neO" firstAttribute="leading" secondItem="XwO-Xs-etO" secondAttribute="leading" id="Rsn-5C-rxc"/>
                                             <constraint firstItem="YI8-UQ-v7m" firstAttribute="leading" secondItem="XwO-Xs-etO" secondAttribute="leading" id="Z32-cm-xf6"/>
-                                            <constraint firstItem="9T7-YY-cHa" firstAttribute="top" secondItem="V6t-C0-neO" secondAttribute="bottom" constant="45" id="dTm-Jj-i6w"/>
+                                            <constraint firstItem="9T7-YY-cHa" firstAttribute="top" secondItem="V6t-C0-neO" secondAttribute="bottom" constant="26" id="dTm-Jj-i6w"/>
                                             <constraint firstAttribute="trailing" secondItem="lxJ-MZ-d42" secondAttribute="trailing" constant="10" id="kSM-7d-n6M"/>
                                             <constraint firstAttribute="trailing" secondItem="YI8-UQ-v7m" secondAttribute="trailing" id="kU9-KI-Odw"/>
                                             <constraint firstAttribute="trailing" secondItem="V6t-C0-neO" secondAttribute="trailing" id="kzO-6D-NjK"/>

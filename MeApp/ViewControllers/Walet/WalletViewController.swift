@@ -235,7 +235,6 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
             let alert: UIAlertController
             alert = UIAlertController(title: "", message: "Comming Soon!", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                
             }))
             self.present(alert, animated: true, completion: nil)
         }else if segmentedControl.selectedIndex == 2{

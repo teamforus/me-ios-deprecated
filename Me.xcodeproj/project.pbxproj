@@ -1475,6 +1475,7 @@
 				65A51F6520B2FFF10010DB33 /* Resources */,
 				459C5C9C67EFFECA9922D370 /* [CP] Embed Pods Frameworks */,
 				CB419101B2DDB60284B9E65E /* [CP] Copy Pods Resources */,
+				65F79DBB213FCB24002DAEAA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1795,6 +1796,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MeTests/Pods-MeTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		65F79DBB213FCB24002DAEAA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" fe3a4b53f20261187b2c79dcd278c3ef76e6a7de c89db981be291d8532a9a5e30a2399da0badfcc0e7e0001543aa59f3b397d351";
 		};
 		CB419101B2DDB60284B9E65E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;

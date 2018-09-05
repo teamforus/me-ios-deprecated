@@ -35,6 +35,7 @@ class MAQRCodeReaderViewController: MABaseViewController {
         reader.didFindCode = { result in
             print("Completion with result: \(result.value) of type \(result.metadataType)")
             if self.reachablity.connection != .none{
+                
                 // login with QR
             if result.value.range(of:"authToken") != nil {
                  self.reader.startScanning()
@@ -50,7 +51,7 @@ class MAQRCodeReaderViewController: MABaseViewController {
                 // make transaction
             }else if(result.value.range(of:"vouchers") != nil){
                 var token = result.value.components(separatedBy: ":")
-                self.getProviderConfirm(address:token[1])
+                self.getProviderConfirm(address: token[1])
                
             } else {
                 let data = result.value.data(using: .utf8)!
@@ -63,11 +64,10 @@ class MAQRCodeReaderViewController: MABaseViewController {
                             
                           // make transaction
                         }else  if jsonArray["type"] as! String == "voucher" {
-                            self.getProviderConfirm(address:jsonArray["value"] as! String)
+                            self.getProviderConfirm(address: jsonArray["value"] as! String)
                             
                           // validate record
                         }else{
-                            
                             self.readValidationToken(code: jsonArray["value"] as! String)
                         }
                     } else {
@@ -90,6 +90,12 @@ class MAQRCodeReaderViewController: MABaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
+         self.reader.startScanning()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+         self.reader.startScanning()
     }
     
     private func checkScanPermissions() -> Bool {

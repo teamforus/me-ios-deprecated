@@ -20,6 +20,7 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
     var familyName: String!
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     let reachability = Reachability()!
+    @IBOutlet weak var faceIDButton: ShadowButton!
     
     var appLocker: AppLocker!
     
@@ -27,6 +28,7 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
         super.viewDidLoad()
         if !faceIDAvailable(){
             headLabel.text = "Would you like to log in with Tocuh ID?"
+            faceIDButton.setTitle("USE TOUCH ID", for: .normal)
         }
     }
     

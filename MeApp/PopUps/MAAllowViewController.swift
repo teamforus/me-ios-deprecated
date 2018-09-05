@@ -62,7 +62,7 @@ extension MAAllowViewController: UITableViewDataSource, UITableViewDelegate{
         previousIndexPath = indexPath
         let cell = tableView.cellForRow(at: indexPath) as! MAAllowTableViewCell
             cell.accessoryType = .checkmark
-            delegate.chooseTypeTime(self, typeTime: cell.typeTime.text! )
+            delegate.chooseTypeTime(self, typeTime: cell.typeTime.text!)
     }
     
     

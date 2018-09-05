@@ -4,9 +4,12 @@ PODS:
   - AssistantKit (0.4.1)
   - BigInt.swift (1.0.0)
   - BWWalkthrough (2.1.2)
+  - Crashlytics (3.10.2):
+    - Fabric (~> 1.7.7)
   - CryptoSwift (0.10.0)
   - DropDown (2.3.1)
   - ExpandableCell (1.2.2)
+  - Fabric (1.7.7)
   - Geth (1.8.10)
   - IQKeyboardManagerSwift (5.0.7)
   - ISHPullUp (1.0.7)
@@ -44,8 +47,10 @@ DEPENDENCIES:
   - AlertBar
   - AssistantKit
   - BWWalkthrough
+  - Crashlytics
   - DropDown
   - ExpandableCell
+  - Fabric
   - IQKeyboardManagerSwift
   - ISHPullUp
   - JSONCodable
@@ -77,9 +82,11 @@ SPEC CHECKSUMS:
   AssistantKit: 9ee71039dffa9dc050de945258e50e3e6bb20d5c
   BigInt.swift: 1e0ddf08d82166e72dfb0fa8d40301d273081afc
   BWWalkthrough: 6b18dc688ff6b7168383fee07fe199ccaad7e9f7
+  Crashlytics: 0360624eea1c978a743feddb2fb1ef8b37fb7a0d
   CryptoSwift: 6c778d69282bed3b4e975ff97a79d074f20bb011
   DropDown: 20499c7b2731b0d21609af924e47c7677a2be50d
   ExpandableCell: f2d99f9ae03a8c393e268adddaeb7f6d2525a76e
+  Fabric: bda89e242bce1b7b8ab264248cf3407774ce0095
   Geth: 0e529ddf97286eca646ab355c080ee0a2337a544
   IQKeyboardManagerSwift: 30fb3a61de1af53a95e02b80fb54ed0a19d5ede5
   ISHPullUp: eaa91bef06270264e1f923bc764705173d341495
@@ -97,6 +104,6 @@ SPEC CHECKSUMS:
   Web3: 1f0c38c8508b8487948af1cb597653b018f4b5d3
   web3swift: 9cf4ccef0c7f7e9f9abb3bc5867789b928800af6
 
-PODFILE CHECKSUM: 247faff3dc7aa5bfcbb4f4d0d8fe25e71946d2cb
+PODFILE CHECKSUM: 5e8e543369a819f0813adb411ee8bc9a3e836bb6
 
 COCOAPODS: 1.4.0

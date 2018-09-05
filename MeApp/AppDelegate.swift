@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 import IQKeyboardManagerSwift
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,12 +19,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        if  UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" && UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil{
+              Fabric.sharedSDK().debug = true
+              Fabric.with([Crashlytics.self])
+        if  self.existCurrentUser() {
         let storyboard:UIStoryboard = UIStoryboard(name: "Tabs", bundle: nil)
         let rootViewController:UIViewController = storyboard.instantiateViewController(withIdentifier: "walet") as UIViewController
         self.window?.rootViewController = rootViewController
         }
+//         Crashlytics.sharedInstance().crash()
         return true
+    }
+    
+    func existCurrentUser() -> Bool{
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        fetchRequest.predicate = NSPredicate(format:"currentUser == YES")
+        do{
+            let results = try context.fetch(fetchRequest) as? [User]
+            if results?.count != 0 {
+                UserShared.shared.currentUser = results![0]
+                UserDefaults.standard.set(UserShared.shared.currentUser.pinCode, forKey: ALConstants.kPincode)
+                UserDefaults.standard.synchronize()
+                return true
+            }
+        } catch{}
+        return false
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

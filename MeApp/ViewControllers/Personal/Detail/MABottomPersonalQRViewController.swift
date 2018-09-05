@@ -82,7 +82,7 @@ class MABottomPersonalQRViewController: MABaseViewController, ISHPullUpSizingDel
                     self.logOut()
                     return
                 }
-                self.qrCodeImageView.generateQRCode(from: "uuid:\(response.uuid!)")
+                self.qrCodeImageView.generateQRCode(from: "{ type: \"uuid\",value:"+response.uuid+" }")
             }) { (error) in
                 AlertController.showError()
             }
