@@ -43,7 +43,7 @@ class MACreatePasswordViewController: UIViewController {
                                                     }
                                                     if response.errors == nil && response.accessToken != nil{
                                                         self.updateOldIndentity()
-                                                        self.saveNewIdentity(accessToken: response.accessToken, pinCode:UserDefaults.standard.string(forKey: ALConstants.kPincode)!)
+                                                        self.saveNewIdentity(accessToken: response.accessToken)
                                                         self.getCurrentUser(primaryEmai: self.primaryEmail)
                                                         RecordCategoryRequest.createRecordCategory(completion: { (response, statusCode) in
                                                             
@@ -82,7 +82,7 @@ class MACreatePasswordViewController: UIViewController {
     
     // MARK: - CoreDataManaged
     
-    func saveNewIdentity(accessToken: String, pinCode: String){
+    func saveNewIdentity(accessToken: String){
         let context = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "User", in: context)
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
@@ -94,7 +94,7 @@ class MACreatePasswordViewController: UIViewController {
                 let newUser = NSManagedObject(entity: entity!, insertInto: context)
                 newUser.setValue(primaryEmail, forKey: "primaryEmail")
                 newUser.setValue(true, forKey: "currentUser")
-                newUser.setValue(pinCode, forKey: "pinCode")
+                newUser.setValue("", forKey: "pinCode")
                 newUser.setValue(accessToken, forKey: "accessToken")
                 newUser.setValue(givenName, forKey: "firstName")
                 newUser.setValue(familyName, forKey: "lastName")
