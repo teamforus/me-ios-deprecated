@@ -15,6 +15,7 @@ class MAPersonalViewController: MABaseViewController, BWWalkthroughViewControlle
     var recordList: NSMutableArray! = NSMutableArray()
     var recordTypeList: NSMutableArray! = NSMutableArray()
     let reachablity = Reachability()!
+    var walkthrough: BWWalkthroughViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,7 +76,7 @@ class MAPersonalViewController: MABaseViewController, BWWalkthroughViewControlle
     }
     
     func walkthroughCloseButtonPressed() {
-        self.dismiss(animated: true, completion: nil)
+        walkthrough.dismiss(animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -83,13 +84,14 @@ class MAPersonalViewController: MABaseViewController, BWWalkthroughViewControlle
             let detailPersonalVC = segue.destination as! MAContentPersonalDetailViewController
             detailPersonalVC.record = self.recordList[(tableView.indexPathForSelectedRow?.row)!] as! Record
             (detailPersonalVC.contentViewController as! MAPersonalDetailViewController).record = self.recordList[(tableView.indexPathForSelectedRow?.row)!] as! Record
+              (detailPersonalVC.contentViewController as! MAPersonalDetailViewController).recordTypeList = recordTypeList
             (detailPersonalVC.bottomViewController as! MABottomPersonalQRViewController).record = self.recordList[(tableView.indexPathForSelectedRow?.row)!] as! Record
         }
     }
     
     @IBAction func createRecord(_ sender: Any) {
         let stb = UIStoryboard(name: "NewProfile", bundle: nil)
-        let walkthrough = stb.instantiateViewController(withIdentifier: "walk") as! BWWalkthroughViewController
+         walkthrough = stb.instantiateViewController(withIdentifier: "walk") as! BWWalkthroughViewController
         let pageOne = stb.instantiateViewController(withIdentifier: "types")
         let pageTwo = stb.instantiateViewController(withIdentifier: "text")
         

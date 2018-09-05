@@ -15,6 +15,7 @@ class MAPersonalDetailViewController: MABaseViewController{
     var record: Record!
     var validators: NSMutableArray! = NSMutableArray()
     var validatorRequests: NSMutableArray! = NSMutableArray()
+    var recordTypeList: NSMutableArray! = NSMutableArray()
     @IBOutlet weak var valueRecord: UILabel!
     @IBOutlet weak var validationLabel: UILabel!
     @IBOutlet weak var imageFavorite: UIImageView!
@@ -26,49 +27,12 @@ class MAPersonalDetailViewController: MABaseViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         //        validationLabel.isHidden = true
-        if record.key == "primary_email"{
-            nameCategory.text = "Primary E-mail"
-            valueRecord.text = record.value
-        }else if record.key == "email"{
-            nameCategory.text = "E-mail"
-            valueRecord.text = record.value
-        }else if record.key == "family_name"{
-            nameCategory.text = "Family name"
-            valueRecord.text = record.value
-        }else if record.key == "telephone"{
-            nameCategory.text = "Phone Number"
-            valueRecord.text = record.value
-        }else if record.key == "given_name"{
-            nameCategory.text = "Given Name"
-            valueRecord.text = record.value
-        }else if record.key == "gender"{
-            nameCategory.text = "Gender"
-            valueRecord.text = record.value
-        }else if record.key == "children_nth"{
-            nameCategory.text = "Children"
-            valueRecord.text = record.value
-        }else if record.key == "tax_id"{
-            nameCategory.text = "Tax ID"
-            valueRecord.text = record.value
-        }else if record.key == "birth_date"{
-            nameCategory.text = "Birth date"
-            valueRecord.text = record.value
-        }else if record.key == "spouse"{
-            nameCategory.text = "Birth date"
-            valueRecord.text = record.value
-        }else if record.key == "net_worth"{
-            nameCategory.text = "Net worth"
-            valueRecord.text = record.value
-        }else if record.key == "base_salary"{
-            nameCategory.text = "Base salary"
-            valueRecord.text = record.value
-        }else if record.key == "bsn"{
-            nameCategory.text = "BSN"
-            valueRecord.text = record.value
-        }else if record.key == "kindpakket_2018_eligible"{
-            nameCategory.text = "Kindpakket Eligible"
-            valueRecord.text = record.value
+        for recordType in recordTypeList{
+            if (recordType as! RecordType).key == record.key{
+                nameCategory.text = (recordType as! RecordType).name
+            }
         }
+        valueRecord.text = record.value
         
     }
     
@@ -164,7 +128,7 @@ extension MAPersonalDetailViewController: UITableViewDelegate, UITableViewDataSo
     
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        if reachablity.connection != .none{
-//            let validator = validators[indexPath.row] as! Validator
+//            let validator = record.validations[indexPath.row]
 //            let parametr: Parameters = ["validator_id" : validator.id!,
 //                                        "record_id" : record.id!]
 //            ValidatorsRequest.createValidationRequest(parameters: parametr, completion: { (response, statusCode) in

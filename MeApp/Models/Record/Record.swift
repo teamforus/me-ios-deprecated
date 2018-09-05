@@ -48,12 +48,14 @@ extension Record: JSONEncodable{
 struct Validations{
     var identityAddress : String!
     var state : String!
+    var id : Int!
 }
 
 extension Validations: JSONDecodable{
     init(object: JSONObject) throws {
         let decoder = JSONDecoder(object:object)
         identityAddress = try decoder.decode("identity_address")
+        id = try decoder.decode("id")
         state = try decoder.decode("state")
         
     }

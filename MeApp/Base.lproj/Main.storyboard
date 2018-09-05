@@ -59,39 +59,39 @@
                                 </state>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y48-7g-35h">
-                                <rect key="frame" x="20" y="284" width="335" height="100"/>
+                                <rect key="frame" x="19" y="284" width="336" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="• " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8h-Jb-VC5">
-                                        <rect key="frame" x="211" y="42" width="12" height="16"/>
+                                        <rect key="frame" x="210" y="42" width="13" height="16"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="20"/>
                                         <color key="textColor" red="0.80000000000000004" green="0.81960784310000001" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="• " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vN-1e-GEc">
-                                        <rect key="frame" x="264" y="42" width="12" height="16"/>
+                                        <rect key="frame" x="263" y="42" width="13" height="16"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="20"/>
                                         <color key="textColor" red="0.80000000000000004" green="0.81960784310000001" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="• " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5HZ-Pd-BUl">
-                                        <rect key="frame" x="54" y="41" width="12" height="16"/>
+                                        <rect key="frame" x="53" y="41" width="13" height="16"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="20"/>
                                         <color key="textColor" red="0.80000000000000004" green="0.81960784310000001" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="• " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uin-cc-p2q">
-                                        <rect key="frame" x="106" y="42" width="12" height="16"/>
+                                        <rect key="frame" x="106" y="42" width="11" height="16"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="20"/>
                                         <color key="textColor" red="0.80000000000000004" green="0.81960784310000001" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="• " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNe-dO-7od">
-                                        <rect key="frame" x="159" y="42" width="12" height="16"/>
+                                        <rect key="frame" x="159" y="42" width="11" height="16"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="20"/>
                                         <color key="textColor" red="0.80000000000000004" green="0.81960784310000001" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -105,14 +105,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8YG-NK-8ez">
-                                        <rect key="frame" x="68" y="18" width="31" height="63"/>
+                                        <rect key="frame" x="67" y="18" width="31" height="63"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="50"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7IK-wd-SSO">
-                                        <rect key="frame" x="120" y="18" width="31" height="63"/>
+                                        <rect key="frame" x="119" y="18" width="31" height="63"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="50"/>
                                         <nil key="textColor"/>
@@ -126,7 +126,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GL1-Fz-0HO">
-                                        <rect key="frame" x="227" y="18" width="31" height="63"/>
+                                        <rect key="frame" x="227" y="18" width="30" height="63"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="50"/>
                                         <nil key="textColor"/>
@@ -665,9 +665,6 @@
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="219" id="cRF-N4-dZh"/>
-                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Dt-bS-lP0" customClass="ShadowButton" customModule="Me" customModuleProvider="target">
                                 <rect key="frame" x="30" y="581" width="315" height="50"/>
@@ -739,6 +736,7 @@
                         <constraints>
                             <constraint firstItem="yO0-Rs-6C7" firstAttribute="leading" secondItem="NRv-4R-hvl" secondAttribute="leading" constant="15" id="4ET-vu-A0s"/>
                             <constraint firstItem="JYx-gW-NQj" firstAttribute="leading" secondItem="NRv-4R-hvl" secondAttribute="leading" id="6xO-hO-UG0"/>
+                            <constraint firstItem="yO0-Rs-6C7" firstAttribute="top" secondItem="NRv-4R-hvl" secondAttribute="top" constant="236" id="Dlu-kE-1v7"/>
                             <constraint firstItem="4Dt-bS-lP0" firstAttribute="top" secondItem="YV7-Gb-SHc" secondAttribute="bottom" constant="22" id="Hdc-6m-KyV"/>
                             <constraint firstItem="YV7-Gb-SHc" firstAttribute="leading" secondItem="NRv-4R-hvl" secondAttribute="leading" constant="30" id="N3l-gu-okI"/>
                             <constraint firstItem="JYx-gW-NQj" firstAttribute="centerX" secondItem="VeI-3q-HAI" secondAttribute="centerX" id="Pgt-mC-ptz"/>
@@ -1086,7 +1084,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick" translatesAutoresizingMaskIntoConstraints="NO" id="cdg-gD-ho0">
-                                <rect key="frame" x="138" y="158" width="100" height="100"/>
+                                <rect key="frame" x="137.5" y="158" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="dhb-Tc-Hwq"/>
                                     <constraint firstAttribute="width" constant="100" id="nXC-uo-v3O"/>
@@ -1268,6 +1266,6 @@ log in with Face ID?</string>
         <image name="tick" width="104" height="104"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="q1h-pR-WcF"/>
+        <segue reference="sb3-cC-tEC"/>
     </inferredMetricsTieBreakers>
 </document>

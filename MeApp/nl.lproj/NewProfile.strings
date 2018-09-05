@@ -1,0 +1,327 @@
+
+/* Class = "UILabel"; text = "TOESTAAN VOOR"; ObjectID = "0Co-38-CZv"; */
+"0Co-38-CZv.text" = "TOESTAAN VOOR";
+
+/* Class = "UIButton"; normalTitle = "PROFIEL TOEVOEGEN"; ObjectID = "0fv-bm-KSW"; */
+"0fv-bm-KSW.normalTitle" = "PROFIEL TOEVOEGEN";
+
+/* Class = "UILabel"; text = "Laat iemand uw persoonlijke QR-code scannen om u \nvaluta, bezit of vouchers te sturen"; ObjectID = "1N4-Kp-O9W"; */
+"1N4-Kp-O9W.text" = "Laat iemand uw persoonlijke QR-code scannen om u \nvaluta, bezit of vouchers te sturen";
+
+/* Class = "UILabel"; text = "Organization van identitiet"; ObjectID = "1ci-sL-dMD"; */
+"1ci-sL-dMD.text" = "Organization van identitiet";
+
+/* Class = "UIButton"; normalTitle = "LAAT QR-CODE ZIEN"; ObjectID = "1qc-FC-gzf"; */
+"1qc-FC-gzf.normalTitle" = "LAAT QR-CODE ZIEN";
+
+/* Class = "UILabel"; text = "E-mail"; ObjectID = "2jb-Gf-jhF"; */
+"2jb-Gf-jhF.text" = "E-mail";
+
+/* Class = "UILabel"; text = "Vul een 4 cijferige toegangscode in. \nDit is uw persoonlijke pincode"; ObjectID = "3IB-16-jqu"; */
+"3IB-16-jqu.text" = "Vul een 4 cijferige toegangscode in. \nDit is uw persoonlijke pincode";
+
+/* Class = "UILabel"; text = "Select the category under which the new record type should be added."; ObjectID = "3lB-Gh-dvm"; */
+"3lB-Gh-dvm.text" = "Select the category under which the new record type should be added.";
+
+/* Class = "UITextField"; placeholder = "Omschrijvin"; ObjectID = "3pZ-yT-OFh"; */
+"3pZ-yT-OFh.placeholder" = "Omschrijvin";
+
+/* Class = "UILabel"; text = "Inloggen bij de Kindpakket applicatie"; ObjectID = "3rK-ia-hwL"; */
+"3rK-ia-hwL.text" = "Inloggen bij de Kindpakket applicatie";
+
+/* Class = "UILabel"; text = "Maak een 4 cijferige pincode aan"; ObjectID = "4CW-pA-obL"; */
+"4CW-pA-obL.text" = "Maak een 4 cijferige pincode aan";
+
+/* Class = "UILabel"; text = "Select the category under which the new record type should be added."; ObjectID = "4aj-jZ-D9K"; */
+"4aj-jZ-D9K.text" = "Select the category under which the new record type should be added.";
+
+/* Class = "UITextField"; placeholder = "Bedrag"; ObjectID = "4dB-fM-naf"; */
+"4dB-fM-naf.placeholder" = "Bedrag";
+
+/* Class = "UIButton"; normalTitle = "TOESTAAN"; ObjectID = "51m-cS-242"; */
+"51m-cS-242.normalTitle" = "TOESTAAN";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "54i-By-tIX"; */
+"54i-By-tIX.text" = "Label";
+
+/* Class = "UILabel"; text = "Choose Category"; ObjectID = "5Z5-l3-RsJ"; */
+"5Z5-l3-RsJ.text" = "Choose Category";
+
+/* Class = "UILabel"; text = "QR-CODE"; ObjectID = "5qS-c3-6nh"; */
+"5qS-c3-6nh.text" = "QR-CODE";
+
+/* Class = "UILabel"; text = "Voeg toe aan mijn contactenlijst"; ObjectID = "6S8-3J-n8v"; */
+"6S8-3J-n8v.text" = "Voeg toe aan mijn contactenlijst";
+
+/* Class = "UILabel"; text = "Hier kunt u uw bezittingen bewerken"; ObjectID = "6sc-h4-smj"; */
+"6sc-h4-smj.text" = "Hier kunt u uw bezittingen bewerken";
+
+/* Class = "UILabel"; text = "Laat iemanduw persoonlijke QR-code scannen om u valuta, bezit of vouchers te sturen"; ObjectID = "781-xe-cPJ"; */
+"781-xe-cPJ.text" = "Laat iemanduw persoonlijke QR-code scannen om u valuta, bezit of vouchers te sturen";
+
+/* Class = "UILabel"; text = "Hier is je persoonlijke QR-Code"; ObjectID = "79g-y7-xbL"; */
+"79g-y7-xbL.text" = "Hier is je persoonlijke QR-Code";
+
+/* Class = "UIButton"; normalTitle = "NIEUWE EIGENSCHAP"; ObjectID = "7Kh-AD-Bi5"; */
+"7Kh-AD-Bi5.normalTitle" = "NIEUWE EIGENSCHAP";
+
+/* Class = "UITextView"; text = "Text"; ObjectID = "8Bt-M3-AM7"; */
+"8Bt-M3-AM7.text" = "Text";
+
+/* Class = "UILabel"; text = "Eigenschappen die wachten op validatie"; ObjectID = "8Xz-5c-gEz"; */
+"8Xz-5c-gEz.text" = "Eigenschappen die wachten op validatie";
+
+/* Class = "UIButton"; normalTitle = "Verwijder eigenschap"; ObjectID = "9T7-YY-cHa"; */
+"9T7-YY-cHa.normalTitle" = "Verwijder eigenschap";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "AoI-gT-xBg"; */
+"AoI-gT-xBg.text" = "Label";
+
+/* Class = "UILabel"; text = "E-MAIL"; ObjectID = "Cin-I3-2aD"; */
+"Cin-I3-2aD.text" = "E-MAIL";
+
+/* Class = "UILabel"; text = "Nieuwe Eigenschappen"; ObjectID = "DbK-WU-q3r"; */
+"DbK-WU-q3r.text" = "Nieuwe Eigenschappen";
+
+/* Class = "UITextField"; placeholder = "uw achternaam"; ObjectID = "F5Z-tq-PJW"; */
+"F5Z-tq-PJW.placeholder" = "uw achternaam";
+
+/* Class = "UILabel"; text = "Adres"; ObjectID = "FGN-oT-pFK"; */
+"FGN-oT-pFK.text" = "Adres";
+
+/* Class = "UIButton"; normalTitle = "Persoonlijk"; ObjectID = "FdY-2V-2Ef"; */
+"FdY-2V-2Ef.normalTitle" = "Persoonlijk";
+
+/* Class = "UITextField"; placeholder = "uw e-mailadres"; ObjectID = "FhZ-3c-JCj"; */
+"FhZ-3c-JCj.placeholder" = "uw e-mailadres";
+
+/* Class = "UIButton"; normalTitle = "Next step"; ObjectID = "Fib-Ls-m0U"; */
+"Fib-Ls-m0U.normalTitle" = "Next step";
+
+/* Class = "UILabel"; text = "PIN instellen"; ObjectID = "IBV-3W-6JM"; */
+"IBV-3W-6JM.text" = "PIN instellen";
+
+/* Class = "UIButton"; normalTitle = "WEIGEREN"; ObjectID = "Ihj-Dd-i9d"; */
+"Ihj-Dd-i9d.normalTitle" = "WEIGEREN";
+
+/* Class = "UIButton"; normalTitle = "Given Name"; ObjectID = "K2d-ly-Yt9"; */
+"K2d-ly-Yt9.normalTitle" = "Given Name";
+
+/* Class = "UILabel"; text = "Vul uw gegevens in"; ObjectID = "KCQ-Si-BCg"; */
+"KCQ-Si-BCg.text" = "Vul uw gegevens in";
+
+/* Class = "UIButton"; normalTitle = "OPSLAAN"; ObjectID = "MAU-vZ-rgj"; */
+"MAU-vZ-rgj.normalTitle" = "OPSLAAN";
+
+/* Class = "UIButton"; normalTitle = "Voornaam"; ObjectID = "Nuk-LE-Obv"; */
+"Nuk-LE-Obv.normalTitle" = "Voornaam";
+
+/* Class = "UILabel"; text = "Jamal"; ObjectID = "PLB-sJ-Gbc"; */
+"PLB-sJ-Gbc.text" = "Jamal";
+
+/* Class = "UILabel"; text = "Notifications"; ObjectID = "Pa8-wl-NX4"; */
+"Pa8-wl-NX4.text" = "Notifications";
+
+/* Class = "UILabel"; text = "BSN"; ObjectID = "QvV-my-dkB"; */
+"QvV-my-dkB.text" = "BSN";
+
+/* Class = "UILabel"; text = "First Name"; ObjectID = "SA5-XQ-6F2"; */
+"SA5-XQ-6F2.text" = "First Name";
+
+/* Class = "UITextField"; placeholder = "Token adres"; ObjectID = "SBc-g9-WPB"; */
+"SBc-g9-WPB.placeholder" = "Token adres";
+
+/* Class = "UILabel"; text = "Organization van identiteit"; ObjectID = "ULY-Si-jvX"; */
+"ULY-Si-jvX.text" = "Organization van identiteit";
+
+/* Class = "UILabel"; text = "Night Mode"; ObjectID = "Uuk-rR-4gH"; */
+"Uuk-rR-4gH.text" = "Night Mode";
+
+/* Class = "UILabel"; text = "Nieuw profiel"; ObjectID = "Uxz-dS-5ik"; */
+"Uxz-dS-5ik.text" = "Nieuw profiel";
+
+/* Class = "UILabel"; text = "Nieuwe Eigenschap"; ObjectID = "Wg3-9U-j3h"; */
+"Wg3-9U-j3h.text" = "Nieuwe Eigenschap";
+
+/* Class = "UILabel"; text = "Use Cellular Network"; ObjectID = "XG6-s5-JQu"; */
+"XG6-s5-JQu.text" = "Use Cellular Network";
+
+/* Class = "UILabel"; text = "Kantoor"; ObjectID = "XQx-zm-0Yy"; */
+"XQx-zm-0Yy.text" = "Kantoor";
+
+/* Class = "UITextField"; placeholder = "Token adres"; ObjectID = "Xkt-kn-DnT"; */
+"Xkt-kn-DnT.placeholder" = "Token adres";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Y3K-Q9-OS0"; */
+"Y3K-Q9-OS0.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Voornaam"; ObjectID = "YEx-pj-EO2"; */
+"YEx-pj-EO2.placeholder" = "Voornaam";
+
+/* Class = "UILabel"; text = "This record has no validations yet"; ObjectID = "Ydy-rz-idj"; */
+"Ydy-rz-idj.text" = "This record has no validations yet";
+
+/* Class = "UILabel"; text = "Persoonlijk"; ObjectID = "Yg3-ag-Rc6"; */
+"Yg3-ag-Rc6.text" = "Persoonlijk";
+
+/* Class = "UIButton"; normalTitle = "Type"; ObjectID = "Zfn-bu-l99"; */
+"Zfn-bu-l99.normalTitle" = "Type";
+
+/* Class = "UIButton"; normalTitle = "BEVESTIGEN"; ObjectID = "Zyj-e7-ul6"; */
+"Zyj-e7-ul6.normalTitle" = "BEVESTIGEN";
+
+/* Class = "UITextField"; placeholder = "Adres"; ObjectID = "aNB-gg-on6"; */
+"aNB-gg-on6.placeholder" = "Adres";
+
+/* Class = "UIButton"; normalTitle = "Jamal"; ObjectID = "aXl-sF-Wag"; */
+"aXl-sF-Wag.normalTitle" = "Jamal";
+
+/* Class = "UILabel"; text = "Create the text or value for the current record"; ObjectID = "aba-TL-MXG"; */
+"aba-TL-MXG.text" = "Create the text or value for the current record";
+
+/* Class = "UILabel"; text = "This record has no validations yet"; ObjectID = "afc-xB-aYa"; */
+"afc-xB-aYa.text" = "This record has no validations yet";
+
+/* Class = "UILabel"; text = "Vul de gegevens van uw aanvraag in"; ObjectID = "ann-Ws-WPD"; */
+"ann-Ws-WPD.text" = "Vul de gegevens van uw aanvraag in";
+
+/* Class = "UILabel"; text = "3"; ObjectID = "bLm-Th-fu0"; */
+"bLm-Th-fu0.text" = "3";
+
+/* Class = "UIButton"; normalTitle = "SUBMIT"; ObjectID = "cDh-Zx-wcG"; */
+"cDh-Zx-wcG.normalTitle" = "SUBMIT";
+
+/* Class = "UITextField"; placeholder = "Bedrag"; ObjectID = "cGy-Xh-Ogd"; */
+"cGy-Xh-Ogd.placeholder" = "Bedrag";
+
+/* Class = "UILabel"; text = "Deze applicatie vraagt om teostemming \nvoor het gebruik van de volgende \ninformatie van je identiteit:"; ObjectID = "dGv-jK-yAO"; */
+"dGv-jK-yAO.text" = "Deze applicatie vraagt om teostemming \nvoor het gebruik van de volgende \ninformatie van je identiteit:";
+
+/* Class = "UILabel"; text = "Nieuwe Eigenschappen"; ObjectID = "dd2-BV-cPM"; */
+"dd2-BV-cPM.text" = "Nieuwe Eigenschappen";
+
+/* Class = "UITextField"; placeholder = "uw voornaam"; ObjectID = "dxf-eQ-fhi"; */
+"dxf-eQ-fhi.placeholder" = "uw voornaam";
+
+/* Class = "UILabel"; text = "Kindpakket"; ObjectID = "eZX-O7-O7j"; */
+"eZX-O7-O7j.text" = "Kindpakket";
+
+/* Class = "UIButton"; normalTitle = "AANVRAAG INDIENEN"; ObjectID = "euj-zr-9SX"; */
+"euj-zr-9SX.normalTitle" = "AANVRAAG INDIENEN";
+
+/* Class = "UILabel"; text = "Voornaam"; ObjectID = "fCh-c0-BLO"; */
+"fCh-c0-BLO.text" = "Voornaam";
+
+/* Class = "UILabel"; text = "Opvragen"; ObjectID = "fqb-QW-FwK"; */
+"fqb-QW-FwK.text" = "Opvragen";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "fze-lc-6gE"; */
+"fze-lc-6gE.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "BEVESTIGEN"; ObjectID = "h27-bO-f0j"; */
+"h27-bO-f0j.normalTitle" = "BEVESTIGEN";
+
+/* Class = "UILabel"; text = "Vul het bestemmingsadres in"; ObjectID = "hAh-9b-AeL"; */
+"hAh-9b-AeL.text" = "Vul het bestemmingsadres in";
+
+/* Class = "UILabel"; text = "Rocket Minds"; ObjectID = "hYt-aF-MwH"; */
+"hYt-aF-MwH.text" = "Rocket Minds";
+
+/* Class = "UIButton"; normalTitle = "Persoonlijk"; ObjectID = "hld-sk-69x"; */
+"hld-sk-69x.normalTitle" = "Persoonlijk";
+
+/* Class = "UILabel"; text = "ACHTERNAAM"; ObjectID = "hnK-No-2Ig"; */
+"hnK-No-2Ig.text" = "ACHTERNAAM";
+
+/* Class = "UIButton"; normalTitle = "ANNULEREN"; ObjectID = "iIe-CD-niQ"; */
+"iIe-CD-niQ.normalTitle" = "ANNULEREN";
+
+/* Class = "UILabel"; text = "Persoonlijk"; ObjectID = "is3-6l-c6l"; */
+"is3-6l-c6l.text" = "Persoonlijk";
+
+/* Class = "UILabel"; text = "Validatie verzoek"; ObjectID = "jVL-Jf-o1V"; */
+"jVL-Jf-o1V.text" = "Validatie verzoek";
+
+/* Class = "UILabel"; text = "Profiel en instellingen"; ObjectID = "jbY-UJ-gwi"; */
+"jbY-UJ-gwi.text" = "Profiel en instellingen";
+
+/* Class = "UILabel"; text = "Achternaam"; ObjectID = "kIt-4c-W2g"; */
+"kIt-4c-W2g.text" = "Achternaam";
+
+/* Class = "UITextField"; placeholder = "uw burger service nummer (BSN)"; ObjectID = "kJC-tf-8DA"; */
+"kJC-tf-8DA.placeholder" = "uw burger service nummer (BSN)";
+
+/* Class = "UIButton"; normalTitle = "BEVESTIGEN"; ObjectID = "kie-12-h4c"; */
+"kie-12-h4c.normalTitle" = "BEVESTIGEN";
+
+/* Class = "UILabel"; text = "TELEFOONNUMMER"; ObjectID = "m99-I5-8vC"; */
+"m99-I5-8vC.text" = "TELEFOONNUMMER";
+
+/* Class = "UIButton"; normalTitle = "VALIDEER LATER"; ObjectID = "mTy-hz-RrL"; */
+"mTy-hz-RrL.normalTitle" = "VALIDEER LATER";
+
+/* Class = "UITextField"; placeholder = "Omschrijving"; ObjectID = "nDe-Vn-y9W"; */
+"nDe-Vn-y9W.placeholder" = "Omschrijving";
+
+/* Class = "UILabel"; text = "Enter the value"; ObjectID = "ndB-dt-gG7"; */
+"ndB-dt-gG7.text" = "Enter the value";
+
+/* Class = "UILabel"; text = "Versturen"; ObjectID = "nui-va-Ebw"; */
+"nui-va-Ebw.text" = "Versturen";
+
+/* Class = "UILabel"; text = "Jamal"; ObjectID = "nwF-9e-IzM"; */
+"nwF-9e-IzM.text" = "Jamal";
+
+/* Class = "UILabel"; text = "Kies Validator"; ObjectID = "oAX-85-AHw"; */
+"oAX-85-AHw.text" = "Kies Validator";
+
+/* Class = "UILabel"; text = "VOORNAAM"; ObjectID = "oE3-Tx-Mnd"; */
+"oE3-Tx-Mnd.text" = "VOORNAAM";
+
+/* Class = "UILabel"; text = "Hier is je persoonlijke QR-Code"; ObjectID = "p1k-hU-QGg"; */
+"p1k-hU-QGg.text" = "Hier is je persoonlijke QR-Code";
+
+/* Class = "UILabel"; text = "Given Name"; ObjectID = "pGq-Vr-EYJ"; */
+"pGq-Vr-EYJ.text" = "Given Name";
+
+/* Class = "UILabel"; text = "Nieuwe Eigenschappen"; ObjectID = "pjN-jM-utv"; */
+"pjN-jM-utv.text" = "Nieuwe Eigenschappen";
+
+/* Class = "UILabel"; text = "First Name"; ObjectID = "q47-Ab-wD9"; */
+"q47-Ab-wD9.text" = "First Name";
+
+/* Class = "UILabel"; text = "Choose Type"; ObjectID = "qQU-sB-Slv"; */
+"qQU-sB-Slv.text" = "Choose Type";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "qvg-gW-97q"; */
+"qvg-gW-97q.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "ANNULEREN"; ObjectID = "rHc-P0-qVz"; */
+"rHc-P0-qVz.normalTitle" = "ANNULEREN";
+
+/* Class = "UILabel"; text = "Vul de gegevens van uw betaling in"; ObjectID = "rdH-Ii-raZ"; */
+"rdH-Ii-raZ.text" = "Vul de gegevens van uw betaling in";
+
+/* Class = "UIButton"; normalTitle = "ADRES"; ObjectID = "rjk-Jr-C5G"; */
+"rjk-Jr-C5G.normalTitle" = "ADRES";
+
+/* Class = "UITextField"; placeholder = "uw telefoonnummer"; ObjectID = "tP6-jO-BMo"; */
+"tP6-jO-BMo.placeholder" = "uw telefoonnummer";
+
+/* Class = "UILabel"; text = "Eigenschap detail"; ObjectID = "u1I-bp-dWe"; */
+"u1I-bp-dWe.text" = "Eigenschap detail";
+
+/* Class = "UIButton"; normalTitle = "SCAN QR-CODE"; ObjectID = "vVa-DB-UZg"; */
+"vVa-DB-UZg.normalTitle" = "SCAN QR-CODE";
+
+/* Class = "UILabel"; text = "Kies de categorie waaraan de nieuwe eigenschap toegevoegd wordt."; ObjectID = "xr1-W6-PzP"; */
+"xr1-W6-PzP.text" = "Kies de categorie waaraan de nieuwe eigenschap toegevoegd wordt.";
+
+/* Class = "UILabel"; text = "1 uur"; ObjectID = "yd8-69-64O"; */
+"yd8-69-64O.text" = "1 uur";
+
+/* Class = "UILabel"; text = "BSN"; ObjectID = "z0z-bX-9qG"; */
+"z0z-bX-9qG.text" = "BSN";
+
+/* Class = "UILabel"; text = "validatie"; ObjectID = "z26-Qp-Uy8"; */
+"z26-Qp-Uy8.text" = "validatie";

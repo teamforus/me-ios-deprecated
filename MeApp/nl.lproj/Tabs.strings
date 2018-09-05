@@ -1,0 +1,75 @@
+
+/* Class = "UILabel"; text = "Nieuwe"; ObjectID = "0RO-Fr-8TE"; */
+"0RO-Fr-8TE.text" = "Nieuwe";
+
+/* Class = "UITabBarItem"; title = "Eigendom"; ObjectID = "0sK-og-sJQ"; */
+"0sK-og-sJQ.title" = "Eigendom";
+
+/* Class = "UILabel"; text = "5 eigenschappen"; ObjectID = "2oP-0e-z3e"; */
+"2oP-0e-z3e.text" = "5 eigenschappen";
+
+/* Class = "UIButton"; normalTitle = "NIEUWE EIGENSCHAP"; ObjectID = "6Ll-lD-Zrb"; */
+"6Ll-lD-Zrb.normalTitle" = "NIEUWE EIGENSCHAP";
+
+/* Class = "UILabel"; text = "Vraag"; ObjectID = "6mM-3T-qfG"; */
+"6mM-3T-qfG.text" = "Vraag";
+
+/* Class = "UITabBarItem"; title = "Eigenschappen"; ObjectID = "7le-DV-ctU"; */
+"7le-DV-ctU.title" = "Eigenschappen";
+
+/* Class = "UILabel"; text = "300 €"; ObjectID = "9C1-7W-qbu"; */
+"9C1-7W-qbu.text" = "300 €";
+
+/* Class = "UILabel"; text = "Ulgersmaweg 35, 9731BK"; ObjectID = "9br-Zf-gru"; */
+"9br-Zf-gru.text" = "Ulgersmaweg 35, 9731BK";
+
+/* Class = "UILabel"; text = "Voornaam"; ObjectID = "GCG-V7-S8z"; */
+"GCG-V7-S8z.text" = "Voornaam";
+
+/* Class = "UILabel"; text = "You have no vouchers yet"; ObjectID = "KKt-19-VeG"; */
+"KKt-19-VeG.text" = "You have no vouchers yet";
+
+/* Class = "UILabel"; text = "5 eigenschappen"; ObjectID = "Lw5-t1-Wd1"; */
+"Lw5-t1-Wd1.text" = "5 eigenschappen";
+
+/* Class = "UILabel"; text = "225,50"; ObjectID = "Mhk-eA-rgD"; */
+"Mhk-eA-rgD.text" = "225,50";
+
+/* Class = "UILabel"; text = "KANTOOR"; ObjectID = "Nsu-ze-VqX"; */
+"Nsu-ze-VqX.text" = "KANTOOR";
+
+/* Class = "UILabel"; text = "Eigendom"; ObjectID = "P1l-mS-jj2"; */
+"P1l-mS-jj2.text" = "Eigendom";
+
+/* Class = "UILabel"; text = "2 dagen geldig"; ObjectID = "PaZ-DR-I5J"; */
+"PaZ-DR-I5J.text" = "2 dagen geldig";
+
+/* Class = "UILabel"; text = "Zend"; ObjectID = "Rsx-qJ-ODf"; */
+"Rsx-qJ-ODf.text" = "Zend";
+
+/* Class = "UILabel"; text = "18 tagen geldig"; ObjectID = "ZYv-E9-UR4"; */
+"ZYv-E9-UR4.text" = "18 tagen geldig";
+
+/* Class = "UITabBarItem"; title = "QR"; ObjectID = "a2M-XK-0VC"; */
+"a2M-XK-0VC.title" = "QR";
+
+/* Class = "UIButton"; normalTitle = "All"; ObjectID = "dLb-D5-Eme"; */
+"dLb-D5-Eme.normalTitle" = "All";
+
+/* Class = "UILabel"; text = "Groningen"; ObjectID = "dfC-3B-tRm"; */
+"dfC-3B-tRm.text" = "Groningen";
+
+/* Class = "UILabel"; text = "Eigenschappen"; ObjectID = "eT6-gv-AkQ"; */
+"eT6-gv-AkQ.text" = "Eigenschappen";
+
+/* Class = "UILabel"; text = "E-mail"; ObjectID = "hcM-rM-dYg"; */
+"hcM-rM-dYg.text" = "E-mail";
+
+/* Class = "UILabel"; text = "Favourites"; ObjectID = "nQs-aP-PJ9"; */
+"nQs-aP-PJ9.text" = "Favourites";
+
+/* Class = "UILabel"; text = "Kindpakket"; ObjectID = "s5P-PY-YuN"; */
+"s5P-PY-YuN.text" = "Kindpakket";
+
+/* Class = "UITabBarItem"; title = "Eigenschappen"; ObjectID = "vmo-CF-lCr"; */
+"vmo-CF-lCr.title" = "Eigenschappen";

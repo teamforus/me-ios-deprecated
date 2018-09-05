@@ -463,7 +463,7 @@
                                     <outlet property="delegate" destination="iIB-xh-Ro7" id="sSL-vX-YFX"/>
                                 </connections>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_launcher_APP" translatesAutoresizingMaskIntoConstraints="NO" id="gCD-jC-Ldu" customClass="RoundImageView" customModule="Me" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="userpick" translatesAutoresizingMaskIntoConstraints="NO" id="gCD-jC-Ldu" customClass="RoundImageView" customModule="Me" customModuleProvider="target">
                                 <rect key="frame" x="314" y="86" width="45" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -4978,5 +4978,6 @@ D+AAAAAAAAAEAQAAAAAAAABWAAAAAAAAAAAAAAAAAAIP4g
         <image name="qrCode" width="178" height="178"/>
         <image name="qrImage2" width="16" height="16"/>
         <image name="rounded" width="24" height="24"/>
+        <image name="userpick" width="40" height="40"/>
     </resources>
 </document>

@@ -170,7 +170,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pd4-Xl-rAR">
                                                 <rect key="frame" x="0.0" y="-15" width="375" height="295"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_launcher_APP" translatesAutoresizingMaskIntoConstraints="NO" id="oal-H1-nuH" customClass="RoundImageView" customModule="Me" customModuleProvider="target">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="userpick" translatesAutoresizingMaskIntoConstraints="NO" id="oal-H1-nuH" customClass="RoundImageView" customModule="Me" customModuleProvider="target">
                                                         <rect key="frame" x="145" y="74" width="86" height="86"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
@@ -378,9 +378,9 @@
     <resources>
         <image name="closeIcon" width="24" height="24"/>
         <image name="faceId" width="85" height="85"/>
-        <image name="ic_launcher_APP" width="210" height="210"/>
         <image name="lock24Px" width="24" height="24"/>
         <image name="qrCode" width="178" height="178"/>
         <image name="qrImage2" width="16" height="16"/>
+        <image name="userpick" width="40" height="40"/>
     </resources>
 </document>

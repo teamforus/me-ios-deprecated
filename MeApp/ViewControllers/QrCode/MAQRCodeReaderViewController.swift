@@ -35,94 +35,40 @@ class MAQRCodeReaderViewController: MABaseViewController {
         reader.didFindCode = { result in
             print("Completion with result: \(result.value) of type \(result.metadataType)")
             if self.reachablity.connection != .none{
+                // login with QR
             if result.value.range(of:"authToken") != nil {
                  self.reader.startScanning()
                 var token = result.value.components(separatedBy: ":")
-                let parameter: Parameters = ["auth_token" : token[1]]
-                AuthorizeTokenRequest.authorizeToken(parameter: parameter, completion: { (response, statusCode) in
-                    self.reader.startScanning()
-                }, failure: { (error) in
-                    AlertController.showError()
-                    self.reader.startScanning()
-                })
+                self.authorizeToken(token: token[1])
+                
+                // validate record
             }else if result.value.range(of:"uuid") != nil{
                 
                 var token = result.value.components(separatedBy: ":")
-                RecordsRequest.readValidationTokenRecord(token: token[1], completion: { (response, statusCode) in
-                    if statusCode == 401{
-                        self.logOut()
-                    }
-                     self.reader.startScanning()
-                    let alert: UIAlertController
-                    alert = UIAlertController(title: response.name, message: response.value, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Aprove", style: .default, handler: { (action) in
-                        self.reader.startScanning()
-                        RecordsRequest.aproveValidationTokenRecord(token: token[1], completion: { (response, statusCode) in
-                            if statusCode == 401{
-                                self.logOut()
-                            }
-                             self.reader.startScanning()
-                        }, failure: { (error) in
-                            AlertController.showError()
-                             self.reader.startScanning()
-                        })
-                    }))
-                    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
-                        self.reader.startScanning()
-                    }))
-                    self.present(alert, animated: true, completion: nil)
-                 
-                }, failure: { (error) in
-                    self.reader.startScanning()
-                })
+                self.readValidationToken(code: token[1])
+               
+                // make transaction
             }else if(result.value.range(of:"vouchers") != nil){
                 var token = result.value.components(separatedBy: ":")
-                self.getProvierConfirm(address:token[1])
+                self.getProviderConfirm(address:token[1])
                
             } else {
                 let data = result.value.data(using: .utf8)!
                 do {
                     if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? Dictionary<String,Any>
                     {
+                          // login with QR
                         if jsonArray["type"] as! String == "auth_token"{
-                        let parameter: Parameters = ["auth_token" : jsonArray["value"] as! String]
-                        AuthorizeTokenRequest.authorizeToken(parameter: parameter, completion: { (response, statusCode) in
-                            self.reader.startScanning()
-                        }, failure: { (error) in
-                            AlertController.showError()
-                            self.reader.startScanning()
-                        })
+                         self.authorizeToken(token: jsonArray["value"] as! String)
                             
+                          // make transaction
                         }else  if jsonArray["type"] as! String == "voucher" {
-                            self.getProvierConfirm(address:jsonArray["value"] as! String)
+                            self.getProviderConfirm(address:jsonArray["value"] as! String)
+                            
+                          // validate record
                         }else{
-                            RecordsRequest.readValidationTokenRecord(token: jsonArray["value"] as! String, completion: { (response, statusCode) in
-                                if statusCode == 401{
-                                    self.logOut()
-                                }
-                                self.reader.startScanning()
-                                let alert: UIAlertController
-                                alert = UIAlertController(title: response.name, message: response.value, preferredStyle: .alert)
-                                alert.addAction(UIAlertAction(title: "Aprove", style: .default, handler: { (action) in
-                                    self.reader.startScanning()
-                                    RecordsRequest.aproveValidationTokenRecord(token: jsonArray["value"] as! String, completion: { (response, statusCode) in
-                                        if statusCode == 401{
-                                            self.logOut()
-                                        }
-                                        self.reader.startScanning()
-                                    }, failure: { (error) in
-                                        AlertController.showError()
-                                        self.reader.startScanning()
-                                    })
-                                }))
-                                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
-                                    self.reader.startScanning()
-                                }))
-                                self.present(alert, animated: true, completion: nil)
-                                
-                            }, failure: { (error) in
-                                self.reader.startScanning()
-                            })
+                            
+                            self.readValidationToken(code: jsonArray["value"] as! String)
                         }
                     } else {
                         self.reader.startScanning()
@@ -180,8 +126,48 @@ class MAQRCodeReaderViewController: MABaseViewController {
         }
     }
     
+    func readValidationToken(code:String){
+        RecordsRequest.readValidationTokenRecord(token:code, completion: { (response, statusCode) in
+            if statusCode == 401{
+                self.logOut()
+            }
+            self.reader.startScanning()
+            let alert: UIAlertController
+            alert = UIAlertController(title: response.name, message: response.value, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Aprove", style: .default, handler: { (action) in
+                self.reader.startScanning()
+                RecordsRequest.aproveValidationTokenRecord(token: code, completion: { (response, statusCode) in
+                    if statusCode == 401{
+                        self.logOut()
+                    }
+                    self.reader.startScanning()
+                }, failure: { (error) in
+                    AlertController.showError()
+                    self.reader.startScanning()
+                })
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+                self.reader.startScanning()
+            }))
+            self.present(alert, animated: true, completion: nil)
+            
+        }, failure: { (error) in
+            self.reader.startScanning()
+        })
+    }
     
-    func getProvierConfirm(address:String){
+    func authorizeToken(token:String){
+        
+        let parameter: Parameters = ["auth_token" : token]
+        AuthorizeTokenRequest.authorizeToken(parameter: parameter, completion: { (response, statusCode) in
+            self.reader.startScanning()
+        }, failure: { (error) in
+            AlertController.showError()
+            self.reader.startScanning()
+        })
+    }
+    
+    func getProviderConfirm(address:String){
         VoucherRequest.getProvider(identityAdress: address, completion: { (voucher, statusCode) in
             if voucher.allowedOrganizations.count != 0 {
             let popupTransction =  MAShareVaucherViewController(nibName: "MAShareVaucherViewController", bundle: nil)
