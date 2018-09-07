@@ -15,7 +15,7 @@
 "5AC-ZM-xIz.text" = "-2,76";
 
 /* Class = "UILabel"; text = "155 dagen geldig"; ObjectID = "5de-iy-ft6"; */
-"5de-iy-ft6.text" = "155 dagen geldig";
+"5de-iy-ft6.text" = "155 day number";
 
 /* Class = "UILabel"; text = "RMinds"; ObjectID = "89x-3m-6Kk"; */
 "89x-3m-6Kk.text" = "RMinds";
@@ -36,10 +36,10 @@
 "Naq-m7-iBJ.text" = "Gefaald";
 
 /* Class = "UIButton"; normalTitle = "E-mail naar mij"; ObjectID = "QgM-Dv-fMr"; */
-"QgM-Dv-fMr.normalTitle" = "E-mail naar mij";
+"QgM-Dv-fMr.normalTitle" = "E-mail for me";
 
 /* Class = "UILabel"; text = "Transactie"; ObjectID = "Soo-aR-aFi"; */
-"Soo-aR-aFi.text" = "Transactie";
+"Soo-aR-aFi.text" = "Transaction";
 
 /* Class = "UILabel"; text = "19 Mei, 14:08"; ObjectID = "Ubp-9X-JGO"; */
 "Ubp-9X-JGO.text" = "19 Mei, 14:08";
@@ -90,7 +90,7 @@
 "oUm-lE-8Qd.text" = "19 Mei, 10:08";
 
 /* Class = "UILabel"; text = "Betaling"; ObjectID = "pm5-6H-OPy"; */
-"pm5-6H-OPy.text" = "Betaling";
+"pm5-6H-OPy.text" = "Payment";
 
 /* Class = "UILabel"; text = "Storting"; ObjectID = "pql-5D-j6D"; */
 "pql-5D-j6D.text" = "Storting";

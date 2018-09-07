@@ -3,7 +3,7 @@
 "0RO-Fr-8TE.text" = "New";
 
 /* Class = "UITabBarItem"; title = "Eigendom"; ObjectID = "0sK-og-sJQ"; */
-"0sK-og-sJQ.title" = "Eigendom";
+"0sK-og-sJQ.title" = "Property";
 
 /* Class = "UILabel"; text = "5 eigenschappen"; ObjectID = "2oP-0e-z3e"; */
 "2oP-0e-z3e.text" = "5 eigenschappen";
@@ -15,7 +15,7 @@
 "6mM-3T-qfG.text" = "Vraag";
 
 /* Class = "UITabBarItem"; title = "Eigenschappen"; ObjectID = "7le-DV-ctU"; */
-"7le-DV-ctU.title" = "Eigenschappen";
+"7le-DV-ctU.title" = "Records";
 
 /* Class = "UILabel"; text = "300 €"; ObjectID = "9C1-7W-qbu"; */
 "9C1-7W-qbu.text" = "300 €";
@@ -39,13 +39,13 @@
 "Nsu-ze-VqX.text" = "KANTOOR";
 
 /* Class = "UILabel"; text = "Eigendom"; ObjectID = "P1l-mS-jj2"; */
-"P1l-mS-jj2.text" = "Eigendom";
+"P1l-mS-jj2.text" = "Property";
 
 /* Class = "UILabel"; text = "2 dagen geldig"; ObjectID = "PaZ-DR-I5J"; */
 "PaZ-DR-I5J.text" = "2 dagen geldig";
 
 /* Class = "UILabel"; text = "Zend"; ObjectID = "Rsx-qJ-ODf"; */
-"Rsx-qJ-ODf.text" = "Zend";
+"Rsx-qJ-ODf.text" = "Send";
 
 /* Class = "UILabel"; text = "18 tagen geldig"; ObjectID = "ZYv-E9-UR4"; */
 "ZYv-E9-UR4.text" = "18 tagen geldig";
@@ -60,7 +60,7 @@
 "dfC-3B-tRm.text" = "Groningen";
 
 /* Class = "UILabel"; text = "Eigenschappen"; ObjectID = "eT6-gv-AkQ"; */
-"eT6-gv-AkQ.text" = "Eigenschappen";
+"eT6-gv-AkQ.text" = "Records";
 
 /* Class = "UILabel"; text = "E-mail"; ObjectID = "hcM-rM-dYg"; */
 "hcM-rM-dYg.text" = "E-mail";
@@ -72,4 +72,4 @@
 "s5P-PY-YuN.text" = "Kindpakket";
 
 /* Class = "UITabBarItem"; title = "Eigenschappen"; ObjectID = "vmo-CF-lCr"; */
-"vmo-CF-lCr.title" = "Eigenschappen";
+"vmo-CF-lCr.title" = "Records";

@@ -138,10 +138,10 @@
 "Uuk-rR-4gH.text" = "Night Mode";
 
 /* Class = "UILabel"; text = "Nieuw profiel"; ObjectID = "Uxz-dS-5ik"; */
-"Uxz-dS-5ik.text" = "Nieuw profiel";
+"Uxz-dS-5ik.text" = "New profile";
 
 /* Class = "UILabel"; text = "Nieuwe Eigenschap"; ObjectID = "Wg3-9U-j3h"; */
-"Wg3-9U-j3h.text" = "Nieuwe Eigenschap";
+"Wg3-9U-j3h.text" = "New Record";
 
 /* Class = "UILabel"; text = "Use Cellular Network"; ObjectID = "XG6-s5-JQu"; */
 "XG6-s5-JQu.text" = "Use Cellular Network";
@@ -156,7 +156,7 @@
 "Y3K-Q9-OS0.text" = "Label";
 
 /* Class = "UITextField"; placeholder = "Voornaam"; ObjectID = "YEx-pj-EO2"; */
-"YEx-pj-EO2.placeholder" = "Voornaam";
+"YEx-pj-EO2.placeholder" = "First name";
 
 /* Class = "UILabel"; text = "This record has no validations yet"; ObjectID = "Ydy-rz-idj"; */
 "Ydy-rz-idj.text" = "This record has no validations yet";
@@ -198,7 +198,7 @@
 "dGv-jK-yAO.text" = "Deze applicatie vraagt om teostemming \nvoor het gebruik van de volgende \ninformatie van je identiteit:";
 
 /* Class = "UILabel"; text = "Nieuwe Eigenschappen"; ObjectID = "dd2-BV-cPM"; */
-"dd2-BV-cPM.text" = "Nieuwe Eigenschappen";
+"dd2-BV-cPM.text" = "New Record";
 
 /* Class = "UITextField"; placeholder = "uw voornaam"; ObjectID = "dxf-eQ-fhi"; */
 "dxf-eQ-fhi.placeholder" = "uw voornaam";
@@ -228,7 +228,7 @@
 "hYt-aF-MwH.text" = "Rocket Minds";
 
 /* Class = "UIButton"; normalTitle = "Persoonlijk"; ObjectID = "hld-sk-69x"; */
-"hld-sk-69x.normalTitle" = "Persoonlijk";
+"hld-sk-69x.normalTitle" = "Personal";
 
 /* Class = "UILabel"; text = "ACHTERNAAM"; ObjectID = "hnK-No-2Ig"; */
 "hnK-No-2Ig.text" = "ACHTERNAAM";
@@ -237,7 +237,7 @@
 "iIe-CD-niQ.normalTitle" = "ANNULEREN";
 
 /* Class = "UILabel"; text = "Persoonlijk"; ObjectID = "is3-6l-c6l"; */
-"is3-6l-c6l.text" = "Persoonlijk";
+"is3-6l-c6l.text" = "Personal";
 
 /* Class = "UILabel"; text = "Validatie verzoek"; ObjectID = "jVL-Jf-o1V"; */
 "jVL-Jf-o1V.text" = "Validatie verzoek";
@@ -324,4 +324,4 @@
 "z0z-bX-9qG.text" = "BSN";
 
 /* Class = "UILabel"; text = "validatie"; ObjectID = "z26-Qp-Uy8"; */
-"z26-Qp-Uy8.text" = "validatie";
+"z26-Qp-Uy8.text" = "validation";
