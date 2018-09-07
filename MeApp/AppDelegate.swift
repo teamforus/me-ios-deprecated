@@ -25,8 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard:UIStoryboard = UIStoryboard(name: "Tabs", bundle: nil)
         let rootViewController:UIViewController = storyboard.instantiateViewController(withIdentifier: "walet") as UIViewController
         self.window?.rootViewController = rootViewController
-        }
-//         Crashlytics.sharedInstance().crash()
+        }      
         return true
     }
     

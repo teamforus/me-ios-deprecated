@@ -20,7 +20,12 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     @IBOutlet weak var faceIdLabel: UILabel!
     @IBOutlet weak var profileNameLabel: UILabel!
     @IBOutlet weak var profileEmailLabel: UILabel!
+    @IBOutlet weak var passcodeLabel: UILabel!
     @IBOutlet weak var appVersionLabel: UILabel!
+    @IBOutlet weak var turnOffPascodeView: CustomCornerUIView!
+    @IBOutlet weak var verticalSpacingFaceIdLogin: NSLayoutConstraint!
+    @IBOutlet weak var heightButtonsView: NSLayoutConstraint!
+    
     let reachability = Reachability()!
     let presenter: Presentr = {
         let presenter = Presentr(presentationType: .alert)
@@ -37,7 +42,6 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
          }else {
             switchFaceID.isOn = false
         }
-
         
         if !faceIDAvailable(){
             faceIdImage.image = #imageLiteral(resourceName: "touchId")
@@ -52,6 +56,16 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
 //        UserDefaults.standard.set("0000", forKey: ALConstants.kPincode)
 //        UserDefaults.standard.synchronize()
 //        updateIndentity()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if !UserDefaults.standard.bool(forKey: "PINCODEENABLED"){
+            passcodeLabel.text = "Turn On Passcode"
+            turnOffPascodeView.isHidden = true
+            verticalSpacingFaceIdLogin.constant = 10
+            heightButtonsView.constant = 124
+        }
     }
     
     func faceIDAvailable() -> Bool {
@@ -82,14 +96,27 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     
     @IBAction func editPasscode(_ sender: Any) {
         if reachability.connection != .none{
+        if UserDefaults.standard.bool(forKey: "PINCODEENABLED"){
         var appearance = ALAppearance()
         appearance.image = UIImage(named: "lock")!
         appearance.title = "Edit passcode"
         appearance.subtitle = "Enter your new passcode"
         appearance.isSensorsEnabled = true
+        appearance.cancelIsVissible = true
         appearance.delegate = self
         
         AppLocker.present(with: .change, and: appearance, withController: self)
+        }else{
+            var appearance = ALAppearance()
+            appearance.image = UIImage(named: "lock")!
+            appearance.title = "Create passcode"
+            appearance.subtitle = "Enter your passcode"
+            appearance.isSensorsEnabled = true
+            appearance.cancelIsVissible = true
+            appearance.delegate = self
+            
+            AppLocker.present(with: .create, and: appearance, withController: self)
+            }
         }else {
             AlertController.showInternetUnable()
         }
@@ -130,10 +157,23 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         }
     }
     
+    @IBAction func deletePasscode(_ sender: Any) {
+        var appearance = ALAppearance()
+        appearance.image = UIImage(named: "lock")!
+        appearance.title = "Turn off passcode"
+        appearance.subtitle = "Enter your passcode"
+        appearance.isSensorsEnabled = true
+        appearance.cancelIsVissible = true
+        appearance.delegate = self
+        
+        AppLocker.present(with: .deactive, and: appearance, withController: self)
+    }
+    
+    
     // AppLocker Delegate
     func closePinCodeView(typeClose: typeClose) {
         if typeClose == .create {
-            let parameters: Parameters = ["pin_code" : Int16(UserDefaults.standard.integer(forKey: ALConstants.kPincode)),
+            let parameters: Parameters = ["pin_code" : UserDefaults.standard.string(forKey: ALConstants.kPincode)!,
                                           "old_pin_code" : UserShared.shared.currentUser.pinCode!]
             RequestNewIndetity.updatePinCode(parameters: parameters, completion: { (response, statusCode) in
                 if statusCode == 401{
@@ -145,6 +185,8 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
             }
             updateIndentity()
             
+        }else if typeClose == .delete{
+            updateIndentity()
         }
     }
     

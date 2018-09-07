@@ -41,6 +41,7 @@ public struct ALAppearance { // The structure used to display the controller
   public var image: UIImage?
   public var color: UIColor?
   public var isSensorsEnabled: Bool?
+  public var cancelIsVissible: Bool?
      weak var delegate: AppLockerDelegate!
   public init() {}
 }
@@ -83,13 +84,11 @@ public class AppLocker: UIViewController {
       case .create:
         messageLabel.text = "Create passcode" // Your submessage for create mode
       case .change:
-        cancelButton.isHidden = false
         messageLabel.text = "Enter passcode" // Your submessage for change mode
       case .deactive:
-        messageLabel.text = "Enter passcode" // Your submessage for deactive mode
+        messageLabel.text = "Turn off passcode" // Your submessage for deactive mode
       case .validate:
         messageLabel.text = "Enter passcode" // Your submessage for validate mode
-        cancelButton.isHidden = true
         isFirstCreationStep = false
       }
     }
@@ -253,6 +252,11 @@ public extension AppLocker {
 //            return
 //        }
 //    }
+        if (config?.cancelIsVissible)!{
+            locker.cancelButton.isHidden = false
+        }else{
+            locker.cancelButton.isHidden = true
+        }
     locker.messageLabel.text = config?.title ?? ""
     locker.submessageLabel.text = config?.subtitle ?? ""
     locker.view.backgroundColor = config?.color ?? .black

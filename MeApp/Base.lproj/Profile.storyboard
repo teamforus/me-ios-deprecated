@@ -37,21 +37,20 @@
             <objects>
                 <viewController storyboardIdentifier="contentProfle" id="LGi-pg-qjE" customClass="MAContentProfileViewController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b6o-WV-UCC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="697"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="735"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m0L-VB-ak0">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="697"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="735"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="155-Ic-MfQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="682"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="735"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Va-AE-fRi">
-                                                <rect key="frame" x="16" y="301" width="343" height="134"/>
+                                                <rect key="frame" x="16" y="301" width="343" height="194"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gkg-fA-sZu" customClass="CustomCornerUIView" customModule="Me" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gkg-fA-sZu" customClass="CustomCornerUIView" customModule="Me" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="342" height="56"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lock24Px" translatesAutoresizingMaskIntoConstraints="NO" id="EVA-dO-pZo">
                                                                 <rect key="frame" x="26" y="16" width="24" height="24"/>
@@ -73,22 +72,56 @@
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="56" id="rp1-Jb-Xhw"/>
+                                                        </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="9"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3F5-pB-QVl" customClass="CustomCornerUIView" customModule="Me" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="78" width="342" height="56"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SbT-hx-NQg" customClass="CustomCornerUIView" customModule="Me" customModuleProvider="target">
+                                                        <rect key="frame" x="1" y="69" width="342" height="56"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lock24Px" translatesAutoresizingMaskIntoConstraints="NO" id="iAp-cU-eTd">
+                                                                <rect key="frame" x="26" y="16" width="24" height="24"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Turn off passcode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfr-ck-RGJ">
+                                                                <rect key="frame" x="70" y="18" width="240" height="21"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GM7-J6-udT">
+                                                                <rect key="frame" x="0.0" y="0.0" width="342" height="56"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                <connections>
+                                                                    <action selector="deletePasscode:" destination="LGi-pg-qjE" eventType="touchUpInside" id="Uni-0v-LDL"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="56" id="xjr-kp-L9O"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="9"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3F5-pB-QVl" customClass="CustomCornerUIView" customModule="Me" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="138" width="342" height="56"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="faceId" translatesAutoresizingMaskIntoConstraints="NO" id="iAC-og-Xvt">
                                                                 <rect key="frame" x="26" y="16" width="24" height="24"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Use Face ID for login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcu-8u-YwG">
-                                                                <rect key="frame" x="70" y="17" width="240" height="22"/>
+                                                                <rect key="frame" x="70" y="17" width="203" height="22"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="17"/>
                                                                 <nil key="textColor"/>
@@ -104,6 +137,9 @@
                                                             </switch>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="56" id="QSn-U3-QLT"/>
+                                                        </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="9"/>
@@ -113,11 +149,18 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="134" id="ZIo-5o-juT"/>
+                                                    <constraint firstItem="gkg-fA-sZu" firstAttribute="leading" secondItem="8Va-AE-fRi" secondAttribute="leading" id="2MA-B8-G4c"/>
+                                                    <constraint firstAttribute="trailing" secondItem="3F5-pB-QVl" secondAttribute="trailing" constant="1" id="Kch-Yq-1D6"/>
+                                                    <constraint firstAttribute="trailing" secondItem="gkg-fA-sZu" secondAttribute="trailing" constant="1" id="Ohw-SG-eAT"/>
+                                                    <constraint firstItem="SbT-hx-NQg" firstAttribute="top" secondItem="gkg-fA-sZu" secondAttribute="bottom" constant="13" id="TMb-J5-v3G"/>
+                                                    <constraint firstItem="3F5-pB-QVl" firstAttribute="top" secondItem="gkg-fA-sZu" secondAttribute="bottom" constant="82" id="VLh-RE-vTF"/>
+                                                    <constraint firstItem="3F5-pB-QVl" firstAttribute="leading" secondItem="8Va-AE-fRi" secondAttribute="leading" id="X9u-eT-Vfh"/>
+                                                    <constraint firstAttribute="height" constant="194" id="ZIo-5o-juT"/>
+                                                    <constraint firstItem="gkg-fA-sZu" firstAttribute="top" secondItem="8Va-AE-fRi" secondAttribute="top" id="uyI-K9-ePG"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JEd-BN-6rq">
-                                                <rect key="frame" x="0.0" y="457" width="375" height="225"/>
+                                                <rect key="frame" x="0.0" y="503" width="375" height="232"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="App version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdB-df-WLS">
                                                         <rect key="frame" x="26" y="19" width="237" height="21"/>
@@ -164,7 +207,7 @@
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="225" id="x6P-Lc-F2M"/>
+                                                    <constraint firstAttribute="height" constant="232" id="x6P-Lc-F2M"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pd4-Xl-rAR">
@@ -221,12 +264,14 @@
                                             <constraint firstAttribute="trailing" secondItem="8Va-AE-fRi" secondAttribute="trailing" constant="16" id="AdM-wF-FI7"/>
                                             <constraint firstItem="JEd-BN-6rq" firstAttribute="leading" secondItem="155-Ic-MfQ" secondAttribute="leading" id="CL6-6B-0i7"/>
                                             <constraint firstItem="pd4-Xl-rAR" firstAttribute="top" secondItem="155-Ic-MfQ" secondAttribute="top" constant="-15" id="Et3-h8-KeY"/>
+                                            <constraint firstAttribute="trailing" secondItem="SbT-hx-NQg" secondAttribute="trailing" constant="16" id="Eyn-vY-VUZ"/>
                                             <constraint firstItem="8Va-AE-fRi" firstAttribute="top" secondItem="pd4-Xl-rAR" secondAttribute="bottom" constant="21" id="G9Y-oK-YtD"/>
                                             <constraint firstAttribute="trailing" secondItem="JEd-BN-6rq" secondAttribute="trailing" id="H8N-wz-Rdd"/>
                                             <constraint firstItem="8Va-AE-fRi" firstAttribute="leading" secondItem="155-Ic-MfQ" secondAttribute="leading" constant="16" id="O0p-TG-zWc"/>
+                                            <constraint firstItem="SbT-hx-NQg" firstAttribute="leading" secondItem="155-Ic-MfQ" secondAttribute="leading" constant="17" id="QeF-sS-CTh"/>
                                             <constraint firstAttribute="bottom" secondItem="JEd-BN-6rq" secondAttribute="bottom" id="fl6-6a-MRY"/>
                                             <constraint firstAttribute="trailing" secondItem="pd4-Xl-rAR" secondAttribute="trailing" id="kqD-NH-G2y"/>
-                                            <constraint firstItem="JEd-BN-6rq" firstAttribute="top" secondItem="8Va-AE-fRi" secondAttribute="bottom" constant="22" id="rcs-aG-3ne"/>
+                                            <constraint firstItem="JEd-BN-6rq" firstAttribute="top" secondItem="8Va-AE-fRi" secondAttribute="bottom" constant="8" id="rcs-aG-3ne"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -250,20 +295,24 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9Qv-5p-42D"/>
                     </view>
-                    <size key="freeformSize" width="375" height="697"/>
+                    <size key="freeformSize" width="375" height="735"/>
                     <connections>
                         <outlet property="appVersionLabel" destination="Ewy-kX-3Ek" id="fb4-Bl-4yx"/>
                         <outlet property="faceIdImage" destination="iAC-og-Xvt" id="baO-Lb-zHJ"/>
                         <outlet property="faceIdLabel" destination="mcu-8u-YwG" id="ysA-j8-j2x"/>
+                        <outlet property="heightButtonsView" destination="ZIo-5o-juT" id="MYC-ka-rKO"/>
+                        <outlet property="passcodeLabel" destination="CGf-eO-S90" id="TMF-c7-Jd8"/>
                         <outlet property="profileEmailLabel" destination="A2b-ot-985" id="T7J-z4-odq"/>
                         <outlet property="profileImage" destination="oal-H1-nuH" id="33M-CH-eMZ"/>
                         <outlet property="profileNameLabel" destination="Wfm-Qk-FJu" id="ZgP-Sh-KcM"/>
                         <outlet property="switchFaceID" destination="YPI-d9-PAw" id="OQN-cU-HRF"/>
+                        <outlet property="turnOffPascodeView" destination="SbT-hx-NQg" id="b7u-sB-K5g"/>
+                        <outlet property="verticalSpacingFaceIdLogin" destination="VLh-RE-vTF" id="Qe8-0K-6Fh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Exl-JO-5KX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-87.200000000000003" y="250.52473763118442"/>
+            <point key="canvasLocation" x="-87.200000000000003" y="249.62518740629687"/>
         </scene>
         <!--Qr Bottom Profile View Controller-->
         <scene sceneID="FKn-Bt-g95">

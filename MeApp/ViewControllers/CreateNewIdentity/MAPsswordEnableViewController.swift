@@ -52,6 +52,7 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
         appearance.title = "Create passcode"
         appearance.subtitle = "Your passcode is required \n to enable Face ID"
         appearance.isSensorsEnabled = true
+        appearance.cancelIsVissible = false
         appearance.delegate = self
         
         AppLocker.present(with: .create, and: appearance, withController: self)
@@ -65,6 +66,7 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
         appearance.title = "Create passcode"
         appearance.subtitle = "Your passcode is required"
         appearance.isSensorsEnabled = true
+        appearance.cancelIsVissible = false
         appearance.delegate = self
         
         AppLocker.present(with: .create, and: appearance, withController: self)

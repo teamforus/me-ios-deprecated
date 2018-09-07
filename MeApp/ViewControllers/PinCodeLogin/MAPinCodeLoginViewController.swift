@@ -9,6 +9,8 @@
 import UIKit
 import SwiftMessages
 import Reachability
+import Presentr
+import CoreData
 
 class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
     @IBOutlet weak var codeUITextField: UITextField!
@@ -19,6 +21,16 @@ class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
     @IBOutlet weak var digit5UILabel: UILabel!
     @IBOutlet weak var digit6UILabel: UILabel!
     @IBOutlet weak var viewPinCode: UIView!
+    var timer : Timer! = Timer()
+    var appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var response: Code!
+    
+    let presenter: Presentr = {
+        let presenter = Presentr(presentationType: .alert)
+        presenter.transitionType = TransitionType.coverHorizontalFromRight
+        presenter.dismissOnSwipe = true
+        return presenter
+    }()
     let reachability = Reachability()!
     
     override func viewDidLoad() {
@@ -37,6 +49,7 @@ class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
         if reachability.connection != .none{
             AuthorizationCodeRequest.createAuthorizationCode(completion: { (response, statusCode) in
                 if response.authCode != nil{
+                    self.response = response
                     let stringCode: String = "\(response.authCode!)"
                     if stringCode.count == 6{
                         self.digit1UILabel.text = String(stringCode[0])
@@ -46,6 +59,7 @@ class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
                         self.digit5UILabel.text = String(stringCode[4])
                         self.digit6UILabel.text = String(stringCode[5])
                         UserDefaults.standard.setValue(response.authCode, forKey: "auth_code")
+                        self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.checkAuthorizeToken), userInfo: nil, repeats: true)
                     }
                 }
             }) { (error) in
@@ -53,6 +67,22 @@ class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
             }
         }else{
             AlertController.showInternetUnable()
+        }
+    }
+    
+    @objc func checkAuthorizeToken(){
+        Status.checkStatus(accessToken: response.accessTokenCode, completion: { (code, message) in
+            if code == 200 {
+                if message == "active"{
+                    self.timer.invalidate()
+                    self.updateOldIndentity()
+                    self.saveNewIdentity(accessToken: self.response.accessTokenCode)
+                    self.getCurrentUser(accessToken: self.response.accessTokenCode)
+                    self.performSegue(withIdentifier: "goToWalet", sender: nil)
+                }
+            }
+        }) { (error) in
+            AlertController.showError()
         }
     }
     
@@ -78,6 +108,74 @@ class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func saveNewIdentity(accessToken: String){
+        let context = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "User", in: context)
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        fetchRequest.predicate = NSPredicate(format:"accessToken == %@", accessToken)
+        
+        do{
+            let results = try context.fetch(fetchRequest) as? [NSManagedObject]
+            if results?.count == 0 {
+                let newUser = NSManagedObject(entity: entity!, insertInto: context)
+                newUser.setValue(true, forKey: "currentUser")
+                newUser.setValue(accessToken, forKey: "accessToken")
+                newUser.setValue(UserDefaults.standard.string(forKey: ALConstants.kPincode), forKey: "pinCode")
+                do {
+                    try context.save()
+                } catch {
+                    print("Failed saving")
+                }
+            }else{
+                results![0].setValue(accessToken, forKey: "accessToken")
+                results![0].setValue(true, forKey: "currentUser")
+                results![0].setValue(UserDefaults.standard.string(forKey: ALConstants.kPincode), forKey: "pinCode")
+                do {
+                    try context.save()
+                } catch {
+                    print("Failed saving")
+                }
+            }
+        } catch{
+            
+        }
+    }
+    
+    func updateOldIndentity(){
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        fetchRequest.predicate = NSPredicate(format:"currentUser == YES")
+        
+        do{
+            let results = try context.fetch(fetchRequest) as? [NSManagedObject]
+            if results?.count != 0 {
+                results![0].setValue(false, forKey: "currentUser")
+                
+                do {
+                    try context.save()
+                } catch {
+                    print("Failed saving")
+                }
+            }
+        } catch{
+            
+        }
+    }
+    
+    func getCurrentUser(accessToken: String!){
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        fetchRequest.predicate = NSPredicate(format:"accessToken == %@", accessToken)
+        
+        do{
+            let results = try context.fetch(fetchRequest) as? [User]
+            UserShared.shared.currentUser = results![0]
+            
+        } catch{
+            
+        }
     }
     
     @IBAction func loginWithCode(_ sender: Any) {
@@ -113,4 +211,16 @@ class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
             AlertController.showInternetUnable()
         }
     }
+    
+    @IBAction func aboutAction(_ sender: Any) {
+        let popupTransction =  MAAboutMeViewController(nibName: "MAAboutMeViewController", bundle: nil)
+        popupTransction.titleDetail = "Hoe werkt het?"
+        popupTransction.descriptionDetail = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        self.presenter.presentationType = .popup
+        self.presenter.transitionType = nil
+        self.presenter.dismissTransitionType = nil
+        self.presenter.keyboardTranslationType = .compress
+        self.customPresentViewController(self.presenter, viewController: popupTransction, animated: true, completion: nil)
+    }
+    
 }

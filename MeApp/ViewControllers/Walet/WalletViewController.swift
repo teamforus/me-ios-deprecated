@@ -44,6 +44,7 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
             appearance.image = UIImage(named: "lock")!
             appearance.title = "Devios Ryasnoy"
             appearance.isSensorsEnabled = true
+            appearance.cancelIsVissible = false
             appearance.delegate = self
             
             AppLocker.present(with: .validate, and: appearance, withController: self)

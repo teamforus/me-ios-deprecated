@@ -9,11 +9,16 @@
 import UIKit
 
 class MAAboutMeViewController: MABasePopUpViewController {
-
+    var titleDetail: String!
+    var descriptionDetail: String!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        titleLabel.text = titleDetail
+        descriptionLabel.text = descriptionDetail
     }
 
     override func didReceiveMemoryWarning() {

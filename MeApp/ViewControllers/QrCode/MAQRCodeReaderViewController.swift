@@ -43,7 +43,7 @@ class MAQRCodeReaderViewController: MABaseViewController {
                 self.authorizeToken(token: token[1])
                 
                 // validate record
-            }else if result.value.range(of:"uuid") != nil{
+            }else if result.value.range(of:"uuids") != nil{
                 
                 var token = result.value.components(separatedBy: ":")
                 self.readValidationToken(code: token[1])
@@ -95,7 +95,7 @@ class MAQRCodeReaderViewController: MABaseViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-         self.reader.startScanning()
+         self.reader.stopScanning()
     }
     
     private func checkScanPermissions() -> Bool {
