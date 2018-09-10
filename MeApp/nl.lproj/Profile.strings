@@ -2,8 +2,8 @@
 /* Class = "UIButton"; normalTitle = "Edit"; ObjectID = "2f1-AJ-K5h"; */
 "2f1-AJ-K5h.normalTitle" = "Edit";
 
-/* Class = "UILabel"; text = "Laat iemanduw persoonlijke QR-code scannen om u valuta, bezit of vouchers te sturen"; ObjectID = "99d-EJ-0q7"; */
-"99d-EJ-0q7.text" = "Laat iemanduw persoonlijke QR-code scannen om u valuta, bezit of vouchers te sturen";
+/* Class = "UILabel"; text = "Laat iemand uw persoonlijke QR-code scannen om u valuta, bezit of vouchers te sturen"; ObjectID = "99d-EJ-0q7"; */
+"99d-EJ-0q7.text" = "Laat iemand uw persoonlijke QR-code scannen om u valuta, bezit of vouchers te sturen";
 
 /* Class = "UILabel"; text = "mail@mail.com"; ObjectID = "A2b-ot-985"; */
 "A2b-ot-985.text" = "mail@mail.com";

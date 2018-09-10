@@ -68,8 +68,8 @@
 /* Class = "UITabBarItem"; title = "Item 2"; ObjectID = "fbk-I4-xhc"; */
 "fbk-I4-xhc.title" = "Item 2";
 
-/* Class = "UIButton"; normalTitle = "VRAAG"; ObjectID = "frd-BF-Gtf"; */
-"frd-BF-Gtf.normalTitle" = "VRAAG";
+/* Class = "UIButton"; normalTitle = "Request"; ObjectID = "frd-BF-Gtf"; */
+"frd-BF-Gtf.normalTitle" = "Request";
 
 /* Class = "UILabel"; text = "19 May, 14:08"; ObjectID = "gbn-RI-53h"; */
 "gbn-RI-53h.text" = "19 May, 14:08";
@@ -95,14 +95,14 @@
 /* Class = "UILabel"; text = "Storting"; ObjectID = "pql-5D-j6D"; */
 "pql-5D-j6D.text" = "Storting";
 
-/* Class = "UILabel"; text = "Hier is je persoonlijke QR-Code"; ObjectID = "sOe-ep-azG"; */
-"sOe-ep-azG.text" = "Hier is je persoonlijke QR-Code";
+/* Class = "UILabel"; text = "This is your personal QR code"; ObjectID = "sOe-ep-azG"; */
+"sOe-ep-azG.text" = "This is your personal QR code";
 
 /* Class = "UILabel"; text = "120,00"; ObjectID = "sh2-eL-3yF"; */
 "sh2-eL-3yF.text" = "120,00";
 
-/* Class = "UILabel"; text = "Laat iemanduw persoonlijke QR-code scannen om u valuta, bezit of vouchers te sturen"; ObjectID = "ufX-dC-Zqj"; */
-"ufX-dC-Zqj.text" = "Laat iemanduw persoonlijke QR-code scannen om u valuta, bezit of vouchers te sturen";
+/* Class = "UILabel"; text = "Let someone scan your personal QR code to send your currency, property or vouchers"; ObjectID = "ufX-dC-Zqj"; */
+"ufX-dC-Zqj.text" = "Let someone scan your personal QR code to send your currency, property or vouchers";
 
 /* Class = "UILabel"; text = "Kindpakket"; ObjectID = "v0t-au-15P"; */
 "v0t-au-15P.text" = "Kindpakket";

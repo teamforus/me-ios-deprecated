@@ -5,8 +5,8 @@
 /* Class = "UIButton"; normalTitle = "PROFIEL TOEVOEGEN"; ObjectID = "0fv-bm-KSW"; */
 "0fv-bm-KSW.normalTitle" = "PROFIEL TOEVOEGEN";
 
-/* Class = "UILabel"; text = "Laat iemand uw persoonlijke QR-code scannen om u \nvaluta, bezit of vouchers te sturen"; ObjectID = "1N4-Kp-O9W"; */
-"1N4-Kp-O9W.text" = "Laat iemand uw persoonlijke QR-code scannen om u \nvaluta, bezit of vouchers te sturen";
+/* Class = "UILabel"; text = "Laat iemand uw persoonlijke QR-code scannen om uw valuta, bezit of vouchers te sturen"; ObjectID = "1N4-Kp-O9W"; */
+"1N4-Kp-O9W.text" = "Laat iemand uw persoonlijke QR-code scannen om uw valuta, bezit of vouchers te sturen";
 
 /* Class = "UILabel"; text = "Organization van identitiet"; ObjectID = "1ci-sL-dMD"; */
 "1ci-sL-dMD.text" = "Organization van identitiet";
@@ -56,8 +56,8 @@
 /* Class = "UILabel"; text = "Hier kunt u uw bezittingen bewerken"; ObjectID = "6sc-h4-smj"; */
 "6sc-h4-smj.text" = "Hier kunt u uw bezittingen bewerken";
 
-/* Class = "UILabel"; text = "Laat iemanduw persoonlijke QR-code scannen om u valuta, bezit of vouchers te sturen"; ObjectID = "781-xe-cPJ"; */
-"781-xe-cPJ.text" = "Laat iemanduw persoonlijke QR-code scannen om u valuta, bezit of vouchers te sturen";
+/* Class = "UILabel"; text = "Laat iemand uw persoonlijke QR-code scannen om u valuta, bezit of vouchers te sturen"; ObjectID = "781-xe-cPJ"; */
+"781-xe-cPJ.text" = "Laat iemand uw persoonlijke QR-code scannen om u valuta, bezit of vouchers te sturen";
 
 /* Class = "UILabel"; text = "Hier is je persoonlijke QR-Code"; ObjectID = "79g-y7-xbL"; */
 "79g-y7-xbL.text" = "Hier is je persoonlijke QR-Code";
@@ -314,8 +314,8 @@
 /* Class = "UIButton"; normalTitle = "SCAN QR-CODE"; ObjectID = "vVa-DB-UZg"; */
 "vVa-DB-UZg.normalTitle" = "SCAN QR-CODE";
 
-/* Class = "UILabel"; text = "Kies de categorie waaraan de nieuwe eigenschap toegevoegd wordt."; ObjectID = "xr1-W6-PzP"; */
-"xr1-W6-PzP.text" = "Kies de categorie waaraan de nieuwe eigenschap toegevoegd wordt.";
+/* Class = "UILabel"; text = "Kies de categorie waaraan de nieuwe eigenschap wordt toegevoegd"; ObjectID = "xr1-W6-PzP"; */
+"xr1-W6-PzP.text" = "Kies de categorie waaraan de nieuwe eigenschap wordt toegevoegd";
 
 /* Class = "UILabel"; text = "1 uur"; ObjectID = "yd8-69-64O"; */
 "yd8-69-64O.text" = "1 uur";

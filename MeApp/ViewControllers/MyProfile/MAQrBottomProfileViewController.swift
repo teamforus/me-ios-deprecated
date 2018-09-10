@@ -102,7 +102,6 @@ class MAQrBottomProfileViewController: MABaseViewController, ISHPullUpSizingDele
         let entity = NSEntityDescription.entity(forEntityName: "User", in: context)
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         fetchRequest.predicate = NSPredicate(format:"accessToken == %@", accessToken)
-        
         do{
             let results = try context.fetch(fetchRequest) as? [NSManagedObject]
             if results?.count == 0 {
@@ -124,7 +123,6 @@ class MAQrBottomProfileViewController: MABaseViewController, ISHPullUpSizingDele
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         fetchRequest.predicate = NSPredicate(format:"currentUser == YES")
-        
         do{
             let results = try context.fetch(fetchRequest) as? [NSManagedObject]
             if results?.count == 0 {
@@ -187,7 +185,7 @@ class MAQrBottomProfileViewController: MABaseViewController, ISHPullUpSizingDele
     }
     
     func pullUpViewController(_ pullUpViewController: ISHPullUpViewController, minimumHeightForBottomViewController bottomVC: UIViewController) -> CGFloat {
-        return topView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height;
+        return topView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
     }
     
     func pullUpViewController(_ pullUpViewController: ISHPullUpViewController, targetHeightForBottomViewController bottomVC: UIViewController, fromCurrentHeight height: CGFloat) -> CGFloat {

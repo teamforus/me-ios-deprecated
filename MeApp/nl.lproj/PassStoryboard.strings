@@ -101,8 +101,8 @@
 /* Class = "UILabel"; text = "120,00"; ObjectID = "sh2-eL-3yF"; */
 "sh2-eL-3yF.text" = "120,00";
 
-/* Class = "UILabel"; text = "Laat iemanduw persoonlijke QR-code scannen om u valuta, bezit of vouchers te sturen"; ObjectID = "ufX-dC-Zqj"; */
-"ufX-dC-Zqj.text" = "Laat iemanduw persoonlijke QR-code scannen om u valuta, bezit of vouchers te sturen";
+/* Class = "UILabel"; text = "Laat iemand uw persoonlijke QR-code scannen om uw valuta, bezit of vouchers te sturen"; ObjectID = "ufX-dC-Zqj"; */
+"ufX-dC-Zqj.text" = "Laat iemand uw persoonlijke QR-code scannen om uw valuta, bezit of vouchers te sturen";
 
 /* Class = "UILabel"; text = "Kindpakket"; ObjectID = "v0t-au-15P"; */
 "v0t-au-15P.text" = "Kindpakket";

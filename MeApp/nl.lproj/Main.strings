@@ -35,8 +35,8 @@
 /* Class = "UILabel"; text = "Create a passcode that will be requested to enter the Me app."; ObjectID = "DPq-Qe-jcq"; */
 "DPq-Qe-jcq.text" = "Create a passcode that will be requested to enter the Me app.";
 
-/* Class = "UILabel"; text = "Scan deze QR-Code met een ander apparaat waar u al op aangemeld bent"; ObjectID = "DtX-5r-B9k"; */
-"DtX-5r-B9k.text" = "Scan deze QR-Code met een ander apparaat waar u al op aangemeld bent";
+/* Class = "UILabel"; text = "Scan deze QR-code met een ander apparaat waar u al op bent aangemeld"; ObjectID = "DtX-5r-B9k"; */
+"DtX-5r-B9k.text" = "Scan deze QR-code met een ander apparaat waar u al op bent aangemeld";
 
 /* Class = "UIButton"; normalTitle = "BEVESTIGEN"; ObjectID = "Fac-xa-KgH"; */
 "Fac-xa-KgH.normalTitle" = "BEVESTIGEN";
@@ -95,8 +95,8 @@
 /* Class = "UIButton"; normalTitle = "PROFIEL TOEVOEGEN"; ObjectID = "dBa-Wv-3m9"; */
 "dBa-Wv-3m9.normalTitle" = "PROFIEL TOEVOEGEN";
 
-/* Class = "UILabel"; text = "Scan deze QR-Code met een ander apparaat waar u al op aangemeld bent"; ObjectID = "deF-pN-y6x"; */
-"deF-pN-y6x.text" = "Scan deze QR-Code met een ander apparaat waar u al op aangemeld bent";
+/* Class = "UILabel"; text = "Scan deze QR-code met een ander apparaat waar u al op bent aangemeld"; ObjectID = "deF-pN-y6x"; */
+"deF-pN-y6x.text" = "Scan deze QR-code met een ander apparaat waar u al op bent aangemeld";
 
 /* Class = "UITextField"; placeholder = "Primary e-mail*"; ObjectID = "jMT-7s-AAr"; */
 "jMT-7s-AAr.placeholder" = "Primary e-mail*";

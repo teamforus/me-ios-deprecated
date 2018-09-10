@@ -1,0 +1,36 @@
+
+/* Class = "UILabel"; text = "€ 21,56"; ObjectID = "1Yq-5X-m9k"; */
+"1Yq-5X-m9k.text" = "€ 21,56";
+
+/* Class = "UILabel"; text = "10 mei, 14:08"; ObjectID = "9BR-wF-bw2"; */
+"9BR-wF-bw2.text" = "10 mei, 14:08";
+
+/* Class = "UILabel"; text = "Lidl Zuidhorn"; ObjectID = "Buf-zG-q1g"; */
+"Buf-zG-q1g.text" = "Lidl Zuidhorn";
+
+/* Class = "UILabel"; text = "Transactie"; ObjectID = "IxF-ok-nfd"; */
+"IxF-ok-nfd.text" = "Transactie";
+
+/* Class = "UILabel"; text = "19.05.2018"; ObjectID = "WJD-R0-w9x"; */
+"WJD-R0-w9x.text" = "19.05.2018";
+
+/* Class = "UILabel"; text = "Lidl Zuidhorn"; ObjectID = "bPK-Jj-Ymg"; */
+"bPK-Jj-Ymg.text" = "Lidl Zuidhorn";
+
+/* Class = "UILabel"; text = "Date:"; ObjectID = "fqM-7I-hPa"; */
+"fqM-7I-hPa.text" = "Date:";
+
+/* Class = "UILabel"; text = "Kindpakket 2018 "; ObjectID = "iGt-hA-A54"; */
+"iGt-hA-A54.text" = "Kindpakket 2018 ";
+
+/* Class = "UIButton"; normalTitle = "Sluit"; ObjectID = "nEl-7A-EkX"; */
+"nEl-7A-EkX.normalTitle" = "Sluit";
+
+/* Class = "UILabel"; text = "Betaald"; ObjectID = "vTG-Gr-x83"; */
+"vTG-Gr-x83.text" = "Betaald";
+
+/* Class = "UILabel"; text = "Rceiver:"; ObjectID = "w3g-KP-a81"; */
+"w3g-KP-a81.text" = "Rceiver:";
+
+/* Class = "UILabel"; text = "Verzonden vanaf:"; ObjectID = "ypQ-fE-7pj"; */
+"ypQ-fE-7pj.text" = "Verzonden vanaf:";

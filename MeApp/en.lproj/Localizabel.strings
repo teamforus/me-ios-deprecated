@@ -5,3 +5,14 @@
   Created by Tcacenco Daniel on 9/3/18.
   Copyright © 2018 Foundation Forus. All rights reserved.
 */
+
+"Personal" = "Personal";
+"Medical" = "Medical";
+"Business" = "Business";
+"Relationships" = "Relationships";
+"Certificates" = "Certificates";
+"Others" = "Others";
+"My currencies" = "My currencies";
+"Property" = "Property";
+"Search currency" = "Search currency";
+"Paid" = "Paid";

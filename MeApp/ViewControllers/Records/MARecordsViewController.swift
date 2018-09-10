@@ -19,7 +19,7 @@ class MARecordsViewController: MABaseViewController, BWWalkthroughViewController
         return tableView.dequeueReusableCell(withIdentifier: ExpandedCell.ID)!
     }
     
-    var titles : NSArray = ["Persoonlijk","Medisch","Zakelijk","Relaties","Certificaten","Anderen"]
+    var titles : NSArray = [NSLocalizedString("Personal", comment: ""),NSLocalizedString("Medical", comment: ""),NSLocalizedString("Business", comment: ""),NSLocalizedString("Relationships", comment: ""),NSLocalizedString("Certificates", comment: ""),NSLocalizedString("Others", comment: "")]
     var images : NSArray = ["iconPersonal","iconMedical","iconBuissness","iconRelations","iconCertificate","iconOther"]
     
     override func viewDidLoad() {

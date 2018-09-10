@@ -24,7 +24,6 @@
 		6500426120DB97E40092CCDA /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6500425620DB97E40092CCDA /* OpenSans-Regular.ttf */; };
 		6500426220DB97E40092CCDA /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6500425720DB97E40092CCDA /* OpenSans-BoldItalic.ttf */; };
 		6500426F20DBA3D50092CCDA /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6500426D20DBA3D50092CCDA /* TransactionViewController.swift */; };
-		6500427020DBA3D50092CCDA /* TransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6500426E20DBA3D50092CCDA /* TransactionViewController.xib */; };
 		6504472420C0239C00D040B9 /* MAKindPakketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6504472320C0239C00D040B9 /* MAKindPakketViewController.swift */; };
 		6504472720C028FD00D040B9 /* MAAllowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6504472520C028FD00D040B9 /* MAAllowTableViewCell.swift */; };
 		6504472820C028FD00D040B9 /* MAAllowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6504472620C028FD00D040B9 /* MAAllowTableViewCell.xib */; };
@@ -45,6 +44,10 @@
 		651826EA20DD1DA400B8963A /* MAContentQRProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651826E920DD1DA400B8963A /* MAContentQRProfileViewController.swift */; };
 		651826EC20DD1DAF00B8963A /* MABotomQrProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651826EB20DD1DAF00B8963A /* MABotomQrProfileViewController.swift */; };
 		651E197C20C95B5400A46D71 /* Web3Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651E197B20C95B5400A46D71 /* Web3Service.swift */; };
+		651F704F21468141008D087A /* MASignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 651F705121468141008D087A /* MASignUpViewController.xib */; };
+		651F7056214682C7008D087A /* MATransactionBlueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 651F7058214682C7008D087A /* MATransactionBlueViewController.xib */; };
+		651F705D214682F5008D087A /* MATransactionRedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 651F705F214682F5008D087A /* MATransactionRedViewController.xib */; };
+		651F7064214682FD008D087A /* TransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 651F7066214682FD008D087A /* TransactionViewController.xib */; };
 		6527C6F520D152F900009704 /* MADestinationAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6527C6F420D152F900009704 /* MADestinationAddressViewController.swift */; };
 		6527C6F820D1579C00009704 /* MAValidationRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6527C6F720D1579C00009704 /* MAValidationRequestViewController.swift */; };
 		6527C6FA20D1626100009704 /* MARequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6527C6F920D1626100009704 /* MARequestViewController.swift */; };
@@ -169,10 +172,8 @@
 		65AC33032102126200633187 /* MAChooseCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AC33022102126200633187 /* MAChooseCategoryCollectionViewCell.swift */; };
 		65AC330821023B8B00633187 /* MAPersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AC330721023B8B00633187 /* MAPersonalViewController.swift */; };
 		65AC330A21023E7000633187 /* MAPersonalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AC330921023E7000633187 /* MAPersonalTableViewCell.swift */; };
-		65B89A8C20B3342E0024DC51 /* MATransactionRedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65B89A8A20B3342E0024DC51 /* MATransactionRedViewController.xib */; };
 		65B89A8D20B3342E0024DC51 /* MATransactionRedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89A8B20B3342E0024DC51 /* MATransactionRedViewController.swift */; };
 		65B89A9120B334860024DC51 /* MATransactionBlueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89A8F20B334860024DC51 /* MATransactionBlueViewController.swift */; };
-		65B89A9220B334860024DC51 /* MATransactionBlueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65B89A9020B334860024DC51 /* MATransactionBlueViewController.xib */; };
 		65B89A9420B408C00024DC51 /* MARecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89A9320B408C00024DC51 /* MARecordsViewController.swift */; };
 		65B89A9720B4128C0024DC51 /* MARecordsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89A9620B4128C0024DC51 /* MARecordsTableViewCell.swift */; };
 		65B89A9C20B422D30024DC51 /* MAWaitingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89A9A20B422D30024DC51 /* MAWaitingViewController.swift */; };
@@ -194,7 +195,6 @@
 		65B89AC420B44B1B0024DC51 /* MAShareVaucherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89AC220B44B1B0024DC51 /* MAShareVaucherViewController.swift */; };
 		65B89AC520B44B1B0024DC51 /* MAShareVaucherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65B89AC320B44B1B0024DC51 /* MAShareVaucherViewController.xib */; };
 		65B89ACA20B44D210024DC51 /* MASignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89AC820B44D210024DC51 /* MASignUpViewController.swift */; };
-		65B89ACB20B44D210024DC51 /* MASignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65B89AC920B44D210024DC51 /* MASignUpViewController.xib */; };
 		65B89ACF20B480470024DC51 /* MANewProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89ACE20B480470024DC51 /* MANewProfileViewController.swift */; };
 		65BB7C3D2112EF380073352C /* GoogleSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65BB7C372112EF380073352C /* GoogleSans-Italic.ttf */; };
 		65BB7C3E2112EF380073352C /* GoogleSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65BB7C382112EF380073352C /* GoogleSans-Bold.ttf */; };
@@ -281,7 +281,6 @@
 		6500425620DB97E40092CCDA /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		6500425720DB97E40092CCDA /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		6500426D20DBA3D50092CCDA /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
-		6500426E20DBA3D50092CCDA /* TransactionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionViewController.xib; sourceTree = "<group>"; };
 		6504472320C0239C00D040B9 /* MAKindPakketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAKindPakketViewController.swift; sourceTree = "<group>"; };
 		6504472520C028FD00D040B9 /* MAAllowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAAllowTableViewCell.swift; sourceTree = "<group>"; };
 		6504472620C028FD00D040B9 /* MAAllowTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAAllowTableViewCell.xib; sourceTree = "<group>"; };
@@ -302,6 +301,19 @@
 		651826E920DD1DA400B8963A /* MAContentQRProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAContentQRProfileViewController.swift; sourceTree = "<group>"; };
 		651826EB20DD1DAF00B8963A /* MABotomQrProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MABotomQrProfileViewController.swift; sourceTree = "<group>"; };
 		651E197B20C95B5400A46D71 /* Web3Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Web3Service.swift; sourceTree = "<group>"; };
+		651F704E21467EE6008D087A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		651F705021468141008D087A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MASignUpViewController.xib; sourceTree = "<group>"; };
+		651F705321468144008D087A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MASignUpViewController.strings; sourceTree = "<group>"; };
+		651F705521468145008D087A /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/MASignUpViewController.strings; sourceTree = "<group>"; };
+		651F7057214682C7008D087A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MATransactionBlueViewController.xib; sourceTree = "<group>"; };
+		651F705A214682CB008D087A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MATransactionBlueViewController.strings; sourceTree = "<group>"; };
+		651F705C214682CF008D087A /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/MATransactionBlueViewController.strings; sourceTree = "<group>"; };
+		651F705E214682F5008D087A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MATransactionRedViewController.xib; sourceTree = "<group>"; };
+		651F7061214682F7008D087A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MATransactionRedViewController.strings; sourceTree = "<group>"; };
+		651F7063214682F9008D087A /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/MATransactionRedViewController.strings; sourceTree = "<group>"; };
+		651F7065214682FD008D087A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TransactionViewController.xib; sourceTree = "<group>"; };
+		651F7068214682FF008D087A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TransactionViewController.strings; sourceTree = "<group>"; };
+		651F706A21468300008D087A /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/TransactionViewController.strings; sourceTree = "<group>"; };
 		6527C6F420D152F900009704 /* MADestinationAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MADestinationAddressViewController.swift; sourceTree = "<group>"; };
 		6527C6F720D1579C00009704 /* MAValidationRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAValidationRequestViewController.swift; sourceTree = "<group>"; };
 		6527C6F920D1626100009704 /* MARequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MARequestViewController.swift; sourceTree = "<group>"; };
@@ -447,10 +459,8 @@
 		65AC33022102126200633187 /* MAChooseCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAChooseCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		65AC330721023B8B00633187 /* MAPersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAPersonalViewController.swift; sourceTree = "<group>"; };
 		65AC330921023E7000633187 /* MAPersonalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAPersonalTableViewCell.swift; sourceTree = "<group>"; };
-		65B89A8A20B3342E0024DC51 /* MATransactionRedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MATransactionRedViewController.xib; sourceTree = "<group>"; };
 		65B89A8B20B3342E0024DC51 /* MATransactionRedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MATransactionRedViewController.swift; sourceTree = "<group>"; };
 		65B89A8F20B334860024DC51 /* MATransactionBlueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MATransactionBlueViewController.swift; sourceTree = "<group>"; };
-		65B89A9020B334860024DC51 /* MATransactionBlueViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MATransactionBlueViewController.xib; sourceTree = "<group>"; };
 		65B89A9320B408C00024DC51 /* MARecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MARecordsViewController.swift; sourceTree = "<group>"; };
 		65B89A9620B4128C0024DC51 /* MARecordsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MARecordsTableViewCell.swift; sourceTree = "<group>"; };
 		65B89A9A20B422D30024DC51 /* MAWaitingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAWaitingViewController.swift; sourceTree = "<group>"; };
@@ -472,7 +482,6 @@
 		65B89AC220B44B1B0024DC51 /* MAShareVaucherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAShareVaucherViewController.swift; sourceTree = "<group>"; };
 		65B89AC320B44B1B0024DC51 /* MAShareVaucherViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAShareVaucherViewController.xib; sourceTree = "<group>"; };
 		65B89AC820B44D210024DC51 /* MASignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MASignUpViewController.swift; sourceTree = "<group>"; };
-		65B89AC920B44D210024DC51 /* MASignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MASignUpViewController.xib; sourceTree = "<group>"; };
 		65B89ACE20B480470024DC51 /* MANewProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MANewProfileViewController.swift; sourceTree = "<group>"; };
 		65B89AD320B48B9B0024DC51 /* MeApp-Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MeApp-Swift.h"; sourceTree = "<group>"; };
 		65BB7C372112EF380073352C /* GoogleSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GoogleSans-Italic.ttf"; sourceTree = "<group>"; };
@@ -688,7 +697,7 @@
 			isa = PBXGroup;
 			children = (
 				6500426D20DBA3D50092CCDA /* TransactionViewController.swift */,
-				6500426E20DBA3D50092CCDA /* TransactionViewController.xib */,
+				651F7066214682FD008D087A /* TransactionViewController.xib */,
 			);
 			path = NewTransaction;
 			sourceTree = "<group>";
@@ -1074,7 +1083,7 @@
 			isa = PBXGroup;
 			children = (
 				65B89A8B20B3342E0024DC51 /* MATransactionRedViewController.swift */,
-				65B89A8A20B3342E0024DC51 /* MATransactionRedViewController.xib */,
+				651F705F214682F5008D087A /* MATransactionRedViewController.xib */,
 			);
 			path = TransactionRed;
 			sourceTree = "<group>";
@@ -1184,7 +1193,7 @@
 			isa = PBXGroup;
 			children = (
 				65B89A8F20B334860024DC51 /* MATransactionBlueViewController.swift */,
-				65B89A9020B334860024DC51 /* MATransactionBlueViewController.xib */,
+				651F7058214682C7008D087A /* MATransactionBlueViewController.xib */,
 			);
 			path = TransactionBlue;
 			sourceTree = "<group>";
@@ -1266,7 +1275,7 @@
 			isa = PBXGroup;
 			children = (
 				65B89AC820B44D210024DC51 /* MASignUpViewController.swift */,
-				65B89AC920B44D210024DC51 /* MASignUpViewController.xib */,
+				651F705121468141008D087A /* MASignUpViewController.xib */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -1593,14 +1602,14 @@
 				65A51FD320B3012C0010DB33 /* SF-Pro-Display-Bold.otf in Resources */,
 				65FC85FF20B58426001FECA5 /* MAValidationQRViewController.xib in Resources */,
 				65A51FD420B3012C0010DB33 /* SF-Pro-Display-Medium.otf in Resources */,
-				6500427020DBA3D50092CCDA /* TransactionViewController.xib in Resources */,
+				651F7064214682FD008D087A /* TransactionViewController.xib in Resources */,
 				65A51FCD20B3012C0010DB33 /* SF-Pro-Display-SemiboldItalic.otf in Resources */,
 				6579634C20E4D49E001CF29D /* NunitoSans-ExtraLightItalic.ttf in Resources */,
 				65A51FCE20B3012C0010DB33 /* SF-Pro-Text-Heavy.otf in Resources */,
 				65A51FE020B3012C0010DB33 /* SF-Pro-Display-Black.otf in Resources */,
 				65BFF47B20C1A61C00F64215 /* VoiceButtonAssets.xcassets in Resources */,
 				65A51FE920B3012C0010DB33 /* SF-Pro-Text-SemiboldItalic.otf in Resources */,
-				65B89A9220B334860024DC51 /* MATransactionBlueViewController.xib in Resources */,
+				651F7056214682C7008D087A /* MATransactionBlueViewController.xib in Resources */,
 				65B89AAC20B4363D0024DC51 /* MAEmailForMeViewController.xib in Resources */,
 				65B89ABB20B442C60024DC51 /* MAFailValidationViewController.xib in Resources */,
 				6500425B20DB97E40092CCDA /* OpenSans-ExtraBold.ttf in Resources */,
@@ -1620,7 +1629,7 @@
 				65A51FCF20B3012C0010DB33 /* SF-Pro-Display-RegularItalic.otf in Resources */,
 				6500425F20DB97E40092CCDA /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				6579634920E4D49E001CF29D /* NunitoSans-SemiBold.ttf in Resources */,
-				65B89A8C20B3342E0024DC51 /* MATransactionRedViewController.xib in Resources */,
+				651F705D214682F5008D087A /* MATransactionRedViewController.xib in Resources */,
 				65A51FDC20B3012C0010DB33 /* SF-Pro-Display-Ultralight.otf in Resources */,
 				65A51FD920B3012C0010DB33 /* SF-Pro-Text-Bold.otf in Resources */,
 				658BBA552110954C0098E2AC /* backspaceBlue@3x.png in Resources */,
@@ -1634,7 +1643,7 @@
 				6579633F20E4D49D001CF29D /* NunitoSans-BoldItalic.ttf in Resources */,
 				6579634620E4D49E001CF29D /* NunitoSans-Italic.ttf in Resources */,
 				6504472820C028FD00D040B9 /* MAAllowTableViewCell.xib in Resources */,
-				65B89ACB20B44D210024DC51 /* MASignUpViewController.xib in Resources */,
+				651F704F21468141008D087A /* MASignUpViewController.xib in Resources */,
 				65BB7C422112EF380073352C /* GoogleSans-Medium.ttf in Resources */,
 				65A51FE820B3012C0010DB33 /* SF-Pro-Display-BoldItalic.otf in Resources */,
 				6500425D20DB97E40092CCDA /* OpenSans-Bold.ttf in Resources */,
@@ -2072,6 +2081,46 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		651F705121468141008D087A /* MASignUpViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				651F705021468141008D087A /* Base */,
+				651F705321468144008D087A /* en */,
+				651F705521468145008D087A /* nl */,
+			);
+			name = MASignUpViewController.xib;
+			sourceTree = "<group>";
+		};
+		651F7058214682C7008D087A /* MATransactionBlueViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				651F7057214682C7008D087A /* Base */,
+				651F705A214682CB008D087A /* en */,
+				651F705C214682CF008D087A /* nl */,
+			);
+			name = MATransactionBlueViewController.xib;
+			sourceTree = "<group>";
+		};
+		651F705F214682F5008D087A /* MATransactionRedViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				651F705E214682F5008D087A /* Base */,
+				651F7061214682F7008D087A /* en */,
+				651F7063214682F9008D087A /* nl */,
+			);
+			name = MATransactionRedViewController.xib;
+			sourceTree = "<group>";
+		};
+		651F7066214682FD008D087A /* TransactionViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				651F7065214682FD008D087A /* Base */,
+				651F7068214682FF008D087A /* en */,
+				651F706A21468300008D087A /* nl */,
+			);
+			name = TransactionViewController.xib;
+			sourceTree = "<group>";
+		};
 		65509467213D3C1E007532BE /* Localizabel.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -2136,6 +2185,7 @@
 			children = (
 				65A51F7720B2FFF40010DB33 /* Base */,
 				65509462213D3BD4007532BE /* nl */,
+				651F704E21467EE6008D087A /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

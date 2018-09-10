@@ -5,3 +5,15 @@
   Created by Tcacenco Daniel on 9/3/18.
   Copyright © 2018 Foundation Forus. All rights reserved.
 */
+
+"Personal" = "Persoonlijk";
+"Medical" = "Medisch";
+"Business" = "Zakelijk";
+"Relationships" = "Relaties";
+"Certificates" = "Certificaten";
+"Others" = "Anderen";
+"My currencies" = "Valuta";
+"Property" = "Bezit";
+"Search currency" = "Zoek valuta";
+"Paid" = "Betaald";
+
