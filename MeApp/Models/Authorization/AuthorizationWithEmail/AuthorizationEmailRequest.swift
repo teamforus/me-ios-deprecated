@@ -20,10 +20,8 @@ class AuthorizationEmailRequest {
             response in
             switch response.result {
             case .success:
-                print(response)
                 if let json = response.result.value {
                     let messages = try! Response(object: json as! JSONObject)
-                    print(messages)
                     completion(messages, (response.response?.statusCode)!)
                 }
                 break
@@ -43,10 +41,8 @@ class AuthorizationEmailRequest {
             response in
             switch response.result {
             case .success:
-                print(response)
                 if let json = response.result.value {
                     let messages = try! Response(object: json as! JSONObject)
-                    print(messages)
                     completion(messages, (response.response?.statusCode)!)
                 }
                 break

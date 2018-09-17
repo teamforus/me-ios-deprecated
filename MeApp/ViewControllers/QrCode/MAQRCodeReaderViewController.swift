@@ -58,15 +58,15 @@ class MAQRCodeReaderViewController: MABaseViewController {
                 do {
                     if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? Dictionary<String,Any>
                     {
-                          // login with QR
+                          // login with QR with normal json format
                         if jsonArray["type"] as! String == "auth_token"{
                          self.authorizeToken(token: jsonArray["value"] as! String)
                             
-                          // make transaction
+                          // make transaction with normal json format
                         }else  if jsonArray["type"] as! String == "voucher" {
                             self.getProviderConfirm(address: jsonArray["value"] as! String)
                             
-                          // validate record
+                          // validate record with normal json format
                         }else{
                             self.readValidationToken(code: jsonArray["value"] as! String)
                         }

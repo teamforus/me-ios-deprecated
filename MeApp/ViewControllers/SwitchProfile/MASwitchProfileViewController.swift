@@ -27,11 +27,11 @@ class MASwitchProfileViewController: MABaseViewController,MASwitchProfilePopUpVi
     override func viewDidLoad() {
         super.viewDidLoad()
         viewBodyQR.layer.cornerRadius = 9.0
-        viewBodyQR.layer.shadowColor = UIColor.black.cgColor;
-        viewBodyQR.layer.shadowOffset = CGSize(width: 0, height: 20);
-        viewBodyQR.layer.shadowOpacity = 0.1;
-        viewBodyQR.layer.shadowRadius = 5.0;
-        viewBodyQR.layer.masksToBounds = false;
+        viewBodyQR.layer.shadowColor = UIColor.black.cgColor
+        viewBodyQR.layer.shadowOffset = CGSize(width: 0, height: 20)
+        viewBodyQR.layer.shadowOpacity = 0.1
+        viewBodyQR.layer.shadowRadius = 5.0
+        viewBodyQR.layer.masksToBounds = false
         buttonSiwtchProfile.clipsToBounds = true
         buttonSiwtchProfile.layer.cornerRadius = 9.0
         imageQR.generateQRCode(from: "ios")

@@ -11,6 +11,6 @@ import Foundation
 class BaseURL {
     
    static func baseURL(url:String) -> String{
-        return "https://test.platform.forus.io/api/v1/\(url)"
+        return "https://dev.api.forus.link/api/v1/\(url)"
     }
 }

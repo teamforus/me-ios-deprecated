@@ -13,6 +13,9 @@
         <array key="GoogleSans-Bold.ttf">
             <string>GoogleSans-Bold</string>
         </array>
+        <array key="GoogleSans-Medium.ttf">
+            <string>GoogleSans-Medium</string>
+        </array>
         <array key="GoogleSans-Regular.ttf">
             <string>GoogleSans-Regular</string>
         </array>
@@ -802,9 +805,9 @@
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBa-Wv-3m9" customClass="ShadowButton" customModule="Me" customModuleProvider="target">
-                                                <rect key="frame" x="24" y="593" width="325" height="50"/>
+                                                <rect key="frame" x="24" y="590" width="325" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="0.20392156859999999" green="0.38823529410000002" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.76470588235294112" green="0.76470588235294112" blue="0.76470588235294112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="14"/>
                                                 <state key="normal" title="PROFIEL TOEVOEGEN">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -941,6 +944,7 @@
                         <outlet property="emailSkyFloatingTextField" destination="jMT-7s-AAr" id="iO6-8S-QeL"/>
                         <outlet property="familyNameField" destination="DMr-He-WGt" id="8dO-pZ-jZn"/>
                         <outlet property="givenNameField" destination="vwf-mA-VNp" id="rGW-uk-dV2"/>
+                        <outlet property="registerUIButton" destination="dBa-Wv-3m9" id="chi-GJ-HfN"/>
                         <outlet property="validateIcon" destination="CrT-Vd-Of7" id="EvL-j3-4fB"/>
                         <segue destination="1dn-ZR-SXY" kind="show" identifier="goToPassword" id="Efr-Sn-2SK"/>
                     </connections>
@@ -985,7 +989,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lyc-b8-jxU" userLabel="Button Info">
-                                                <rect key="frame" x="311" y="17" width="24" height="24"/>
+                                                <rect key="frame" x="311" y="20" width="24" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="closeIcon"/>
                                                 <connections>
@@ -993,13 +997,13 @@
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="qrImage2" translatesAutoresizingMaskIntoConstraints="NO" id="qRz-sX-02r">
-                                                <rect key="frame" x="24" y="19" width="20" height="20"/>
+                                                <rect key="frame" x="30" y="20" width="20" height="20"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="QR-CODE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1c-Qc-rxI">
-                                                <rect key="frame" x="53" y="20" width="59" height="16"/>
+                                                <rect key="frame" x="58" y="23" width="58" height="16"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="12"/>
+                                                <fontDescription key="fontDescription" name="GoogleSans-Medium" family="Google Sans" pointSize="12"/>
                                                 <color key="textColor" red="0.20784313725490197" green="0.39215686274509803" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>

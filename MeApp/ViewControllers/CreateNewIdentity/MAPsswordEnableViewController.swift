@@ -95,9 +95,7 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
                                                             self.getCurrentUser(primaryEmai: self.primaryEmail)
                                                             RecordCategoryRequest.createRecordCategory(completion: { (response, statusCode) in
                                                                 
-                                                            }) { (error) in
-                                                                
-                                                            }
+                                                            }) { (error) in }
                                                             self.performSegue(withIdentifier: "goToWalet", sender: self)
                                                         }else {
                                                             let error = MessageView.viewFromNib(layout: .tabView)
@@ -106,7 +104,6 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
                                                                 SwiftMessages.hide()
                                                             }
                                                             error.button?.setTitle("OK", for: .normal)
-                                                            
                                                             SwiftMessages.show( view: error)
                                                         }
                                                         
@@ -117,7 +114,6 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
                         SwiftMessages.hide()
                     }
                     error.button?.setTitle("OK", for: .normal)
-                    
                     SwiftMessages.show( view: error)
                 })
             }else{
@@ -136,7 +132,6 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
         let entity = NSEntityDescription.entity(forEntityName: "User", in: context)
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         fetchRequest.predicate = NSPredicate(format:"primaryEmail == %@", primaryEmail)
-        
         do{
             let results = try context.fetch(fetchRequest) as? [NSManagedObject]
             if results?.count == 0 {
@@ -168,7 +163,6 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
             let results = try context.fetch(fetchRequest) as? [NSManagedObject]
             if results?.count != 0 {
                 results![0].setValue(false, forKey: "currentUser")
-                
                 do {
                     try context.save()
                 } catch {
@@ -184,11 +178,9 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         fetchRequest.predicate = NSPredicate(format:"primaryEmail == %@", primaryEmail)
-        
         do{
             let results = try context.fetch(fetchRequest) as? [User]
             UserShared.shared.currentUser = results![0]
-            
         } catch{
             
         }

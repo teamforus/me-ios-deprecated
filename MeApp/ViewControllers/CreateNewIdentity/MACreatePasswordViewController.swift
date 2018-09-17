@@ -71,7 +71,6 @@ class MACreatePasswordViewController: UIViewController {
                     SwiftMessages.hide()
                 }
                 error.button?.setTitle("OK", for: .normal)
-                
                 SwiftMessages.show( view: error)
             })
         }else{
