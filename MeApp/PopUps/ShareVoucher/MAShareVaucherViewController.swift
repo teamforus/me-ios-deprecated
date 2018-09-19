@@ -47,7 +47,7 @@ class MAShareVaucherViewController: MABasePopUpViewController {
     
     @IBAction func checkAmount(_ sender: Any) {
         if amount.text != "" {
-            if let limit = Double(self.voucher.amount), Double(amount.text!)! > limit{
+            if Float(amount.text!)! > Float(self.voucher.amount){
                 amount.errorMessage = "You enter more biger price then amount!"
             }else{
                 amount.errorMessage = nil
@@ -60,13 +60,13 @@ class MAShareVaucherViewController: MABasePopUpViewController {
     
     @IBAction func send(_ sender: Any) {
         if amount.text != "" {
-            if let limit = self.voucher.amount, Double(amount.text!)! > limit{
+            if  Float(amount.text!)! > Float(self.voucher.amount){
                 amount.errorMessage = "You enter more biger price then amount!"
             }else{
                 amount.errorMessage = nil
                 let parameters: Parameters = [
                                   "organization_id" : voucher.allowedOrganizations.first?.id!,
-                                  "amount" : Double(self.amount.text!)]
+                                  "amount" : Float(self.amount.text!)!]
                 TransactionVoucherRequest.makeTransaction(parameters: parameters, identityAdress: voucher.address, completion: { (transaction, statusCode) in
                     if statusCode == 201{
                             self.dismiss(animated: true, completion: nil)

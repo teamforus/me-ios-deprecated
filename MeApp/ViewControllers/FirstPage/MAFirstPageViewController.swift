@@ -7,15 +7,29 @@
 //
 
 import UIKit
+import Presentr
 
 class MAFirstPageViewController: MABaseViewController, AppLockerDelegate {
     @IBOutlet weak var createNewAccountButton: UIButton!
     
     @IBOutlet weak var haveIdentityButton: UIButton!
-    
+    let presenter: Presentr = {
+        let presenter = Presentr(presentationType: .alert)
+        presenter.transitionType = TransitionType.coverHorizontalFromRight
+        presenter.dismissOnSwipe = true
+        return presenter
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+      
+        
+        let popupTransction =  MAShareVaucherViewController(nibName: "MAShareVaucherViewController", bundle: nil)
+//        popupTransction.voucher = voucher
+        self.presenter.presentationType = .popup
+        self.presenter.transitionType = nil
+        self.presenter.dismissTransitionType = nil
+        self.presenter.keyboardTranslationType = .compress
+        self.customPresentViewController(self.presenter, viewController: popupTransction, animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
