@@ -219,6 +219,11 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
     
     func pullUpViewController(_ pullUpViewController: ISHPullUpViewController, didChangeTo state: ISHPullUpState) {
         handleView.setState(ISHPullUpHandleView.handleState(for: state), animated: firstAppearanceCompleted)
+        if state == .collapsed {
+            self.view.isHidden = true
+        }else if state == .intermediate {
+            pullUpController.toggleState(animated: true)
+        }
     }
     
 }

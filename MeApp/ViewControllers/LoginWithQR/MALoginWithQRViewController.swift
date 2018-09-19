@@ -89,7 +89,6 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
     }
     
     func confirmPinCode(_ controller: MASignUpViewController, pinCode: String) {
-        print(pinCode)
         self.pinCode = pinCode
     }
     

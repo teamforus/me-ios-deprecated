@@ -115,7 +115,7 @@
                             <rect key="frame" x="21" y="264" width="302" height="47"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="16"/>
                             <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
@@ -150,6 +150,6 @@
     </objects>
     <resources>
         <image name="closeIcon" width="24" height="24"/>
-        <image name="ic_launcher_APP" width="512" height="512"/>
+        <image name="ic_launcher_APP" width="210" height="210"/>
     </resources>
 </document>
