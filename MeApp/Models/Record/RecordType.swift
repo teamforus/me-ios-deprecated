@@ -50,10 +50,12 @@ class RecordTypeRequest {
                 if let json = response.result.value {
                     let recordTypeList: NSMutableArray = NSMutableArray()
                     if (json as AnyObject).count != 0{
+                        if json is Array<Any>{
                         for recordTypeItem in json as! Array<Any>{
                             let recordType = try! RecordType(object: recordTypeItem as! JSONObject)
                             recordTypeList.add(recordType)
                         }
+                             }
                     }
                     completion(recordTypeList, (response.response?.statusCode)!)
                 }

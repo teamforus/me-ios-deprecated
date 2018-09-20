@@ -642,6 +642,9 @@
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="219" id="M5F-Pv-yKj"/>
+                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Dt-bS-lP0" customClass="ShadowButton" customModule="Me" customModuleProvider="target">
                                 <rect key="frame" x="30" y="581" width="315" height="50"/>
@@ -713,7 +716,6 @@
                         <constraints>
                             <constraint firstItem="yO0-Rs-6C7" firstAttribute="leading" secondItem="NRv-4R-hvl" secondAttribute="leading" constant="15" id="4ET-vu-A0s"/>
                             <constraint firstItem="JYx-gW-NQj" firstAttribute="leading" secondItem="NRv-4R-hvl" secondAttribute="leading" id="6xO-hO-UG0"/>
-                            <constraint firstItem="yO0-Rs-6C7" firstAttribute="top" secondItem="NRv-4R-hvl" secondAttribute="top" constant="236" id="Dlu-kE-1v7"/>
                             <constraint firstItem="4Dt-bS-lP0" firstAttribute="top" secondItem="YV7-Gb-SHc" secondAttribute="bottom" constant="22" id="Hdc-6m-KyV"/>
                             <constraint firstItem="YV7-Gb-SHc" firstAttribute="leading" secondItem="NRv-4R-hvl" secondAttribute="leading" constant="30" id="N3l-gu-okI"/>
                             <constraint firstItem="JYx-gW-NQj" firstAttribute="centerX" secondItem="VeI-3q-HAI" secondAttribute="centerX" id="Pgt-mC-ptz"/>
@@ -847,9 +849,9 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGx-Ya-lC9">
-                                                <rect key="frame" x="15" y="101" width="344" height="70"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGx-Ya-lC9">
+                                                <rect key="frame" x="15" y="101" width="344" height="96"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <string key="text">Please provide your e-mail and information below. For registration primary email address is required. When you're finished, click Continue. </string>
                                                 <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="14"/>
                                                 <color key="textColor" red="0.43137254899999999" green="0.43921568630000002" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -956,7 +958,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1671" y="1594"/>
+            <point key="canvasLocation" x="-1671.2" y="1593.5532233883059"/>
         </scene>
         <!--Botom Qr Profile View Controller-->
         <scene sceneID="6Jw-HM-cFe">
@@ -1015,7 +1017,7 @@
                                         <rect key="frame" x="27" y="154" width="300" height="294"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Scan deze QR-Code met een ander apparaat waar u al op aangemeld bent" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DtX-5r-B9k">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Scan deze QR-Code met een ander apparaat waar u al op aangemeld bent" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="DtX-5r-B9k">
                                         <rect key="frame" x="8" y="74" width="339" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="15"/>
@@ -1281,6 +1283,6 @@ log in with Face ID?</string>
         <image name="tick" width="104" height="104"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PkR-Mm-c8w"/>
+        <segue reference="sb3-cC-tEC"/>
     </inferredMetricsTieBreakers>
 </document>

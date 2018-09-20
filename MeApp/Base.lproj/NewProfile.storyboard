@@ -464,7 +464,7 @@
                                 </connections>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="userpick" translatesAutoresizingMaskIntoConstraints="NO" id="gCD-jC-Ldu" customClass="RoundImageView" customModule="Me" customModuleProvider="target">
-                                <rect key="frame" x="314" y="86" width="45" height="45"/>
+                                <rect key="frame" x="311" y="84" width="44" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Kh-AD-Bi5" customClass="ShadowButton" customModule="Me" customModuleProvider="target">
@@ -485,7 +485,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bw-cy-EYk" customClass="ShadowButton" customModule="Me" customModuleProvider="target">
-                                <rect key="frame" x="314" y="87" width="44" height="44"/>
+                                <rect key="frame" x="311" y="84" width="44" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -2209,9 +2209,9 @@ informatie van je identiteit:</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JsV-CI-LNe">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="318"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kies Validator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAX-85-AHw">
-                                        <rect key="frame" x="18" y="89" width="332" height="49"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kies Validator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="oAX-85-AHw">
+                                        <rect key="frame" x="17" y="89" width="332" height="49"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="38"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -2224,8 +2224,8 @@ informatie van je identiteit:</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kies de categorie waaraan de nieuwe eigenschap toegevoegd wordt." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xr1-W6-PzP">
-                                        <rect key="frame" x="18" y="146" width="332" height="52"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="17" y="146" width="332" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="14"/>
                                         <color key="textColor" red="0.43137254899999999" green="0.43921568630000002" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -2423,8 +2423,8 @@ informatie van je identiteit:</string>
                                                 <rect key="frame" x="0.0" y="329" width="375" height="245"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This record has no validations yet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afc-xB-aYa">
-                                                        <rect key="frame" x="21" y="112" width="346" height="45"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <rect key="frame" x="15" y="112" width="346" height="45"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -2639,7 +2639,7 @@ informatie van je identiteit:</string>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <accessibility key="accessibilityConfiguration" identifier="topViewHandle"/>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Laat iemanduw persoonlijke QR-code scannen om u valuta, bezit of vouchers te sturen" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="781-xe-cPJ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Laat iemanduw persoonlijke QR-code scannen om u valuta, bezit of vouchers te sturen" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="781-xe-cPJ">
                                         <rect key="frame" x="8" y="308" width="339" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="15"/>

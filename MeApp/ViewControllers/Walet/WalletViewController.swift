@@ -31,7 +31,7 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
     var vouhers: NSMutableArray! = NSMutableArray()
     
 //    @IBOutlet weak var voiceButton: VoiceButtonView!
-    private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "ro"))!
+    private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en"))!
     @IBOutlet weak var segmentedControl: HBSegmentedControl!
     let largerRedTextSelectAttributes = [NSAttributedStringKey.font: UIFont(name: "GoogleSans-Medium", size: 14.0),
                                          NSAttributedStringKey.foregroundColor: UIColor.white]

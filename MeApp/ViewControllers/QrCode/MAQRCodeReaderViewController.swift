@@ -73,8 +73,7 @@ class MAQRCodeReaderViewController: MABaseViewController {
                     } else {
                         self.reader.startScanning()
                     }
-                } catch let error as NSError {
-                    print(error)
+                } catch _ as NSError {
                     self.reader.startScanning()
                 }
             }

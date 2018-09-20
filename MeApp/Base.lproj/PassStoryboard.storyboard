@@ -699,8 +699,8 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <accessibility key="accessibilityConfiguration" identifier="topViewHandle"/>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Laat iemanduw persoonlijke QR-code scannen om u valuta, bezit of vouchers te sturen" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufX-dC-Zqj">
-                                        <rect key="frame" x="8" y="308" width="339" height="48"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Laat iemanduw persoonlijke QR-code scannen om u valuta, bezit of vouchers te sturen" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="ufX-dC-Zqj">
+                                        <rect key="frame" x="8" y="308" width="339" height="49"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="15"/>
                                         <nil key="textColor"/>
@@ -753,7 +753,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ebv-7C-fiK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-519" y="830"/>
+            <point key="canvasLocation" x="-519.20000000000005" y="829.38530734632695"/>
         </scene>
     </scenes>
     <resources>

@@ -48,10 +48,12 @@ class MACreateNewIdentityViewController: MABaseViewController {
         if Validation.validateEmail(emailSkyFloatingTextField.text!){
             validateIcon.isHidden = false
             emailSkyFloatingTextField.errorMessage = nil
+            registerUIButton.isEnabled = true
             registerUIButton.backgroundColor = #colorLiteral(red: 0.2078431373, green: 0.3921568627, blue: 0.9764705882, alpha: 1)
         }else{
             validateIcon.isHidden = true
             emailSkyFloatingTextField.errorMessage = "Email is not valid"
+            registerUIButton.isEnabled = false
             registerUIButton.backgroundColor = #colorLiteral(red: 0.7647058824, green: 0.7647058824, blue: 0.7647058824, alpha: 1)
         }
     }

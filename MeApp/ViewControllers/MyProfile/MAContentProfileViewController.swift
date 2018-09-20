@@ -181,7 +181,6 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
                 }
                 
             }) { (error) in
-                
             }
             updateIndentity()
             

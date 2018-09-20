@@ -71,8 +71,8 @@
 /* Class = "UILabel"; text = "Eigenschappen die wachten op validatie"; ObjectID = "8Xz-5c-gEz"; */
 "8Xz-5c-gEz.text" = "Eigenschappen die wachten op validatie";
 
-/* Class = "UIButton"; normalTitle = "Verwijder eigenschap"; ObjectID = "9T7-YY-cHa"; */
-"9T7-YY-cHa.normalTitle" = "Verwijder eigenschap";
+/* Class = "UIButton"; normalTitle = "Delete record"; ObjectID = "9T7-YY-cHa"; */
+"9T7-YY-cHa.normalTitle" = "Delete record";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "AoI-gT-xBg"; */
 "AoI-gT-xBg.text" = "Label";

@@ -34,7 +34,7 @@ class MABottomPersonalQRViewController: MABaseViewController, ISHPullUpSizingDel
         self.view.isHidden = true
         topView.layer.cornerRadius = 14.0
         rootView.layer.cornerRadius = 14.0
-        rootView.layer.shadowColor = UIColor.black.cgColor;
+        rootView.layer.shadowColor = UIColor.black.cgColor
         rootView.layer.shadowOffset = CGSize(width: 0, height: -2)
         rootView.layer.shadowOpacity = 0.2
         rootView.layer.shadowRadius = 23 / 2
@@ -122,7 +122,6 @@ class MABottomPersonalQRViewController: MABaseViewController, ISHPullUpSizingDel
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         fetchRequest.predicate = NSPredicate(format:"currentUser == YES")
-        
         do{
             let results = try context.fetch(fetchRequest) as? [NSManagedObject]
             if results?.count == 0 {
@@ -143,7 +142,6 @@ class MABottomPersonalQRViewController: MABaseViewController, ISHPullUpSizingDel
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         fetchRequest.predicate = NSPredicate(format:"accessToken == %@", accessToken)
-        
         do{
             let results = try context.fetch(fetchRequest) as? [User]
             UserShared.shared.currentUser = results![0]
@@ -185,7 +183,7 @@ class MABottomPersonalQRViewController: MABaseViewController, ISHPullUpSizingDel
     }
     
     func pullUpViewController(_ pullUpViewController: ISHPullUpViewController, minimumHeightForBottomViewController bottomVC: UIViewController) -> CGFloat {
-        return topView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height;
+        return topView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
     }
     
     func pullUpViewController(_ pullUpViewController: ISHPullUpViewController, targetHeightForBottomViewController bottomVC: UIViewController, fromCurrentHeight height: CGFloat) -> CGFloat {
