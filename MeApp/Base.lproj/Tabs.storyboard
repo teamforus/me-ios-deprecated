@@ -569,10 +569,10 @@
             </objects>
             <point key="canvasLocation" x="1661.5999999999999" y="-530.28485757121439"/>
         </scene>
-        <!--personal-->
+        <!--Profile-->
         <scene sceneID="3HN-tU-oBk">
             <objects>
-                <viewControllerPlaceholder storyboardName="NewProfile" referencedIdentifier="personal" id="zMH-cq-qpS" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Profile" id="zMH-cq-qpS" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="fPu-YC-xJb"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Zi-ns-Rdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -671,11 +671,11 @@
             </objects>
             <point key="canvasLocation" x="820" y="-530"/>
         </scene>
-        <!--Eigenschappen-->
+        <!--Profile-->
         <scene sceneID="Wdm-Yc-gpO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S76-wR-HhB" customClass="HiddenNavBarNavigationController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Eigenschappen" image="records" id="7le-DV-ctU"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="activeBlue" id="7le-DV-ctU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mKl-8Q-pNZ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -693,6 +693,7 @@
     </scenes>
     <resources>
         <image name="Resting" width="210" height="210"/>
+        <image name="activeBlue" width="30" height="26"/>
         <image name="eth" width="52" height="52"/>
         <image name="homeIcon" width="17" height="16"/>
         <image name="iconGrey" width="30" height="26"/>

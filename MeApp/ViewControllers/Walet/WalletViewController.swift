@@ -96,7 +96,13 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
         }) { (error) in
             
         }
+        
+      //  ConfigRequest.getConfig(configType: "wallet", completion: { (statuCode, response) in
+            
+       // }) { (error) in }
     }
+    
+    
   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

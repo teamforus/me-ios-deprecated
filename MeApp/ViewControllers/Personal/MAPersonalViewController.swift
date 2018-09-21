@@ -26,6 +26,9 @@ class MAPersonalViewController: MABaseViewController, BWWalkthroughViewControlle
         self.tabBarController?.tabBar.isHidden = false
          NotificationCenter.default.addObserver(self, selector: #selector(closePage), name: Notification.Name("CLOSESLIDEPAGE"), object: nil)
         if reachablity.connection != .none{
+            ConfigRequest.getConfig(configType: "records", completion: { (statuCode, response) in
+                
+            }) { (error) in }
         getRecordType()
         getRecordList()
         }else {
