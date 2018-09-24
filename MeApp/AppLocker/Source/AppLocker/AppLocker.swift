@@ -242,7 +242,7 @@ public extension AppLocker {
   // Present AppLocker
     class func present(with mode: ALMode, and config: ALAppearance? = nil, withController: UIViewController) {
     
-    guard let root = UIApplication.shared.keyWindow?.rootViewController,
+        guard let _ = UIApplication.shared.keyWindow?.rootViewController,
 
       let locker = Bundle(for: self.classForCoder()).loadNibNamed(ALConstants.nibName, owner: self, options: nil)?.first as? AppLocker else {
         return

@@ -86,7 +86,7 @@ import UIKit
     
     // MARK: - Private properties -
     
-    open let scrollview = UIScrollView()
+    public let scrollview = UIScrollView()
     private var controllers = [UIViewController]()
     private var lastViewConstraint: [NSLayoutConstraint]?
     

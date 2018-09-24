@@ -133,8 +133,11 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToKindPaket"{
             let passVC = segue.destination as! MAGeneralPassViewController
-            (passVC.contentViewController as! PassViewController).voucher = self.vouhers[(self.tableView.indexPathForSelectedRow?.row)!] as! Voucher
-            (passVC.bottomViewController as! MABottomVoucherViewController).voucher = self.vouhers[(self.tableView.indexPathForSelectedRow?.row)!] as! Voucher
+            (passVC.contentViewController as! PassViewController).voucher = self.vouhers[(self.tableView.indexPathForSelectedRow?.row)!] as? Voucher
+            (passVC.bottomViewController as! MABottomVoucherViewController).voucher = self.vouhers[(self.tableView.indexPathForSelectedRow?.row)!] as? Voucher
+        }else if segue.identifier == "goToProfile"{
+            let profileVC = segue.destination as! MAMyProfileViewController
+            (profileVC.contentViewController as! MAContentProfileViewController).isCloseButtonHide = false
         }
     }
 }
@@ -180,7 +183,7 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
         var cell : UITableViewCell! = nil
         
         switch walletCase {
-        case .token:
+        case .token?:
             let cellWalletSecond = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! WalletSecondTableViewCell
             if indexPath.row == 0{
                 cellWalletSecond.priceLabel.text = "10,509876"
@@ -198,7 +201,7 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
             cell = cellWalletSecond
             break
             
-        case .assets:
+        case .assets?:
             let cellWalletOwner = tableView.dequeueReusableCell(withIdentifier: "cell3", for: indexPath) as! MAWalletOwnerTableViewCell
             cellWalletOwner.delegate = self
                 cellWalletOwner.headNameLabel.text = "APPARTEMENT"
@@ -207,7 +210,7 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
     
             cell = cellWalletOwner
             break
-        case .passes:
+        case .passes?:
             let cellWallet = tableView.dequeueReusableCell(withIdentifier: "cell4", for: indexPath) as! MAWaletVoucherTableViewCell
 //            cellWallet.delegate = self
             cellWallet.selectionStyle = .none
@@ -253,9 +256,9 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch walletCase {
-        case .token:
+        case .token?:
             return 130
-        case .passes:
+        case .passes?:
             return 130
         default:
             break
@@ -282,13 +285,13 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
         deleteAction.font =  UIFont(name: "SFUIText-Bold", size: 10.0)
         
         switch walletCase {
-        case .token: break
-        case .assets:
+        case .token?: break
+        case .assets?:
             if orientation == .right {
                 return [deleteAction,transctionAction]
             }
             
-        case .passes:
+        case .passes?:
             if orientation == .left {
                 return [transctionAction]
             }else {

@@ -78,7 +78,7 @@ class TransactionVoucherRequest {
             response in
             switch response.result {
             case .success:
-                var transaction: Transactions!
+                var _: Transactions!
                 if let json = response.result.value {
                     if (json as AnyObject)["message"]! == nil {
                         let voucherList: NSMutableArray = NSMutableArray()

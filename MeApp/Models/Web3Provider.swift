@@ -48,7 +48,7 @@ class Web3Provider{
     
    static func getBalance(){
         let configuartion = EthAccountConfiguration(namespace: "username", password: "")
-        let (keystore, account) = EthAccountCoordinator.default.launch(configuartion)
+    let (_, account) = EthAccountCoordinator.default.launch(configuartion)
         let walletAAccountAddress: GethAddress = (account?.getAddress())!
         let addressContract = try? EthereumAddress(hex: walletAAccountAddress.getHex(), eip55: true)
         Web3Provider.web3.eth.getBalance(address: addressContract!, block: .block(4000000)) { (response) in

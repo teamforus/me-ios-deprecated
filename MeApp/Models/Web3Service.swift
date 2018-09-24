@@ -21,7 +21,7 @@ public class Service{
     
    static func prepareTransaction() -> GethTransaction? {
          let configuartion = EthAccountConfiguration(namespace: "username", password: "assword")
-        let (keystore, account) = EthAccountCoordinator.default.launch(configuartion)
+    let (_, account) = EthAccountCoordinator.default.launch(configuartion)
         if let walletAAccountAddress: GethAddress = account?.getAddress() {
             let amount = GethBigInt.bigInt(valueInEther:50)!
             let transferFunction = EthFunction(name: "transfer", inputParameters: [walletAAccountAddress, amount])

@@ -15,6 +15,8 @@ import Presentr
 
 class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
+    @IBOutlet weak var closeUIButton: UIButton!
+    var isCloseButtonHide: Bool!
     @IBOutlet weak var switchFaceID: UISwitch!
     @IBOutlet weak var faceIdImage: UIImageView!
     @IBOutlet weak var faceIdLabel: UILabel!
@@ -37,6 +39,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     @IBOutlet weak var profileImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+         closeUIButton.isHidden = isCloseButtonHide ?? true
          if UserDefaults.standard.bool(forKey: "isWithTouchID"){
             switchFaceID.isOn = true
          }else {
@@ -60,6 +63,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+       
         if !UserDefaults.standard.bool(forKey: "PINCODEENABLED"){
             passcodeLabel.text = "Turn On Passcode"
             turnOffPascodeView.isHidden = true
@@ -129,6 +133,8 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     
     @IBAction func aboutMe(_ sender: Any) {
         let popupTransction =  MAAboutMeViewController(nibName: "MAAboutMeViewController", bundle: nil)
+        popupTransction.titleDetail = "About Me app"
+        popupTransction.descriptionDetail = "Me app will support three main groups of functionality: a wallet for the things you own, your personal records and a way to identify and interact with third parties (applications, people or organisations)"
         self.presenter.presentationType = .popup
         self.presenter.transitionType = nil
         self.presenter.dismissTransitionType = nil

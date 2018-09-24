@@ -115,7 +115,7 @@ extension PassViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let popOverVC = TransactionViewController(nibName: "TransactionViewController", bundle: nil)
-        popOverVC.transaction = self.transactions[indexPath.row] as! Transactions
+        popOverVC.transaction = self.transactions[indexPath.row] as? Transactions
         self.addChildViewController(popOverVC)
         popOverVC.view.frame = self.view.frame
         self.view.addSubview(popOverVC.view)
