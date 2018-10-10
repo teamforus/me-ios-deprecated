@@ -55,6 +55,11 @@
 		6528F01920E51BEF00DD19C1 /* MAFirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6528F01820E51BEF00DD19C1 /* MAFirstPageViewController.swift */; };
 		6528F01C20E5358900DD19C1 /* MAPinCodeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6528F01B20E5358900DD19C1 /* MAPinCodeLoginViewController.swift */; };
 		6528F01E20E53F3D00DD19C1 /* MALoginEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6528F01D20E53F3D00DD19C1 /* MALoginEmailViewController.swift */; };
+		652D910A216DF19F00F04D2E /* VoucherPayment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652D9109216DF19F00F04D2E /* VoucherPayment.storyboard */; };
+		652D910C216DF33900F04D2E /* MABaseVoucherPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652D910B216DF33900F04D2E /* MABaseVoucherPaymentViewController.swift */; };
+		652D910E216DF40B00F04D2E /* MAContentVoucherPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652D910D216DF40B00F04D2E /* MAContentVoucherPaymentViewController.swift */; };
+		652D9110216DF43000F04D2E /* MABottomQRVoucherPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652D910F216DF43000F04D2E /* MABottomQRVoucherPaymentViewController.swift */; };
+		652D9113216E016600F04D2E /* MAVoucherPaymentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652D9112216E016600F04D2E /* MAVoucherPaymentTableViewCell.swift */; };
 		653181AF212FF9AD0001D24E /* MAMyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653181AE212FF9AD0001D24E /* MAMyProfileViewController.swift */; };
 		653181B1213010CA0001D24E /* MAQrBottomProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653181B0213010CA0001D24E /* MAQrBottomProfileViewController.swift */; };
 		653181B3213010E70001D24E /* MAContentProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653181B2213010E70001D24E /* MAContentProfileViewController.swift */; };
@@ -322,6 +327,11 @@
 		6528F01820E51BEF00DD19C1 /* MAFirstPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAFirstPageViewController.swift; sourceTree = "<group>"; };
 		6528F01B20E5358900DD19C1 /* MAPinCodeLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAPinCodeLoginViewController.swift; sourceTree = "<group>"; };
 		6528F01D20E53F3D00DD19C1 /* MALoginEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MALoginEmailViewController.swift; sourceTree = "<group>"; };
+		652D9109216DF19F00F04D2E /* VoucherPayment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VoucherPayment.storyboard; sourceTree = "<group>"; };
+		652D910B216DF33900F04D2E /* MABaseVoucherPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MABaseVoucherPaymentViewController.swift; sourceTree = "<group>"; };
+		652D910D216DF40B00F04D2E /* MAContentVoucherPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAContentVoucherPaymentViewController.swift; sourceTree = "<group>"; };
+		652D910F216DF43000F04D2E /* MABottomQRVoucherPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MABottomQRVoucherPaymentViewController.swift; sourceTree = "<group>"; };
+		652D9112216E016600F04D2E /* MAVoucherPaymentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAVoucherPaymentTableViewCell.swift; sourceTree = "<group>"; };
 		653181AE212FF9AD0001D24E /* MAMyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAMyProfileViewController.swift; sourceTree = "<group>"; };
 		653181B0213010CA0001D24E /* MAQrBottomProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAQrBottomProfileViewController.swift; sourceTree = "<group>"; };
 		653181B2213010E70001D24E /* MAContentProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAContentProfileViewController.swift; sourceTree = "<group>"; };
@@ -720,6 +730,25 @@
 			path = PinCodeLogin;
 			sourceTree = "<group>";
 		};
+		652D9111216DF43600F04D2E /* VoucherPayment */ = {
+			isa = PBXGroup;
+			children = (
+				652D910B216DF33900F04D2E /* MABaseVoucherPaymentViewController.swift */,
+				652D910D216DF40B00F04D2E /* MAContentVoucherPaymentViewController.swift */,
+				652D910F216DF43000F04D2E /* MABottomQRVoucherPaymentViewController.swift */,
+				652D9114216E016C00F04D2E /* Cell */,
+			);
+			path = VoucherPayment;
+			sourceTree = "<group>";
+		};
+		652D9114216E016C00F04D2E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				652D9112216E016600F04D2E /* MAVoucherPaymentTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		653181B4213017A30001D24E /* MyProfile */ = {
 			isa = PBXGroup;
 			children = (
@@ -943,6 +972,7 @@
 				65509472213D4F36007532BE /* Main.storyboard */,
 				6550946B213D4D29007532BE /* Tabs.storyboard */,
 				65509479213D4F4F007532BE /* PassStoryboard.storyboard */,
+				652D9109216DF19F00F04D2E /* VoucherPayment.storyboard */,
 				65509480213D5017007532BE /* NewProfile.storyboard */,
 				65509487213D5105007532BE /* Profile.storyboard */,
 				65E3363E20E645B600C0512B /* KRScrollView.swift */,
@@ -1171,6 +1201,7 @@
 				656F198B210604B800923DAF /* Personal */,
 				65A5A9B9210B64F600CF1C45 /* CreateNewIdentity */,
 				653181B4213017A30001D24E /* MyProfile */,
+				652D9111216DF43600F04D2E /* VoucherPayment */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1631,6 +1662,7 @@
 				6579634220E4D49D001CF29D /* NunitoSans-BlackItalic.ttf in Resources */,
 				65A51FCF20B3012C0010DB33 /* SF-Pro-Display-RegularItalic.otf in Resources */,
 				6500425F20DB97E40092CCDA /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				652D910A216DF19F00F04D2E /* VoucherPayment.storyboard in Resources */,
 				6579634920E4D49E001CF29D /* NunitoSans-SemiBold.ttf in Resources */,
 				651F705D214682F5008D087A /* MATransactionRedViewController.xib in Resources */,
 				65A51FDC20B3012C0010DB33 /* SF-Pro-Display-Ultralight.otf in Resources */,
@@ -1946,6 +1978,7 @@
 				6556375520B6DE8300E45487 /* ShapeType.swift in Sources */,
 				65467FA520B821E7009E99CC /* Authorization.swift in Sources */,
 				6556375C20B6DE8300E45487 /* PopupItem.swift in Sources */,
+				652D910C216DF33900F04D2E /* MABaseVoucherPaymentViewController.swift in Sources */,
 				65E3800B2139270E0094385D /* MAAboutMeViewController.swift in Sources */,
 				65BFF46C20C1860500F64215 /* ResponseNewIndentity.swift in Sources */,
 				65AC33032102126200633187 /* MAChooseCategoryCollectionViewCell.swift in Sources */,
@@ -1972,6 +2005,7 @@
 				6504472720C028FD00D040B9 /* MAAllowTableViewCell.swift in Sources */,
 				6504473C20C04F4300D040B9 /* UserLocal.swift in Sources */,
 				65B89ABF20B448CB0024DC51 /* MAAllowViewController.swift in Sources */,
+				652D9113216E016600F04D2E /* MAVoucherPaymentTableViewCell.swift in Sources */,
 				65AC32FD2102040F00633187 /* MAChooseTypeViewController.swift in Sources */,
 				65BFF46320C161B500F64215 /* Records.swift in Sources */,
 				6539827921342638003B87FC /* MASuccessEmailViewController.swift in Sources */,
@@ -1979,6 +2013,7 @@
 				656F19872105E22A00923DAF /* MAValidatorsViewController.swift in Sources */,
 				65B89A9720B4128C0024DC51 /* MARecordsTableViewCell.swift in Sources */,
 				6556375620B6DE8300E45487 /* PopupContainerView.swift in Sources */,
+				652D910E216DF40B00F04D2E /* MAContentVoucherPaymentViewController.swift in Sources */,
 				6556375920B6DE8300E45487 /* PopupContainerWindow.swift in Sources */,
 				651826EC20DD1DAF00B8963A /* MABotomQrProfileViewController.swift in Sources */,
 				6556375720B6DE8300E45487 /* CGRect+Inset.swift in Sources */,
@@ -1986,6 +2021,7 @@
 				654CBAB62109E1EC00E56F2E /* AuthorizationCode.swift in Sources */,
 				658BBA522110954C0098E2AC /* AppLocker.swift in Sources */,
 				653982752133FC5B003B87FC /* RoundImageView.swift in Sources */,
+				652D9110216DF43000F04D2E /* MABottomQRVoucherPaymentViewController.swift in Sources */,
 				6556376820B726F700E45487 /* MABaseViewController.swift in Sources */,
 				65FC860620B5B340001FECA5 /* MASwitchProfileViewController.swift in Sources */,
 				65BFF47920C1A61C00F64215 /* UIImage+Colorize.swift in Sources */,

@@ -608,11 +608,20 @@
                     <tabBarItem key="tabBarItem" title="QR" image="iconGrey" id="a2M-XK-0VC"/>
                     <connections>
                         <outlet property="previewQR" destination="H4i-L8-WvF" id="QFS-cL-yWD"/>
+                        <segue destination="NHe-dp-rV5" kind="show" identifier="goToVoucherPayment" id="Por-0N-f2M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sNe-9X-Jt7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1759" y="211"/>
+        </scene>
+        <!--VoucherPayment-->
+        <scene sceneID="o2Z-GT-MfE">
+            <objects>
+                <viewControllerPlaceholder storyboardName="VoucherPayment" id="NHe-dp-rV5" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HYt-fr-oTc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2502" y="210"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="DqR-Ea-D4l">

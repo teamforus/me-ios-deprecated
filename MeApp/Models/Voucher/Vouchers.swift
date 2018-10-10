@@ -17,9 +17,9 @@ struct Voucher {
     var amount: Int!
     var found: Found!
     var transactions: Array<Transactions>!
-    var allowedOrganizations: Array<AllowedOrganizations>
-    var allowedProductCategories: Array<AllowedProductCategories>
-    var allowedProducts: Array<AllowedProducts>
+    var allowedOrganizations: Array<AllowedOrganizations>?
+    var allowedProductCategories: Array<AllowedProductCategories>?
+    var allowedProducts: Array<AllowedProducts>?
 }
 
 extension Voucher: JSONDecodable{

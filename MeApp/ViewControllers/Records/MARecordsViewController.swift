@@ -36,8 +36,10 @@ class MARecordsViewController: MABaseViewController, BWWalkthroughViewController
         //        self.title = "Eigenschappen"
         //        self.navigationController?.navigationBar.prefersLargeTitles = true
         self.getRecordList()
-        UIApplication.shared.statusBarStyle = .default
+//        UIApplication.shared.statusBarStyle = .default
     }
+    
+    
     
     func getRecordList(){
         RecordsRequest.getRecordsList(completion: { (response, statusCode) in
@@ -204,5 +206,11 @@ extension MARecordsViewController: UICollectionViewDelegate, UICollectionViewDat
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         
         return cell
+    }
+}
+
+extension UINavigationController {
+    open override var preferredStatusBarStyle: UIStatusBarStyle {
+        return topViewController?.preferredStatusBarStyle ?? .default
     }
 }

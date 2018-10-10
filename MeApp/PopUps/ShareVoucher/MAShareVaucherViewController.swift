@@ -24,8 +24,8 @@ class MAShareVaucherViewController: MABasePopUpViewController {
         super.viewDidLoad()
         viewBody.layer.cornerRadius = 14.0
         organizationName.text = voucher.found.name
-        for category in voucher.allowedProductCategories{
-            if category.id == voucher.allowedProductCategories.last?.id{
+        for category in (voucher?.allowedProductCategories!)!{
+            if category.id == voucher.allowedProductCategories?.last?.id{
                 categoryNames.append(category.name)
             }else{
                 categoryNames.append(category.name+", ")
@@ -65,12 +65,11 @@ class MAShareVaucherViewController: MABasePopUpViewController {
             }else{
                 amount.errorMessage = nil
                 let parameters: Parameters = [
-                    "organization_id" : voucher.allowedOrganizations.first?.id ?? 0,
+                    "organization_id" : voucher.allowedOrganizations!.first?.id ?? 0,
                                   "amount" : Float(self.amount.text!)!]
                 TransactionVoucherRequest.makeTransaction(parameters: parameters, identityAdress: voucher.address, completion: { (transaction, statusCode) in
                     if statusCode == 201{
                             self.dismiss(animated: true, completion: nil)
-                        
                     }
                     
                 }) { (error) in

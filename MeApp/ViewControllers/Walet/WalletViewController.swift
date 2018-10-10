@@ -128,6 +128,7 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
 //    }
     @IBAction func logout(_ sender: Any) {
         self.logOut()
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

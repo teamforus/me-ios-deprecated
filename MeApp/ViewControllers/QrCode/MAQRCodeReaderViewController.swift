@@ -21,7 +21,7 @@ class MAQRCodeReaderViewController: MABaseViewController {
         presenter.dismissOnSwipe = true
         return presenter
     }()
-    
+    var voucher: Voucher!
     @IBOutlet weak var previewQR: QRCodeReaderView!{
         didSet {
             previewQR.setupComponents(showCancelButton: false, showSwitchCameraButton: false, showTorchButton: false, showOverlayView: true, reader: reader)
@@ -174,14 +174,17 @@ class MAQRCodeReaderViewController: MABaseViewController {
     
     func getProviderConfirm(address:String){
         VoucherRequest.getProvider(identityAdress: address, completion: { (voucher, statusCode) in
-            if voucher.allowedOrganizations.count != 0 {
-            let popupTransction =  MAShareVaucherViewController(nibName: "MAShareVaucherViewController", bundle: nil)
-            popupTransction.voucher = voucher
-            self.presenter.presentationType = .popup
-            self.presenter.transitionType = nil
-            self.presenter.dismissTransitionType = nil
-            self.presenter.keyboardTranslationType = .compress
-            self.customPresentViewController(self.presenter, viewController: popupTransction, animated: true, completion: nil)
+            if voucher.allowedOrganizations?.count != 0 {
+                
+//            let popupTransction =  MAShareVaucherViewController(nibName: "MAShareVaucherViewController", bundle: nil)
+//            popupTransction.voucher = voucher
+//            self.presenter.presentationType = .popup
+//            self.presenter.transitionType = nil
+//            self.presenter.dismissTransitionType = nil
+//            self.presenter.keyboardTranslationType = .compress
+//            self.customPresentViewController(self.presenter, viewController: popupTransction, animated: true, completion: nil)
+                self.voucher = voucher
+                self.performSegue(withIdentifier: "goToVoucherPayment", sender: nil)
             }else{
                 AlertController.showWarning(withText: "Sorry this voucher is not availebel for you!")
             }
@@ -189,6 +192,13 @@ class MAQRCodeReaderViewController: MABaseViewController {
         }) { (error) in
             AlertController.showError()
             self.reader.startScanning()
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToVoucherPayment"{
+            let detailPaymentVC = segue.destination as! MABaseVoucherPaymentViewController
+            (detailPaymentVC.contentViewController as! MAContentVoucherPaymentViewController).voucher = self.voucher
         }
     }
     
