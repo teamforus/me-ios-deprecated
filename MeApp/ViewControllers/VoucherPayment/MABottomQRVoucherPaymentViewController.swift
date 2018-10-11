@@ -32,7 +32,7 @@ class MABottomQRVoucherPaymentViewController: MABaseViewController , ISHPullUpSi
         //        self.view.isHidden = true
         topView.layer.cornerRadius = 14.0
         rootView.layer.cornerRadius = 14.0
-        rootView.layer.shadowColor = UIColor.black.cgColor;
+        rootView.layer.shadowColor = UIColor.black.cgColor
         rootView.layer.shadowOffset = CGSize(width: 0, height: -2)
         rootView.layer.shadowOpacity = 0.2
         rootView.layer.shadowRadius = 23 / 2
