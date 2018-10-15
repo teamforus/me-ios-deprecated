@@ -43,6 +43,7 @@
 		651826E720DD1D8200B8963A /* MABaseQRProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651826E620DD1D8200B8963A /* MABaseQRProfileViewController.swift */; };
 		651826EA20DD1DA400B8963A /* MAContentQRProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651826E920DD1DA400B8963A /* MAContentQRProfileViewController.swift */; };
 		651826EC20DD1DAF00B8963A /* MABotomQrProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651826EB20DD1DAF00B8963A /* MABotomQrProfileViewController.swift */; };
+		651CADD32174957C000E3E37 /* MAProductVoucherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651CADD22174957C000E3E37 /* MAProductVoucherViewController.swift */; };
 		651E197C20C95B5400A46D71 /* Web3Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651E197B20C95B5400A46D71 /* Web3Service.swift */; };
 		651F704F21468141008D087A /* MASignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 651F705121468141008D087A /* MASignUpViewController.xib */; };
 		651F7056214682C7008D087A /* MATransactionBlueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 651F7058214682C7008D087A /* MATransactionBlueViewController.xib */; };
@@ -306,6 +307,7 @@
 		651826E620DD1D8200B8963A /* MABaseQRProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MABaseQRProfileViewController.swift; sourceTree = "<group>"; };
 		651826E920DD1DA400B8963A /* MAContentQRProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAContentQRProfileViewController.swift; sourceTree = "<group>"; };
 		651826EB20DD1DAF00B8963A /* MABotomQrProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MABotomQrProfileViewController.swift; sourceTree = "<group>"; };
+		651CADD22174957C000E3E37 /* MAProductVoucherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAProductVoucherViewController.swift; sourceTree = "<group>"; };
 		651E197B20C95B5400A46D71 /* Web3Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Web3Service.swift; sourceTree = "<group>"; };
 		651F704E21467EE6008D087A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		651F705021468141008D087A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MASignUpViewController.xib; sourceTree = "<group>"; };
@@ -1018,6 +1020,7 @@
 				6504474120C0715C00D040B9 /* MAKindpakketCurrenciesViewController.swift */,
 				653181B521301AD30001D24E /* Voucher */,
 				65A51FEC20B31FBC0010DB33 /* Cell */,
+				651CADD22174957C000E3E37 /* MAProductVoucherViewController.swift */,
 			);
 			path = Pass;
 			sourceTree = "<group>";
@@ -1852,7 +1855,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" fe3a4b53f20261187b2c79dcd278c3ef76e6a7de c89db981be291d8532a9a5e30a2399da0badfcc0e7e0001543aa59f3b397d351";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" fe3a4b53f20261187b2c79dcd278c3ef76e6a7de c89db981be291d8532a9a5e30a2399da0badfcc0e7e0001543aa59f3b397d351\n";
 		};
 		CB419101B2DDB60284B9E65E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1955,6 +1958,7 @@
 				65B89AB020B43A3D0024DC51 /* MAValidationViewController.swift in Sources */,
 				65B89ACF20B480470024DC51 /* MANewProfileViewController.swift in Sources */,
 				6504473920C04BD800D040B9 /* AlertViewController.swift in Sources */,
+				651CADD32174957C000E3E37 /* MAProductVoucherViewController.swift in Sources */,
 				6504472E20C03DAB00D040B9 /* MASwitchProfilePopUpViewController.swift in Sources */,
 				65A51FA720B300EA0010DB33 /* PassTableViewCell.swift in Sources */,
 				65FC866820B5EB2A001FECA5 /* MAAddProfileTableViewCell.swift in Sources */,
