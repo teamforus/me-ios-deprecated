@@ -159,7 +159,7 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
         var cell : UITableViewCell! = nil
         
         switch walletCase {
-        case .token:
+        case .token?:
             let cellWalletSecond = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! WalletSecondTableViewCell
             if indexPath.row == 0{
                 cellWalletSecond.priceLabel.text = "10,509876"
@@ -177,7 +177,7 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
             cell = cellWalletSecond
             break
             
-        case .assets:
+        case .assets?:
             let cellWalletOwner = tableView.dequeueReusableCell(withIdentifier: "cell3", for: indexPath) as! MAWalletOwnerTableViewCell
             cellWalletOwner.delegate = self
             if indexPath.row == 0{
@@ -228,9 +228,9 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch walletCase {
-        case .token:
+        case .token?:
             return 130
-        case .passes:
+        case .passes?:
             return 130
         default:
             break
@@ -257,13 +257,13 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
         deleteAction.font =  UIFont(name: "SFUIText-Bold", size: 10.0)
         
         switch walletCase {
-        case .token: break
-        case .assets:
+        case .token?: break
+        case .assets?:
             if orientation == .right {
                 return [deleteAction,transctionAction]
             }
             
-        case .passes:
+        case .passes?:
             if orientation == .left {
                 return [transctionAction]
             }else {
