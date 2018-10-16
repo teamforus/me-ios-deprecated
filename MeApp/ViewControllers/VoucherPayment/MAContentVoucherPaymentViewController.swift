@@ -40,6 +40,11 @@ class MAContentVoucherPaymentViewController: MABaseViewController {
             
         }
     }
+    
+    @IBAction func dismiss(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 extension MAContentVoucherPaymentViewController: UITableViewDelegate, UITableViewDataSource{
