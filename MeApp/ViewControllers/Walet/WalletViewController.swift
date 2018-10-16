@@ -30,7 +30,7 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
     @IBOutlet weak var segmentView: UIView!
     var vouhers: NSMutableArray! = NSMutableArray()
     
-//    @IBOutlet weak var voiceButton: VoiceButtonView!
+    //    @IBOutlet weak var voiceButton: VoiceButtonView!
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en"))!
     @IBOutlet weak var segmentedControl: HBSegmentedControl!
     let largerRedTextSelectAttributes = [NSAttributedStringKey.font: UIFont(name: "GoogleSans-Medium", size: 14.0),
@@ -50,19 +50,19 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
             AppLocker.present(with: .validate, and: appearance, withController: self)
         }
         // profile icon round
-       
         
-            walletCase = WalletCase.passes
         
-//        segmentView.layer.cornerRadius = 8.0
-//        tableView.setContentOffset(CGPoint(x: 0, y: 44), animated: true)
-//        segmentedControl.items = ["Valuta", "Bezit", "Vouchers"]
-//        segmentedControl.selectedIndex = 0
-//        segmentedControl.font = UIFont(name: "GoogleSans-Medium", size: 14)
-//        segmentedControl.unselectedLabelColor = #colorLiteral(red: 0.631372549, green: 0.6509803922, blue: 0.6784313725, alpha: 1)
-//        segmentedControl.selectedLabelColor = #colorLiteral(red: 0.2078431373, green: 0.3921568627, blue: 0.968627451, alpha: 1)
-//        segmentedControl.addTarget(self, action: #selector(self.segmentSelected(sender:)), for: .valueChanged)
-//        segmentedControl.borderColor = .clear
+        walletCase = WalletCase.passes
+        
+        //        segmentView.layer.cornerRadius = 8.0
+        //        tableView.setContentOffset(CGPoint(x: 0, y: 44), animated: true)
+        //        segmentedControl.items = ["Valuta", "Bezit", "Vouchers"]
+        //        segmentedControl.selectedIndex = 0
+        //        segmentedControl.font = UIFont(name: "GoogleSans-Medium", size: 14)
+        //        segmentedControl.unselectedLabelColor = #colorLiteral(red: 0.631372549, green: 0.6509803922, blue: 0.6784313725, alpha: 1)
+        //        segmentedControl.selectedLabelColor = #colorLiteral(red: 0.2078431373, green: 0.3921568627, blue: 0.968627451, alpha: 1)
+        //        segmentedControl.addTarget(self, action: #selector(self.segmentSelected(sender:)), for: .valueChanged)
+        //        segmentedControl.borderColor = .clear
         tableView.keyboardDismissMode = .onDrag
         Web3Provider.getBalance()
         Service.sendContract { (response, error) in
@@ -75,8 +75,8 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
             let results = try context.fetch(fetchRequest) as? [User]
             if results?.count != 0 {
                 UserShared.shared.currentUser = results![0]
-                 UserDefaults.standard.set(UserShared.shared.currentUser.pinCode, forKey: ALConstants.kPincode)
-                 UserDefaults.standard.synchronize()
+                UserDefaults.standard.set(UserShared.shared.currentUser.pinCode, forKey: ALConstants.kPincode)
+                UserDefaults.standard.synchronize()
             }
         } catch{}
     }
@@ -97,13 +97,13 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
             
         }
         
-      //  ConfigRequest.getConfig(configType: "wallet", completion: { (statuCode, response) in
-            
-       // }) { (error) in }
+        //  ConfigRequest.getConfig(configType: "wallet", completion: { (statuCode, response) in
+        
+        // }) { (error) in }
     }
     
     
-  
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -112,20 +112,20 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
         self.view.endEditing(true)
     }
     
-//    @objc func segmentSelected(sender:HBSegmentedControl) {
-//        print("Segment at index \(sender.selectedIndex)  selected")
-//        if (sender.selectedIndex == 0 ){
-//            walletCase = WalletCase.token
-//            self.tableView.reloadData()
-//        }else if (sender.selectedIndex == 1){
-//            walletCase = WalletCase.assets
-//            self.tableView.reloadData()
-//        }else if (sender.selectedIndex == 2){
-//            walletCase = WalletCase.passes
-//            self.tableView.reloadData()
-//        }
-//
-//    }
+    //    @objc func segmentSelected(sender:HBSegmentedControl) {
+    //        print("Segment at index \(sender.selectedIndex)  selected")
+    //        if (sender.selectedIndex == 0 ){
+    //            walletCase = WalletCase.token
+    //            self.tableView.reloadData()
+    //        }else if (sender.selectedIndex == 1){
+    //            walletCase = WalletCase.assets
+    //            self.tableView.reloadData()
+    //        }else if (sender.selectedIndex == 2){
+    //            walletCase = WalletCase.passes
+    //            self.tableView.reloadData()
+    //        }
+    //
+    //    }
     @IBAction func logout(_ sender: Any) {
         self.logOut()
         
@@ -139,6 +139,10 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
         }else if segue.identifier == "goToProfile"{
             let profileVC = segue.destination as! MAMyProfileViewController
             (profileVC.contentViewController as! MAContentProfileViewController).isCloseButtonHide = false
+        }
+        else if segue.identifier == "goToVoucherProduct"{
+            let profileVC = segue.destination as! MAProductVoucherViewController
+            profileVC.voucher = self.vouhers[(self.tableView.indexPathForSelectedRow?.row)!] as? Voucher
         }
     }
 }
@@ -164,7 +168,7 @@ extension WalletViewController: VoiceButtonDelegate{
     }
 }
 
-    // MARK: UITableViewDelegate
+// MARK: UITableViewDelegate
 
 extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeTableViewCellDelegate {
     
@@ -173,7 +177,7 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         if walletCase == .passes{
+        if walletCase == .passes{
             return vouhers.count
         }
         return 3
@@ -205,18 +209,22 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
         case .assets?:
             let cellWalletOwner = tableView.dequeueReusableCell(withIdentifier: "cell3", for: indexPath) as! MAWalletOwnerTableViewCell
             cellWalletOwner.delegate = self
-                cellWalletOwner.headNameLabel.text = "APPARTEMENT"
-                cellWalletOwner.productNameLabel.text = "Groningen"
-                cellWalletOwner.marcLabel.text = "Ulgersmaweg 35, 9731BK"
-    
+            cellWalletOwner.headNameLabel.text = "APPARTEMENT"
+            cellWalletOwner.productNameLabel.text = "Groningen"
+            cellWalletOwner.marcLabel.text = "Ulgersmaweg 35, 9731BK"
+            
             cell = cellWalletOwner
             break
         case .passes?:
             let cellWallet = tableView.dequeueReusableCell(withIdentifier: "cell4", for: indexPath) as! MAWaletVoucherTableViewCell
-//            cellWallet.delegate = self
+            //            cellWallet.delegate = self
             cellWallet.selectionStyle = .none
             let voucher = self.vouhers[indexPath.row] as! Voucher
-            cellWallet.voucherTitleLabel.text = voucher.found.name
+            if voucher.product != nil{
+                cellWallet.voucherTitleLabel.text = voucher.product?.name
+            }else{
+                cellWallet.voucherTitleLabel.text = voucher.found.name
+            }
             cellWallet.priceLabel.text = "€\(voucher.amount!)"
             cellWallet.organizationNameLabel.text = voucher.found.organization.name
             cell = cellWallet
@@ -235,23 +243,29 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
         return cell
     }
     
-     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if segmentedControl.selectedIndex == 1 {
-//            let popOverVC = TransactionViewController(nibName: "TransactionViewController", bundle: nil)
-//            self.addChildViewController(popOverVC)
-//            popOverVC.view.frame = self.view.frame
-//            popOverVC.isVisisbeTabBar = true
-//            self.view.addSubview(popOverVC.view)
-//            popOverVC.didMove(toParentViewController: self)
-            let alert: UIAlertController
-            alert = UIAlertController(title: "", message: "Comming Soon!", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-            }))
-            self.present(alert, animated: true, completion: nil)
-        }else if segmentedControl.selectedIndex == 2{
-            self.performSegue(withIdentifier: "goToKindPaket", sender: self)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let voucher = self.vouhers[indexPath.row] as! Voucher
+        if voucher.product != nil{
+            self.performSegue(withIdentifier: "goToVoucherProduct", sender: nil)
+        }else{
+            self.performSegue(withIdentifier: "goToKindPaket", sender: nil)
         }
-        self.performSegue(withIdentifier: "goToKindPaket", sender: self)
+//        if segmentedControl.selectedIndex == 1 {
+//            //            let popOverVC = TransactionViewController(nibName: "TransactionViewController", bundle: nil)
+//            //            self.addChildViewController(popOverVC)
+//            //            popOverVC.view.frame = self.view.frame
+//            //            popOverVC.isVisisbeTabBar = true
+//            //            self.view.addSubview(popOverVC.view)
+//            //            popOverVC.didMove(toParentViewController: self)
+//            let alert: UIAlertController
+//            alert = UIAlertController(title: "", message: "Comming Soon!", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+//            }))
+//            self.present(alert, animated: true, completion: nil)
+//        }else if segmentedControl.selectedIndex == 2{
+//            self.performSegue(withIdentifier: "goToKindPaket", sender: self)
+//        }
+//        self.performSegue(withIdentifier: "goToKindPaket", sender: self)
         tableView.deselectRow(at: indexPath, animated: false)
     }
     

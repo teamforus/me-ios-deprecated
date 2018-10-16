@@ -20,6 +20,7 @@ struct Voucher {
     var allowedOrganizations: Array<AllowedOrganizations>?
     var allowedProductCategories: Array<AllowedProductCategories>?
     var allowedProducts: Array<AllowedProducts>?
+    var product: ProductVoucher?
 }
 
 extension Voucher: JSONDecodable{
@@ -34,6 +35,7 @@ extension Voucher: JSONDecodable{
         allowedOrganizations = try decoder.decode("allowed_organizations")
         allowedProductCategories = try decoder.decode("allowed_product_categories")
         allowedProducts = try decoder.decode("allowed_products")
+        product = try decoder.decode("product")
     }
 }
 
@@ -70,6 +72,37 @@ extension AllowedProducts: JSONDecodable{
         oldPrice = try decoder.decode("old_price")
         totalAmount = try decoder.decode("total_amount")
         soldAmount = try decoder.decode("sold_amounts")
+    }
+}
+
+struct ProductVoucher {
+    var id: Int!
+    var name: String!
+    var description: String!
+    var price: Int!
+    var oldPrice: Int!
+    var totalAmount: Int!
+    var soldAmount: Int!
+    var organization: AllowedOrganizations!
+    var organizationId: Int!
+    var productCategoryId: Int!
+    var photo: String!
+}
+
+extension ProductVoucher: JSONDecodable{
+    init(object: JSONObject) throws {
+        let decoder = JSONDecoder(object:object)
+        id = try decoder.decode("id")
+        name = try decoder.decode("name")
+        description = try decoder.decode("description")
+        price = try decoder.decode("price")
+        oldPrice = try decoder.decode("old_price")
+        totalAmount = try decoder.decode("total_amount")
+        soldAmount = try decoder.decode("sold_amounts")
+        organization = try decoder.decode("organization")
+        organizationId = try decoder.decode("organization_id")
+        productCategoryId = try decoder.decode("product_category_id")
+        photo = try decoder.decode("photo")
     }
 }
 

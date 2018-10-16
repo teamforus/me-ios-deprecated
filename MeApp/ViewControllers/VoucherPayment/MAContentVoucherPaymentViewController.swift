@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import Presentr
 
 class MAContentVoucherPaymentViewController: MABaseViewController {
     @IBOutlet weak var paketTitle: UILabel!
@@ -18,6 +19,12 @@ class MAContentVoucherPaymentViewController: MABaseViewController {
     @IBOutlet weak var organizationImageView: UIImageView!
     @IBOutlet weak var pricePayLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    let presenter: Presentr = {
+        let presenter = Presentr(presentationType: .alert)
+        presenter.transitionType = TransitionType.coverHorizontalFromRight
+        presenter.dismissOnSwipe = true
+        return presenter
+    }()
     var voucher: Voucher!
     
     override func viewDidLoad() {
@@ -40,6 +47,8 @@ class MAContentVoucherPaymentViewController: MABaseViewController {
             
         }
     }
+    
+   
     
     @IBAction func dismiss(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
