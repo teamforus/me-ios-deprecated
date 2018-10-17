@@ -17,6 +17,7 @@ import Reachability
 class MACreateNewIdentityViewController: MABaseViewController {
     @IBOutlet weak var validateIcon: UIImageView!
     @IBOutlet weak var emailSkyFloatingTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var confirmEmailField: SkyFloatingLabelTextField!
     @IBOutlet weak var givenNameField: SkyFloatingLabelTextField!
     @IBOutlet weak var familyNameField: SkyFloatingLabelTextField!
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -26,6 +27,7 @@ class MACreateNewIdentityViewController: MABaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         IQKeyboardManager.sharedManager().enable = true
+        confirmEmailField.isEnabled = false
     }
     
     override func didReceiveMemoryWarning() {
@@ -33,7 +35,7 @@ class MACreateNewIdentityViewController: MABaseViewController {
     }
     
     @IBAction func create(_ sender: Any) {
-        if Validation.validateEmail(emailSkyFloatingTextField.text!){
+        if Validation.validateEmail(emailSkyFloatingTextField.text!) && confirmEmailField.text == emailSkyFloatingTextField.text{
             if Validation.validateFieldEmpty(textField: givenNameField) || Validation.validateFieldEmpty(textField: familyNameField) {
                 if reachablity.connection != .none{
                     self.performSegue(withIdentifier: "goToPassword", sender: self)
@@ -45,16 +47,28 @@ class MACreateNewIdentityViewController: MABaseViewController {
     }
     
     @IBAction func validateEmailField(textField:SkyFloatingLabelTextField) {
-        if Validation.validateEmail(emailSkyFloatingTextField.text!){
-            validateIcon.isHidden = false
-            emailSkyFloatingTextField.errorMessage = nil
-            registerUIButton.isEnabled = true
-            registerUIButton.backgroundColor = #colorLiteral(red: 0.2078431373, green: 0.3921568627, blue: 0.9764705882, alpha: 1)
+        if textField == emailSkyFloatingTextField{
+            if Validation.validateEmail(emailSkyFloatingTextField.text!){
+                validateIcon.isHidden = false
+                emailSkyFloatingTextField.errorMessage = nil
+                confirmEmailField.isEnabled = true
+            }else{
+                validateIcon.isHidden = true
+                emailSkyFloatingTextField.errorMessage = "Email is not valid"
+                confirmEmailField.isEnabled = false
+            }
         }else{
-            validateIcon.isHidden = true
-            emailSkyFloatingTextField.errorMessage = "Email is not valid"
-            registerUIButton.isEnabled = false
-            registerUIButton.backgroundColor = #colorLiteral(red: 0.7647058824, green: 0.7647058824, blue: 0.7647058824, alpha: 1)
+            if confirmEmailField.text == emailSkyFloatingTextField.text{
+                validateIcon.isHidden = false
+                confirmEmailField.errorMessage = nil
+                registerUIButton.isEnabled = true
+                registerUIButton.backgroundColor = #colorLiteral(red: 0.2078431373, green: 0.3921568627, blue: 0.9764705882, alpha: 1)
+            }else{
+                validateIcon.isHidden = true
+                confirmEmailField.errorMessage = "Confirm email is not corect"
+                registerUIButton.isEnabled = false
+                registerUIButton.backgroundColor = #colorLiteral(red: 0.7647058824, green: 0.7647058824, blue: 0.7647058824, alpha: 1)
+            }
         }
     }
     
