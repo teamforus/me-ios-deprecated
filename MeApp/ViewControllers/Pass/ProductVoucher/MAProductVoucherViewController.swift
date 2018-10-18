@@ -19,6 +19,7 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
     var transactions: NSMutableArray! = NSMutableArray()
     @IBOutlet weak var kindPaketQRView: UIView!
     @IBOutlet weak var imageQR: UIImageView!
+    @IBOutlet weak var dateCreatedLabel: UILabel!
     let presenter: Presentr = {
         let presenter = Presentr(presentationType: .alert)
         presenter.transitionType = TransitionType.coverHorizontalFromRight

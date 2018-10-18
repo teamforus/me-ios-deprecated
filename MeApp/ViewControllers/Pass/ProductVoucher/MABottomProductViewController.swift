@@ -1,9 +1,9 @@
 //
-//  MABotomQrProfileViewController.swift
-//  MeApp
+//  MABottomProductViewController.swift
+//  Me
 //
-//  Created by Tcacenco Daniel on 6/22/18.
-//  Copyright © 2018 Tcacenco Daniel. All rights reserved.
+//  Created by Tcacenco Daniel on 10/18/18.
+//  Copyright © 2018 Foundation Forus. All rights reserved.
 //
 
 import UIKit
@@ -12,10 +12,11 @@ import AssistantKit
 import CoreData
 import Reachability
 
-class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate, ISHPullUpStateDelegate{
+class MABottomProductViewController: MABaseViewController , ISHPullUpSizingDelegate, ISHPullUpStateDelegate{
     @IBOutlet private weak var handleView: ISHPullUpHandleView!
     @IBOutlet private weak var rootView: UIView!
     @IBOutlet private weak var topView: UIView!
+    var voucher: Voucher!
     @IBOutlet private weak var buttonLock: UIButton?
     @IBOutlet weak var qrCodeImageView: UIImageView!
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -29,13 +30,15 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.view.isHidden = true
+        //        self.view.isHidden = true
         topView.layer.cornerRadius = 14.0
         rootView.layer.cornerRadius = 14.0
-        rootView.layer.shadowColor = UIColor.black.cgColor;
+        rootView.layer.shadowColor = UIColor.black.cgColor
         rootView.layer.shadowOffset = CGSize(width: 0, height: -2)
         rootView.layer.shadowOpacity = 0.2
         rootView.layer.shadowRadius = 23 / 2
+        self.qrCodeImageView.generateQRCode(from: "{ \"type\": \"voucher\",\"value\": \"\(voucher.address!)\" }")
+        //        self.qrCodeImageView.generateQRCode(from: "{ \"type\": \"auth_token\",\"value\”:\”cd66db60cde7f133bf122db07fdd534bd3ab4d04f9d93af4516c279f4dd1cbb6\“ }")
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture))
         topView.addGestureRecognizer(tapGesture)
         NotificationCenter.default.addObserver(self, selector: #selector(toglePullUpView), name: Notification.Name("togleStateWindow"), object: nil)
@@ -43,20 +46,19 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
         let screen = Device.screen
         switch screen {
         case .inches_4_0:
-            rect.size.height = 440
+            rect.size.height = 404
             break
         case .inches_4_7:
-            rect.size.height = 500
+            rect.size.height = 404
             break
         case .inches_5_5:
-            rect.size.height = 567
+            rect.size.height = 404
             break
         case .inches_5_8:
-            rect.size.height = 567
+            rect.size.height = 404
             break
         default:
             break
-            
         }
         self.rootView.frame = rect
     }
@@ -73,44 +75,10 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         firstAppearanceCompleted = true
-        if reachability.connection != .none{
-            AuthorizeTokenRequest.createToken(completion: { (response, statusCode) in
-                if response.authToken != nil{
-                    self.authorizeToken = response
-                    self.qrCodeImageView.generateQRCode(from: "{ \"type\": \"auth_token\",\"value\": \"\(response.authToken!)\" }")
-                    self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.checkAuthorizeToken), userInfo: nil, repeats: true)
-                }else{
-                    AlertController.showError()
-                }
-            }) { (error) in
-                AlertController.showError()
-            }
-        }else{
-            AlertController.showInternetUnable()
-        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if timer != nil {
-            self.timer.invalidate()
-        }
-    }
-    
-    @objc func checkAuthorizeToken(){
-        Status.checkStatus(accessToken: self.authorizeToken.accessToken, completion: { (code, message) in
-            if code == 200 {
-                if message == "active"{
-                    self.timer.invalidate()
-                    self.updateOldIndentity()
-                    self.saveNewIdentity(accessToken: self.authorizeToken.accessToken)
-                    self.getCurrentUser(accessToken: self.authorizeToken.accessToken)
-                    NotificationCenter.default.post(name: Notification.Name("TokenIsValidate"), object: nil)
-                }
-            }
-        }) { (error) in
-            AlertController.showError()
-        }
     }
     
     func saveNewIdentity(accessToken: String){
@@ -118,7 +86,6 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
         let entity = NSEntityDescription.entity(forEntityName: "User", in: context)
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         fetchRequest.predicate = NSPredicate(format:"accessToken == %@", accessToken)
-        
         do{
             let results = try context.fetch(fetchRequest) as? [NSManagedObject]
             if results?.count == 0 {
@@ -140,10 +107,9 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         fetchRequest.predicate = NSPredicate(format:"currentUser == YES")
-        
         do{
             let results = try context.fetch(fetchRequest) as? [NSManagedObject]
-            if results?.count != 0 {
+            if results?.count == 0 {
                 results![0].setValue(false, forKey: "currentUser")
                 
                 do {
@@ -161,7 +127,6 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         fetchRequest.predicate = NSPredicate(format:"accessToken == %@", accessToken)
-        
         do{
             let results = try context.fetch(fetchRequest) as? [User]
             UserShared.shared.currentUser = results![0]
@@ -175,7 +140,6 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
         if pullUpController.isLocked {
             return
         }
-        
         pullUpController.toggleState(animated: true)
     }
     
@@ -203,13 +167,16 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
     }
     
     func pullUpViewController(_ pullUpViewController: ISHPullUpViewController, minimumHeightForBottomViewController bottomVC: UIViewController) -> CGFloat {
-        return topView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height;
+        return topView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
     }
     
     func pullUpViewController(_ pullUpViewController: ISHPullUpViewController, targetHeightForBottomViewController bottomVC: UIViewController, fromCurrentHeight height: CGFloat) -> CGFloat {
+        
         if abs(height - halfWayPoint) < 30 {
+            pullUpController.toggleState(animated: true)
             return halfWayPoint
         }
+        
         return height
     }
     
@@ -225,13 +192,7 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
         }else if state == .intermediate {
             pullUpController.toggleState(animated: true)
         }
+        
     }
     
-}
-
-class ModalViewController: UIViewController {
-    
-    @IBAction func buttonTappedDone(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
-    }
 }

@@ -25,6 +25,7 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
     @IBOutlet weak var voucherTitleLabel: UILabel!
     @IBOutlet weak var timAvailabelLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var imageBodyView: UIImageView!
     
     let presenter: Presentr = {
         let presenter = Presentr(presentationType: .alert)
@@ -39,11 +40,11 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
         self.priceLabel.text = "€\(voucher.amount!)"
         self.timAvailabelLabel.text = voucher.found.organization.name
         kindPaketQRView.layer.cornerRadius = 9.0
-        kindPaketQRView.layer.shadowColor = UIColor.black.cgColor
-        kindPaketQRView.layer.shadowOffset = CGSize(width: 0, height: 5)
-        kindPaketQRView.layer.shadowOpacity = 0.1
-        kindPaketQRView.layer.shadowRadius = 10.0
-        kindPaketQRView.layer.masksToBounds = false
+        imageBodyView.layer.shadowColor = UIColor.black.cgColor
+        imageBodyView.layer.shadowOffset = CGSize(width: 0, height: 5)
+        imageBodyView.layer.shadowOpacity = 0.1
+        imageBodyView.layer.shadowRadius = 10.0
+        imageBodyView.clipsToBounds = false
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(goToQRReader))
         imageQR.isUserInteractionEnabled = true
         imageQR.addGestureRecognizer(tapGestureRecognizer)

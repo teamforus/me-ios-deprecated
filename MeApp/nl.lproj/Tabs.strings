@@ -15,7 +15,7 @@
 "6mM-3T-qfG.text" = "Vraag";
 
 /* Class = "UITabBarItem"; title = "Eigenschappen"; ObjectID = "7le-DV-ctU"; */
-"7le-DV-ctU.title" = "Eigenschappen";
+"7le-DV-ctU.title" = "Profiel";
 
 /* Class = "UILabel"; text = "300 €"; ObjectID = "9C1-7W-qbu"; */
 "9C1-7W-qbu.text" = "300 €";
@@ -72,4 +72,4 @@
 "s5P-PY-YuN.text" = "Kindpakket";
 
 /* Class = "UITabBarItem"; title = "Eigenschappen"; ObjectID = "vmo-CF-lCr"; */
-"vmo-CF-lCr.title" = "Eigenschappen";
+"vmo-CF-lCr.title" = "Profiel";

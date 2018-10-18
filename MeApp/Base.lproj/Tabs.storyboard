@@ -335,10 +335,10 @@
             </objects>
             <point key="canvasLocation" x="2623" y="984"/>
         </scene>
-        <!--productVoucher-->
+        <!--contentProduct-->
         <scene sceneID="81M-gx-0jH">
             <objects>
-                <viewControllerPlaceholder storyboardName="PassStoryboard" referencedIdentifier="productVoucher" id="Cvi-6D-RK2" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="PassStoryboard" referencedIdentifier="contentProduct" id="Cvi-6D-RK2" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oyh-Kc-GDX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2608" y="1070"/>
@@ -698,7 +698,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2hC-Nt-8iK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2424.8000000000002" y="-878.41079460269873"/>
+            <point key="canvasLocation" x="2694" y="-820"/>
         </scene>
     </scenes>
     <resources>

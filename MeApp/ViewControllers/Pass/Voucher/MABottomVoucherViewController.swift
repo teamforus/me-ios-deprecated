@@ -30,7 +30,7 @@ class MABottomVoucherViewController: MABaseViewController, ISHPullUpSizingDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.isHidden = true
+//        self.view.isHidden = true
         topView.layer.cornerRadius = 14.0
         rootView.layer.cornerRadius = 14.0
         rootView.layer.shadowColor = UIColor.black.cgColor
@@ -39,6 +39,8 @@ class MABottomVoucherViewController: MABaseViewController, ISHPullUpSizingDelega
         rootView.layer.shadowRadius = 23 / 2
          self.qrCodeImageView.generateQRCode(from: "{ \"type\": \"voucher\",\"value\": \"\(voucher.address!)\" }")
 //        self.qrCodeImageView.generateQRCode(from: "{ \"type\": \"auth_token\",\"value\”:\”cd66db60cde7f133bf122db07fdd534bd3ab4d04f9d93af4516c279f4dd1cbb6\“ }")
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture))
+        topView.addGestureRecognizer(tapGesture)
         NotificationCenter.default.addObserver(self, selector: #selector(toglePullUpView), name: Notification.Name("togleStateWindow"), object: nil)
         var rect: CGRect = self.rootView.frame
         let screen = Device.screen

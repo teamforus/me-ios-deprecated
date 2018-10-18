@@ -141,8 +141,9 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
             (profileVC.contentViewController as! MAContentProfileViewController).isCloseButtonHide = false
         }
         else if segue.identifier == "goToVoucherProduct"{
-            let profileVC = segue.destination as! MAProductVoucherViewController
-            profileVC.voucher = self.vouhers[(self.tableView.indexPathForSelectedRow?.row)!] as? Voucher
+            let passVC = segue.destination as! MAContenProductVoucherViewController
+            (passVC.contentViewController as! MAProductVoucherViewController).voucher = self.vouhers[(self.tableView.indexPathForSelectedRow?.row)!] as? Voucher
+            (passVC.bottomViewController as! MABottomProductViewController).voucher = self.vouhers[(self.tableView.indexPathForSelectedRow?.row)!] as? Voucher
         }
     }
 }
