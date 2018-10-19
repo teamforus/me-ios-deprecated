@@ -122,6 +122,9 @@
 /* Class = "UIButton"; normalTitle = "LOGIN VIA DE QR-CODE"; ObjectID = "tc3-ez-uND"; */
 "tc3-ez-uND.normalTitle" = "Login via qr code";
 
+/* Class = "UITextField"; placeholder = "Confirm e-mail"; ObjectID = "yi8-tc-XIf"; */
+"yi8-tc-XIf.placeholder" = "Confirm e-mail";
+
 /* Class = "UITextField"; placeholder = "Given Name"; ObjectID = "vwf-mA-VNp"; */
 "vwf-mA-VNp.placeholder" = "Given Name";
 

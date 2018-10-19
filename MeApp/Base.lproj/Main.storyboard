@@ -355,25 +355,6 @@
                                                     <action selector="back:" destination="VwV-oF-jRp" eventType="touchUpInside" id="W0y-Uz-AKw"/>
                                                 </connections>
                                             </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Herhaal  e-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QCB-TQ-Zj0" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="24" y="328" width="315" height="60"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                                <color key="textColor" red="0.70196078429999997" green="0.72941176470000002" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="18"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
-                                                        <color key="value" red="0.58823529409999997" green="0.61568627450000002" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
-                                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="validateEmailFieldWithTextField:" destination="VwV-oF-jRp" eventType="editingChanged" id="0cd-zd-743"/>
-                                                    <outlet property="delegate" destination="VwV-oF-jRp" id="MYY-uF-VKb"/>
-                                                </connections>
-                                            </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Inloggen via E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Acz-7X-ucB">
                                                 <rect key="frame" x="51" y="17" width="102" height="16"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -402,10 +383,6 @@
                                             </textField>
                                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="proper" translatesAutoresizingMaskIntoConstraints="NO" id="Rxm-Vk-Tmr">
                                                 <rect key="frame" x="315" y="286" width="14" height="14"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="proper" translatesAutoresizingMaskIntoConstraints="NO" id="aQy-zB-fu4">
-                                                <rect key="frame" x="315" y="354" width="14" height="14"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
@@ -443,9 +420,7 @@
                         <viewLayoutGuide key="safeArea" id="Wb4-ZW-6ZD"/>
                     </view>
                     <connections>
-                        <outlet property="confirmEmailSkyTextField" destination="QCB-TQ-Zj0" id="rli-Kf-ddi"/>
                         <outlet property="emailSkyTextField" destination="L2x-vd-lfS" id="RFw-3q-aSu"/>
-                        <outlet property="validationConfirmEmail" destination="aQy-zB-fu4" id="zRj-aI-jmh"/>
                         <outlet property="validationEmailImage" destination="Rxm-Vk-Tmr" id="dgf-7N-egl"/>
                         <segue destination="S0q-vM-DEe" kind="presentation" identifier="goToSuccessMail" id="yfi-LS-IYx"/>
                     </connections>
@@ -1094,7 +1069,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registration succesful" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gu-KB-Q8z">
-                                <rect key="frame" x="20" y="288" width="337" height="97"/>
+                                <rect key="frame" x="20" y="288.5" width="337" height="97"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="97" id="t04-GM-7bm"/>
                                 </constraints>
@@ -1103,7 +1078,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a passcode that will be requested to enter the Me app." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPq-Qe-jcq">
-                                <rect key="frame" x="24" y="426" width="333" height="53.5"/>
+                                <rect key="frame" x="24" y="426.5" width="333" height="49"/>
                                 <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
