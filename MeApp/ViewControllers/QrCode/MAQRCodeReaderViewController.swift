@@ -145,6 +145,7 @@ class MAQRCodeReaderViewController: MABaseViewController {
                     if statusCode == 401{
                         self.logOut()
                     }
+                    AlertController.showSuccess(withText: NSLocalizedString("A record has been validated!", comment: ""))
                     self.reader.startScanning()
                 }, failure: { (error) in
                     AlertController.showError()

@@ -26,6 +26,7 @@ pod 'Fabric'
 pod 'Crashlytics'
 pod 'BWWalkthrough'
 pod 'ReachabilitySwift'
+pod 'Firebase/Core'
 pod 'web3swift', :git => 'https://github.com/MercuryProtocol/web3.swift.git', :branch => 'master'
   target 'MeTests' do
     inherit! :search_paths

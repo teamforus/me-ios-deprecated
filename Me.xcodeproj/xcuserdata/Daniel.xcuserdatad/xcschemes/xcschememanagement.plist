@@ -6,6 +6,8 @@
 	<dict>
 		<key>Me.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>28</integer>
 		</dict>
@@ -13,6 +15,24 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>28</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>65A51F6620B2FFF10010DB33</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>65A51F7D20B2FFF40010DB33</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>65A51F8820B2FFF40010DB33</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
