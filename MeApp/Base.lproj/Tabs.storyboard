@@ -55,7 +55,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="userpick" translatesAutoresizingMaskIntoConstraints="NO" id="kDN-O7-bQf" customClass="RoundImageView" customModule="Me" customModuleProvider="target">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_launcher_APP" translatesAutoresizingMaskIntoConstraints="NO" id="kDN-O7-bQf" customClass="RoundImageView" customModule="Me" customModuleProvider="target">
                                         <rect key="frame" x="311" y="84" width="44" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -706,13 +706,13 @@
         <image name="activeBlue" width="30" height="26"/>
         <image name="eth" width="52" height="52"/>
         <image name="homeIcon" width="17" height="16"/>
+        <image name="ic_launcher_APP" width="210" height="210"/>
         <image name="iconGrey" width="30" height="26"/>
         <image name="iconNotes" width="60" height="60"/>
         <image name="records" width="30" height="26"/>
         <image name="rectangle" width="10" height="7"/>
         <image name="rectangleRed" width="9" height="7"/>
         <image name="shape1" width="21" height="21"/>
-        <image name="userpick" width="40" height="40"/>
         <image name="wallet" width="30" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>

@@ -49,7 +49,7 @@ class MALoginEmailViewController: MABaseViewController {
             if mailIsValid {
                 if reachablity.connection != .none{
                     AuthorizationEmailRequest.loginWithEmail(parameters: try! AuthorizationEmail(email: emailSkyTextField.text!,
-                                                                                                 source:"app.me_app").toJSON() as! Parameters,
+                                                                                                 source:"app-me_app").toJSON() as! Parameters,
                                                              completion: { (response, statusCode) in
                                                                 if response.errors == nil {
                                                                     UserDefaults.standard.setValue(response.accessToken, forKeyPath: "auth_token")

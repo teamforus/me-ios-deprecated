@@ -22,9 +22,15 @@ class MASuccessEmailViewController: MABaseViewController, AppLockerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if UserDefaults.standard.string(forKey: "auth_token") != ""{
-            self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.authorizeToken), userInfo: nil, repeats: true)
-        }
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(authorizeToken(notifcation:)),
+            name: NSNotification.Name(rawValue: "authorizeToken"),
+            object: nil)
+    
+//        if UserDefaults.standard.string(forKey: "auth_token") != ""{
+//            self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.authorizeToken), userInfo: nil, repeats: true)
+//        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,11 +47,10 @@ class MASuccessEmailViewController: MABaseViewController, AppLockerDelegate {
         }
     }
     
-    @objc func authorizeToken(){
-        Status.checkStatus(accessToken: UserDefaults.standard.string(forKey: "auth_token")!, completion: { (code, message) in
+    @objc func authorizeToken(notifcation: Notification){
+        Status.checkStatus(accessToken: notifcation.userInfo?["authToken"] as! String, completion: { (code, message) in
             if code == 200 {
                 if message == "active"{
-                    self.timer.invalidate()
                     //check if user exist or no
                     self.checkPassCode()
                 }

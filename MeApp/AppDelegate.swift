@@ -66,7 +66,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         print(url, options)
-        url.absoluteString.replacingOccurrences(of: "", with: "")
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "authorizeToken"), object: self, userInfo: ["authToken" : url.absoluteString.replacingOccurrences(of: "meapp://identity-restore?token=", with: "")])
         return true
     }
 
