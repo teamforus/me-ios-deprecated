@@ -377,6 +377,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
+                                                    <action selector="validateEmailFieldWithTextField:" destination="VwV-oF-jRp" eventType="valueChanged" id="h0q-JI-mW4"/>
                                                     <outlet property="delegate" destination="VwV-oF-jRp" id="JHt-JA-JPQ"/>
                                                 </connections>
                                             </textField>
@@ -419,6 +420,7 @@
                         <viewLayoutGuide key="safeArea" id="Wb4-ZW-6ZD"/>
                     </view>
                     <connections>
+                        <outlet property="confirmButton" destination="Fac-xa-KgH" id="nPs-Su-kzT"/>
                         <outlet property="emailSkyTextField" destination="L2x-vd-lfS" id="RFw-3q-aSu"/>
                         <outlet property="validationEmailImage" destination="Rxm-Vk-Tmr" id="dgf-7N-egl"/>
                         <segue destination="S0q-vM-DEe" kind="presentation" identifier="goToSuccessMail" id="yfi-LS-IYx"/>

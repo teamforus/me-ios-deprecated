@@ -31,10 +31,10 @@ class MALoginEmailViewController: MABaseViewController {
         if textField == emailSkyTextField  {
             if Validation.validateEmail(emailSkyTextField.text!){
                 validationEmailImage.isHidden = false
-                emailSkyTextField.errorMessage = nil
+                confirmButton.backgroundColor = #colorLiteral(red: 0.7647058824, green: 0.7647058824, blue: 0.7647058824, alpha: 1)
             }else{
                 validationEmailImage.isHidden = true
-                emailSkyTextField.errorMessage = "Email is not valid"
+                confirmButton.backgroundColor = #colorLiteral(red: 0.2078431373, green: 0.3921568627, blue: 0.9764705882, alpha: 1)
             }
         }
     }
