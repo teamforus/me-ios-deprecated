@@ -150,11 +150,13 @@ public class AppLocker: UIViewController {
   }
   
   private func validateModeAction() {
+    UserDefaults.standard.set(true, forKey: "PINCODEENABLED")
     pin == savedPin ? dismiss(animated: true, completion: nil) : incorrectPinAnimation()
     delegate.closePinCodeView(typeClose: .validate)
   }
   
   private func removePin() {
+    UserDefaults.standard.set(false, forKey: "PINCODEENABLED")
     UserDefaults.standard.removeObject(forKey: ALConstants.kPincode)
     dismiss(animated: true, completion: nil)
     delegate.closePinCodeView(typeClose: .delete)
@@ -162,6 +164,7 @@ public class AppLocker: UIViewController {
   }
   
   private func confirmPin() {
+    UserDefaults.standard.set(true, forKey: "PINCODEENABLED")
     if pin == reservedPin {
       savedPin = pin
       dismiss(animated: true, completion: nil)

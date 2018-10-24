@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import Presentr
+import SkyFloatingLabelTextField
 
 class MAContentVoucherPaymentViewController: MABaseViewController {
     @IBOutlet weak var paketTitle: UILabel!
@@ -19,6 +20,8 @@ class MAContentVoucherPaymentViewController: MABaseViewController {
     @IBOutlet weak var organizationImageView: UIImageView!
     @IBOutlet weak var pricePayLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var amount: SkyFloatingLabelTextField!
+    @IBOutlet weak var noteSkyTextField: SkyFloatingLabelTextField!
     let presenter: Presentr = {
         let presenter = Presentr(presentationType: .alert)
         presenter.transitionType = TransitionType.coverHorizontalFromRight
@@ -34,21 +37,41 @@ class MAContentVoucherPaymentViewController: MABaseViewController {
         priceLabel.text = "€\(voucher.amount ?? 0)"
     }
     
-    @IBAction func pay(_ sender: Any) {
-        let parameters: Parameters = [
-            "organization_id" : voucher.allowedOrganizations!.first?.id ?? 0,
-            "amount" : voucher.amount]
-        TransactionVoucherRequest.makeTransaction(parameters: parameters, identityAdress: voucher.address, completion: { (transaction, statusCode) in
-            if statusCode == 201{
-                self.dismiss(animated: true, completion: nil)
+    @IBAction func send(_ sender: Any) {
+        if amount.text != "" {
+            if  Float(amount.text!)! > Float(self.voucher.amount ?? 0){
+                amount.errorMessage = "You enter more biger price then amount!"
+            }else{
+                amount.errorMessage = nil
+                let parameters: Parameters = [
+                    "organization_id" : voucher.allowedOrganizations!.first?.id ?? 0,
+                    "amount" : Float(self.amount.text!)!,
+                    "note" : noteSkyTextField.text ?? ""]
+                TransactionVoucherRequest.makeTransaction(parameters: parameters, identityAdress: voucher.address, completion: { (transaction, statusCode) in
+                    if statusCode == 201{
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                    
+                }) { (error) in
+                    
+                }
             }
-            
-        }) { (error) in
-            
+        }else{
+            amount.errorMessage = "This field is required"
         }
     }
     
-   
+    @IBAction func checkAmount(_ sender: Any) {
+        if amount.text != "" {
+            if Float(amount.text!)! > Float(self.voucher.amount  ?? 0){
+                amount.errorMessage = "You enter more biger price then amount!"
+            }else{
+                amount.errorMessage = nil
+            }
+        }else {
+            amount.errorMessage = "This field is required"
+        }
+    }
     
     @IBAction func dismiss(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

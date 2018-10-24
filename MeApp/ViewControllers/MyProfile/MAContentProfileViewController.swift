@@ -64,7 +64,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
        
-        if !UserDefaults.standard.bool(forKey: "PINCODEENABLED"){
+        if UserDefaults.standard.string(forKey: ALConstants.kPincode) == "" || UserDefaults.standard.string(forKey: ALConstants.kPincode) == nil{
             passcodeLabel.text = "Turn On Passcode"
             turnOffPascodeView.isHidden = true
             verticalSpacingFaceIdLogin.constant = 10
@@ -100,7 +100,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     
     @IBAction func editPasscode(_ sender: Any) {
         if reachability.connection != .none{
-        if UserDefaults.standard.bool(forKey: "PINCODEENABLED"){
+        if UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" || UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil{
         var appearance = ALAppearance()
         appearance.image = UIImage(named: "lock")!
         appearance.title = "Edit passcode"

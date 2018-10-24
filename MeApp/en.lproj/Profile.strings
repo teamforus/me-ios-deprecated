@@ -29,8 +29,8 @@
 /* Class = "UIButton"; normalTitle = "Close"; ObjectID = "Vgc-gt-tFS"; */
 "Vgc-gt-tFS.normalTitle" = "Close";
 
-/* Class = "UILabel"; text = "Adoplph Nalevia Hollenbeck-Moore"; ObjectID = "Wfm-Qk-FJu"; */
-"Wfm-Qk-FJu.text" = "Adoplph Nalevia Hollenbeck-Moore";
+/* Class = "UILabel"; text = "Your Profile"; ObjectID = "Wfm-Qk-FJu"; */
+"Wfm-Qk-FJu.text" = "Your Profile";
 
 /* Class = "UILabel"; text = "Use Face ID for login"; ObjectID = "mcu-8u-YwG"; */
 "mcu-8u-YwG.text" = "Use Face ID for login";
