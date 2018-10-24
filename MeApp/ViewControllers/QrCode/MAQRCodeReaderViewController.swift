@@ -119,9 +119,9 @@ class MAQRCodeReaderViewController: MABaseViewController {
                     }
                 }))
                 
-                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                alert.addAction(UIAlertAction(title: "Annuleer", style: .cancel, handler: nil))
             default:
-                alert = UIAlertController(title: "Error", message: "Reader not supported by the current device", preferredStyle: .alert)
+                alert = UIAlertController(title: "Error", message: "De scanner wordt niet ondersteund op dit apparaat", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             }
             
@@ -139,7 +139,7 @@ class MAQRCodeReaderViewController: MABaseViewController {
             self.reader.startScanning()
             let alert: UIAlertController
             alert = UIAlertController(title: response.name, message: response.value, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Aprove", style: .default, handler: { (action) in
+            alert.addAction(UIAlertAction(title: "Valideer", style: .default, handler: { (action) in
                 self.reader.startScanning()
                 RecordsRequest.aproveValidationTokenRecord(token: code, completion: { (response, statusCode) in
                     if statusCode == 401{
@@ -152,7 +152,7 @@ class MAQRCodeReaderViewController: MABaseViewController {
                     self.reader.startScanning()
                 })
             }))
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+            alert.addAction(UIAlertAction(title: "Annuleer", style: .cancel, handler: { (action) in
                 self.reader.startScanning()
             }))
             self.present(alert, animated: true, completion: nil)
@@ -187,7 +187,7 @@ class MAQRCodeReaderViewController: MABaseViewController {
                 self.voucher = voucher
                 self.performSegue(withIdentifier: "goToVoucherPayment", sender: nil)
             }else{
-                AlertController.showWarning(withText: "Sorry this voucher is not availebel for you!")
+                AlertController.showWarning(withText: "Sorry je voldoet niet aan de voorwaarden voor deze voucher")
             }
             self.reader.startScanning()
         }) { (error) in

@@ -43,7 +43,7 @@ class MALoginEmailViewController: MABaseViewController {
         if emailSkyTextField.text == ""{
             emailSkyTextField.errorMessage = "Email is empty"
         }else if !Validation.validateEmail(emailSkyTextField.text!){
-            emailSkyTextField.errorMessage = "Email is not valid"
+            emailSkyTextField.errorMessage = "E-mailadres is ongeldig"
         }else{
             emailSkyTextField.errorMessage = nil
             if mailIsValid {

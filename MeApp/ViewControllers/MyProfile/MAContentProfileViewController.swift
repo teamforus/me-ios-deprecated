@@ -48,7 +48,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         
         if !faceIDAvailable(){
             faceIdImage.image = #imageLiteral(resourceName: "touchId")
-            faceIdLabel.text = "Use Touch ID for login"
+            faceIdLabel.text = "Touch ID aanzetten"
         }
         if UserShared.shared.currentUser.primaryEmail != nil{
         profileNameLabel.text = "\(UserShared.shared.currentUser.firstName!) \(UserShared.shared.currentUser.lastName!)"
@@ -65,7 +65,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         super.viewWillAppear(animated)
        
         if !UserDefaults.standard.bool(forKey: "PINCODEENABLED"){
-            passcodeLabel.text = "Turn On Passcode"
+            passcodeLabel.text = "Inlogcode aanzetten"
             turnOffPascodeView.isHidden = true
             verticalSpacingFaceIdLogin.constant = 10
             heightButtonsView.constant = 124
@@ -113,8 +113,8 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         }else{
             var appearance = ALAppearance()
             appearance.image = UIImage(named: "lock")!
-            appearance.title = "Create passcode"
-            appearance.subtitle = "Enter your passcode"
+            appearance.title = "Inlogcode"
+            appearance.subtitle = "Stel in een inlogcode in"
             appearance.isSensorsEnabled = true
             appearance.cancelIsVissible = true
             appearance.delegate = self
@@ -133,8 +133,8 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     
     @IBAction func aboutMe(_ sender: Any) {
         let popupTransction =  MAAboutMeViewController(nibName: "MAAboutMeViewController", bundle: nil)
-        popupTransction.titleDetail = "About Me app"
-        popupTransction.descriptionDetail = "Me app will support three main groups of functionality: a wallet for the things you own, your personal records and a way to identify and interact with third parties (applications, people or organisations)"
+        popupTransction.titleDetail = "Over Me"
+        popupTransction.descriptionDetail = "Met de Me App kan je een indentiteit aanmaken, vouchers beheren en de QR-code scanner gebruiken om in te loggen op de gebruikersomgeving."
         self.presenter.presentationType = .popup
         self.presenter.transitionType = nil
         self.presenter.dismissTransitionType = nil
@@ -166,8 +166,8 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     @IBAction func deletePasscode(_ sender: Any) {
         var appearance = ALAppearance()
         appearance.image = UIImage(named: "lock")!
-        appearance.title = "Turn off passcode"
-        appearance.subtitle = "Enter your passcode"
+        appearance.title = "Inlogcode uitzetten"
+        appearance.subtitle = "Vul je inlogcode in"
         appearance.isSensorsEnabled = true
         appearance.cancelIsVissible = true
         appearance.delegate = self

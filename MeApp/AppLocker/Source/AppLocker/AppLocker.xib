@@ -269,7 +269,7 @@
                             <button hidden="YES" opaque="NO" clipsSubviews="YES" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIU-9Q-OSg">
                                 <rect key="frame" x="55.5" y="314" width="74.5" height="74.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Cancel">
+                                <state key="normal" title="Annuleer">
                                     <color key="titleColor" red="0.20784313730000001" green="0.3921568627" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <state key="highlighted">

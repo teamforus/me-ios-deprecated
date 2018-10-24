@@ -106,8 +106,8 @@ class MASuccessEmailViewController: MABaseViewController, AppLockerDelegate {
                     UserDefaults.standard.set(user.pinCode, forKey: ALConstants.kPincode)
                     var appearance = ALAppearance()
                     appearance.image = UIImage(named: "lock")!
-                    appearance.title = "Create passcode"
-                    appearance.subtitle = "Your passcode is required"
+                    appearance.title = "Inlogcode"
+                    appearance.subtitle = "Maak een inlogcode aan"
                     appearance.isSensorsEnabled = true
                     appearance.cancelIsVissible = false
                     appearance.delegate = self
@@ -118,8 +118,8 @@ class MASuccessEmailViewController: MABaseViewController, AppLockerDelegate {
                 UserDefaults.standard.set("", forKey: ALConstants.kPincode)
                 var appearance = ALAppearance()
                 appearance.image = UIImage(named: "lock")!
-                appearance.title = "Create passcode"
-                appearance.subtitle = "Your passcode is required"
+                appearance.title = "Inlogcode"
+                appearance.subtitle = "Maak een inlogcode aan"
                 appearance.isSensorsEnabled = true
                 appearance.cancelIsVissible = false
                 appearance.delegate = self

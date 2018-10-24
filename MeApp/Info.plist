@@ -55,7 +55,7 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>The camera is needed to scan QR codes</string>
+	<string>De camera wordt gebruikt om QR-Codes te scannen</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Your microphone will be used to record your speech when you press the "Start Recording" button.</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
