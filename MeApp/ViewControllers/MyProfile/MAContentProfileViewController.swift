@@ -68,7 +68,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
             verticalSpacingFaceIdLogin.constant = 10
             heightButtonsView.constant = 124
         }
-    }
+    
     
     func faceIDAvailable() -> Bool {
         if #available(iOS 11.0, *) {
@@ -193,3 +193,4 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     
 
 }
+

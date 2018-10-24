@@ -167,13 +167,10 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.96066790819168091" green="0.96077126264572144" blue="0.96475189924240112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
-<<<<<<< HEAD
+
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="beW-H0-ko8" customClass="CustomCornerUIView" customModule="Me" customModuleProvider="target">
                                         <rect key="frame" x="10" y="80" width="355" height="50"/>
-=======
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sag-bH-3ei" customClass="CustomCornerUIView" customModule="Me" customModuleProvider="target">
-                                        <rect key="frame" x="17" y="80" width="340" height="50"/>
->>>>>>> 7ac11c71713d007e5dded607403b21ac9550c7ad
+
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CIO-xg-YnF" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
