@@ -27,7 +27,7 @@
 "GCG-V7-S8z.text" = "Voornaam";
 
 /* Class = "UILabel"; text = "You have no vouchers yet"; ObjectID = "KKt-19-VeG"; */
-"KKt-19-VeG.text" = "You have no vouchers yet";
+"KKt-19-VeG.text" = "Je hebt nog geen vouchers.";
 
 /* Class = "UILabel"; text = "5 eigenschappen"; ObjectID = "Lw5-t1-Wd1"; */
 "Lw5-t1-Wd1.text" = "5 eigenschappen";
@@ -45,10 +45,10 @@
 "PaZ-DR-I5J.text" = "2 dagen geldig";
 
 /* Class = "UILabel"; text = "Zend"; ObjectID = "Rsx-qJ-ODf"; */
-"Rsx-qJ-ODf.text" = "Zend";
+"Rsx-qJ-ODf.text" = "Verstuur";
 
 /* Class = "UILabel"; text = "18 tagen geldig"; ObjectID = "ZYv-E9-UR4"; */
-"ZYv-E9-UR4.text" = "18 tagen geldig";
+"ZYv-E9-UR4.text" = "18 dagen geldig";
 
 /* Class = "UITabBarItem"; title = "QR"; ObjectID = "a2M-XK-0VC"; */
 "a2M-XK-0VC.title" = "QR";
@@ -66,7 +66,7 @@
 "hcM-rM-dYg.text" = "E-mail";
 
 /* Class = "UILabel"; text = "Favourites"; ObjectID = "nQs-aP-PJ9"; */
-"nQs-aP-PJ9.text" = "Favourites";
+"nQs-aP-PJ9.text" = "Favorieten";
 
 /* Class = "UILabel"; text = "Kindpakket"; ObjectID = "s5P-PY-YuN"; */
 "s5P-PY-YuN.text" = "Kindpakket";

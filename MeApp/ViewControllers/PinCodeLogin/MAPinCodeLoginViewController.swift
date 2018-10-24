@@ -214,8 +214,8 @@ class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
     
     @IBAction func aboutAction(_ sender: Any) {
         let popupTransction =  MAAboutMeViewController(nibName: "MAAboutMeViewController", bundle: nil)
-        popupTransction.titleDetail = "How work that?"
-        popupTransction.descriptionDetail = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        popupTransction.titleDetail = "Hoe werkt het?"
+        popupTransction.descriptionDetail = "Heb je al een indentiteit en ben je al ingelogd op de webshop? Open dan je indentiteit via de webshop en klik op 'Autoriseer apparaat' en vul de code in die op de Me App zichtbaar is."
         self.presenter.presentationType = .popup
         self.presenter.transitionType = nil
         self.presenter.dismissTransitionType = nil

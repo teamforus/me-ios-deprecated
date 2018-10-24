@@ -82,13 +82,13 @@ public class AppLocker: UIViewController {
       let mode = self.mode ?? .validate
       switch mode {
       case .create:
-        messageLabel.text = "Create passcode" // Your submessage for create mode
+        messageLabel.text = "Inlogcode" // Your submessage for create mode
       case .change:
-        messageLabel.text = "Enter passcode" // Your submessage for change mode
+        messageLabel.text = "Vul je inlogcode in" // Your submessage for change mode
       case .deactive:
-        messageLabel.text = "Turn off passcode" // Your submessage for deactive mode
+        messageLabel.text = "Inlogcode uitzetten" // Your submessage for deactive mode
       case .validate:
-        messageLabel.text = "Enter passcode" // Your submessage for validate mode
+        messageLabel.text = "Vul je inlogcode in" // Your submessage for validate mode
         isFirstCreationStep = false
       }
     }
@@ -135,7 +135,7 @@ public class AppLocker: UIViewController {
       isFirstCreationStep = false
       reservedPin = pin
       clearView()
-      messageLabel.text = "Confirm password"
+      messageLabel.text = "Bevestig code"
     } else {
       confirmPin()
     }

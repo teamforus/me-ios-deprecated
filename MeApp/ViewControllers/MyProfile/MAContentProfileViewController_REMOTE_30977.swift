@@ -64,6 +64,8 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
        
+        if !UserDefaults.standard.bool(forKey: "PINCODEENABLED"){
+            passcodeLabel.text = "Inlogcode aanzetten"
             turnOffPascodeView.isHidden = true
             verticalSpacingFaceIdLogin.constant = 10
             heightButtonsView.constant = 124
@@ -98,7 +100,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     
     @IBAction func editPasscode(_ sender: Any) {
         if reachability.connection != .none{
-        if UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" || UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil{
+        if UserDefaults.standard.bool(forKey: "PINCODEENABLED"){
         var appearance = ALAppearance()
         appearance.image = UIImage(named: "lock")!
         appearance.title = "Edit passcode"
@@ -131,6 +133,8 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     
     @IBAction func aboutMe(_ sender: Any) {
         let popupTransction =  MAAboutMeViewController(nibName: "MAAboutMeViewController", bundle: nil)
+        popupTransction.titleDetail = "Over Me"
+        popupTransction.descriptionDetail = "Met de Me App kan je een indentiteit aanmaken, vouchers beheren en de QR-code scanner gebruiken om in te loggen op de gebruikersomgeving."
         self.presenter.presentationType = .popup
         self.presenter.transitionType = nil
         self.presenter.dismissTransitionType = nil
