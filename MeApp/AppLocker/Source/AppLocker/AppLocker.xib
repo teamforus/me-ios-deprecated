@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -34,7 +32,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="255"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hVx-18-l1J">
-                                <rect key="frame" x="167" y="42.5" width="40" height="60"/>
+                                <rect key="frame" x="167.5" y="42.5" width="40" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hVx-18-l1J" secondAttribute="height" multiplier="1:1" constant="-20" id="wcK-td-OD3"/>
                                 </constraints>
@@ -45,31 +43,31 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6kS-ba-3rR">
-                                <rect key="frame" x="8" y="208" width="359" height="28"/>
+                                <rect key="frame" x="8" y="231" width="359" height="28"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y48-OI-bV6" userLabel="first" customClass="Indicator" customModule="Me" customModuleProvider="target">
-                                        <rect key="frame" x="120" y="7.5" width="14.5" height="14.5"/>
+                                        <rect key="frame" x="121.5" y="7" width="14" height="14"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="y48-OI-bV6" secondAttribute="height" multiplier="1:1" id="cHE-Dp-W1T"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EvL-fK-aNd" userLabel="second" customClass="Indicator" customModule="Me" customModuleProvider="target">
-                                        <rect key="frame" x="155" y="7.5" width="14.5" height="14.5"/>
+                                        <rect key="frame" x="155.5" y="7" width="14" height="14"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="EvL-fK-aNd" secondAttribute="height" multiplier="1:1" id="mWJ-SV-lPQ"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ty0-rX-vyo" userLabel="third" customClass="Indicator" customModule="Me" customModuleProvider="target">
-                                        <rect key="frame" x="189.5" y="7.5" width="14.5" height="14.5"/>
+                                        <rect key="frame" x="189.5" y="7" width="14" height="14"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ty0-rX-vyo" secondAttribute="height" multiplier="1:1" id="Bb2-Nk-aDy"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nQv-Y6-U7g" userLabel="four" customClass="Indicator" customModule="Me" customModuleProvider="target">
-                                        <rect key="frame" x="223.5" y="7.5" width="14.5" height="14.5"/>
+                                        <rect key="frame" x="223.5" y="7" width="14" height="14"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="nQv-Y6-U7g" secondAttribute="height" multiplier="1:1" id="XIl-Rp-NHx"/>
@@ -113,7 +111,7 @@
                             <constraint firstItem="BiA-iv-5oK" firstAttribute="top" secondItem="hVx-18-l1J" secondAttribute="bottom" constant="8.5" id="dUH-mc-nNL"/>
                             <constraint firstAttribute="trailing" secondItem="6kS-ba-3rR" secondAttribute="trailing" constant="8" id="gi3-Ze-ZlI"/>
                             <constraint firstItem="BiA-iv-5oK" firstAttribute="leading" secondItem="O4o-Ks-4Ii" secondAttribute="leading" constant="20" id="hm6-JS-fkp"/>
-                            <constraint firstItem="6kS-ba-3rR" firstAttribute="top" secondItem="9Yc-zm-CFr" secondAttribute="bottom" constant="-12" id="rwf-wn-aLV"/>
+                            <constraint firstItem="6kS-ba-3rR" firstAttribute="top" secondItem="9Yc-zm-CFr" secondAttribute="bottom" constant="11" id="rwf-wn-aLV"/>
                             <constraint firstItem="6kS-ba-3rR" firstAttribute="leading" secondItem="O4o-Ks-4Ii" secondAttribute="leading" constant="8" id="x0K-gx-1Dy"/>
                             <constraint firstAttribute="trailing" secondItem="9Yc-zm-CFr" secondAttribute="trailing" constant="8" id="y15-Jy-o4e"/>
                         </constraints>
@@ -122,7 +120,7 @@
                         <rect key="frame" x="0.0" y="248" width="375" height="419"/>
                         <subviews>
                             <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uxb-3y-6MP" customClass="Button" customModule="Me" customModuleProvider="target">
-                                <rect key="frame" x="56" y="40.5" width="74.5" height="74.5"/>
+                                <rect key="frame" x="55" y="40.5" width="75" height="75"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="1">
                                     <color key="titleColor" red="0.20784313725490197" green="0.39215686274509803" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -135,7 +133,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJZ-BT-9eb" customClass="Button" customModule="Me" customModuleProvider="target">
-                                <rect key="frame" x="150.5" y="40.5" width="75" height="74.5"/>
+                                <rect key="frame" x="150" y="40.5" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="HJZ-BT-9eb" secondAttribute="height" multiplier="1:1" id="1VR-Td-HwG"/>
                                 </constraints>
@@ -151,7 +149,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cog-Nd-UYd" customClass="Button" customModule="Me" customModuleProvider="target">
-                                <rect key="frame" x="245.5" y="40.5" width="74.5" height="74.5"/>
+                                <rect key="frame" x="245" y="40.5" width="75" height="75"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="3">
                                     <color key="titleColor" red="0.20784313725490197" green="0.39215686274509803" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -164,7 +162,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJn-a6-MYe" customClass="Button" customModule="Me" customModuleProvider="target">
-                                <rect key="frame" x="56" y="131.5" width="74.5" height="75"/>
+                                <rect key="frame" x="55" y="131.5" width="75" height="75"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="4">
                                     <color key="titleColor" red="0.20784313725490197" green="0.39215686274509803" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -190,7 +188,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uve-ti-7ya" customClass="Button" customModule="Me" customModuleProvider="target">
-                                <rect key="frame" x="245.5" y="131.5" width="74.5" height="75"/>
+                                <rect key="frame" x="245" y="131.5" width="75" height="75"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="6">
                                     <color key="titleColor" red="0.20784313725490197" green="0.39215686274509803" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -203,7 +201,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAE-1L-zxN" customClass="Button" customModule="Me" customModuleProvider="target">
-                                <rect key="frame" x="56" y="222.5" width="74.5" height="75"/>
+                                <rect key="frame" x="55" y="222.5" width="75" height="75"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="7">
                                     <color key="titleColor" red="0.20784313725490197" green="0.39215686274509803" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -229,7 +227,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKD-qE-N40" customClass="Button" customModule="Me" customModuleProvider="target">
-                                <rect key="frame" x="245.5" y="222.5" width="74.5" height="75"/>
+                                <rect key="frame" x="245" y="222.5" width="75" height="75"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="9">
                                     <color key="titleColor" red="0.20784313725490197" green="0.39215686274509803" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -267,7 +265,7 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" clipsSubviews="YES" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIU-9Q-OSg">
-                                <rect key="frame" x="55.5" y="314" width="74.5" height="74.5"/>
+                                <rect key="frame" x="55" y="313.5" width="75" height="75"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Annuleer">
                                     <color key="titleColor" red="0.20784313730000001" green="0.3921568627" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
