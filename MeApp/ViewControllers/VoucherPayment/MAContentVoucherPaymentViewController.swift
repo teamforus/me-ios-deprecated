@@ -32,8 +32,16 @@ class MAContentVoucherPaymentViewController: MABaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        paketTitle.text = voucher.found.name
-        organizationNameLabel.text = voucher.found.organization.name
+        if voucher.product != nil {
+        paketTitle.text = voucher.product?.name
+            organizationNameLabel.text = voucher.product?.organization.name
+        }else{
+            paketTitle.text = voucher.found.name
+            organizationNameLabel.text = voucher.found.organization.name ?? ""
+            
+        }
+        
+        
         if voucher.product != nil {
             priceLabel.text = "€\(voucher.product?.price! ?? 0.0)"
         }else{
@@ -91,6 +99,9 @@ extension MAContentVoucherPaymentViewController: UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if voucher.product != nil {
+            return 0
+        }
         return (voucher?.allowedProductCategories?.count)!
     }
     
