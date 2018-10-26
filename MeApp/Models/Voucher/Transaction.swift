@@ -13,7 +13,7 @@ import Alamofire
 struct Transactions {
     var organizationId: Int!
     var productId: Int!
-    var amount: Int!
+    var amount: String!
     var adress: String!
     var organization: Organization!
     var product: Product!
