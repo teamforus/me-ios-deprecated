@@ -40,14 +40,20 @@ class MAContentVoucherPaymentViewController: MABaseViewController {
             organizationNameLabel.text = voucher.found.organization.name ?? ""
             
         }
-        
-        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        self.view.isUserInteractionEnabled = true
+         self.view.addGestureRecognizer(tapGestureRecognizer)
         if voucher.product != nil {
             priceLabel.text = "€\(voucher.product?.price! ?? 0.0)"
         }else{
             priceLabel.text = "€\(voucher.amount ?? 0.0)"
         }
         
+    }
+    
+    @objc func dismissKeyboard(){
+        //        self.tabBarController?.selectedIndex = 1
+        self.view.endEditing(true)
     }
     
     @IBAction func send(_ sender: Any) {
