@@ -34,18 +34,23 @@ class MAContentVoucherPaymentViewController: MABaseViewController {
         super.viewDidLoad()
         paketTitle.text = voucher.found.name
         organizationNameLabel.text = voucher.found.organization.name
-        priceLabel.text = "€\(voucher.amount ?? 0)"
+        if voucher.product != nil {
+            priceLabel.text = "€\(voucher.product?.price! ?? 0.0)"
+        }else{
+            priceLabel.text = "€\(voucher.amount ?? 0)"
+        }
+        
     }
     
     @IBAction func send(_ sender: Any) {
         if amount.text != "" {
-            if  Float(amount.text!)! > Float(self.voucher.amount ?? 0){
+            if  Double(amount.text!)! > Double(self.voucher.amount ?? 0){
                 amount.errorMessage = "You enter more biger price then amount!"
             }else{
                 amount.errorMessage = nil
                 let parameters: Parameters = [
                     "organization_id" : voucher.allowedOrganizations!.first?.id ?? 0,
-                    "amount" : Float(self.amount.text!)!,
+                    "amount" : Double(self.amount.text!)!,
                     "note" : noteSkyTextField.text ?? ""]
                 TransactionVoucherRequest.makeTransaction(parameters: parameters, identityAdress: voucher.address, completion: { (transaction, statusCode) in
                     if statusCode == 201{
@@ -63,7 +68,7 @@ class MAContentVoucherPaymentViewController: MABaseViewController {
     
     @IBAction func checkAmount(_ sender: Any) {
         if amount.text != "" {
-            if Float(amount.text!)! > Float(self.voucher.amount  ?? 0){
+            if Double(amount.text!)! > Double(self.voucher.amount  ?? 0){
                 amount.errorMessage = "You enter more biger price then amount!"
             }else{
                 amount.errorMessage = nil
