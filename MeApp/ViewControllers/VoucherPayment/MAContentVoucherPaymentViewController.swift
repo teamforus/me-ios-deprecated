@@ -37,7 +37,7 @@ class MAContentVoucherPaymentViewController: MABaseViewController {
         if voucher.product != nil {
             priceLabel.text = "€\(voucher.product?.price! ?? 0.0)"
         }else{
-            priceLabel.text = "€\(voucher.amount ?? 0)"
+            priceLabel.text = "€\(voucher.amount ?? 0.0)"
         }
         
     }
