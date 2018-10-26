@@ -165,11 +165,14 @@ class VoucherRequest {
                 var transaction: Voucher!
                 if let json = response.result.value {
                     
-                    if (json as AnyObject).count != 0 {
+                    if (json as AnyObject).count != 0 && (json as AnyObject).count != 5 {
                         transaction = try! Voucher(object: (json as AnyObject)["data"] as! JSONObject)
+                        completion(transaction, (response.response?.statusCode)!)
+                    }else{
+                        completion(Voucher(), (response.response?.statusCode)!)
                     }
                 }
-                completion(transaction, (response.response?.statusCode)!)
+                
                 
                 break
             case .failure(let error):

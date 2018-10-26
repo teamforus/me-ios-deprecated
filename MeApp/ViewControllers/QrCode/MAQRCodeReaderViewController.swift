@@ -175,7 +175,7 @@ class MAQRCodeReaderViewController: MABaseViewController {
     
     func getProviderConfirm(address:String){
         VoucherRequest.getProvider(identityAdress: address, completion: { (voucher, statusCode) in
-            if voucher.allowedOrganizations?.count != 0 {
+            if voucher.allowedOrganizations?.count != 0 && voucher.allowedOrganizations?.count  != nil {
                 
 //            let popupTransction =  MAShareVaucherViewController(nibName: "MAShareVaucherViewController", bundle: nil)
 //            popupTransction.voucher = voucher
@@ -186,8 +186,12 @@ class MAQRCodeReaderViewController: MABaseViewController {
 //            self.customPresentViewController(self.presenter, viewController: popupTransction, animated: true, completion: nil)
                 self.voucher = voucher
                 self.performSegue(withIdentifier: "goToVoucherPayment", sender: nil)
+            }else if voucher.product != nil{
+                self.voucher = voucher
+                self.performSegue(withIdentifier: "goToVoucherPayment", sender: nil)
+               
             }else{
-                AlertController.showWarning(withText: "Sorry je voldoet niet aan de voorwaarden voor deze voucher")
+                 AlertController.showWarning(withText: "Sorry je voldoet niet aan de voorwaarden voor deze voucher")
             }
             self.reader.startScanning()
         }) { (error) in
