@@ -14,7 +14,7 @@ struct Voucher {
     var foundID: Int!
     var identityAdress: String!
     var address: String!
-    var amount: Int!
+    var amount: Float!
     var found: Found!
     var transactions: Array<Transactions>!
     var allowedOrganizations: Array<AllowedOrganizations>?
@@ -79,7 +79,7 @@ struct ProductVoucher {
     var id: Int!
     var name: String!
     var description: String!
-    var price: Int!
+    var price: Double!
     var oldPrice: Int!
     var totalAmount: Int!
     var soldAmount: Int!

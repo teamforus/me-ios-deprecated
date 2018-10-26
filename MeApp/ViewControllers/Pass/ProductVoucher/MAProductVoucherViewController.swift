@@ -30,7 +30,7 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
         super.viewDidLoad()
 
         self.voucherTitleLabel.text = voucher.product?.name
-        self.priceLabel.text = "€\(voucher.amount!)"
+        self.priceLabel.text = "€\(voucher.product?.price! ?? 0.0)"
         self.timAvailabelLabel.text = voucher.product?.organization.name
     }
     

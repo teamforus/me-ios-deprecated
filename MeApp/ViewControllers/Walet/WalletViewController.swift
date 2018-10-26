@@ -223,10 +223,13 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
             let voucher = self.vouhers[indexPath.row] as! Voucher
             if voucher.product != nil{
                 cellWallet.voucherTitleLabel.text = voucher.product?.name
+                cellWallet.priceLabel.text = "€\(voucher.product?.price! ?? 0.0)"
             }else{
                 cellWallet.voucherTitleLabel.text = voucher.found.name
+                cellWallet.priceLabel.text = "€\(voucher.amount ?? 0)"
             }
-            cellWallet.priceLabel.text = "€\(voucher.amount!)"
+            
+            
             cellWallet.organizationNameLabel.text = voucher.found.organization.name
             cell = cellWallet
         default:
