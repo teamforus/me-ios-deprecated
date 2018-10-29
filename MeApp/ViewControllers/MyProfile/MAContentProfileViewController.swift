@@ -102,7 +102,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     
     @IBAction func editPasscode(_ sender: Any) {
         if reachability.connection != .none{
-            if UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" || UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil{
+            if UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" && UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil{
                 var appearance = ALAppearance()
                 appearance.image = UIImage(named: "lock")!
                 appearance.title = "Edit passcode"
