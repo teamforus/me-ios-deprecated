@@ -38,11 +38,116 @@ class MACreateNewIdentityViewController: MABaseViewController {
         if Validation.validateEmail(emailSkyFloatingTextField.text!) && confirmEmailField.text == emailSkyFloatingTextField.text{
             if Validation.validateFieldEmpty(textField: givenNameField) || Validation.validateFieldEmpty(textField: familyNameField) {
                 if reachablity.connection != .none{
-                    self.performSegue(withIdentifier: "goToPassword", sender: self)
+                    let emailObject = ["primary_email" : emailSkyFloatingTextField.text,
+                                       "family_name" : familyNameField.text,
+                                       "given_name" : givenNameField.text]
+                    let parameters: Parameters = ["pin_code" : "1111",
+                                                  "records" : emailObject]
+                    RequestNewIndetity.createnewIndentity(parameters: parameters,
+                                                          completion: { (response, statusCode) in
+                                                            if statusCode == 401 {
+                                                                
+                                                            }
+                                                            if response.errors == nil && response.accessToken != nil{
+                                                                self.updateOldIndentity()
+                                                                self.saveNewIdentity(accessToken: response.accessToken)
+                                                                self.getCurrentUser(primaryEmai: self.emailSkyFloatingTextField.text)
+                                                                RecordCategoryRequest.createRecordCategory(completion: { (response, statusCode) in
+                                                                    
+                                                                }) { (error) in
+                                                                    
+                                                                }
+                                                                UserDefaults.standard.set(false, forKey: "PINCODEENABLED")
+                                                                UserDefaults.standard.set("", forKey: ALConstants.kPincode)
+                                                                self.performSegue(withIdentifier: "goToWalet", sender: self)
+                                                            }else {
+                                                                let error = MessageView.viewFromNib(layout: .tabView)
+                                                                error.configureTheme(.error)
+                                                                error.configureContent(title: "Invalid data", body: response.errors?.recordMessage != nil ? response.errors?.recordMessage.first : "Email already is used" , iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
+                                                                    SwiftMessages.hide()
+                                                                }
+                                                                error.button?.setTitle("OK", for: .normal)
+                                                                
+                                                                SwiftMessages.show( view: error)
+                                                            }
+                                                            
+                    }, failure: { (error) in
+                        let error = MessageView.viewFromNib(layout: .tabView)
+                        error.configureTheme(.error)
+                        error.configureContent(title: "Invalid email", body: "Something go wrong, please try again!", iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
+                            SwiftMessages.hide()
+                        }
+                        error.button?.setTitle("OK", for: .normal)
+                        SwiftMessages.show( view: error)
+                    })
                 }else {
                     AlertController.showInternetUnable()
                 }
             }
+        }
+    }
+    
+    // MARK: - CoreDataManaged
+    
+    func saveNewIdentity(accessToken: String){
+        let context = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "User", in: context)
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        fetchRequest.predicate = NSPredicate(format:"primaryEmail == %@", emailSkyFloatingTextField.text!)
+        
+        do{
+            let results = try context.fetch(fetchRequest) as? [NSManagedObject]
+            if results?.count == 0 {
+                let newUser = NSManagedObject(entity: entity!, insertInto: context)
+                newUser.setValue(emailSkyFloatingTextField.text, forKey: "primaryEmail")
+                newUser.setValue(true, forKey: "currentUser")
+                newUser.setValue("", forKey: "pinCode")
+                newUser.setValue(accessToken, forKey: "accessToken")
+                newUser.setValue(givenNameField.text, forKey: "firstName")
+                newUser.setValue(familyNameField.text, forKey: "lastName")
+                
+                do {
+                    try context.save()
+                } catch {
+                    print("Failed saving")
+                }
+            }
+        } catch{
+            
+        }
+    }
+    
+    func updateOldIndentity(){
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        fetchRequest.predicate = NSPredicate(format:"currentUser == YES")
+        
+        do{
+            let results = try context.fetch(fetchRequest) as? [NSManagedObject]
+            if results?.count != 0 {
+                results![0].setValue(false, forKey: "currentUser")
+                
+                do {
+                    try context.save()
+                } catch {
+                    print("Failed saving")
+                }
+            }
+        } catch{
+            
+        }
+    }
+    
+    func getCurrentUser(primaryEmai: String!){
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        fetchRequest.predicate = NSPredicate(format:"primaryEmail == %@", emailSkyFloatingTextField.text!)
+        
+        do{
+            let results = try context.fetch(fetchRequest) as? [User]
+            UserShared.shared.currentUser = results![0]
+        } catch{
+            
         }
     }
     

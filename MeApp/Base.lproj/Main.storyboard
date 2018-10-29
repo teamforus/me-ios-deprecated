@@ -946,7 +946,7 @@
                         <outlet property="givenNameField" destination="vwf-mA-VNp" id="rGW-uk-dV2"/>
                         <outlet property="registerUIButton" destination="dBa-Wv-3m9" id="chi-GJ-HfN"/>
                         <outlet property="validateIcon" destination="CrT-Vd-Of7" id="EvL-j3-4fB"/>
-                        <segue destination="1dn-ZR-SXY" kind="show" identifier="goToPassword" id="Efr-Sn-2SK"/>
+                        <segue destination="RMo-3g-bFh" kind="presentation" identifier="goToWalet" id="Xwa-sU-bYn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7xR-VU-EqI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1279,6 +1279,6 @@
         <image name="tick" width="104" height="104"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sb3-cC-tEC"/>
+        <segue reference="Xwa-sU-bYn"/>
     </inferredMetricsTieBreakers>
 </document>
