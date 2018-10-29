@@ -47,9 +47,9 @@ class MAContentVoucherPaymentViewController: MABaseViewController {
         self.view.isUserInteractionEnabled = true
          self.view.addGestureRecognizer(tapGestureRecognizer)
         if voucher.product != nil {
-            priceLabel.text = "€\(voucher.product?.price! ?? 0.0)"
+            self.priceLabel.text = String(format: "€%.02f", voucher.product?.price ?? 0.0)
         }else{
-            priceLabel.text = "€\(voucher.amount ?? 0.0)"
+            self.priceLabel.text = String(format: "€%.02f", voucher.amount ?? 0.0)
         }
         
     }

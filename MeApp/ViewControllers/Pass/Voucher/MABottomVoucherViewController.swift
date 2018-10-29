@@ -46,19 +46,20 @@ class MABottomVoucherViewController: MABaseViewController, ISHPullUpSizingDelega
         let screen = Device.screen
         switch screen {
         case .inches_4_0:
-            rect.size.height = 404
+            rect.size.height = 440
             break
         case .inches_4_7:
-            rect.size.height = 404
+            rect.size.height = 500
             break
         case .inches_5_5:
-            rect.size.height = 404
+            rect.size.height = 575
             break
         case .inches_5_8:
-            rect.size.height = 404
+            rect.size.height = 575
             break
         default:
             break
+            
         }
         self.rootView.frame = rect
     }

@@ -30,7 +30,7 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
         super.viewDidLoad()
 
         self.voucherTitleLabel.text = voucher.product?.name
-        self.priceLabel.text = "€\(voucher.product?.price! ?? 0.0)"
+        self.priceLabel.text = String(format: "€%.02f", voucher.product?.price ?? 0.0)
         self.timAvailabelLabel.text = voucher.product?.organization.name
         dateCreatedLabel.text = voucher.createdAt.dateFormaterNormalDate()
         imageQR.generateQRCode(from: "{ \"type\": \"voucher\",\"value\": \"\(voucher.address!)\" }")
