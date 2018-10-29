@@ -33,6 +33,7 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
         self.priceLabel.text = "€\(voucher.product?.price! ?? 0.0)"
         self.timAvailabelLabel.text = voucher.product?.organization.name
         dateCreatedLabel.text = voucher.createdAt.dateFormaterNormalDate()
+        imageQR.generateQRCode(from: "{ \"type\": \"voucher\",\"value\": \"\(voucher.address!)\" }")
     }
     
     override func viewWillAppear(_ animated: Bool) {
