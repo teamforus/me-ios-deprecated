@@ -32,6 +32,7 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
         self.voucherTitleLabel.text = voucher.product?.name
         self.priceLabel.text = "€\(voucher.product?.price! ?? 0.0)"
         self.timAvailabelLabel.text = voucher.product?.organization.name
+        dateCreatedLabel.text = voucher.createdAt.dateFormaterNormalDate()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,6 +45,9 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
         TransactionVoucherRequest.getTransaction(identityAdress: voucher.address, completion: { (transactions, statusCode) in
             self.transactions.removeAllObjects()
             self.transactions.addObjects(from: transactions.sorted(by: { ($0 as! Transactions).created_at.compare(($1 as! Transactions).created_at) == .orderedDescending}))
+            if self.transactions.count == 0 {
+                self.tableView.isHidden = true
+            }
             self.tableView.reloadData()
         }) { (error) in
             

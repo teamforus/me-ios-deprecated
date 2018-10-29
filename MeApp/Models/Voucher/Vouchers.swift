@@ -15,6 +15,8 @@ struct Voucher {
     var identityAdress: String!
     var address: String!
     var amount: Double!
+    var createdAtLocale: String!
+    var createdAt: String!
     var found: Found!
     var transactions: Array<Transactions>!
     var allowedOrganizations: Array<AllowedOrganizations>?
@@ -36,6 +38,8 @@ extension Voucher: JSONDecodable{
         allowedProductCategories = try decoder.decode("allowed_product_categories")
         allowedProducts = try decoder.decode("allowed_products")
         product = try decoder.decode("product")
+        createdAtLocale = try decoder.decode("created_at_locale")
+        createdAt = try decoder.decode("created_at")
     }
 }
 

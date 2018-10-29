@@ -26,6 +26,7 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
     @IBOutlet weak var timAvailabelLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var imageBodyView: UIImageView!
+    @IBOutlet weak var dateCreatedLabel: UILabel!
     
     let presenter: Presentr = {
         let presenter = Presentr(presentationType: .alert)
@@ -39,6 +40,7 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
         self.voucherTitleLabel.text = voucher.found.name
         self.priceLabel.text = "€\(voucher.amount!)"
         self.timAvailabelLabel.text = voucher.found.organization.name
+        dateCreatedLabel.text = voucher.createdAt.dateFormaterNormalDate()
         kindPaketQRView.layer.cornerRadius = 9.0
         imageBodyView.layer.shadowColor = UIColor.black.cgColor
         imageBodyView.layer.shadowOffset = CGSize(width: 0, height: 5)
@@ -47,6 +49,7 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
         imageBodyView.clipsToBounds = false
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(goToQRReader))
         imageQR.isUserInteractionEnabled = true
+        imageQR.generateQRCode(from: "{ \"type\": \"voucher\",\"value\": \"\(voucher.address!)\" }")
         imageQR.addGestureRecognizer(tapGestureRecognizer)
         smallerAmount.layer.cornerRadius = 9.0
         emailMeButton.layer.cornerRadius = 9.0
@@ -68,6 +71,9 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
         TransactionVoucherRequest.getTransaction(identityAdress: voucher.address, completion: { (transactions, statusCode) in
             self.transactions.removeAllObjects()
              self.transactions.addObjects(from: transactions.sorted(by: { ($0 as! Transactions).created_at.compare(($1 as! Transactions).created_at) == .orderedDescending}))
+           if self.transactions.count == 0 {
+                self.tableView.isHidden = true
+            }
             self.tableView.reloadData()
         }) { (error) in
             

@@ -25,8 +25,10 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     @IBOutlet weak var passcodeLabel: UILabel!
     @IBOutlet weak var appVersionLabel: UILabel!
     @IBOutlet weak var turnOffPascodeView: CustomCornerUIView!
+    @IBOutlet weak var changePasscodeView: CustomCornerUIView!
     @IBOutlet weak var verticalSpacingFaceIdLogin: NSLayoutConstraint!
     @IBOutlet weak var heightButtonsView: NSLayoutConstraint!
+    var deletePasscode: Bool = false
     
     let reachability = Reachability()!
     let presenter: Presentr = {
@@ -63,8 +65,10 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       
+        if UserDefaults.standard.string(forKey: ALConstants.kPincode) == "" || UserDefaults.standard.string(forKey: ALConstants.kPincode) == nil{
             turnOffPascodeView.isHidden = true
+            passcodeLabel.text = "Add 4-digit passcode"
+        }
             verticalSpacingFaceIdLogin.constant = 10
             heightButtonsView.constant = 124
         }
@@ -125,7 +129,21 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     }
     
     @IBAction func logOut(_ sender: Any) {
-        self.logOut()
+        self.logOutProfile()
+    }
+    
+     func logOutProfile(){
+        //        self.parent?.dismiss(animated: true, completion: nil)
+        var appearance = ALAppearance()
+        appearance.image = UIImage(named: "lock")!
+        appearance.title = "Inlogcode"
+        appearance.subtitle = "Stel in een inlogcode in"
+        appearance.isSensorsEnabled = true
+        appearance.cancelIsVissible = true
+        appearance.delegate = self
+        
+        AppLocker.present(with: .deactive, and: appearance, withController: self)
+      
     }
     
     
@@ -167,7 +185,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         appearance.isSensorsEnabled = true
         appearance.cancelIsVissible = true
         appearance.delegate = self
-        
+        deletePasscode = true
         AppLocker.present(with: .deactive, and: appearance, withController: self)
     }
     
@@ -188,6 +206,13 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
             
         }else if typeClose == .delete{
             updateIndentity()
+            if !deletePasscode{
+            let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let navigationController:HiddenNavBarNavigationController = storyboard.instantiateInitialViewController() as! HiddenNavBarNavigationController
+            let firstPageVC:UIViewController = storyboard.instantiateViewController(withIdentifier: "firstPage") as UIViewController
+            navigationController.viewControllers = [firstPageVC]
+            self.present(navigationController, animated: true, completion: nil)
+        }
         }
     }
     

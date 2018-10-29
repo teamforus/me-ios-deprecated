@@ -302,6 +302,7 @@
                     <size key="freeformSize" width="375" height="735"/>
                     <connections>
                         <outlet property="appVersionLabel" destination="Ewy-kX-3Ek" id="fb4-Bl-4yx"/>
+                        <outlet property="changePasscodeView" destination="gkg-fA-sZu" id="W0W-rc-ena"/>
                         <outlet property="closeUIButton" destination="Vgc-gt-tFS" id="rGl-5g-B9i"/>
                         <outlet property="faceIdImage" destination="iAC-og-Xvt" id="baO-Lb-zHJ"/>
                         <outlet property="faceIdLabel" destination="mcu-8u-YwG" id="ysA-j8-j2x"/>

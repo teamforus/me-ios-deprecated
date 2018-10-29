@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import Presentr
 import SkyFloatingLabelTextField
+import IQKeyboardManagerSwift
 
 class MAContentVoucherPaymentViewController: MABaseViewController {
     @IBOutlet weak var paketTitle: UILabel!
@@ -19,6 +20,7 @@ class MAContentVoucherPaymentViewController: MABaseViewController {
     @IBOutlet weak var organizationNameLabel: UILabel!
     @IBOutlet weak var organizationImageView: UIImageView!
     @IBOutlet weak var pricePayLabel: UILabel!
+    fileprivate var returnKeyHandler : IQKeyboardReturnKeyHandler!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var amount: SkyFloatingLabelTextField!
     @IBOutlet weak var noteSkyTextField: SkyFloatingLabelTextField!
@@ -32,6 +34,7 @@ class MAContentVoucherPaymentViewController: MABaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        IQKeyboardManager.sharedManager().enable = true
         if voucher.product != nil {
         paketTitle.text = voucher.product?.name
             organizationNameLabel.text = voucher.product?.organization.name
