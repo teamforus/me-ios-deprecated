@@ -69,15 +69,12 @@ class AlertController: UIAlertController {
         SwiftMessages.show( view: error)
     }
     
-    static func showWarning(withText: String){
-        let error = MessageView.viewFromNib(layout: .tabView)
-        error.configureTheme(.error)
-        error.configureContent(title: "Warning", body: withText , iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
-            SwiftMessages.hide()
-        }
-        error.button?.setTitle("OK", for: .normal)
-        
-        SwiftMessages.show( view: error)
+    static func showWarning(withText: String, vc: UIViewController){
+        let alert: UIAlertController
+        alert = UIAlertController(title: "Warning", message: withText, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+        }))
+        vc.present(alert, animated: true, completion: nil)
     }
     
     static func showSuccess(withText: String){

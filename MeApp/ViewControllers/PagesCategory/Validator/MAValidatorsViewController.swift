@@ -96,7 +96,7 @@ extension MAValidatorsViewController: UITableViewDataSource, UITableViewDelegate
                                         "record_id" : recordID!]
             ValidatorsRequest.createValidationRequest(parameters: parametr, completion: { (response, statusCode) in
                 if response.message != nil{
-                    AlertController.showWarning(withText: "Sorry request to validate is already send")
+                    AlertController.showWarning(withText: "Sorry request to validate is already send", vc: self)
                 }else{
                     AlertController.showSuccess(withText: "")
                 }

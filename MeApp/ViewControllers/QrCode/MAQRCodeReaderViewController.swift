@@ -191,7 +191,7 @@ class MAQRCodeReaderViewController: MABaseViewController {
                 self.performSegue(withIdentifier: "goToVoucherPayment", sender: nil)
                
             }else{
-                 AlertController.showWarning(withText: "Sorry je voldoet niet aan de voorwaarden voor deze voucher")
+                AlertController.showWarning(withText: "Sorry je voldoet niet aan de voorwaarden voor deze voucher", vc: self)
             }
             self.reader.startScanning()
         }) { (error) in

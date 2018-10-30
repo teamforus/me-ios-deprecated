@@ -54,7 +54,7 @@ class MATextViewController: MABaseViewController, UITextViewDelegate {
     @IBAction func submit(_ sender: Any) {
         if self.recordType.name.contains("E-mail"){
             if !Validation.validateEmail(textUITextView.text) {
-                AlertController.showWarning(withText: "E-mail is not valid")
+                AlertController.showWarning(withText: "E-mail is not valid", vc: self)
                 return
             }
         }
