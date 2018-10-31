@@ -36,7 +36,7 @@
 "Mhk-eA-rgD.text" = "225,50";
 
 /* Class = "UILabel"; text = "KANTOOR"; ObjectID = "Nsu-ze-VqX"; */
-"Nsu-ze-VqX.text" = "KANTOOR";
+"Nsu-ze-VqX.text" = "VESTIGING";
 
 /* Class = "UILabel"; text = "Eigendom"; ObjectID = "P1l-mS-jj2"; */
 "P1l-mS-jj2.text" = "Vouchers";
@@ -54,7 +54,7 @@
 "a2M-XK-0VC.title" = "QR";
 
 /* Class = "UIButton"; normalTitle = "All"; ObjectID = "dLb-D5-Eme"; */
-"dLb-D5-Eme.normalTitle" = "All";
+"dLb-D5-Eme.normalTitle" = "Alles";
 
 /* Class = "UILabel"; text = "Groningen"; ObjectID = "dfC-3B-tRm"; */
 "dfC-3B-tRm.text" = "Groningen";

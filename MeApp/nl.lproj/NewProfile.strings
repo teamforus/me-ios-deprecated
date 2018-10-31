@@ -3,13 +3,13 @@
 "0Co-38-CZv.text" = "TOESTAAN VOOR";
 
 /* Class = "UIButton"; normalTitle = "PROFIEL TOEVOEGEN"; ObjectID = "0fv-bm-KSW"; */
-"0fv-bm-KSW.normalTitle" = "INDENTITEIT TOEVOEGEN";
+"0fv-bm-KSW.normalTitle" = "PROFIEL TOEVOEGEN";
 
 /* Class = "UILabel"; text = "Laat iemand uw persoonlijke QR-code scannen om uw valuta, bezit of vouchers te sturen"; ObjectID = "1N4-Kp-O9W"; */
 "1N4-Kp-O9W.text" = "Scan deze QR-Code op een apparaat waar je al op ingelogd bent.";
 
 /* Class = "UILabel"; text = "Organization van identitiet"; ObjectID = "1ci-sL-dMD"; */
-"1ci-sL-dMD.text" = "Organisatie van de identitiet";
+"1ci-sL-dMD.text" = "Organisatie van het profiel";
 
 /* Class = "UIButton"; normalTitle = "LAAT QR-CODE ZIEN"; ObjectID = "1qc-FC-gzf"; */
 "1qc-FC-gzf.normalTitle" = "LAAT QR-CODE ZIEN";
@@ -132,13 +132,13 @@
 "SBc-g9-WPB.placeholder" = "Token adres";
 
 /* Class = "UILabel"; text = "Organization van identiteit"; ObjectID = "ULY-Si-jvX"; */
-"ULY-Si-jvX.text" = "Organisatie van de identiteit";
+"ULY-Si-jvX.text" = "Organisatie van het profiel";
 
 /* Class = "UILabel"; text = "Night Mode"; ObjectID = "Uuk-rR-4gH"; */
 "Uuk-rR-4gH.text" = "Nachtmodus";
 
 /* Class = "UILabel"; text = "Nieuw profiel"; ObjectID = "Uxz-dS-5ik"; */
-"Uxz-dS-5ik.text" = "Indentiteit";
+"Uxz-dS-5ik.text" = "Nieuw profiel";
 
 /* Class = "UILabel"; text = "Nieuwe Eigenschap"; ObjectID = "Wg3-9U-j3h"; */
 "Wg3-9U-j3h.text" = "Nieuwe eigenschap";
@@ -194,8 +194,8 @@
 /* Class = "UITextField"; placeholder = "Bedrag"; ObjectID = "cGy-Xh-Ogd"; */
 "cGy-Xh-Ogd.placeholder" = "Bedrag";
 
-/* Class = "UILabel"; text = "Deze applicatie vraagt om teostemming \nvoor het gebruik van de volgende \ninformatie van je identiteit:"; ObjectID = "dGv-jK-yAO"; */
-"dGv-jK-yAO.text" = "Deze applicatie vraagt om toestemming \nvoor het gebruik van de volgende \ninformatie van je identiteit:";
+/* Class = "UILabel"; text = "Deze applicatie vraagt om teostemming \nvoor het gebruik van de volgende \ninformatie van je profiel:"; ObjectID = "dGv-jK-yAO"; */
+"dGv-jK-yAO.text" = "Deze applicatie vraagt om toestemming \nvoor het gebruik van de volgende \ninformatie van je profiel:";
 
 /* Class = "UILabel"; text = "Nieuwe Eigenschappen"; ObjectID = "dd2-BV-cPM"; */
 "dd2-BV-cPM.text" = "Nieuwe Eigenschappen";

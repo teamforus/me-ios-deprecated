@@ -29,15 +29,10 @@
 /* Class = "UIButton"; normalTitle = "Close"; ObjectID = "Vgc-gt-tFS"; */
 "Vgc-gt-tFS.normalTitle" = "Sluit";
 
-<<<<<<< HEAD
 /* Class = "UILabel"; text = "Uw Profiel"; ObjectID = "Wfm-Qk-FJu"; */
-"Wfm-Qk-FJu.text" = "Uw Profiel";
-=======
-/* Class = "UILabel"; text = "Adoplph Nalevia Hollenbeck-Moore"; ObjectID = "Wfm-Qk-FJu"; */
-"Wfm-Qk-FJu.text" = "Jan-Peter Smit";
->>>>>>> 7ac11c71713d007e5dded607403b21ac9550c7ad
+"Wfm-Qk-FJu.text" = "Profiel";
 
-/* Class = "UILabel"; text = "Use Face ID for login"; ObjectID = "mcu-8u-YwG"; */
+/* Class = "UILabel"; text = "Gebruik Face ID om in te loggen"; ObjectID = "mcu-8u-YwG"; */
 "mcu-8u-YwG.text" = "Gebruik Face ID";
 
 /* Class = "UILabel"; text = "App version"; ObjectID = "qdB-df-WLS"; */

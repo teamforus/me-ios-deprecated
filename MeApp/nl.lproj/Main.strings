@@ -33,7 +33,7 @@
 "DMr-He-WGt.placeholder" = "Achternaam";
 
 /* Class = "UILabel"; text = "Create a passcode that will be requested to enter the Me app."; ObjectID = "DPq-Qe-jcq"; */
-"DPq-Qe-jcq.text" = "Maak een inlogcode om de Me app te gebruiken";
+"DPq-Qe-jcq.text" = "Maak een inlogcode om de Me app te beveiligen";
 
 /* Class = "UILabel"; text = "Scan deze QR-code met een ander apparaat waar u al op bent aangemeld"; ObjectID = "DtX-5r-B9k"; */
 "DtX-5r-B9k.text" = "Scan deze QR-code met een ander apparaat waar je al op bent ingelogd";
@@ -75,7 +75,7 @@
 "QCB-TQ-Zj0.placeholder" = "Herhaal e-mail";
 
 /* Class = "UILabel"; text = "Stel uw identiteit in"; ObjectID = "S0a-1L-yB6"; */
-"S0a-1L-yB6.text" = "Stel je identiteit in";
+"S0a-1L-yB6.text" = "Stel je profiel in";
 
 /* Class = "UILabel"; text = "• "; ObjectID = "Uin-cc-p2q"; */
 "Uin-cc-p2q.text" = "• ";
@@ -93,9 +93,9 @@
 "YV7-Gb-SHc.normalTitle" = "INLOGGEN MET AUTORISATIECODE";
 
 /* Class = "UIButton"; normalTitle = "PROFIEL TOEVOEGEN"; ObjectID = "dBa-Wv-3m9"; */
-"dBa-Wv-3m9.normalTitle" = "INDENTITEIT TOEVOEGEN";
+"dBa-Wv-3m9.normalTitle" = "PROFIEL TOEVOEGEN";
 
-/* Class = "UILabel"; text = "Scan deze QR-code met een ander apparaat waar u al op bent aangemeld"; ObjectID = "deF-pN-y6x"; */
+/* Class = "UILabel"; text = "Scan deze QR-code met een ander apparaat waar je al op bent aangemeld"; ObjectID = "deF-pN-y6x"; */
 "deF-pN-y6x.text" = "Scan deze QR-code met een ander apparaat waar je al op bent ingelogd.";
 
 /* Class = "UITextField"; placeholder = "Primary e-mail*"; ObjectID = "jMT-7s-AAr"; */

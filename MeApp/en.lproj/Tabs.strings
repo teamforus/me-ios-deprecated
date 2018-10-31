@@ -24,10 +24,10 @@
 "9br-Zf-gru.text" = "Ulgersmaweg 35, 9731BK";
 
 /* Class = "UILabel"; text = "Voornaam"; ObjectID = "GCG-V7-S8z"; */
-"GCG-V7-S8z.text" = "Voornaam";
+"GCG-V7-S8z.text" = "First Name";
 
 /* Class = "UILabel"; text = "You have no vouchers yet"; ObjectID = "KKt-19-VeG"; */
-"KKt-19-VeG.text" = "You have no vouchers yet";
+"KKt-19-VeG.text" = "You don't have any vouchers yet";
 
 /* Class = "UILabel"; text = "5 records"; ObjectID = "Lw5-t1-Wd1"; */
 "Lw5-t1-Wd1.text" = "5 records";
@@ -42,13 +42,13 @@
 "P1l-mS-jj2.text" = "Vouchers";
 
 /* Class = "UILabel"; text = "2 dagen geldig"; ObjectID = "PaZ-DR-I5J"; */
-"PaZ-DR-I5J.text" = "2 dagen geldig";
+"PaZ-DR-I5J.text" = "2 days valid";
 
 /* Class = "UILabel"; text = "Zend"; ObjectID = "Rsx-qJ-ODf"; */
 "Rsx-qJ-ODf.text" = "Send";
 
 /* Class = "UILabel"; text = "18 tagen geldig"; ObjectID = "ZYv-E9-UR4"; */
-"ZYv-E9-UR4.text" = "18 tagen geldig";
+"ZYv-E9-UR4.text" = "18 days valid";
 
 /* Class = "UITabBarItem"; title = "QR"; ObjectID = "a2M-XK-0VC"; */
 "a2M-XK-0VC.title" = "QR";
@@ -60,7 +60,7 @@
 "dfC-3B-tRm.text" = "Groningen";
 
 /* Class = "UILabel"; text = "My Records"; ObjectID = "eT6-gv-AkQ"; */
-"eT6-gv-AkQ.text" = "Profile";
+"eT6-gv-AkQ.text" = "Records";
 
 /* Class = "UILabel"; text = "E-mail"; ObjectID = "hcM-rM-dYg"; */
 "hcM-rM-dYg.text" = "E-mail";
