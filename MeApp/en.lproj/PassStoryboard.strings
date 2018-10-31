@@ -14,8 +14,8 @@
 /* Class = "UILabel"; text = "-2,76"; ObjectID = "5AC-ZM-xIz"; */
 "5AC-ZM-xIz.text" = "-2,76";
 
-/* Class = "UILabel"; text = "155 dagen geldig"; ObjectID = "5de-iy-ft6"; */
-"5de-iy-ft6.text" = "155 day number";
+/* Class = "UILabel"; text = "Not 2 dagen geldig valid"; ObjectID = "5de-iy-ft6"; */
+"5de-iy-ft6.text" = "NOT 2 DAGEN GELDIG VALID";
 
 /* Class = "UILabel"; text = "RMinds"; ObjectID = "89x-3m-6Kk"; */
 "89x-3m-6Kk.text" = "RMinds";
