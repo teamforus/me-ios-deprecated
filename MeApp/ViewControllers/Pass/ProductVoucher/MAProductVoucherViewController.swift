@@ -99,7 +99,7 @@ extension MAProductVoucherViewController: UITableViewDataSource, UITableViewDele
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PassTableViewCell
         let transaction = self.transactions[indexPath.row] as! Transactions
         cell.companyTitle.text = transaction.organization.name
-        cell.priceLabel.text = "-\(transaction.amount!)"
+        cell.priceLabel.text = "- €\(transaction.amount!)"
         cell.dateLabel.text = transaction.created_at.dateFormaterNormalDate()
         return cell
     }
