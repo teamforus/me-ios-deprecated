@@ -33,7 +33,7 @@
 "Wfm-Qk-FJu.text" = "Your Profile";
 
 /* Class = "UILabel"; text = "Use Face ID for login"; ObjectID = "mcu-8u-YwG"; */
-"mcu-8u-YwG.text" = "Use Face ID for login";
+"mcu-8u-YwG.text" = "Use Face ID";
 
 /* Class = "UILabel"; text = "App version"; ObjectID = "qdB-df-WLS"; */
 "qdB-df-WLS.text" = "App version";
