@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "30CE52C8B1E0F5CE940B973AEF41F6EB"
+               BlueprintIdentifier = "56B80BECBA35403918F016271941BCB7"
                BlueprintName = "ISHPullUp"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "ISHPullUp.framework">

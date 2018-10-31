@@ -30,7 +30,7 @@ class MABottomProductViewController: MABaseViewController , ISHPullUpSizingDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        self.view.isHidden = true
+                self.view.isHidden = true
         topView.layer.cornerRadius = 14.0
         rootView.layer.cornerRadius = 14.0
         rootView.layer.shadowColor = UIColor.black.cgColor
@@ -66,9 +66,9 @@ class MABottomProductViewController: MABaseViewController , ISHPullUpSizingDeleg
     
     @objc func toglePullUpView(){
         if pullUpController.state == .expanded{
-//            self.view.isHidden = true
+            self.view.isHidden = true
         }else{
-//            self.view.isHidden = false
+            self.view.isHidden = false
         }
         pullUpController.toggleState(animated: true)
     }
@@ -153,7 +153,7 @@ class MABottomProductViewController: MABaseViewController , ISHPullUpSizingDeleg
     @IBAction func close(_ sender: Any) {
         if pullUpController.state == .expanded || pullUpController.state == .intermediate{
             pullUpController.toggleState(animated: true)
-//            self.view.isHidden = true
+            self.view.isHidden = true
         }
     }
     
@@ -189,7 +189,7 @@ class MABottomProductViewController: MABaseViewController , ISHPullUpSizingDeleg
     func pullUpViewController(_ pullUpViewController: ISHPullUpViewController, didChangeTo state: ISHPullUpState) {
         handleView.setState(ISHPullUpHandleView.handleState(for: state), animated: firstAppearanceCompleted)
         if state == .collapsed {
-//            self.view.isHidden = true
+            self.view.isHidden = true
         }else if state == .intermediate {
             pullUpController.toggleState(animated: true)
         }

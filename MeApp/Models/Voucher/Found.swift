@@ -15,6 +15,7 @@ struct Found{
     var state: String!
     var organization: Organization!
     var productCategories: Array<ProductCategory>!
+    var logo: Logo!
 }
 
 extension Found: JSONDecodable{
@@ -25,6 +26,7 @@ extension Found: JSONDecodable{
         state = try decoder.decode("state")
         organization = try decoder.decode("organization")
         productCategories = try decoder.decode("product_categories")
+        logo = try decoder.decode("logo")
         
     }
 }

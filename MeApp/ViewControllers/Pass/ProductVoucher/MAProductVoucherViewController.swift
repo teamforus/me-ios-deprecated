@@ -38,6 +38,14 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
         self.priceLabel.text = String(format: "€%.02f", voucher.product?.price ?? 0.0)
         dateCreatedLabel.text = voucher.createdAt.dateFormaterNormalDate()
         imageQR.generateQRCode(from: "{ \"type\": \"voucher\",\"value\": \"\(voucher.address!)\" }")
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(goToQRReader))
+        imageQR.isUserInteractionEnabled = true
+        imageQR.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc func goToQRReader(){
+        //        self.tabBarController?.selectedIndex = 1
+        NotificationCenter.default.post(name: Notification.Name("togleStateWindow"), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -95,14 +95,8 @@
 /* Class = "UILabel"; text = "Storting"; ObjectID = "pql-5D-j6D"; */
 "pql-5D-j6D.text" = "Deposit";
 
-/* Class = "UILabel"; text = "This is your personal QR code"; ObjectID = "sOe-ep-azG"; */
-"sOe-ep-azG.text" = "This is your personal QR code";
-
 /* Class = "UILabel"; text = "120,00"; ObjectID = "sh2-eL-3yF"; */
 "sh2-eL-3yF.text" = "120,00";
-
-/* Class = "UILabel"; text = "Let someone scan your personal QR code to send your currency, property or vouchers"; ObjectID = "ufX-dC-Zqj"; */
-"ufX-dC-Zqj.text" = "Let someone scan your personal QR-code to use the Kindpakket voucher";
 
 /* Class = "UILabel"; text = "Kindpakket"; ObjectID = "v0t-au-15P"; */
 "v0t-au-15P.text" = "Kindpakket";

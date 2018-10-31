@@ -562,8 +562,11 @@
 		65FC866220B5DF81001FECA5 /* MASwitchProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MASwitchProfileTableViewCell.swift; sourceTree = "<group>"; };
 		65FC866620B5EB2A001FECA5 /* MAAddProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAAddProfileTableViewCell.swift; sourceTree = "<group>"; };
 		65FC866720B5EB2A001FECA5 /* MAAddProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAAddProfileTableViewCell.xib; sourceTree = "<group>"; };
+		89068B526C15FBF4653D8F95 /* Pods-Me.demo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Me.demo.xcconfig"; path = "Pods/Target Support Files/Pods-Me/Pods-Me.demo.xcconfig"; sourceTree = "<group>"; };
 		C6A3E44B1D4BFF2E2A9A7B22 /* Pods-MeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeTests/Pods-MeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CE96269A72438E973A30032F /* Pods-MeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeUITests/Pods-MeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D9D60B6167958DF1CA7FAA79 /* Pods-MeTests.demo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeTests.demo.xcconfig"; path = "Pods/Target Support Files/Pods-MeTests/Pods-MeTests.demo.xcconfig"; sourceTree = "<group>"; };
+		DDA1FF7D4FCE9FF9BC864648 /* Pods-MeUITests.demo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeUITests.demo.xcconfig"; path = "Pods/Target Support Files/Pods-MeUITests/Pods-MeUITests.demo.xcconfig"; sourceTree = "<group>"; };
 		E4647894AE9F75A5A5B1672E /* Pods_MeAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E32A731CFDBC0B1D33B95E /* Pods-Me.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Me.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Me/Pods-Me.debug.xcconfig"; sourceTree = "<group>"; };
 		F165C3E58588DEDFCF61DF4A /* Pods_Me.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Me.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -608,6 +611,9 @@
 				649FEB2CAF5C1834CDA45677 /* Pods-MeTests.release.xcconfig */,
 				CE96269A72438E973A30032F /* Pods-MeUITests.debug.xcconfig */,
 				5F12BE540752A5ED15BF9F18 /* Pods-MeUITests.release.xcconfig */,
+				89068B526C15FBF4653D8F95 /* Pods-Me.demo.xcconfig */,
+				D9D60B6167958DF1CA7FAA79 /* Pods-MeTests.demo.xcconfig */,
+				DDA1FF7D4FCE9FF9BC864648 /* Pods-MeUITests.demo.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1863,6 +1869,7 @@
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/ScrollableSegmentedControl/ScrollableSegmentedControl.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
@@ -1890,6 +1897,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ScrollableSegmentedControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
@@ -2443,10 +2451,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = MeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2468,10 +2473,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -2489,11 +2491,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MeAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RokectMinds.MeAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -2510,11 +2508,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MeAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RokectMinds.MeAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -2530,11 +2524,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MeAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RokectMinds.MeAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -2550,11 +2540,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MeAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RokectMinds.MeAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -2626,7 +2612,7 @@
 		};
 		65CC8C062180A76F0084AA34 /* Demo */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E8E32A731CFDBC0B1D33B95E /* Pods-Me.debug.xcconfig */;
+			baseConfigurationReference = 89068B526C15FBF4653D8F95 /* Pods-Me.demo.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -2634,10 +2620,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = MeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2651,17 +2634,13 @@
 		};
 		65CC8C072180A76F0084AA34 /* Demo */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6A3E44B1D4BFF2E2A9A7B22 /* Pods-MeTests.debug.xcconfig */;
+			baseConfigurationReference = D9D60B6167958DF1CA7FAA79 /* Pods-MeTests.demo.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MeAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RokectMinds.MeAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -2672,16 +2651,12 @@
 		};
 		65CC8C082180A76F0084AA34 /* Demo */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE96269A72438E973A30032F /* Pods-MeUITests.debug.xcconfig */;
+			baseConfigurationReference = DDA1FF7D4FCE9FF9BC864648 /* Pods-MeUITests.demo.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MeAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = RokectMinds.MeAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

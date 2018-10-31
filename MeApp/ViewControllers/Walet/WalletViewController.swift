@@ -12,6 +12,7 @@ import SwipeCellKit
 import CoreData
 import Speech
 import Reachability
+import SDWebImage
 enum WalletCase {
     case token
     case assets
@@ -224,9 +225,11 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
             if voucher.product != nil{
                 cellWallet.voucherTitleLabel.text = voucher.product?.name
                 cellWallet.priceLabel.text = String(format: "€%.02f", voucher.product?.price ?? 0.0)
+                cellWallet.voucherImage.sd_setImage(with: URL(string: voucher.product?.photo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
             }else{
                 cellWallet.voucherTitleLabel.text = voucher.found.name
                 cellWallet.priceLabel.text = String(format: "€%.02f", voucher.amount ?? 0.0)
+                cellWallet.voucherImage.sd_setImage(with: URL(string: voucher.found.logo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
             }
             
             
