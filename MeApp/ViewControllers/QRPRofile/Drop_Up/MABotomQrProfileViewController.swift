@@ -40,10 +40,15 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
         topView.addGestureRecognizer(tapGesture)
         NotificationCenter.default.addObserver(self, selector: #selector(toglePullUpView), name: Notification.Name("togleStateWindow"), object: nil)
         var rect: CGRect = self.rootView.frame
+        var imageQRRect: CGRect = qrCodeImageView.frame
         let screen = Device.screen
         switch screen {
         case .inches_4_0:
-            rect.size.height = 440
+            rect.size.height = 400
+            imageQRRect.size.height = 200
+            imageQRRect.size.width = 200
+            imageQRRect.origin.x = imageQRRect.origin.x + 50
+            qrCodeImageView.frame = imageQRRect
             break
         case .inches_4_7:
             rect.size.height = 500

@@ -18,6 +18,7 @@ extension UIImageView{
             
             if let output = filter.outputImage?.transformed(by: transform) {
                 self.image =  UIImage(ciImage: output)
+                
             }
         }
         

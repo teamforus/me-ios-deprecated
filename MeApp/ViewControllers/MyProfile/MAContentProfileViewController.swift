@@ -158,6 +158,8 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     @IBAction func aboutMe(_ sender: Any) {
         let popupTransction =  MAAboutMeViewController(nibName: "MAAboutMeViewController", bundle: nil)
         self.presenter.presentationType = .popup
+        popupTransction.titleDetail = "Hoe werkt het?"
+        popupTransction.descriptionDetail = "Heb je al een indentiteit en ben je al ingelogd op de webshop? Open dan je indentiteit via de webshop en klik op 'Autoriseer apparaat' en vul de code in die op de Me App zichtbaar is."
         self.presenter.transitionType = nil
         self.presenter.dismissTransitionType = nil
         self.presenter.keyboardTranslationType = .compress
