@@ -15,6 +15,7 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
     @IBOutlet weak var voucherTitleLabel: UILabel!
     @IBOutlet weak var timAvailabelLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var imageBodyView: UIImageView!
     var voucher: Voucher!
     var transactions: NSMutableArray! = NSMutableArray()
     @IBOutlet weak var kindPaketQRView: UIView!
@@ -28,10 +29,13 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        imageBodyView.layer.shadowColor = UIColor.black.cgColor
+        imageBodyView.layer.shadowOffset = CGSize(width: 0, height: 5)
+        imageBodyView.layer.shadowOpacity = 0.1
+        imageBodyView.layer.shadowRadius = 10.0
+        imageBodyView.clipsToBounds = false
         self.voucherTitleLabel.text = voucher.product?.name
         self.priceLabel.text = String(format: "€%.02f", voucher.product?.price ?? 0.0)
-        self.timAvailabelLabel.text = voucher.product?.organization.name
         dateCreatedLabel.text = voucher.createdAt.dateFormaterNormalDate()
         imageQR.generateQRCode(from: "{ \"type\": \"voucher\",\"value\": \"\(voucher.address!)\" }")
     }
