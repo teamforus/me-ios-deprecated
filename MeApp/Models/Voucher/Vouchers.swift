@@ -83,7 +83,7 @@ struct ProductVoucher {
     var id: Int!
     var name: String!
     var description: String!
-    var price: Double!
+    var price: String!
     var oldPrice: Int!
     var totalAmount: Int!
     var soldAmount: Int!

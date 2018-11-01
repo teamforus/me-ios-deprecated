@@ -35,7 +35,7 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
         imageBodyView.layer.shadowRadius = 10.0
         imageBodyView.clipsToBounds = false
         self.voucherTitleLabel.text = voucher.product?.name
-        self.priceLabel.text = String(format: "€%.02f", voucher.product?.price ?? 0.0)
+        self.priceLabel.text = voucher.product?.price ?? "0.0"
         dateCreatedLabel.text = voucher.createdAt.dateFormaterNormalDate()
         imageQR.generateQRCode(from: "{ \"type\": \"voucher\",\"value\": \"\(voucher.address!)\" }")
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(goToQRReader))

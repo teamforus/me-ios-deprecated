@@ -38,7 +38,7 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.voucherTitleLabel.text = voucher.found.name
-        self.priceLabel.text = String(format: "€%.02f", voucher.amount ?? 0.0)
+        self.priceLabel.text = voucher.amount ?? "0.0"
         dateCreatedLabel.text = voucher.createdAt.dateFormaterNormalDate()
         kindPaketQRView.layer.cornerRadius = 9.0
         imageBodyView.layer.shadowColor = UIColor.black.cgColor

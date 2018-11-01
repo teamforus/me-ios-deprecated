@@ -33,7 +33,7 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
        
         
         if voucher.product != nil {
-            amountLabel.text = String(format: "€%.02f", voucher.product?.price ?? 0.0)
+            amountLabel.text = voucher.product?.price ?? "0.0"
             var reactBodyView = bodyView.frame
             reactBodyView.size.height = reactBodyView.size.height - 36
             bodyView.frame = reactBodyView

@@ -45,7 +45,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u0v-rn-4yi">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="-15" width="375" height="682"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5bP-uZ-2Tn">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="671"/>
@@ -314,7 +314,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="5bP-uZ-2Tn" secondAttribute="trailing" id="2hG-4m-Zfg"/>
-                                    <constraint firstAttribute="bottom" secondItem="5bP-uZ-2Tn" secondAttribute="bottom" id="6LT-fj-RSb"/>
+                                    <constraint firstAttribute="bottom" secondItem="5bP-uZ-2Tn" secondAttribute="bottom" constant="11" id="6LT-fj-RSb"/>
                                     <constraint firstItem="5bP-uZ-2Tn" firstAttribute="leading" secondItem="u0v-rn-4yi" secondAttribute="leading" id="7Qm-02-Ddx"/>
                                     <constraint firstItem="5bP-uZ-2Tn" firstAttribute="top" secondItem="u0v-rn-4yi" secondAttribute="top" id="Esk-1K-pwd"/>
                                 </constraints>
@@ -326,7 +326,7 @@
                             <constraint firstItem="u0v-rn-4yi" firstAttribute="bottom" secondItem="4fg-Ur-5cF" secondAttribute="bottom" id="DdO-zl-X2v"/>
                             <constraint firstAttribute="trailing" secondItem="u0v-rn-4yi" secondAttribute="trailing" id="GX0-N9-EOY"/>
                             <constraint firstItem="u0v-rn-4yi" firstAttribute="leading" secondItem="Xun-PQ-5RV" secondAttribute="leading" id="XO0-XA-ycq"/>
-                            <constraint firstItem="u0v-rn-4yi" firstAttribute="top" secondItem="Xun-PQ-5RV" secondAttribute="top" id="jPg-ks-D9X"/>
+                            <constraint firstItem="u0v-rn-4yi" firstAttribute="top" secondItem="Xun-PQ-5RV" secondAttribute="top" constant="-15" id="jPg-ks-D9X"/>
                             <constraint firstItem="5bP-uZ-2Tn" firstAttribute="height" secondItem="Xun-PQ-5RV" secondAttribute="height" priority="250" id="mgZ-Zl-nlj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4fg-Ur-5cF"/>
