@@ -14,6 +14,7 @@ import Presentr
 
 class MAQRCodeReaderViewController: MABaseViewController {
     lazy var reader: QRCodeReader = QRCodeReader()
+    var addressVoucher: String!
     let reachablity = Reachability()!
     let presenter: Presentr = {
         let presenter = Presentr(presentationType: .alert)
@@ -174,6 +175,7 @@ class MAQRCodeReaderViewController: MABaseViewController {
     }
     
     func getProviderConfirm(address:String){
+        self.addressVoucher = address
         VoucherRequest.getProvider(identityAdress: address, completion: { (voucher, statusCode) in
             if voucher.allowedOrganizations?.count != 0 && voucher.allowedOrganizations?.count  != nil {
                 
@@ -184,6 +186,7 @@ class MAQRCodeReaderViewController: MABaseViewController {
 //            self.presenter.dismissTransitionType = nil
 //            self.presenter.keyboardTranslationType = .compress
 //            self.customPresentViewController(self.presenter, viewController: popupTransction, animated: true, completion: nil)
+                
                 self.voucher = voucher
                 self.performSegue(withIdentifier: "goToVoucherPayment", sender: nil)
             }else if voucher.product != nil{
@@ -204,6 +207,7 @@ class MAQRCodeReaderViewController: MABaseViewController {
         if segue.identifier == "goToVoucherPayment"{
             let detailPaymentVC = segue.destination as! MABaseVoucherPaymentViewController
             (detailPaymentVC.contentViewController as! MAContentVoucherPaymentViewController).voucher = self.voucher
+            (detailPaymentVC.contentViewController as! MAContentVoucherPaymentViewController).addressVoucher = self.addressVoucher
         }
     }
     

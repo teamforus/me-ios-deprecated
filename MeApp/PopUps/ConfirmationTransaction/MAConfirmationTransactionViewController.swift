@@ -16,6 +16,7 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
     @IBOutlet weak var bodyView: CustomCornerUIView!
     var note: String!
     var voucher: Voucher!
+    var addressVoucher: String!
     var amount: Double!
     let presenter: Presentr = {
         let presenter = Presentr(presentationType: .alert)
@@ -50,9 +51,11 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
                         "organization_id" : voucher.allowedOrganizations!.first?.id ?? 0,
                         "amount" : amount,
                         "note" : note ?? ""]
-                    TransactionVoucherRequest.makeTransaction(parameters: parameters, identityAdress: voucher.address, completion: { (transaction, statusCode) in
+                    TransactionVoucherRequest.makeTransaction(parameters: parameters, identityAdress: addressVoucher, completion: { (transaction, statusCode) in
                         if statusCode == 201{
                             self.dismiss(animated: true, completion: nil)
+                        }else if statusCode == 422 {
+                            AlertController.showWarning(withText: "Voucher not have enough funds", vc: self)
                         }
                     }) { (error) in
                     }
@@ -61,9 +64,11 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
                 "organization_id" : voucher.allowedOrganizations!.first?.id ?? 0,
                 "amount" : voucher.amount ?? 0.0,
                 "note" : note ?? ""]
-            TransactionVoucherRequest.makeTransaction(parameters: parameters, identityAdress: voucher.address, completion: { (transaction, statusCode) in
+            TransactionVoucherRequest.makeTransaction(parameters: parameters, identityAdress: addressVoucher, completion: { (transaction, statusCode) in
                 if statusCode == 201{
                     self.dismiss(animated: true, completion: nil)
+                }else if statusCode == 422 {
+                    AlertController.showWarning(withText: "Voucher not have enough funds", vc: self)
                 }
                 
             }) { (error) in

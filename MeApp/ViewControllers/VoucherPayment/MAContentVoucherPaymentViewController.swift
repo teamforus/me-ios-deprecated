@@ -16,6 +16,7 @@ class MAContentVoucherPaymentViewController: MABaseViewController {
     @IBOutlet weak var noteView: CustomCornerUIView!
     @IBOutlet weak var amountView: CustomCornerUIView!
     @IBOutlet weak var paketTitle: UILabel!
+    var addressVoucher: String!
     @IBOutlet weak var validDaysLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var qrCodeImageView: UIImageView!
@@ -80,6 +81,7 @@ class MAContentVoucherPaymentViewController: MABaseViewController {
         let popupTransction =  MAConfirmationTransactionViewController(nibName: "MAConfirmationTransactionViewController", bundle: nil)
         self.presenter.presentationType = .popup
         popupTransction.voucher = voucher
+        popupTransction.addressVoucher = addressVoucher
         popupTransction.amount = Double(amount.text ?? "0.0")
         popupTransction.note = noteSkyTextField.text ?? ""
         self.presenter.transitionType = nil

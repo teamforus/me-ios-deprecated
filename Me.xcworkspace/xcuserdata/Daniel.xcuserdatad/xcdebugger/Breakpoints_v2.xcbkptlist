@@ -19,13 +19,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MeApp/Models/Voucher/Vouchers.swift"
-            timestampString = "562694076.691803"
+            filePath = "MeApp/Models/Voucher/Transaction.swift"
+            timestampString = "562765841.063902"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
-            landmarkName = "getProvider(identityAdress:completion:failure:)"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "makeTransaction(parameters:identityAdress:completion:failure:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
