@@ -35,7 +35,7 @@ class MAChooseCategoryViewController: MABaseViewController {
                 self.recordCategories.addObjects(from: response as! [Any])
                 self.collectionView.reloadData()
             }) { (error) in
-                AlertController.showError()
+                AlertController.showError(vc:self)
             }
         }else{
             AlertController.showInternetUnable()

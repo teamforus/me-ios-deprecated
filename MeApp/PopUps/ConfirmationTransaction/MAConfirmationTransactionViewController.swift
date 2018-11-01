@@ -15,6 +15,7 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var bodyView: CustomCornerUIView!
     var note: String!
+    var aditionalAmount: Double!
     var voucher: Voucher!
     var addressVoucher: String!
     var amount: Double!
@@ -27,21 +28,27 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        amountLabel.text =  String(format: "€%.02f", amount ?? 0.0)
-        let aditionalAmount = amount - voucher.amount
+//
+       
+        
         if voucher.product != nil {
             amountLabel.text = String(format: "€%.02f", voucher.product?.price ?? 0.0)
             var reactBodyView = bodyView.frame
             reactBodyView.size.height = reactBodyView.size.height - 36
             bodyView.frame = reactBodyView
             insuficientAmountLabel.isHidden = true
-        }else if amount > voucher.amount{
-            insuficientAmountLabel.text = String(format: "Insufficient funds on the voucher.  Please, request extra payment of €%.02f", aditionalAmount)
         }else{
+            amountLabel.text =  String(format: "€%.02f", amount)
+            let amountVoucher = Double(voucher.amount)!
+            aditionalAmount = amount - amountVoucher
+            if amount > amountVoucher{
+                insuficientAmountLabel.text = String(format: "Insufficient funds on the voucher.  Please, request extra payment of €%.02f", aditionalAmount)
+            }else{
             var reactBodyView = bodyView.frame
             reactBodyView.size.height = reactBodyView.size.height - 36
             bodyView.frame = reactBodyView
             insuficientAmountLabel.isHidden = true
+            }
         }
     }
 

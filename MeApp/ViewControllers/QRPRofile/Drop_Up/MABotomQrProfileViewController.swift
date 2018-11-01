@@ -85,10 +85,10 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
                     self.qrCodeImageView.generateQRCode(from: "{ \"type\": \"auth_token\",\"value\": \"\(response.authToken!)\" }")
                     self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.checkAuthorizeToken), userInfo: nil, repeats: true)
                 }else{
-                    AlertController.showError()
+                    AlertController.showError(vc:self)
                 }
             }) { (error) in
-                AlertController.showError()
+                AlertController.showError(vc:self)
             }
         }else{
             AlertController.showInternetUnable()
@@ -114,7 +114,7 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
                 }
             }
         }) { (error) in
-            AlertController.showError()
+            AlertController.showError(vc:self)
         }
     }
     

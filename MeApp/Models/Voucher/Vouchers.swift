@@ -14,7 +14,7 @@ struct Voucher {
     var foundID: Int!
     var identityAdress: String!
     var address: String!
-    var amount: Double!
+    var amount: String!
     var createdAtLocale: String!
     var createdAt: String!
     var found: Found!

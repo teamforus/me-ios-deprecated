@@ -78,7 +78,7 @@ class MAPersonalDetailViewController: MABaseViewController{
                 }
                 self.navigationController?.popViewController(animated: true)
             }) { (error) in
-                AlertController.showError()
+                AlertController.showError(vc:self)
             }
         }else{
             AlertController.showInternetUnable()

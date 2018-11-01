@@ -149,7 +149,7 @@ class MAQRCodeReaderViewController: MABaseViewController {
                     AlertController.showSuccess(withText: NSLocalizedString("A record has been validated!", comment: ""))
                     self.reader.startScanning()
                 }, failure: { (error) in
-                    AlertController.showError()
+                    AlertController.showError(vc:self)
                     self.reader.startScanning()
                 })
             }))
@@ -169,7 +169,7 @@ class MAQRCodeReaderViewController: MABaseViewController {
         AuthorizeTokenRequest.authorizeToken(parameter: parameter, completion: { (response, statusCode) in
             self.reader.startScanning()
         }, failure: { (error) in
-            AlertController.showError()
+            AlertController.showError(vc:self)
             self.reader.startScanning()
         })
     }
@@ -198,7 +198,7 @@ class MAQRCodeReaderViewController: MABaseViewController {
             }
             self.reader.startScanning()
         }) { (error) in
-            AlertController.showError()
+            AlertController.showError(vc:self)
             self.reader.startScanning()
         }
     }

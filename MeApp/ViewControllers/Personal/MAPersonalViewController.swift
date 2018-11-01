@@ -47,26 +47,26 @@ class MAPersonalViewController: MABaseViewController, BWWalkthroughViewControlle
     func getRecordType(){
         RecordTypeRequest.getRecordType(completion: { (response, statusCode) in
             if statusCode == 401{
-                AlertController.showError()
+                AlertController.showError(vc:self)
                 return
             }
             self.recordTypeList.addObjects(from: response as! [Any])
         }) { (error) in
-            AlertController.showError()
+            AlertController.showError(vc:self)
         }
     }
     
     func getRecordList(){
         RecordsRequest.getRecordsList(completion: { (response, statusCode) in
             if statusCode == 401{
-                AlertController.showError()
+                AlertController.showError(vc:self)
                 return
             }
             self.recordList.removeAllObjects()
             self.recordList.addObjects(from: response as! [Any])
             self.tableView.reloadData()
         }) { (error) in
-            AlertController.showError()
+            AlertController.showError(vc:self)
         }
     }
     

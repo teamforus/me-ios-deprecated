@@ -64,12 +64,12 @@ class MATextViewController: MABaseViewController, UITextViewDelegate {
             RecordsRequest.createRecord(parameters: parameters, completion: { (response, statusCode) in
                 if statusCode == 401{
 //                    self.logOut()
-                    AlertController.showError()
+                    AlertController.showError(vc:self)
                     return
                 }
                 NotificationCenter.default.post(name: Notification.Name("CLOSESLIDEPAGE"), object: nil)
             }) { (error) in
-                AlertController.showError()
+                AlertController.showError(vc:self)
             }
         }else {
             AlertController.showInternetUnable()

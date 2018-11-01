@@ -11,12 +11,15 @@ import Alamofire
 import Presentr
 import SkyFloatingLabelTextField
 import IQKeyboardManagerSwift
+import SDWebImage
 
 class MAContentVoucherPaymentViewController: MABaseViewController {
     @IBOutlet weak var noteView: CustomCornerUIView!
     @IBOutlet weak var amountView: CustomCornerUIView!
     @IBOutlet weak var paketTitle: UILabel!
     var addressVoucher: String!
+    @IBOutlet weak var qrImageViewBody: UIImageView!
+    @IBOutlet weak var heightContraint: NSLayoutConstraint!
     @IBOutlet weak var validDaysLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var qrCodeImageView: UIImageView!
@@ -25,8 +28,8 @@ class MAContentVoucherPaymentViewController: MABaseViewController {
     @IBOutlet weak var pricePayLabel: UILabel!
     fileprivate var returnKeyHandler : IQKeyboardReturnKeyHandler!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var amount: SkyFloatingLabelTextField!
-    @IBOutlet weak var noteSkyTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var amount: UITextField!
+    @IBOutlet weak var noteSkyTextField: UITextField!
     let presenter: Presentr = {
         let presenter = Presentr(presentationType: .alert)
         presenter.transitionType = TransitionType.coverHorizontalFromRight
@@ -37,27 +40,33 @@ class MAContentVoucherPaymentViewController: MABaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        qrImageViewBody.layer.shadowColor = UIColor.black.cgColor
+        qrImageViewBody.layer.shadowOffset = CGSize(width: 0, height: 5)
+        qrImageViewBody.layer.shadowOpacity = 0.1
+        qrImageViewBody.layer.shadowRadius = 10.0
+        qrImageViewBody.clipsToBounds = false
         IQKeyboardManager.sharedManager().enable = true
         if voucher.product != nil {
             paketTitle.text = voucher.product?.name
             organizationNameLabel.text = voucher.product?.organization.name
+            qrCodeImageView.sd_setImage(with: URL(string: voucher.product?.photo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
         }else{
             paketTitle.text = voucher.found.name
             organizationNameLabel.text = voucher.found.organization.name ?? ""
-            
+                qrCodeImageView.sd_setImage(with: URL(string: voucher.found.logo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
         }
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         self.view.isUserInteractionEnabled = true
         self.view.addGestureRecognizer(tapGestureRecognizer)
         if voucher.product != nil {
-            self.priceLabel.text = String(format: "€%.02f", voucher.product?.price ?? 0.0)
+            self.priceLabel.text = voucher.product?.organization.name ?? ""
             self.amountView.isHidden = true
             var rectNote = self.noteView.frame
-            rectNote.size.height =  130
             rectNote.origin.y = 70
             self.noteView.frame = rectNote
+            heightContraint.constant = 160
         }else{
-            self.priceLabel.text = String(format: "€%.02f", voucher.amount ?? 0.0)
+            self.priceLabel.text = voucher.found.organization.name ?? ""
         }
         
     }
@@ -91,15 +100,7 @@ class MAContentVoucherPaymentViewController: MABaseViewController {
     }
     
     @IBAction func checkAmount(_ sender: Any) {
-        if amount.text != "" {
-            if Double(amount.text!)! > Double(self.voucher.amount  ?? 0){
-                amount.errorMessage = "You enter more biger price then amount!"
-            }else{
-                amount.errorMessage = nil
-            }
-        }else {
-            amount.errorMessage = "This field is required"
-        }
+     
     }
     
     @IBAction func dismiss(_ sender: Any) {

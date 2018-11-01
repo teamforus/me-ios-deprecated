@@ -33,7 +33,7 @@ class MAValidatorsViewController: MABaseViewController {
             RecordCategoryRequest.getCategory(categoryId: recordCategoryId, completion: { (response, statusCode) in
                 self.categoryNameLabel.text = response.name
             }) { (error) in
-                AlertController.showError()
+                AlertController.showError(vc:self)
             }
         }else{
              self.categoryNameLabel.text = "Persoonlijk"
@@ -55,7 +55,7 @@ class MAValidatorsViewController: MABaseViewController {
                 }
                 self.tableView.reloadData()
             }) { (error) in
-                AlertController.showError()
+                AlertController.showError(vc:self)
             }
           
         }else {

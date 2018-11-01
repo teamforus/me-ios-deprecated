@@ -51,7 +51,7 @@ class MARecordsViewController: MABaseViewController, BWWalkthroughViewController
             self.recordList.addObjects(from: response as! [Any])
             self.tableView.reloadData()
         }) { (error) in
-            AlertController.showError()
+            AlertController.showError(vc:self)
         }
     }
     

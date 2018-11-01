@@ -56,7 +56,7 @@ class MASuccessEmailViewController: MABaseViewController, AppLockerDelegate {
                 }
             }
         }) { (error) in
-            AlertController.showError()
+            AlertController.showError(vc:self)
         }
     }
     

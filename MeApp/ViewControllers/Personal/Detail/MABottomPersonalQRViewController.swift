@@ -84,7 +84,7 @@ class MABottomPersonalQRViewController: MABaseViewController, ISHPullUpSizingDel
                 }
                 self.qrCodeImageView.generateQRCode(from: "{ \"type\": \"record\",\"value\": \"\(response.uuid!)\" }")
             }) { (error) in
-                AlertController.showError()
+                AlertController.showError(vc:self)
             }
         }else{
             AlertController.showInternetUnable()

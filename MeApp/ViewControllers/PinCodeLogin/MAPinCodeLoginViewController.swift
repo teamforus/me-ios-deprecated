@@ -63,7 +63,7 @@ class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
                     }
                 }
             }) { (error) in
-                AlertController.showError()
+                AlertController.showError(vc:self)
             }
         }else{
             AlertController.showInternetUnable()
@@ -82,7 +82,7 @@ class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
                 }
             }
         }) { (error) in
-            AlertController.showError()
+            AlertController.showError(vc:self)
         }
     }
     
@@ -195,7 +195,7 @@ class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
                         SwiftMessages.show( view: error)
                     }
                 }) { (error) in
-                    AlertController.showError()
+                    AlertController.showError(vc:self)
                 }
             }else {
                 let error = MessageView.viewFromNib(layout: .tabView)
