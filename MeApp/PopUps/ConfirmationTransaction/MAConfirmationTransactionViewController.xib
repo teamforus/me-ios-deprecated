@@ -23,6 +23,7 @@
                 <outlet property="amountLabel" destination="Jn4-Q5-PiM" id="lAo-9r-BuB"/>
                 <outlet property="bodyView" destination="HPk-NB-eNr" id="TUZ-DM-BFp"/>
                 <outlet property="insuficientAmountLabel" destination="i3A-5O-pnI" id="jJQ-YC-aQp"/>
+                <outlet property="requestButton" destination="CUG-E7-rCW" id="PHZ-Ot-sYk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

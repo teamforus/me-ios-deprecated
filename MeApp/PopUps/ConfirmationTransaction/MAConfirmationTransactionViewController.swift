@@ -11,6 +11,7 @@ import Presentr
 import Alamofire
 
 class MAConfirmationTransactionViewController: MABasePopUpViewController {
+    @IBOutlet weak var requestButton: ShadowButton!
     @IBOutlet weak var insuficientAmountLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var bodyView: CustomCornerUIView!
@@ -42,6 +43,8 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
             let amountVoucher = Double(voucher.amount)!
             aditionalAmount = amount - amountVoucher
             if amount > amountVoucher{
+                requestButton.isEnabled = false
+                requestButton.backgroundColor = #colorLiteral(red: 0.7646217346, green: 0.764754355, blue: 0.7646133304, alpha: 1)
                 insuficientAmountLabel.text = String(format: "Insufficient funds on the voucher.  Please, request extra payment of €%.02f", aditionalAmount)
             }else{
             var reactBodyView = bodyView.frame
