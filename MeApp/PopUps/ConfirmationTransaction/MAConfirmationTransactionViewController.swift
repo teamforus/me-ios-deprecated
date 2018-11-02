@@ -72,9 +72,10 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
                             let alert: UIAlertController
                             alert = UIAlertController(title: "Success!", message: "Payment succeeded ", preferredStyle: .alert)
                             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                                self.tabController.selectedIndex = 0
                                 self.presentingViewController?
                                     .presentingViewController?.dismiss(animated: true, completion: {
-                                        self.tabController.selectedIndex = 0
+                                        
                                     })
                             }))
                             self.present(alert, animated: true, completion: nil)
@@ -93,9 +94,10 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
                     let alert: UIAlertController
                     alert = UIAlertController(title: "Success!", message: "Payment succeeded ", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                        self.tabController.selectedIndex = 0
                         self.presentingViewController?
                             .presentingViewController?.dismiss(animated: true, completion: {
-                                self.tabController.selectedIndex = 0
+                                
                             })
                     }))
                     self.present(alert, animated: true, completion: nil)
