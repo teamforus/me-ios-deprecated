@@ -222,6 +222,15 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
             //            cellWallet.delegate = self
             cellWallet.selectionStyle = .none
             let voucher = self.vouhers[indexPath.row] as! Voucher
+            if voucher.transactions != nil{
+                if voucher.transactions.count != 0 {
+                    cellWallet.usedVoucherLabel.isHidden = false
+                }else{
+                    cellWallet.usedVoucherLabel.isHidden = true
+                }
+            }else{
+                cellWallet.usedVoucherLabel.isHidden = true
+            }
             if voucher.product != nil{
                 cellWallet.voucherTitleLabel.text = voucher.product?.name
                 cellWallet.priceLabel.text = voucher.product?.price ?? "0.0"
@@ -257,22 +266,22 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
         }else{
             self.performSegue(withIdentifier: "goToKindPaket", sender: nil)
         }
-//        if segmentedControl.selectedIndex == 1 {
-//            //            let popOverVC = TransactionViewController(nibName: "TransactionViewController", bundle: nil)
-//            //            self.addChildViewController(popOverVC)
-//            //            popOverVC.view.frame = self.view.frame
-//            //            popOverVC.isVisisbeTabBar = true
-//            //            self.view.addSubview(popOverVC.view)
-//            //            popOverVC.didMove(toParentViewController: self)
-//            let alert: UIAlertController
-//            alert = UIAlertController(title: "", message: "Comming Soon!", preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-//            }))
-//            self.present(alert, animated: true, completion: nil)
-//        }else if segmentedControl.selectedIndex == 2{
-//            self.performSegue(withIdentifier: "goToKindPaket", sender: self)
-//        }
-//        self.performSegue(withIdentifier: "goToKindPaket", sender: self)
+        //        if segmentedControl.selectedIndex == 1 {
+        //            //            let popOverVC = TransactionViewController(nibName: "TransactionViewController", bundle: nil)
+        //            //            self.addChildViewController(popOverVC)
+        //            //            popOverVC.view.frame = self.view.frame
+        //            //            popOverVC.isVisisbeTabBar = true
+        //            //            self.view.addSubview(popOverVC.view)
+        //            //            popOverVC.didMove(toParentViewController: self)
+        //            let alert: UIAlertController
+        //            alert = UIAlertController(title: "", message: "Comming Soon!", preferredStyle: .alert)
+        //            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+        //            }))
+        //            self.present(alert, animated: true, completion: nil)
+        //        }else if segmentedControl.selectedIndex == 2{
+        //            self.performSegue(withIdentifier: "goToKindPaket", sender: self)
+        //        }
+        //        self.performSegue(withIdentifier: "goToKindPaket", sender: self)
         tableView.deselectRow(at: indexPath, animated: false)
     }
     

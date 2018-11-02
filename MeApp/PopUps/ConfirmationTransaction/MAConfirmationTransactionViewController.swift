@@ -16,6 +16,7 @@ protocol MAConfirmationTransactionViewControllerDelegate: class {
 
 class MAConfirmationTransactionViewController: MABasePopUpViewController {
     @IBOutlet weak var requestButton: ShadowButton!
+    var tabController: UITabBarController!
     @IBOutlet weak var insuficientAmountLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var bodyView: CustomCornerUIView!
@@ -71,7 +72,10 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
                             let alert: UIAlertController
                             alert = UIAlertController(title: "Success!", message: "Payment succeeded ", preferredStyle: .alert)
                             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                                self.dismiss(animated: true, completion: nil)
+                                self.presentingViewController?
+                                    .presentingViewController?.dismiss(animated: true, completion: {
+                                        self.tabController.selectedIndex = 0
+                                    })
                             }))
                             self.present(alert, animated: true, completion: nil)
                         }else if statusCode == 422 {
@@ -89,7 +93,10 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
                     let alert: UIAlertController
                     alert = UIAlertController(title: "Success!", message: "Payment succeeded ", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                        self.dismiss(animated: true, completion: nil)
+                        self.presentingViewController?
+                            .presentingViewController?.dismiss(animated: true, completion: {
+                                self.tabController.selectedIndex = 0
+                            })
                     }))
                     self.present(alert, animated: true, completion: nil)
                     
