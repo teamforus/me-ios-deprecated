@@ -71,8 +71,8 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
                     }
             }else{
             let parameters: Parameters = [
-                "organization_id" : voucher.allowedOrganizations!.first?.id ?? 0,
-                "amount" : voucher.amount ?? 0.0,
+                "organization_id" : voucher.product?.organization.id ?? 0,
+                "amount" : voucher.amount ?? "0.0",
                 "note" : note ?? ""]
             TransactionVoucherRequest.makeTransaction(parameters: parameters, identityAdress: addressVoucher, completion: { (transaction, statusCode) in
                 if statusCode == 201{
