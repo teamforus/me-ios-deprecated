@@ -10,16 +10,21 @@ import UIKit
 import Presentr
 import Alamofire
 
+protocol MAConfirmationTransactionViewControllerDelegate: class {
+    func paymentSucceded()
+}
+
 class MAConfirmationTransactionViewController: MABasePopUpViewController {
     @IBOutlet weak var requestButton: ShadowButton!
     @IBOutlet weak var insuficientAmountLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var bodyView: CustomCornerUIView!
+    weak var delegate: MAConfirmationTransactionViewControllerDelegate!
     var note: String!
     var aditionalAmount: Double!
     var voucher: Voucher!
     var addressVoucher: String!
-    var amount: Double!
+    var amount: String!
     let presenter: Presentr = {
         let presenter = Presentr(presentationType: .alert)
         presenter.transitionType = TransitionType.coverHorizontalFromRight
@@ -39,10 +44,10 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
             bodyView.frame = reactBodyView
             insuficientAmountLabel.isHidden = true
         }else{
-            amountLabel.text =  String(format: "€%.02f", amount)
+            amountLabel.text = amount
             let amountVoucher = Double(voucher.amount)!
-            aditionalAmount = amount - amountVoucher
-            if amount > amountVoucher{
+            aditionalAmount = Double(amount.replacingOccurrences(of: ",", with: "."))! - amountVoucher
+            if Double(amount.replacingOccurrences(of: ",", with: "."))! > amountVoucher{
                 requestButton.isEnabled = false
                 requestButton.backgroundColor = #colorLiteral(red: 0.7646217346, green: 0.764754355, blue: 0.7646133304, alpha: 1)
                 insuficientAmountLabel.text = String(format: "Insufficient funds on the voucher.  Please, request extra payment of €%.02f", aditionalAmount)
@@ -59,11 +64,16 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
         if voucher.product == nil {
                     let parameters: Parameters = [
                         "organization_id" : voucher.allowedOrganizations!.first?.id ?? 0,
-                        "amount" : amount,
+                        "amount" : amount.replacingOccurrences(of: ",", with: "."),
                         "note" : note ?? ""]
                     TransactionVoucherRequest.makeTransaction(parameters: parameters, identityAdress: addressVoucher, completion: { (transaction, statusCode) in
                         if statusCode == 201{
-                            self.dismiss(animated: true, completion: nil)
+                            let alert: UIAlertController
+                            alert = UIAlertController(title: "Success!", message: "Payment succeeded ", preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                                self.dismiss(animated: true, completion: nil)
+                            }))
+                            self.present(alert, animated: true, completion: nil)
                         }else if statusCode == 422 {
                             AlertController.showWarning(withText: "Voucher not have enough funds", vc: self)
                         }
@@ -76,7 +86,13 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
                 "note" : note ?? ""]
             TransactionVoucherRequest.makeTransaction(parameters: parameters, identityAdress: addressVoucher, completion: { (transaction, statusCode) in
                 if statusCode == 201{
-                    self.dismiss(animated: true, completion: nil)
+                    let alert: UIAlertController
+                    alert = UIAlertController(title: "Success!", message: "Payment succeeded ", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                        self.dismiss(animated: true, completion: nil)
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                    
                 }else if statusCode == 422 {
                     AlertController.showWarning(withText: "Voucher not have enough funds", vc: self)
                 }

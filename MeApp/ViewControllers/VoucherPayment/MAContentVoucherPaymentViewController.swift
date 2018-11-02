@@ -13,7 +13,7 @@ import SkyFloatingLabelTextField
 import IQKeyboardManagerSwift
 import SDWebImage
 
-class MAContentVoucherPaymentViewController: MABaseViewController {
+class MAContentVoucherPaymentViewController: MABaseViewController, MAConfirmationTransactionViewControllerDelegate {
     @IBOutlet weak var noteView: CustomCornerUIView!
     @IBOutlet weak var amountView: CustomCornerUIView!
     @IBOutlet weak var paketTitle: UILabel!
@@ -76,6 +76,10 @@ class MAContentVoucherPaymentViewController: MABaseViewController {
         self.view.endEditing(true)
     }
     
+    func paymentSucceded() {
+        AlertController.showSuccess(withText: "Payment succeeded", vc: self)
+    }
+    
     @IBAction func send(_ sender: Any) {
         if voucher.product != nil{
             goToTrnasctionConfirm()
@@ -91,7 +95,8 @@ class MAContentVoucherPaymentViewController: MABaseViewController {
         self.presenter.presentationType = .popup
         popupTransction.voucher = voucher
         popupTransction.addressVoucher = addressVoucher
-        popupTransction.amount = Double(amount.text ?? "0.0")
+        popupTransction.delegate = self
+        popupTransction.amount = amount.text
         popupTransction.note = noteSkyTextField.text ?? ""
         self.presenter.transitionType = nil
         self.presenter.dismissTransitionType = nil
