@@ -124,7 +124,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
                 AppLocker.present(with: .create, and: appearance, withController: self)
             }
         }else {
-            AlertController.showInternetUnable()
+            AlertController.showInternetUnable(vc: self)
         }
     }
     

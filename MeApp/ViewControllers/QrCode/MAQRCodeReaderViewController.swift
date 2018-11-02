@@ -79,7 +79,7 @@ class MAQRCodeReaderViewController: MABaseViewController {
                 }
             }
             }else{
-                AlertController.showInternetUnable()
+                AlertController.showInternetUnable(vc: self)
             }
         }
         
@@ -146,7 +146,7 @@ class MAQRCodeReaderViewController: MABaseViewController {
                     if statusCode == 401{
                         self.logOut()
                     }
-                    AlertController.showSuccess(withText: NSLocalizedString("A record has been validated!", comment: ""))
+                    AlertController.showSuccess(withText: NSLocalizedString("A record has been validated!", comment: ""), vc: self)
                     self.reader.startScanning()
                 }, failure: { (error) in
                     AlertController.showError(vc:self)

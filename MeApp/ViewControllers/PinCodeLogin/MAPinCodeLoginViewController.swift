@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftMessages
 import Reachability
 import Presentr
 import CoreData
@@ -66,7 +65,7 @@ class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
                 AlertController.showError(vc:self)
             }
         }else{
-            AlertController.showInternetUnable()
+            AlertController.showInternetUnable(vc: self)
         }
     }
     
@@ -185,30 +184,16 @@ class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
                     if response.success != nil {
                         self.performSegue(withIdentifier: "goToWalet", sender: nil)
                     }else if response.message != nil {
-                        let error = MessageView.viewFromNib(layout: .tabView)
-                        error.configureTheme(.error)
-                        error.configureContent(title: "Warning", body: response.message , iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
-                            SwiftMessages.hide()
-                        }
-                        error.button?.setTitle("OK", for: .normal)
-                        
-                        SwiftMessages.show( view: error)
+                        AlertController.showWarning(withText: response.message, vc: self)
                     }
                 }) { (error) in
                     AlertController.showError(vc:self)
                 }
             }else {
-                let error = MessageView.viewFromNib(layout: .tabView)
-                error.configureTheme(.error)
-                error.configureContent(title: "Warning", body: "This device in not authorize" , iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
-                    SwiftMessages.hide()
-                }
-                error.button?.setTitle("OK", for: .normal)
-                
-                SwiftMessages.show( view: error)
+                AlertController.showWarning(withText: "This device in not authorize", vc: self)
             }
         }else {
-            AlertController.showInternetUnable()
+            AlertController.showInternetUnable(vc: self)
         }
     }
     

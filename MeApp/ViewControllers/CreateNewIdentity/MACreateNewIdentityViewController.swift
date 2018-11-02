@@ -9,7 +9,6 @@
 import UIKit
 import SkyFloatingLabelTextField
 import Alamofire
-import SwiftMessages
 import CoreData
 import IQKeyboardManagerSwift
 import Reachability
@@ -61,27 +60,14 @@ class MACreateNewIdentityViewController: MABaseViewController {
                                                                 UserDefaults.standard.set("", forKey: ALConstants.kPincode)
                                                                 self.performSegue(withIdentifier: "goToWalet", sender: self)
                                                             }else {
-                                                                let error = MessageView.viewFromNib(layout: .tabView)
-                                                                error.configureTheme(.error)
-                                                                error.configureContent(title: "Invalid data", body: response.errors?.recordMessage != nil ? response.errors?.recordMessage.first : "Email already is used" , iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
-                                                                    SwiftMessages.hide()
-                                                                }
-                                                                error.button?.setTitle("OK", for: .normal)
-                                                                
-                                                                SwiftMessages.show( view: error)
+                                                                 AlertController.showWarning(withText: "Email already is used", vc: self)
                                                             }
                                                             
                     }, failure: { (error) in
-                        let error = MessageView.viewFromNib(layout: .tabView)
-                        error.configureTheme(.error)
-                        error.configureContent(title: "Invalid email", body: "Something go wrong, please try again!", iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
-                            SwiftMessages.hide()
-                        }
-                        error.button?.setTitle("OK", for: .normal)
-                        SwiftMessages.show( view: error)
+                        AlertController.showWarning(withText: "Something go wrong, please try again!", vc: self)
                     })
                 }else {
-                    AlertController.showInternetUnable()
+                    AlertController.showInternetUnable(vc: self)
                 }
             }
         }

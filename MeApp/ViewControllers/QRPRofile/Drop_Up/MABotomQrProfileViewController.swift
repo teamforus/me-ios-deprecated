@@ -91,7 +91,7 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
                 AlertController.showError(vc:self)
             }
         }else{
-            AlertController.showInternetUnable()
+            AlertController.showInternetUnable(vc: self)
         }
     }
     

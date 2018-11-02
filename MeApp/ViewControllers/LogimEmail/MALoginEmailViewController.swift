@@ -10,7 +10,6 @@ import UIKit
 import SkyFloatingLabelTextField
 import IQKeyboardManagerSwift
 import Alamofire
-import SwiftMessages
 import Reachability
 
 class MALoginEmailViewController: MABaseViewController {
@@ -56,30 +55,16 @@ class MALoginEmailViewController: MABaseViewController {
                                                                     self.performSegue(withIdentifier: "goToSuccessMail", sender: self)
                                                                     //
                                                                 }else {
-                                                                    let error = MessageView.viewFromNib(layout: .tabView)
-                                                                    error.configureTheme(.error)
-                                                                    error.configureContent(title: "Invalid email", body: "", iconImage: nil, iconText: "Such email not exist!", buttonImage: nil, buttonTitle: "YES") { _ in
-                                                                        SwiftMessages.hide()
-                                                                    }
-                                                                    error.button?.setTitle("OK", for: .normal)
-                                                                    
-                                                                    SwiftMessages.show( view: error)
+                                                                     AlertController.showWarning(withText: "Such email not exist!", vc: self)
                                                                 }
                                                                 
                     }, failure: { (error) in
-                        let error = MessageView.viewFromNib(layout: .tabView)
-                        error.configureTheme(.error)
-                        error.configureContent(title: "Invalid email", body: "Something go wrong, please try again!", iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
-                            SwiftMessages.hide()
-                        }
-                        error.button?.setTitle("OK", for: .normal)
-                        
-                        SwiftMessages.show( view: error)
+                        AlertController.showWarning(withText: "Something go wrong, please try again!", vc: self)
                     })
                 }
                 
             }else{
-                AlertController.showInternetUnable()
+                AlertController.showInternetUnable(vc: self)
             }
         }
         

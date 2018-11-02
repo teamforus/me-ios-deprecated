@@ -32,7 +32,7 @@ class MAPersonalViewController: MABaseViewController, BWWalkthroughViewControlle
         getRecordType()
         getRecordList()
         }else {
-            AlertController.showInternetUnable()
+            AlertController.showInternetUnable(vc: self)
         }
     }
 

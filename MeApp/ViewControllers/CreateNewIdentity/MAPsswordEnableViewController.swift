@@ -9,7 +9,6 @@
 import UIKit
 import CoreData
 import Alamofire
-import SwiftMessages
 import Reachability
 import LocalAuthentication
 
@@ -98,26 +97,14 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
                                                             }) { (error) in }
                                                             self.performSegue(withIdentifier: "goToWalet", sender: self)
                                                         }else {
-                                                            let error = MessageView.viewFromNib(layout: .tabView)
-                                                            error.configureTheme(.error)
-                                                            error.configureContent(title: "Ongeldige invoer", body: response.errors?.recordMessage != nil ? response.errors?.recordMessage.first : "Email wordt al gebruikt" , iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
-                                                                SwiftMessages.hide()
-                                                            }
-                                                            error.button?.setTitle("OK", for: .normal)
-                                                            SwiftMessages.show( view: error)
+                                                            AlertController.showWarning(withText: "Email wordt al gebruikt", vc: self)
                                                         }
                                                         
                 }, failure: { (error) in
-                    let error = MessageView.viewFromNib(layout: .tabView)
-                    error.configureTheme(.error)
-                    error.configureContent(title: "Ongeldig e-mailadres", body: "Er ging iets fout, probeer het nogmaals", iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
-                        SwiftMessages.hide()
-                    }
-                    error.button?.setTitle("OK", for: .normal)
-                    SwiftMessages.show( view: error)
+                    AlertController.showWarning(withText: "Er ging iets fout, probeer het nogmaals", vc: self)
                 })
             }else{
-                AlertController.showInternetUnable()
+                AlertController.showInternetUnable(vc: self)
             }
             break
         default:

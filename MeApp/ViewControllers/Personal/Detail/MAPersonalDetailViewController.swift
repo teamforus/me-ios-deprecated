@@ -81,7 +81,7 @@ class MAPersonalDetailViewController: MABaseViewController{
                 AlertController.showError(vc:self)
             }
         }else{
-            AlertController.showInternetUnable()
+            AlertController.showInternetUnable(vc: self)
         }
     }
     

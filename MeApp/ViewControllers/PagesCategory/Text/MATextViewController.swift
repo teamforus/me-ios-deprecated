@@ -72,7 +72,7 @@ class MATextViewController: MABaseViewController, UITextViewDelegate {
                 AlertController.showError(vc:self)
             }
         }else {
-            AlertController.showInternetUnable()
+            AlertController.showInternetUnable(vc: self)
         }
     }
     

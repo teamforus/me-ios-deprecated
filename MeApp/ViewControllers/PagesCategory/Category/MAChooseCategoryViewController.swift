@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftMessages
 import Reachability
 
 class MAChooseCategoryViewController: MABaseViewController {
@@ -38,7 +37,7 @@ class MAChooseCategoryViewController: MABaseViewController {
                 AlertController.showError(vc:self)
             }
         }else{
-            AlertController.showInternetUnable()
+            AlertController.showInternetUnable(vc: self)
         }
     }
     
@@ -89,14 +88,7 @@ extension MAChooseCategoryViewController: UICollectionViewDataSource, UICollecti
             NotificationCenter.default.post(name: Notification.Name("SETSELECTEDCATEGORY"), object: nil)
             NotificationCenter.default.post(name: Notification.Name("EnableNextButton"), object: nil)
         } else{
-            let error = MessageView.viewFromNib(layout: .tabView)
-            error.configureTheme(.warning)
-            error.configureContent(title: "Warning", body: "Only personal category can be choose for this moment" , iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
-                SwiftMessages.hide()
-            }
-            error.button?.setTitle("OK", for: .normal)
-            
-            SwiftMessages.show( view: error)
+            AlertController.showWarning(withText: "Only personal category can be choose for this moment", vc: self)
         }
     }
     

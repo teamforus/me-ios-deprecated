@@ -87,7 +87,7 @@ class MABottomPersonalQRViewController: MABaseViewController, ISHPullUpSizingDel
                 AlertController.showError(vc:self)
             }
         }else{
-            AlertController.showInternetUnable()
+            AlertController.showInternetUnable(vc: self)
         }
     }
     

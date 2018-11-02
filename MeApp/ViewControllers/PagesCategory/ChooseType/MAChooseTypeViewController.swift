@@ -45,7 +45,7 @@ class MAChooseTypeViewController: MABaseViewController, BWWalkthroughPage, MACho
                 AlertController.showError(vc:self)
             }
         }else{
-            AlertController.showInternetUnable()
+            AlertController.showInternetUnable(vc: self)
         }
     }
     

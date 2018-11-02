@@ -39,7 +39,7 @@ class MAValidatorsViewController: MABaseViewController {
              self.categoryNameLabel.text = "Persoonlijk"
         }
         }else{
-            AlertController.showInternetUnable()
+            AlertController.showInternetUnable(vc: self)
         }
     }
     
@@ -59,7 +59,7 @@ class MAValidatorsViewController: MABaseViewController {
             }
           
         }else {
-            AlertController.showInternetUnable()
+            AlertController.showInternetUnable(vc: self)
         }
     }
     
@@ -98,13 +98,13 @@ extension MAValidatorsViewController: UITableViewDataSource, UITableViewDelegate
                 if response.message != nil{
                     AlertController.showWarning(withText: "Sorry request to validate is already send", vc: self)
                 }else{
-                    AlertController.showSuccess(withText: "")
+                    AlertController.showSuccess(withText: "", vc: self)
                 }
             }) { (error) in
                 
             }
         }else {
-            AlertController.showInternetUnable()
+            AlertController.showInternetUnable(vc: self)
         }
     }
 }
