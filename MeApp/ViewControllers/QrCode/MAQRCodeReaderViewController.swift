@@ -208,6 +208,7 @@ class MAQRCodeReaderViewController: MABaseViewController {
             let detailPaymentVC = segue.destination as! MABaseVoucherPaymentViewController
             (detailPaymentVC.contentViewController as! MAContentVoucherPaymentViewController).voucher = self.voucher
             (detailPaymentVC.contentViewController as! MAContentVoucherPaymentViewController).addressVoucher = self.addressVoucher
+            (detailPaymentVC.contentViewController as! MAContentVoucherPaymentViewController).tabController = self.tabBarController
         }
     }
     

@@ -18,6 +18,7 @@ class MAContentVoucherPaymentViewController: MABaseViewController, MAConfirmatio
     @IBOutlet weak var amountView: CustomCornerUIView!
     @IBOutlet weak var paketTitle: UILabel!
     var addressVoucher: String!
+    var tabController: UITabBarController!
     @IBOutlet weak var qrImageViewBody: UIImageView!
     @IBOutlet weak var heightContraint: NSLayoutConstraint!
     @IBOutlet weak var validDaysLabel: UILabel!
@@ -53,7 +54,11 @@ class MAContentVoucherPaymentViewController: MABaseViewController, MAConfirmatio
         }else{
             paketTitle.text = voucher.found.name
             organizationNameLabel.text = voucher.found.organization.name ?? ""
+            if voucher.found.logo != nil{
                 qrCodeImageView.sd_setImage(with: URL(string: voucher.found.logo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+            }else{
+                qrCodeImageView.image = UIImage(named: "Resting")
+            }
         }
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         self.view.isUserInteractionEnabled = true
@@ -94,6 +99,7 @@ class MAContentVoucherPaymentViewController: MABaseViewController, MAConfirmatio
         let popupTransction =  MAConfirmationTransactionViewController(nibName: "MAConfirmationTransactionViewController", bundle: nil)
         self.presenter.presentationType = .popup
         popupTransction.voucher = voucher
+        popupTransction.tabController = tabController
         popupTransction.addressVoucher = addressVoucher
         popupTransction.delegate = self
         popupTransction.amount = amount.text

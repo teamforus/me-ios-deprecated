@@ -14,7 +14,7 @@ class BaseURL {
     #if DEV
     return "https://dev.api.forus.link/api/v1/\(url)"
     #elseif DEMO
-    return " https://demo.api.forus.link/api/v1/\(url)"
+    return "https://demo.api.forus.link/api/v1/\(url)"
     #else
     return "https://api.forus.link/api/v1/\(url)"
     #endif
