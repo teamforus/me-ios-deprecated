@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftMessages
 import Reachability
 import Presentr
 import CoreData
@@ -63,10 +62,10 @@ class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
                     }
                 }
             }) { (error) in
-                AlertController.showError()
+                AlertController.showError(vc:self)
             }
         }else{
-            AlertController.showInternetUnable()
+            AlertController.showInternetUnable(vc: self)
         }
     }
     
@@ -82,7 +81,7 @@ class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
                 }
             }
         }) { (error) in
-            AlertController.showError()
+            AlertController.showError(vc:self)
         }
     }
     
@@ -185,37 +184,23 @@ class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
                     if response.success != nil {
                         self.performSegue(withIdentifier: "goToWalet", sender: nil)
                     }else if response.message != nil {
-                        let error = MessageView.viewFromNib(layout: .tabView)
-                        error.configureTheme(.error)
-                        error.configureContent(title: "Warning", body: response.message , iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
-                            SwiftMessages.hide()
-                        }
-                        error.button?.setTitle("OK", for: .normal)
-                        
-                        SwiftMessages.show( view: error)
+                        AlertController.showWarning(withText: response.message, vc: self)
                     }
                 }) { (error) in
-                    AlertController.showError()
+                    AlertController.showError(vc:self)
                 }
             }else {
-                let error = MessageView.viewFromNib(layout: .tabView)
-                error.configureTheme(.error)
-                error.configureContent(title: "Warning", body: "This device in not authorize" , iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
-                    SwiftMessages.hide()
-                }
-                error.button?.setTitle("OK", for: .normal)
-                
-                SwiftMessages.show( view: error)
+                AlertController.showWarning(withText: "This device in not authorize", vc: self)
             }
         }else {
-            AlertController.showInternetUnable()
+            AlertController.showInternetUnable(vc: self)
         }
     }
     
     @IBAction func aboutAction(_ sender: Any) {
         let popupTransction =  MAAboutMeViewController(nibName: "MAAboutMeViewController", bundle: nil)
-        popupTransction.titleDetail = "How work that?"
-        popupTransction.descriptionDetail = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        popupTransction.titleDetail = "About Me"
+        popupTransction.descriptionDetail = "Met de Me App kan je een indentiteit aanmaken, vouchers beheren en de QR-code scanner gebruiken om in te loggen op de gebruikersomgeving."
         self.presenter.presentationType = .popup
         self.presenter.transitionType = nil
         self.presenter.dismissTransitionType = nil

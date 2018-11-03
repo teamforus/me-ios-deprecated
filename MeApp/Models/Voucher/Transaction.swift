@@ -13,7 +13,7 @@ import Alamofire
 struct Transactions {
     var organizationId: Int!
     var productId: Int!
-    var amount: Int!
+    var amount: String!
     var adress: String!
     var organization: Organization!
     var product: Product!
@@ -116,7 +116,7 @@ class TransactionVoucherRequest {
                     if (json as AnyObject)["message"]! == nil{
                         transaction = try! Transactions(object: (json as AnyObject)["data"] as! JSONObject)
                     }else{
-                        AlertController.showWarning(withText: (json as AnyObject)["message"] as! String)
+//                        AlertController.showWarning(withText: (json as AnyObject)["message"] as! String, vc: self)
                     }
                 }
                 completion(transaction, (response.response?.statusCode)!)

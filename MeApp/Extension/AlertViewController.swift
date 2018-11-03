@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftMessages
 
 class AlertController: UIAlertController {
     private(set) var originalTitle: String?
@@ -58,48 +57,36 @@ class AlertController: UIAlertController {
         title = spaceAdjustedTitle
     }
     
-    static func showError(){
-        let error = MessageView.viewFromNib(layout: .tabView)
-        error.configureTheme(.error)
-        error.configureContent(title: "Warning", body: "Something goes wrong please try again!" , iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
-            SwiftMessages.hide()
-        }
-        error.button?.setTitle("OK", for: .normal)
-        
-        SwiftMessages.show( view: error)
+    static func showError(vc: UIViewController){
+        let alert: UIAlertController
+        alert = UIAlertController(title: "Warning", message: "Something goes wrong please try again!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+        }))
+        vc.present(alert, animated: true, completion: nil)
     }
     
-    static func showWarning(withText: String){
-        let error = MessageView.viewFromNib(layout: .tabView)
-        error.configureTheme(.error)
-        error.configureContent(title: "Warning", body: withText , iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
-            SwiftMessages.hide()
-        }
-        error.button?.setTitle("OK", for: .normal)
-        
-        SwiftMessages.show( view: error)
+    static func showWarning(withText: String, vc: UIViewController){
+        let alert: UIAlertController
+        alert = UIAlertController(title: "Warning", message: withText, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+        }))
+        vc.present(alert, animated: true, completion: nil)
     }
     
-    static func showSuccess(withText: String){
-        let error = MessageView.viewFromNib(layout: .tabView)
-        error.configureTheme(.success)
-        error.configureContent(title: "Success!", body: "" , iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
-            SwiftMessages.hide()
-        }
-        error.button?.setTitle("OK", for: .normal)
-        
-        SwiftMessages.show( view: error)
+    static func showSuccess(withText: String, vc: UIViewController){
+        let alert: UIAlertController
+        alert = UIAlertController(title: "Success!", message: withText, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+        }))
+        vc.present(alert, animated: true, completion: nil)
     }
     
-    static func showInternetUnable(){
-        let error = MessageView.viewFromNib(layout: .tabView)
-        error.configureTheme(.warning)
-        error.configureContent(title: "Warning!", body: "No Internet Conecction" , iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
-            SwiftMessages.hide()
-        }
-        error.button?.setTitle("OK", for: .normal)
-        
-        SwiftMessages.show( view: error)
+    static func showInternetUnable(vc: UIViewController){
+        let alert: UIAlertController
+        alert = UIAlertController(title: "Warning", message: "No Internet Conecction", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+        }))
+        vc.present(alert, animated: true, completion: nil)
     }
     
     private func newLinesCount(for imageView: UIImageView) -> CGFloat {

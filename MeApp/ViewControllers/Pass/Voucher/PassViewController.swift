@@ -25,6 +25,8 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
     @IBOutlet weak var voucherTitleLabel: UILabel!
     @IBOutlet weak var timAvailabelLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var imageBodyView: UIImageView!
+    @IBOutlet weak var dateCreatedLabel: UILabel!
     
     let presenter: Presentr = {
         let presenter = Presentr(presentationType: .alert)
@@ -36,16 +38,17 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.voucherTitleLabel.text = voucher.found.name
-        self.priceLabel.text = "€\(voucher.amount!)"
-        self.timAvailabelLabel.text = voucher.found.organization.name
+        self.priceLabel.text = voucher.amount ?? "0.0"
+        dateCreatedLabel.text = voucher.createdAt.dateFormaterNormalDate()
         kindPaketQRView.layer.cornerRadius = 9.0
-        kindPaketQRView.layer.shadowColor = UIColor.black.cgColor
-        kindPaketQRView.layer.shadowOffset = CGSize(width: 0, height: 5)
-        kindPaketQRView.layer.shadowOpacity = 0.1
-        kindPaketQRView.layer.shadowRadius = 10.0
-        kindPaketQRView.layer.masksToBounds = false
+        imageBodyView.layer.shadowColor = UIColor.black.cgColor
+        imageBodyView.layer.shadowOffset = CGSize(width: 0, height: 5)
+        imageBodyView.layer.shadowOpacity = 0.1
+        imageBodyView.layer.shadowRadius = 10.0
+        imageBodyView.clipsToBounds = false
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(goToQRReader))
         imageQR.isUserInteractionEnabled = true
+        imageQR.generateQRCode(from: "{ \"type\": \"voucher\",\"value\": \"\(voucher.address!)\" }")
         imageQR.addGestureRecognizer(tapGestureRecognizer)
         smallerAmount.layer.cornerRadius = 9.0
         emailMeButton.layer.cornerRadius = 9.0
@@ -67,6 +70,9 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
         TransactionVoucherRequest.getTransaction(identityAdress: voucher.address, completion: { (transactions, statusCode) in
             self.transactions.removeAllObjects()
              self.transactions.addObjects(from: transactions.sorted(by: { ($0 as! Transactions).created_at.compare(($1 as! Transactions).created_at) == .orderedDescending}))
+           if self.transactions.count == 0 {
+                self.tableView.isHidden = true
+            }
             self.tableView.reloadData()
         }) { (error) in
             
@@ -108,7 +114,7 @@ extension PassViewController: UITableViewDataSource, UITableViewDelegate{
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PassTableViewCell
         let transaction = self.transactions[indexPath.row] as! Transactions
         cell.companyTitle.text = transaction.organization.name
-        cell.priceLabel.text = "-\(transaction.amount!)"
+        cell.priceLabel.text = "- €\(transaction.amount!)"
         cell.dateLabel.text = transaction.created_at.dateFormaterNormalDate()
         return cell
     }

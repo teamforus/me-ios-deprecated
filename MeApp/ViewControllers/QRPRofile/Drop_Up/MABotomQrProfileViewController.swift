@@ -29,20 +29,26 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.isHidden = true
+//        self.view.isHidden = true
         topView.layer.cornerRadius = 14.0
         rootView.layer.cornerRadius = 14.0
         rootView.layer.shadowColor = UIColor.black.cgColor;
         rootView.layer.shadowOffset = CGSize(width: 0, height: -2)
         rootView.layer.shadowOpacity = 0.2
         rootView.layer.shadowRadius = 23 / 2
-        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture))
+        topView.addGestureRecognizer(tapGesture)
         NotificationCenter.default.addObserver(self, selector: #selector(toglePullUpView), name: Notification.Name("togleStateWindow"), object: nil)
         var rect: CGRect = self.rootView.frame
+        var imageQRRect: CGRect = qrCodeImageView.frame
         let screen = Device.screen
         switch screen {
         case .inches_4_0:
-            rect.size.height = 440
+            rect.size.height = 400
+            imageQRRect.size.height = 200
+            imageQRRect.size.width = 200
+            imageQRRect.origin.x = imageQRRect.origin.x + 50
+            qrCodeImageView.frame = imageQRRect
             break
         case .inches_4_7:
             rect.size.height = 500
@@ -79,13 +85,13 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
                     self.qrCodeImageView.generateQRCode(from: "{ \"type\": \"auth_token\",\"value\": \"\(response.authToken!)\" }")
                     self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.checkAuthorizeToken), userInfo: nil, repeats: true)
                 }else{
-                    AlertController.showError()
+                    AlertController.showError(vc:self)
                 }
             }) { (error) in
-                AlertController.showError()
+                AlertController.showError(vc:self)
             }
         }else{
-            AlertController.showInternetUnable()
+            AlertController.showInternetUnable(vc: self)
         }
     }
     
@@ -108,7 +114,7 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
                 }
             }
         }) { (error) in
-            AlertController.showError()
+            AlertController.showError(vc:self)
         }
     }
     

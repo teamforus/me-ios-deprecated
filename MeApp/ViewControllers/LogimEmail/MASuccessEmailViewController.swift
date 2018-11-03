@@ -22,9 +22,15 @@ class MASuccessEmailViewController: MABaseViewController, AppLockerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if UserDefaults.standard.string(forKey: "auth_token") != ""{
-            self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.authorizeToken), userInfo: nil, repeats: true)
-        }
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(authorizeToken(notifcation:)),
+            name: NSNotification.Name(rawValue: "authorizeToken"),
+            object: nil)
+    
+//        if UserDefaults.standard.string(forKey: "auth_token") != ""{
+//            self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.authorizeToken), userInfo: nil, repeats: true)
+//        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,17 +47,16 @@ class MASuccessEmailViewController: MABaseViewController, AppLockerDelegate {
         }
     }
     
-    @objc func authorizeToken(){
-        Status.checkStatus(accessToken: UserDefaults.standard.string(forKey: "auth_token")!, completion: { (code, message) in
+    @objc func authorizeToken(notifcation: Notification){
+        Status.checkStatus(accessToken: notifcation.userInfo?["authToken"] as! String, completion: { (code, message) in
             if code == 200 {
                 if message == "active"{
-                    self.timer.invalidate()
                     //check if user exist or no
                     self.checkPassCode()
                 }
             }
         }) { (error) in
-            AlertController.showError()
+            AlertController.showError(vc:self)
         }
     }
     
@@ -101,8 +106,8 @@ class MASuccessEmailViewController: MABaseViewController, AppLockerDelegate {
                     UserDefaults.standard.set(user.pinCode, forKey: ALConstants.kPincode)
                     var appearance = ALAppearance()
                     appearance.image = UIImage(named: "lock")!
-                    appearance.title = "Create passcode"
-                    appearance.subtitle = "Your passcode is required"
+                    appearance.title = "Inlogcode"
+                    appearance.subtitle = "Maak een inlogcode aan"
                     appearance.isSensorsEnabled = true
                     appearance.cancelIsVissible = false
                     appearance.delegate = self
@@ -113,8 +118,8 @@ class MASuccessEmailViewController: MABaseViewController, AppLockerDelegate {
                 UserDefaults.standard.set("", forKey: ALConstants.kPincode)
                 var appearance = ALAppearance()
                 appearance.image = UIImage(named: "lock")!
-                appearance.title = "Create passcode"
-                appearance.subtitle = "Your passcode is required"
+                appearance.title = "Inlogcode"
+                appearance.subtitle = "Maak een inlogcode aan"
                 appearance.isSensorsEnabled = true
                 appearance.cancelIsVissible = false
                 appearance.delegate = self

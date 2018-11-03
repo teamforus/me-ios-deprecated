@@ -9,7 +9,6 @@
 import UIKit
 import CoreData
 import Alamofire
-import SwiftMessages
 import Reachability
 import LocalAuthentication
 
@@ -27,8 +26,8 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         if !faceIDAvailable(){
-            headLabel.text = "Would you like to log in with Tocuh ID?"
-            faceIDButton.setTitle("USE TOUCH ID", for: .normal)
+            headLabel.text = "Wil je inloggen met Touch ID"
+            faceIDButton.setTitle("GEBRUIK TOUCH ID", for: .normal)
         }
     }
     
@@ -49,8 +48,8 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
         UserDefaults.standard.synchronize()
         var appearance = ALAppearance()
         appearance.image = UIImage(named: "lock")!
-        appearance.title = "Create passcode"
-        appearance.subtitle = "Your passcode is required \n to enable Face ID"
+        appearance.title = "Inlogcode"
+        appearance.subtitle = "Vul je inlogcode in \n om Face ID te gebruiken"
         appearance.isSensorsEnabled = true
         appearance.cancelIsVissible = false
         appearance.delegate = self
@@ -63,8 +62,8 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
         UserDefaults.standard.synchronize()
         var appearance = ALAppearance()
         appearance.image = UIImage(named: "lock")!
-        appearance.title = "Create passcode"
-        appearance.subtitle = "Your passcode is required"
+        appearance.title = "Inlogcode"
+        appearance.subtitle = "Maak een inlogcode aan"
         appearance.isSensorsEnabled = true
         appearance.cancelIsVissible = false
         appearance.delegate = self
@@ -98,26 +97,14 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
                                                             }) { (error) in }
                                                             self.performSegue(withIdentifier: "goToWalet", sender: self)
                                                         }else {
-                                                            let error = MessageView.viewFromNib(layout: .tabView)
-                                                            error.configureTheme(.error)
-                                                            error.configureContent(title: "Invalid data", body: response.errors?.recordMessage != nil ? response.errors?.recordMessage.first : "Email already is used" , iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
-                                                                SwiftMessages.hide()
-                                                            }
-                                                            error.button?.setTitle("OK", for: .normal)
-                                                            SwiftMessages.show( view: error)
+                                                            AlertController.showWarning(withText: "Email wordt al gebruikt", vc: self)
                                                         }
                                                         
                 }, failure: { (error) in
-                    let error = MessageView.viewFromNib(layout: .tabView)
-                    error.configureTheme(.error)
-                    error.configureContent(title: "Invalid email", body: "Something go wrong, please try again!", iconImage: nil, iconText: "", buttonImage: nil, buttonTitle: "YES") { _ in
-                        SwiftMessages.hide()
-                    }
-                    error.button?.setTitle("OK", for: .normal)
-                    SwiftMessages.show( view: error)
+                    AlertController.showWarning(withText: "Er ging iets fout, probeer het nogmaals", vc: self)
                 })
             }else{
-                AlertController.showInternetUnable()
+                AlertController.showInternetUnable(vc: self)
             }
             break
         default:

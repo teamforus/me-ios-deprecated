@@ -22,7 +22,7 @@ class PassTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         bodyView.layer.cornerRadius = 8.0
-        imageRectView.layer.cornerRadius = 12.0
+//        imageRectView.layer.cornerRadius = 12.0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

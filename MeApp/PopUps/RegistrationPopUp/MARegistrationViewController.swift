@@ -14,7 +14,6 @@ import UIKit
 import AlertBar
 import SkyFloatingLabelTextField
 import Alamofire
-import SwiftMessages
 
 class MARegistrationViewController: MABasePopUpViewController, UITextFieldDelegate {
     @IBOutlet var viewBody: UIView!

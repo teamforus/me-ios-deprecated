@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dkF-Rx-zlv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dkF-Rx-zlv">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -55,11 +55,11 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="userpick" translatesAutoresizingMaskIntoConstraints="NO" id="kDN-O7-bQf" customClass="RoundImageView" customModule="Me" customModuleProvider="target">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_launcher_APP" translatesAutoresizingMaskIntoConstraints="NO" id="kDN-O7-bQf" customClass="RoundImageView" customModule="Me" customModuleProvider="target">
                                         <rect key="frame" x="311" y="84" width="44" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VD4-vu-QiK" customClass="ShadowButton" customModule="Me" customModuleProvider="target">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VD4-vu-QiK" customClass="ShadowButton" customModule="Me" customModuleProvider="target">
                                         <rect key="frame" x="311" y="84" width="44" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <userDefinedRuntimeAttributes>
@@ -168,7 +168,6 @@
                                             <outlet property="typeCoinImageView" destination="IYk-TZ-dsI" id="mVA-On-EAG"/>
                                             <outlet property="typeCoinLabel" destination="PaZ-DR-I5J" id="dFX-Tr-FNp"/>
                                             <outlet property="viewBody" destination="2yc-Ku-yvk" id="iCJ-pi-9Sh"/>
-                                            <segue destination="Cvi-6D-RK2" kind="show" id="vME-J9-YGa"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell3" rowHeight="142" id="Z6F-td-6Q0" customClass="MAWalletOwnerTableViewCell" customModule="Me" customModuleProvider="target">
@@ -249,7 +248,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="18 tagen geldig" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYv-E9-UR4">
-                                                            <rect key="frame" x="20" y="44" width="274" height="20"/>
+                                                            <rect key="frame" x="20" y="44" width="245" height="20"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="14"/>
                                                             <color key="textColor" red="0.1960784314" green="0.21176470589999999" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -264,6 +263,13 @@
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="20"/>
                                                             <color key="textColor" red="0.20784313730000001" green="0.3921568627" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Used Voucher" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUr-0Z-7e9">
+                                                            <rect key="frame" x="208" y="78" width="115" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="15"/>
+                                                            <color key="textColor" red="0.98387008909999996" green="0.63834285739999996" blue="0.1010637954" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -290,6 +296,7 @@
                                         <connections>
                                             <outlet property="organizationNameLabel" destination="ZYv-E9-UR4" id="o1X-qx-wfR"/>
                                             <outlet property="priceLabel" destination="9C1-7W-qbu" id="fsL-IO-2sX"/>
+                                            <outlet property="usedVoucherLabel" destination="BUr-0Z-7e9" id="C3v-HE-qK2"/>
                                             <outlet property="voucherImage" destination="aUF-1z-wID" id="E8x-Nt-3eK"/>
                                             <outlet property="voucherTitleLabel" destination="s5P-PY-YuN" id="HiB-wR-hex"/>
                                         </connections>
@@ -313,6 +320,7 @@
                         <outlet property="segmentedControl" destination="ZuF-wI-tas" id="HiT-sC-aeo"/>
                         <outlet property="tableView" destination="c0d-Ce-cj1" id="pgU-9O-Liy"/>
                         <segue destination="lg9-1p-9uw" kind="show" identifier="goToKindPaket" id="4xC-zG-BHj"/>
+                        <segue destination="Cvi-6D-RK2" kind="show" identifier="goToVoucherProduct" id="3Jr-31-XNX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y34-xr-kxu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -335,10 +343,10 @@
             </objects>
             <point key="canvasLocation" x="2623" y="984"/>
         </scene>
-        <!--Courrencies-->
+        <!--contentProduct-->
         <scene sceneID="81M-gx-0jH">
             <objects>
-                <viewControllerPlaceholder storyboardName="PassStoryboard" referencedIdentifier="Courrencies" id="Cvi-6D-RK2" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="PassStoryboard" referencedIdentifier="contentProduct" id="Cvi-6D-RK2" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oyh-Kc-GDX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2608" y="1070"/>
@@ -698,7 +706,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2hC-Nt-8iK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2424.8000000000002" y="-878.41079460269873"/>
+            <point key="canvasLocation" x="2694" y="-820"/>
         </scene>
     </scenes>
     <resources>
@@ -706,13 +714,13 @@
         <image name="activeBlue" width="30" height="26"/>
         <image name="eth" width="52" height="52"/>
         <image name="homeIcon" width="17" height="16"/>
+        <image name="ic_launcher_APP" width="210" height="210"/>
         <image name="iconGrey" width="30" height="26"/>
         <image name="iconNotes" width="60" height="60"/>
         <image name="records" width="30" height="26"/>
         <image name="rectangle" width="10" height="7"/>
         <image name="rectangleRed" width="9" height="7"/>
         <image name="shape1" width="21" height="21"/>
-        <image name="userpick" width="40" height="40"/>
         <image name="wallet" width="30" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>

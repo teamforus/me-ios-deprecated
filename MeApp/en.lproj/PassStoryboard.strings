@@ -14,8 +14,8 @@
 /* Class = "UILabel"; text = "-2,76"; ObjectID = "5AC-ZM-xIz"; */
 "5AC-ZM-xIz.text" = "-2,76";
 
-/* Class = "UILabel"; text = "155 dagen geldig"; ObjectID = "5de-iy-ft6"; */
-"5de-iy-ft6.text" = "155 day number";
+/* Class = "UILabel"; text = "Not 2 dagen geldig valid"; ObjectID = "5de-iy-ft6"; */
+"5de-iy-ft6.text" = "NOT 2 DAGEN GELDIG VALID";
 
 /* Class = "UILabel"; text = "RMinds"; ObjectID = "89x-3m-6Kk"; */
 "89x-3m-6Kk.text" = "RMinds";
@@ -30,13 +30,13 @@
 "FNc-gw-bh0.normalTitle" = "Info";
 
 /* Class = "UILabel"; text = "Zwembad"; ObjectID = "InR-jP-3v8"; */
-"InR-jP-3v8.text" = "Zwembad";
+"InR-jP-3v8.text" = "Swimming pool";
 
 /* Class = "UILabel"; text = "Gefaald"; ObjectID = "Naq-m7-iBJ"; */
-"Naq-m7-iBJ.text" = "Gefaald";
+"Naq-m7-iBJ.text" = "Failed";
 
 /* Class = "UIButton"; normalTitle = "E-mail naar mij"; ObjectID = "QgM-Dv-fMr"; */
-"QgM-Dv-fMr.normalTitle" = "E-mail for me";
+"QgM-Dv-fMr.normalTitle" = "E-mail to me";
 
 /* Class = "UILabel"; text = "Transactie"; ObjectID = "Soo-aR-aFi"; */
 "Soo-aR-aFi.text" = "Transaction";
@@ -60,7 +60,7 @@
 "bls-5D-nMA.text" = "Voucher";
 
 /* Class = "UIButton"; normalTitle = "ZEND"; ObjectID = "dCu-cn-Lmk"; */
-"dCu-cn-Lmk.normalTitle" = "ZEND";
+"dCu-cn-Lmk.normalTitle" = "SEND";
 
 /* Class = "UILabel"; text = "18 Mei, 14:08"; ObjectID = "ecg-Yu-9Pv"; */
 "ecg-Yu-9Pv.text" = "18 Mei, 14:08";
@@ -78,7 +78,7 @@
 "hwW-K7-8bM.text" = "RMinds";
 
 /* Class = "UILabel"; text = "Geschiedenis"; ObjectID = "i1G-qE-89v"; */
-"i1G-qE-89v.text" = "Geschiedenis";
+"i1G-qE-89v.text" = "History";
 
 /* Class = "UILabel"; text = "+2,76"; ObjectID = "jA4-iO-fF3"; */
 "jA4-iO-fF3.text" = "+2,76";
@@ -93,16 +93,10 @@
 "pm5-6H-OPy.text" = "Payment";
 
 /* Class = "UILabel"; text = "Storting"; ObjectID = "pql-5D-j6D"; */
-"pql-5D-j6D.text" = "Storting";
-
-/* Class = "UILabel"; text = "This is your personal QR code"; ObjectID = "sOe-ep-azG"; */
-"sOe-ep-azG.text" = "This is your personal QR code";
+"pql-5D-j6D.text" = "Deposit";
 
 /* Class = "UILabel"; text = "120,00"; ObjectID = "sh2-eL-3yF"; */
 "sh2-eL-3yF.text" = "120,00";
-
-/* Class = "UILabel"; text = "Let someone scan your personal QR code to send your currency, property or vouchers"; ObjectID = "ufX-dC-Zqj"; */
-"ufX-dC-Zqj.text" = "Let someone scan your personal QR code to send your currency, property or vouchers";
 
 /* Class = "UILabel"; text = "Kindpakket"; ObjectID = "v0t-au-15P"; */
 "v0t-au-15P.text" = "Kindpakket";

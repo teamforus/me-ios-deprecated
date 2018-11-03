@@ -14,12 +14,15 @@ struct Voucher {
     var foundID: Int!
     var identityAdress: String!
     var address: String!
-    var amount: Int!
+    var amount: String!
+    var createdAtLocale: String!
+    var createdAt: String!
     var found: Found!
     var transactions: Array<Transactions>!
     var allowedOrganizations: Array<AllowedOrganizations>?
     var allowedProductCategories: Array<AllowedProductCategories>?
     var allowedProducts: Array<AllowedProducts>?
+    var product: ProductVoucher?
 }
 
 extension Voucher: JSONDecodable{
@@ -34,6 +37,9 @@ extension Voucher: JSONDecodable{
         allowedOrganizations = try decoder.decode("allowed_organizations")
         allowedProductCategories = try decoder.decode("allowed_product_categories")
         allowedProducts = try decoder.decode("allowed_products")
+        product = try decoder.decode("product")
+        createdAtLocale = try decoder.decode("created_at_locale")
+        createdAt = try decoder.decode("created_at")
     }
 }
 
@@ -70,6 +76,37 @@ extension AllowedProducts: JSONDecodable{
         oldPrice = try decoder.decode("old_price")
         totalAmount = try decoder.decode("total_amount")
         soldAmount = try decoder.decode("sold_amounts")
+    }
+}
+
+struct ProductVoucher {
+    var id: Int!
+    var name: String!
+    var description: String!
+    var price: String!
+    var oldPrice: Int!
+    var totalAmount: Int!
+    var soldAmount: Int!
+    var organization: AllowedOrganizations!
+    var organizationId: Int!
+    var productCategoryId: Int!
+    var photo: Logo!
+}
+
+extension ProductVoucher: JSONDecodable{
+    init(object: JSONObject) throws {
+        let decoder = JSONDecoder(object:object)
+        id = try decoder.decode("id")
+        name = try decoder.decode("name")
+        description = try decoder.decode("description")
+        price = try decoder.decode("price")
+        oldPrice = try decoder.decode("old_price")
+        totalAmount = try decoder.decode("total_amount")
+        soldAmount = try decoder.decode("sold_amounts")
+        organization = try decoder.decode("organization")
+        organizationId = try decoder.decode("organization_id")
+        productCategoryId = try decoder.decode("product_category_id")
+        photo = try decoder.decode("photo")
     }
 }
 
@@ -132,11 +169,14 @@ class VoucherRequest {
                 var transaction: Voucher!
                 if let json = response.result.value {
                     
-                    if (json as AnyObject).count != 0 {
+                    if (json as AnyObject).count != 0 && (json as AnyObject).count != 5 {
                         transaction = try! Voucher(object: (json as AnyObject)["data"] as! JSONObject)
+                        completion(transaction, (response.response?.statusCode)!)
+                    }else{
+                        completion(Voucher(), (response.response?.statusCode)!)
                     }
                 }
-                completion(transaction, (response.response?.statusCode)!)
+                
                 
                 break
             case .failure(let error):

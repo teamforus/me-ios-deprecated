@@ -33,13 +33,13 @@ class MAValidatorsViewController: MABaseViewController {
             RecordCategoryRequest.getCategory(categoryId: recordCategoryId, completion: { (response, statusCode) in
                 self.categoryNameLabel.text = response.name
             }) { (error) in
-                AlertController.showError()
+                AlertController.showError(vc:self)
             }
         }else{
              self.categoryNameLabel.text = "Persoonlijk"
         }
         }else{
-            AlertController.showInternetUnable()
+            AlertController.showInternetUnable(vc: self)
         }
     }
     
@@ -55,11 +55,11 @@ class MAValidatorsViewController: MABaseViewController {
                 }
                 self.tableView.reloadData()
             }) { (error) in
-                AlertController.showError()
+                AlertController.showError(vc:self)
             }
           
         }else {
-            AlertController.showInternetUnable()
+            AlertController.showInternetUnable(vc: self)
         }
     }
     
@@ -96,15 +96,15 @@ extension MAValidatorsViewController: UITableViewDataSource, UITableViewDelegate
                                         "record_id" : recordID!]
             ValidatorsRequest.createValidationRequest(parameters: parametr, completion: { (response, statusCode) in
                 if response.message != nil{
-                    AlertController.showWarning(withText: "Sorry request to validate is already send")
+                    AlertController.showWarning(withText: "Sorry request to validate is already send", vc: self)
                 }else{
-                    AlertController.showSuccess(withText: "")
+                    AlertController.showSuccess(withText: "", vc: self)
                 }
             }) { (error) in
                 
             }
         }else {
-            AlertController.showInternetUnable()
+            AlertController.showInternetUnable(vc: self)
         }
     }
 }

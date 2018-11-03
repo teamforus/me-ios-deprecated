@@ -11,9 +11,9 @@
 "Business" = "Zakelijk";
 "Relationships" = "Relaties";
 "Certificates" = "Certificaten";
-"Others" = "Anderen";
+"Others" = "Overig";
 "My currencies" = "Valuta";
 "Property" = "Bezit";
 "Search currency" = "Zoek valuta";
 "Paid" = "Betaald";
-
+"A record has been validated!" = "Er is een eigenschap gevallideerd!";

@@ -39,24 +39,27 @@ class MABottomVoucherViewController: MABaseViewController, ISHPullUpSizingDelega
         rootView.layer.shadowRadius = 23 / 2
          self.qrCodeImageView.generateQRCode(from: "{ \"type\": \"voucher\",\"value\": \"\(voucher.address!)\" }")
 //        self.qrCodeImageView.generateQRCode(from: "{ \"type\": \"auth_token\",\"value\”:\”cd66db60cde7f133bf122db07fdd534bd3ab4d04f9d93af4516c279f4dd1cbb6\“ }")
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture))
+        topView.addGestureRecognizer(tapGesture)
         NotificationCenter.default.addObserver(self, selector: #selector(toglePullUpView), name: Notification.Name("togleStateWindow"), object: nil)
         var rect: CGRect = self.rootView.frame
         let screen = Device.screen
         switch screen {
         case .inches_4_0:
-            rect.size.height = 404
+            rect.size.height = 440
             break
         case .inches_4_7:
-            rect.size.height = 404
+            rect.size.height = 500
             break
         case .inches_5_5:
-            rect.size.height = 404
+            rect.size.height = 575
             break
         case .inches_5_8:
-            rect.size.height = 404
+            rect.size.height = 575
             break
         default:
             break
+            
         }
         self.rootView.frame = rect
     }

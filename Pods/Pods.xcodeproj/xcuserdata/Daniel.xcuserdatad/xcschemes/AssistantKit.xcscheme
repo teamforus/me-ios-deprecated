@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6692035863D8FE5368739028AC008322"
+               BlueprintIdentifier = "AEEF226389482BDD4E4F0991F3A61543"
                BlueprintName = "AssistantKit"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "AssistantKit.framework">

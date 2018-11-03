@@ -42,10 +42,10 @@ class MAChooseTypeViewController: MABaseViewController, BWWalkthroughPage, MACho
                 self.recordTypeList.addObjects(from: response as! [Any])
                 self.tableView.reloadData()
             }) { (error) in
-                AlertController.showError()
+                AlertController.showError(vc:self)
             }
         }else{
-            AlertController.showInternetUnable()
+            AlertController.showInternetUnable(vc: self)
         }
     }
     

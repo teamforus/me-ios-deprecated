@@ -1,12 +1,12 @@
 
-/* Class = "UILabel"; text = "Sign Up"; ObjectID = "1ya-1g-6TI"; */
-"1ya-1g-6TI.text" = "Sign Up";
+/* Class = "UILabel"; text = "Aanmelden"; ObjectID = "1ya-1g-6TI"; */
+"1ya-1g-6TI.text" = "Register";
 
 /* Class = "UILabel"; text = "Registration succesful"; ObjectID = "3gu-KB-Q8z"; */
 "3gu-KB-Q8z.text" = "Registration succesful";
 
 /* Class = "UIButton"; normalTitle = "INLOGGEN VIA E-MAIL"; ObjectID = "4Dt-bS-lP0"; */
-"4Dt-bS-lP0.normalTitle" = "Login with email";
+"4Dt-bS-lP0.normalTitle" = "LOG IN BY E-MAIL";
 
 /* Class = "UILabel"; text = "• "; ObjectID = "4vN-1e-GEc"; */
 "4vN-1e-GEc.text" = "• ";
@@ -15,16 +15,16 @@
 "5HZ-Pd-BUl.text" = "• ";
 
 /* Class = "UIButton"; normalTitle = "Hoe werk het?"; ObjectID = "5Kc-0W-ZYK"; */
-"5Kc-0W-ZYK.normalTitle" = "How work that?";
+"5Kc-0W-ZYK.normalTitle" = "How does it work?";
 
 /* Class = "UILabel"; text = "Inloggen via E-mail"; ObjectID = "Acz-7X-ucB"; */
-"Acz-7X-ucB.text" = "Inloggen via E-mail";
+"Acz-7X-ucB.text" = "Log in by e-mail";
 
 /* Class = "UILabel"; text = "Please provide your e-mail and information below. For registration primary email address is required. When you're finished, click Continue. "; ObjectID = "BGx-Ya-lC9"; */
 "BGx-Ya-lC9.text" = "Please provide your e-mail and information below. For registration primary email address is required. When you're finished, click Continue. ";
 
-/* Class = "UILabel"; text = "Sign Up"; ObjectID = "BUj-xf-lgk"; */
-"BUj-xf-lgk.text" = "Sign Up";
+/* Class = "UILabel"; text = "Aanmelden"; ObjectID = "BUj-xf-lgk"; */
+"BUj-xf-lgk.text" = "Aanmelden";
 
 /* Class = "UILabel"; text = "New profiel"; ObjectID = "CtM-Fv-Z9R"; */
 "CtM-Fv-Z9R.text" = "New profile";
@@ -35,47 +35,44 @@
 /* Class = "UILabel"; text = "Create a passcode that will be requested to enter the Me app."; ObjectID = "DPq-Qe-jcq"; */
 "DPq-Qe-jcq.text" = "Create a passcode that will be requested to enter the Me app.";
 
-/* Class = "UILabel"; text = "Scan this QR code with another device you are already logged into"; ObjectID = "DtX-5r-B9k"; */
-"DtX-5r-B9k.text" = "Scan this QR code with another device you are already logged into";
+/* Class = "UILabel"; text = "Scan deze QR-Code met een ander apparaat waar u al op aangemeld bent"; ObjectID = "DtX-5r-B9k"; */
+"DtX-5r-B9k.text" = "Scan this QR-Code with a device you have already logged into.";
 
 /* Class = "UIButton"; normalTitle = "BEVESTIGEN"; ObjectID = "Fac-xa-KgH"; */
-"Fac-xa-KgH.normalTitle" = "BEVESTIGEN";
+"Fac-xa-KgH.normalTitle" = "CONFIRM";
 
-/* Class = "UIButton"; normalTitle = "New profile"; ObjectID = "HmC-46-6dN"; */
-"HmC-46-6dN.normalTitle" = "New profile";
-
-/* Class = "UIButton"; normalTitle = "BEVESTIGEN"; ObjectID = "JuF-U4-vEH"; */
-"JuF-U4-vEH.normalTitle" = "BEVESTIGEN";
+/* Class = "UIButton"; normalTitle = "NIEUWE AANMAKEN"; ObjectID = "HmC-46-6dN"; */
+"HmC-46-6dN.normalTitle" = "CREATE NEW PROFILE";
 
 /* Class = "UILabel"; text = "• "; ObjectID = "K8h-Jb-VC5"; */
 "K8h-Jb-VC5.text" = "• ";
 
 /* Class = "UILabel"; text = "Inloggen met pincode"; ObjectID = "KaT-WH-hs3"; */
-"KaT-WH-hs3.text" = "Login with pincode";
+"KaT-WH-hs3.text" = "Me";
 
 /* Class = "UITextField"; placeholder = "E-mail"; ObjectID = "L2x-vd-lfS"; */
 "L2x-vd-lfS.placeholder" = "E-mail";
 
-/* Class = "UILabel"; text = "Welcome to Me"; ObjectID = "Nuw-gS-LZ8"; */
-"Nuw-gS-LZ8.text" = "Welcome to Me";
+/* Class = "UILabel"; text = "Welkom bij Me"; ObjectID = "Nuw-gS-LZ8"; */
+"Nuw-gS-LZ8.text" = "Welkom to Me";
 
 /* Class = "UILabel"; text = "Please enter your e-mail address in order to receive your login details."; ObjectID = "OJO-WQ-zli"; */
 "OJO-WQ-zli.text" = "Please enter your e-mail address in order to receive your login details.";
 
 /* Class = "UILabel"; text = "Start"; ObjectID = "OeK-ez-ebj"; */
-"OeK-ez-ebj.text" = "Start";
+"OeK-ez-ebj.text" = "Me";
 
 /* Class = "UILabel"; text = "Vul deze pincode in uw profeil in"; ObjectID = "Pef-GR-72U"; */
-"Pef-GR-72U.text" = "Enter this pincode in your profile";
+"Pef-GR-72U.text" = "Enter this code into your profile on the webshop.";
 
 /* Class = "UILabel"; text = "Bij Me"; ObjectID = "PzA-yq-3Ed"; */
-"PzA-yq-3Ed.text" = "To Me";
+"PzA-yq-3Ed.text" = "Me";
 
 /* Class = "UITextField"; placeholder = "Herhaal  e-mail"; ObjectID = "QCB-TQ-Zj0"; */
-"QCB-TQ-Zj0.placeholder" = "Herhaal  e-mail";
+"QCB-TQ-Zj0.placeholder" = "Confirm e-mail";
 
-/* Class = "UILabel"; text = "Set up your identity"; ObjectID = "S0a-1L-yB6"; */
-"S0a-1L-yB6.text" = "Set up your identity";
+/* Class = "UILabel"; text = "Stel uw identiteit in"; ObjectID = "S0a-1L-yB6"; */
+"S0a-1L-yB6.text" = "Create your profile";
 
 /* Class = "UILabel"; text = "• "; ObjectID = "Uin-cc-p2q"; */
 "Uin-cc-p2q.text" = "• ";
@@ -83,20 +80,20 @@
 /* Class = "UIButton"; normalTitle = "No Thanks"; ObjectID = "Viz-Qg-3rR"; */
 "Viz-Qg-3rR.normalTitle" = "No Thanks";
 
-/* Class = "UILabel"; text = "Sign Up"; ObjectID = "Wgk-tC-3BB"; */
-"Wgk-tC-3BB.text" = "Sign Up";
+/* Class = "UILabel"; text = "Aanmelden"; ObjectID = "Wgk-tC-3BB"; */
+"Wgk-tC-3BB.text" = "Register";
 
 /* Class = "UILabel"; text = "• "; ObjectID = "YNe-dO-7od"; */
 "YNe-dO-7od.text" = "• ";
 
 /* Class = "UIButton"; normalTitle = "INLOGGEN MET PINCODE"; ObjectID = "YV7-Gb-SHc"; */
-"YV7-Gb-SHc.normalTitle" = "Login with pincode";
+"YV7-Gb-SHc.normalTitle" = "LOG IN WITH AUTHORISATIONCODE";
 
-/* Class = "UIButton"; normalTitle = "Add profile"; ObjectID = "dBa-Wv-3m9"; */
-"dBa-Wv-3m9.normalTitle" = "Add profile";
+/* Class = "UIButton"; normalTitle = "PROFIEL TOEVOEGEN"; ObjectID = "dBa-Wv-3m9"; */
+"dBa-Wv-3m9.normalTitle" = "ADD PROFILE";
 
-/* Class = "UILabel"; text = "Scan this QR code with another device you are already logged into; ObjectID = "deF-pN-y6x"; */
-"deF-pN-y6x.text" = "Scan this QR code with another device you are already logged into";
+/* Class = "UILabel"; text = "Scan deze QR-Code met een ander apparaat waar u al op aangemeld bent"; ObjectID = "deF-pN-y6x"; */
+"deF-pN-y6x.text" = "Scan this QR-Code with a device you have already logged into.";
 
 /* Class = "UITextField"; placeholder = "Primary e-mail*"; ObjectID = "jMT-7s-AAr"; */
 "jMT-7s-AAr.placeholder" = "Primary e-mail*";
@@ -105,7 +102,7 @@
 "l4O-aX-sP6.normalTitle" = "USE FACE ID";
 
 /* Class = "UIButton"; normalTitle = "Go to mail app"; ObjectID = "lGB-BZ-Lqb"; */
-"lGB-BZ-Lqb.normalTitle" = "Go to mail app";
+"lGB-BZ-Lqb.normalTitle" = "TO MAIL APP";
 
 /* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "lMC-Xp-5ur"; */
 "lMC-Xp-5ur.normalTitle" = "Cancel";
@@ -113,20 +110,26 @@
 /* Class = "UILabel"; text = "QR-CODE"; ObjectID = "n1c-Qc-rxI"; */
 "n1c-Qc-rxI.text" = "QR-CODE";
 
+/* Class = "UIButton"; normalTitle = "SKIP"; ObjectID = "okc-fe-5pU"; */
+"okc-fe-5pU.normalTitle" = "SKIP";
+
 /* Class = "UILabel"; text = "Would you like to \nlog in with Face ID?"; ObjectID = "qda-uv-y3b"; */
 "qda-uv-y3b.text" = "Would you like to \nlog in with Face ID?";
 
 /* Class = "UIButton"; normalTitle = "CREATE PASSWORD"; ObjectID = "rKn-SJ-9lB"; */
-"rKn-SJ-9lB.normalTitle" = "CREATE PASSWORD";
+"rKn-SJ-9lB.normalTitle" = "CREATE PASSCODE";
 
 /* Class = "UIButton"; normalTitle = "LOGIN VIA DE QR-CODE"; ObjectID = "tc3-ez-uND"; */
-"tc3-ez-uND.normalTitle" = "Login via qr code";
+"tc3-ez-uND.normalTitle" = "LOGIN BY QR-CODE";
+
+/* Class = "UITextField"; placeholder = "Confirm e-mail"; ObjectID = "yi8-tc-XIf"; */
+"yi8-tc-XIf.placeholder" = "Confirm e-mail";
 
 /* Class = "UITextField"; placeholder = "Given Name"; ObjectID = "vwf-mA-VNp"; */
 "vwf-mA-VNp.placeholder" = "Given Name";
 
 /* Class = "UILabel"; text = "Email has been sent to you"; ObjectID = "yVG-jI-CFB"; */
-"yVG-jI-CFB.text" = "Email has been sent to you";
+"yVG-jI-CFB.text" = "E-mail has been sent to you";
 
-/* Class = "UIButton"; normalTitle = "I HAVE A ME IDENTITY"; ObjectID = "yuH-Kk-zbF"; */
-"yuH-Kk-zbF.normalTitle" = "I HAVE A ME IDENTITY";
+/* Class = "UIButton"; normalTitle = "IK HEB EEN ME IDENTITEIT"; ObjectID = "yuH-Kk-zbF"; */
+"yuH-Kk-zbF.normalTitle" = "I ALLREADY HAVE A PROFILE";

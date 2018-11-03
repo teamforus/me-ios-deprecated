@@ -11,6 +11,7 @@ import CoreData
 import IQKeyboardManagerSwift
 import Fabric
 import Crashlytics
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 //              Fabric.sharedSDK().debug = true
               Fabric.with([Crashlytics.self])
+        FirebaseApp.configure()
         if  self.existCurrentUser() {
         let storyboard:UIStoryboard = UIStoryboard(name: "Tabs", bundle: nil)
         let rootViewController:UIViewController = storyboard.instantiateViewController(withIdentifier: "walet") as UIViewController
@@ -64,6 +66,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         print(url, options)
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "authorizeToken"), object: self, userInfo: ["authToken" : url.absoluteString.replacingOccurrences(of: "meapp://identity-restore?token=", with: "")])
         return true
     }
 
