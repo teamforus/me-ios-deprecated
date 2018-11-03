@@ -237,8 +237,11 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
                 cellWallet.voucherImage.sd_setImage(with: URL(string: voucher.product?.photo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
             }else{
                 cellWallet.voucherTitleLabel.text = voucher.found.name
+                
                 cellWallet.priceLabel.text = voucher.amount ?? "0.0"
-                cellWallet.voucherImage.sd_setImage(with: URL(string: voucher.found.logo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+               if voucher.found.logo != nil{
+                    cellWallet.voucherImage.sd_setImage(with: URL(string: voucher.found.logo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+                }
             }
             
             

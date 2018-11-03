@@ -54,7 +54,11 @@ class MAContentVoucherPaymentViewController: MABaseViewController, MAConfirmatio
         }else{
             paketTitle.text = voucher.found.name
             organizationNameLabel.text = voucher.found.organization.name ?? ""
+            if voucher.found.logo != nil{
                 qrCodeImageView.sd_setImage(with: URL(string: voucher.found.logo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+            }else{
+                qrCodeImageView.image = UIImage(named: "Resting")
+            }
         }
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         self.view.isUserInteractionEnabled = true
