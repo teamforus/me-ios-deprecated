@@ -33,4 +33,18 @@
 "Enter your login code to use Face ID" = "Vul je inlogcode om Face ID te gebruiken";
 "Confirm the code" = "Bevestig code";
 "Enter a new login code" = "Voer een nieuwe inlogcode in";
-
+"Cancel" = "Annuleer";
+"The scanner is not supported on this device" = "De scanner wordt niet ondersteund op dit apparaat";
+"This app is not authorized to use Back Camera" = "Deze app is niet geautoriseerd om een Camera te gebruiken.";
+"Sorry you do not meet the criteria for this voucher" = "Sorry you do not meet the criteria for this voucher";
+"Email is empty" = "E-mail is leeg";
+"Invalid Email address" = "E-mailadres is ongeldig";
+"This email does not exist" = "Dit e-mail adres bestaat niet";
+"Turn on Touch ID" = "Touch ID aanzetten";
+"Payment succeeded" = "Betaling geslaagd";
+"Please enter the amount" = "Voer het bedrag in";
+"Insufficient funds on the voucher" = "Onvoldoende budget op de voucher";
+"Success" = "Succes!";
+"Insufficient funds on the voucher.  Please, request extra payment of " = "Onvoldoende budget op de voucher. Vraag de klant of hij een bedrag van %@ wilt bijbetalen";
+"REQUEST" = "VRAAG";
+"Validate" = "Valideer";

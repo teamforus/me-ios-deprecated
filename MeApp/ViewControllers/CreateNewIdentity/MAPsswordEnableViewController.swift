@@ -26,8 +26,8 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         if !faceIDAvailable(){
-            headLabel.text = "Wil je inloggen met Touch ID"
-            faceIDButton.setTitle("GEBRUIK TOUCH ID", for: .normal)
+            headLabel.text = NSLocalizedString("Use Touch ID to log in?", comment: "")
+            faceIDButton.setTitle(NSLocalizedString("Use Touch ID", comment: ""), for: .normal)
         }
     }
     

@@ -106,7 +106,7 @@ class MAQRCodeReaderViewController: MABaseViewController {
             
             switch error.code {
             case -11852:
-                alert = UIAlertController(title: "Error", message: "This app is not authorized to use Back Camera.", preferredStyle: .alert)
+                alert = UIAlertController(title: "Error", message: NSLocalizedString("This app is not authorized to use Back Camera", comment: ""), preferredStyle: .alert)
                 
                 alert.addAction(UIAlertAction(title: "Setting", style: .default, handler: { (_) in
                     DispatchQueue.main.async {
@@ -122,7 +122,7 @@ class MAQRCodeReaderViewController: MABaseViewController {
                 
                 alert.addAction(UIAlertAction(title: "Annuleer", style: .cancel, handler: nil))
             default:
-                alert = UIAlertController(title: "Error", message: "De scanner wordt niet ondersteund op dit apparaat", preferredStyle: .alert)
+                alert = UIAlertController(title: "Error", message: NSLocalizedString("The scanner is not supported on this device", comment: ""), preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             }
             
@@ -140,7 +140,7 @@ class MAQRCodeReaderViewController: MABaseViewController {
             self.reader.startScanning()
             let alert: UIAlertController
             alert = UIAlertController(title: response.name, message: response.value, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Valideer", style: .default, handler: { (action) in
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Validate", comment: ""), style: .default, handler: { (action) in
                 self.reader.startScanning()
                 RecordsRequest.aproveValidationTokenRecord(token: code, completion: { (response, statusCode) in
                     if statusCode == 401{
@@ -153,7 +153,7 @@ class MAQRCodeReaderViewController: MABaseViewController {
                     self.reader.startScanning()
                 })
             }))
-            alert.addAction(UIAlertAction(title: "Annuleer", style: .cancel, handler: { (action) in
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: { (action) in
                 self.reader.startScanning()
             }))
             self.present(alert, animated: true, completion: nil)
@@ -194,7 +194,7 @@ class MAQRCodeReaderViewController: MABaseViewController {
                 self.performSegue(withIdentifier: "goToVoucherPayment", sender: nil)
                
             }else{
-                AlertController.showWarning(withText: "Sorry je voldoet niet aan de voorwaarden voor deze voucher", vc: self)
+                AlertController.showWarning(withText: NSLocalizedString("Sorry you do not meet the criteria for this voucher", comment: ""), vc: self)
             }
             self.reader.startScanning()
         }) { (error) in

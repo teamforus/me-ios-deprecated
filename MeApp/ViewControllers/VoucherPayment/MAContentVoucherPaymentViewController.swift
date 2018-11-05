@@ -82,14 +82,14 @@ class MAContentVoucherPaymentViewController: MABaseViewController, MAConfirmatio
     }
     
     func paymentSucceded() {
-        AlertController.showSuccess(withText: "Payment succeeded", vc: self)
+        AlertController.showSuccess(withText: NSLocalizedString("Payment succeeded", comment: ""), vc: self)
     }
     
     @IBAction func send(_ sender: Any) {
         if voucher.product != nil{
             goToTrnasctionConfirm()
         }else if amount.text == ""{
-            AlertController.showWarning(withText: "Please set amount!", vc: self)
+            AlertController.showWarning(withText: NSLocalizedString("Please enter the amount ", comment: ""), vc: self)
         }else{
             goToTrnasctionConfirm()
         }

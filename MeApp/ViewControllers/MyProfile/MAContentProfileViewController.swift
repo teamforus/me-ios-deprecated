@@ -71,7 +71,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         
         if !faceIDAvailable(){
             faceIdImage.image = #imageLiteral(resourceName: "touchId")
-            faceIdLabel.text = "Touch ID aanzetten"
+            faceIdLabel.text = NSLocalizedString("Turn on Touch ID", comment: "")
         }
         if UserShared.shared.currentUser.primaryEmail != nil{
             profileNameLabel.text = "\(UserShared.shared.currentUser.firstName!) \(UserShared.shared.currentUser.lastName!)"
@@ -203,8 +203,8 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     @IBAction func deletePasscode(_ sender: Any) {
         var appearance = ALAppearance()
         appearance.image = UIImage(named: "lock")!
-        appearance.title = "Inlogcode uitzetten"
-        appearance.subtitle = "Vul je inlogcode in"
+        appearance.title = NSLocalizedString("Turn off login code", comment: "")
+        appearance.subtitle = NSLocalizedString("Enter login code", comment: "")
         appearance.isSensorsEnabled = true
         appearance.cancelIsVissible = true
         appearance.delegate = self

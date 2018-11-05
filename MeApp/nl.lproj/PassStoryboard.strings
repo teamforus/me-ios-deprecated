@@ -101,5 +101,12 @@
 /* Class = "UILabel"; text = "Kindpakket"; ObjectID = "v0t-au-15P"; */
 "v0t-au-15P.text" = "Kindpakket";
 
+/* Class = "UILabel"; text = "You have no transactions yet"; ObjectID = "vQs-nn-dte"; */
+"vQs-nn-dte.text" = "Je hebt nog geen transacties";
+
+/* Class = "UILabel"; text = "You have no transactions yet"; ObjectID = "h9H-Tx-Cte"; */
+"h9H-Tx-Cte.text" = "Je hebt nog geen transacties";
+
 /* Class = "UITabBarItem"; title = "Item 2"; ObjectID = "xtY-8m-Mw2"; */
 "xtY-8m-Mw2.title" = "Item 2";
+
