@@ -15,6 +15,7 @@ class MASuccessEmailViewController: MABaseViewController, AppLockerDelegate {
     var timer : Timer! = Timer()
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     var email: String!
+    var accessToken: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,15 +49,20 @@ class MASuccessEmailViewController: MABaseViewController, AppLockerDelegate {
     }
     
     @objc func authorizeToken(notifcation: Notification){
-        Status.checkStatus(accessToken: notifcation.userInfo?["authToken"] as! String, completion: { (code, message) in
-            if code == 200 {
-                if message == "active"{
-                    //check if user exist or no
-                    self.checkPassCode()
-                }
-            }
+//        Status.checkStatus(accessToken: notifcation.userInfo?["authToken"] as! String, completion: { (code, message) in
+//            if code == 200 {
+//                if message == "active"{
+//                    //check if user exist or no
+//                    self.checkPassCode()
+//                }
+//            }
+//        }) { (error) in
+//            AlertController.showError(vc:self)
+//        }
+        AuthorizationEmailRequest.authorizeEmailToken(token: notifcation.userInfo?["authToken"] as! String, completion: { (response, statusCode) in
+            self.accessToken = response.accessToken
+            self.checkPassCode()
         }) { (error) in
-            AlertController.showError(vc:self)
         }
     }
     
@@ -109,7 +115,7 @@ class MASuccessEmailViewController: MABaseViewController, AppLockerDelegate {
                     appearance.title = "Inlogcode"
                     appearance.subtitle = "Maak een inlogcode aan"
                     appearance.isSensorsEnabled = true
-                    appearance.cancelIsVissible = false
+                    appearance.cancelIsVissible = true
                     appearance.delegate = self
                     
                     AppLocker.present(with: .validate, and: appearance, withController: self)
@@ -121,7 +127,7 @@ class MASuccessEmailViewController: MABaseViewController, AppLockerDelegate {
                 appearance.title = "Inlogcode"
                 appearance.subtitle = "Maak een inlogcode aan"
                 appearance.isSensorsEnabled = true
-                appearance.cancelIsVissible = false
+                appearance.cancelIsVissible = true
                 appearance.delegate = self
                 
                 AppLocker.present(with: .create, and: appearance, withController: self)
@@ -164,8 +170,8 @@ class MASuccessEmailViewController: MABaseViewController, AppLockerDelegate {
     
     func closePinCodeView(typeClose: typeClose) {
         self.updateOldIndentity()
-        self.saveNewIdentity(accessToken: UserDefaults.standard.string(forKey: "auth_token")!, email: self.email)
-        self.getCurrentUser(accessToken: UserDefaults.standard.string(forKey: "auth_token")!)
+        self.saveNewIdentity(accessToken: accessToken, email: self.email)
+        self.getCurrentUser(accessToken: accessToken)
         self.performSegue(withIdentifier: "goToWalet", sender: nil)
     }
     

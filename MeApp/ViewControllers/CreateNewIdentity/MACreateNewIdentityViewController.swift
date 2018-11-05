@@ -60,11 +60,11 @@ class MACreateNewIdentityViewController: MABaseViewController {
                                                                 UserDefaults.standard.set("", forKey: ALConstants.kPincode)
                                                                 self.performSegue(withIdentifier: "goToWalet", sender: self)
                                                             }else {
-                                                                 AlertController.showWarning(withText: "Email already is used", vc: self)
+                                                                 AlertController.showWarning(withText: NSLocalizedString("This email is already used", comment: ""), vc: self)
                                                             }
                                                             
                     }, failure: { (error) in
-                        AlertController.showWarning(withText: "Something go wrong, please try again!", vc: self)
+                         AlertController.showWarning(withText: NSLocalizedString("Something went wrong, please try again…", comment: ""), vc: self)
                     })
                 }else {
                     AlertController.showInternetUnable(vc: self)

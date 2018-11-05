@@ -101,9 +101,10 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     
     @IBAction func faceIdEnable(_ sender: Any) {
         if (sender as! UISwitch).isOn{
-            UserDefaults.standard.set(true, forKey: "isWithTouchID")
+            (sender as! UISwitch).onImage = UIImage(named: "nightMode-1")
+//            UserDefaults.standard.set(true, forKey: "isWithTouchID")
         }else{
-            UserDefaults.standard.set(false, forKey: "isWithTouchID")
+//            UserDefaults.standard.set(false, forKey: "isWithTouchID")
         }
         
     }
@@ -113,8 +114,8 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
             if UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" && UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil{
                 var appearance = ALAppearance()
                 appearance.image = UIImage(named: "lock")!
-                appearance.title = "Edit passcode"
-                appearance.subtitle = "Enter your old passcode"
+                appearance.title = NSLocalizedString("Change passcode", comment: "")
+                appearance.subtitle = NSLocalizedString("Enter your old code", comment: "")
                 appearance.isSensorsEnabled = true
                 appearance.cancelIsVissible = true
                 appearance.delegate = self
@@ -124,10 +125,10 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
 //                UserDefaults.standard.set("", forKey: ALConstants.kPincode)
                 var appearance = ALAppearance()
                 appearance.image = UIImage(named: "lock")!
-                appearance.title = "Inlogcode"
-                appearance.subtitle = "Maak een inlogcode aan"
+                appearance.title = NSLocalizedString("Login code", comment: "")
+                appearance.subtitle = NSLocalizedString("Enter a new login code", comment: "")
                 appearance.isSensorsEnabled = true
-                appearance.cancelIsVissible = false
+                appearance.cancelIsVissible = true
                 appearance.delegate = self
                 
                 AppLocker.present(with: .create, and: appearance, withController: self)
@@ -146,12 +147,11 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         if UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" && UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil{
             var appearance = ALAppearance()
             appearance.image = UIImage(named: "lock")!
-            appearance.title = "Inlogcode"
-            appearance.subtitle = "Stel in een inlogcode in"
+            appearance.title = NSLocalizedString("Login code", comment: "")
+            appearance.subtitle = NSLocalizedString("Set up the login code", comment: "")
             appearance.isSensorsEnabled = true
             appearance.cancelIsVissible = true
             appearance.delegate = self
-            
             AppLocker.present(with: .deactive, and: appearance, withController: self)
         }else{
             let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -167,8 +167,8 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     @IBAction func aboutMe(_ sender: Any) {
         let popupTransction =  MAAboutMeViewController(nibName: "MAAboutMeViewController", bundle: nil)
         self.presenter.presentationType = .popup
-        popupTransction.titleDetail = "Hoe werkt het?"
-        popupTransction.descriptionDetail = "Heb je al een indentiteit en ben je al ingelogd op de webshop? Open dan je indentiteit via de webshop en klik op 'Autoriseer apparaat' en vul de code in die op de Me App zichtbaar is."
+        popupTransction.titleDetail = NSLocalizedString("How does it work?", comment: "")
+        popupTransction.descriptionDetail = NSLocalizedString("If you already have a Me identity and logged into the web-shop, then go to the web-shop and click on 'Authorize device' and enter the code that is visible on this screen.", comment: "")
         self.presenter.transitionType = nil
         self.presenter.dismissTransitionType = nil
         self.presenter.keyboardTranslationType = .compress
@@ -179,7 +179,6 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         fetchRequest.predicate = NSPredicate(format:"accessToken == %@", UserShared.shared.currentUser.accessToken!)
-        
         do{
             let results = try context.fetch(fetchRequest) as? [NSManagedObject]
             if results?.count != 0 {
@@ -222,19 +221,15 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
 //
 //            }) { (error) in
 //            }
-            
-            
         }else if typeClose == .delete{
             if !deletePasscode{
                 let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let navigationController:HiddenNavBarNavigationController = storyboard.instantiateInitialViewController() as! HiddenNavBarNavigationController
-                let firstPageVC:UIViewController = storyboard.instantiateViewController(withIdentifier: "firstPage") as UIViewController
+                let firstPageVC: UIViewController = storyboard.instantiateViewController(withIdentifier: "firstPage") as UIViewController
                 navigationController.viewControllers = [firstPageVC]
                 self.present(navigationController, animated: true, completion: nil)
             }
         }
     }
-    
-    
 }
 

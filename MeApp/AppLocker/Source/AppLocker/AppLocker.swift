@@ -82,13 +82,14 @@ public class AppLocker: UIViewController {
       let mode = self.mode ?? .validate
       switch mode {
       case .create:
-        messageLabel.text = "Inlogcode" // Your submessage for create mode
+        messageLabel.text = NSLocalizedString("Login code", comment: "") // Your message for create mode
+        submessageLabel.text = NSLocalizedString("Enter a new login code", comment: "") // Your message for create mode // Your submessage for create mode
       case .change:
-        messageLabel.text = "Vul je inlogcode in" // Your submessage for change mode
+        messageLabel.text = NSLocalizedString("Enter login code", comment: "") // Your submessage for change mode
       case .deactive:
-        messageLabel.text = "Inlogcode uitzetten" // Your submessage for deactive mode
+        messageLabel.text = NSLocalizedString("Turn off login code", comment: "") // Your submessage for deactive mode
       case .validate:
-        messageLabel.text = "Vul je inlogcode in" // Your submessage for validate mode
+        messageLabel.text = NSLocalizedString("Enter login code", comment: "") // Your submessage for validate mode
         isFirstCreationStep = false
       }
     }
@@ -135,7 +136,7 @@ public class AppLocker: UIViewController {
       isFirstCreationStep = false
       reservedPin = pin
       clearView()
-      messageLabel.text = "Bevestig code"
+      messageLabel.text = NSLocalizedString("Confirm the code", comment: "")
     } else {
       confirmPin()
     }
@@ -177,7 +178,10 @@ public class AppLocker: UIViewController {
   private func incorrectPinAnimation() {
     pinIndicators.forEach { view in
       view.shake(delegate: self)
-      view.backgroundColor = .clear
+      view.backgroundColor = .red
+      self.photoImageView.image = UIImage(named: "lockError")
+      submessageLabel.text = NSLocalizedString("Passwordes don't match. Please try again", comment: "")
+    
     }
     AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
   }
