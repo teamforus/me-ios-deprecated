@@ -60,8 +60,10 @@ class MASuccessEmailViewController: MABaseViewController, AppLockerDelegate {
 //            AlertController.showError(vc:self)
 //        }
         AuthorizationEmailRequest.authorizeEmailToken(token: notifcation.userInfo?["authToken"] as! String, completion: { (response, statusCode) in
-            self.accessToken = response.accessToken
-            self.checkPassCode()
+            self.updateOldIndentity()
+            self.saveNewIdentity(accessToken: response.accessToken, email: self.email)
+            self.getCurrentUser(accessToken: response.accessToken)
+            self.performSegue(withIdentifier: "goToWalet", sender: nil)
         }) { (error) in
         }
     }
@@ -169,10 +171,7 @@ class MASuccessEmailViewController: MABaseViewController, AppLockerDelegate {
     }
     
     func closePinCodeView(typeClose: typeClose) {
-        self.updateOldIndentity()
-        self.saveNewIdentity(accessToken: accessToken, email: self.email)
-        self.getCurrentUser(accessToken: accessToken)
-        self.performSegue(withIdentifier: "goToWalet", sender: nil)
+      
     }
     
     @IBAction func cancel(_ sender: Any) {

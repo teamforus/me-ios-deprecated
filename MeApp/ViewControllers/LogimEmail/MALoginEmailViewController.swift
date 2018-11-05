@@ -59,7 +59,7 @@ class MALoginEmailViewController: MABaseViewController {
                                                                 }
                                                                 
                     }, failure: { (error) in
-                        AlertController.showWarning(withText: "Something go wrong, please try again!", vc: self)
+                        AlertController.showWarning(withText: NSLocalizedString("Something went wrong, please try again…", comment: ""), vc: self)
                     })
                 }
                 
