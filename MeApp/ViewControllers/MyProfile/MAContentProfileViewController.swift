@@ -41,6 +41,26 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     @IBOutlet weak var profileImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        //        UserDefaults.standard.set("0000", forKey: ALConstants.kPincode)
+        //        UserDefaults.standard.synchronize()
+        //        updateIndentity()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if UserDefaults.standard.string(forKey: ALConstants.kPincode) == "" || UserDefaults.standard.string(forKey: ALConstants.kPincode) == nil{
+            turnOffPascodeView.isHidden = true
+            passcodeLabel.text = "Add 4-digit passcode"
+            heightButtonsView.constant = 124
+            verticalSpacingFaceIdLogin.constant = 10
+        }else{
+            heightButtonsView.constant = 194
+            turnOffPascodeView.isHidden = false
+            passcodeLabel.text = "Change 4-digit passcode"
+        }
+        
+        
         closeUIButton.isHidden = isCloseButtonHide ?? true
         if UserDefaults.standard.bool(forKey: "isWithTouchID"){
             switchFaceID.isOn = true
@@ -58,19 +78,6 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         profileEmailLabel.text = UserShared.shared.currentUser.primaryEmail
         let nsObject: AnyObject? = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as AnyObject
         appVersionLabel.text = nsObject as? String
-        //        UserDefaults.standard.set("0000", forKey: ALConstants.kPincode)
-        //        UserDefaults.standard.synchronize()
-        //        updateIndentity()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        if UserDefaults.standard.string(forKey: ALConstants.kPincode) == "" || UserDefaults.standard.string(forKey: ALConstants.kPincode) == nil{
-            turnOffPascodeView.isHidden = true
-            passcodeLabel.text = "Add 4-digit passcode"
-        }
-        verticalSpacingFaceIdLogin.constant = 10
-        heightButtonsView.constant = 124
     }
     
     
@@ -113,12 +120,13 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
                 
                 AppLocker.present(with: .change, and: appearance, withController: self)
             }else{
+//                UserDefaults.standard.set("", forKey: ALConstants.kPincode)
                 var appearance = ALAppearance()
                 appearance.image = UIImage(named: "lock")!
                 appearance.title = "Inlogcode"
-                appearance.subtitle = "Stel in een inlogcode in"
+                appearance.subtitle = "Maak een inlogcode aan"
                 appearance.isSensorsEnabled = true
-                appearance.cancelIsVissible = true
+                appearance.cancelIsVissible = false
                 appearance.delegate = self
                 
                 AppLocker.present(with: .create, and: appearance, withController: self)
@@ -169,7 +177,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     func updateIndentity(){
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        fetchRequest.predicate = NSPredicate(format:"primaryEmail == %@", UserShared.shared.currentUser.primaryEmail!)
+        fetchRequest.predicate = NSPredicate(format:"accessToken == %@", UserShared.shared.currentUser.accessToken!)
         
         do{
             let results = try context.fetch(fetchRequest) as? [NSManagedObject]
@@ -202,20 +210,20 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     
     // AppLocker Delegate
     func closePinCodeView(typeClose: typeClose) {
-        if typeClose == .create {
-            let parameters: Parameters = ["pin_code" : UserDefaults.standard.string(forKey: ALConstants.kPincode)!,
-                                          "old_pin_code" : UserShared.shared.currentUser.pinCode!]
-            RequestNewIndetity.updatePinCode(parameters: parameters, completion: { (response, statusCode) in
-                if statusCode == 401{
-                    //                    self.logOut()
-                }
-                
-            }) { (error) in
-            }
-            updateIndentity()
+        updateIndentity()
+        if typeClose == .change {
+//            let parameters: Parameters = ["pin_code" : UserDefaults.standard.string(forKey: ALConstants.kPincode)!,
+//                                          "old_pin_code" : UserShared.shared.currentUser.pinCode ?? ""]
+//            RequestNewIndetity.updatePinCode(parameters: parameters, completion: { (response, statusCode) in
+//                if statusCode == 401{
+//                    //                    self.logOut()
+//                }
+//
+//            }) { (error) in
+//            }
+            
             
         }else if typeClose == .delete{
-            updateIndentity()
             if !deletePasscode{
                 let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let navigationController:HiddenNavBarNavigationController = storyboard.instantiateInitialViewController() as! HiddenNavBarNavigationController
