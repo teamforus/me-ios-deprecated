@@ -68,6 +68,9 @@
 /* Class = "UILabel"; text = "Favourites"; ObjectID = "nQs-aP-PJ9"; */
 "nQs-aP-PJ9.text" = "Favourites";
 
+/* Class = "UILabel"; text = "Used"; ObjectID = "BUr-0Z-7e9"; */
+"BUr-0Z-7e9.text" = "Used";
+
 /* Class = "UILabel"; text = "Kindpakket"; ObjectID = "s5P-PY-YuN"; */
 "s5P-PY-YuN.text" = "Kindpakket";
 

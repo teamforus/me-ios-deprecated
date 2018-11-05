@@ -73,3 +73,6 @@
 
 /* Class = "UITabBarItem"; title = "Eigenschappen"; ObjectID = "vmo-CF-lCr"; */
 "vmo-CF-lCr.title" = "Profiel";
+
+/* Class = "UILabel"; text = "Gebruikt"; ObjectID = "BUr-0Z-7e9"; */
+"BUr-0Z-7e9.text" = "Gebruikt";
