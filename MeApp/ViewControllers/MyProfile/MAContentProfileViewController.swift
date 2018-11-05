@@ -101,10 +101,15 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     
     @IBAction func faceIdEnable(_ sender: Any) {
         if (sender as! UISwitch).isOn{
-            (sender as! UISwitch).onImage = UIImage(named: "nightMode-1")
-//            UserDefaults.standard.set(true, forKey: "isWithTouchID")
+            if let thumbView =  ((sender as! UISwitch).subviews[0].subviews[3] as? UIImageView) {
+                thumbView.transform = CGAffineTransform(scaleX:0.8, y: 0.8)
+            }
+            UserDefaults.standard.set(true, forKey: "isWithTouchID")
         }else{
-//            UserDefaults.standard.set(false, forKey: "isWithTouchID")
+            UserDefaults.standard.set(false, forKey: "isWithTouchID")
+            if let thumbView =  ((sender as! UISwitch).subviews[0].subviews[3] as? UIImageView) {
+                thumbView.transform = CGAffineTransform(scaleX:1.0, y: 1.0)
+            }
         }
         
     }

@@ -81,13 +81,13 @@
 "Viz-Qg-3rR.normalTitle" = "No Thanks";
 
 /* Class = "UILabel"; text = "Aanmelden"; ObjectID = "Wgk-tC-3BB"; */
-"Wgk-tC-3BB.text" = "Register";
+"Wgk-tC-3BB.text" = "Log in";
 
 /* Class = "UILabel"; text = "• "; ObjectID = "YNe-dO-7od"; */
 "YNe-dO-7od.text" = "• ";
 
 /* Class = "UIButton"; normalTitle = "INLOGGEN MET PINCODE"; ObjectID = "YV7-Gb-SHc"; */
-"YV7-Gb-SHc.normalTitle" = "LOG IN WITH AUTHORISATIONCODE";
+"YV7-Gb-SHc.normalTitle" = "LOG IN WITH AUTHORISATION CODE";
 
 /* Class = "UIButton"; normalTitle = "PROFIEL TOEVOEGEN"; ObjectID = "dBa-Wv-3m9"; */
 "dBa-Wv-3m9.normalTitle" = "ADD PROFILE";
@@ -120,16 +120,16 @@
 "rKn-SJ-9lB.normalTitle" = "CREATE PASSCODE";
 
 /* Class = "UIButton"; normalTitle = "LOGIN VIA DE QR-CODE"; ObjectID = "tc3-ez-uND"; */
-"tc3-ez-uND.normalTitle" = "LOGIN BY QR-CODE";
+"tc3-ez-uND.normalTitle" = "LOGIN WITH QR-CODE";
 
 /* Class = "UITextField"; placeholder = "Confirm e-mail"; ObjectID = "yi8-tc-XIf"; */
 "yi8-tc-XIf.placeholder" = "Confirm e-mail";
 
 /* Class = "UITextField"; placeholder = "Given Name"; ObjectID = "vwf-mA-VNp"; */
-"vwf-mA-VNp.placeholder" = "Given Name";
+"vwf-mA-VNp.placeholder" = "First Name";
 
 /* Class = "UILabel"; text = "Email has been sent to you"; ObjectID = "yVG-jI-CFB"; */
 "yVG-jI-CFB.text" = "E-mail has been sent to you";
 
 /* Class = "UIButton"; normalTitle = "IK HEB EEN ME IDENTITEIT"; ObjectID = "yuH-Kk-zbF"; */
-"yuH-Kk-zbF.normalTitle" = "I ALLREADY HAVE A PROFILE";
+"yuH-Kk-zbF.normalTitle" = "I ALREADY HAVE A PROFILE";
