@@ -56,6 +56,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
             verticalSpacingFaceIdLogin.constant = 10
         }else{
             heightButtonsView.constant = 194
+            verticalSpacingFaceIdLogin.constant = 82
             turnOffPascodeView.isHidden = false
             passcodeLabel.text = "Change 4-digit passcode"
         }
