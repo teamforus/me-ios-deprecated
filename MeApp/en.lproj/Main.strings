@@ -120,7 +120,7 @@
 "rKn-SJ-9lB.normalTitle" = "CREATE PASSCODE";
 
 /* Class = "UIButton"; normalTitle = "LOGIN VIA DE QR-CODE"; ObjectID = "tc3-ez-uND"; */
-"tc3-ez-uND.normalTitle" = "LOGIN WITH QR-CODE";
+"tc3-ez-uND.normalTitle" = "LOG IN WITH QR-CODE";
 
 /* Class = "UITextField"; placeholder = "Confirm e-mail"; ObjectID = "yi8-tc-XIf"; */
 "yi8-tc-XIf.placeholder" = "Confirm e-mail";
