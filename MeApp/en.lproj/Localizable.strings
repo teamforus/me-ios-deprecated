@@ -45,7 +45,7 @@
 "Please enter the amount" = "Please enter the amount";
 "Insufficient funds on the voucher" = "Insufficient funds on the voucher";
 "Success" = "Success";
-"Insufficient funds on the voucher.  Please, request extra payment of " = "Insufficient funds on the voucher.  Please, request extra payment of ";
+"Insufficient funds on the voucher.  Please, request extra payment of" = "Insufficient funds on the voucher.  Please, request extra payment of ";
 "REQUEST" = "REQUEST";
 "Validate" = "Validate";
 "Error" = "Error";
@@ -53,6 +53,6 @@
 "About Me" = "About Me";
 "With the Me App you can create an identity, receive and use your vouchers. For more information please visit our website — https://zuidhorn.forus.io" = "With the Me App you can create an identity, receive and use your vouchers. For more information please visit our website — https://zuidhorn.forus.io";
 "Create passcode" = "Create passcode";
-"Change passcode" = "Change passcode";
 "Wrong passcode, please try again" = "Wrong passcode, please try again";
 "Codes don't match. Please try again" = "Codes don't match. Please try again";
+"Enter your login code" = "Enter your login code";

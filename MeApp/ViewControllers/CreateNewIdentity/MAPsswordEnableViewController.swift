@@ -48,8 +48,8 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
         UserDefaults.standard.synchronize()
         var appearance = ALAppearance()
         appearance.image = UIImage(named: "lock")!
-        appearance.title = NSLocalizedString("Login code", comment: "")
-        appearance.subtitle = NSLocalizedString("Enter your login code to use Face ID", comment: "")
+        appearance.title = "Login code".localized()
+        appearance.subtitle = "Enter your login code to use Face ID".localized()
         appearance.isSensorsEnabled = true
         appearance.cancelIsVissible = false
         appearance.delegate = self
@@ -62,7 +62,7 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
         UserDefaults.standard.synchronize()
         var appearance = ALAppearance()
         appearance.image = UIImage(named: "lock")!
-        appearance.title = NSLocalizedString("Login code", comment: "")
+        appearance.title = "Login code".localized()
         appearance.subtitle = NSLocalizedString("Enter a new login code", comment: "")
         appearance.isSensorsEnabled = true
         appearance.cancelIsVissible = false

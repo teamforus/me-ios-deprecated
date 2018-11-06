@@ -82,7 +82,7 @@ public class AppLocker: UIViewController {
             let mode = self.mode ?? .validate
             switch mode {
             case .create:
-                messageLabel.text = NSLocalizedString("Login code", comment: "") // Your message for create mode
+                messageLabel.text = "Login code".localized() // Your message for create mode
                 submessageLabel.text = NSLocalizedString("Enter a new login code", comment: "") // Your message for create mode // Your submessage for create mode
             case .change:
                 messageLabel.text = NSLocalizedString("Enter login code", comment: "") // Your submessage for change mode

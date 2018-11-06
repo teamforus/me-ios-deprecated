@@ -78,7 +78,7 @@
 		65467FB020B86C57009E99CC /* MALoginWithQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65467FAF20B86C57009E99CC /* MALoginWithQRViewController.swift */; };
 		654CBAB62109E1EC00E56F2E /* AuthorizationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654CBAB52109E1EC00E56F2E /* AuthorizationCode.swift */; };
 		654CBAB92109F84600E56F2E /* String+Substring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654CBAB82109F84600E56F2E /* String+Substring.swift */; };
-		65509465213D3C1E007532BE /* Localizabel.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65509467213D3C1E007532BE /* Localizabel.strings */; };
+		65509465213D3C1E007532BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65509467213D3C1E007532BE /* Localizable.strings */; };
 		65509469213D4D29007532BE /* Tabs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6550946B213D4D29007532BE /* Tabs.storyboard */; };
 		65509470213D4F36007532BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65509472213D4F36007532BE /* Main.storyboard */; };
 		65509477213D4F4F007532BE /* PassStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65509479213D4F4F007532BE /* PassStoryboard.storyboard */; };
@@ -361,8 +361,8 @@
 		654CBAB52109E1EC00E56F2E /* AuthorizationCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationCode.swift; sourceTree = "<group>"; };
 		654CBAB82109F84600E56F2E /* String+Substring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Substring.swift"; sourceTree = "<group>"; };
 		65509462213D3BD4007532BE /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		65509466213D3C1E007532BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizabel.strings; sourceTree = "<group>"; };
-		65509468213D3C21007532BE /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizabel.strings; sourceTree = "<group>"; };
+		65509466213D3C1E007532BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		65509468213D3C21007532BE /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6550946A213D4D29007532BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Tabs.storyboard; sourceTree = "<group>"; };
 		6550946D213D4D30007532BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Tabs.strings; sourceTree = "<group>"; };
 		6550946F213D4D33007532BE /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Tabs.strings; sourceTree = "<group>"; };
@@ -1046,7 +1046,7 @@
 				65A51F7920B2FFF40010DB33 /* Info.plist */,
 				6582871F217DC9E1008979C6 /* GoogleService-Info.plist */,
 				65A51F7420B2FFF40010DB33 /* Assets.xcassets */,
-				65509467213D3C1E007532BE /* Localizabel.strings */,
+				65509467213D3C1E007532BE /* Localizable.strings */,
 				65A51F7620B2FFF40010DB33 /* LaunchScreen.storyboard */,
 				65A51F7120B2FFF20010DB33 /* MeApp.xcdatamodeld */,
 				65B89AD320B48B9B0024DC51 /* MeApp-Swift.h */,
@@ -1714,7 +1714,7 @@
 				6500425E20DB97E40092CCDA /* OpenSans-SemiBoldItalic.ttf in Resources */,
 				65B89AC020B448CB0024DC51 /* MAAllowViewController.xib in Resources */,
 				6500425A20DB97E40092CCDA /* OpenSans-Italic.ttf in Resources */,
-				65509465213D3C1E007532BE /* Localizabel.strings in Resources */,
+				65509465213D3C1E007532BE /* Localizable.strings in Resources */,
 				65A51FD320B3012C0010DB33 /* SF-Pro-Display-Bold.otf in Resources */,
 				65FC85FF20B58426001FECA5 /* MAValidationQRViewController.xib in Resources */,
 				65A51FD420B3012C0010DB33 /* SF-Pro-Display-Medium.otf in Resources */,
@@ -2257,13 +2257,13 @@
 			name = TransactionViewController.xib;
 			sourceTree = "<group>";
 		};
-		65509467213D3C1E007532BE /* Localizabel.strings */ = {
+		65509467213D3C1E007532BE /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				65509466213D3C1E007532BE /* en */,
 				65509468213D3C21007532BE /* nl */,
 			);
-			name = Localizabel.strings;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		6550946B213D4D29007532BE /* Tabs.storyboard */ = {

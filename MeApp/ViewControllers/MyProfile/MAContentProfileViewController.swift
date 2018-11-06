@@ -51,14 +51,14 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         super.viewWillAppear(animated)
         if UserDefaults.standard.string(forKey: ALConstants.kPincode) == "" || UserDefaults.standard.string(forKey: ALConstants.kPincode) == nil{
             turnOffPascodeView.isHidden = true
-            passcodeLabel.text = NSLocalizedString("Create passcode", comment: "")
+            passcodeLabel.text = "Create passcode".localized()
             heightButtonsView.constant = 124
             verticalSpacingFaceIdLogin.constant = 10
         }else{
             heightButtonsView.constant = 194
             verticalSpacingFaceIdLogin.constant = 82
             turnOffPascodeView.isHidden = false
-            passcodeLabel.text = NSLocalizedString("Change passcode", comment: "")
+            passcodeLabel.text = "Change passcode".localized()
         }
         
         
@@ -71,7 +71,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         
         if !faceIDAvailable(){
             faceIdImage.image = #imageLiteral(resourceName: "touchId")
-            faceIdLabel.text = NSLocalizedString("Turn on Touch ID", comment: "")
+            faceIdLabel.text = "Turn on Touch ID".localized()
         }
         if UserShared.shared.currentUser.primaryEmail != nil{
             profileNameLabel.text = "\(UserShared.shared.currentUser.firstName!) \(UserShared.shared.currentUser.lastName!)"
@@ -122,8 +122,8 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
             if UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" && UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil{
                 var appearance = ALAppearance()
                 appearance.image = UIImage(named: "lock")!
-                appearance.title = NSLocalizedString("Change passcode", comment: "")
-                appearance.subtitle = NSLocalizedString("Enter your old code", comment: "")
+                appearance.title = "Change passcode".localized()
+                appearance.subtitle = "Enter your old code".localized()
                 appearance.isSensorsEnabled = true
                 appearance.cancelIsVissible = true
                 appearance.delegate = self
@@ -133,8 +133,8 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
 //                UserDefaults.standard.set("", forKey: ALConstants.kPincode)
                 var appearance = ALAppearance()
                 appearance.image = UIImage(named: "lock")!
-                appearance.title = NSLocalizedString("Login code", comment: "")
-                appearance.subtitle = NSLocalizedString("Enter a new login code", comment: "")
+                appearance.title = "Login code".localized()
+                appearance.subtitle = "Enter a new login code".localized()
                 appearance.isSensorsEnabled = true
                 appearance.cancelIsVissible = true
                 appearance.delegate = self
@@ -155,8 +155,8 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         if UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" && UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil{
             var appearance = ALAppearance()
             appearance.image = UIImage(named: "lock")!
-            appearance.title = NSLocalizedString("Login code", comment: "")
-            appearance.subtitle = NSLocalizedString("Set up the login code", comment: "")
+            appearance.title = "Login code".localized()
+            appearance.subtitle = "Enter your login code".localized()
             appearance.isSensorsEnabled = true
             appearance.cancelIsVissible = true
             appearance.delegate = self
