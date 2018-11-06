@@ -3,7 +3,7 @@
 "0RO-Fr-8TE.text" = "Nieuwe";
 
 /* Class = "UITabBarItem"; title = "Eigendom"; ObjectID = "0sK-og-sJQ"; */
-"0sK-og-sJQ.title" = "Vouchers";
+"0sK-og-sJQ.title" = "Eigendom";
 
 /* Class = "UILabel"; text = "5 eigenschappen"; ObjectID = "2oP-0e-z3e"; */
 "2oP-0e-z3e.text" = "5 eigenschappen";
@@ -39,7 +39,7 @@
 "Nsu-ze-VqX.text" = "VESTIGING";
 
 /* Class = "UILabel"; text = "Eigendom"; ObjectID = "P1l-mS-jj2"; */
-"P1l-mS-jj2.text" = "Vouchers";
+"P1l-mS-jj2.text" = "Eigendom";
 
 /* Class = "UILabel"; text = "2 dagen geldig"; ObjectID = "PaZ-DR-I5J"; */
 "PaZ-DR-I5J.text" = "2 dagen geldig";

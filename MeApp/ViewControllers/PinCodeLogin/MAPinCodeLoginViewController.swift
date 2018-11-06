@@ -190,7 +190,7 @@ class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
                     AlertController.showError(vc:self)
                 }
             }else {
-                AlertController.showWarning(withText: "This device in not authorize", vc: self)
+                AlertController.showWarning(withText: NSLocalizedString("This device in not authorize", comment: ""), vc: self)
             }
         }else {
             AlertController.showInternetUnable(vc: self)
@@ -199,8 +199,8 @@ class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
     
     @IBAction func aboutAction(_ sender: Any) {
         let popupTransction =  MAAboutMeViewController(nibName: "MAAboutMeViewController", bundle: nil)
-        popupTransction.titleDetail = "About Me"
-        popupTransction.descriptionDetail = "Met de Me App kan je een indentiteit aanmaken, vouchers beheren en de QR-code scanner gebruiken om in te loggen op de gebruikersomgeving."
+        popupTransction.titleDetail = NSLocalizedString("How does it work?", comment: "")
+        popupTransction.descriptionDetail = NSLocalizedString("If you already have a Me identity and logged into the web-shop, then go to the web-shop and click on 'Authorize device' and enter the code that is visible on this screen.", comment: "")
         self.presenter.presentationType = .popup
         self.presenter.transitionType = nil
         self.presenter.dismissTransitionType = nil

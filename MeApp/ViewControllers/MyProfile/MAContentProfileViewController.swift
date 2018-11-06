@@ -51,14 +51,14 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         super.viewWillAppear(animated)
         if UserDefaults.standard.string(forKey: ALConstants.kPincode) == "" || UserDefaults.standard.string(forKey: ALConstants.kPincode) == nil{
             turnOffPascodeView.isHidden = true
-            passcodeLabel.text = "Add 4-digit passcode"
+            passcodeLabel.text = NSLocalizedString("Create passcode", comment: "")
             heightButtonsView.constant = 124
             verticalSpacingFaceIdLogin.constant = 10
         }else{
             heightButtonsView.constant = 194
             verticalSpacingFaceIdLogin.constant = 82
             turnOffPascodeView.isHidden = false
-            passcodeLabel.text = "Change 4-digit passcode"
+            passcodeLabel.text = NSLocalizedString("Change passcode", comment: "")
         }
         
         
@@ -172,8 +172,8 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     @IBAction func aboutMe(_ sender: Any) {
         let popupTransction =  MAAboutMeViewController(nibName: "MAAboutMeViewController", bundle: nil)
         self.presenter.presentationType = .popup
-        popupTransction.titleDetail = NSLocalizedString("How does it work?", comment: "")
-        popupTransction.descriptionDetail = NSLocalizedString("If you already have a Me identity and logged into the web-shop, then go to the web-shop and click on 'Authorize device' and enter the code that is visible on this screen.", comment: "")
+        popupTransction.titleDetail = NSLocalizedString("About Me", comment: "")
+        popupTransction.descriptionDetail = NSLocalizedString("With the Me App you can create an identity, receive and use your vouchers. For more information please visit our website — https://zuidhorn.forus.io", comment: "")
         self.presenter.transitionType = nil
         self.presenter.dismissTransitionType = nil
         self.presenter.keyboardTranslationType = .compress

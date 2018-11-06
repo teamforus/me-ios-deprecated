@@ -37,3 +37,6 @@
 
 /* Class = "UILabel"; text = "App version"; ObjectID = "qdB-df-WLS"; */
 "qdB-df-WLS.text" = "App versie";
+
+/* Class = "UIButton"; normalTitle = "Inlogcode uitschakelen"; ObjectID = "Mfr-ck-RGJ"; */
+"Mfr-ck-RGJ.normalTitle" = "Inlogcode uitschakelen";

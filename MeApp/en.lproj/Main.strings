@@ -24,7 +24,7 @@
 "BGx-Ya-lC9.text" = "Please provide your e-mail and information below. For registration primary email address is required. When you're finished, click Continue. ";
 
 /* Class = "UILabel"; text = "Aanmelden"; ObjectID = "BUj-xf-lgk"; */
-"BUj-xf-lgk.text" = "Aanmelden";
+"BUj-xf-lgk.text" = "Log In";
 
 /* Class = "UILabel"; text = "New profiel"; ObjectID = "CtM-Fv-Z9R"; */
 "CtM-Fv-Z9R.text" = "New profile";

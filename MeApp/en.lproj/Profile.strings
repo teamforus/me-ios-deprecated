@@ -37,3 +37,6 @@
 
 /* Class = "UILabel"; text = "App version"; ObjectID = "qdB-df-WLS"; */
 "qdB-df-WLS.text" = "App version";
+
+/* Class = "UIButton"; normalTitle = "Turn off passcode"; ObjectID = "Mfr-ck-RGJ"; */
+"Mfr-ck-RGJ.normalTitle" = "Turn off passcode";

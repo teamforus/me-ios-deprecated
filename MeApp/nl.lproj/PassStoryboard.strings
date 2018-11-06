@@ -110,3 +110,38 @@
 /* Class = "UITabBarItem"; title = "Item 2"; ObjectID = "xtY-8m-Mw2"; */
 "xtY-8m-Mw2.title" = "Item 2";
 
+/* Class = "UILabel"; text = "E-mail naar mij"; ObjectID = "h9H-Tx-Cte"; */
+"z7n-A7-brV.text" = "E-mail naar mij";
+
+/* Class = "UIButton"; normalTitle = "Voucher Info"; ObjectID = "6OY-uF-Osa"; */
+"6OY-uF-Osa.normalTitle" = "Voucher Info";
+
+/* Class = "UILabel"; text = "Hier is je persoonlijke QR-Code"; ObjectID = "sOe-ep-azG"; */
+"sOe-ep-azG.text" = "Hier is je persoonlijke QR-Code";
+
+/* Class = "UILabel"; text = "Laat iemanduw persoonlijke QR-code scannen om u valuta, bezit of vouchers te sturen"; ObjectID = "ufX-dC-Zqj"; */
+"ufX-dC-Zqj.text" = "Laat iemanduw persoonlijke QR-code scannen om u valuta, bezit of vouchers te sturen";
+
+/* Class = "UILabel"; text = "Hier is je persoonlijke QR-Code"; ObjectID = "WIf-wb-p3w"; */
+"WIf-wb-p3w.text" = "Hier is je persoonlijke QR-Code";
+
+/* Class = "UILabel"; text = "Laat iemanduw persoonlijke QR-code scannen om u valuta, bezit of vouchers te sturen"; ObjectID = "raD-LX-S2B"; */
+"raD-LX-S2B.text" = "Laat iemanduw persoonlijke QR-code scannen om u valuta, bezit of vouchers te sturen";
+
+/* Class = "UILabel"; text = "Product Voucher"; ObjectID = "5vp-xG-Gy2"; */
+"5vp-xG-Gy2.text" = "Aanbieding";
+
+/* Class = "UILabel"; text = "Voucher"; ObjectID = "bls-5D-nMA"; */
+"bls-5D-nMA.text" = "Voucher";
+
+/* Class = "UILabel"; text = "Geschiedenis"; ObjectID = "i1G-qE-89v"; */
+"i1G-qE-89v.text" = "Geschiedenis";
+
+/* Class = "UILabel"; text = "Vandaag"; ObjectID = "0ve-pB-Qlv"; */
+"0ve-pB-Qlv.text" = "Vandaag";
+
+/* Class = "UILabel"; text = "Aangemaakt"; ObjectID = "jCA-Qb-qHj"; */
+"jCA-Qb-qHj.text" = "Aangemaakt";
+
+/* Class = "UILabel"; text = "Aangemaakt"; ObjectID = "JN2-pl-xhh"; */
+"JN2-pl-xhh.text" = "Aangemaakt";
