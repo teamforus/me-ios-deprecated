@@ -180,7 +180,7 @@ public class AppLocker: UIViewController {
       view.shake(delegate: self)
       view.backgroundColor = .red
       self.photoImageView.image = UIImage(named: "lockError")
-      submessageLabel.text = NSLocalizedString("Passwordes don't match. Please try again", comment: "")
+      submessageLabel.text = NSLocalizedString("Wrong passcode, please try again", comment: "")
     
     }
     AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
