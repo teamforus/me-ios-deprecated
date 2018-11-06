@@ -77,8 +77,11 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
             profileNameLabel.text = "\(UserShared.shared.currentUser.firstName!) \(UserShared.shared.currentUser.lastName!)"
         }
         profileEmailLabel.text = UserShared.shared.currentUser.primaryEmail
-        let nsObject: AnyObject? = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as AnyObject
-        appVersionLabel.text = nsObject as? String
+        let versionApp: AnyObject? = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as AnyObject
+        let buildAppNumber: AnyObject? = Bundle.main.infoDictionary?["CFBundleVersion"] as AnyObject
+        
+        appVersionLabel.text = (versionApp as? String)! + " - dev - " + (buildAppNumber as? String)!
+//        CFBundleVersion
     }
     
     
