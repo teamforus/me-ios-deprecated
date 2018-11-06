@@ -234,7 +234,9 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
             if voucher.product != nil{
                 cellWallet.voucherTitleLabel.text = voucher.product?.name
                 cellWallet.priceLabel.text = voucher.product?.price ?? "0.0"
+                if voucher.product?.photo != nil {
                 cellWallet.voucherImage.sd_setImage(with: URL(string: voucher.product?.photo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+                }
             }else{
                 cellWallet.voucherTitleLabel.text = voucher.found.name
                 

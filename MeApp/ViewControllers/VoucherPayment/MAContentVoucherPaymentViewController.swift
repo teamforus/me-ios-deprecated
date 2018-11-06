@@ -50,7 +50,11 @@ class MAContentVoucherPaymentViewController: MABaseViewController, MAConfirmatio
         if voucher.product != nil {
             paketTitle.text = voucher.product?.name
             organizationNameLabel.text = voucher.product?.organization.name
+           if voucher.product?.photo != nil {
             qrCodeImageView.sd_setImage(with: URL(string: voucher.product?.photo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+            }else{
+                qrCodeImageView.image = UIImage(named: "Resting")
+            }
         }else{
             paketTitle.text = voucher.found.name
             organizationNameLabel.text = voucher.found.organization.name ?? ""
