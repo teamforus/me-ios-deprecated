@@ -54,7 +54,7 @@
 "L2x-vd-lfS.placeholder" = "E-mail";
 
 /* Class = "UILabel"; text = "Welkom bij Me"; ObjectID = "Nuw-gS-LZ8"; */
-"Nuw-gS-LZ8.text" = "Welkom to Me";
+"Nuw-gS-LZ8.text" = "Welcome to Me";
 
 /* Class = "UILabel"; text = "Please enter your e-mail address in order to receive your login details."; ObjectID = "OJO-WQ-zli"; */
 "OJO-WQ-zli.text" = "Please enter your e-mail address in order to receive your login details.";
