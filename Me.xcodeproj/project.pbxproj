@@ -131,7 +131,6 @@
 		658BBA532110954C0098E2AC /* backspaceBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = 658BBA45211094BE0098E2AC /* backspaceBlue.png */; };
 		658BBA542110954C0098E2AC /* backspaceBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 658BBA46211094BE0098E2AC /* backspaceBlue@2x.png */; };
 		658BBA552110954C0098E2AC /* backspaceBlue@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 658BBA47211094BE0098E2AC /* backspaceBlue@3x.png */; };
-		658BBA562110954C0098E2AC /* AppLocker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 658BBA48211094BE0098E2AC /* AppLocker.xib */; };
 		658BBA572110954C0098E2AC /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658BBA49211094BE0098E2AC /* UI.swift */; };
 		658BDDC721085AFE00A27EC7 /* MACreateNewIdentityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658BDDC621085AFE00A27EC7 /* MACreateNewIdentityViewController.swift */; };
 		658BDDC92108A76100A27EC7 /* RecordType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658BDDC82108A76100A27EC7 /* RecordType.swift */; };
@@ -186,6 +185,7 @@
 		65AC33032102126200633187 /* MAChooseCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AC33022102126200633187 /* MAChooseCategoryCollectionViewCell.swift */; };
 		65AC330821023B8B00633187 /* MAPersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AC330721023B8B00633187 /* MAPersonalViewController.swift */; };
 		65AC330A21023E7000633187 /* MAPersonalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AC330921023E7000633187 /* MAPersonalTableViewCell.swift */; };
+		65ACC3802191DA67001D15DC /* AppLocker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65ACC3822191DA67001D15DC /* AppLocker.xib */; };
 		65B89A8D20B3342E0024DC51 /* MATransactionRedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89A8B20B3342E0024DC51 /* MATransactionRedViewController.swift */; };
 		65B89A9120B334860024DC51 /* MATransactionBlueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89A8F20B334860024DC51 /* MATransactionBlueViewController.swift */; };
 		65B89A9420B408C00024DC51 /* MARecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89A9320B408C00024DC51 /* MARecordsViewController.swift */; };
@@ -431,7 +431,6 @@
 		658BBA45211094BE0098E2AC /* backspaceBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backspaceBlue.png; sourceTree = "<group>"; };
 		658BBA46211094BE0098E2AC /* backspaceBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backspaceBlue@2x.png"; sourceTree = "<group>"; };
 		658BBA47211094BE0098E2AC /* backspaceBlue@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backspaceBlue@3x.png"; sourceTree = "<group>"; };
-		658BBA48211094BE0098E2AC /* AppLocker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AppLocker.xib; path = Source/AppLocker/AppLocker.xib; sourceTree = "<group>"; };
 		658BBA49211094BE0098E2AC /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UI.swift; path = Source/UI.swift; sourceTree = "<group>"; };
 		658BDDC621085AFE00A27EC7 /* MACreateNewIdentityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MACreateNewIdentityViewController.swift; sourceTree = "<group>"; };
 		658BDDC82108A76100A27EC7 /* RecordType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordType.swift; sourceTree = "<group>"; };
@@ -493,6 +492,9 @@
 		65AC33022102126200633187 /* MAChooseCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAChooseCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		65AC330721023B8B00633187 /* MAPersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAPersonalViewController.swift; sourceTree = "<group>"; };
 		65AC330921023E7000633187 /* MAPersonalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAPersonalTableViewCell.swift; sourceTree = "<group>"; };
+		65ACC3812191DA67001D15DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AppLocker.xib; sourceTree = "<group>"; };
+		65ACC3842191DA6A001D15DC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AppLocker.strings; sourceTree = "<group>"; };
+		65ACC3862191DA6C001D15DC /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/AppLocker.strings; sourceTree = "<group>"; };
 		65B89A8B20B3342E0024DC51 /* MATransactionRedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MATransactionRedViewController.swift; sourceTree = "<group>"; };
 		65B89A8F20B334860024DC51 /* MATransactionBlueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MATransactionBlueViewController.swift; sourceTree = "<group>"; };
 		65B89A9320B408C00024DC51 /* MARecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MARecordsViewController.swift; sourceTree = "<group>"; };
@@ -983,7 +985,7 @@
 				658BBA45211094BE0098E2AC /* backspaceBlue.png */,
 				658BBA46211094BE0098E2AC /* backspaceBlue@2x.png */,
 				658BBA47211094BE0098E2AC /* backspaceBlue@3x.png */,
-				658BBA48211094BE0098E2AC /* AppLocker.xib */,
+				65ACC3822191DA67001D15DC /* AppLocker.xib */,
 				658BBA49211094BE0098E2AC /* UI.swift */,
 			);
 			path = AppLocker;
@@ -1773,7 +1775,7 @@
 				65A51F7820B2FFF40010DB33 /* LaunchScreen.storyboard in Resources */,
 				6500425C20DB97E40092CCDA /* OpenSans-LightItalic.ttf in Resources */,
 				6568CDA82190A873003E5F0C /* MAConfirmationTransactionViewController.xib in Resources */,
-				658BBA562110954C0098E2AC /* AppLocker.xib in Resources */,
+				65ACC3802191DA67001D15DC /* AppLocker.xib in Resources */,
 				65B89AB620B43FA50024DC51 /* MAValidationSuccessViewController.xib in Resources */,
 				65A51FE320B3012C0010DB33 /* SF-Pro-Text-Semibold.otf in Resources */,
 				6500426020DB97E40092CCDA /* LICENSE.txt in Resources */,
@@ -2342,6 +2344,17 @@
 				651F704E21467EE6008D087A /* en */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		65ACC3822191DA67001D15DC /* AppLocker.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65ACC3812191DA67001D15DC /* Base */,
+				65ACC3842191DA6A001D15DC /* en */,
+				65ACC3862191DA6C001D15DC /* nl */,
+			);
+			name = AppLocker.xib;
+			path = Source/AppLocker;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -55,3 +55,4 @@
 "Create passcode" = "Create passcode";
 "Change passcode" = "Change passcode";
 "Wrong passcode, please try again" = "Wrong passcode, please try again";
+"Codes don't match. Please try again" = "Codes don't match. Please try again";

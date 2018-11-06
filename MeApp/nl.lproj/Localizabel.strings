@@ -55,3 +55,4 @@
 "Create passcode" = "Maak een wachtwoord aan";
 "Change passcode" = "Wijzig inlogcode";
 "Wrong passcode, please try again" = "Verkeerde inlogcode, probeer het opnieuw";
+"Codes don't match. Please try again" = "Inlogcodes komen niet overeen. Probeer het opnieuw";
