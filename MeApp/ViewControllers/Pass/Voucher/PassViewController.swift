@@ -53,10 +53,10 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
         smallerAmount.layer.cornerRadius = 9.0
         emailMeButton.layer.cornerRadius = 9.0
     }
-  
+    
     
     @objc func goToQRReader(){
-//        self.tabBarController?.selectedIndex = 1
+        //        self.tabBarController?.selectedIndex = 1
         NotificationCenter.default.post(name: Notification.Name("togleStateWindow"), object: nil)
     }
     
@@ -69,8 +69,8 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
     func getTransaction(){
         TransactionVoucherRequest.getTransaction(identityAdress: voucher.address, completion: { (transactions, statusCode) in
             self.transactions.removeAllObjects()
-             self.transactions.addObjects(from: transactions.sorted(by: { ($0 as! Transactions).created_at.compare(($1 as! Transactions).created_at) == .orderedDescending}))
-           if self.transactions.count == 0 {
+            self.transactions.addObjects(from: transactions.sorted(by: { ($0 as! Transactions).created_at.compare(($1 as! Transactions).created_at) == .orderedDescending}))
+            if self.transactions.count == 0 {
                 self.tableView.isHidden = true
             }
             self.tableView.reloadData()
@@ -78,18 +78,23 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
             
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
     @IBAction func showEmailToMe(_ sender: Any) {
-        let popupTransction =  MAEmailForMeViewController(nibName: "MAEmailForMeViewController", bundle: nil)
-        presenter.presentationType = .popup
-        presenter.transitionType = nil
-        presenter.dismissTransitionType = nil
-        presenter.keyboardTranslationType = .compress
-        customPresentViewController(presenter, viewController: popupTransction, animated: true, completion: nil)
+        VoucherRequest.sendEmailToVoucher(address: voucher.address, completion: { (statusCode) in
+            let popupTransction =  MARegistrationSuccessViewController(nibName: "MARegistrationSuccessViewController", bundle: nil)
+            self.presenter.presentationType = .popup
+            self.presenter.transitionType = nil
+            self.presenter.dismissTransitionType = nil
+            self.presenter.keyboardTranslationType = .compress
+            self.customPresentViewController(self.presenter, viewController: popupTransction, animated: true, completion: nil)
+        }) { (error) in
+            
+        }
+        //
     }
     
     @IBAction func showAmmount(_ sender: Any) {

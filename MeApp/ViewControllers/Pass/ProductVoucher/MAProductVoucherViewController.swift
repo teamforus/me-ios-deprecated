@@ -68,12 +68,16 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
     }
     
     @IBAction func showEmailToMe(_ sender: Any) {
-        let popupTransction =  MAEmailForMeViewController(nibName: "MAEmailForMeViewController", bundle: nil)
-        presenter.presentationType = .popup
-        presenter.transitionType = nil
-        presenter.dismissTransitionType = nil
-        presenter.keyboardTranslationType = .compress
-        customPresentViewController(presenter, viewController: popupTransction, animated: true, completion: nil)
+        VoucherRequest.sendEmailToVoucher(address: voucher.address, completion: { (statusCode) in
+            let popupTransction =  MARegistrationSuccessViewController(nibName: "MARegistrationSuccessViewController", bundle: nil)
+            self.presenter.presentationType = .popup
+            self.presenter.transitionType = nil
+            self.presenter.dismissTransitionType = nil
+            self.presenter.keyboardTranslationType = .compress
+            self.customPresentViewController(self.presenter, viewController: popupTransction, animated: true, completion: nil)
+        }) { (error) in
+            
+        }
     }
     
     @IBAction func showInfo(_ sender: Any) {
