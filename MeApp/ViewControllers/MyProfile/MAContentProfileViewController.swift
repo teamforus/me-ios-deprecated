@@ -42,7 +42,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     @IBOutlet weak var profileImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        switchFaceID.transform = CGAffineTransform(scaleX: 1.0, y: 0.85);
         //        UserDefaults.standard.set("0000", forKey: ALConstants.kPincode)
         //        UserDefaults.standard.synchronize()
         //        updateIndentity()
@@ -54,7 +54,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
             turnOffPascodeView.isHidden = true
             turnOnOffFaceId.isHidden = true
             passcodeLabel.text = "Create passcode".localized()
-            heightButtonsView.constant = 68
+            heightButtonsView.constant = 64
             verticalSpacingFaceIdLogin.constant = 10
         }else{
             heightButtonsView.constant = 194
@@ -179,10 +179,12 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         let popupTransction =  MAAboutMeViewController(nibName: "MAAboutMeViewController", bundle: nil)
         self.presenter.presentationType = .popup
         popupTransction.titleDetail = NSLocalizedString("About Me", comment: "")
-        popupTransction.descriptionDetail = NSLocalizedString("With the Me App you can create an identity, receive and use your vouchers. For more information please visit our website — https://zuidhorn.forus.io", comment: "")
+        popupTransction.descriptionDetail = NSLocalizedString("With the Me you can create an identity, receive and use your vouchers. For more information please visit our website — https://zuidhorn.forus.io", comment: "")
         self.presenter.transitionType = nil
         self.presenter.dismissTransitionType = nil
-        self.presenter.keyboardTranslationType = .compress
+        self.presenter.dismissOnTap = true
+         presenter.dismissAnimated = true
+//        self.presenter.keyboardTranslationType = .compress
         self.customPresentViewController(self.presenter, viewController: popupTransction, animated: true, completion: nil)
     }
     

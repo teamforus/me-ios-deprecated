@@ -113,16 +113,17 @@ extension MAProductVoucherViewController: UITableViewDataSource, UITableViewDele
         cell.companyTitle.text = transaction.organization.name
         cell.priceLabel.text = "- €\(transaction.amount!)"
         cell.dateLabel.text = transaction.created_at.dateFormaterNormalDate()
+        cell.selectionStyle = .none
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let popOverVC = TransactionViewController(nibName: "TransactionViewController", bundle: nil)
-        popOverVC.transaction = self.transactions[indexPath.row] as? Transactions
-        self.addChildViewController(popOverVC)
-        popOverVC.view.frame = self.view.frame
-        self.view.addSubview(popOverVC.view)
-        popOverVC.didMove(toParentViewController: self)
-        tableView.deselectRow(at: indexPath, animated: true)
+//        let popOverVC = TransactionViewController(nibName: "TransactionViewController", bundle: nil)
+//        popOverVC.transaction = self.transactions[indexPath.row] as? Transactions
+//        self.addChildViewController(popOverVC)
+//        popOverVC.view.frame = self.view.frame
+//        self.view.addSubview(popOverVC.view)
+//        popOverVC.didMove(toParentViewController: self)
+//        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

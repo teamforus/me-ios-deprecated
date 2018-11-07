@@ -60,7 +60,6 @@
 		6528F01920E51BEF00DD19C1 /* MAFirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6528F01820E51BEF00DD19C1 /* MAFirstPageViewController.swift */; };
 		6528F01C20E5358900DD19C1 /* MAPinCodeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6528F01B20E5358900DD19C1 /* MAPinCodeLoginViewController.swift */; };
 		6528F01E20E53F3D00DD19C1 /* MALoginEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6528F01D20E53F3D00DD19C1 /* MALoginEmailViewController.swift */; };
-		652D910A216DF19F00F04D2E /* VoucherPayment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652D9109216DF19F00F04D2E /* VoucherPayment.storyboard */; };
 		652D910C216DF33900F04D2E /* MABaseVoucherPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652D910B216DF33900F04D2E /* MABaseVoucherPaymentViewController.swift */; };
 		652D910E216DF40B00F04D2E /* MAContentVoucherPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652D910D216DF40B00F04D2E /* MAContentVoucherPaymentViewController.swift */; };
 		652D9110216DF43000F04D2E /* MABottomQRVoucherPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652D910F216DF43000F04D2E /* MABottomQRVoucherPaymentViewController.swift */; };
@@ -108,6 +107,7 @@
 		656F19872105E22A00923DAF /* MAValidatorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656F19862105E22A00923DAF /* MAValidatorsViewController.swift */; };
 		656F198A2105EFF100923DAF /* MAValidatorCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656F19892105EFF100923DAF /* MAValidatorCellTableViewCell.swift */; };
 		6576A0B62192F610007B3D9D /* MARegistrationSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6576A0B82192F610007B3D9D /* MARegistrationSuccessViewController.xib */; };
+		6576A0BD21933EC7007B3D9D /* VoucherPayment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6576A0BF21933EC7007B3D9D /* VoucherPayment.storyboard */; };
 		6579633E20E4D49D001CF29D /* NunitoSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579632F20E4D49C001CF29D /* NunitoSans-LightItalic.ttf */; };
 		6579633F20E4D49D001CF29D /* NunitoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579633020E4D49C001CF29D /* NunitoSans-BoldItalic.ttf */; };
 		6579634020E4D49D001CF29D /* NunitoSans-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579633120E4D49C001CF29D /* NunitoSans-ExtraLight.ttf */; };
@@ -342,7 +342,6 @@
 		6528F01820E51BEF00DD19C1 /* MAFirstPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAFirstPageViewController.swift; sourceTree = "<group>"; };
 		6528F01B20E5358900DD19C1 /* MAPinCodeLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAPinCodeLoginViewController.swift; sourceTree = "<group>"; };
 		6528F01D20E53F3D00DD19C1 /* MALoginEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MALoginEmailViewController.swift; sourceTree = "<group>"; };
-		652D9109216DF19F00F04D2E /* VoucherPayment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VoucherPayment.storyboard; sourceTree = "<group>"; };
 		652D910B216DF33900F04D2E /* MABaseVoucherPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MABaseVoucherPaymentViewController.swift; sourceTree = "<group>"; };
 		652D910D216DF40B00F04D2E /* MAContentVoucherPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAContentVoucherPaymentViewController.swift; sourceTree = "<group>"; };
 		652D910F216DF43000F04D2E /* MABottomQRVoucherPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MABottomQRVoucherPaymentViewController.swift; sourceTree = "<group>"; };
@@ -409,6 +408,9 @@
 		6576A0B72192F610007B3D9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MARegistrationSuccessViewController.xib; sourceTree = "<group>"; };
 		6576A0BA2192F613007B3D9D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MARegistrationSuccessViewController.strings; sourceTree = "<group>"; };
 		6576A0BC2192F615007B3D9D /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/MARegistrationSuccessViewController.strings; sourceTree = "<group>"; };
+		6576A0BE21933EC7007B3D9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/VoucherPayment.storyboard; sourceTree = "<group>"; };
+		6576A0C121933ED5007B3D9D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/VoucherPayment.strings; sourceTree = "<group>"; };
+		6576A0C321933ED7007B3D9D /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/VoucherPayment.strings; sourceTree = "<group>"; };
 		6579632F20E4D49C001CF29D /* NunitoSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-LightItalic.ttf"; sourceTree = "<group>"; };
 		6579633020E4D49C001CF29D /* NunitoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		6579633120E4D49C001CF29D /* NunitoSans-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraLight.ttf"; sourceTree = "<group>"; };
@@ -1034,7 +1036,7 @@
 				65509472213D4F36007532BE /* Main.storyboard */,
 				6550946B213D4D29007532BE /* Tabs.storyboard */,
 				65509479213D4F4F007532BE /* PassStoryboard.storyboard */,
-				652D9109216DF19F00F04D2E /* VoucherPayment.storyboard */,
+				6576A0BF21933EC7007B3D9D /* VoucherPayment.storyboard */,
 				65509480213D5017007532BE /* NewProfile.storyboard */,
 				65509487213D5105007532BE /* Profile.storyboard */,
 				65E3363E20E645B600C0512B /* KRScrollView.swift */,
@@ -1746,7 +1748,7 @@
 				6579634220E4D49D001CF29D /* NunitoSans-BlackItalic.ttf in Resources */,
 				65A51FCF20B3012C0010DB33 /* SF-Pro-Display-RegularItalic.otf in Resources */,
 				6500425F20DB97E40092CCDA /* OpenSans-ExtraBoldItalic.ttf in Resources */,
-				652D910A216DF19F00F04D2E /* VoucherPayment.storyboard in Resources */,
+				6576A0BD21933EC7007B3D9D /* VoucherPayment.storyboard in Resources */,
 				6579634920E4D49E001CF29D /* NunitoSans-SemiBold.ttf in Resources */,
 				651F705D214682F5008D087A /* MATransactionRedViewController.xib in Resources */,
 				65A51FDC20B3012C0010DB33 /* SF-Pro-Display-Ultralight.otf in Resources */,
@@ -2346,6 +2348,16 @@
 				6576A0BC2192F615007B3D9D /* nl */,
 			);
 			name = MARegistrationSuccessViewController.xib;
+			sourceTree = "<group>";
+		};
+		6576A0BF21933EC7007B3D9D /* VoucherPayment.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6576A0BE21933EC7007B3D9D /* Base */,
+				6576A0C121933ED5007B3D9D /* en */,
+				6576A0C321933ED7007B3D9D /* nl */,
+			);
+			name = VoucherPayment.storyboard;
 			sourceTree = "<group>";
 		};
 		65A51F7620B2FFF40010DB33 /* LaunchScreen.storyboard */ = {

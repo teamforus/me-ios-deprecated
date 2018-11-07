@@ -111,22 +111,22 @@
 "xtY-8m-Mw2.title" = "Item 2";
 
 /* Class = "UILabel"; text = "E-mail for me"; ObjectID = "h9H-Tx-Cte"; */
-"z7n-A7-brV.text" = "E-mail for me";
+"z7n-A7-brV.text" = "E-mail to me";
 
 /* Class = "UIButton"; normalTitle = "Voucher Info"; ObjectID = "6OY-uF-Osa"; */
 "6OY-uF-Osa.normalTitle" = "Voucher Info";
 
 /* Class = "UILabel"; text = "This is your personal QR code"; ObjectID = "sOe-ep-azG"; */
-"sOe-ep-azG.text" = "This is your personal QR code";
+"sOe-ep-azG.text" = "This is your Voucher’s QR-code.";
 
 /* Class = "UILabel"; text = "Let someone scan your personal QR code to send your currency, property or vouchers"; ObjectID = "ufX-dC-Zqj"; */
-"ufX-dC-Zqj.text" = "Let someone scan your personal QR code to send your currency, property or vouchers";
+"ufX-dC-Zqj.text" = "Let the shopkeeper scan it to make a payment from your voucher.";
 
 /* Class = "UILabel"; text = "This is your personal QR code"; ObjectID = "WIf-wb-p3w"; */
-"WIf-wb-p3w.text" = "This is your personal QR code";
+"WIf-wb-p3w.text" = "This is your Voucher’s QR-code.";
 
 /* Class = "UILabel"; text = "Let someone scan your personal QR code to send your currency, property or vouchers"; ObjectID = "raD-LX-S2B"; */
-"raD-LX-S2B.text" = "Let someone scan your personal QR code to send your currency, property or vouchers";
+"raD-LX-S2B.text" = "Let the shopkeeper scan it to make a payment from your voucher.";
 
 /* Class = "UILabel"; text = "Product Voucher"; ObjectID = "5vp-xG-Gy2"; */
 "5vp-xG-Gy2.text" = "Product Voucher";
@@ -145,3 +145,7 @@
 
 /* Class = "UILabel"; text = "Created"; ObjectID = "JN2-pl-xhh"; */
 "jCA-Qb-qHj.text" = "Created";
+
+/* Class = "UILabel"; text = "Email to me"; ObjectID = "IzK-iS-COA"; */
+"IzK-iS-COA.text" = "E-mail to me";
+

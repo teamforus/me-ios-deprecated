@@ -222,18 +222,19 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
             //            cellWallet.delegate = self
             cellWallet.selectionStyle = .none
             let voucher = self.vouhers[indexPath.row] as! Voucher
-            if voucher.transactions != nil{
-                if voucher.transactions.count != 0 {
-                    cellWallet.usedVoucherLabel.isHidden = false
+         
+            if voucher.product != nil{
+                if voucher.transactions != nil{
+                    if voucher.transactions.count != 0 {
+                        cellWallet.usedVoucherLabel.isHidden = false
+                    }else{
+                        cellWallet.usedVoucherLabel.isHidden = true
+                    }
                 }else{
                     cellWallet.usedVoucherLabel.isHidden = true
                 }
-            }else{
-                cellWallet.usedVoucherLabel.isHidden = true
-            }
-            if voucher.product != nil{
                 cellWallet.voucherTitleLabel.text = voucher.product?.name
-                cellWallet.priceLabel.text = voucher.product?.price ?? "0.0"
+                cellWallet.priceLabel.text = "€\(voucher.product?.price ?? "0.0")" 
                 if voucher.product?.photo != nil {
                 cellWallet.voucherImage.sd_setImage(with: URL(string: voucher.product?.photo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
                 }
