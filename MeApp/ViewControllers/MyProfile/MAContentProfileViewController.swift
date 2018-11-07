@@ -24,6 +24,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     @IBOutlet weak var profileEmailLabel: UILabel!
     @IBOutlet weak var passcodeLabel: UILabel!
     @IBOutlet weak var appVersionLabel: UILabel!
+    @IBOutlet weak var turnOnOffFaceId: CustomCornerUIView!
     @IBOutlet weak var turnOffPascodeView: CustomCornerUIView!
     @IBOutlet weak var changePasscodeView: CustomCornerUIView!
     @IBOutlet weak var verticalSpacingFaceIdLogin: NSLayoutConstraint!
@@ -51,13 +52,15 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         super.viewWillAppear(animated)
         if UserDefaults.standard.string(forKey: ALConstants.kPincode) == "" || UserDefaults.standard.string(forKey: ALConstants.kPincode) == nil{
             turnOffPascodeView.isHidden = true
+            turnOnOffFaceId.isHidden = true
             passcodeLabel.text = "Create passcode".localized()
-            heightButtonsView.constant = 124
+            heightButtonsView.constant = 68
             verticalSpacingFaceIdLogin.constant = 10
         }else{
             heightButtonsView.constant = 194
             verticalSpacingFaceIdLogin.constant = 82
             turnOffPascodeView.isHidden = false
+            turnOnOffFaceId.isHidden = false
             passcodeLabel.text = "Change passcode".localized()
         }
         

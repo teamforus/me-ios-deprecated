@@ -313,6 +313,7 @@
                         <outlet property="profileNameLabel" destination="Wfm-Qk-FJu" id="ZgP-Sh-KcM"/>
                         <outlet property="switchFaceID" destination="YPI-d9-PAw" id="OQN-cU-HRF"/>
                         <outlet property="turnOffPascodeView" destination="SbT-hx-NQg" id="b7u-sB-K5g"/>
+                        <outlet property="turnOnOffFaceId" destination="3F5-pB-QVl" id="hYn-QR-rBl"/>
                         <outlet property="verticalSpacingFaceIdLogin" destination="VLh-RE-vTF" id="Qe8-0K-6Fh"/>
                     </connections>
                 </viewController>
