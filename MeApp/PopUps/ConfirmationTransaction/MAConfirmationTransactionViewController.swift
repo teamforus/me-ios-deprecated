@@ -39,19 +39,23 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
        
         
         if voucher.product != nil {
-            amountLabel.text = voucher.product?.price ?? "0.0"
+            amountLabel.text = "€\(voucher.product?.price ?? "0.0")?"
             var reactBodyView = bodyView.frame
             reactBodyView.size.height = reactBodyView.size.height - 36
             bodyView.frame = reactBodyView
             insuficientAmountLabel.isHidden = true
         }else{
-            amountLabel.text = amount
+            amountLabel.text = "€\(amount ?? "0.0")?"
             let amountVoucher = Double(voucher.amount)!
             aditionalAmount = Double(amount.replacingOccurrences(of: ",", with: "."))! - amountVoucher
             if Double(amount.replacingOccurrences(of: ",", with: "."))! > amountVoucher{
                 requestButton.isEnabled = false
                 requestButton.backgroundColor = #colorLiteral(red: 0.7646217346, green: 0.764754355, blue: 0.7646133304, alpha: 1)
-                insuficientAmountLabel.text = String(format: "Insufficient funds on the voucher.  Please, request extra payment of €%.02f", aditionalAmount)
+                if NSLocale.preferredLanguages.first == "en"{
+                insuficientAmountLabel.text = String(format:"Insufficient funds on the voucher. Please, request extra payment of".localized()+" €%.02f", aditionalAmount)
+                }else if NSLocale.preferredLanguages.first == "nl"{
+                    insuficientAmountLabel.text = String(format:"Onvoldoende budget op de voucher. Vraag de klant of hij een bedrag van".localized()+" €%.02f"+"wilt bijbetalen.", aditionalAmount)
+                }
             }else{
             var reactBodyView = bodyView.frame
             reactBodyView.size.height = reactBodyView.size.height - 36
