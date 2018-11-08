@@ -83,13 +83,13 @@ public class AppLocker: UIViewController {
             switch mode {
             case .create:
                 messageLabel.text = "Login code".localized() // Your message for create mode
-                submessageLabel.text = NSLocalizedString("Enter a new login code", comment: "") // Your message for create mode // Your submessage for create mode
+                submessageLabel.text = "Enter a new login code".localized() // Your message for create mode // Your submessage for create mode
             case .change:
-                messageLabel.text = NSLocalizedString("Enter login code", comment: "") // Your submessage for change mode
+                messageLabel.text = "Enter login code".localized() // Your submessage for change mode
             case .deactive:
-                messageLabel.text = NSLocalizedString("Turn off login code", comment: "") // Your submessage for deactive mode
+                messageLabel.text = "Turn off login code".localized() // Your submessage for deactive mode
             case .validate:
-                messageLabel.text = NSLocalizedString("Enter login code", comment: "") // Your submessage for validate mode
+                messageLabel.text = "Enter login code".localized() // Your submessage for validate mode
                 isFirstCreationStep = false
             }
         }
@@ -136,7 +136,7 @@ public class AppLocker: UIViewController {
             isFirstCreationStep = false
             reservedPin = pin
             clearView()
-            messageLabel.text = NSLocalizedString("Confirm the code", comment: "")
+            messageLabel.text = "Confirm the code".localized()
         } else {
             confirmPin()
         }
@@ -182,9 +182,9 @@ public class AppLocker: UIViewController {
             view.backgroundColor = .red
             self.photoImageView.image = UIImage(named: "lockError")
             if self.isFirstCreationStep == false {
-                submessageLabel.text = NSLocalizedString("Codes don't match. Please try again", comment: "")
+                submessageLabel.text = "Codes don't match. Please try again".localized()
             }else{
-                submessageLabel.text = NSLocalizedString("Wrong passcode, please try again", comment: "")
+                submessageLabel.text = "Wrong passcode, please try again".localized()
             }
             
         }

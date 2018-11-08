@@ -40,9 +40,9 @@ class MALoginEmailViewController: MABaseViewController {
     
     @IBAction func loginInApp(_ sender: Any) {
         if emailSkyTextField.text == ""{
-            emailSkyTextField.errorMessage = NSLocalizedString("Email is empty ", comment: "")
+            emailSkyTextField.errorMessage = "Email is empty ".localized()
         }else if !Validation.validateEmail(emailSkyTextField.text!){
-            emailSkyTextField.errorMessage = NSLocalizedString("Invalid Email address", comment: "")
+            emailSkyTextField.errorMessage = "Invalid Email address".localized()
         }else{
             emailSkyTextField.errorMessage = nil
             if mailIsValid {
@@ -55,11 +55,11 @@ class MALoginEmailViewController: MABaseViewController {
                                                                     self.performSegue(withIdentifier: "goToSuccessMail", sender: self)
                                                                     //
                                                                 }else {
-                                                                     AlertController.showWarning(withText: NSLocalizedString("This email does not exist", comment: ""), vc: self)
+                                                                     AlertController.showWarning(withText: "This email does not exist".localized(), vc: self)
                                                                 }
                                                                 
                     }, failure: { (error) in
-                        AlertController.showWarning(withText: NSLocalizedString("Something went wrong, please try again…", comment: ""), vc: self)
+                        AlertController.showWarning(withText: "Something went wrong, please try again…".localized(), vc: self)
                     })
                 }
                 

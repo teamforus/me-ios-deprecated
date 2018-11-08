@@ -178,8 +178,8 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     @IBAction func aboutMe(_ sender: Any) {
         let popupTransction =  MAAboutMeViewController(nibName: "MAAboutMeViewController", bundle: nil)
         self.presenter.presentationType = .popup
-        popupTransction.titleDetail = NSLocalizedString("About Me", comment: "")
-        popupTransction.descriptionDetail = NSLocalizedString("With the Me you can create an identity, receive and use your vouchers. For more information please visit our website — https://zuidhorn.forus.io", comment: "")
+        popupTransction.titleDetail = "About Me".localized()
+        popupTransction.descriptionDetail = "With the Me you can create an identity, receive and use your vouchers. For more information please visit our website — https://zuidhorn.forus.io".localized()
         self.presenter.transitionType = nil
         self.presenter.dismissTransitionType = nil
         self.presenter.dismissOnTap = true
@@ -211,8 +211,8 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     @IBAction func deletePasscode(_ sender: Any) {
         var appearance = ALAppearance()
         appearance.image = UIImage(named: "lock")!
-        appearance.title = NSLocalizedString("Turn off login code", comment: "")
-        appearance.subtitle = NSLocalizedString("Enter login code", comment: "")
+        appearance.title = "Turn off login code".localized()
+        appearance.subtitle = "Enter login code".localized()
         appearance.isSensorsEnabled = true
         appearance.cancelIsVissible = true
         appearance.delegate = self

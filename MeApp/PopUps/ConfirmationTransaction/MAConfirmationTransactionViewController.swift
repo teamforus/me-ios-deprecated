@@ -72,7 +72,7 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
                     TransactionVoucherRequest.makeTransaction(parameters: parameters, identityAdress: addressVoucher, completion: { (transaction, statusCode) in
                         if statusCode == 201{
                             let alert: UIAlertController
-                            alert = UIAlertController(title: NSLocalizedString("Success", comment: ""), message: NSLocalizedString("Payment succeeded", comment: ""), preferredStyle: .alert)
+                            alert = UIAlertController(title: "Success".localized(), message: "Payment succeeded".localized(), preferredStyle: .alert)
                             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
                                 self.tabController.selectedIndex = 0
                                 self.presentingViewController?
@@ -94,7 +94,7 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
             TransactionVoucherRequest.makeTransaction(parameters: parameters, identityAdress: addressVoucher, completion: { (transaction, statusCode) in
                 if statusCode == 201{
                     let alert: UIAlertController
-                    alert = UIAlertController(title: NSLocalizedString("Success", comment: ""), message: NSLocalizedString("Payment succeeded", comment: ""), preferredStyle: .alert)
+                    alert = UIAlertController(title: "Success".localized(), message: "Payment succeeded".localized(), preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
                         self.tabController.selectedIndex = 0
                         self.presentingViewController?

@@ -26,8 +26,8 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         if !faceIDAvailable(){
-            headLabel.text = NSLocalizedString("Use Touch ID to log in?", comment: "")
-            faceIDButton.setTitle(NSLocalizedString("Use Touch ID", comment: ""), for: .normal)
+            headLabel.text = "Use Touch ID to log in?".localized()
+            faceIDButton.setTitle("Use Touch ID".localized(), for: .normal)
         }
     }
     
@@ -63,7 +63,7 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
         var appearance = ALAppearance()
         appearance.image = UIImage(named: "lock")!
         appearance.title = "Login code".localized()
-        appearance.subtitle = NSLocalizedString("Enter a new login code", comment: "")
+        appearance.subtitle = "Enter a new login code".localized()
         appearance.isSensorsEnabled = true
         appearance.cancelIsVissible = false
         appearance.delegate = self
@@ -97,11 +97,11 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
                                                             }) { (error) in }
                                                             self.performSegue(withIdentifier: "goToWalet", sender: self)
                                                         }else {
-                                                            AlertController.showWarning(withText: NSLocalizedString("This email is already used", comment: ""), vc: self)
+                                                            AlertController.showWarning(withText: "This email is already used".localized(), vc: self)
                                                         }
                                                         
                 }, failure: { (error) in
-                    AlertController.showWarning(withText: NSLocalizedString("Something went wrong, please try again…", comment: ""), vc: self)
+                    AlertController.showWarning(withText: "Something went wrong, please try again…".localized(), vc: self)
                 })
             }else{
                 AlertController.showInternetUnable(vc: self)
