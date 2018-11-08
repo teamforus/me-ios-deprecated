@@ -36,8 +36,6 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //
-       
-        
         if voucher.product != nil {
             amountLabel.text = "€\(voucher.product?.price ?? "0.0")?"
             var reactBodyView = bodyView.frame

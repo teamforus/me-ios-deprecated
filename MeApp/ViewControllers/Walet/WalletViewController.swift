@@ -42,7 +42,7 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
         if UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" && UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil{
             var appearance = ALAppearance()
             appearance.image = UIImage(named: "lock")!
-            appearance.title = "Enter your 4-digit passcode"
+            appearance.title = "Enter login code".localized()
             appearance.isSensorsEnabled = true
             appearance.cancelIsVissible = false
             appearance.delegate = self
