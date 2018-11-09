@@ -133,3 +133,9 @@
 
 /* Class = "UIButton"; normalTitle = "IK HEB EEN ME IDENTITEIT"; ObjectID = "yuH-Kk-zbF"; */
 "yuH-Kk-zbF.normalTitle" = "IK HEB EEN PROFIEL";
+
+/* Class = "UILabel"; text = "Autorisatie code"; ObjectID = "YAw-Y3-qc2"; */
+"YAw-Y3-qc2.text" = "Autorisatie code";
+
+/* Class = "UILabel"; text = "Log in op de webshop, klik op je profiel en klik op autoriseer apparaat en vul deze code in."; ObjectID = "cdy-dX-r9O"; */
+"cdy-dX-r9O.text" = "Log in op de webshop, klik op je profiel en klik op autoriseer apparaat en vul deze code in.";
