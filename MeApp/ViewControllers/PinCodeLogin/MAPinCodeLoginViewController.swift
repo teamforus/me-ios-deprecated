@@ -171,7 +171,6 @@ class MAPinCodeLoginViewController: MABaseViewController ,UITextFieldDelegate{
         do{
             let results = try context.fetch(fetchRequest) as? [User]
             UserShared.shared.currentUser = results![0]
-            
         } catch{
             
         }

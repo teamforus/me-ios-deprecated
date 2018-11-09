@@ -18,6 +18,16 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
     @IBOutlet weak var loginWithQRButton: UIButton!
     @IBOutlet weak var loginWithPinCodeButton: UIButton!
     @IBOutlet weak var loginWithEmailButton: UIButton!
+    @IBOutlet weak var codeUITextField: UITextField!
+    @IBOutlet weak var digit1UILabel: UILabel!
+    @IBOutlet weak var digit2UILabel: UILabel!
+    @IBOutlet weak var digit3UILabel: UILabel!
+    @IBOutlet weak var digit4UILabel: UILabel!
+    @IBOutlet weak var digit5UILabel: UILabel!
+    @IBOutlet weak var digit6UILabel: UILabel!
+    var timer : Timer! = Timer()
+    var appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var response: Code!
     weak var pullUpController: ISHPullUpViewController!
     let reachability = Reachability()!
     
@@ -46,6 +56,45 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
                 UserShared.shared.currentUser = results![0]
             }
         } catch{}
+        
+        if reachability.connection != .none{
+            AuthorizationCodeRequest.createAuthorizationCode(completion: { (response, statusCode) in
+                if response.authCode != nil{
+                    self.response = response
+                    let stringCode: String = "\(response.authCode!)"
+                    if stringCode.count == 6{
+                        self.digit1UILabel.text = String(stringCode[0])
+                        self.digit2UILabel.text = String(stringCode[1])
+                        self.digit3UILabel.text = String(stringCode[2])
+                        self.digit4UILabel.text = String(stringCode[3])
+                        self.digit5UILabel.text = String(stringCode[4])
+                        self.digit6UILabel.text = String(stringCode[5])
+                        UserDefaults.standard.setValue(response.authCode, forKey: "auth_code")
+                        self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.checkAuthorizeToken), userInfo: nil, repeats: true)
+                    }
+                }
+            }) { (error) in
+                AlertController.showError(vc:self)
+            }
+        }else{
+            AlertController.showInternetUnable(vc: self)
+        }
+    }
+    
+    @objc func checkAuthorizeToken(){
+        Status.checkStatus(accessToken: response.accessTokenCode, completion: { (code, message) in
+            if code == 200 {
+                if message == "active"{
+                    self.timer.invalidate()
+                    self.updateOldIndentity()
+                    self.saveNewIdentity(accessToken: self.response.accessTokenCode)
+                    self.getCurrentUser(accessToken: self.response.accessTokenCode)
+                    self.performSegue(withIdentifier: "goToWalet", sender: nil)
+                }
+            }
+        }) { (error) in
+            AlertController.showError(vc:self)
+        }
     }
     
     @objc func goToWalet(){
@@ -54,12 +103,6 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        qrBodyView.layer.cornerRadius = 9.0
-        qrBodyView.layer.shadowColor = UIColor.black.cgColor
-        qrBodyView.layer.shadowOffset = CGSize(width: 0, height: 15)
-        qrBodyView.layer.shadowOpacity = 0.1
-        qrBodyView.layer.shadowRadius = 10.0
-        qrBodyView.layer.masksToBounds = false
         
     }
 
@@ -111,6 +154,74 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
             customPresentViewController(presenter, viewController: popupTransction, animated: true, completion: nil)
         }
         
+    }
+    
+    func saveNewIdentity(accessToken: String){
+        let context = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "User", in: context)
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        fetchRequest.predicate = NSPredicate(format:"accessToken == %@", accessToken)
+        
+        do{
+            let results = try context.fetch(fetchRequest) as? [NSManagedObject]
+            if results?.count == 0 {
+                let newUser = NSManagedObject(entity: entity!, insertInto: context)
+                newUser.setValue(true, forKey: "currentUser")
+                newUser.setValue(accessToken, forKey: "accessToken")
+                newUser.setValue(UserDefaults.standard.string(forKey: ALConstants.kPincode), forKey: "pinCode")
+                do {
+                    try context.save()
+                } catch {
+                    print("Failed saving")
+                }
+            }else{
+                results![0].setValue(accessToken, forKey: "accessToken")
+                results![0].setValue(true, forKey: "currentUser")
+                results![0].setValue(UserDefaults.standard.string(forKey: ALConstants.kPincode), forKey: "pinCode")
+                do {
+                    try context.save()
+                } catch {
+                    print("Failed saving")
+                }
+            }
+        } catch{
+            
+        }
+    }
+    
+    func updateOldIndentity(){
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        fetchRequest.predicate = NSPredicate(format:"currentUser == YES")
+        
+        do{
+            let results = try context.fetch(fetchRequest) as? [NSManagedObject]
+            if results?.count != 0 {
+                results![0].setValue(false, forKey: "currentUser")
+                
+                do {
+                    try context.save()
+                } catch {
+                    print("Failed saving")
+                }
+            }
+        } catch{
+            
+        }
+    }
+    
+    func getCurrentUser(accessToken: String!){
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        fetchRequest.predicate = NSPredicate(format:"accessToken == %@", accessToken)
+        
+        do{
+            let results = try context.fetch(fetchRequest) as? [User]
+            UserShared.shared.currentUser = results![0]
+            
+        } catch{
+            
+        }
     }
     
 }

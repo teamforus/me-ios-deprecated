@@ -6,7 +6,7 @@
 "3gu-KB-Q8z.text" = "Registration succesful";
 
 /* Class = "UIButton"; normalTitle = "INLOGGEN VIA E-MAIL"; ObjectID = "4Dt-bS-lP0"; */
-"4Dt-bS-lP0.normalTitle" = "LOG IN BY E-MAIL";
+"4Dt-bS-lP0.normalTitle" = "ADD ANOTHER DEVICE";
 
 /* Class = "UILabel"; text = "• "; ObjectID = "4vN-1e-GEc"; */
 "4vN-1e-GEc.text" = "• ";
@@ -87,7 +87,7 @@
 "YNe-dO-7od.text" = "• ";
 
 /* Class = "UIButton"; normalTitle = "INLOGGEN MET PINCODE"; ObjectID = "YV7-Gb-SHc"; */
-"YV7-Gb-SHc.normalTitle" = "LOG IN WITH AUTHORISATION CODE";
+"YV7-Gb-SHc.normalTitle" = "LOG IN BY E-MAIL";
 
 /* Class = "UIButton"; normalTitle = "PROFIEL TOEVOEGEN"; ObjectID = "dBa-Wv-3m9"; */
 "dBa-Wv-3m9.normalTitle" = "ADD PROFILE";
