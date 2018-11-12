@@ -179,7 +179,7 @@ class MAQRCodeReaderViewController: MABaseViewController {
     func getProviderConfirm(address:String){
         self.addressVoucher = address
         VoucherRequest.getProvider(identityAdress: address, completion: { (voucher, statusCode) in
-            if voucher.found != nil{
+            if statusCode != 403{
             if voucher.allowedOrganizations?.count != 0 && voucher.allowedOrganizations?.count  != nil {
                 
 //            let popupTransction =  MAShareVaucherViewController(nibName: "MAShareVaucherViewController", bundle: nil)
