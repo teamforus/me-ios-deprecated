@@ -35,7 +35,7 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
         imageBodyView.layer.shadowRadius = 10.0
         imageBodyView.clipsToBounds = false
         self.voucherTitleLabel.text = voucher.product?.name
-        self.priceLabel.text = voucher.product?.price ?? "0.0"
+        self.priceLabel.text = "€ " + (voucher.product?.price)!
         dateCreatedLabel.text = voucher.createdAt.dateFormaterNormalDate()
         imageQR.generateQRCode(from: "{ \"type\": \"voucher\",\"value\": \"\(voucher.address!)\" }")
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(goToQRReader))
@@ -111,7 +111,7 @@ extension MAProductVoucherViewController: UITableViewDataSource, UITableViewDele
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PassTableViewCell
         let transaction = self.transactions[indexPath.row] as! Transactions
         cell.companyTitle.text = transaction.organization.name
-        cell.priceLabel.text = "- €\(transaction.amount!)"
+        cell.priceLabel.text = "- \(transaction.amount!)"
         cell.dateLabel.text = transaction.created_at.dateFormaterNormalDate()
         cell.selectionStyle = .none
         return cell

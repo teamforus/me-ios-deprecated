@@ -38,7 +38,7 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.voucherTitleLabel.text = voucher.found.name
-        self.priceLabel.text = voucher.amount ?? "0.0"
+        self.priceLabel.text = "€ " + voucher.amount
         dateCreatedLabel.text = voucher.createdAt.dateFormaterNormalDate()
         kindPaketQRView.layer.cornerRadius = 9.0
         imageBodyView.layer.shadowColor = UIColor.black.cgColor
@@ -119,7 +119,7 @@ extension PassViewController: UITableViewDataSource, UITableViewDelegate{
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PassTableViewCell
         let transaction = self.transactions[indexPath.row] as! Transactions
         cell.companyTitle.text = transaction.organization.name
-        cell.priceLabel.text = "- €\(transaction.amount!)"
+        cell.priceLabel.text = "- \(transaction.amount!)"
         cell.dateLabel.text = transaction.created_at.dateFormaterNormalDate()
         cell.selectionStyle = .none
         return cell

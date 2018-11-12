@@ -75,6 +75,7 @@ class MAQRCodeReaderViewController: MABaseViewController {
                         self.reader.startScanning()
                     }
                 } catch _ as NSError {
+                     AlertController.showWarningWithTitle(title:"Error!".localized(), text: "Unknown QR-code!".localized(), vc: self)
                     self.reader.startScanning()
                 }
             }
