@@ -1,6 +1,6 @@
 
-/* Class = "UILabel"; text = "Aanmelden"; ObjectID = "1ya-1g-6TI"; */
-"1ya-1g-6TI.text" = "Register";
+/* Class = "UILabel"; text = "Log in"; ObjectID = "1ya-1g-6TI"; */
+"1ya-1g-6TI.text" = "Log in";
 
 /* Class = "UILabel"; text = "Registration succesful"; ObjectID = "3gu-KB-Q8z"; */
 "3gu-KB-Q8z.text" = "Registration succesful";

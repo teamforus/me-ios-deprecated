@@ -1,12 +1,12 @@
 
-/* Class = "UILabel"; text = "Aanmelden"; ObjectID = "1ya-1g-6TI"; */
-"1ya-1g-6TI.text" = "Registreren";
+/* Class = "UILabel"; text = "Inloggen"; ObjectID = "1ya-1g-6TI"; */
+"1ya-1g-6TI.text" = "Inloggen";
 
 /* Class = "UILabel"; text = "Registration succesful"; ObjectID = "3gu-KB-Q8z"; */
 "3gu-KB-Q8z.text" = "Registratie gelukt";
 
 /* Class = "UIButton"; normalTitle = "INLOGGEN VIA E-MAIL"; ObjectID = "4Dt-bS-lP0"; */
-"4Dt-bS-lP0.normalTitle" = "ADD ANOTHER DEVICE";
+"4Dt-bS-lP0.normalTitle" = " ANDER APPARAT TOEVOEGEN";
 
 /* Class = "UILabel"; text = "• "; ObjectID = "4vN-1e-GEc"; */
 "4vN-1e-GEc.text" = "• ";
@@ -83,8 +83,8 @@
 /* Class = "UIButton"; normalTitle = "No Thanks"; ObjectID = "Viz-Qg-3rR"; */
 "Viz-Qg-3rR.normalTitle" = "OVERSLAAN";
 
-/* Class = "UILabel"; text = "Aanmelden"; ObjectID = "Wgk-tC-3BB"; */
-"Wgk-tC-3BB.text" = "Registreren";
+/* Class = "UILabel"; text = "Inloggen"; ObjectID = "Wgk-tC-3BB"; */
+"Wgk-tC-3BB.text" = "Inloggen";
 
 /* Class = "UILabel"; text = "• "; ObjectID = "YNe-dO-7od"; */
 "YNe-dO-7od.text" = "• ";
@@ -135,7 +135,7 @@
 "yuH-Kk-zbF.normalTitle" = "IK HEB EEN PROFIEL";
 
 /* Class = "UILabel"; text = "Autorisatie code"; ObjectID = "YAw-Y3-qc2"; */
-"YAw-Y3-qc2.text" = "Autorisatie code";
+"YAw-Y3-qc2.text" = "Autorisatie code.";
 
 /* Class = "UILabel"; text = "Log in op de webshop, klik op je profiel en klik op autoriseer apparaat en vul deze code in."; ObjectID = "cdy-dX-r9O"; */
 "cdy-dX-r9O.text" = "Log in op de webshop, klik op je profiel en klik op autoriseer apparaat en vul deze code in.";
