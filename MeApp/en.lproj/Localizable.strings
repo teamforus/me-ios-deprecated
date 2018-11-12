@@ -56,3 +56,6 @@
 "Wrong passcode, please try again" = "Wrong passcode, please try again";
 "Codes don't match. Please try again" = "Codes don't match. Please try again";
 "Enter your login code" = "Enter your login code";
+"The voucher is empty! No transactions can be done." = "The voucher is empty! No transactions can be done.";
+"This product voucher is used!" = "This product voucher is used!";
+"Error!" = "Error!";

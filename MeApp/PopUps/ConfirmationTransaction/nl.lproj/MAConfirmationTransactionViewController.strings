@@ -6,13 +6,10 @@
 "Jn4-Q5-PiM.text" = "€ 140.00?";
 
 /* Class = "UILabel"; text = "Confirm transaction"; ObjectID = "bqz-xD-T08"; */
-"bqz-xD-T08.text" = "Bevestig transactie";
+"bqz-xD-T08.text" = "Bevestig verzoek";
 
-/* Class = "UILabel"; text = "Insufficient funds on the voucher.  Please, request extra payment of € 20"; ObjectID = "i3A-5O-pnI"; */
-"i3A-5O-pnI.text" = "Onvoldoende budget op de voucher. Vraag de klant of hij een bedrag van 20 € wilt bijbetalen.";
+
 
 /* Class = "UIButton"; normalTitle = "DECLINE"; ObjectID = "pDE-Jt-awq"; */
 "pDE-Jt-awq.normalTitle" = "ANNULEREN";
 
-/* Class = "UILabel"; text = "Are you sure you want to pay "; ObjectID = "qt0-Ke-bEw"; */
-"qt0-Ke-bEw.text" = "Klopt het bedrag van";

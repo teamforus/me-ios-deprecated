@@ -20,7 +20,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MAConfirmationTransactionViewController" customModule="Me" customModuleProvider="target">
             <connections>
-                <outlet property="amountLabel" destination="Jn4-Q5-PiM" id="lAo-9r-BuB"/>
+                <outlet property="amountLabel" destination="qt0-Ke-bEw" id="IbR-wb-2Pm"/>
                 <outlet property="bodyView" destination="HPk-NB-eNr" id="TUZ-DM-BFp"/>
                 <outlet property="insuficientAmountLabel" destination="i3A-5O-pnI" id="jJQ-YC-aQp"/>
                 <outlet property="requestButton" destination="CUG-E7-rCW" id="PHZ-Ot-sYk"/>
@@ -59,17 +59,10 @@
                                 <action selector="requestTransaction:" destination="-1" eventType="touchUpInside" id="46k-eq-TnF"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Are you sure you want to pay " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qt0-Ke-bEw">
-                            <rect key="frame" x="18" y="66" width="261" height="23"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Are you sure you want to pay      €140?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qt0-Ke-bEw">
+                            <rect key="frame" x="19" y="63" width="261" height="45"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="16"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="€ 140.00?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jn4-Q5-PiM">
-                            <rect key="frame" x="18" y="92" width="262" height="22"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" name="GoogleSans-Medium" family="Google Sans" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>

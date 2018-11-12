@@ -35,8 +35,13 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//
+        //
         if voucher.product != nil {
+            if NSLocale.preferredLanguages.first == "en"{
+                amountLabel.text = "Are you sure you want to request €\(amount ?? "0.0") ?"
+            }else if NSLocale.preferredLanguages.first == "nl"{
+                amountLabel.text = "Weet je zeker dat je een betaling van €\(amount ?? "0.0") ,- wilt verzoeken?"
+            }
             amountLabel.text = "€\(voucher.product?.price ?? "0.0")?"
             var reactBodyView = bodyView.frame
             reactBodyView.size.height = reactBodyView.size.height - 36
@@ -50,43 +55,45 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
                 requestButton.isEnabled = false
                 requestButton.backgroundColor = #colorLiteral(red: 0.7646217346, green: 0.764754355, blue: 0.7646133304, alpha: 1)
                 if NSLocale.preferredLanguages.first == "en"{
-                insuficientAmountLabel.text = String(format:"Insufficient funds on the voucher. Please, request extra payment of".localized()+" €%.02f", aditionalAmount)
+                    amountLabel.text = "Are you sure you want to request €\(amount ?? "0.0") ?"
+                    insuficientAmountLabel.text = String(format:"Insufficient funds on the voucher. Please, request extra payment of"+" €%.02f", aditionalAmount)
                 }else if NSLocale.preferredLanguages.first == "nl"{
-                    insuficientAmountLabel.text = String(format:"Onvoldoende budget op de voucher. Vraag de klant of hij een bedrag van".localized()+" €%.02f"+"wilt bijbetalen.", aditionalAmount)
+                    amountLabel.text = "Weet je zeker dat je een betaling van €\(amount ?? "0.0") ,- wilt verzoeken?"
+                    insuficientAmountLabel.text = String(format:"Onvoldoende budget op de voucher. Verzoek de klant of hij een bedrag van"+" €%.02f"+" wilt bijbetalen.", aditionalAmount)
                 }
             }else{
-            var reactBodyView = bodyView.frame
-            reactBodyView.size.height = reactBodyView.size.height - 36
-            bodyView.frame = reactBodyView
-            insuficientAmountLabel.isHidden = true
+                var reactBodyView = bodyView.frame
+                reactBodyView.size.height = reactBodyView.size.height - 36
+                bodyView.frame = reactBodyView
+                insuficientAmountLabel.isHidden = true
             }
         }
     }
-
+    
     @IBAction func requestTransaction(_ sender: Any) {
         if voucher.product == nil {
-                    let parameters: Parameters = [
-                        "organization_id" : voucher.allowedOrganizations!.first?.id ?? 0,
-                        "amount" : amount.replacingOccurrences(of: ",", with: "."),
-                        "note" : note ?? ""]
-                    TransactionVoucherRequest.makeTransaction(parameters: parameters, identityAdress: addressVoucher, completion: { (transaction, statusCode) in
-                        if statusCode == 201{
-                            let alert: UIAlertController
-                            alert = UIAlertController(title: "Success".localized(), message: "Payment succeeded".localized(), preferredStyle: .alert)
-                            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                                self.tabController.selectedIndex = 0
-                                self.presentingViewController?
-                                    .presentingViewController?.dismiss(animated: true, completion: {
-                                        
-                                    })
-                            }))
-                            self.present(alert, animated: true, completion: nil)
-                        }else if statusCode == 422 {
-                            AlertController.showWarning(withText: "Voucher not have enough funds", vc: self)
-                        }
-                    }) { (error) in
-                    }
-            }else{
+            let parameters: Parameters = [
+                "organization_id" : voucher.allowedOrganizations!.first?.id ?? 0,
+                "amount" : amount.replacingOccurrences(of: ",", with: "."),
+                "note" : note ?? ""]
+            TransactionVoucherRequest.makeTransaction(parameters: parameters, identityAdress: addressVoucher, completion: { (transaction, statusCode) in
+                if statusCode == 201{
+                    let alert: UIAlertController
+                    alert = UIAlertController(title: "Success".localized(), message: "Payment succeeded".localized(), preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                        self.tabController.selectedIndex = 0
+                        self.presentingViewController?
+                            .presentingViewController?.dismiss(animated: true, completion: {
+                                
+                            })
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                }else if statusCode == 422 {
+                    AlertController.showWarning(withText: "Voucher not have enough funds", vc: self)
+                }
+            }) { (error) in
+            }
+        }else{
             let parameters: Parameters = [
                 "organization_id" : voucher.product?.organization.id ?? 0,
                 "amount" : voucher.amount ?? "0.0",
@@ -115,13 +122,13 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

@@ -86,7 +86,16 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
         self.tabBarController?.tabBar.isHidden = false
         VoucherRequest.getVoucherList(completion: { (response, statusCode) in
             self.vouhers.removeAllObjects()
-            self.vouhers.addObjects(from: response as! [Any])
+            for voucher in response{
+                if (voucher as! Voucher).product != nil{
+                    if (voucher as! Voucher).transactions.count == 0{
+                        self.vouhers.add(voucher)
+                    }
+                }else{
+                     self.vouhers.add(voucher)
+                }
+            }
+            
             if self.vouhers.count == 0{
                 self.tableView.isHidden = true
             }else {
@@ -223,15 +232,7 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
             let voucher = self.vouhers[indexPath.row] as! Voucher
          
             if voucher.product != nil{
-                if voucher.transactions != nil{
-                    if voucher.transactions.count != 0 {
-                        cellWallet.usedVoucherLabel.isHidden = false
-                    }else{
-                        cellWallet.usedVoucherLabel.isHidden = true
-                    }
-                }else{
-                    cellWallet.usedVoucherLabel.isHidden = true
-                }
+               cellWallet.usedVoucherLabel.isHidden = true
                 cellWallet.voucherTitleLabel.text = voucher.product?.name
                 cellWallet.priceLabel.text = "€\(voucher.product?.price ?? "0.0")" 
                 if voucher.product?.photo != nil {
@@ -239,7 +240,7 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
                 }
             }else{
                 cellWallet.voucherTitleLabel.text = voucher.found.name
-                
+                cellWallet.usedVoucherLabel.isHidden = true
                 cellWallet.priceLabel.text = "€\(voucher.amount ?? "0.0")"
                if voucher.found.logo != nil{
                     cellWallet.voucherImage.sd_setImage(with: URL(string: voucher.found.logo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))

@@ -12,7 +12,7 @@
 "Lfu-NP-FiZ.text" = "€ 140.00";
 
 /* Class = "UILabel"; text = "Insufficient funds on the voucher.  Please, request extra payment of € 20"; ObjectID = "WRc-RU-rfx"; */
-"WRc-RU-rfx.text" = "Onvoldoende budget op de voucher. Vraag de klant of hij een bedrag van 20 € wilt bijbetalen.";
+"WRc-RU-rfx.text" = "Onvoldoende budget op de voucher. Verzoek de klant of hij een bedrag van 20 € wilt bijbetalen.";
 
 /* Class = "UILabel"; text = "Provider"; ObjectID = "b49-ar-4De"; */
 "b49-ar-4De.text" = "Aanbieder";

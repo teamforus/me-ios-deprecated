@@ -188,10 +188,19 @@ class MAQRCodeReaderViewController: MABaseViewController {
 //            self.customPresentViewController(self.presenter, viewController: popupTransction, animated: true, completion: nil)
                 
                 self.voucher = voucher
+                if voucher.amount != "0.00"{
                 self.performSegue(withIdentifier: "goToVoucherPayment", sender: nil)
+                }else{
+                    AlertController.showWarningWithTitle(title:"Error!".localized(), text: "The voucher is empty! No transactions can be done.".localized(), vc: self)
+                }
             }else if voucher.product != nil{
-                self.voucher = voucher
-                self.performSegue(withIdentifier: "goToVoucherPayment", sender: nil)
+                if voucher.product?.price != "0.00"{
+                    self.voucher = voucher
+                    self.performSegue(withIdentifier: "goToVoucherPayment", sender: nil)
+                }else{
+                    AlertController.showWarningWithTitle(title:"Error!".localized(), text: "This product voucher is used!".localized(), vc: self)
+                }
+               
                
             }else{
                 AlertController.showWarning(withText: "Sorry you do not meet the criteria for this voucher".localized(), vc: self)

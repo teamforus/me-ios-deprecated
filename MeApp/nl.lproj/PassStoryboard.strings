@@ -39,7 +39,7 @@
 "QgM-Dv-fMr.normalTitle" = "E-mail naar mij";
 
 /* Class = "UILabel"; text = "Transactie"; ObjectID = "Soo-aR-aFi"; */
-"Soo-aR-aFi.text" = "Transactie";
+"Soo-aR-aFi.text" = "Betaald";
 
 /* Class = "UILabel"; text = "19 Mei, 14:08"; ObjectID = "Ubp-9X-JGO"; */
 "Ubp-9X-JGO.text" = "19 Mei, 14:08";
@@ -141,7 +141,7 @@
 "0ve-pB-Qlv.text" = "Vandaag";
 
 /* Class = "UILabel"; text = "Aangemaakt"; ObjectID = "jCA-Qb-qHj"; */
-"Fs4-N2-tE5.text" = "Aangemaakt";
+"Fs4-N2-tE5.text" = "Geactiveerd";
 
 /* Class = "UILabel"; text = "Aangemaakt"; ObjectID = "JN2-pl-xhh"; */
 "jCA-Qb-qHj.text" = "Aangemaakt";

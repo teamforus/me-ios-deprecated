@@ -11,8 +11,8 @@
 /* Class = "UIButton"; normalTitle = "NIEUWE EIGENSCHAP"; ObjectID = "6Ll-lD-Zrb"; */
 "6Ll-lD-Zrb.normalTitle" = "NIEUWE EIGENSCHAP";
 
-/* Class = "UILabel"; text = "Vraag"; ObjectID = "6mM-3T-qfG"; */
-"6mM-3T-qfG.text" = "Vraag";
+/* Class = "UILabel"; text = "Verzoek"; ObjectID = "6mM-3T-qfG"; */
+"6mM-3T-qfG.text" = "Verzoek";
 
 /* Class = "UITabBarItem"; title = "Eigenschappen"; ObjectID = "7le-DV-ctU"; */
 "7le-DV-ctU.title" = "Profiel";

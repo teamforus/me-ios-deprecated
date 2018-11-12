@@ -65,6 +65,14 @@ class AlertController: UIAlertController {
         vc.present(alert, animated: true, completion: nil)
     }
     
+    static func showWarningWithTitle(title: String, text: String ,vc: UIViewController){
+        let alert: UIAlertController
+        alert = UIAlertController(title: title, message: text, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+        }))
+        vc.present(alert, animated: true, completion: nil)
+    }
+    
     static func showWarning(withText: String, vc: UIViewController){
         let alert: UIAlertController
         alert = UIAlertController(title: "Warning", message: withText, preferredStyle: .alert)
