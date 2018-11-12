@@ -179,6 +179,7 @@ class MAQRCodeReaderViewController: MABaseViewController {
     func getProviderConfirm(address:String){
         self.addressVoucher = address
         VoucherRequest.getProvider(identityAdress: address, completion: { (voucher, statusCode) in
+            if voucher.found != nil{
             if voucher.allowedOrganizations?.count != 0 && voucher.allowedOrganizations?.count  != nil {
                 
 //            let popupTransction =  MAShareVaucherViewController(nibName: "MAShareVaucherViewController", bundle: nil)
@@ -206,6 +207,9 @@ class MAQRCodeReaderViewController: MABaseViewController {
                
             }else{
                 AlertController.showWarning(withText: "Sorry you do not meet the criteria for this voucher".localized(), vc: self)
+            }
+            }else{
+                AlertController.showWarningWithTitle(title:"Error!".localized(), text: "You can't scan this voucher. You are not accepted as a provider for the fund that hands out these vouchers.".localized(), vc: self)
             }
             self.reader.startScanning()
         }) { (error) in

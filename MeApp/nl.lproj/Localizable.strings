@@ -60,3 +60,4 @@
 "This product voucher is used!" = "Aanbiedingvoucher is al gebruikt!";
 "Error!" = "Mislukt!";
 "Unknown QR-code!" = "Onbekende QR-code!";
+"You can't scan this voucher. You are not accepted as a provider for the fund that hands out these vouchers." = "U kunt deze voucher niet scannen. Het fonds dat deze voucher uitgegeven heeft, heeft u niet geaccepteerd als aanbieder.";

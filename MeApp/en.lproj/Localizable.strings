@@ -60,3 +60,4 @@
 "This product voucher is used!" = "This product voucher is used!";
 "Error!" = "Error!";
 "Unknown QR-code!" = "Unknown QR-code!";
+"You can't scan this voucher. You are not accepted as a provider for the fund that hands out these vouchers." = "You can't scan this voucher. You are not accepted as a provider for the fund that hands out these vouchers.";
