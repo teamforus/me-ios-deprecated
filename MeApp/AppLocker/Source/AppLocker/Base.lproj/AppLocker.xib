@@ -43,7 +43,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6kS-ba-3rR">
-                                <rect key="frame" x="8" y="210" width="359" height="28"/>
+                                <rect key="frame" x="8" y="209.5" width="359" height="28"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y48-OI-bV6" userLabel="first" customClass="Indicator" customModule="Me" customModuleProvider="target">
                                         <rect key="frame" x="121.5" y="7" width="14" height="14"/>
@@ -90,10 +90,10 @@
                                     <constraint firstItem="nQv-Y6-U7g" firstAttribute="height" secondItem="6kS-ba-3rR" secondAttribute="height" multiplier="1:2" id="rTb-Fm-qBg"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9Yc-zm-CFr">
-                                <rect key="frame" x="8" y="168" width="359" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verkeerde inlogcode, probeer het opnieuw" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Yc-zm-CFr">
+                                <rect key="frame" x="20" y="163" width="335" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="80p-wg-cpz"/>
+                                    <constraint firstAttribute="height" constant="44" id="80p-wg-cpz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="16"/>
                                 <nil key="highlightedColor"/>
@@ -104,16 +104,16 @@
                             <constraint firstItem="hVx-18-l1J" firstAttribute="centerX" secondItem="O4o-Ks-4Ii" secondAttribute="centerX" id="4ph-gk-YLp"/>
                             <constraint firstItem="6kS-ba-3rR" firstAttribute="height" secondItem="O4o-Ks-4Ii" secondAttribute="height" multiplier="1:8" constant="-3.875" id="5vT-yP-MeY"/>
                             <constraint firstItem="BiA-iv-5oK" firstAttribute="centerX" secondItem="O4o-Ks-4Ii" secondAttribute="centerX" id="ABR-dq-2Dy"/>
-                            <constraint firstItem="9Yc-zm-CFr" firstAttribute="top" secondItem="BiA-iv-5oK" secondAttribute="bottom" constant="8" id="FD0-he-TB2"/>
+                            <constraint firstItem="9Yc-zm-CFr" firstAttribute="top" secondItem="BiA-iv-5oK" secondAttribute="bottom" constant="3" id="FD0-he-TB2"/>
                             <constraint firstAttribute="trailing" secondItem="BiA-iv-5oK" secondAttribute="trailing" constant="20" id="IN1-bn-LyO"/>
-                            <constraint firstItem="9Yc-zm-CFr" firstAttribute="leading" secondItem="O4o-Ks-4Ii" secondAttribute="leading" constant="8" id="cb0-Xj-5lK"/>
+                            <constraint firstItem="9Yc-zm-CFr" firstAttribute="leading" secondItem="O4o-Ks-4Ii" secondAttribute="leading" constant="20" id="cb0-Xj-5lK"/>
                             <constraint firstItem="BiA-iv-5oK" firstAttribute="centerY" secondItem="O4o-Ks-4Ii" secondAttribute="centerY" constant="8" id="cod-xi-qy4"/>
                             <constraint firstItem="BiA-iv-5oK" firstAttribute="top" secondItem="hVx-18-l1J" secondAttribute="bottom" constant="8.5" id="dUH-mc-nNL"/>
                             <constraint firstAttribute="trailing" secondItem="6kS-ba-3rR" secondAttribute="trailing" constant="8" id="gi3-Ze-ZlI"/>
                             <constraint firstItem="BiA-iv-5oK" firstAttribute="leading" secondItem="O4o-Ks-4Ii" secondAttribute="leading" constant="20" id="hm6-JS-fkp"/>
-                            <constraint firstItem="6kS-ba-3rR" firstAttribute="top" secondItem="9Yc-zm-CFr" secondAttribute="bottom" constant="13" id="rwf-wn-aLV"/>
+                            <constraint firstItem="6kS-ba-3rR" firstAttribute="top" secondItem="9Yc-zm-CFr" secondAttribute="bottom" constant="2.5" id="rwf-wn-aLV"/>
                             <constraint firstItem="6kS-ba-3rR" firstAttribute="leading" secondItem="O4o-Ks-4Ii" secondAttribute="leading" constant="8" id="x0K-gx-1Dy"/>
-                            <constraint firstAttribute="trailing" secondItem="9Yc-zm-CFr" secondAttribute="trailing" constant="8" id="y15-Jy-o4e"/>
+                            <constraint firstAttribute="trailing" secondItem="9Yc-zm-CFr" secondAttribute="trailing" constant="20" id="y15-Jy-o4e"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xRu-9U-A1v" userLabel="keyboard">
@@ -354,7 +354,7 @@
                 <outletCollection property="pinIndicators" destination="ty0-rX-vyo" collectionClass="NSMutableArray" id="evP-lU-FiQ"/>
                 <outletCollection property="pinIndicators" destination="nQv-Y6-U7g" collectionClass="NSMutableArray" id="jYB-cR-2wD"/>
             </connections>
-            <point key="canvasLocation" x="-213.59999999999999" y="-163.26836581709148"/>
+            <point key="canvasLocation" x="-213.75" y="-163.73239436619718"/>
         </viewController>
     </objects>
     <resources>
