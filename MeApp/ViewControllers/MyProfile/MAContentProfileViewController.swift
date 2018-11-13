@@ -42,7 +42,11 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     @IBOutlet weak var profileImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        switchFaceID.transform = CGAffineTransform(scaleX: 1.0, y: 0.85);
+        switchFaceID.transform = CGAffineTransform(scaleX: 1.0, y: 0.90);
+        if let thumbView =  (switchFaceID.subviews[0].subviews[3] as? UIImageView) {
+            thumbView.transform = CGAffineTransform(scaleX:0.7, y: 0.8)
+        }
+//        switchFaceID.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         //        UserDefaults.standard.set("0000", forKey: ALConstants.kPincode)
         //        UserDefaults.standard.synchronize()
         //        updateIndentity()
@@ -107,15 +111,15 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     
     @IBAction func faceIdEnable(_ sender: Any) {
         if (sender as! UISwitch).isOn{
-            if let thumbView =  ((sender as! UISwitch).subviews[0].subviews[3] as? UIImageView) {
-                thumbView.transform = CGAffineTransform(scaleX:0.8, y: 0.8)
-            }
+//            if let thumbView =  ((sender as! UISwitch).subviews[0].subviews[3] as? UIImageView) {
+////                thumbView.transform = CGAffineTransform(scaleX:0.7, y: 0.8)
+//            }
             UserDefaults.standard.set(true, forKey: "isWithTouchID")
         }else{
             UserDefaults.standard.set(false, forKey: "isWithTouchID")
-            if let thumbView =  ((sender as! UISwitch).subviews[0].subviews[3] as? UIImageView) {
-                thumbView.transform = CGAffineTransform(scaleX:1.0, y: 1.0)
-            }
+//            if let thumbView =  ((sender as! UISwitch).subviews[0].subviews[3] as? UIImageView) {
+////                thumbView.transform = CGAffineTransform(scaleX:1.0, y: 1.0)
+//            }
         }
         
     }
