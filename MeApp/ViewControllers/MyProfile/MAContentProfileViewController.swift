@@ -44,7 +44,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         super.viewDidLoad()
         switchFaceID.transform = CGAffineTransform(scaleX: 1.0, y: 0.90);
         if let thumbView =  (switchFaceID.subviews[0].subviews[3] as? UIImageView) {
-            thumbView.transform = CGAffineTransform(scaleX:0.7, y: 0.8)
+            thumbView.transform = CGAffineTransform(scaleX:0.72, y: 0.8)
         }
 //        switchFaceID.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         //        UserDefaults.standard.set("0000", forKey: ALConstants.kPincode)
