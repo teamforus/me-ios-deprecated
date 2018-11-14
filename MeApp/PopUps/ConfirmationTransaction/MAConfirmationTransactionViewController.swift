@@ -38,9 +38,9 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
         //
         if voucher.product != nil {
             if NSLocale.preferredLanguages.first == "en"{
-                amountLabel.text = "Are you sure you want to request €\(voucher.product?.price ?? "0.0") ?"
+                amountLabel.text = "Is the price of €\(voucher.product?.price ?? "0.0"), correct?"
             }else if NSLocale.preferredLanguages.first == "nl"{
-                amountLabel.text = "Weet je zeker dat je een betaling van €\(voucher.product?.price ?? "0.0") ,- wilt verzoeken?"
+                amountLabel.text = "Klopt het bedrag van €\(voucher.product?.price ?? "0.0"),- wilt verzoeken?"
             }
             var reactBodyView = bodyView.frame
             reactBodyView.size.height = reactBodyView.size.height - 36
@@ -54,10 +54,10 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
                 requestButton.isEnabled = false
                 requestButton.backgroundColor = #colorLiteral(red: 0.7646217346, green: 0.764754355, blue: 0.7646133304, alpha: 1)
                 if NSLocale.preferredLanguages.first == "en"{
-                    amountLabel.text = "Are you sure you want to request €\(amount ?? "0.0") ?"
+                    amountLabel.text = "Is the price of €\(amount ?? "0.0"), correct?"
                     insuficientAmountLabel.text = String(format:"Insufficient funds on the voucher. Please, request extra payment of"+"€%.02f", aditionalAmount)
                 }else if NSLocale.preferredLanguages.first == "nl"{
-                    amountLabel.text = "Weet je zeker dat je een betaling van €\(amount ?? "0.0") ,- wilt verzoeken?"
+                    amountLabel.text = "Klopt het bedrag van €\(amount ?? "0.0"),- wilt verzoeken?"
                     insuficientAmountLabel.text = String(format:"Onvoldoende budget op de voucher. Verzoek de klant of hij een bedrag van"+"€%.02f"+" wilt bijbetalen.", aditionalAmount)
                 }
             }else{
