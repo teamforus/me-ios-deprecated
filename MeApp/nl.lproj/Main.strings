@@ -21,7 +21,7 @@
 "Acz-7X-ucB.text" = "Inloggen via E-mail";
 
 /* Class = "UILabel"; text = "Please provide your e-mail and information below. For registration primary email address is required. When you're finished, click Continue. "; ObjectID = "BGx-Ya-lC9"; */
-"BGx-Ya-lC9.text" = "Vul onderstaande gegevens in om een indentiteit aan te maken.";
+"BGx-Ya-lC9.text" = "Vul onderstaande gegevens in om een profiel aan te maken.";
 
 /* Class = "UILabel"; text = "Aanmelden"; ObjectID = "BUj-xf-lgk"; */
 "BUj-xf-lgk.text" = "Registreren";
