@@ -12,6 +12,7 @@ import Alamofire
 import ISHPullUp
 import CoreData
 import Reachability
+import AssistantKit
 
 class MALoginWithQRViewController: MABaseViewController, MARegistrationViewControllerDelegate, MASignUpViewControllerDelegate {
     @IBOutlet weak var qrBodyView: UIView!
@@ -25,6 +26,8 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
     @IBOutlet weak var digit4UILabel: UILabel!
     @IBOutlet weak var digit5UILabel: UILabel!
     @IBOutlet weak var digit6UILabel: UILabel!
+    @IBOutlet weak var constraintBottom: NSLayoutConstraint!
+    
     var timer : Timer! = Timer()
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     var response: Code!
@@ -45,6 +48,14 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let screen = Device.screen
+        switch screen {
+        case .inches_5_8:
+            constraintBottom.constant = 110
+            break
+        default:
+            break
+        }
         NotificationCenter.default.addObserver(self, selector: #selector(goToWalet), name: Notification.Name("TokenIsValidate"), object: nil)
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
