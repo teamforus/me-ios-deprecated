@@ -50,14 +50,18 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
 //            amountLabel.text = "€\(amount ?? "0.0")?"
             let amountVoucher = Double(voucher.amount)!
             aditionalAmount = Double(amount.replacingOccurrences(of: ",", with: "."))! - amountVoucher
+            if NSLocale.preferredLanguages.first == "en"{
+                
+                amountLabel.text = String(format:"Is the price of €%.02f, correct?",Double(amount.replacingOccurrences(of: ",", with: ".")) ?? 0.0)
+            }else if NSLocale.preferredLanguages.first == "nl"{
+                amountLabel.text =  String(format:"Klopt het bedrag van €%.02f,- wilt verzoeken?",Double(amount.replacingOccurrences(of: ",", with: ".")) ?? 0.0)
+            }
             if Double(amount.replacingOccurrences(of: ",", with: "."))! > amountVoucher{
                 requestButton.isEnabled = false
                 requestButton.backgroundColor = #colorLiteral(red: 0.7646217346, green: 0.764754355, blue: 0.7646133304, alpha: 1)
                 if NSLocale.preferredLanguages.first == "en"{
-                    amountLabel.text = "Is the price of €\(amount ?? "0.0"), correct?"
                     insuficientAmountLabel.text = String(format:"Insufficient funds on the voucher. Please, request extra payment of"+"€%.02f", aditionalAmount)
                 }else if NSLocale.preferredLanguages.first == "nl"{
-                    amountLabel.text = "Klopt het bedrag van €\(amount ?? "0.0"),- wilt verzoeken?"
                     insuficientAmountLabel.text = String(format:"Onvoldoende budget op de voucher. Verzoek de klant of hij een bedrag van"+"€%.02f"+" wilt bijbetalen.", aditionalAmount)
                 }
             }else{
