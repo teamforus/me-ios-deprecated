@@ -307,10 +307,12 @@
                     <size key="freeformSize" width="375" height="735"/>
                     <connections>
                         <outlet property="appVersionLabel" destination="Ewy-kX-3Ek" id="fb4-Bl-4yx"/>
+                        <outlet property="bottonConstraint" destination="Upy-On-k4N" id="ioV-qZ-GLK"/>
                         <outlet property="changePasscodeView" destination="gkg-fA-sZu" id="W0W-rc-ena"/>
                         <outlet property="closeUIButton" destination="Vgc-gt-tFS" id="rGl-5g-B9i"/>
                         <outlet property="faceIdImage" destination="iAC-og-Xvt" id="baO-Lb-zHJ"/>
                         <outlet property="faceIdLabel" destination="mcu-8u-YwG" id="ysA-j8-j2x"/>
+                        <outlet property="heightBottomViewConstraint" destination="x6P-Lc-F2M" id="YI6-0Y-fMk"/>
                         <outlet property="heightButtonsView" destination="ZIo-5o-juT" id="MYC-ka-rKO"/>
                         <outlet property="passcodeLabel" destination="CGf-eO-S90" id="TMF-c7-Jd8"/>
                         <outlet property="profileEmailLabel" destination="A2b-ot-985" id="T7J-z4-odq"/>

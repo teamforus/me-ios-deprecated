@@ -12,6 +12,7 @@ import CoreData
 import Alamofire
 import Reachability
 import Presentr
+import AssistantKit
 
 class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -19,6 +20,9 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     var isCloseButtonHide: Bool!
     @IBOutlet weak var switchFaceID: UISwitch!
     @IBOutlet weak var faceIdImage: UIImageView!
+    @IBOutlet weak var bottonConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var heightBottomViewConstraint: NSLayoutConstraint!
     @IBOutlet weak var faceIdLabel: UILabel!
     @IBOutlet weak var profileNameLabel: UILabel!
     @IBOutlet weak var profileEmailLabel: UILabel!
@@ -46,6 +50,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         if let thumbView =  (switchFaceID.subviews[0].subviews[3] as? UIImageView) {
             thumbView.transform = CGAffineTransform(scaleX:0.73, y: 0.8)
         }
+       
 //        switchFaceID.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         //        UserDefaults.standard.set("0000", forKey: ALConstants.kPincode)
         //        UserDefaults.standard.synchronize()
@@ -68,7 +73,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
             passcodeLabel.text = "Change passcode".localized()
         }
         
-        
+         self.layoutBottom()
         closeUIButton.isHidden = isCloseButtonHide ?? true
         if UserDefaults.standard.bool(forKey: "isWithTouchID"){
             switchFaceID.isOn = true
@@ -91,6 +96,30 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
 //        CFBundleVersion
     }
     
+    // layout constrint
+    
+    func layoutBottom(){
+       
+        let screen = Device.screen
+        switch screen {
+        case .inches_4_0:
+           // rect.size.height = 440
+            break
+        case .inches_4_7:
+           // rect.size.height = 500
+            break
+        case .inches_5_5:
+          //  rect.size.height = 575
+            break
+        case .inches_5_8:
+           self.heightBottomViewConstraint.constant = 350
+            break
+        default:
+            break
+            
+        }
+        
+    }
     
     func faceIDAvailable() -> Bool {
         if #available(iOS 11.0, *) {

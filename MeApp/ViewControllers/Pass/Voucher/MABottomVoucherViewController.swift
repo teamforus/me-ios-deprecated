@@ -55,7 +55,7 @@ class MABottomVoucherViewController: MABaseViewController, ISHPullUpSizingDelega
             rect.size.height = 575
             break
         case .inches_5_8:
-            rect.size.height = 575
+            rect.size.height = 650
             break
         default:
             break
