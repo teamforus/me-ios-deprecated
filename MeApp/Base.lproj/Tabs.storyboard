@@ -599,29 +599,21 @@
         <!--QR-->
         <scene sceneID="JMc-uz-fZD">
             <objects>
-                <viewController storyboardIdentifier="qrCodeReader" id="LjQ-wo-wiu" customClass="MAQRCodeReaderViewController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="qrCodeReader" id="LjQ-wo-wiu" customClass="MAQRCodeScannerViewController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o4o-xU-ixY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H4i-L8-WvF" customClass="QRCodeReaderView" customModule="QRCodeReader">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="BON-fU-Cgo"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="QR" image="iconGrey" id="a2M-XK-0VC"/>
                     <connections>
-                        <outlet property="previewQR" destination="H4i-L8-WvF" id="QFS-cL-yWD"/>
                         <segue destination="NHe-dp-rV5" kind="show" identifier="goToVoucherPayment" id="Por-0N-f2M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sNe-9X-Jt7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1759" y="211"/>
+            <point key="canvasLocation" x="1757.5999999999999" y="210.94452773613196"/>
         </scene>
         <!--VoucherPayment-->
         <scene sceneID="o2Z-GT-MfE">

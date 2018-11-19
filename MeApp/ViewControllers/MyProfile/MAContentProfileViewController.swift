@@ -109,7 +109,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
            // rect.size.height = 500
             break
         case .inches_5_5:
-          //  rect.size.height = 575
+            self.heightBottomViewConstraint.constant = 350
             break
         case .inches_5_8:
            self.heightBottomViewConstraint.constant = 350

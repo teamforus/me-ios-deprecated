@@ -137,6 +137,11 @@
 		658BDDC92108A76100A27EC7 /* RecordType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658BDDC82108A76100A27EC7 /* RecordType.swift */; };
 		658BDDCB2108AFCC00A27EC7 /* MAChooseTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658BDDCA2108AFCC00A27EC7 /* MAChooseTypeTableViewCell.swift */; };
 		658BDDCE2108B62500A27EC7 /* RecordCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658BDDCD2108B62500A27EC7 /* RecordCategory.swift */; };
+		658D40FF21A2ECA600CA4F10 /* ScanWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658D40FB21A2ECA500CA4F10 /* ScanWorker.swift */; };
+		658D410021A2ECA600CA4F10 /* ScanPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658D40FC21A2ECA500CA4F10 /* ScanPermission.swift */; };
+		658D410121A2ECA600CA4F10 /* HSDefaultScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658D40FD21A2ECA600CA4F10 /* HSDefaultScanView.swift */; };
+		658D410221A2ECA600CA4F10 /* HSScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658D40FE21A2ECA600CA4F10 /* HSScanViewController.swift */; };
+		658D410421A2EE1700CA4F10 /* MAQRCodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658D410321A2EE1700CA4F10 /* MAQRCodeScannerViewController.swift */; };
 		65A51F6B20B2FFF10010DB33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A51F6A20B2FFF10010DB33 /* AppDelegate.swift */; };
 		65A51F7320B2FFF20010DB33 /* MeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65A51F7120B2FFF20010DB33 /* MeApp.xcdatamodeld */; };
 		65A51F7520B2FFF40010DB33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65A51F7420B2FFF40010DB33 /* Assets.xcassets */; };
@@ -442,6 +447,11 @@
 		658BDDC82108A76100A27EC7 /* RecordType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordType.swift; sourceTree = "<group>"; };
 		658BDDCA2108AFCC00A27EC7 /* MAChooseTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAChooseTypeTableViewCell.swift; sourceTree = "<group>"; };
 		658BDDCD2108B62500A27EC7 /* RecordCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCategory.swift; sourceTree = "<group>"; };
+		658D40FB21A2ECA500CA4F10 /* ScanWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanWorker.swift; sourceTree = "<group>"; };
+		658D40FC21A2ECA500CA4F10 /* ScanPermission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanPermission.swift; sourceTree = "<group>"; };
+		658D40FD21A2ECA600CA4F10 /* HSDefaultScanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSDefaultScanView.swift; sourceTree = "<group>"; };
+		658D40FE21A2ECA600CA4F10 /* HSScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSScanViewController.swift; sourceTree = "<group>"; };
+		658D410321A2EE1700CA4F10 /* MAQRCodeScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAQRCodeScannerViewController.swift; sourceTree = "<group>"; };
 		659EBA6321258A7400162445 /* MeApp 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MeApp 2.xcdatamodel"; sourceTree = "<group>"; };
 		65A51F6720B2FFF10010DB33 /* Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Me.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A51F6A20B2FFF10010DB33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -1005,6 +1015,17 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		658D410521A30E2F00CA4F10 /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				658D40FD21A2ECA600CA4F10 /* HSDefaultScanView.swift */,
+				658D40FE21A2ECA600CA4F10 /* HSScanViewController.swift */,
+				658D40FC21A2ECA500CA4F10 /* ScanPermission.swift */,
+				658D40FB21A2ECA500CA4F10 /* ScanWorker.swift */,
+			);
+			path = Scanner;
+			sourceTree = "<group>";
+		};
 		65A51F5E20B2FFF10010DB33 = {
 			isa = PBXGroup;
 			children = (
@@ -1488,6 +1509,7 @@
 		65D764E020B73933007D7B9D /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				658D410521A30E2F00CA4F10 /* Scanner */,
 				65A51FA220B300EA0010DB33 /* TabBarController.swift */,
 				65FC85F720B56FA2001FECA5 /* MANavicationController.swift */,
 				6556376720B726F700E45487 /* MABaseViewController.swift */,
@@ -1537,6 +1559,7 @@
 			isa = PBXGroup;
 			children = (
 				65FC85F920B57642001FECA5 /* MAQRCodeReaderViewController.swift */,
+				658D410321A2EE1700CA4F10 /* MAQRCodeScannerViewController.swift */,
 			);
 			path = QrCode;
 			sourceTree = "<group>";
@@ -1890,6 +1913,7 @@
 				"${BUILT_PRODUCTS_DIR}/Web3/Web3.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 				"${BUILT_PRODUCTS_DIR}/secp256k1.swift/secp256k1.framework",
+				"${BUILT_PRODUCTS_DIR}/swiftScan/swiftScan.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1917,6 +1941,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Web3.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/secp256k1.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/swiftScan.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2088,6 +2113,7 @@
 				65C0B220210F3ACF00FBC254 /* UserShared.swift in Sources */,
 				654CBAB92109F84600E56F2E /* String+Substring.swift in Sources */,
 				658BDDCB2108AFCC00A27EC7 /* MAChooseTypeTableViewCell.swift in Sources */,
+				658D410421A2EE1700CA4F10 /* MAQRCodeScannerViewController.swift in Sources */,
 				6510D87D20CAEF1400D85BAE /* Web3Provider.swift in Sources */,
 				653BB0E9215515300059AE0C /* Config.swift in Sources */,
 				65E3363F20E645B600C0512B /* KRScrollView.swift in Sources */,
@@ -2140,6 +2166,7 @@
 				65B89AC420B44B1B0024DC51 /* MAShareVaucherViewController.swift in Sources */,
 				6527C6FE20D16BBC00009704 /* MASendViewController.swift in Sources */,
 				6528F01E20E53F3D00DD19C1 /* MALoginEmailViewController.swift in Sources */,
+				658D410221A2ECA600CA4F10 /* HSScanViewController.swift in Sources */,
 				651B5A8C21789DC100C23204 /* MAContenProductVoucherViewController.swift in Sources */,
 				65FC866020B5D8F5001FECA5 /* UIColor+Background.swift in Sources */,
 				65B89AB520B43FA50024DC51 /* MAValidationSuccessViewController.swift in Sources */,
@@ -2163,10 +2190,12 @@
 				655BB05720EE442B00BFD06A /* MAQRLoginViewController.swift in Sources */,
 				6556376020B6FB9100E45487 /* UITextField+PlaceholderColor.swift in Sources */,
 				65AC32F62101D9E500633187 /* CustomCornerUIView.swift in Sources */,
+				658D410121A2ECA600CA4F10 /* HSDefaultScanView.swift in Sources */,
 				65BD691921246C420098CF9F /* StatusView.swift in Sources */,
 				658BDDC721085AFE00A27EC7 /* MACreateNewIdentityViewController.swift in Sources */,
 				6558E3DF20DBB6B6001EC568 /* HBSegmentedControl.swift in Sources */,
 				65FC860220B5A2DA001FECA5 /* MAOfficeViewController.swift in Sources */,
+				658D410021A2ECA600CA4F10 /* ScanPermission.swift in Sources */,
 				65B89A9C20B422D30024DC51 /* MAWaitingViewController.swift in Sources */,
 				650F01FB2126EDEC00484BD1 /* TypeLog.swift in Sources */,
 				65A51FAC20B300EA0010DB33 /* WaletTableViewCell.swift in Sources */,
@@ -2183,6 +2212,7 @@
 				65FC866420B5DF81001FECA5 /* MASwitchProfileTableViewCell.swift in Sources */,
 				65A51FEB20B31FB30010DB33 /* WalletSecondTableViewCell.swift in Sources */,
 				6556375E20B6DE8300E45487 /* BasePopupViewController.swift in Sources */,
+				658D40FF21A2ECA600CA4F10 /* ScanWorker.swift in Sources */,
 				65A51FAB20B300EA0010DB33 /* WalletViewController.swift in Sources */,
 				6504473F20C060E000D040B9 /* Validation.swift in Sources */,
 				658370B02126DAB3008D76A9 /* Validator.swift in Sources */,
