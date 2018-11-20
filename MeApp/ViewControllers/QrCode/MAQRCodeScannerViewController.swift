@@ -67,6 +67,7 @@ class MAQRCodeScannerViewController: HSScanViewController , HSScanViewController
                         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
                             self.scanWorker.start()
                         }))
+                         self.present(alert, animated: true, completion: nil)
                     }
                 } catch _ as NSError {
                     self.scanWorker.stop()
@@ -75,6 +76,7 @@ class MAQRCodeScannerViewController: HSScanViewController , HSScanViewController
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
                         self.scanWorker.start()
                     }))
+                     self.present(alert, animated: true, completion: nil)
                 }
             }
         }else{
