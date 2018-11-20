@@ -38,9 +38,9 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
         //
         if voucher.product != nil {
             if NSLocale.preferredLanguages.first == "en"{
-                amountLabel.text = "Is the price of €\(voucher.product?.price ?? "0.0"), correct?"
+                amountLabel.text = "Are you sure you want to request €\(voucher.product?.price ?? "0.0")?"
             }else if NSLocale.preferredLanguages.first == "nl"{
-                amountLabel.text = "Klopt het bedrag van €\(voucher.product?.price ?? "0.0"),- wilt verzoeken?"
+                amountLabel.text = "Weet je zeker dat je €\(voucher.product?.price ?? "0.0") wilt aanvragen?"
             }
             var reactBodyView = bodyView.frame
             reactBodyView.size.height = reactBodyView.size.height - 36
@@ -52,9 +52,9 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
             aditionalAmount = Double(amount.replacingOccurrences(of: ",", with: "."))! - amountVoucher
             if NSLocale.preferredLanguages.first == "en"{
                 
-                amountLabel.text = String(format:"Is the price of €%.02f, correct?",Double(amount.replacingOccurrences(of: ",", with: ".")) ?? 0.0)
+                amountLabel.text = String(format:"Are you sure you want to request €%.02f",Double(amount.replacingOccurrences(of: ",", with: ".")) ?? 0.0)
             }else if NSLocale.preferredLanguages.first == "nl"{
-                amountLabel.text =  String(format:"Klopt het bedrag van €%.02f,- wilt verzoeken?",Double(amount.replacingOccurrences(of: ",", with: ".")) ?? 0.0)
+                amountLabel.text =  String(format:"Weet je zeker dat je €%.02f wilt aanvragen?",Double(amount.replacingOccurrences(of: ",", with: ".")) ?? 0.0)
             }
             if Double(amount.replacingOccurrences(of: ",", with: "."))! > amountVoucher{
                 requestButton.isEnabled = false
@@ -62,7 +62,7 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
                 if NSLocale.preferredLanguages.first == "en"{
                     insuficientAmountLabel.text = String(format:"Insufficient funds on the voucher. Please, request extra payment of"+"€%.02f", aditionalAmount)
                 }else if NSLocale.preferredLanguages.first == "nl"{
-                    insuficientAmountLabel.text = String(format:"Onvoldoende budget op de voucher. Verzoek de klant of hij een bedrag van"+"€%.02f"+" wilt bijbetalen.", aditionalAmount)
+                    insuficientAmountLabel.text = String(format:"Onvoldoende budget op de voucher. Vraag de klant of hij een bedrag van"+"€%.02f"+" wilt bijbetalen.", aditionalAmount)
                 }
             }else{
                 var reactBodyView = bodyView.frame
