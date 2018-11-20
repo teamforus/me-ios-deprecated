@@ -129,37 +129,52 @@ extension HSDefaultScanView {
         let rightX = scanRectangleRightX
         let bottomY = scanRectangleBottomY
         
+        let imageViewSquare1 = UIImageView(frame: CGRect(x: leftX-linewidthAngle/2 + 3, y: topY, width: 26, height: 26))
+        imageViewSquare1.image = UIImage(named: "4")
+        self.addSubview(imageViewSquare1)
+        
+        let imageViewSquare2 = UIImageView(frame: CGRect(x: leftX-linewidthAngle/2 + 3, y: bottomY - hAngle - 2, width: 26, height: 26))
+        imageViewSquare2.image = UIImage(named: "1-1")
+        self.addSubview(imageViewSquare2)
+        
+        let imageViewSquare3 = UIImageView(frame: CGRect(x: rightX - wAngle - 2, y: topY, width: 26, height: 26))
+        imageViewSquare3.image = UIImage(named: "3")
+        self.addSubview(imageViewSquare3)
+        
+        let imageViewSquare4 = UIImageView(frame: CGRect(x: rightX - wAngle - 2, y: bottomY - hAngle - 2, width: 26, height: 26))
+        imageViewSquare4.image = UIImage(named: "2")
+        self.addSubview(imageViewSquare4)
         //左上角水平线
-        context.move(to: CGPoint(x: leftX-linewidthAngle/2, y: topY))
-        context.addLine(to: CGPoint(x: leftX + wAngle, y: topY))
-        
-        // 左上角垂直线
-        context.move(to: CGPoint(x: leftX, y: topY-linewidthAngle/2))
-        context.addLine(to: CGPoint(x: leftX, y: topY+hAngle))
-        
-        // 左下角水平线
-        context.move(to: CGPoint(x: leftX-linewidthAngle/2, y: bottomY))
-        context.addLine(to: CGPoint(x: leftX + wAngle, y: bottomY))
-        
-        // 左下角垂直线
-        context.move(to: CGPoint(x: leftX, y: bottomY+linewidthAngle/2))
-        context.addLine(to: CGPoint(x: leftX, y: bottomY - hAngle))
-        
-        // 右上角水平线
-        context.move(to: CGPoint(x: rightX+linewidthAngle/2, y: topY))
-        context.addLine(to: CGPoint(x: rightX - wAngle, y: topY))
-        
-        // 右上角垂直线
-        context.move(to: CGPoint(x: rightX, y: topY-linewidthAngle/2))
-        context.addLine(to: CGPoint(x: rightX, y: topY + hAngle))
-        
-        // 右下角水平线
-        context.move(to: CGPoint(x: rightX+linewidthAngle/2, y: bottomY))
-        context.addLine(to: CGPoint(x: rightX - wAngle, y: bottomY))
-        
-        // 右下角垂直线
-        context.move(to: CGPoint(x: rightX, y: bottomY+linewidthAngle/2))
-        context.addLine(to: CGPoint(x: rightX, y: bottomY - hAngle))
+//        context.move(to: CGPoint(x: leftX-linewidthAngle/2, y: topY))
+//        context.addLine(to: CGPoint(x: leftX + wAngle, y: topY))
+//        
+//        // 左上角垂直线
+//        context.move(to: CGPoint(x: leftX, y: topY-linewidthAngle/2))
+//        context.addLine(to: CGPoint(x: leftX, y: topY+hAngle))
+//        
+//        // 左下角水平线
+//        context.move(to: CGPoint(x: leftX-linewidthAngle/2, y: bottomY))
+//        context.addLine(to: CGPoint(x: leftX + wAngle, y: bottomY))
+//        
+//        // 左下角垂直线
+//        context.move(to: CGPoint(x: leftX, y: bottomY+linewidthAngle/2))
+//        context.addLine(to: CGPoint(x: leftX, y: bottomY - hAngle))
+//        
+//        // 右上角水平线
+//        context.move(to: CGPoint(x: rightX+linewidthAngle/2, y: topY))
+//        context.addLine(to: CGPoint(x: rightX - wAngle, y: topY))
+//        
+//        // 右上角垂直线
+//        context.move(to: CGPoint(x: rightX, y: topY-linewidthAngle/2))
+//        context.addLine(to: CGPoint(x: rightX, y: topY + hAngle))
+//        
+//        // 右下角水平线
+//        context.move(to: CGPoint(x: rightX+linewidthAngle/2, y: bottomY))
+//        context.addLine(to: CGPoint(x: rightX - wAngle, y: bottomY))
+//        
+//        // 右下角垂直线
+//        context.move(to: CGPoint(x: rightX, y: bottomY+linewidthAngle/2))
+//        context.addLine(to: CGPoint(x: rightX, y: bottomY - hAngle))
         context.strokePath()
     }
 }

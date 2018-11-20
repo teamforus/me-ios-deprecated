@@ -118,13 +118,16 @@ class MAQRCodeScannerViewController: HSScanViewController , HSScanViewController
     }
     
     func authorizeToken(token:String){
-        
+        let alert: UIAlertController
+        alert = UIAlertController(title: "Scanner", message: "Scanning successfully!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            self.scanWorker.start()
+        }))
+        self.present(alert, animated: true, completion: nil)
         let parameter: Parameters = ["auth_token" : token]
         AuthorizeTokenRequest.authorizeToken(parameter: parameter, completion: { (response, statusCode) in
-            self.scanWorker.start()
         }, failure: { (error) in
             AlertController.showError(vc:self)
-            self.scanWorker.start()
         })
     }
     
