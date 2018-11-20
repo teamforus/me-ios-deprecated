@@ -61,12 +61,20 @@ class MAQRCodeScannerViewController: HSScanViewController , HSScanViewController
                             self.readValidationToken(code: jsonArray["value"] as! String)
                         }
                     } else {
-                        AlertController.showWarningWithTitle(title:"Error!".localized(), text: "Unknown QR-code!".localized(), vc: self)
-                        self.scanWorker.start()
+                       self.scanWorker.stop()
+                        let alert: UIAlertController
+                        alert = UIAlertController(title: "Error!".localized(), message: "Unknown QR-code!".localized(), preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                            self.scanWorker.start()
+                        }))
                     }
                 } catch _ as NSError {
-                    AlertController.showWarningWithTitle(title:"Error!".localized(), text: "Unknown QR-code!".localized(), vc: self)
-                    self.scanWorker.start()
+                    self.scanWorker.stop()
+                    let alert: UIAlertController
+                    alert = UIAlertController(title: "Error!".localized(), message: "Unknown QR-code!".localized(), preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                        self.scanWorker.start()
+                    }))
                 }
             }
         }else{
@@ -87,24 +95,31 @@ class MAQRCodeScannerViewController: HSScanViewController , HSScanViewController
     
     
     func readValidationToken(code:String){
+        self.scanWorker.stop()
         RecordsRequest.readValidationTokenRecord(token:code, completion: { (response, statusCode) in
             if statusCode == 401{
                 self.logOut()
             }
-            self.scanWorker.start()
             let alert: UIAlertController
             alert = UIAlertController(title: response.name, message: response.value, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Validate".localized(), style: .default, handler: { (action) in
-                self.scanWorker.start()
                 RecordsRequest.aproveValidationTokenRecord(token: code, completion: { (response, statusCode) in
                     if statusCode == 401{
                         self.logOut()
                     }
-                    AlertController.showSuccess(withText: "A record has been validated!".localized(), vc: self)
-                    self.scanWorker.start()
+                    self.scanWorker.stop()
+                    let alert: UIAlertController
+                    alert = UIAlertController(title: "Success".localized(), message:  "A record has been validated!".localized(), preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                        self.scanWorker.start()
+                    }))
                 }, failure: { (error) in
-                    AlertController.showError(vc:self)
-                    self.scanWorker.start()
+                    self.scanWorker.stop()
+                    let alert: UIAlertController
+                    alert = UIAlertController(title: "Error!".localized(), message: "Unknown QR-code!".localized(), preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                        self.scanWorker.start()
+                    }))
                 })
             }))
             alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .cancel, handler: { (action) in
