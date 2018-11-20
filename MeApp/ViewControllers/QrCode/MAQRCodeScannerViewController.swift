@@ -91,6 +91,18 @@ class MAQRCodeScannerViewController: HSScanViewController , HSScanViewController
         self.scanCodeTypes  = [.qr]
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        ScanPermission.authorizeCamera { (isAuthorized) in
+            if !isAuthorized{
+               self.showToast(message: "Camera permission request was denied.".localized(), messageButton: "Press settings to give an access or cancel to close this window.".localized() )
+            }
+        }
+        
+    }
+    
+   
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -208,4 +220,54 @@ class MAQRCodeScannerViewController: HSScanViewController , HSScanViewController
         navigationController.viewControllers = [firstPageVC]
         self.present(navigationController, animated: true, completion: nil)
     }
+}
+
+
+extension UIViewController {
+    
+    func showToast(message : String, messageButton: String) {
+        
+        let toastLabel = UILabel(frame: CGRect(x: 15, y: self.view.frame.size.height-100, width: self.view.frame.size.width - 30, height: 35))
+        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        toastLabel.textColor = UIColor.white
+        toastLabel.textAlignment = .center;
+        toastLabel.font = UIFont(name: "GoogleSans-Regular", size: 11.0)
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 10;
+        toastLabel.clipsToBounds  =  true
+        
+        let toastLabel2 = UILabel(frame: CGRect(x: 15, y: self.view.frame.size.height-50, width: self.view.frame.size.width - 30, height: 35))
+        toastLabel2.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        toastLabel2.textColor = UIColor.white
+        toastLabel2.textAlignment = .center;
+        toastLabel2.font = UIFont(name: "GoogleSans-Regular", size: 12.0)
+        toastLabel2.minimumScaleFactor = 0.5
+        toastLabel2.adjustsFontSizeToFitWidth = true
+        toastLabel2.text = messageButton
+        toastLabel2.alpha = 1.0
+        toastLabel2.layer.cornerRadius = 10;
+        toastLabel2.clipsToBounds  =  true
+        
+        let toastButton = UIButton(frame: CGRect(x: 15, y: self.view.frame.size.height-50, width: self.view.frame.size.width - 30, height: 35))
+        toastButton.backgroundColor = .clear
+        toastButton.addTarget(self, action: #selector(self.goToSettings(sender:)), for: .touchUpInside)
+        
+        self.view.addSubview(toastLabel)
+        self.view.addSubview(toastButton)
+        self.view.addSubview(toastLabel2)
+        UIView.animate(withDuration: 5.0, delay: 1.0, options: .curveEaseOut, animations: {
+            toastLabel.alpha = 0.0
+            toastLabel2.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+            toastLabel2.removeFromSuperview()
+            toastButton.removeFromSuperview()
+        })
+    }
+    
+    @objc func goToSettings( sender :UIButton){
+        ScanPermission.goToSystemSetting()
+    }
+    
 }

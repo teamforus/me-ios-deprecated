@@ -51,7 +51,7 @@ public class HSScanViewController: UIViewController {
                 strongSelf.startScan()
                 
             } else {
-                ScanPermission.goToSystemSetting()
+                
             }
         }
     }
