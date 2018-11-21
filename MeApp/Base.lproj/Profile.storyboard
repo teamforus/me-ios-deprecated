@@ -56,7 +56,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V7i-UM-Dm9" customClass="CustomCornerUIView" customModule="Me" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="342" height="56"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lock24Px-1" translatesAutoresizingMaskIntoConstraints="NO" id="sOw-os-QJZ">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="qrImage" translatesAutoresizingMaskIntoConstraints="NO" id="sOw-os-QJZ">
                                                                 <rect key="frame" x="10" y="16" width="24" height="24"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             </imageView>
@@ -486,6 +486,7 @@
         <image name="ic_launcher_APP" width="210" height="210"/>
         <image name="lock24Px-1" width="24" height="24"/>
         <image name="qrCode" width="178" height="178"/>
+        <image name="qrImage" width="62" height="62"/>
         <image name="qrImage2" width="16" height="16"/>
     </resources>
 </document>
