@@ -56,9 +56,10 @@ public class HSDefaultScanView: UIView, HSScanViewProtocol {
     public override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .clear
-        let label = UILabel.init(frame: CGRect(x: viewStyle.scanRectOffsetX - viewStyle.scanRetangleCornerThickness / 2, y: 60, width: 300, height: 46))
+        let label = UILabel.init(frame: CGRect(x: 0, y: 60, width: self.frame.width, height: 46))
         label.text = "Scan QR-code"
         label.textColor = .white
+        label.textAlignment = .center
         label.autoresizingMask = [.flexibleRightMargin, .flexibleLeftMargin, .flexibleBottomMargin]
         label.font = UIFont(name: "GoogleSans-Medium", size: 36)
         

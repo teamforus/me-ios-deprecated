@@ -89,24 +89,29 @@ class MAQRCodeScannerViewController: HSScanViewController , HSScanViewController
         super.viewDidLoad()
         self.delegate = self
         self.scanCodeTypes  = [.qr]
+        ScanPermission.authorizeCamera { (isAuthorized) in
+            if !isAuthorized{
+                let alert: UIAlertController
+                alert = UIAlertController(title: "Camera permission request was denied.".localized(), message: "Press settings to give an access or cancel to close this window.".localized(), preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .default, handler: { (action) in
+                    self.dismiss(animated: true, completion: nil)
+                }))
+                
+                alert.addAction(UIAlertAction(title: "Settings".localized(), style: .default, handler: { (action) in
+                    ScanPermission.goToSystemSetting()
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        ScanPermission.authorizeCamera { (isAuthorized) in
-            if !isAuthorized{
-               self.showToast(message: "Camera permission request was denied.".localized(), messageButton: "Press settings to give an access or cancel to close this window.".localized() )
-            }
-        }
-        
     }
     
-   
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
+       override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
     
     func readValidationToken(code:String){
         self.scanWorker.stop()
@@ -123,7 +128,7 @@ class MAQRCodeScannerViewController: HSScanViewController , HSScanViewController
                     }
                     self.scanWorker.stop()
                     let alert: UIAlertController
-                    alert = UIAlertController(title: "Success".localized(), message:  "A record has been validated!".localized(), preferredStyle: .alert)
+                    alert = UIAlertController(title: "Success".localized(), message: "A record has been validated!".localized(), preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
                         self.scanWorker.start()
                     }))
