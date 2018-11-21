@@ -37,9 +37,9 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if voucher.product != nil {
-            if NSLocale.preferredLanguages.first == "en"{
+            if self.getLanguageISO() == "en"{
                 amountLabel.text = "Are you sure you want to request €\(voucher.product?.price ?? "0.0")?"
-            }else if NSLocale.preferredLanguages.first == "nl"{
+            }else if self.getLanguageISO() == "nl"{
                 amountLabel.text = "Weet je zeker dat je €\(voucher.product?.price ?? "0.0") wilt aanvragen?"
             }
             var reactBodyView = bodyView.frame
