@@ -51,10 +51,48 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="735"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Va-AE-fRi">
-                                                <rect key="frame" x="16" y="274" width="343" height="194"/>
+                                                <rect key="frame" x="16" y="274" width="343" height="270"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gkg-fA-sZu" customClass="CustomCornerUIView" customModule="Me" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V7i-UM-Dm9" customClass="CustomCornerUIView" customModule="Me" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="342" height="56"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lock24Px-1" translatesAutoresizingMaskIntoConstraints="NO" id="sOw-os-QJZ">
+                                                                <rect key="frame" x="10" y="16" width="24" height="24"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start from scanner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpR-qM-V0a">
+                                                                <rect key="frame" x="46" y="18" width="211" height="22"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="e3Y-Mv-8pA" customClass="UISwitchCustom" customModule="Me" customModuleProvider="target">
+                                                                <rect key="frame" x="285" y="13" width="49" height="31"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                                <color key="onTintColor" red="0.19183093309999999" green="0.36965066190000001" blue="0.99199551340000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="OffTint">
+                                                                        <color key="value" red="0.96852236986160278" green="0.96868795156478882" blue="0.96851199865341187" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="checkStartFromScreen:" destination="LGi-pg-qjE" eventType="valueChanged" id="ZDj-gE-co9"/>
+                                                                </connections>
+                                                            </switch>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="56" id="18A-nv-n6T"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="9"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gkg-fA-sZu" customClass="CustomCornerUIView" customModule="Me" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="70" width="342" height="56"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lock24Px-1" translatesAutoresizingMaskIntoConstraints="NO" id="EVA-dO-pZo">
                                                                 <rect key="frame" x="10" y="16" width="24" height="24"/>
@@ -86,7 +124,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SbT-hx-NQg" customClass="CustomCornerUIView" customModule="Me" customModuleProvider="target">
-                                                        <rect key="frame" x="1" y="69" width="342" height="56"/>
+                                                        <rect key="frame" x="1" y="139" width="342" height="56"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lock24Px-1" translatesAutoresizingMaskIntoConstraints="NO" id="iAp-cU-eTd">
                                                                 <rect key="frame" x="10" y="16" width="24" height="24"/>
@@ -118,7 +156,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3F5-pB-QVl" customClass="CustomCornerUIView" customModule="Me" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="138" width="342" height="56"/>
+                                                        <rect key="frame" x="0.0" y="208" width="342" height="56"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="faceId-1" translatesAutoresizingMaskIntoConstraints="NO" id="iAC-og-Xvt">
                                                                 <rect key="frame" x="10" y="16" width="24" height="24"/>
@@ -137,7 +175,7 @@
                                                                 <color key="onTintColor" red="0.19183093309402466" green="0.36965066194534302" blue="0.99199551343917847" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="OffTint">
-                                                                        <color key="value" red="0.83085113763809204" green="0.84256267547607422" blue="0.87986952066421509" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <color key="value" red="0.96852236986160278" green="0.96868795156478882" blue="0.96851199865341187" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
@@ -159,17 +197,20 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="gkg-fA-sZu" firstAttribute="leading" secondItem="8Va-AE-fRi" secondAttribute="leading" id="2MA-B8-G4c"/>
+                                                    <constraint firstItem="V7i-UM-Dm9" firstAttribute="top" secondItem="8Va-AE-fRi" secondAttribute="top" id="2Wg-5V-QDT"/>
+                                                    <constraint firstItem="V7i-UM-Dm9" firstAttribute="leading" secondItem="8Va-AE-fRi" secondAttribute="leading" id="Ek2-kV-lnI"/>
                                                     <constraint firstAttribute="trailing" secondItem="3F5-pB-QVl" secondAttribute="trailing" constant="1" id="Kch-Yq-1D6"/>
                                                     <constraint firstAttribute="trailing" secondItem="gkg-fA-sZu" secondAttribute="trailing" constant="1" id="Ohw-SG-eAT"/>
                                                     <constraint firstItem="SbT-hx-NQg" firstAttribute="top" secondItem="gkg-fA-sZu" secondAttribute="bottom" constant="13" id="TMb-J5-v3G"/>
+                                                    <constraint firstAttribute="trailing" secondItem="V7i-UM-Dm9" secondAttribute="trailing" constant="1" id="TVz-FG-HH5"/>
                                                     <constraint firstItem="3F5-pB-QVl" firstAttribute="top" secondItem="gkg-fA-sZu" secondAttribute="bottom" constant="82" id="VLh-RE-vTF"/>
                                                     <constraint firstItem="3F5-pB-QVl" firstAttribute="leading" secondItem="8Va-AE-fRi" secondAttribute="leading" id="X9u-eT-Vfh"/>
-                                                    <constraint firstAttribute="height" constant="194" id="ZIo-5o-juT"/>
-                                                    <constraint firstItem="gkg-fA-sZu" firstAttribute="top" secondItem="8Va-AE-fRi" secondAttribute="top" id="uyI-K9-ePG"/>
+                                                    <constraint firstAttribute="height" constant="270" id="ZIo-5o-juT"/>
+                                                    <constraint firstItem="gkg-fA-sZu" firstAttribute="top" secondItem="V7i-UM-Dm9" secondAttribute="bottom" constant="14" id="ifD-x8-8W3"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JEd-BN-6rq">
-                                                <rect key="frame" x="0.0" y="500" width="375" height="232"/>
+                                                <rect key="frame" x="0.0" y="552" width="375" height="180"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="App version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdB-df-WLS">
                                                         <rect key="frame" x="26" y="82" width="237" height="21"/>
@@ -216,7 +257,7 @@
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="232" id="x6P-Lc-F2M"/>
+                                                    <constraint firstAttribute="height" constant="180" id="x6P-Lc-F2M"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pd4-Xl-rAR">
@@ -280,7 +321,7 @@
                                             <constraint firstItem="SbT-hx-NQg" firstAttribute="leading" secondItem="155-Ic-MfQ" secondAttribute="leading" constant="17" id="QeF-sS-CTh"/>
                                             <constraint firstAttribute="bottom" secondItem="JEd-BN-6rq" secondAttribute="bottom" constant="3" id="fl6-6a-MRY"/>
                                             <constraint firstAttribute="trailing" secondItem="pd4-Xl-rAR" secondAttribute="trailing" id="kqD-NH-G2y"/>
-                                            <constraint firstItem="JEd-BN-6rq" firstAttribute="top" secondItem="8Va-AE-fRi" secondAttribute="bottom" constant="32" id="rcs-aG-3ne"/>
+                                            <constraint firstItem="JEd-BN-6rq" firstAttribute="top" secondItem="8Va-AE-fRi" secondAttribute="bottom" constant="8" id="rcs-aG-3ne"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -319,6 +360,7 @@
                         <outlet property="profileImage" destination="oal-H1-nuH" id="33M-CH-eMZ"/>
                         <outlet property="profileNameLabel" destination="Wfm-Qk-FJu" id="ZgP-Sh-KcM"/>
                         <outlet property="switchFaceID" destination="YPI-d9-PAw" id="OQN-cU-HRF"/>
+                        <outlet property="switchScannert" destination="e3Y-Mv-8pA" id="yap-yB-1rA"/>
                         <outlet property="turnOffPascodeView" destination="SbT-hx-NQg" id="b7u-sB-K5g"/>
                         <outlet property="turnOnOffFaceId" destination="3F5-pB-QVl" id="hYn-QR-rBl"/>
                         <outlet property="verticalSpacingFaceIdLogin" destination="VLh-RE-vTF" id="Qe8-0K-6Fh"/>

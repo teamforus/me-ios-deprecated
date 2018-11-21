@@ -24,6 +24,9 @@ class TabBarController: UITabBarController {
             selector: #selector(hideTapBar),
             name: NSNotification.Name(rawValue: "hideTapBar"),
             object: nil)
+        if UserDefaults.standard.bool(forKey: "isStartFromScanner"){
+            self.selectedIndex = 1
+        }
     }
     
     @objc func hideTapBar(){

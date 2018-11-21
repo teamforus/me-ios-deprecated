@@ -22,6 +22,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     @IBOutlet weak var faceIdImage: UIImageView!
     @IBOutlet weak var bottonConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var switchScannert: UISwitch!
     @IBOutlet weak var heightBottomViewConstraint: NSLayoutConstraint!
     @IBOutlet weak var faceIdLabel: UILabel!
     @IBOutlet weak var profileNameLabel: UILabel!
@@ -50,6 +51,11 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         if let thumbView =  (switchFaceID.subviews[0].subviews[3] as? UIImageView) {
             thumbView.transform = CGAffineTransform(scaleX:0.73, y: 0.8)
         }
+        
+        switchScannert.transform = CGAffineTransform(scaleX: 1.0, y: 0.90);
+        if let thumbView =  (switchScannert.subviews[0].subviews[3] as? UIImageView) {
+            thumbView.transform = CGAffineTransform(scaleX:0.73, y: 0.8)
+        }
        
 //        switchFaceID.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         //        UserDefaults.standard.set("0000", forKey: ALConstants.kPincode)
@@ -63,14 +69,21 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
             turnOffPascodeView.isHidden = true
             turnOnOffFaceId.isHidden = true
             passcodeLabel.text = "Create passcode".localized()
-            heightButtonsView.constant = 64
+            heightButtonsView.constant = 130
             verticalSpacingFaceIdLogin.constant = 10
         }else{
-            heightButtonsView.constant = 194
+            heightButtonsView.constant = 270
             verticalSpacingFaceIdLogin.constant = 82
             turnOffPascodeView.isHidden = false
             turnOnOffFaceId.isHidden = false
             passcodeLabel.text = "Change passcode".localized()
+        }
+        
+        
+        if UserDefaults.standard.bool(forKey: "isStartFromScanner"){
+            switchScannert.isOn = true
+        }else {
+            switchScannert.isOn = false
         }
         
          self.layoutBottom()
@@ -109,10 +122,10 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
            // rect.size.height = 500
             break
         case .inches_5_5:
-            self.heightBottomViewConstraint.constant = 350
+            self.heightBottomViewConstraint.constant = 280
             break
         case .inches_5_8:
-           self.heightBottomViewConstraint.constant = 350
+           self.heightBottomViewConstraint.constant = 300
             break
         default:
             break
@@ -138,17 +151,20 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     }
     
     
+    @IBAction func checkStartFromScreen(_ sender: UISwitch) {
+        if sender.isOn{
+            UserDefaults.standard.set(true, forKey: "isStartFromScanner")
+        }else{
+            UserDefaults.standard.set(false, forKey: "isStartFromScanner")
+        }
+    }
+    
+    
     @IBAction func faceIdEnable(_ sender: Any) {
         if (sender as! UISwitch).isOn{
-//            if let thumbView =  ((sender as! UISwitch).subviews[0].subviews[3] as? UIImageView) {
-////                thumbView.transform = CGAffineTransform(scaleX:0.7, y: 0.8)
-//            }
             UserDefaults.standard.set(true, forKey: "isWithTouchID")
         }else{
             UserDefaults.standard.set(false, forKey: "isWithTouchID")
-//            if let thumbView =  ((sender as! UISwitch).subviews[0].subviews[3] as? UIImageView) {
-////                thumbView.transform = CGAffineTransform(scaleX:1.0, y: 1.0)
-//            }
         }
         
     }
