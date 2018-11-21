@@ -33,9 +33,9 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
         return presenter
     }()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //
         if voucher.product != nil {
             if NSLocale.preferredLanguages.first == "en"{
                 amountLabel.text = "Are you sure you want to request €\(voucher.product?.price ?? "0.0")?"
@@ -50,18 +50,17 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
 //            amountLabel.text = "€\(amount ?? "0.0")?"
             let amountVoucher = Double(voucher.amount)!
             aditionalAmount = Double(amount.replacingOccurrences(of: ",", with: "."))! - amountVoucher
-            if NSLocale.preferredLanguages.first == "en"{
-                
+            if self.getLanguageISO() == "en"{
                 amountLabel.text = String(format:"Are you sure you want to request €%.02f",Double(amount.replacingOccurrences(of: ",", with: ".")) ?? 0.0)
-            }else if NSLocale.preferredLanguages.first == "nl"{
+            }else if self.getLanguageISO() == "nl"{
                 amountLabel.text =  String(format:"Weet je zeker dat je €%.02f wilt aanvragen?",Double(amount.replacingOccurrences(of: ",", with: ".")) ?? 0.0)
             }
             if Double(amount.replacingOccurrences(of: ",", with: "."))! > amountVoucher{
                 requestButton.isEnabled = false
                 requestButton.backgroundColor = #colorLiteral(red: 0.7646217346, green: 0.764754355, blue: 0.7646133304, alpha: 1)
-                if NSLocale.preferredLanguages.first == "en"{
+                if self.getLanguageISO() == "en"{
                     insuficientAmountLabel.text = String(format:"Insufficient funds on the voucher. Please, request extra payment of"+"€%.02f", aditionalAmount)
-                }else if NSLocale.preferredLanguages.first == "nl"{
+                }else if self.getLanguageISO() == "nl"{
                     insuficientAmountLabel.text = String(format:"Onvoldoende budget op de voucher. Vraag de klant of hij een bedrag van"+"€%.02f"+" wilt bijbetalen.", aditionalAmount)
                 }
             }else{
@@ -134,4 +133,11 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
      }
      */
     
+}
+
+extension UIViewController{
+    
+     func getLanguageISO() -> String {
+        return Locale.current.languageCode!
+    }
 }
