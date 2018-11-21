@@ -45,6 +45,7 @@
 "Please enter the amount" = "Please enter the amount";
 "Insufficient funds on the voucher" = "Insufficient funds on the voucher";
 "Success" = "Success";
+"Success!" = "Success!";
 "Insufficient funds on the voucher. Please, request extra payment of" = "Insufficient funds on the voucher. Please, request extra payment of ";
 "REQUEST" = "REQUEST";
 "Validate" = "Validate";
@@ -64,3 +65,4 @@
 "Camera permission request was denied." = "Camera permission request was denied.";
 "Press settings to give an access or cancel to close this window." = "Press settings to give an access or cancel to close this window.";
 "Settings" = "Settings";
+"Scanning successfully!" = "QR-code was recognized";

@@ -44,6 +44,7 @@
 "Please enter the amount" = "Voer het bedrag in";
 "Insufficient funds on the voucher" = "Onvoldoende budget op de voucher";
 "Success" = "Succes!";
+"Success!" = "Geslaagt!";
 "Insufficient funds on the voucher. Please, request extra payment of" = "Onvoldoende budget op de voucher. Verzoek de klant of hij een bedrag van %@ wilt bijbetalen";
 "REQUEST" = "VRAAG";
 "Validate" = "Valideer";
@@ -64,3 +65,4 @@
 "Camera permission request was denied." = "Verzoek om cameratoestemming is geweigerd.";
 "Press settings to give an access or cancel to close this window." = "Druk op instellingen om toegang te geven of druk op annuleren om dit venster te sluiten.";
 "Settings" = "Instellingen";
+"Scanning successfully!" = "Het scannen van de QR-code is gelukt";

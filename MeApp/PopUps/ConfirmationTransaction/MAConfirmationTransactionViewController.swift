@@ -17,6 +17,7 @@ protocol MAConfirmationTransactionViewControllerDelegate: class {
 class MAConfirmationTransactionViewController: MABasePopUpViewController {
     @IBOutlet weak var requestButton: ShadowButton!
     var tabController: UITabBarController!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var insuficientAmountLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var bodyView: CustomCornerUIView!
@@ -38,8 +39,10 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
         super.viewDidLoad()
         if voucher.product != nil {
             if self.getLanguageISO() == "en"{
+                titleLabel.text = "Confirm transaction"
                 amountLabel.text = "Are you sure you want to request €\(voucher.product?.price ?? "0.0")?"
             }else if self.getLanguageISO() == "nl"{
+                titleLabel.text = "Bevestig betaling"
                 amountLabel.text = "Weet je zeker dat je €\(voucher.product?.price ?? "0.0") wilt aanvragen?"
             }
             var reactBodyView = bodyView.frame
@@ -51,9 +54,11 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
             let amountVoucher = Double(voucher.amount)!
             aditionalAmount = Double(amount.replacingOccurrences(of: ",", with: "."))! - amountVoucher
             if self.getLanguageISO() == "en"{
-                amountLabel.text = String(format:"Are you sure you want to request €%.02f",Double(amount.replacingOccurrences(of: ",", with: ".")) ?? 0.0)
+                titleLabel.text = " Confirm transaction"
+                amountLabel.text = "Are you sure you want to confirm this transaction?"
             }else if self.getLanguageISO() == "nl"{
-                amountLabel.text =  String(format:"Weet je zeker dat je €%.02f wilt aanvragen?",Double(amount.replacingOccurrences(of: ",", with: ".")) ?? 0.0)
+                titleLabel.text = "Bevestig transactie"
+                amountLabel.text =  "Weet je zeker dat je deze transactie wilt bevestigen?"
             }
             if Double(amount.replacingOccurrences(of: ",", with: "."))! > amountVoucher{
                 requestButton.isEnabled = false

@@ -4,12 +4,6 @@
 
 /* Class = "UILabel"; text = "€ 140.00?"; ObjectID = "Jn4-Q5-PiM"; */
 "Jn4-Q5-PiM.text" = "€ 140.00?";
-
-/* Class = "UILabel"; text = "Confirm transaction"; ObjectID = "bqz-xD-T08"; */
-"bqz-xD-T08.text" = "Confirm transaction";
-
-
-
 /* Class = "UIButton"; normalTitle = "DECLINE"; ObjectID = "pDE-Jt-awq"; */
 "pDE-Jt-awq.normalTitle" = "DECLINE";
 

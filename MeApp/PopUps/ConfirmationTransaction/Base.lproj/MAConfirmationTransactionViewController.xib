@@ -24,6 +24,7 @@
                 <outlet property="bodyView" destination="HPk-NB-eNr" id="TUZ-DM-BFp"/>
                 <outlet property="insuficientAmountLabel" destination="i3A-5O-pnI" id="jJQ-YC-aQp"/>
                 <outlet property="requestButton" destination="CUG-E7-rCW" id="PHZ-Ot-sYk"/>
+                <outlet property="titleLabel" destination="bqz-xD-T08" id="yf0-yj-ATy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
