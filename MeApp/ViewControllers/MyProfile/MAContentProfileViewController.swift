@@ -47,6 +47,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     @IBOutlet weak var profileImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.getRecordList()
         switchFaceID.transform = CGAffineTransform(scaleX: 1.0, y: 0.90);
         if let thumbView =  (switchFaceID.subviews[0].subviews[3] as? UIImageView) {
             thumbView.transform = CGAffineTransform(scaleX:0.73, y: 0.8)
@@ -65,6 +66,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         if UserDefaults.standard.string(forKey: ALConstants.kPincode) == "" || UserDefaults.standard.string(forKey: ALConstants.kPincode) == nil{
             turnOffPascodeView.isHidden = true
             turnOnOffFaceId.isHidden = true
@@ -98,15 +100,30 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
             faceIdImage.image = #imageLiteral(resourceName: "touchId")
             faceIdLabel.text = "Turn on Touch ID".localized()
         }
-        if UserShared.shared.currentUser.primaryEmail != nil{
-            profileNameLabel.text = "\(UserShared.shared.currentUser.firstName!) \(UserShared.shared.currentUser.lastName!)"
-        }
-        profileEmailLabel.text = UserShared.shared.currentUser.primaryEmail
         let versionApp: AnyObject? = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as AnyObject
         let buildAppNumber: AnyObject? = Bundle.main.infoDictionary?["CFBundleVersion"] as AnyObject
         
         appVersionLabel.text = (versionApp as? String)! + " - dev - " + (buildAppNumber as? String)!
 //        CFBundleVersion
+    }
+    
+    func getRecordList(){
+        RecordsRequest.getRecordsList(completion: { (response, statusCode) in
+            let mutableString = NSMutableString()
+            for record in response{
+                if (record as! Record).key == "given_name"{
+                     mutableString.append((record as! Record).value)
+                }else if (record as! Record).key == "primary_email" {
+                    self.profileEmailLabel.text = (record as! Record).value
+                }else if (record as! Record).key == "family_name" {
+                    mutableString.append(" \((record as! Record).value ?? "")")
+                }
+            }
+            self.profileNameLabel.text = mutableString as String
+            
+        }) { (error) in
+            AlertController.showError(vc:self)
+        }
     }
     
     // layout constrint
