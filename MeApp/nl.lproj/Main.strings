@@ -27,7 +27,7 @@
 "BUj-xf-lgk.text" = "Registreren";
 
 /* Class = "UILabel"; text = "New profiel"; ObjectID = "CtM-Fv-Z9R"; */
-"CtM-Fv-Z9R.text" = "Indentiteit";
+"CtM-Fv-Z9R.text" = "Nieuw Profiel";
 
 /* Class = "UITextField"; placeholder = "Family Name"; ObjectID = "DMr-He-WGt"; */
 "DMr-He-WGt.placeholder" = "Achternaam";
