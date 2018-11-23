@@ -15,7 +15,7 @@ extension Date {
         let dateFormater = DateFormatter()
         dateFormater.dateFormat = "dd.MM.yyyy HH:mm"
         let dateString = dateFormater.string(from: self)
-        return dateString
+        return dateString 
     }
     
      func dateFormaterFromDateShort() -> String  {
