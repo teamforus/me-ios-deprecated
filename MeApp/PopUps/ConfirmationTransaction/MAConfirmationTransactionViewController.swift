@@ -43,7 +43,7 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
                 amountLabel.text = "Are you sure you want to request €\(voucher.product?.price ?? "0.0")?"
             }else if self.getLanguageISO() == "nl"{
                 titleLabel.text = "Bevestig betaling"
-                amountLabel.text = "Weet je zeker dat je €\(voucher.product?.price ?? "0.0") wilt aanvragen?"
+                amountLabel.text = "Wil je de transactie van €\(voucher.product?.price ?? "0.0") bevestigen?"
             }
             var reactBodyView = bodyView.frame
             reactBodyView.size.height = reactBodyView.size.height - 36
@@ -55,10 +55,10 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
             aditionalAmount = Double(amount.replacingOccurrences(of: ",", with: "."))! - amountVoucher
             if self.getLanguageISO() == "en"{
                 titleLabel.text = " Confirm transaction"
-                amountLabel.text = "Are you sure you want to confirm this transaction?"
+                amountLabel.text = "Please confirm the transaction of €\(amount.replacingOccurrences(of: ",", with: "."))."
             }else if self.getLanguageISO() == "nl"{
                 titleLabel.text = "Bevestig transactie"
-                amountLabel.text =  "Weet je zeker dat je deze transactie wilt bevestigen?"
+                amountLabel.text =  "Is het bedrag van €\(amount.replacingOccurrences(of: ",", with: ".")) correct?"
             }
             if Double(amount.replacingOccurrences(of: ",", with: "."))! > amountVoucher{
                 requestButton.isEnabled = false
