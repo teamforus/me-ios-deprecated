@@ -28,6 +28,7 @@ class MABottomVoucherViewController: MABaseViewController, ISHPullUpSizingDelega
     weak var pullUpController: ISHPullUpViewController!
     private var halfWayPoint = CGFloat(0)
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.isHidden = true

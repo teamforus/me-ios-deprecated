@@ -66,6 +66,10 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
         self.rootView.frame = rect
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return false
+    }
+    
     @objc func toglePullUpView(){
         if pullUpController.state == .expanded{
             self.view.isHidden = true

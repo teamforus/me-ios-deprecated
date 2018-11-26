@@ -21,6 +21,10 @@ class MAGeneralPassViewController: ISHPullUpViewController {
         commonInit()
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .default
+    }
+    
     private func commonInit() {
         let storyBoard = UIStoryboard(name: "PassStoryboard", bundle: nil)
         let contentVC = storyBoard.instantiateViewController(withIdentifier: "contentPass") as! PassViewController
