@@ -73,7 +73,6 @@ PODS:
   - SDWebImage/Core (4.4.2)
   - secp256k1.swift (0.1.4)
   - SkyFloatingLabelTextField (3.4.0)
-  - swiftScan (1.1.5)
   - SwipeCellKit (2.0.1)
   - UICheckbox.Swift (1.0.0)
   - Web3 (0.1.1):
@@ -111,7 +110,6 @@ DEPENDENCIES:
   - ScrollableSegmentedControl (~> 1.3.0)
   - SDWebImage
   - SkyFloatingLabelTextField
-  - swiftScan
   - SwipeCellKit
   - UICheckbox.Swift
   - Web3
@@ -158,12 +156,11 @@ SPEC CHECKSUMS:
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   secp256k1.swift: a7e7a214f6db6ce5db32cc6b2b45e5c4dd633634
   SkyFloatingLabelTextField: 703aa1420b697392b1e7dba25571180dde018477
-  swiftScan: bc6dbf74e6a579c45a861691afc44628d8d9f6ab
   SwipeCellKit: 76888d93d1843dc568fdf38fff21b15dbbcf6b28
   UICheckbox.Swift: 85715689206fac5bae38b308f19c2a3e00442c3b
   Web3: 1f0c38c8508b8487948af1cb597653b018f4b5d3
   web3swift: 9cf4ccef0c7f7e9f9abb3bc5867789b928800af6
 
-PODFILE CHECKSUM: 5f7434d857c4845b302c868808722b6c20cadc60
+PODFILE CHECKSUM: 1f3616e53ca5a20016ffaf648afc5c1324cb934c
 
 COCOAPODS: 1.4.0

@@ -149,11 +149,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>swiftScan.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>web3swift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
