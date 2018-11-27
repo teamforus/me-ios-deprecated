@@ -13,6 +13,7 @@ import Alamofire
 import Reachability
 import Presentr
 import AssistantKit
+import Crashlytics
 
 class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -63,6 +64,11 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         //        UserDefaults.standard.synchronize()
         //        updateIndentity()
     }
+    
+    @IBAction func crash(_ sender: Any) {
+        Crashlytics.sharedInstance().crash()
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

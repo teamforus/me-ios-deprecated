@@ -41,7 +41,7 @@
             <objects>
                 <viewController storyboardIdentifier="contentProfle" id="LGi-pg-qjE" customClass="MAContentProfileViewController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b6o-WV-UCC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="735"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m0L-VB-ak0">
@@ -252,6 +252,14 @@
                                                         </state>
                                                         <connections>
                                                             <action selector="aboutMe:" destination="LGi-pg-qjE" eventType="touchUpInside" id="2ZD-RT-WEY"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYv-0d-o7w">
+                                                        <rect key="frame" x="307" y="8" width="46" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="crash:" destination="LGi-pg-qjE" eventType="touchUpInside" id="JWY-bH-iwC"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
