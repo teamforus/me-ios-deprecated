@@ -2538,7 +2538,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E8E32A731CFDBC0B1D33B95E /* Pods-Me.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon.dev;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon.DEMO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7L2RMARLH9;
 				ENABLE_BITCODE = NO;
@@ -2730,7 +2730,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89068B526C15FBF4653D8F95 /* Pods-Me.demo.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon.DEMO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon.dev;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7L2RMARLH9;
 				ENABLE_BITCODE = NO;
