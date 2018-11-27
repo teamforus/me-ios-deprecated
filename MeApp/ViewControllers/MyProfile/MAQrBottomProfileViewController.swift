@@ -30,7 +30,7 @@ class MAQrBottomProfileViewController: MABaseViewController, ISHPullUpSizingDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.view.isHidden = true
+        self.view.isHidden = true
         topView.layer.cornerRadius = 14.0
         rootView.layer.cornerRadius = 14.0
         rootView.layer.shadowColor = UIColor.black.cgColor;

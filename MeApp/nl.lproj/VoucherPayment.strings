@@ -1,0 +1,42 @@
+
+/* Class = "UILabel"; text = "Product categories"; ObjectID = "55N-Z6-mQK"; */
+"55N-Z6-mQK.text" = "Product categories";
+
+/* Class = "UILabel"; text = "DenyK"; ObjectID = "6Xy-W4-uEi"; */
+"6Xy-W4-uEi.text" = "DenyK";
+
+/* Class = "UITabBarItem"; title = "Item 2"; ObjectID = "6h3-TN-XAh"; */
+"6h3-TN-XAh.title" = "Item 2";
+
+/* Class = "UILabel"; text = "Dit is de QR-Code van je voucher"; ObjectID = "HwD-Rv-h59"; */
+"HwD-Rv-h59.text" = "Dit is de QR-Code van je voucher";
+
+/* Class = "UILabel"; text = "QR-CODE"; ObjectID = "Ipa-cA-vUo"; */
+"Ipa-cA-vUo.text" = "QR-CODE";
+
+/* Class = "UILabel"; text = "Laat deze QR-Code zien om gebruik te maken van je voucher"; ObjectID = "OjP-CL-AzD"; */
+"OjP-CL-AzD.text" = "Laat deze QR-Code zien om gebruik te maken van je voucher";
+
+/* Class = "UIButton"; normalTitle = "VERZOEK TOT BETALING"; ObjectID = "SbJ-kF-bi1"; */
+"SbJ-kF-bi1.normalTitle" = "VERZOEK BETALING";
+
+/* Class = "UITextField"; placeholder = "Amount"; ObjectID = "U4v-7i-D2P"; */
+"U4v-7i-D2P.placeholder" = "Vul hier het bedrag in";
+
+/* Class = "UILabel"; text = "NOT 2 DAGEN GELDIG VALID"; ObjectID = "i3k-b3-VIp"; */
+"i3k-b3-VIp.text" = "NOT 2 DAGEN GELDIG VALID";
+
+/* Class = "UILabel"; text = "Rijwielhandel Kuis"; ObjectID = "iHr-dh-0rp"; */
+"iHr-dh-0rp.text" = "Rijwielhandel Kuis";
+
+/* Class = "UILabel"; text = "Belga Groningen Megastore"; ObjectID = "jay-GP-gwZ"; */
+"jay-GP-gwZ.text" = "Belga Groningen Megastore";
+
+/* Class = "UILabel"; text = "Kindpakket"; ObjectID = "p2M-pj-GtD"; */
+"p2M-pj-GtD.text" = "Kindpakket";
+
+/* Class = "UITextField"; placeholder = "Note"; ObjectID = "r0l-e8-gTo"; */
+"r0l-e8-gTo.placeholder" = "Omschrijving";
+
+/* Class = "UILabel"; text = " Redeem Voucher"; ObjectID = "rrc-Ki-Lfi"; */
+"rrc-Ki-Lfi.text" = "Betalingsverzoek";

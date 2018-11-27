@@ -72,9 +72,12 @@ class MAQRCodeReaderViewController: MABaseViewController {
                             self.readValidationToken(code: jsonArray["value"] as! String)
                         }
                     } else {
+                        AlertController.showWarningWithTitle(title:"Error!".localized(), text: "Unknown QR-code!".localized(), vc: self)
                         self.reader.startScanning()
+                        
                     }
                 } catch _ as NSError {
+                     AlertController.showWarningWithTitle(title:"Error!".localized(), text: "Unknown QR-code!".localized(), vc: self)
                     self.reader.startScanning()
                 }
             }
@@ -106,7 +109,7 @@ class MAQRCodeReaderViewController: MABaseViewController {
             
             switch error.code {
             case -11852:
-                alert = UIAlertController(title: "Error", message: "This app is not authorized to use Back Camera.", preferredStyle: .alert)
+                alert = UIAlertController(title: "Error", message: "This app is not authorized to use Back Camera".localized(), preferredStyle: .alert)
                 
                 alert.addAction(UIAlertAction(title: "Setting", style: .default, handler: { (_) in
                     DispatchQueue.main.async {
@@ -122,7 +125,7 @@ class MAQRCodeReaderViewController: MABaseViewController {
                 
                 alert.addAction(UIAlertAction(title: "Annuleer", style: .cancel, handler: nil))
             default:
-                alert = UIAlertController(title: "Error", message: "De scanner wordt niet ondersteund op dit apparaat", preferredStyle: .alert)
+                alert = UIAlertController(title: "Error", message: "The scanner is not supported on this device".localized(), preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             }
             
@@ -140,20 +143,20 @@ class MAQRCodeReaderViewController: MABaseViewController {
             self.reader.startScanning()
             let alert: UIAlertController
             alert = UIAlertController(title: response.name, message: response.value, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Valideer", style: .default, handler: { (action) in
+            alert.addAction(UIAlertAction(title: "Validate".localized(), style: .default, handler: { (action) in
                 self.reader.startScanning()
                 RecordsRequest.aproveValidationTokenRecord(token: code, completion: { (response, statusCode) in
                     if statusCode == 401{
                         self.logOut()
                     }
-                    AlertController.showSuccess(withText: NSLocalizedString("A record has been validated!", comment: ""), vc: self)
+                    AlertController.showSuccess(withText: "A record has been validated!".localized(), vc: self)
                     self.reader.startScanning()
                 }, failure: { (error) in
                     AlertController.showError(vc:self)
                     self.reader.startScanning()
                 })
             }))
-            alert.addAction(UIAlertAction(title: "Annuleer", style: .cancel, handler: { (action) in
+            alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .cancel, handler: { (action) in
                 self.reader.startScanning()
             }))
             self.present(alert, animated: true, completion: nil)
@@ -177,6 +180,7 @@ class MAQRCodeReaderViewController: MABaseViewController {
     func getProviderConfirm(address:String){
         self.addressVoucher = address
         VoucherRequest.getProvider(identityAdress: address, completion: { (voucher, statusCode) in
+            if statusCode != 403{
             if voucher.allowedOrganizations?.count != 0 && voucher.allowedOrganizations?.count  != nil {
                 
 //            let popupTransction =  MAShareVaucherViewController(nibName: "MAShareVaucherViewController", bundle: nil)
@@ -188,13 +192,25 @@ class MAQRCodeReaderViewController: MABaseViewController {
 //            self.customPresentViewController(self.presenter, viewController: popupTransction, animated: true, completion: nil)
                 
                 self.voucher = voucher
+                if voucher.amount != "0.00"{
                 self.performSegue(withIdentifier: "goToVoucherPayment", sender: nil)
+                }else{
+                    AlertController.showWarningWithTitle(title:"Error!".localized(), text: "The voucher is empty! No transactions can be done.".localized(), vc: self)
+                }
             }else if voucher.product != nil{
-                self.voucher = voucher
-                self.performSegue(withIdentifier: "goToVoucherPayment", sender: nil)
+                if voucher.product?.price != "0.00"{
+                    self.voucher = voucher
+                    self.performSegue(withIdentifier: "goToVoucherPayment", sender: nil)
+                }else{
+                    AlertController.showWarningWithTitle(title:"Error!".localized(), text: "This product voucher is used!".localized(), vc: self)
+                }
+               
                
             }else{
-                AlertController.showWarning(withText: "Sorry je voldoet niet aan de voorwaarden voor deze voucher", vc: self)
+                AlertController.showWarning(withText: "Sorry you do not meet the criteria for this voucher".localized(), vc: self)
+            }
+            }else{
+                AlertController.showWarningWithTitle(title:"Error!".localized(), text: "You can't scan this voucher. You are not accepted as a provider for the fund that hands out these vouchers.".localized(), vc: self)
             }
             self.reader.startScanning()
         }) { (error) in

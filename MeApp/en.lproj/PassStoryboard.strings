@@ -101,5 +101,51 @@
 /* Class = "UILabel"; text = "Kindpakket"; ObjectID = "v0t-au-15P"; */
 "v0t-au-15P.text" = "Kindpakket";
 
+/* Class = "UILabel"; text = "You have no transactions yet"; ObjectID = "vQs-nn-dte"; */
+"vQs-nn-dte.text" = "You have no transactions yet";
+
+/* Class = "UILabel"; text = "You have no transactions yet"; ObjectID = "h9H-Tx-Cte"; */
+"h9H-Tx-Cte.text" = "You have no transactions yet";
+
 /* Class = "UITabBarItem"; title = "Item 2"; ObjectID = "xtY-8m-Mw2"; */
 "xtY-8m-Mw2.title" = "Item 2";
+
+/* Class = "UILabel"; text = "E-mail for me"; ObjectID = "h9H-Tx-Cte"; */
+"z7n-A7-brV.text" = "E-mail to me";
+
+/* Class = "UIButton"; normalTitle = "Voucher Info"; ObjectID = "6OY-uF-Osa"; */
+"6OY-uF-Osa.normalTitle" = "Voucher Info";
+
+/* Class = "UILabel"; text = "This is your personal QR code"; ObjectID = "sOe-ep-azG"; */
+"sOe-ep-azG.text" = "This is your Voucher’s QR-code.";
+
+/* Class = "UILabel"; text = "Let someone scan your personal QR code to send your currency, property or vouchers"; ObjectID = "ufX-dC-Zqj"; */
+"ufX-dC-Zqj.text" = "Let the shopkeeper scan it to make a payment from your voucher.";
+
+/* Class = "UILabel"; text = "This is your personal QR code"; ObjectID = "WIf-wb-p3w"; */
+"WIf-wb-p3w.text" = "This is your Voucher’s QR-code.";
+
+/* Class = "UILabel"; text = "Let someone scan your personal QR code to send your currency, property or vouchers"; ObjectID = "raD-LX-S2B"; */
+"raD-LX-S2B.text" = "Let the shopkeeper scan it to make a payment from your voucher.";
+
+/* Class = "UILabel"; text = "Product Voucher"; ObjectID = "5vp-xG-Gy2"; */
+"5vp-xG-Gy2.text" = "Product Voucher";
+
+/* Class = "UILabel"; text = "Voucher"; ObjectID = "bls-5D-nMA"; */
+"bls-5D-nMA.text" = "Voucher";
+
+/* Class = "UILabel"; text = "History"; ObjectID = "i1G-qE-89v"; */
+"i1G-qE-89v.text" = "History";
+
+/* Class = "UILabel"; text = "Today"; ObjectID = "0ve-pB-Qlv"; */
+"0ve-pB-Qlv.text" = "Today";
+
+/* Class = "UILabel"; text = "Created"; ObjectID = "jCA-Qb-qHj"; */
+"Fs4-N2-tE5" = "Activated";
+
+/* Class = "UILabel"; text = "Created"; ObjectID = "JN2-pl-xhh"; */
+"jCA-Qb-qHj.text" = "Created";
+
+/* Class = "UILabel"; text = "Email to me"; ObjectID = "IzK-iS-COA"; */
+"IzK-iS-COA.text" = "E-mail to me";
+

@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "Success!"; ObjectID = "3Zf-ST-Jmi"; */
+"3Zf-ST-Jmi.text" = "Success!";
+
+/* Class = "UILabel"; text = "The voucher has been sent to email."; ObjectID = "Z7D-vz-4qZ"; */
+"Z7D-vz-4qZ.text" = "De voucher is verzonden naar email.";
+
+/* Class = "UIButton"; normalTitle = "OK"; ObjectID = "z2G-BI-KvI"; */
+"z2G-BI-KvI.normalTitle" = "OK";

@@ -37,3 +37,9 @@
 
 /* Class = "UILabel"; text = "App version"; ObjectID = "qdB-df-WLS"; */
 "qdB-df-WLS.text" = "App versie";
+
+/* Class = "UIButton"; normalTitle = "Inlogcode uitschakelen"; ObjectID = "Mfr-ck-RGJ"; */
+"Mfr-ck-RGJ.text" = "Inlogcode uitschakelen";
+
+/* Class = "UILabel"; text = "App version"; ObjectID = "lpR-qM-V0a"; */
+"lpR-qM-V0a.text" = "Start met scanner";

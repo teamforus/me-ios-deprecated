@@ -1,0 +1,27 @@
+
+/* Class = "UILabel"; text = "Kindpakket 2018"; ObjectID = "4R9-z0-XAl"; */
+"4R9-z0-XAl.text" = "Kindpakket 2018";
+
+/* Class = "UIButton"; normalTitle = "DECLINE"; ObjectID = "FVv-dA-YL3"; */
+"FVv-dA-YL3.normalTitle" = "ANNULEREN";
+
+/* Class = "UILabel"; text = "Provider"; ObjectID = "IyD-7e-WNa"; */
+"IyD-7e-WNa.text" = "Aanbieder";
+
+/* Class = "UILabel"; text = "€ 140.00"; ObjectID = "Lfu-NP-FiZ"; */
+"Lfu-NP-FiZ.text" = "€ 140.00";
+
+/* Class = "UILabel"; text = "Insufficient funds on the voucher.  Please, request extra payment of € 20"; ObjectID = "WRc-RU-rfx"; */
+"WRc-RU-rfx.text" = "Onvoldoende budget op de voucher. Verzoek de klant of hij een bedrag van 20 € wilt bijbetalen.";
+
+/* Class = "UILabel"; text = "Provider"; ObjectID = "b49-ar-4De"; */
+"b49-ar-4De.text" = "Aanbieder";
+
+/* Class = "UILabel"; text = "19 mei, 6:23 PM"; ObjectID = "bRI-2k-irA"; */
+"bRI-2k-irA.text" = "19 mei, 6:23 PM";
+
+/* Class = "UILabel"; text = "Approve payment"; ObjectID = "nVP-cZ-oZr"; */
+"nVP-cZ-oZr.text" = "Betaling goedkeuren";
+
+/* Class = "UIButton"; normalTitle = "REQUEST"; ObjectID = "oXa-qP-eDE"; */
+"oXa-qP-eDE.normalTitle" = "VRAAG";

@@ -12,6 +12,7 @@ import CoreData
 import Alamofire
 import Reachability
 import Presentr
+import AssistantKit
 
 class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -19,11 +20,16 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     var isCloseButtonHide: Bool!
     @IBOutlet weak var switchFaceID: UISwitch!
     @IBOutlet weak var faceIdImage: UIImageView!
+    @IBOutlet weak var bottonConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var switchScannert: UISwitch!
+    @IBOutlet weak var heightBottomViewConstraint: NSLayoutConstraint!
     @IBOutlet weak var faceIdLabel: UILabel!
     @IBOutlet weak var profileNameLabel: UILabel!
     @IBOutlet weak var profileEmailLabel: UILabel!
     @IBOutlet weak var passcodeLabel: UILabel!
     @IBOutlet weak var appVersionLabel: UILabel!
+    @IBOutlet weak var turnOnOffFaceId: CustomCornerUIView!
     @IBOutlet weak var turnOffPascodeView: CustomCornerUIView!
     @IBOutlet weak var changePasscodeView: CustomCornerUIView!
     @IBOutlet weak var verticalSpacingFaceIdLogin: NSLayoutConstraint!
@@ -41,6 +47,48 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     @IBOutlet weak var profileImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.getRecordList()
+        switchFaceID.transform = CGAffineTransform(scaleX: 1.0, y: 0.90);
+        if let thumbView =  (switchFaceID.subviews[0].subviews[3] as? UIImageView) {
+            thumbView.transform = CGAffineTransform(scaleX:0.73, y: 0.8)
+        }
+        
+        switchScannert.transform = CGAffineTransform(scaleX: 1.0, y: 0.90);
+        if let thumbView =  (switchScannert.subviews[0].subviews[3] as? UIImageView) {
+            thumbView.transform = CGAffineTransform(scaleX:0.73, y: 0.8)
+        }
+       
+//        switchFaceID.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        //        UserDefaults.standard.set("0000", forKey: ALConstants.kPincode)
+        //        UserDefaults.standard.synchronize()
+        //        updateIndentity()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if UserDefaults.standard.string(forKey: ALConstants.kPincode) == "" || UserDefaults.standard.string(forKey: ALConstants.kPincode) == nil{
+            turnOffPascodeView.isHidden = true
+            turnOnOffFaceId.isHidden = true
+            passcodeLabel.text = "Create passcode".localized()
+            heightButtonsView.constant = 130
+            verticalSpacingFaceIdLogin.constant = 10
+        }else{
+            heightButtonsView.constant = 270
+            verticalSpacingFaceIdLogin.constant = 82
+            turnOffPascodeView.isHidden = false
+            turnOnOffFaceId.isHidden = false
+            passcodeLabel.text = "Change passcode".localized()
+        }
+        
+        
+        if UserDefaults.standard.bool(forKey: "isStartFromScanner"){
+            switchScannert.isOn = true
+        }else {
+            switchScannert.isOn = false
+        }
+        
+         self.layoutBottom()
         closeUIButton.isHidden = isCloseButtonHide ?? true
         if UserDefaults.standard.bool(forKey: "isWithTouchID"){
             switchFaceID.isOn = true
@@ -50,29 +98,58 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         
         if !faceIDAvailable(){
             faceIdImage.image = #imageLiteral(resourceName: "touchId")
-            faceIdLabel.text = "Touch ID aanzetten"
+            faceIdLabel.text = "Turn on Touch ID".localized()
         }
-        if UserShared.shared.currentUser.primaryEmail != nil{
-            profileNameLabel.text = "\(UserShared.shared.currentUser.firstName!) \(UserShared.shared.currentUser.lastName!)"
-        }
-        profileEmailLabel.text = UserShared.shared.currentUser.primaryEmail
-        let nsObject: AnyObject? = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as AnyObject
-        appVersionLabel.text = nsObject as? String
-        //        UserDefaults.standard.set("0000", forKey: ALConstants.kPincode)
-        //        UserDefaults.standard.synchronize()
-        //        updateIndentity()
+        let versionApp: AnyObject? = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as AnyObject
+        let buildAppNumber: AnyObject? = Bundle.main.infoDictionary?["CFBundleVersion"] as AnyObject
+        
+        appVersionLabel.text = (versionApp as? String)! + " - dev - " + (buildAppNumber as? String)!
+//        CFBundleVersion
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        if UserDefaults.standard.string(forKey: ALConstants.kPincode) == "" || UserDefaults.standard.string(forKey: ALConstants.kPincode) == nil{
-            turnOffPascodeView.isHidden = true
-            passcodeLabel.text = "Add 4-digit passcode"
+    func getRecordList(){
+        RecordsRequest.getRecordsList(completion: { (response, statusCode) in
+            let mutableString = NSMutableString()
+            for record in response{
+                if (record as! Record).key == "given_name"{
+                     mutableString.append((record as! Record).value)
+                }else if (record as! Record).key == "primary_email" {
+                    self.profileEmailLabel.text = (record as! Record).value
+                }else if (record as! Record).key == "family_name" {
+                    mutableString.append(" \((record as! Record).value ?? "")")
+                }
+            }
+            self.profileNameLabel.text = mutableString as String
+            
+        }) { (error) in
+            AlertController.showError(vc:self)
         }
-        verticalSpacingFaceIdLogin.constant = 10
-        heightButtonsView.constant = 124
     }
     
+    // layout constrint
+    
+    func layoutBottom(){
+       
+        let screen = Device.screen
+        switch screen {
+        case .inches_4_0:
+           // rect.size.height = 440
+            break
+        case .inches_4_7:
+           // rect.size.height = 500
+            break
+        case .inches_5_5:
+            self.heightBottomViewConstraint.constant = 280
+            break
+        case .inches_5_8:
+           self.heightBottomViewConstraint.constant = 300
+            break
+        default:
+            break
+            
+        }
+        
+    }
     
     func faceIDAvailable() -> Bool {
         if #available(iOS 11.0, *) {
@@ -91,6 +168,15 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     }
     
     
+    @IBAction func checkStartFromScreen(_ sender: UISwitch) {
+        if sender.isOn{
+            UserDefaults.standard.set(true, forKey: "isStartFromScanner")
+        }else{
+            UserDefaults.standard.set(false, forKey: "isStartFromScanner")
+        }
+    }
+    
+    
     @IBAction func faceIdEnable(_ sender: Any) {
         if (sender as! UISwitch).isOn{
             UserDefaults.standard.set(true, forKey: "isWithTouchID")
@@ -105,18 +191,19 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
             if UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" && UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil{
                 var appearance = ALAppearance()
                 appearance.image = UIImage(named: "lock")!
-                appearance.title = "Edit passcode"
-                appearance.subtitle = "Enter your old passcode"
+                appearance.title = "Change passcode".localized()
+                appearance.subtitle = "Enter your old code".localized()
                 appearance.isSensorsEnabled = true
                 appearance.cancelIsVissible = true
                 appearance.delegate = self
                 
                 AppLocker.present(with: .change, and: appearance, withController: self)
             }else{
+//                UserDefaults.standard.set("", forKey: ALConstants.kPincode)
                 var appearance = ALAppearance()
                 appearance.image = UIImage(named: "lock")!
-                appearance.title = "Inlogcode"
-                appearance.subtitle = "Stel in een inlogcode in"
+                appearance.title = "Login code".localized()
+                appearance.subtitle = "Enter a new login code".localized()
                 appearance.isSensorsEnabled = true
                 appearance.cancelIsVissible = true
                 appearance.delegate = self
@@ -137,12 +224,11 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         if UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" && UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil{
             var appearance = ALAppearance()
             appearance.image = UIImage(named: "lock")!
-            appearance.title = "Inlogcode"
-            appearance.subtitle = "Stel in een inlogcode in"
+            appearance.title = "Login code".localized()
+            appearance.subtitle = "Enter your login code".localized()
             appearance.isSensorsEnabled = true
             appearance.cancelIsVissible = true
             appearance.delegate = self
-            
             AppLocker.present(with: .deactive, and: appearance, withController: self)
         }else{
             let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -158,19 +244,20 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     @IBAction func aboutMe(_ sender: Any) {
         let popupTransction =  MAAboutMeViewController(nibName: "MAAboutMeViewController", bundle: nil)
         self.presenter.presentationType = .popup
-        popupTransction.titleDetail = "Hoe werkt het?"
-        popupTransction.descriptionDetail = "Heb je al een indentiteit en ben je al ingelogd op de webshop? Open dan je indentiteit via de webshop en klik op 'Autoriseer apparaat' en vul de code in die op de Me App zichtbaar is."
+        popupTransction.titleDetail = "About Me".localized()
+        popupTransction.descriptionDetail = "With the Me you can create an identity, receive and use your vouchers. For more information please visit our website — https://zuidhorn.forus.io".localized()
         self.presenter.transitionType = nil
         self.presenter.dismissTransitionType = nil
-        self.presenter.keyboardTranslationType = .compress
+        self.presenter.dismissOnTap = true
+         presenter.dismissAnimated = true
+//        self.presenter.keyboardTranslationType = .compress
         self.customPresentViewController(self.presenter, viewController: popupTransction, animated: true, completion: nil)
     }
     
     func updateIndentity(){
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        fetchRequest.predicate = NSPredicate(format:"primaryEmail == %@", UserShared.shared.currentUser.primaryEmail!)
-        
+        fetchRequest.predicate = NSPredicate(format:"accessToken == %@", UserShared.shared.currentUser.accessToken!)
         do{
             let results = try context.fetch(fetchRequest) as? [NSManagedObject]
             if results?.count != 0 {
@@ -190,8 +277,8 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     @IBAction func deletePasscode(_ sender: Any) {
         var appearance = ALAppearance()
         appearance.image = UIImage(named: "lock")!
-        appearance.title = "Inlogcode uitzetten"
-        appearance.subtitle = "Vul je inlogcode in"
+        appearance.title = "Turn off login code".localized()
+        appearance.subtitle = "Enter login code".localized()
         appearance.isSensorsEnabled = true
         appearance.cancelIsVissible = true
         appearance.delegate = self
@@ -202,30 +289,26 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     
     // AppLocker Delegate
     func closePinCodeView(typeClose: typeClose) {
-        if typeClose == .create {
-            let parameters: Parameters = ["pin_code" : UserDefaults.standard.string(forKey: ALConstants.kPincode)!,
-                                          "old_pin_code" : UserShared.shared.currentUser.pinCode!]
-            RequestNewIndetity.updatePinCode(parameters: parameters, completion: { (response, statusCode) in
-                if statusCode == 401{
-                    //                    self.logOut()
-                }
-                
-            }) { (error) in
-            }
-            updateIndentity()
-            
+        updateIndentity()
+        if typeClose == .change {
+//            let parameters: Parameters = ["pin_code" : UserDefaults.standard.string(forKey: ALConstants.kPincode)!,
+//                                          "old_pin_code" : UserShared.shared.currentUser.pinCode ?? ""]
+//            RequestNewIndetity.updatePinCode(parameters: parameters, completion: { (response, statusCode) in
+//                if statusCode == 401{
+//                    //                    self.logOut()
+//                }
+//
+//            }) { (error) in
+//            }
         }else if typeClose == .delete{
-            updateIndentity()
             if !deletePasscode{
                 let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let navigationController:HiddenNavBarNavigationController = storyboard.instantiateInitialViewController() as! HiddenNavBarNavigationController
-                let firstPageVC:UIViewController = storyboard.instantiateViewController(withIdentifier: "firstPage") as UIViewController
+                let firstPageVC: UIViewController = storyboard.instantiateViewController(withIdentifier: "firstPage") as UIViewController
                 navigationController.viewControllers = [firstPageVC]
                 self.present(navigationController, animated: true, completion: nil)
             }
         }
     }
-    
-    
 }
 

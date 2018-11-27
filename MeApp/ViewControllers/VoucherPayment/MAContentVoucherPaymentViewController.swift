@@ -50,7 +50,11 @@ class MAContentVoucherPaymentViewController: MABaseViewController, MAConfirmatio
         if voucher.product != nil {
             paketTitle.text = voucher.product?.name
             organizationNameLabel.text = voucher.product?.organization.name
+           if voucher.product?.photo != nil {
             qrCodeImageView.sd_setImage(with: URL(string: voucher.product?.photo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+            }else{
+                qrCodeImageView.image = UIImage(named: "Resting")
+            }
         }else{
             paketTitle.text = voucher.found.name
             organizationNameLabel.text = voucher.found.organization.name ?? ""
@@ -82,14 +86,14 @@ class MAContentVoucherPaymentViewController: MABaseViewController, MAConfirmatio
     }
     
     func paymentSucceded() {
-        AlertController.showSuccess(withText: "Payment succeeded", vc: self)
+        AlertController.showSuccess(withText: "Payment succeeded".localized(), vc: self)
     }
     
     @IBAction func send(_ sender: Any) {
         if voucher.product != nil{
             goToTrnasctionConfirm()
         }else if amount.text == ""{
-            AlertController.showWarning(withText: "Please set amount!", vc: self)
+            AlertController.showWarning(withText: "Please enter the amount ".localized(), vc: self)
         }else{
             goToTrnasctionConfirm()
         }

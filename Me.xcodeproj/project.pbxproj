@@ -47,9 +47,7 @@
 		651B5A8E2178A06900C23204 /* MABottomProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651B5A8D2178A06900C23204 /* MABottomProductViewController.swift */; };
 		651CADD32174957C000E3E37 /* MAProductVoucherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651CADD22174957C000E3E37 /* MAProductVoucherViewController.swift */; };
 		651CF244218908A30088F9D5 /* MAConfirmationTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651CF242218908A30088F9D5 /* MAConfirmationTransactionViewController.swift */; };
-		651CF245218908A30088F9D5 /* MAConfirmationTransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 651CF243218908A30088F9D5 /* MAConfirmationTransactionViewController.xib */; };
 		651CF24921891CD80088F9D5 /* MAApprovePaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651CF24721891CD80088F9D5 /* MAApprovePaymentViewController.swift */; };
-		651CF24A21891CD90088F9D5 /* MAApprovePaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 651CF24821891CD80088F9D5 /* MAApprovePaymentViewController.xib */; };
 		651E197C20C95B5400A46D71 /* Web3Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651E197B20C95B5400A46D71 /* Web3Service.swift */; };
 		651F704F21468141008D087A /* MASignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 651F705121468141008D087A /* MASignUpViewController.xib */; };
 		651F7056214682C7008D087A /* MATransactionBlueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 651F7058214682C7008D087A /* MATransactionBlueViewController.xib */; };
@@ -62,7 +60,6 @@
 		6528F01920E51BEF00DD19C1 /* MAFirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6528F01820E51BEF00DD19C1 /* MAFirstPageViewController.swift */; };
 		6528F01C20E5358900DD19C1 /* MAPinCodeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6528F01B20E5358900DD19C1 /* MAPinCodeLoginViewController.swift */; };
 		6528F01E20E53F3D00DD19C1 /* MALoginEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6528F01D20E53F3D00DD19C1 /* MALoginEmailViewController.swift */; };
-		652D910A216DF19F00F04D2E /* VoucherPayment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652D9109216DF19F00F04D2E /* VoucherPayment.storyboard */; };
 		652D910C216DF33900F04D2E /* MABaseVoucherPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652D910B216DF33900F04D2E /* MABaseVoucherPaymentViewController.swift */; };
 		652D910E216DF40B00F04D2E /* MAContentVoucherPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652D910D216DF40B00F04D2E /* MAContentVoucherPaymentViewController.swift */; };
 		652D9110216DF43000F04D2E /* MABottomQRVoucherPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652D910F216DF43000F04D2E /* MABottomQRVoucherPaymentViewController.swift */; };
@@ -80,7 +77,7 @@
 		65467FB020B86C57009E99CC /* MALoginWithQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65467FAF20B86C57009E99CC /* MALoginWithQRViewController.swift */; };
 		654CBAB62109E1EC00E56F2E /* AuthorizationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654CBAB52109E1EC00E56F2E /* AuthorizationCode.swift */; };
 		654CBAB92109F84600E56F2E /* String+Substring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654CBAB82109F84600E56F2E /* String+Substring.swift */; };
-		65509465213D3C1E007532BE /* Localizabel.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65509467213D3C1E007532BE /* Localizabel.strings */; };
+		65509465213D3C1E007532BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65509467213D3C1E007532BE /* Localizable.strings */; };
 		65509469213D4D29007532BE /* Tabs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6550946B213D4D29007532BE /* Tabs.storyboard */; };
 		65509470213D4F36007532BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65509472213D4F36007532BE /* Main.storyboard */; };
 		65509477213D4F4F007532BE /* PassStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65509479213D4F4F007532BE /* PassStoryboard.storyboard */; };
@@ -105,8 +102,12 @@
 		65588FFA21146B7600806C9E /* MAWaletVoucherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65588FF921146B7600806C9E /* MAWaletVoucherTableViewCell.swift */; };
 		6558E3DF20DBB6B6001EC568 /* HBSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6558E3DE20DBB6B6001EC568 /* HBSegmentedControl.swift */; };
 		655BB05720EE442B00BFD06A /* MAQRLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655BB05620EE442B00BFD06A /* MAQRLoginViewController.swift */; };
+		6568CDA82190A873003E5F0C /* MAConfirmationTransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6568CDAA2190A873003E5F0C /* MAConfirmationTransactionViewController.xib */; };
+		6568CDAF2190A89C003E5F0C /* MAApprovePaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6568CDB12190A89C003E5F0C /* MAApprovePaymentViewController.xib */; };
 		656F19872105E22A00923DAF /* MAValidatorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656F19862105E22A00923DAF /* MAValidatorsViewController.swift */; };
 		656F198A2105EFF100923DAF /* MAValidatorCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656F19892105EFF100923DAF /* MAValidatorCellTableViewCell.swift */; };
+		6576A0B62192F610007B3D9D /* MARegistrationSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6576A0B82192F610007B3D9D /* MARegistrationSuccessViewController.xib */; };
+		6576A0BD21933EC7007B3D9D /* VoucherPayment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6576A0BF21933EC7007B3D9D /* VoucherPayment.storyboard */; };
 		6579633E20E4D49D001CF29D /* NunitoSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579632F20E4D49C001CF29D /* NunitoSans-LightItalic.ttf */; };
 		6579633F20E4D49D001CF29D /* NunitoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579633020E4D49C001CF29D /* NunitoSans-BoldItalic.ttf */; };
 		6579634020E4D49D001CF29D /* NunitoSans-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579633120E4D49C001CF29D /* NunitoSans-ExtraLight.ttf */; };
@@ -131,12 +132,16 @@
 		658BBA532110954C0098E2AC /* backspaceBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = 658BBA45211094BE0098E2AC /* backspaceBlue.png */; };
 		658BBA542110954C0098E2AC /* backspaceBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 658BBA46211094BE0098E2AC /* backspaceBlue@2x.png */; };
 		658BBA552110954C0098E2AC /* backspaceBlue@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 658BBA47211094BE0098E2AC /* backspaceBlue@3x.png */; };
-		658BBA562110954C0098E2AC /* AppLocker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 658BBA48211094BE0098E2AC /* AppLocker.xib */; };
 		658BBA572110954C0098E2AC /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658BBA49211094BE0098E2AC /* UI.swift */; };
 		658BDDC721085AFE00A27EC7 /* MACreateNewIdentityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658BDDC621085AFE00A27EC7 /* MACreateNewIdentityViewController.swift */; };
 		658BDDC92108A76100A27EC7 /* RecordType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658BDDC82108A76100A27EC7 /* RecordType.swift */; };
 		658BDDCB2108AFCC00A27EC7 /* MAChooseTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658BDDCA2108AFCC00A27EC7 /* MAChooseTypeTableViewCell.swift */; };
 		658BDDCE2108B62500A27EC7 /* RecordCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658BDDCD2108B62500A27EC7 /* RecordCategory.swift */; };
+		658D40FF21A2ECA600CA4F10 /* ScanWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658D40FB21A2ECA500CA4F10 /* ScanWorker.swift */; };
+		658D410021A2ECA600CA4F10 /* ScanPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658D40FC21A2ECA500CA4F10 /* ScanPermission.swift */; };
+		658D410121A2ECA600CA4F10 /* HSDefaultScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658D40FD21A2ECA600CA4F10 /* HSDefaultScanView.swift */; };
+		658D410221A2ECA600CA4F10 /* HSScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658D40FE21A2ECA600CA4F10 /* HSScanViewController.swift */; };
+		658D410421A2EE1700CA4F10 /* MAQRCodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658D410321A2EE1700CA4F10 /* MAQRCodeScannerViewController.swift */; };
 		65A51F6B20B2FFF10010DB33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A51F6A20B2FFF10010DB33 /* AppDelegate.swift */; };
 		65A51F7320B2FFF20010DB33 /* MeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65A51F7120B2FFF20010DB33 /* MeApp.xcdatamodeld */; };
 		65A51F7520B2FFF40010DB33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65A51F7420B2FFF40010DB33 /* Assets.xcassets */; };
@@ -186,6 +191,7 @@
 		65AC33032102126200633187 /* MAChooseCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AC33022102126200633187 /* MAChooseCategoryCollectionViewCell.swift */; };
 		65AC330821023B8B00633187 /* MAPersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AC330721023B8B00633187 /* MAPersonalViewController.swift */; };
 		65AC330A21023E7000633187 /* MAPersonalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AC330921023E7000633187 /* MAPersonalTableViewCell.swift */; };
+		65ACC3802191DA67001D15DC /* AppLocker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65ACC3822191DA67001D15DC /* AppLocker.xib */; };
 		65B89A8D20B3342E0024DC51 /* MATransactionRedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89A8B20B3342E0024DC51 /* MATransactionRedViewController.swift */; };
 		65B89A9120B334860024DC51 /* MATransactionBlueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89A8F20B334860024DC51 /* MATransactionBlueViewController.swift */; };
 		65B89A9420B408C00024DC51 /* MARecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89A9320B408C00024DC51 /* MARecordsViewController.swift */; };
@@ -195,7 +201,6 @@
 		65B89AA120B42A6F0024DC51 /* MARegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89A9F20B42A6F0024DC51 /* MARegistrationViewController.swift */; };
 		65B89AA220B42A6F0024DC51 /* MARegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65B89AA020B42A6F0024DC51 /* MARegistrationViewController.xib */; };
 		65B89AA620B432CC0024DC51 /* MARegistrationSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89AA420B432CC0024DC51 /* MARegistrationSuccessViewController.swift */; };
-		65B89AA720B432CC0024DC51 /* MARegistrationSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65B89AA520B432CC0024DC51 /* MARegistrationSuccessViewController.xib */; };
 		65B89AAB20B4363D0024DC51 /* MAEmailForMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89AA920B4363D0024DC51 /* MAEmailForMeViewController.swift */; };
 		65B89AAC20B4363D0024DC51 /* MAEmailForMeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65B89AAA20B4363D0024DC51 /* MAEmailForMeViewController.xib */; };
 		65B89AB020B43A3D0024DC51 /* MAValidationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89AAE20B43A3D0024DC51 /* MAValidationViewController.swift */; };
@@ -238,6 +243,7 @@
 		65C0B222210F470F00FBC254 /* MAPersonalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C0B221210F470F00FBC254 /* MAPersonalDetailViewController.swift */; };
 		65CC8C01218077D30084AA34 /* MARequesterPaymentPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CC8BFF218077D30084AA34 /* MARequesterPaymentPopUpViewController.swift */; };
 		65CC8C02218077D30084AA34 /* MARequesterPaymentPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65CC8C00218077D30084AA34 /* MARequesterPaymentPopUpViewController.xib */; };
+		65D2B58B219AE30000EA5162 /* SwitchCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D2B58A219AE30000EA5162 /* SwitchCustom.swift */; };
 		65DC02222138314C00FDD4A3 /* Formater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DC02212138314B00FDD4A3 /* Formater.swift */; };
 		65DCA0B7213311850051F6A3 /* MABottomPersonalQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DCA0B6213311850051F6A3 /* MABottomPersonalQRViewController.swift */; };
 		65DCA0B9213311970051F6A3 /* MAContentPersonalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DCA0B8213311970051F6A3 /* MAContentPersonalDetailViewController.swift */; };
@@ -320,9 +326,7 @@
 		651B5A8D2178A06900C23204 /* MABottomProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MABottomProductViewController.swift; sourceTree = "<group>"; };
 		651CADD22174957C000E3E37 /* MAProductVoucherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAProductVoucherViewController.swift; sourceTree = "<group>"; };
 		651CF242218908A30088F9D5 /* MAConfirmationTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAConfirmationTransactionViewController.swift; sourceTree = "<group>"; };
-		651CF243218908A30088F9D5 /* MAConfirmationTransactionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAConfirmationTransactionViewController.xib; sourceTree = "<group>"; };
 		651CF24721891CD80088F9D5 /* MAApprovePaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAApprovePaymentViewController.swift; sourceTree = "<group>"; };
-		651CF24821891CD80088F9D5 /* MAApprovePaymentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAApprovePaymentViewController.xib; sourceTree = "<group>"; };
 		651E197B20C95B5400A46D71 /* Web3Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Web3Service.swift; sourceTree = "<group>"; };
 		651F704E21467EE6008D087A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		651F705021468141008D087A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MASignUpViewController.xib; sourceTree = "<group>"; };
@@ -344,7 +348,6 @@
 		6528F01820E51BEF00DD19C1 /* MAFirstPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAFirstPageViewController.swift; sourceTree = "<group>"; };
 		6528F01B20E5358900DD19C1 /* MAPinCodeLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAPinCodeLoginViewController.swift; sourceTree = "<group>"; };
 		6528F01D20E53F3D00DD19C1 /* MALoginEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MALoginEmailViewController.swift; sourceTree = "<group>"; };
-		652D9109216DF19F00F04D2E /* VoucherPayment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VoucherPayment.storyboard; sourceTree = "<group>"; };
 		652D910B216DF33900F04D2E /* MABaseVoucherPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MABaseVoucherPaymentViewController.swift; sourceTree = "<group>"; };
 		652D910D216DF40B00F04D2E /* MAContentVoucherPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAContentVoucherPaymentViewController.swift; sourceTree = "<group>"; };
 		652D910F216DF43000F04D2E /* MABottomQRVoucherPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MABottomQRVoucherPaymentViewController.swift; sourceTree = "<group>"; };
@@ -363,8 +366,8 @@
 		654CBAB52109E1EC00E56F2E /* AuthorizationCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationCode.swift; sourceTree = "<group>"; };
 		654CBAB82109F84600E56F2E /* String+Substring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Substring.swift"; sourceTree = "<group>"; };
 		65509462213D3BD4007532BE /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		65509466213D3C1E007532BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizabel.strings; sourceTree = "<group>"; };
-		65509468213D3C21007532BE /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizabel.strings; sourceTree = "<group>"; };
+		65509466213D3C1E007532BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		65509468213D3C21007532BE /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6550946A213D4D29007532BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Tabs.storyboard; sourceTree = "<group>"; };
 		6550946D213D4D30007532BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Tabs.strings; sourceTree = "<group>"; };
 		6550946F213D4D33007532BE /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Tabs.strings; sourceTree = "<group>"; };
@@ -398,10 +401,22 @@
 		65588FF921146B7600806C9E /* MAWaletVoucherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAWaletVoucherTableViewCell.swift; sourceTree = "<group>"; };
 		6558E3DE20DBB6B6001EC568 /* HBSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HBSegmentedControl.swift; sourceTree = "<group>"; };
 		655BB05620EE442B00BFD06A /* MAQRLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAQRLoginViewController.swift; sourceTree = "<group>"; };
+		6568CDA92190A873003E5F0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MAConfirmationTransactionViewController.xib; sourceTree = "<group>"; };
+		6568CDAC2190A876003E5F0C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MAConfirmationTransactionViewController.strings; sourceTree = "<group>"; };
+		6568CDAE2190A87B003E5F0C /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/MAConfirmationTransactionViewController.strings; sourceTree = "<group>"; };
+		6568CDB02190A89C003E5F0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MAApprovePaymentViewController.xib; sourceTree = "<group>"; };
+		6568CDB32190A89F003E5F0C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MAApprovePaymentViewController.strings; sourceTree = "<group>"; };
+		6568CDB52190A8A1003E5F0C /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/MAApprovePaymentViewController.strings; sourceTree = "<group>"; };
 		6569CDD22179F06700EF95E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		6569CDD32179F06A00EF95E4 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Main.strings; sourceTree = "<group>"; };
 		656F19862105E22A00923DAF /* MAValidatorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAValidatorsViewController.swift; sourceTree = "<group>"; };
 		656F19892105EFF100923DAF /* MAValidatorCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAValidatorCellTableViewCell.swift; sourceTree = "<group>"; };
+		6576A0B72192F610007B3D9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MARegistrationSuccessViewController.xib; sourceTree = "<group>"; };
+		6576A0BA2192F613007B3D9D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MARegistrationSuccessViewController.strings; sourceTree = "<group>"; };
+		6576A0BC2192F615007B3D9D /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/MARegistrationSuccessViewController.strings; sourceTree = "<group>"; };
+		6576A0BE21933EC7007B3D9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/VoucherPayment.storyboard; sourceTree = "<group>"; };
+		6576A0C121933ED5007B3D9D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/VoucherPayment.strings; sourceTree = "<group>"; };
+		6576A0C321933ED7007B3D9D /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/VoucherPayment.strings; sourceTree = "<group>"; };
 		6579632F20E4D49C001CF29D /* NunitoSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-LightItalic.ttf"; sourceTree = "<group>"; };
 		6579633020E4D49C001CF29D /* NunitoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		6579633120E4D49C001CF29D /* NunitoSans-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraLight.ttf"; sourceTree = "<group>"; };
@@ -427,12 +442,16 @@
 		658BBA45211094BE0098E2AC /* backspaceBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backspaceBlue.png; sourceTree = "<group>"; };
 		658BBA46211094BE0098E2AC /* backspaceBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backspaceBlue@2x.png"; sourceTree = "<group>"; };
 		658BBA47211094BE0098E2AC /* backspaceBlue@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backspaceBlue@3x.png"; sourceTree = "<group>"; };
-		658BBA48211094BE0098E2AC /* AppLocker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AppLocker.xib; path = Source/AppLocker/AppLocker.xib; sourceTree = "<group>"; };
 		658BBA49211094BE0098E2AC /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UI.swift; path = Source/UI.swift; sourceTree = "<group>"; };
 		658BDDC621085AFE00A27EC7 /* MACreateNewIdentityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MACreateNewIdentityViewController.swift; sourceTree = "<group>"; };
 		658BDDC82108A76100A27EC7 /* RecordType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordType.swift; sourceTree = "<group>"; };
 		658BDDCA2108AFCC00A27EC7 /* MAChooseTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAChooseTypeTableViewCell.swift; sourceTree = "<group>"; };
 		658BDDCD2108B62500A27EC7 /* RecordCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCategory.swift; sourceTree = "<group>"; };
+		658D40FB21A2ECA500CA4F10 /* ScanWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanWorker.swift; sourceTree = "<group>"; };
+		658D40FC21A2ECA500CA4F10 /* ScanPermission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanPermission.swift; sourceTree = "<group>"; };
+		658D40FD21A2ECA600CA4F10 /* HSDefaultScanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSDefaultScanView.swift; sourceTree = "<group>"; };
+		658D40FE21A2ECA600CA4F10 /* HSScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSScanViewController.swift; sourceTree = "<group>"; };
+		658D410321A2EE1700CA4F10 /* MAQRCodeScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAQRCodeScannerViewController.swift; sourceTree = "<group>"; };
 		659EBA6321258A7400162445 /* MeApp 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MeApp 2.xcdatamodel"; sourceTree = "<group>"; };
 		65A51F6720B2FFF10010DB33 /* Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Me.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A51F6A20B2FFF10010DB33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -489,6 +508,9 @@
 		65AC33022102126200633187 /* MAChooseCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAChooseCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		65AC330721023B8B00633187 /* MAPersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAPersonalViewController.swift; sourceTree = "<group>"; };
 		65AC330921023E7000633187 /* MAPersonalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAPersonalTableViewCell.swift; sourceTree = "<group>"; };
+		65ACC3812191DA67001D15DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AppLocker.xib; sourceTree = "<group>"; };
+		65ACC3842191DA6A001D15DC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AppLocker.strings; sourceTree = "<group>"; };
+		65ACC3862191DA6C001D15DC /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/AppLocker.strings; sourceTree = "<group>"; };
 		65B89A8B20B3342E0024DC51 /* MATransactionRedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MATransactionRedViewController.swift; sourceTree = "<group>"; };
 		65B89A8F20B334860024DC51 /* MATransactionBlueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MATransactionBlueViewController.swift; sourceTree = "<group>"; };
 		65B89A9320B408C00024DC51 /* MARecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MARecordsViewController.swift; sourceTree = "<group>"; };
@@ -498,7 +520,6 @@
 		65B89A9F20B42A6F0024DC51 /* MARegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MARegistrationViewController.swift; sourceTree = "<group>"; };
 		65B89AA020B42A6F0024DC51 /* MARegistrationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MARegistrationViewController.xib; sourceTree = "<group>"; };
 		65B89AA420B432CC0024DC51 /* MARegistrationSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MARegistrationSuccessViewController.swift; sourceTree = "<group>"; };
-		65B89AA520B432CC0024DC51 /* MARegistrationSuccessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MARegistrationSuccessViewController.xib; sourceTree = "<group>"; };
 		65B89AA920B4363D0024DC51 /* MAEmailForMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAEmailForMeViewController.swift; sourceTree = "<group>"; };
 		65B89AAA20B4363D0024DC51 /* MAEmailForMeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAEmailForMeViewController.xib; sourceTree = "<group>"; };
 		65B89AAE20B43A3D0024DC51 /* MAValidationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAValidationViewController.swift; sourceTree = "<group>"; };
@@ -542,6 +563,7 @@
 		65C0B221210F470F00FBC254 /* MAPersonalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAPersonalDetailViewController.swift; sourceTree = "<group>"; };
 		65CC8BFF218077D30084AA34 /* MARequesterPaymentPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MARequesterPaymentPopUpViewController.swift; sourceTree = "<group>"; };
 		65CC8C00218077D30084AA34 /* MARequesterPaymentPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MARequesterPaymentPopUpViewController.xib; sourceTree = "<group>"; };
+		65D2B58A219AE30000EA5162 /* SwitchCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCustom.swift; sourceTree = "<group>"; };
 		65DC02212138314B00FDD4A3 /* Formater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formater.swift; sourceTree = "<group>"; };
 		65DCA0B6213311850051F6A3 /* MABottomPersonalQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MABottomPersonalQRViewController.swift; sourceTree = "<group>"; };
 		65DCA0B8213311970051F6A3 /* MAContentPersonalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAContentPersonalDetailViewController.swift; sourceTree = "<group>"; };
@@ -713,7 +735,7 @@
 			isa = PBXGroup;
 			children = (
 				651CF242218908A30088F9D5 /* MAConfirmationTransactionViewController.swift */,
-				651CF243218908A30088F9D5 /* MAConfirmationTransactionViewController.xib */,
+				6568CDAA2190A873003E5F0C /* MAConfirmationTransactionViewController.xib */,
 			);
 			path = ConfirmationTransaction;
 			sourceTree = "<group>";
@@ -722,7 +744,7 @@
 			isa = PBXGroup;
 			children = (
 				651CF24721891CD80088F9D5 /* MAApprovePaymentViewController.swift */,
-				651CF24821891CD80088F9D5 /* MAApprovePaymentViewController.xib */,
+				6568CDB12190A89C003E5F0C /* MAApprovePaymentViewController.xib */,
 			);
 			path = ApprovePayment;
 			sourceTree = "<group>";
@@ -979,7 +1001,7 @@
 				658BBA45211094BE0098E2AC /* backspaceBlue.png */,
 				658BBA46211094BE0098E2AC /* backspaceBlue@2x.png */,
 				658BBA47211094BE0098E2AC /* backspaceBlue@3x.png */,
-				658BBA48211094BE0098E2AC /* AppLocker.xib */,
+				65ACC3822191DA67001D15DC /* AppLocker.xib */,
 				658BBA49211094BE0098E2AC /* UI.swift */,
 			);
 			path = AppLocker;
@@ -991,6 +1013,17 @@
 				658BDDCA2108AFCC00A27EC7 /* MAChooseTypeTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		658D410521A30E2F00CA4F10 /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				658D40FD21A2ECA600CA4F10 /* HSDefaultScanView.swift */,
+				658D40FE21A2ECA600CA4F10 /* HSScanViewController.swift */,
+				658D40FC21A2ECA500CA4F10 /* ScanPermission.swift */,
+				658D40FB21A2ECA500CA4F10 /* ScanWorker.swift */,
+			);
+			path = Scanner;
 			sourceTree = "<group>";
 		};
 		65A51F5E20B2FFF10010DB33 = {
@@ -1026,7 +1059,7 @@
 				65509472213D4F36007532BE /* Main.storyboard */,
 				6550946B213D4D29007532BE /* Tabs.storyboard */,
 				65509479213D4F4F007532BE /* PassStoryboard.storyboard */,
-				652D9109216DF19F00F04D2E /* VoucherPayment.storyboard */,
+				6576A0BF21933EC7007B3D9D /* VoucherPayment.storyboard */,
 				65509480213D5017007532BE /* NewProfile.storyboard */,
 				65509487213D5105007532BE /* Profile.storyboard */,
 				65E3363E20E645B600C0512B /* KRScrollView.swift */,
@@ -1040,7 +1073,7 @@
 				65A51F7920B2FFF40010DB33 /* Info.plist */,
 				6582871F217DC9E1008979C6 /* GoogleService-Info.plist */,
 				65A51F7420B2FFF40010DB33 /* Assets.xcassets */,
-				65509467213D3C1E007532BE /* Localizabel.strings */,
+				65509467213D3C1E007532BE /* Localizable.strings */,
 				65A51F7620B2FFF40010DB33 /* LaunchScreen.storyboard */,
 				65A51F7120B2FFF20010DB33 /* MeApp.xcdatamodeld */,
 				65B89AD320B48B9B0024DC51 /* MeApp-Swift.h */,
@@ -1312,7 +1345,7 @@
 			isa = PBXGroup;
 			children = (
 				65B89AA420B432CC0024DC51 /* MARegistrationSuccessViewController.swift */,
-				65B89AA520B432CC0024DC51 /* MARegistrationSuccessViewController.xib */,
+				6576A0B82192F610007B3D9D /* MARegistrationSuccessViewController.xib */,
 			);
 			path = RegistrationSuccess;
 			sourceTree = "<group>";
@@ -1410,6 +1443,7 @@
 				65AC32F52101D9E500633187 /* CustomCornerUIView.swift */,
 				65BD691821246C420098CF9F /* StatusView.swift */,
 				653982742133FC5B003B87FC /* RoundImageView.swift */,
+				65D2B58A219AE30000EA5162 /* SwitchCustom.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -1475,6 +1509,7 @@
 		65D764E020B73933007D7B9D /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				658D410521A30E2F00CA4F10 /* Scanner */,
 				65A51FA220B300EA0010DB33 /* TabBarController.swift */,
 				65FC85F720B56FA2001FECA5 /* MANavicationController.swift */,
 				6556376720B726F700E45487 /* MABaseViewController.swift */,
@@ -1524,6 +1559,7 @@
 			isa = PBXGroup;
 			children = (
 				65FC85F920B57642001FECA5 /* MAQRCodeReaderViewController.swift */,
+				658D410321A2EE1700CA4F10 /* MAQRCodeScannerViewController.swift */,
 			);
 			path = QrCode;
 			sourceTree = "<group>";
@@ -1708,7 +1744,7 @@
 				6500425E20DB97E40092CCDA /* OpenSans-SemiBoldItalic.ttf in Resources */,
 				65B89AC020B448CB0024DC51 /* MAAllowViewController.xib in Resources */,
 				6500425A20DB97E40092CCDA /* OpenSans-Italic.ttf in Resources */,
-				65509465213D3C1E007532BE /* Localizabel.strings in Resources */,
+				65509465213D3C1E007532BE /* Localizable.strings in Resources */,
 				65A51FD320B3012C0010DB33 /* SF-Pro-Display-Bold.otf in Resources */,
 				65FC85FF20B58426001FECA5 /* MAValidationQRViewController.xib in Resources */,
 				65A51FD420B3012C0010DB33 /* SF-Pro-Display-Medium.otf in Resources */,
@@ -1738,7 +1774,7 @@
 				6579634220E4D49D001CF29D /* NunitoSans-BlackItalic.ttf in Resources */,
 				65A51FCF20B3012C0010DB33 /* SF-Pro-Display-RegularItalic.otf in Resources */,
 				6500425F20DB97E40092CCDA /* OpenSans-ExtraBoldItalic.ttf in Resources */,
-				652D910A216DF19F00F04D2E /* VoucherPayment.storyboard in Resources */,
+				6576A0BD21933EC7007B3D9D /* VoucherPayment.storyboard in Resources */,
 				6579634920E4D49E001CF29D /* NunitoSans-SemiBold.ttf in Resources */,
 				651F705D214682F5008D087A /* MATransactionRedViewController.xib in Resources */,
 				65A51FDC20B3012C0010DB33 /* SF-Pro-Display-Ultralight.otf in Resources */,
@@ -1768,8 +1804,8 @@
 				65BB7C3F2112EF380073352C /* GoogleSans-BoldItalic.ttf in Resources */,
 				65A51F7820B2FFF40010DB33 /* LaunchScreen.storyboard in Resources */,
 				6500425C20DB97E40092CCDA /* OpenSans-LightItalic.ttf in Resources */,
-				651CF245218908A30088F9D5 /* MAConfirmationTransactionViewController.xib in Resources */,
-				658BBA562110954C0098E2AC /* AppLocker.xib in Resources */,
+				6568CDA82190A873003E5F0C /* MAConfirmationTransactionViewController.xib in Resources */,
+				65ACC3802191DA67001D15DC /* AppLocker.xib in Resources */,
 				65B89AB620B43FA50024DC51 /* MAValidationSuccessViewController.xib in Resources */,
 				65A51FE320B3012C0010DB33 /* SF-Pro-Text-Semibold.otf in Resources */,
 				6500426020DB97E40092CCDA /* LICENSE.txt in Resources */,
@@ -1779,7 +1815,7 @@
 				65A51FD120B3012C0010DB33 /* SF-Pro-Display-Regular.otf in Resources */,
 				65A51F7520B2FFF40010DB33 /* Assets.xcassets in Resources */,
 				65A51FDE20B3012C0010DB33 /* SF-Pro-Display-LightItalic.otf in Resources */,
-				651CF24A21891CD90088F9D5 /* MAApprovePaymentViewController.xib in Resources */,
+				6568CDAF2190A89C003E5F0C /* MAApprovePaymentViewController.xib in Resources */,
 				65A51FE420B3012C0010DB33 /* SF-Pro-Text-HeavyItalic.otf in Resources */,
 				6500426120DB97E40092CCDA /* OpenSans-Regular.ttf in Resources */,
 				6579634420E4D49E001CF29D /* NunitoSans-Regular.ttf in Resources */,
@@ -1795,7 +1831,7 @@
 				6550947E213D5017007532BE /* NewProfile.storyboard in Resources */,
 				6579633E20E4D49D001CF29D /* NunitoSans-LightItalic.ttf in Resources */,
 				65B89AC520B44B1B0024DC51 /* MAShareVaucherViewController.xib in Resources */,
-				65B89AA720B432CC0024DC51 /* MARegistrationSuccessViewController.xib in Resources */,
+				6576A0B62192F610007B3D9D /* MARegistrationSuccessViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1877,6 +1913,7 @@
 				"${BUILT_PRODUCTS_DIR}/Web3/Web3.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 				"${BUILT_PRODUCTS_DIR}/secp256k1.swift/secp256k1.framework",
+				"${BUILT_PRODUCTS_DIR}/swiftScan/swiftScan.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1904,6 +1941,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Web3.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/secp256k1.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/swiftScan.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2075,6 +2113,7 @@
 				65C0B220210F3ACF00FBC254 /* UserShared.swift in Sources */,
 				654CBAB92109F84600E56F2E /* String+Substring.swift in Sources */,
 				658BDDCB2108AFCC00A27EC7 /* MAChooseTypeTableViewCell.swift in Sources */,
+				658D410421A2EE1700CA4F10 /* MAQRCodeScannerViewController.swift in Sources */,
 				6510D87D20CAEF1400D85BAE /* Web3Provider.swift in Sources */,
 				653BB0E9215515300059AE0C /* Config.swift in Sources */,
 				65E3363F20E645B600C0512B /* KRScrollView.swift in Sources */,
@@ -2082,6 +2121,7 @@
 				6528F01920E51BEF00DD19C1 /* MAFirstPageViewController.swift in Sources */,
 				6509EA3620C84CFD004F8BA0 /* NewToken.swift in Sources */,
 				65BFF47820C1A61C00F64215 /* SpinnerView.swift in Sources */,
+				65D2B58B219AE30000EA5162 /* SwitchCustom.swift in Sources */,
 				651826E720DD1D8200B8963A /* MABaseQRProfileViewController.swift in Sources */,
 				65E88DF621355066006D45C0 /* Transaction.swift in Sources */,
 				651826EA20DD1DA400B8963A /* MAContentQRProfileViewController.swift in Sources */,
@@ -2126,6 +2166,7 @@
 				65B89AC420B44B1B0024DC51 /* MAShareVaucherViewController.swift in Sources */,
 				6527C6FE20D16BBC00009704 /* MASendViewController.swift in Sources */,
 				6528F01E20E53F3D00DD19C1 /* MALoginEmailViewController.swift in Sources */,
+				658D410221A2ECA600CA4F10 /* HSScanViewController.swift in Sources */,
 				651B5A8C21789DC100C23204 /* MAContenProductVoucherViewController.swift in Sources */,
 				65FC866020B5D8F5001FECA5 /* UIColor+Background.swift in Sources */,
 				65B89AB520B43FA50024DC51 /* MAValidationSuccessViewController.swift in Sources */,
@@ -2149,10 +2190,12 @@
 				655BB05720EE442B00BFD06A /* MAQRLoginViewController.swift in Sources */,
 				6556376020B6FB9100E45487 /* UITextField+PlaceholderColor.swift in Sources */,
 				65AC32F62101D9E500633187 /* CustomCornerUIView.swift in Sources */,
+				658D410121A2ECA600CA4F10 /* HSDefaultScanView.swift in Sources */,
 				65BD691921246C420098CF9F /* StatusView.swift in Sources */,
 				658BDDC721085AFE00A27EC7 /* MACreateNewIdentityViewController.swift in Sources */,
 				6558E3DF20DBB6B6001EC568 /* HBSegmentedControl.swift in Sources */,
 				65FC860220B5A2DA001FECA5 /* MAOfficeViewController.swift in Sources */,
+				658D410021A2ECA600CA4F10 /* ScanPermission.swift in Sources */,
 				65B89A9C20B422D30024DC51 /* MAWaitingViewController.swift in Sources */,
 				650F01FB2126EDEC00484BD1 /* TypeLog.swift in Sources */,
 				65A51FAC20B300EA0010DB33 /* WaletTableViewCell.swift in Sources */,
@@ -2169,6 +2212,7 @@
 				65FC866420B5DF81001FECA5 /* MASwitchProfileTableViewCell.swift in Sources */,
 				65A51FEB20B31FB30010DB33 /* WalletSecondTableViewCell.swift in Sources */,
 				6556375E20B6DE8300E45487 /* BasePopupViewController.swift in Sources */,
+				658D40FF21A2ECA600CA4F10 /* ScanWorker.swift in Sources */,
 				65A51FAB20B300EA0010DB33 /* WalletViewController.swift in Sources */,
 				6504473F20C060E000D040B9 /* Validation.swift in Sources */,
 				658370B02126DAB3008D76A9 /* Validator.swift in Sources */,
@@ -2251,13 +2295,13 @@
 			name = TransactionViewController.xib;
 			sourceTree = "<group>";
 		};
-		65509467213D3C1E007532BE /* Localizabel.strings */ = {
+		65509467213D3C1E007532BE /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				65509466213D3C1E007532BE /* en */,
 				65509468213D3C21007532BE /* nl */,
 			);
-			name = Localizabel.strings;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		6550946B213D4D29007532BE /* Tabs.storyboard */ = {
@@ -2310,6 +2354,46 @@
 			name = Profile.storyboard;
 			sourceTree = "<group>";
 		};
+		6568CDAA2190A873003E5F0C /* MAConfirmationTransactionViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6568CDA92190A873003E5F0C /* Base */,
+				6568CDAC2190A876003E5F0C /* en */,
+				6568CDAE2190A87B003E5F0C /* nl */,
+			);
+			name = MAConfirmationTransactionViewController.xib;
+			sourceTree = "<group>";
+		};
+		6568CDB12190A89C003E5F0C /* MAApprovePaymentViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6568CDB02190A89C003E5F0C /* Base */,
+				6568CDB32190A89F003E5F0C /* en */,
+				6568CDB52190A8A1003E5F0C /* nl */,
+			);
+			name = MAApprovePaymentViewController.xib;
+			sourceTree = "<group>";
+		};
+		6576A0B82192F610007B3D9D /* MARegistrationSuccessViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6576A0B72192F610007B3D9D /* Base */,
+				6576A0BA2192F613007B3D9D /* en */,
+				6576A0BC2192F615007B3D9D /* nl */,
+			);
+			name = MARegistrationSuccessViewController.xib;
+			sourceTree = "<group>";
+		};
+		6576A0BF21933EC7007B3D9D /* VoucherPayment.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6576A0BE21933EC7007B3D9D /* Base */,
+				6576A0C121933ED5007B3D9D /* en */,
+				6576A0C321933ED7007B3D9D /* nl */,
+			);
+			name = VoucherPayment.storyboard;
+			sourceTree = "<group>";
+		};
 		65A51F7620B2FFF40010DB33 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -2320,6 +2404,17 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		65ACC3822191DA67001D15DC /* AppLocker.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65ACC3812191DA67001D15DC /* Base */,
+				65ACC3842191DA6A001D15DC /* en */,
+				65ACC3862191DA6C001D15DC /* nl */,
+			);
+			name = AppLocker.xib;
+			path = Source/AppLocker;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -2327,6 +2422,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -2388,6 +2484,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -2443,15 +2540,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E8E32A731CFDBC0B1D33B95E /* Pods-Me.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon.dev;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7L2RMARLH9;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = MeApp;
+				PRODUCT_BUNDLE_IDENTIFIER = io.forus.me;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEV;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -2471,8 +2571,11 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = MeApp;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.forus.me;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
@@ -2489,7 +2592,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MeAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = RokectMinds.MeAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -2506,7 +2613,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MeAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = RokectMinds.MeAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -2522,7 +2633,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MeAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = RokectMinds.MeAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -2538,7 +2653,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MeAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = RokectMinds.MeAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -2551,6 +2670,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -2612,15 +2732,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89068B526C15FBF4653D8F95 /* Pods-Me.demo.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon.DEMO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7L2RMARLH9;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = MeApp;
+				PRODUCT_BUNDLE_IDENTIFIER = io.forus.me;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEMO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -2638,7 +2761,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MeAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = RokectMinds.MeAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -2654,7 +2781,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MeAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = RokectMinds.MeAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

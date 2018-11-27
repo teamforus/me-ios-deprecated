@@ -1,0 +1,15 @@
+
+/* Class = "UIButton"; normalTitle = "REQUEST"; ObjectID = "CUG-E7-rCW"; */
+"CUG-E7-rCW.normalTitle" = "BEVESTIG";
+
+/* Class = "UILabel"; text = "€ 140.00?"; ObjectID = "Jn4-Q5-PiM"; */
+"Jn4-Q5-PiM.text" = "€ 140.00?";
+
+/* Class = "UILabel"; text = "Confirm transaction"; ObjectID = "bqz-xD-T08"; */
+"bqz-xD-T08.text" = "Bevestig betaling";
+
+
+
+/* Class = "UIButton"; normalTitle = "DECLINE"; ObjectID = "pDE-Jt-awq"; */
+"pDE-Jt-awq.normalTitle" = "ANNULEREN";
+

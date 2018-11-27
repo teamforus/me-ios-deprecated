@@ -39,11 +39,10 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" && UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil{
             var appearance = ALAppearance()
             appearance.image = UIImage(named: "lock")!
-            appearance.title = "Devios Ryasnoy"
+            appearance.title = "Enter login code".localized()
             appearance.isSensorsEnabled = true
             appearance.cancelIsVissible = false
             appearance.delegate = self
@@ -87,7 +86,16 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
         self.tabBarController?.tabBar.isHidden = false
         VoucherRequest.getVoucherList(completion: { (response, statusCode) in
             self.vouhers.removeAllObjects()
-            self.vouhers.addObjects(from: response as! [Any])
+            for voucher in response{
+                if (voucher as! Voucher).product != nil{
+                    if (voucher as! Voucher).transactions.count == 0{
+                        self.vouhers.add(voucher)
+                    }
+                }else{
+                     self.vouhers.add(voucher)
+                }
+            }
+            
             if self.vouhers.count == 0{
                 self.tableView.isHidden = true
             }else {
@@ -222,23 +230,18 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
             //            cellWallet.delegate = self
             cellWallet.selectionStyle = .none
             let voucher = self.vouhers[indexPath.row] as! Voucher
-            if voucher.transactions != nil{
-                if voucher.transactions.count != 0 {
-                    cellWallet.usedVoucherLabel.isHidden = false
-                }else{
-                    cellWallet.usedVoucherLabel.isHidden = true
+         
+            if voucher.product != nil{
+               cellWallet.usedVoucherLabel.isHidden = true
+                cellWallet.voucherTitleLabel.text = voucher.product?.name
+                cellWallet.priceLabel.text = "€\(voucher.product?.price ?? "0.0")" 
+                if voucher.product?.photo != nil {
+                cellWallet.voucherImage.sd_setImage(with: URL(string: voucher.product?.photo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
                 }
             }else{
-                cellWallet.usedVoucherLabel.isHidden = true
-            }
-            if voucher.product != nil{
-                cellWallet.voucherTitleLabel.text = voucher.product?.name
-                cellWallet.priceLabel.text = voucher.product?.price ?? "0.0"
-                cellWallet.voucherImage.sd_setImage(with: URL(string: voucher.product?.photo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
-            }else{
                 cellWallet.voucherTitleLabel.text = voucher.found.name
-                
-                cellWallet.priceLabel.text = voucher.amount ?? "0.0"
+                cellWallet.usedVoucherLabel.isHidden = true
+                cellWallet.priceLabel.text = "€\(voucher.amount ?? "0.0")"
                if voucher.found.logo != nil{
                     cellWallet.voucherImage.sd_setImage(with: URL(string: voucher.found.logo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
                 }

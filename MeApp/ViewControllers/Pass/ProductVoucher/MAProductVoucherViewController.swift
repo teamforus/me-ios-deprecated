@@ -35,7 +35,7 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
         imageBodyView.layer.shadowRadius = 10.0
         imageBodyView.clipsToBounds = false
         self.voucherTitleLabel.text = voucher.product?.name
-        self.priceLabel.text = voucher.product?.price ?? "0.0"
+        self.priceLabel.text = "€ " + (voucher.product?.price)!
         dateCreatedLabel.text = voucher.createdAt.dateFormaterNormalDate()
         imageQR.generateQRCode(from: "{ \"type\": \"voucher\",\"value\": \"\(voucher.address!)\" }")
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(goToQRReader))
@@ -68,12 +68,16 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
     }
     
     @IBAction func showEmailToMe(_ sender: Any) {
-        let popupTransction =  MAEmailForMeViewController(nibName: "MAEmailForMeViewController", bundle: nil)
-        presenter.presentationType = .popup
-        presenter.transitionType = nil
-        presenter.dismissTransitionType = nil
-        presenter.keyboardTranslationType = .compress
-        customPresentViewController(presenter, viewController: popupTransction, animated: true, completion: nil)
+        VoucherRequest.sendEmailToVoucher(address: voucher.address, completion: { (statusCode) in
+            let popupTransction =  MARegistrationSuccessViewController(nibName: "MARegistrationSuccessViewController", bundle: nil)
+            self.presenter.presentationType = .popup
+            self.presenter.transitionType = nil
+            self.presenter.dismissTransitionType = nil
+            self.presenter.keyboardTranslationType = .compress
+            self.customPresentViewController(self.presenter, viewController: popupTransction, animated: true, completion: nil)
+        }) { (error) in
+            
+        }
     }
     
     @IBAction func showInfo(_ sender: Any) {
@@ -107,18 +111,19 @@ extension MAProductVoucherViewController: UITableViewDataSource, UITableViewDele
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PassTableViewCell
         let transaction = self.transactions[indexPath.row] as! Transactions
         cell.companyTitle.text = transaction.organization.name
-        cell.priceLabel.text = "- €\(transaction.amount!)"
+        cell.priceLabel.text = "- \(transaction.amount!)"
         cell.dateLabel.text = transaction.created_at.dateFormaterNormalDate()
+        cell.selectionStyle = .none
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let popOverVC = TransactionViewController(nibName: "TransactionViewController", bundle: nil)
-        popOverVC.transaction = self.transactions[indexPath.row] as? Transactions
-        self.addChildViewController(popOverVC)
-        popOverVC.view.frame = self.view.frame
-        self.view.addSubview(popOverVC.view)
-        popOverVC.didMove(toParentViewController: self)
-        tableView.deselectRow(at: indexPath, animated: true)
+//        let popOverVC = TransactionViewController(nibName: "TransactionViewController", bundle: nil)
+//        popOverVC.transaction = self.transactions[indexPath.row] as? Transactions
+//        self.addChildViewController(popOverVC)
+//        popOverVC.view.frame = self.view.frame
+//        self.view.addSubview(popOverVC.view)
+//        popOverVC.didMove(toParentViewController: self)
+//        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

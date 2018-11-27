@@ -16,6 +16,7 @@ import Reachability
 class MACreateNewIdentityViewController: MABaseViewController {
     @IBOutlet weak var validateIcon: UIImageView!
     @IBOutlet weak var emailSkyFloatingTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var validateIcon2: UIImageView!
     @IBOutlet weak var confirmEmailField: SkyFloatingLabelTextField!
     @IBOutlet weak var givenNameField: SkyFloatingLabelTextField!
     @IBOutlet weak var familyNameField: SkyFloatingLabelTextField!
@@ -60,11 +61,11 @@ class MACreateNewIdentityViewController: MABaseViewController {
                                                                 UserDefaults.standard.set("", forKey: ALConstants.kPincode)
                                                                 self.performSegue(withIdentifier: "goToWalet", sender: self)
                                                             }else {
-                                                                 AlertController.showWarning(withText: "Email already is used", vc: self)
+                                                                 AlertController.showWarning(withText: "This email is already used".localized(), vc: self)
                                                             }
                                                             
                     }, failure: { (error) in
-                        AlertController.showWarning(withText: "Something go wrong, please try again!", vc: self)
+                         AlertController.showWarning(withText: "Something went wrong, please try again…".localized(), vc: self)
                     })
                 }else {
                     AlertController.showInternetUnable(vc: self)
@@ -148,15 +149,16 @@ class MACreateNewIdentityViewController: MABaseViewController {
 //                emailSkyFloatingTextField.errorMessage = "Email is not valid"
                 confirmEmailField.isEnabled = false
             }
-        }else{
+        }else if textField == confirmEmailField{
             if confirmEmailField.text == emailSkyFloatingTextField.text{
                 validateIcon.isHidden = false
+                validateIcon2.isHidden = false
 //                confirmEmailField.errorMessage = nil
                 registerUIButton.isEnabled = true
                 registerUIButton.backgroundColor = #colorLiteral(red: 0.2078431373, green: 0.3921568627, blue: 0.9764705882, alpha: 1)
             }else{
                 validateIcon.isHidden = true
-//                confirmEmailField.errorMessage = "Confirm email is not corect"
+                validateIcon2.isHidden = true
                 registerUIButton.isEnabled = false
                 registerUIButton.backgroundColor = #colorLiteral(red: 0.7647058824, green: 0.7647058824, blue: 0.7647058824, alpha: 1)
             }

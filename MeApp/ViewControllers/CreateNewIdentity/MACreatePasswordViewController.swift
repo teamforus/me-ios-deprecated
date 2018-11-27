@@ -53,11 +53,11 @@ class MACreatePasswordViewController: UIViewController {
                                                         UserDefaults.standard.set("", forKey: ALConstants.kPincode)
                                                         self.performSegue(withIdentifier: "goToWalet", sender: self)
                                                     }else {
-                                                        AlertController.showWarning(withText: "Email already is used", vc: self)
+                                                        AlertController.showWarning(withText: "This email is already used".localized(), vc: self)
                                                     }
                                                     
             }, failure: { (error) in
-                AlertController.showWarning(withText: "Something go wrong, please try again!", vc: self)
+                AlertController.showWarning(withText: "Something went wrong, please try again…".localized(), vc: self)
             })
         }else{
             AlertController.showInternetUnable(vc: self)

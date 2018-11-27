@@ -17,6 +17,7 @@ protocol MAConfirmationTransactionViewControllerDelegate: class {
 class MAConfirmationTransactionViewController: MABasePopUpViewController {
     @IBOutlet weak var requestButton: ShadowButton!
     var tabController: UITabBarController!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var insuficientAmountLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var bodyView: CustomCornerUIView!
@@ -33,58 +34,73 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
         return presenter
     }()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//
-       
-        
         if voucher.product != nil {
-            amountLabel.text = voucher.product?.price ?? "0.0"
+            if self.getLanguageISO() == "en"{
+                titleLabel.text = "Confirm transaction"
+                amountLabel.text = "Are you sure you want to request €\(voucher.product?.price ?? "0.0")?"
+            }else if self.getLanguageISO() == "nl"{
+                titleLabel.text = "Bevestig betaling"
+                amountLabel.text = "Wil je de transactie van €\(voucher.product?.price ?? "0.0") bevestigen?"
+            }
             var reactBodyView = bodyView.frame
             reactBodyView.size.height = reactBodyView.size.height - 36
             bodyView.frame = reactBodyView
             insuficientAmountLabel.isHidden = true
         }else{
-            amountLabel.text = amount
+//            amountLabel.text = "€\(amount ?? "0.0")?"
             let amountVoucher = Double(voucher.amount)!
             aditionalAmount = Double(amount.replacingOccurrences(of: ",", with: "."))! - amountVoucher
+            if self.getLanguageISO() == "en"{
+                titleLabel.text = " Confirm transaction"
+                amountLabel.text = "Please confirm the transaction of €\(amount.replacingOccurrences(of: ",", with: "."))."
+            }else if self.getLanguageISO() == "nl"{
+                titleLabel.text = "Bevestig transactie"
+                amountLabel.text =  "Is het bedrag van €\(amount.replacingOccurrences(of: ",", with: ".")) correct?"
+            }
             if Double(amount.replacingOccurrences(of: ",", with: "."))! > amountVoucher{
                 requestButton.isEnabled = false
                 requestButton.backgroundColor = #colorLiteral(red: 0.7646217346, green: 0.764754355, blue: 0.7646133304, alpha: 1)
-                insuficientAmountLabel.text = String(format: "Insufficient funds on the voucher.  Please, request extra payment of €%.02f", aditionalAmount)
+                if self.getLanguageISO() == "en"{
+                    insuficientAmountLabel.text = String(format:"Insufficient funds on the voucher. Please, request extra payment of"+"€%.02f", aditionalAmount)
+                }else if self.getLanguageISO() == "nl"{
+                    insuficientAmountLabel.text = String(format:"Onvoldoende budget op de voucher. Vraag de klant of hij een bedrag van"+"€%.02f"+" wilt bijbetalen.", aditionalAmount)
+                }
             }else{
-            var reactBodyView = bodyView.frame
-            reactBodyView.size.height = reactBodyView.size.height - 36
-            bodyView.frame = reactBodyView
-            insuficientAmountLabel.isHidden = true
+                var reactBodyView = bodyView.frame
+                reactBodyView.size.height = reactBodyView.size.height - 36
+                bodyView.frame = reactBodyView
+                insuficientAmountLabel.isHidden = true
             }
         }
     }
-
+    
     @IBAction func requestTransaction(_ sender: Any) {
         if voucher.product == nil {
-                    let parameters: Parameters = [
-                        "organization_id" : voucher.allowedOrganizations!.first?.id ?? 0,
-                        "amount" : amount.replacingOccurrences(of: ",", with: "."),
-                        "note" : note ?? ""]
-                    TransactionVoucherRequest.makeTransaction(parameters: parameters, identityAdress: addressVoucher, completion: { (transaction, statusCode) in
-                        if statusCode == 201{
-                            let alert: UIAlertController
-                            alert = UIAlertController(title: "Success!", message: "Payment succeeded ", preferredStyle: .alert)
-                            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                                self.tabController.selectedIndex = 0
-                                self.presentingViewController?
-                                    .presentingViewController?.dismiss(animated: true, completion: {
-                                        
-                                    })
-                            }))
-                            self.present(alert, animated: true, completion: nil)
-                        }else if statusCode == 422 {
-                            AlertController.showWarning(withText: "Voucher not have enough funds", vc: self)
-                        }
-                    }) { (error) in
-                    }
-            }else{
+            let parameters: Parameters = [
+                "organization_id" : voucher.allowedOrganizations!.first?.id ?? 0,
+                "amount" : amount.replacingOccurrences(of: ",", with: "."),
+                "note" : note ?? ""]
+            TransactionVoucherRequest.makeTransaction(parameters: parameters, identityAdress: addressVoucher, completion: { (transaction, statusCode) in
+                if statusCode == 201{
+                    let alert: UIAlertController
+                    alert = UIAlertController(title: "Success".localized(), message: "Payment succeeded".localized(), preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                        self.tabController.selectedIndex = 0
+                        self.presentingViewController?
+                            .presentingViewController?.dismiss(animated: true, completion: {
+                                
+                            })
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                }else if statusCode == 422 {
+                    AlertController.showWarning(withText: "Voucher not have enough funds", vc: self)
+                }
+            }) { (error) in
+            }
+        }else{
             let parameters: Parameters = [
                 "organization_id" : voucher.product?.organization.id ?? 0,
                 "amount" : voucher.amount ?? "0.0",
@@ -92,7 +108,7 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
             TransactionVoucherRequest.makeTransaction(parameters: parameters, identityAdress: addressVoucher, completion: { (transaction, statusCode) in
                 if statusCode == 201{
                     let alert: UIAlertController
-                    alert = UIAlertController(title: "Success!", message: "Payment succeeded ", preferredStyle: .alert)
+                    alert = UIAlertController(title: "Success".localized(), message: "Payment succeeded".localized(), preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
                         self.tabController.selectedIndex = 0
                         self.presentingViewController?
@@ -113,13 +129,20 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
     }
     
     /*
-    // MARK: - Navigation
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension UIViewController{
+    
+     func getLanguageISO() -> String {
+        return Locale.current.languageCode!
     }
-    */
-
 }

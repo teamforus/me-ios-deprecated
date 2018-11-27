@@ -2,7 +2,7 @@
 /* Class = "UILabel"; text = "Nieuwe"; ObjectID = "0RO-Fr-8TE"; */
 "0RO-Fr-8TE.text" = "New";
 
-/* Class = "UITabBarItem"; title = "Eigendom"; ObjectID = "0sK-og-sJQ"; */
+/* Class = "UITabBarItem"; title = "Vouchers"; ObjectID = "0sK-og-sJQ"; */
 "0sK-og-sJQ.title" = "Vouchers";
 
 /* Class = "UILabel"; text = "5 records"; ObjectID = "2oP-0e-z3e"; */
@@ -38,7 +38,7 @@
 /* Class = "UILabel"; text = "OFFICE"; ObjectID = "Nsu-ze-VqX"; */
 "Nsu-ze-VqX.text" = "OFFICE";
 
-/* Class = "UILabel"; text = "Eigendom"; ObjectID = "P1l-mS-jj2"; */
+/* Class = "UILabel"; text = "Vouchers"; ObjectID = "P1l-mS-jj2"; */
 "P1l-mS-jj2.text" = "Vouchers";
 
 /* Class = "UILabel"; text = "2 dagen geldig"; ObjectID = "PaZ-DR-I5J"; */
@@ -67,6 +67,9 @@
 
 /* Class = "UILabel"; text = "Favourites"; ObjectID = "nQs-aP-PJ9"; */
 "nQs-aP-PJ9.text" = "Favourites";
+
+/* Class = "UILabel"; text = "Used"; ObjectID = "BUr-0Z-7e9"; */
+"BUr-0Z-7e9.text" = "Used";
 
 /* Class = "UILabel"; text = "Kindpakket"; ObjectID = "s5P-PY-YuN"; */
 "s5P-PY-YuN.text" = "Kindpakket";

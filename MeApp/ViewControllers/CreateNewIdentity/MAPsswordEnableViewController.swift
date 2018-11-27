@@ -26,8 +26,8 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         if !faceIDAvailable(){
-            headLabel.text = "Wil je inloggen met Touch ID"
-            faceIDButton.setTitle("GEBRUIK TOUCH ID", for: .normal)
+            headLabel.text = "Use Touch ID to log in?".localized()
+            faceIDButton.setTitle("Use Touch ID".localized(), for: .normal)
         }
     }
     
@@ -48,8 +48,8 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
         UserDefaults.standard.synchronize()
         var appearance = ALAppearance()
         appearance.image = UIImage(named: "lock")!
-        appearance.title = "Inlogcode"
-        appearance.subtitle = "Vul je inlogcode in \n om Face ID te gebruiken"
+        appearance.title = "Login code".localized()
+        appearance.subtitle = "Enter your login code to use Face ID".localized()
         appearance.isSensorsEnabled = true
         appearance.cancelIsVissible = false
         appearance.delegate = self
@@ -62,8 +62,8 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
         UserDefaults.standard.synchronize()
         var appearance = ALAppearance()
         appearance.image = UIImage(named: "lock")!
-        appearance.title = "Inlogcode"
-        appearance.subtitle = "Maak een inlogcode aan"
+        appearance.title = "Login code".localized()
+        appearance.subtitle = "Enter a new login code".localized()
         appearance.isSensorsEnabled = true
         appearance.cancelIsVissible = false
         appearance.delegate = self
@@ -97,11 +97,11 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
                                                             }) { (error) in }
                                                             self.performSegue(withIdentifier: "goToWalet", sender: self)
                                                         }else {
-                                                            AlertController.showWarning(withText: "Email wordt al gebruikt", vc: self)
+                                                            AlertController.showWarning(withText: "This email is already used".localized(), vc: self)
                                                         }
                                                         
                 }, failure: { (error) in
-                    AlertController.showWarning(withText: "Er ging iets fout, probeer het nogmaals", vc: self)
+                    AlertController.showWarning(withText: "Something went wrong, please try again…".localized(), vc: self)
                 })
             }else{
                 AlertController.showInternetUnable(vc: self)

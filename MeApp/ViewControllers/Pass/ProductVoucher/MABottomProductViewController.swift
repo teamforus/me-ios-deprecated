@@ -55,7 +55,7 @@ class MABottomProductViewController: MABaseViewController , ISHPullUpSizingDeleg
             rect.size.height = 567
             break
         case .inches_5_8:
-            rect.size.height = 567
+            rect.size.height = 650
             break
         default:
             break
