@@ -12,6 +12,7 @@ import SwipeCellKit
 import CoreData
 import Speech
 import Reachability
+import Crashlytics
 import SDWebImage
 enum WalletCase {
     case token
@@ -83,6 +84,13 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        IndentityRequest.requestIndentiy(completion: { (identityAddress, statuCode) in
+            Crashlytics.sharedInstance().setUserIdentifier(identityAddress.address)
+        }) { (error) in
+            
+        }
+        
         self.tabBarController?.tabBar.isHidden = false
         VoucherRequest.getVoucherList(completion: { (response, statusCode) in
             self.vouhers.removeAllObjects()
