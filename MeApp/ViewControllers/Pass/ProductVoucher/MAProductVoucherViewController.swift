@@ -9,18 +9,23 @@
 import UIKit
 import Presentr
 import SafariServices
+import MapKit
 
 class MAProductVoucherViewController: MABaseViewController, SFSafariViewControllerDelegate {
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var organizationIcon: UIImageView!
+    @IBOutlet weak var organizationName: UILabel!
+    @IBOutlet weak var organizationAddress: UILabel!
+    @IBOutlet weak var telephoneNumber: UILabel!
+    @IBOutlet weak var organizationEmailAddress: UIButton!
     @IBOutlet weak var voucherTitleLabel: UILabel!
     @IBOutlet weak var timAvailabelLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var imageBodyView: UIImageView!
     var voucher: Voucher!
+    @IBOutlet weak var mapView: MKMapView!
     var transactions: NSMutableArray! = NSMutableArray()
     @IBOutlet weak var kindPaketQRView: UIView!
     @IBOutlet weak var imageQR: UIImageView!
-    @IBOutlet weak var dateCreatedLabel: UILabel!
     let presenter: Presentr = {
         let presenter = Presentr(presentationType: .alert)
         presenter.transitionType = TransitionType.coverHorizontalFromRight
@@ -36,36 +41,35 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
         imageBodyView.clipsToBounds = false
         self.voucherTitleLabel.text = voucher.product?.name
         self.priceLabel.text = "€ " + (voucher.product?.price)!
-        dateCreatedLabel.text = voucher.createdAt.dateFormaterNormalDate()
         imageQR.generateQRCode(from: "{ \"type\": \"voucher\",\"value\": \"\(voucher.address!)\" }")
+        organizationName.text = voucher.product?.organization.name
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(goToQRReader))
         imageQR.isUserInteractionEnabled = true
         imageQR.addGestureRecognizer(tapGestureRecognizer)
+        let tapGestureRecognizerMap = UITapGestureRecognizer(target: self, action: #selector(goToMap))
+        mapView.addGestureRecognizer(tapGestureRecognizerMap)
+    }
+    
+    @objc func goToMap(){
+        self.performSegue(withIdentifier: "goToMap", sender: nil)
     }
     
     @objc func goToQRReader(){
-        //        self.tabBarController?.selectedIndex = 1
         NotificationCenter.default.post(name: Notification.Name("togleStateWindow"), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
-        self.getTransaction()
+        let circle = MKCircle(center: CLLocationCoordinate2D(latitude:47.0571 , longitude: 28.8941),
+            radius: 1000 as CLLocationDistance)
+        let viewRegion = MKCoordinateRegionMakeWithDistance( CLLocationCoordinate2D(latitude:47.0571 , longitude: 28.8941), 5000, 5000)
+        self.mapView.setRegion(viewRegion, animated: false)
+        mapView.region = viewRegion
+        self.mapView.add(circle)
+        self.mapView.addAnnotation(setAnnotation(lattitude: 47.0571, longitude: 28.8941))
     }
-    
-    func getTransaction(){
-        TransactionVoucherRequest.getTransaction(identityAdress: voucher.address, completion: { (transactions, statusCode) in
-            self.transactions.removeAllObjects()
-            self.transactions.addObjects(from: transactions.sorted(by: { ($0 as! Transactions).created_at.compare(($1 as! Transactions).created_at) == .orderedDescending}))
-            if self.transactions.count == 0 {
-                self.tableView.isHidden = true
-            }
-            self.tableView.reloadData()
-        }) { (error) in
-            
-        }
-    }
+  
     
     @IBAction func showEmailToMe(_ sender: Any) {
         VoucherRequest.sendEmailToVoucher(address: voucher.address, completion: { (statusCode) in
@@ -85,45 +89,49 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
         self.present(safariVC, animated: true, completion: nil)
         safariVC.delegate = self
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
-extension MAProductVoucherViewController: UITableViewDataSource, UITableViewDelegate{
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+extension MAProductVoucherViewController: MKMapViewDelegate{
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if !(annotation is CustomPointAnnotation) {
+            return nil
+        }
+        let reuseId = "annotation"
+        var anView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
+        if anView == nil {
+            anView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            anView?.canShowCallout = true
+        }
+        else {
+            anView?.annotation = annotation
+        }
+        let cpa = annotation as! CustomPointAnnotation
+        anView?.image = UIImage(named:cpa.imageName)
+        
+        return anView
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.transactions.count
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let circle = MKCircleRenderer(overlay: overlay)
+        circle.strokeColor = #colorLiteral(red: 0.3073092699, green: 0.4766488671, blue: 0.9586974978, alpha: 1)
+        circle.fillColor = #colorLiteral(red: 0.746714294, green: 0.8004079461, blue: 0.9871394038, alpha: 0.7)
+        circle.lineWidth = 1
+        return circle
     }
+}
+
+extension MAProductVoucherViewController{
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PassTableViewCell
-        let transaction = self.transactions[indexPath.row] as! Transactions
-        cell.companyTitle.text = transaction.organization.name
-        cell.priceLabel.text = "- \(transaction.amount!)"
-        cell.dateLabel.text = transaction.created_at.dateFormaterNormalDate()
-        cell.selectionStyle = .none
-        return cell
+    func setAnnotation(lattitude: Double, longitude: Double) -> CustomPointAnnotation{
+        let annotation = CustomPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2DMake(lattitude, longitude)
+        annotation.imageName = "carLocation"
+        return annotation
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let popOverVC = TransactionViewController(nibName: "TransactionViewController", bundle: nil)
-//        popOverVC.transaction = self.transactions[indexPath.row] as? Transactions
-//        self.addChildViewController(popOverVC)
-//        popOverVC.view.frame = self.view.frame
-//        self.view.addSubview(popOverVC.view)
-//        popOverVC.didMove(toParentViewController: self)
-//        tableView.deselectRow(at: indexPath, animated: true)
-    }
+}
+
+
+class CustomPointAnnotation: MKPointAnnotation {
+    var imageName: String!
 }

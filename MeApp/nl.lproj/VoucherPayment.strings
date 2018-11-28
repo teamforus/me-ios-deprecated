@@ -36,7 +36,7 @@
 "p2M-pj-GtD.text" = "Kindpakket";
 
 /* Class = "UITextField"; placeholder = "Note"; ObjectID = "r0l-e8-gTo"; */
-"r0l-e8-gTo.placeholder" = "Omschrijving";
+"r0l-e8-gTo.placeholder" = "Uw persoonlijke notitie";
 
 /* Class = "UILabel"; text = " Redeem Voucher"; ObjectID = "rrc-Ki-Lfi"; */
 "rrc-Ki-Lfi.text" = "Betalingsverzoek";
