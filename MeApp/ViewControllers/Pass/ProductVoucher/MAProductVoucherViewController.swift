@@ -10,6 +10,7 @@ import UIKit
 import Presentr
 import SafariServices
 import MapKit
+import MarqueeLabel
 
 class MAProductVoucherViewController: MABaseViewController, SFSafariViewControllerDelegate {
     @IBOutlet weak var organizationIcon: UIImageView!
@@ -17,7 +18,7 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
     @IBOutlet weak var organizationAddress: UILabel!
     @IBOutlet weak var telephoneNumber: UILabel!
     @IBOutlet weak var organizationEmailAddress: UIButton!
-    @IBOutlet weak var voucherTitleLabel: UILabel!
+    @IBOutlet weak var voucherTitleLabel: MarqueeLabel!
     @IBOutlet weak var timAvailabelLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var imageBodyView: UIImageView!
@@ -40,9 +41,11 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
         imageBodyView.layer.shadowRadius = 10.0
         imageBodyView.clipsToBounds = false
         self.voucherTitleLabel.text = voucher.product?.name
+        voucherTitleLabel.type = .continuous
         self.priceLabel.text = "€ " + (voucher.product?.price)!
         imageQR.generateQRCode(from: "{ \"type\": \"voucher\",\"value\": \"\(voucher.address!)\" }")
         organizationName.text = voucher.product?.organization.name
+        
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(goToQRReader))
         imageQR.isUserInteractionEnabled = true
         imageQR.addGestureRecognizer(tapGestureRecognizer)

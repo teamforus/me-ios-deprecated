@@ -58,6 +58,7 @@ PODS:
   - IQKeyboardManagerSwift (5.0.7)
   - ISHPullUp (1.0.7)
   - JSONCodable (3.0.1)
+  - MarqueeLabel/Swift (3.2.0)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
@@ -104,6 +105,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - ISHPullUp
   - JSONCodable
+  - MarqueeLabel/Swift
   - Presentr
   - QRCodeReader.swift
   - ReachabilitySwift
@@ -147,6 +149,7 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 30fb3a61de1af53a95e02b80fb54ed0a19d5ede5
   ISHPullUp: eaa91bef06270264e1f923bc764705173d341495
   JSONCodable: bd8616ae881befe2b82fbbf56d98b2dd377ac662
+  MarqueeLabel: 440a502b91a9179bd98f9fff00ba1150650a1c0e
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Presentr: 3f0825a42cb32ecd8fc6b6d0b0de87d7d0b42482
   PromiseKit: 6788ce1a0ed5448b83d4aaf56b9fc49fb7647d32
@@ -161,6 +164,6 @@ SPEC CHECKSUMS:
   Web3: 1f0c38c8508b8487948af1cb597653b018f4b5d3
   web3swift: 9cf4ccef0c7f7e9f9abb3bc5867789b928800af6
 
-PODFILE CHECKSUM: 1f3616e53ca5a20016ffaf648afc5c1324cb934c
+PODFILE CHECKSUM: 6e41537419454e8c8d58bb0faaaf4bf68509e060
 
 COCOAPODS: 1.4.0
