@@ -255,9 +255,9 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYv-0d-o7w">
-                                                        <rect key="frame" x="307" y="8" width="46" height="30"/>
+                                                        <rect key="frame" x="310" y="8" width="41" height="30"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <state key="normal" title="Button"/>
+                                                        <state key="normal" title="Crash"/>
                                                         <connections>
                                                             <action selector="crash:" destination="LGi-pg-qjE" eventType="touchUpInside" id="JWY-bH-iwC"/>
                                                         </connections>
