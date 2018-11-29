@@ -66,3 +66,6 @@
 "Press settings to give an access or cancel to close this window." = "Druk op instellingen om toegang te geven of druk op annuleren om dit venster te sluiten.";
 "Settings" = "Instellingen";
 "Scanning successfully!" = "Het scannen van de QR-code is gelukt";
+"Address" = "Adres";
+"Copy address" = "Adres kopiëren";
+"Copied to clipboard" = "Gekopieerd";

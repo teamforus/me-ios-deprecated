@@ -9,6 +9,7 @@
 import UIKit
 import Presentr
 import SafariServices
+import MarqueeLabel
 
 class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
     @IBOutlet weak var searchField: UITextField!
@@ -22,7 +23,7 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
     var transactions: NSMutableArray! = NSMutableArray()
     var gestureRecognizer: UIGestureRecognizer!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var voucherTitleLabel: UILabel!
+    @IBOutlet weak var voucherTitleLabel: MarqueeLabel!
     @IBOutlet weak var timAvailabelLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var imageBodyView: UIImageView!

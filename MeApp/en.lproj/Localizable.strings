@@ -66,3 +66,6 @@
 "Press settings to give an access or cancel to close this window." = "Press settings to give an access or cancel to close this window.";
 "Settings" = "Settings";
 "Scanning successfully!" = "QR-code was recognized";
+"Address" = "Address";
+"Copy address" = "Copy address";
+"Copied to clipboard" = "Copied to clipboard";

@@ -45,7 +45,7 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
         self.priceLabel.text = "€ " + (voucher.product?.price)!
         imageQR.generateQRCode(from: "{ \"type\": \"voucher\",\"value\": \"\(voucher.address!)\" }")
         organizationName.text = voucher.product?.organization.name
-        
+        organizationIcon.sd_setImage(with: URL(string: voucher.found.logo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(goToQRReader))
         imageQR.isUserInteractionEnabled = true
         imageQR.addGestureRecognizer(tapGestureRecognizer)
@@ -54,11 +54,38 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
     }
     
     @objc func goToMap(){
-        self.performSegue(withIdentifier: "goToMap", sender: nil)
+//        self.performSegue(withIdentifier: "goToMap", sender: nil)
+        let actionSheet = UIAlertController.init(title: "Address".localized(), message: nil, preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction.init(title: "Open in Apple Maps", style: UIAlertActionStyle.default, handler: { (action) in
+            self.openMapForPlace(lattitude: 47.0571, longitude: 28.8941)
+        }))
+        actionSheet.addAction(UIAlertAction.init(title: "Open in Google Maps", style: UIAlertActionStyle.default, handler: { (action) in
+            if (UIApplication.shared.canOpenURL(URL(string:"https://maps.google.com")!))
+            {
+                UIApplication.shared.open(URL(string:
+                    "https://maps.google.com/?q=@47.0571,28.8941")!, options: [:], completionHandler: { (succes) in
+                })
+            }
+        }))
+        actionSheet.addAction(UIAlertAction.init(title: "Copy address".localized(), style: UIAlertActionStyle.default, handler: { (action) in
+            UIPasteboard.general.string = "Copied address"
+            self.showSimpleToast(message: "Copied to clipboard".localized())
+        }))
+        actionSheet.addAction(UIAlertAction.init(title: "Cancel".localized(), style: UIAlertActionStyle.cancel, handler: { (action) in
+        }))
+        //Present the controller
+        self.present(actionSheet, animated: true, completion: nil)
     }
     
     @objc func goToQRReader(){
         NotificationCenter.default.post(name: Notification.Name("togleStateWindow"), object: nil)
+    }
+    
+    
+    @IBAction func callPhone(_ sender: Any) {
+        guard let number = URL(string: "tel://" + "0615261612") else { return }
+        UIApplication.shared.open(number)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -131,6 +158,24 @@ extension MAProductVoucherViewController{
         annotation.coordinate = CLLocationCoordinate2DMake(lattitude, longitude)
         annotation.imageName = "carLocation"
         return annotation
+    }
+    
+    func openMapForPlace(lattitude: Double, longitude: Double) {
+        
+        let latitude: CLLocationDegrees = lattitude
+        let longitude: CLLocationDegrees = longitude
+        
+        let regionDistance:CLLocationDistance = 10000
+        let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
+        let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
+        let options = [
+            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+        ]
+        let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = "Address Name"
+        mapItem.openInMaps(launchOptions: options)
     }
 }
 
