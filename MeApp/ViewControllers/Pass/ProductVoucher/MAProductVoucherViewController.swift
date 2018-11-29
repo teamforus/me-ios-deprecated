@@ -60,7 +60,12 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
             self.openMapForPlace(lattitude: 47.0571, longitude: 28.8941)
         }))
         actionSheet.addAction(UIAlertAction.init(title: "Open in Google Maps", style: UIAlertActionStyle.default, handler: { (action) in
-            if (UIApplication.shared.canOpenURL(URL(string:"https://maps.google.com")!))
+            if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!))
+            {
+                UIApplication.shared.open(URL(string:
+                    "comgooglemaps://?saddr=&daddr=47.0571,28.8941&directionsmode=driving")!, options: [:], completionHandler: { (succes) in
+                })
+            } else if (UIApplication.shared.canOpenURL(URL(string:"https://maps.google.com")!))
             {
                 UIApplication.shared.open(URL(string:
                     "https://maps.google.com/?q=@47.0571,28.8941")!, options: [:], completionHandler: { (succes) in
