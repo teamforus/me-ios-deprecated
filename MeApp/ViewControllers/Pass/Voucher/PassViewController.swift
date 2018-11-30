@@ -64,21 +64,24 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
-        self.getTransaction()
+        self.transactions.addObjects(from: voucher.transactions.sorted(by: { ($0).created_at.compare(($1).created_at) == .orderedDescending}))
+        self.transactions.addObjects(from: voucher.productVoucher!.sorted(by: { ($0).createdAt.compare(($1).createdAt) == .orderedDescending}))
+        
+        
     }
     
-    func getTransaction(){
-        TransactionVoucherRequest.getTransaction(identityAdress: voucher.address, completion: { (transactions, statusCode) in
-            self.transactions.removeAllObjects()
-            self.transactions.addObjects(from: transactions.sorted(by: { ($0 as! Transactions).created_at.compare(($1 as! Transactions).created_at) == .orderedDescending}))
-            if self.transactions.count == 0 {
-                self.tableView.isHidden = true
-            }
-            self.tableView.reloadData()
-        }) { (error) in
-            
-        }
-    }
+//    func getTransaction(){
+//        TransactionVoucherRequest.getTransaction(identityAdress: voucher.address, completion: { (transactions, statusCode) in
+//            self.transactions.removeAllObjects()
+//            self.transactions.addObjects(from: transactions.sorted(by: { ($0 as! Transactions).created_at.compare(($1 as! Transactions).created_at) == .orderedDescending}))
+//            if self.transactions.count == 0 {
+//                self.tableView.isHidden = true
+//            }
+//            self.tableView.reloadData()
+//        }) { (error) in
+//
+//        }
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -118,22 +121,48 @@ extension PassViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PassTableViewCell
-        let transaction = self.transactions[indexPath.row] as! Transactions
-        cell.companyTitle.text = transaction.organization.name
-        cell.priceLabel.text = "- \(transaction.amount!)"
-        cell.dateLabel.text = transaction.created_at.dateFormaterNormalDate()
+        let transactions = self.transactions[indexPath.row]
+        
+        if transactions is Transactions{
+            let transaction = transactions as! Transactions
+            if transaction.product != nil {
+                cell.companyTitle.text = transaction.product.name
+            }else{
+                cell.companyTitle.text = transaction.organization.name
+            }
+            if transaction.organization.logo != nil {
+                cell.imageTransfer.sd_setImage(with: URL(string: transaction.organization.logo?.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+            }else{
+                cell.imageTransfer.image = UIImage(named: "Resting")
+            }
+            cell.priceLabel.text = "- \(transaction.amount!)"
+            cell.dateLabel.text = transaction.created_at.dateFormaterNormalDate()
+
+        }else if transactions is Voucher{
+            let productTransaction = transactions as! Voucher
+                cell.companyTitle.text = productTransaction.product?.name
+            if productTransaction.product?.photo != nil {
+                cell.imageTransfer.sd_setImage(with: URL(string: productTransaction.product?.photo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+            }else{
+                cell.imageTransfer.image = UIImage(named: "Resting")
+            }
+            cell.priceLabel.text = "- \(productTransaction.amount!)"
+            cell.dateLabel.text = productTransaction.createdAt.dateFormaterNormalDate()
+
+        }
+        
         cell.selectionStyle = .none
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let popOverVC = TransactionViewController(nibName: "TransactionViewController", bundle: nil)
-//        popOverVC.transaction = self.transactions[indexPath.row] as? Transactions
-//        self.addChildViewController(popOverVC)
-//        popOverVC.view.frame = self.view.frame
-//        self.view.addSubview(popOverVC.view)
-//        popOverVC.didMove(toParentViewController: self)
-//        tableView.deselectRow(at: indexPath, animated: true)
+        //        let popOverVC = TransactionViewController(nibName: "TransactionViewController", bundle: nil)
+        //        popOverVC.transaction = self.transactions[indexPath.row] as? Transactions
+        //        self.addChildViewController(popOverVC)
+        //        popOverVC.view.frame = self.view.frame
+        //        self.view.addSubview(popOverVC.view)
+        //        popOverVC.didMove(toParentViewController: self)
+        //        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

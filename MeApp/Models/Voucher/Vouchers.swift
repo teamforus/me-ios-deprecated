@@ -23,6 +23,9 @@ struct Voucher {
     var allowedProductCategories: Array<AllowedProductCategories>?
     var allowedProducts: Array<AllowedProducts>?
     var product: ProductVoucher?
+    var url_webshop: String?
+    var productVoucher: Array<Voucher>?
+    var offices: Array<Office>?
 }
 
 extension Voucher: JSONDecodable{
@@ -32,6 +35,7 @@ extension Voucher: JSONDecodable{
         identityAdress = try decoder.decode("identity_address")
         address = try decoder.decode("address")
         amount = try decoder.decode("amount")
+        url_webshop = try decoder.decode("url_webshop")
         found = try decoder.decode("fund")
         transactions = try decoder.decode("transactions")
         allowedOrganizations = try decoder.decode("allowed_organizations")
@@ -40,6 +44,31 @@ extension Voucher: JSONDecodable{
         product = try decoder.decode("product")
         createdAtLocale = try decoder.decode("created_at_locale")
         createdAt = try decoder.decode("created_at")
+        productVoucher = try decoder.decode("product_vouchers")
+        offices = try decoder.decode("offices")
+    }
+}
+
+struct Office {
+    var id: Int!
+    var address: String!
+    var phone: String?
+    var lon: String!
+    var organization: Organization!
+    var lat: String?
+    var photo: Logo!
+}
+
+extension Office: JSONDecodable{
+    init(object: JSONObject) throws {
+        let decoder = JSONDecoder(object:object)
+        id = try decoder.decode("id")
+        address = try decoder.decode("address")
+        phone = try decoder.decode("phone")
+        lon = try decoder.decode("lon")
+        lat = try decoder.decode("lat")
+        photo = try decoder.decode("photo")
+        organization = try decoder.decode("organization")
     }
 }
 

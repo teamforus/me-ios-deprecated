@@ -245,6 +245,7 @@
 		65CC8C01218077D30084AA34 /* MARequesterPaymentPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CC8BFF218077D30084AA34 /* MARequesterPaymentPopUpViewController.swift */; };
 		65CC8C02218077D30084AA34 /* MARequesterPaymentPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65CC8C00218077D30084AA34 /* MARequesterPaymentPopUpViewController.xib */; };
 		65D2B58B219AE30000EA5162 /* SwitchCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D2B58A219AE30000EA5162 /* SwitchCustom.swift */; };
+		65D5CDE821B1341500EB855A /* CornerImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D5CDE721B1341400EB855A /* CornerImageView.swift */; };
 		65DC02222138314C00FDD4A3 /* Formater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DC02212138314B00FDD4A3 /* Formater.swift */; };
 		65DCA0B7213311850051F6A3 /* MABottomPersonalQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DCA0B6213311850051F6A3 /* MABottomPersonalQRViewController.swift */; };
 		65DCA0B9213311970051F6A3 /* MAContentPersonalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DCA0B8213311970051F6A3 /* MAContentPersonalDetailViewController.swift */; };
@@ -566,6 +567,7 @@
 		65CC8BFF218077D30084AA34 /* MARequesterPaymentPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MARequesterPaymentPopUpViewController.swift; sourceTree = "<group>"; };
 		65CC8C00218077D30084AA34 /* MARequesterPaymentPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MARequesterPaymentPopUpViewController.xib; sourceTree = "<group>"; };
 		65D2B58A219AE30000EA5162 /* SwitchCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCustom.swift; sourceTree = "<group>"; };
+		65D5CDE721B1341400EB855A /* CornerImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerImageView.swift; sourceTree = "<group>"; };
 		65DC02212138314B00FDD4A3 /* Formater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formater.swift; sourceTree = "<group>"; };
 		65DCA0B6213311850051F6A3 /* MABottomPersonalQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MABottomPersonalQRViewController.swift; sourceTree = "<group>"; };
 		65DCA0B8213311970051F6A3 /* MAContentPersonalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAContentPersonalDetailViewController.swift; sourceTree = "<group>"; };
@@ -1446,6 +1448,7 @@
 				65AC32F52101D9E500633187 /* CustomCornerUIView.swift */,
 				65BD691821246C420098CF9F /* StatusView.swift */,
 				653982742133FC5B003B87FC /* RoundImageView.swift */,
+				65D5CDE721B1341400EB855A /* CornerImageView.swift */,
 				65D2B58A219AE30000EA5162 /* SwitchCustom.swift */,
 			);
 			path = Custom;
@@ -2168,6 +2171,7 @@
 				65B89A8D20B3342E0024DC51 /* MATransactionRedViewController.swift in Sources */,
 				65B89AC420B44B1B0024DC51 /* MAShareVaucherViewController.swift in Sources */,
 				6527C6FE20D16BBC00009704 /* MASendViewController.swift in Sources */,
+				65D5CDE821B1341500EB855A /* CornerImageView.swift in Sources */,
 				6528F01E20E53F3D00DD19C1 /* MALoginEmailViewController.swift in Sources */,
 				658D410221A2ECA600CA4F10 /* HSScanViewController.swift in Sources */,
 				651B5A8C21789DC100C23204 /* MAContenProductVoucherViewController.swift in Sources */,

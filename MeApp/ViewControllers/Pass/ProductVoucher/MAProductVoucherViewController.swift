@@ -11,6 +11,7 @@ import Presentr
 import SafariServices
 import MapKit
 import MarqueeLabel
+import MessageUI
 
 class MAProductVoucherViewController: MABaseViewController, SFSafariViewControllerDelegate {
     @IBOutlet weak var organizationIcon: UIImageView!
@@ -20,7 +21,10 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
     @IBOutlet weak var organizationEmailAddress: UIButton!
     @IBOutlet weak var voucherTitleLabel: MarqueeLabel!
     @IBOutlet weak var timAvailabelLabel: UILabel!
+    @IBOutlet weak var phoneButton: UIButton!
     @IBOutlet weak var priceLabel: UILabel!
+    var latitude: Double!
+    var long: Double!
     @IBOutlet weak var imageBodyView: UIImageView!
     var voucher: Voucher!
     @IBOutlet weak var mapView: MKMapView!
@@ -40,40 +44,88 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
         imageBodyView.layer.shadowOpacity = 0.1
         imageBodyView.layer.shadowRadius = 10.0
         imageBodyView.clipsToBounds = false
+        organizationAddress.text = voucher.offices?.first?.address
+        telephoneNumber.text = voucher.offices?.first?.phone ?? "No phone number"
+        organizationEmailAddress.setTitle(voucher.offices?.first?.organization.email, for: .normal)
+        
         self.voucherTitleLabel.text = voucher.product?.name
         voucherTitleLabel.type = .continuous
         self.priceLabel.text = "€ " + (voucher.product?.price)!
         imageQR.generateQRCode(from: "{ \"type\": \"voucher\",\"value\": \"\(voucher.address!)\" }")
         organizationName.text = voucher.product?.organization.name
+        
         organizationIcon.sd_setImage(with: URL(string: voucher.found.logo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+        if let latitudeValue = self.voucher.offices?.first?.lat, let lat = Double(latitudeValue) {
+            latitude = lat
+        }
+        
+        if voucher.offices?.first?.phone == nil {
+            phoneButton.isHidden = true
+        }
+        
+        if let longitudeValue = self.voucher.offices?.first?.lon, let lon = Double(longitudeValue) {
+            long = lon
+        }
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(goToQRReader))
         imageQR.isUserInteractionEnabled = true
         imageQR.addGestureRecognizer(tapGestureRecognizer)
         let tapGestureRecognizerMap = UITapGestureRecognizer(target: self, action: #selector(goToMap))
         mapView.addGestureRecognizer(tapGestureRecognizerMap)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(Tap))
+        let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(Long))
+        tapGesture.numberOfTapsRequired = 1
+        organizationEmailAddress.addGestureRecognizer(tapGesture)
+        organizationEmailAddress.addGestureRecognizer(longGesture)
+        
+        if !MFMailComposeViewController.canSendMail() {
+            AlertController.showWarning(withText: "Mail services are not available", vc: self)
+            return
+        }
+    }
+    
+    @objc func Tap() {
+        if MFMailComposeViewController.canSendMail() {
+            let composeVC = MFMailComposeViewController()
+            composeVC.mailComposeDelegate = self
+            composeVC.setToRecipients([(voucher.offices?.first?.organization.email)!])
+            composeVC.setSubject("Message Subject")
+            composeVC.setMessageBody("Message content.", isHTML: false)
+            self.present(composeVC, animated: true, completion: nil)
+        }else{
+            AlertController.showWarning(withText: "Mail services are not available", vc: self)
+        }
+    }
+    
+    @objc func Long() {
+        UIPasteboard.general.string = self.voucher.offices?.first?.organization.email
+        self.showSimpleToast(message: "Copied to clipboard".localized())
     }
     
     @objc func goToMap(){
-//        self.performSegue(withIdentifier: "goToMap", sender: nil)
+        
+        
+        //        self.performSegue(withIdentifier: "goToMap", sender: nil)
         let actionSheet = UIAlertController.init(title: "Address".localized(), message: nil, preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction.init(title: "Open in Apple Maps", style: UIAlertActionStyle.default, handler: { (action) in
-            self.openMapForPlace(lattitude: 47.0571, longitude: 28.8941)
+            
+            self.openMapForPlace(lattitude: self.latitude, longitude: self.long)
         }))
         actionSheet.addAction(UIAlertAction.init(title: "Open in Google Maps", style: UIAlertActionStyle.default, handler: { (action) in
             if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!))
             {
                 UIApplication.shared.open(URL(string:
-                    "comgooglemaps://?saddr=&daddr=47.0571,28.8941&directionsmode=driving")!, options: [:], completionHandler: { (succes) in
+                    "comgooglemaps://?saddr=&daddr=\(self.latitude!),\(self.long!)&directionsmode=driving")!, options: [:], completionHandler: { (succes) in
                 })
             } else if (UIApplication.shared.canOpenURL(URL(string:"https://maps.google.com")!))
             {
                 UIApplication.shared.open(URL(string:
-                    "https://maps.google.com/?q=@47.0571,28.8941")!, options: [:], completionHandler: { (succes) in
+                    "https://maps.google.com/?q=@\(self.latitude!),\(self.long!)")!, options: [:], completionHandler: { (succes) in
                 })
             }
         }))
         actionSheet.addAction(UIAlertAction.init(title: "Copy address".localized(), style: UIAlertActionStyle.default, handler: { (action) in
-            UIPasteboard.general.string = "Copied address"
+            UIPasteboard.general.string = self.voucher.offices?.first?.address
             self.showSimpleToast(message: "Copied to clipboard".localized())
         }))
         actionSheet.addAction(UIAlertAction.init(title: "Cancel".localized(), style: UIAlertActionStyle.cancel, handler: { (action) in
@@ -88,23 +140,22 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
     
     
     @IBAction func callPhone(_ sender: Any) {
-        guard let number = URL(string: "tel://" + "0615261612") else { return }
+        guard let number = URL(string: "tel://" + (voucher.offices?.first?.phone!)!) else { return }
         UIApplication.shared.open(number)
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
-        let circle = MKCircle(center: CLLocationCoordinate2D(latitude:47.0571 , longitude: 28.8941),
-            radius: 1000 as CLLocationDistance)
-        let viewRegion = MKCoordinateRegionMakeWithDistance( CLLocationCoordinate2D(latitude:47.0571 , longitude: 28.8941), 5000, 5000)
+        let circle = MKCircle(center: CLLocationCoordinate2D(latitude:latitude , longitude: long),
+                              radius: 1000 as CLLocationDistance)
+        let viewRegion = MKCoordinateRegionMakeWithDistance( CLLocationCoordinate2D(latitude:latitude , longitude: long), 5000, 5000)
         self.mapView.setRegion(viewRegion, animated: false)
         mapView.region = viewRegion
         self.mapView.add(circle)
-        self.mapView.addAnnotation(setAnnotation(lattitude: 47.0571, longitude: 28.8941))
+        self.mapView.addAnnotation(setAnnotation(lattitude: latitude, longitude: long))
     }
-  
+    
     
     @IBAction func showEmailToMe(_ sender: Any) {
         VoucherRequest.sendEmailToVoucher(address: voucher.address, completion: { (statusCode) in
@@ -124,7 +175,7 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
         self.present(safariVC, animated: true, completion: nil)
         safariVC.delegate = self
     }
-
+    
 }
 
 extension MAProductVoucherViewController: MKMapViewDelegate{
@@ -181,6 +232,13 @@ extension MAProductVoucherViewController{
         let mapItem = MKMapItem(placemark: placemark)
         mapItem.name = "Address Name"
         mapItem.openInMaps(launchOptions: options)
+    }
+}
+
+extension MAProductVoucherViewController: MFMailComposeViewControllerDelegate{
+    func mailComposeController(_ controller: MFMailComposeViewController,
+                               didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }
 
