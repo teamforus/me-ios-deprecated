@@ -80,16 +80,23 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
     }
     
     @IBAction func showEmailToMe(_ sender: Any) {
-        VoucherRequest.sendEmailToVoucher(address: voucher.address, completion: { (statusCode) in
-            let popupTransction =  MARegistrationSuccessViewController(nibName: "MARegistrationSuccessViewController", bundle: nil)
-            self.presenter.presentationType = .popup
-            self.presenter.transitionType = nil
-            self.presenter.dismissTransitionType = nil
-            self.presenter.keyboardTranslationType = .compress
-            self.customPresentViewController(self.presenter, viewController: popupTransction, animated: true, completion: nil)
-        }) { (error) in
-            
-        }
+        let alert: UIAlertController
+        alert = UIAlertController(title: "", message: "Send the voucher to your email?".localized(), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Confirm".localized(), style: .default, handler: { (action) in
+            VoucherRequest.sendEmailToVoucher(address: self.voucher.address, completion: { (statusCode) in
+                let popupTransction =  MARegistrationSuccessViewController(nibName: "MARegistrationSuccessViewController", bundle: nil)
+                self.presenter.presentationType = .popup
+                self.presenter.transitionType = nil
+                self.presenter.dismissTransitionType = nil
+                self.presenter.keyboardTranslationType = .compress
+                self.customPresentViewController(self.presenter, viewController: popupTransction, animated: true, completion: nil)
+            }) { (error) in
+                
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .default, handler: { (action) in
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func showAmmount(_ sender: Any) {

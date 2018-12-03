@@ -179,7 +179,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
                 composeVC.setMessageBody("", isHTML: false)
                 self.present(composeVC, animated: true, completion: nil)
             }else{
-                AlertController.showWarning(withText: "Mail services are not available", vc: self)
+                AlertController.showWarning(withText: "Mail services are not available".localized(), vc: self)
             }
         }))
         alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .default, handler: { (action) in

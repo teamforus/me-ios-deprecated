@@ -100,7 +100,7 @@ class MAContentVoucherPaymentViewController: MABaseViewController, MAConfirmatio
         if voucher.product != nil{
             goToTrnasctionConfirm()
         }else if amount.text == ""{
-            AlertController.showWarning(withText: "Please enter the amount ".localized(), vc: self)
+            AlertController.showWarning(withText: "Please enter the amount".localized(), vc: self)
         }else{
             goToTrnasctionConfirm()
         }
