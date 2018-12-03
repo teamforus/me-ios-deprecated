@@ -73,22 +73,7 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
         transactionsArray.addObjects(from: voucher.transactions)
         transactionsArray.addObjects(from: voucher.productVoucher!)
         self.transactions.addObjects(from: transactionsArray.sorted(by: { ($0 as! Transactions).created_at.compare(($1 as! Transactions).created_at) == .orderedDescending}))
-        
-        
     }
-    
-//    func getTransaction(){
-//        TransactionVoucherRequest.getTransaction(identityAdress: voucher.address, completion: { (transactions, statusCode) in
-//            self.transactions.removeAllObjects()
-//            self.transactions.addObjects(from: transactions.sorted(by: { ($0 as! Transactions).created_at.compare(($1 as! Transactions).created_at) == .orderedDescending}))
-//            if self.transactions.count == 0 {
-//                self.tableView.isHidden = true
-//            }
-//            self.tableView.reloadData()
-//        }) { (error) in
-//
-//        }
-//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

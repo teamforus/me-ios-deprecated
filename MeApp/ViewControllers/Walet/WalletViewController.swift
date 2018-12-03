@@ -254,8 +254,6 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
                     cellWallet.voucherImage.sd_setImage(with: URL(string: voucher.found.logo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
                 }
             }
-            
-            
             cellWallet.organizationNameLabel.text = voucher.found.organization.name
             cell = cellWallet
         default:
