@@ -2514,7 +2514,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = me.forus.io.alpha;
+				PRODUCT_BUNDLE_IDENTIFIER = io.forus.me.alpha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = ALPHA;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -2698,7 +2698,7 @@
 					"@executable_path/Frameworks",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = me.forus.io.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = io.forus.me.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEV;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -2890,7 +2890,7 @@
 					"@executable_path/Frameworks",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = me.forus.io.beta;
+				PRODUCT_BUNDLE_IDENTIFIER = io.forus.me.beta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEMO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
