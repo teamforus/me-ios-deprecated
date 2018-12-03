@@ -16,7 +16,7 @@ struct Transactions {
     var amount: String!
     var adress: String!
     var organization: Organization!
-    var product: Product!
+    var product: ProductVoucher!
     var created_at: String!
 }
 

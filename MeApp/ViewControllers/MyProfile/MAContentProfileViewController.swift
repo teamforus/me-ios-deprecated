@@ -14,6 +14,7 @@ import Reachability
 import Presentr
 import AssistantKit
 import Crashlytics
+import MessageUI
 
 class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -23,6 +24,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     @IBOutlet weak var faceIdImage: UIImageView!
     @IBOutlet weak var bottonConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var supportEmailButton: UIButton!
     @IBOutlet weak var switchScannert: UISwitch!
     @IBOutlet weak var heightBottomViewConstraint: NSLayoutConstraint!
     @IBOutlet weak var faceIdLabel: UILabel!
@@ -164,6 +166,27 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         }
         return false
     }
+    
+    @IBAction func feedBack(_ sender: Any) {
+        let alert: UIAlertController
+        alert = UIAlertController(title: "", message: "Do you realy want to send an e-mail?".localized(), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Confirm".localized(), style: .default, handler: { (action) in
+            if MFMailComposeViewController.canSendMail() {
+                let composeVC = MFMailComposeViewController()
+                composeVC.mailComposeDelegate = self
+                composeVC.setToRecipients(["feedback@forus.io"])
+                composeVC.setSubject("My feedback about the Me app".localized())
+                composeVC.setMessageBody("", isHTML: false)
+                self.present(composeVC, animated: true, completion: nil)
+            }else{
+                AlertController.showWarning(withText: "Mail services are not available", vc: self)
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .default, handler: { (action) in
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -315,6 +338,13 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
                 self.present(navigationController, animated: true, completion: nil)
             }
         }
+    }
+}
+
+extension MAContentProfileViewController: MFMailComposeViewControllerDelegate{
+    func mailComposeController(_ controller: MFMailComposeViewController,
+                               didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }
 

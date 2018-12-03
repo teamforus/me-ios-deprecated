@@ -20,6 +20,7 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
     @IBOutlet weak var telephoneNumber: UILabel!
     @IBOutlet weak var organizationEmailAddress: UIButton!
     @IBOutlet weak var voucherTitleLabel: MarqueeLabel!
+    @IBOutlet weak var infoButton: ShadowButton!
     @IBOutlet weak var timAvailabelLabel: UILabel!
     @IBOutlet weak var phoneButton: UIButton!
     @IBOutlet weak var priceLabel: UILabel!
@@ -39,6 +40,9 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
+        if voucher.found.url_webshop == nil {
+            self.infoButton.isHidden = true
+        }
         imageBodyView.layer.shadowColor = UIColor.black.cgColor
         imageBodyView.layer.shadowOffset = CGSize(width: 0, height: 5)
         imageBodyView.layer.shadowOpacity = 0.1
@@ -85,16 +89,24 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
     }
     
     @objc func Tap() {
-        if MFMailComposeViewController.canSendMail() {
-            let composeVC = MFMailComposeViewController()
-            composeVC.mailComposeDelegate = self
-            composeVC.setToRecipients([(voucher.offices?.first?.organization.email)!])
-            composeVC.setSubject("Message Subject")
-            composeVC.setMessageBody("Message content.", isHTML: false)
-            self.present(composeVC, animated: true, completion: nil)
-        }else{
-            AlertController.showWarning(withText: "Mail services are not available", vc: self)
-        }
+        let alert: UIAlertController
+        alert = UIAlertController(title: "", message: "Do you realy want to send an e-mail?".localized(), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Confirm".localized(), style: .default, handler: { (action) in
+            if MFMailComposeViewController.canSendMail() {
+                let composeVC = MFMailComposeViewController()
+                composeVC.mailComposeDelegate = self
+                composeVC.setToRecipients([(self.voucher.offices?.first?.organization.email)!])
+                composeVC.setSubject("Question from Me user".localized())
+                composeVC.setMessageBody("", isHTML: false)
+                self.present(composeVC, animated: true, completion: nil)
+            }else{
+                AlertController.showWarning(withText: "Mail services are not available", vc: self)
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .default, handler: { (action) in
+        }))
+        self.present(alert, animated: true, completion: nil)
+     
     }
     
     @objc func Long() {
@@ -171,7 +183,7 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
     }
     
     @IBAction func showInfo(_ sender: Any) {
-        let safariVC = SFSafariViewController(url: URL(string: "https://www.zuidhorn.nl/kindpakket")!)
+        let safariVC = SFSafariViewController(url: URL(string: voucher.found.url_webshop!)!)
         self.present(safariVC, animated: true, completion: nil)
         safariVC.delegate = self
     }

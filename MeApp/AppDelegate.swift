@@ -21,8 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 //              Fabric.sharedSDK().debug = true
-              Fabric.with([Crashlytics.self])
+        #if DEBUG
+        #else
+        Fabric.with([Crashlytics.self])
         FirebaseApp.configure()
+        #endif
         if  self.existCurrentUser() {
         let storyboard:UIStoryboard = UIStoryboard(name: "Tabs", bundle: nil)
         let rootViewController:UIViewController = storyboard.instantiateViewController(withIdentifier: "walet") as UIViewController

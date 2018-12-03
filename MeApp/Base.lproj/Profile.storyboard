@@ -213,7 +213,7 @@
                                                 <rect key="frame" x="0.0" y="552" width="375" height="180"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="App version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdB-df-WLS">
-                                                        <rect key="frame" x="26" y="82" width="237" height="21"/>
+                                                        <rect key="frame" x="26" y="93" width="237" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="15"/>
                                                         <nil key="textColor"/>
@@ -237,12 +237,28 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1.0.4" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ewy-kX-3Ek">
-                                                        <rect key="frame" x="207" y="82" width="146" height="21"/>
+                                                        <rect key="frame" x="207" y="93" width="146" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="15"/>
                                                         <color key="textColor" red="0.2470588235" green="0.47843137250000001" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Support" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hlq-ka-2hK" userLabel="Feedback">
+                                                        <rect key="frame" x="26" y="59" width="130" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="15"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fxd-3S-5w0">
+                                                        <rect key="frame" x="207" y="55" width="146" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="15"/>
+                                                        <state key="normal" title="support@mail.nl"/>
+                                                        <connections>
+                                                            <action selector="feedBack:" destination="LGi-pg-qjE" eventType="touchUpInside" id="7hr-Xi-aBK"/>
+                                                        </connections>
+                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6T-de-dXb">
                                                         <rect key="frame" x="26" y="23" width="211" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -367,6 +383,7 @@
                         <outlet property="profileEmailLabel" destination="A2b-ot-985" id="T7J-z4-odq"/>
                         <outlet property="profileImage" destination="oal-H1-nuH" id="33M-CH-eMZ"/>
                         <outlet property="profileNameLabel" destination="Wfm-Qk-FJu" id="ZgP-Sh-KcM"/>
+                        <outlet property="supportEmailButton" destination="Fxd-3S-5w0" id="efQ-gP-EES"/>
                         <outlet property="switchFaceID" destination="YPI-d9-PAw" id="OQN-cU-HRF"/>
                         <outlet property="switchScannert" destination="e3Y-Mv-8pA" id="yap-yB-1rA"/>
                         <outlet property="turnOffPascodeView" destination="SbT-hx-NQg" id="b7u-sB-K5g"/>

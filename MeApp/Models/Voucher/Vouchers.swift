@@ -23,8 +23,7 @@ struct Voucher {
     var allowedProductCategories: Array<AllowedProductCategories>?
     var allowedProducts: Array<AllowedProducts>?
     var product: ProductVoucher?
-    var url_webshop: String?
-    var productVoucher: Array<Voucher>?
+    var productVoucher: Array<Transactions>?
     var offices: Array<Office>?
 }
 
@@ -35,7 +34,6 @@ extension Voucher: JSONDecodable{
         identityAdress = try decoder.decode("identity_address")
         address = try decoder.decode("address")
         amount = try decoder.decode("amount")
-        url_webshop = try decoder.decode("url_webshop")
         found = try decoder.decode("fund")
         transactions = try decoder.decode("transactions")
         allowedOrganizations = try decoder.decode("allowed_organizations")

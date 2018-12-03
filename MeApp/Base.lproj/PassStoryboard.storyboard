@@ -378,7 +378,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f4M-sl-dJO">
-                                                    <rect key="frame" x="9" y="5" width="356" height="65"/>
+                                                    <rect key="frame" x="9" y="5" width="356" height="64"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RMinds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCO-k0-mHr">
@@ -1097,6 +1097,7 @@
                     <connections>
                         <outlet property="imageBodyView" destination="t8J-H4-fOa" id="NbS-mW-Et1"/>
                         <outlet property="imageQR" destination="Wj8-AE-Stp" id="gjf-Sc-LLQ"/>
+                        <outlet property="infoButton" destination="mAf-lc-wCk" id="hvS-Ig-d8G"/>
                         <outlet property="kindPaketQRView" destination="0yl-vf-EIj" id="K32-i6-9ch"/>
                         <outlet property="mapView" destination="Rct-qV-Lw8" id="4gj-8Z-LNb"/>
                         <outlet property="organizationAddress" destination="Zl3-Tm-R1i" id="ZhA-5I-8yH"/>

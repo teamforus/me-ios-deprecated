@@ -38,6 +38,9 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if voucher.found.url_webshop == nil {
+            self.smallerAmount.isHidden = true
+        }
         self.voucherTitleLabel.text = voucher.found.name
         self.priceLabel.text = "€ " + voucher.amount
         dateCreatedLabel.text = voucher.createdAt.dateFormaterNormalDate()
@@ -64,8 +67,10 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
-        self.transactions.addObjects(from: voucher.transactions.sorted(by: { ($0).created_at.compare(($1).created_at) == .orderedDescending}))
-        self.transactions.addObjects(from: voucher.productVoucher!.sorted(by: { ($0).createdAt.compare(($1).createdAt) == .orderedDescending}))
+        let transactionsArray = NSMutableArray()
+        transactionsArray.addObjects(from: voucher.transactions)
+        transactionsArray.addObjects(from: voucher.productVoucher!)
+        self.transactions.addObjects(from: transactionsArray.sorted(by: { ($0 as! Transactions).created_at.compare(($1 as! Transactions).created_at) == .orderedDescending}))
         
         
     }
@@ -98,11 +103,10 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
         }) { (error) in
             
         }
-        //
     }
     
     @IBAction func showAmmount(_ sender: Any) {
-        let safariVC = SFSafariViewController(url: URL(string: "https://www.zuidhorn.nl/kindpakket")!)
+        let safariVC = SFSafariViewController(url: URL(string: voucher.found.url_webshop!)!)
         self.present(safariVC, animated: true, completion: nil)
         safariVC.delegate = self
     }
@@ -121,35 +125,29 @@ extension PassViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PassTableViewCell
-        let transactions = self.transactions[indexPath.row]
+        let transaction = self.transactions[indexPath.row] as! Transactions
         
-        if transactions is Transactions{
-            let transaction = transactions as! Transactions
-            if transaction.product != nil {
-                cell.companyTitle.text = transaction.product.name
+        if transaction.product != nil {
+            cell.statusTransfer.text = "Product voucher".localized()
+            cell.companyTitle.text = transaction.product?.name
+            if transaction.product?.photo != nil {
+                cell.imageTransfer.sd_setImage(with: URL(string: transaction.product?.photo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
             }else{
-                cell.companyTitle.text = transaction.organization.name
+                cell.imageTransfer.image = UIImage(named: "Resting")
             }
+        }else{
+                cell.statusTransfer.text = "Transaction".localized()
+                cell.companyTitle.text = transaction.organization.name
             if transaction.organization.logo != nil {
                 cell.imageTransfer.sd_setImage(with: URL(string: transaction.organization.logo?.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
             }else{
                 cell.imageTransfer.image = UIImage(named: "Resting")
             }
+        }
             cell.priceLabel.text = "- \(transaction.amount!)"
             cell.dateLabel.text = transaction.created_at.dateFormaterNormalDate()
 
-        }else if transactions is Voucher{
-            let productTransaction = transactions as! Voucher
-                cell.companyTitle.text = productTransaction.product?.name
-            if productTransaction.product?.photo != nil {
-                cell.imageTransfer.sd_setImage(with: URL(string: productTransaction.product?.photo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
-            }else{
-                cell.imageTransfer.image = UIImage(named: "Resting")
-            }
-            cell.priceLabel.text = "- \(productTransaction.amount!)"
-            cell.dateLabel.text = productTransaction.createdAt.dateFormaterNormalDate()
-
-        }
+    
         
         cell.selectionStyle = .none
         return cell
