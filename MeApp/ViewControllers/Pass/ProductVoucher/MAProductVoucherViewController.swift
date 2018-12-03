@@ -24,6 +24,7 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
     @IBOutlet weak var timAvailabelLabel: UILabel!
     @IBOutlet weak var phoneButton: UIButton!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var organizationLabel: UILabel!
     var latitude: Double!
     var long: Double!
     @IBOutlet weak var imageBodyView: UIImageView!
@@ -43,6 +44,7 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
         if voucher.found.url_webshop == nil {
             self.infoButton.isHidden = true
         }
+        organizationLabel.text = voucher.found.organization.name
         imageBodyView.layer.shadowColor = UIColor.black.cgColor
         imageBodyView.layer.shadowOffset = CGSize(width: 0, height: 5)
         imageBodyView.layer.shadowOpacity = 0.1

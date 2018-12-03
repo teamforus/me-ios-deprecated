@@ -83,7 +83,7 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kindpakket" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2M-pj-GtD" customClass="MarqueeLabel" customModule="MarqueeLabel">
-                                                        <rect key="frame" x="32" y="148" width="204" height="26"/>
+                                                        <rect key="frame" x="32" y="132" width="204" height="26"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name="GoogleSans-Medium" family="Google Sans" pointSize="21"/>
                                                         <nil key="textColor"/>
@@ -98,17 +98,16 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Belga Groningen Megastore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jay-GP-gwZ">
-                                                        <rect key="frame" x="32" y="184" width="204" height="26"/>
+                                                        <rect key="frame" x="32" y="168" width="204" height="26"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NOT 2 DAGEN GELDIG VALID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3k-b3-VIp">
-                                                        <rect key="frame" x="32" y="119" width="204" height="17"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NOT 2 DAGEN GELDIG VALID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3k-b3-VIp">
+                                                        <rect key="frame" x="32" y="168" width="204" height="17"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="13"/>
-                                                        <color key="textColor" red="0.98387008909999996" green="0.63834285739999996" blue="0.1010637954" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="qrV" translatesAutoresizingMaskIntoConstraints="NO" id="sIH-Su-wgd" customClass="CornerImageView" customModule="Me" customModuleProvider="target">
@@ -355,7 +354,9 @@
                         <outlet property="heightContraint" destination="GVx-DQ-l21" id="793-go-98v"/>
                         <outlet property="noteSkyTextField" destination="r0l-e8-gTo" id="RW5-TP-e8v"/>
                         <outlet property="noteView" destination="lKC-v0-nme" id="gCb-69-LM8"/>
+                        <outlet property="organizationLogo" destination="DnB-6g-lyu" id="WME-7c-WMT"/>
                         <outlet property="organizationNameLabel" destination="6Xy-W4-uEi" id="F2V-3g-6bK"/>
+                        <outlet property="organizationVoucherName" destination="i3k-b3-VIp" id="7V3-fr-a2z"/>
                         <outlet property="paketTitle" destination="p2M-pj-GtD" id="Id1-eg-V8I"/>
                         <outlet property="priceLabel" destination="jay-GP-gwZ" id="ols-Ld-Q9V"/>
                         <outlet property="qrCodeImageView" destination="sIH-Su-wgd" id="d64-Fj-OaR"/>

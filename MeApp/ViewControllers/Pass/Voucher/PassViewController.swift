@@ -15,6 +15,7 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var imageQR: UIImageView!
     @IBOutlet weak var voiceButton: VoiceButtonView!
+    @IBOutlet weak var organizationLabel: UILabel!
     var voucher: Voucher!
     @IBOutlet weak var kindPaketQRView: UIView!
     @IBOutlet weak var emailMeButton: UIButton!
@@ -38,6 +39,7 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        organizationLabel.text = voucher.found.organization.name
         if voucher.found.url_webshop == nil {
             self.smallerAmount.isHidden = true
         }

@@ -27,6 +27,8 @@ class MAContentVoucherPaymentViewController: MABaseViewController, MAConfirmatio
     @IBOutlet weak var organizationNameLabel: UILabel!
     @IBOutlet weak var organizationImageView: UIImageView!
     @IBOutlet weak var pricePayLabel: UILabel!
+    @IBOutlet weak var organizationVoucherName: UILabel!
+    @IBOutlet weak var organizationLogo: UIImageView!
     fileprivate var returnKeyHandler : IQKeyboardReturnKeyHandler!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var amount: UITextField!
@@ -52,30 +54,35 @@ class MAContentVoucherPaymentViewController: MABaseViewController, MAConfirmatio
             organizationNameLabel.text = voucher.product?.organization.name
            if voucher.product?.photo != nil {
             qrCodeImageView.sd_setImage(with: URL(string: voucher.product?.photo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+             organizationLogo.sd_setImage(with: URL(string: voucher.product?.photo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
             }else{
                 qrCodeImageView.image = UIImage(named: "Resting")
+             organizationLogo.image = UIImage(named: "face24Px")
             }
         }else{
             paketTitle.text = voucher.found.name
             organizationNameLabel.text = voucher.found.organization.name ?? ""
+            organizationVoucherName.text = voucher.found.organization.name ?? ""
             if voucher.found.logo != nil{
                 qrCodeImageView.sd_setImage(with: URL(string: voucher.found.logo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+                organizationLogo.sd_setImage(with: URL(string: voucher.found.logo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
             }else{
                 qrCodeImageView.image = UIImage(named: "Resting")
+                qrCodeImageView.image = UIImage(named: "face24Px")
             }
         }
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         self.view.isUserInteractionEnabled = true
         self.view.addGestureRecognizer(tapGestureRecognizer)
         if voucher.product != nil {
-            self.priceLabel.text = voucher.product?.organization.name ?? ""
+            organizationVoucherName.text = voucher.product?.organization.name ?? ""
             self.amountView.isHidden = true
             var rectNote = self.noteView.frame
             rectNote.origin.y = 70
             self.noteView.frame = rectNote
             heightContraint.constant = 160
         }else{
-            self.priceLabel.text = voucher.found.organization.name ?? ""
+            organizationVoucherName.text = voucher.found.organization.name ?? ""
         }
         
     }
