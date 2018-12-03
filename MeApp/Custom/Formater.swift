@@ -65,7 +65,7 @@ extension String{
         let dateFormater = DateFormatter()
         dateFormater.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let date = dateFormater.date(from: self)
-        dateFormater.dateFormat = "dd MMMM, HH:mm"
+        dateFormater.dateFormat = "d MMMM, HH:mm"
         let dateString = dateFormater.string(from: date!)
         return dateString
     }
