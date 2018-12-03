@@ -147,12 +147,12 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
-        let circle = MKCircle(center: CLLocationCoordinate2D(latitude:latitude , longitude: long),
-                              radius: 1000 as CLLocationDistance)
+//        let circle = MKCircle(center: CLLocationCoordinate2D(latitude:latitude , longitude: long),
+//                              radius: 1000 as CLLocationDistance)
         let viewRegion = MKCoordinateRegionMakeWithDistance( CLLocationCoordinate2D(latitude:latitude , longitude: long), 5000, 5000)
         self.mapView.setRegion(viewRegion, animated: false)
         mapView.region = viewRegion
-        self.mapView.add(circle)
+//        self.mapView.add(circle)
         self.mapView.addAnnotation(setAnnotation(lattitude: latitude, longitude: long))
     }
     
