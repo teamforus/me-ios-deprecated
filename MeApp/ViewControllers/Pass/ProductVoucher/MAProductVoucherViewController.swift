@@ -51,7 +51,7 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
         imageBodyView.layer.shadowRadius = 10.0
         imageBodyView.clipsToBounds = false
         organizationAddress.text = voucher.offices?.first?.address
-        telephoneNumber.text = voucher.offices?.first?.phone ?? "No phone number"
+        telephoneNumber.text = voucher.offices?.first?.phone ?? "No phone number".localized()
         organizationEmailAddress.setTitle(voucher.offices?.first?.organization.email, for: .normal)
         
         self.voucherTitleLabel.text = voucher.product?.name
