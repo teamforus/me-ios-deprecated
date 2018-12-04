@@ -105,12 +105,31 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
             
         }
         
-        self.tabBarController?.tabBar.isHidden = false
+        
         
         getVoucherList()
         //  ConfigRequest.getConfig(configType: "wallet", completion: { (statuCode, response) in
         
         // }) { (error) in }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIView.animate(withDuration: 0.3) {
+            self.tabBarController?.tabBar.isHidden = false
+            self.view.setNeedsDisplay()
+            self.view.layoutSubviews()
+        }
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        UIView.animate(withDuration: 0.3) {
+            self.tabBarController?.tabBar.isHidden = true
+            self.view.setNeedsDisplay()
+            self.view.layoutSubviews()
+        }
     }
     
     func getVoucherList()

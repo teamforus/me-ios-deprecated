@@ -5,7 +5,7 @@ class UISwitchCustom: UISwitch {
     @IBInspectable var OffTint: UIColor? {
         didSet {
             self.tintColor = OffTint
-            self.layer.cornerRadius = 14
+            self.layer.cornerRadius = self.frame.height / 2
             self.backgroundColor = OffTint
         }
     }

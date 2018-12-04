@@ -34,7 +34,7 @@ class MAGeneralPassViewController: ISHPullUpViewController {
         bottomVC.pullUpController = self
         sizingDelegate = bottomVC
         stateDelegate = bottomVC
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "hideTapBar"), object: nil)
+//        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "hideTapBar"), object: nil)
     }
 
 }

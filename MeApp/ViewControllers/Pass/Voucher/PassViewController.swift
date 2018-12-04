@@ -74,7 +74,7 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = true
+//        self.tabBarController?.tabBar.isHidden = true
         let transactionsArray = NSMutableArray()
         transactionsArray.addObjects(from: voucher.transactions)
         transactionsArray.addObjects(from: voucher.productVoucher!)
@@ -83,7 +83,7 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.tabBarController?.tabBar.isHidden = true
+//        self.tabBarController?.tabBar.isHidden = true
         
     }
     
