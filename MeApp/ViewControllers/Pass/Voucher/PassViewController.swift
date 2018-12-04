@@ -29,6 +29,7 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var imageBodyView: UIImageView!
     @IBOutlet weak var dateCreatedLabel: UILabel!
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
     let presenter: Presentr = {
         let presenter = Presentr(presentationType: .alert)
@@ -66,6 +67,11 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
         NotificationCenter.default.post(name: Notification.Name("togleStateWindow"), object: nil)
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
@@ -73,6 +79,12 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
         transactionsArray.addObjects(from: voucher.transactions)
         transactionsArray.addObjects(from: voucher.productVoucher!)
         self.transactions.addObjects(from: transactionsArray.sorted(by: { ($0 as! Transactions).created_at.compare(($1 as! Transactions).created_at) == .orderedDescending}))
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -156,5 +168,31 @@ extension PassViewController: UITableViewDataSource, UITableViewDelegate{
         //        popOverVC.didMove(toParentViewController: self)
         //        tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if isFirstCellVisible(){
+            self.heightConstraint.constant = 322
+            UIView.animate(withDuration: 0.5) {
+                self.view.layoutIfNeeded()
+            }
+        }else{
+            self.heightConstraint.constant = 60
+             UIView.animate(withDuration: 0.5) {
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
 }
 
+
+extension PassViewController{
+    func isFirstCellVisible() -> Bool{
+        let indexes = tableView.indexPathsForVisibleRows
+        for indexPath in indexes!{
+            if indexPath.row == 0{
+                return true
+            }
+        }
+        return false
+    }
+}

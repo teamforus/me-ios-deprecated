@@ -73,6 +73,7 @@ extension Office: JSONDecodable{
 struct AllowedOrganizations {
     var id: Int!
     var name: String!
+    var logo: Logo!
 }
 
 extension AllowedOrganizations: JSONDecodable{
@@ -80,6 +81,7 @@ extension AllowedOrganizations: JSONDecodable{
         let decoder = JSONDecoder(object:object)
         id = try decoder.decode("id")
         name = try decoder.decode("name")
+        logo = try decoder.decode("logo")
     }
 }
 

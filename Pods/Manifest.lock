@@ -64,6 +64,9 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - NVActivityIndicatorView (4.4.0):
+    - NVActivityIndicatorView/Presenter (= 4.4.0)
+  - NVActivityIndicatorView/Presenter (4.4.0)
   - Presentr (1.3)
   - PromiseKit/CorePromise (6.2.8)
   - QRCodeReader.swift (9.0.1)
@@ -106,6 +109,7 @@ DEPENDENCIES:
   - ISHPullUp
   - JSONCodable
   - MarqueeLabel/Swift
+  - NVActivityIndicatorView
   - Presentr
   - QRCodeReader.swift
   - ReachabilitySwift
@@ -151,6 +155,7 @@ SPEC CHECKSUMS:
   JSONCodable: bd8616ae881befe2b82fbbf56d98b2dd377ac662
   MarqueeLabel: 440a502b91a9179bd98f9fff00ba1150650a1c0e
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  NVActivityIndicatorView: ec7440a57af2450319d3a4181cca7da6fc127064
   Presentr: 3f0825a42cb32ecd8fc6b6d0b0de87d7d0b42482
   PromiseKit: 6788ce1a0ed5448b83d4aaf56b9fc49fb7647d32
   QRCodeReader.swift: 96292a5612fbc2fd9a0b26f93fa5164c8d02f59d
@@ -164,6 +169,6 @@ SPEC CHECKSUMS:
   Web3: 1f0c38c8508b8487948af1cb597653b018f4b5d3
   web3swift: 9cf4ccef0c7f7e9f9abb3bc5867789b928800af6
 
-PODFILE CHECKSUM: 6e41537419454e8c8d58bb0faaaf4bf68509e060
+PODFILE CHECKSUM: 89735dedcf35f786b7c44f45c59ab8646cb39afe
 
 COCOAPODS: 1.4.0

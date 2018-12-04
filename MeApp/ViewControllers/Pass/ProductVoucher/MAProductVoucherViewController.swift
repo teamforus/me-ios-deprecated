@@ -60,7 +60,11 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
         imageQR.generateQRCode(from: "{ \"type\": \"voucher\",\"value\": \"\(voucher.address!)\" }")
         organizationName.text = voucher.product?.organization.name
         
-        organizationIcon.sd_setImage(with: URL(string: voucher.found.logo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+        if voucher.product?.organization.logo != nil{
+        organizationIcon.sd_setImage(with: URL(string: voucher.product?.organization.logo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+        }else{
+            organizationIcon.image = UIImage(named: "Resting")
+        }
         if let latitudeValue = self.voucher.offices?.first?.lat, let lat = Double(latitudeValue) {
             latitude = lat
         }

@@ -14,13 +14,15 @@ import Speech
 import Reachability
 import Crashlytics
 import SDWebImage
+import NVActivityIndicatorView
+
 enum WalletCase {
     case token
     case assets
     case passes
 }
 
-class WalletViewController: MABaseViewController, AppLockerDelegate{
+class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityIndicatorViewable{
     func closePinCodeView(typeClose: typeClose) {
         
     }
@@ -31,6 +33,7 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
     var walletCase : WalletCase! = WalletCase.token
     @IBOutlet weak var segmentView: UIView!
     var vouhers: NSMutableArray! = NSMutableArray()
+    var activityIndicatorView: NVActivityIndicatorView!
     
     //    @IBOutlet weak var voiceButton: VoiceButtonView!
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en"))!
@@ -49,6 +52,7 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
             appearance.delegate = self
             
             AppLocker.present(with: .validate, and: appearance, withController: self)
+            
         }
         // profile icon round
         
@@ -80,11 +84,21 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
                 UserDefaults.standard.synchronize()
             }
         } catch{}
+        
+        let size = CGSize(width: 60, height: 60)
+        
+        startAnimating(size, message: "Loading...", type: NVActivityIndicatorType(rawValue: 32)!, color: #colorLiteral(red: 0.1918309331, green: 0.3696506619, blue: 0.9919955134, alpha: 1), textColor: .white, fadeInAnimation: nil)
+        getVoucherList()
     }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+//        activityIndicatorView = NVActivityIndicatorView(frame: CGRect(x: self.view.center.x - 50, y: self.view.center.y - 50, width: 100, height: 100), type: .ballScaleMultiple, color: #colorLiteral(red: 0.1918309331, green: 0.3696506619, blue: 0.9919955134, alpha: 1), padding: 20)
+//        self.view.addSubview(activityIndicatorView)
+//        activityIndicatorView.startAnimating()
+       
         IndentityRequest.requestIndentiy(completion: { (identityAddress, statuCode) in
             Crashlytics.sharedInstance().setUserIdentifier(identityAddress.address)
         }) { (error) in
@@ -92,6 +106,15 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
         }
         
         self.tabBarController?.tabBar.isHidden = false
+        
+        getVoucherList()
+        //  ConfigRequest.getConfig(configType: "wallet", completion: { (statuCode, response) in
+        
+        // }) { (error) in }
+    }
+    
+    func getVoucherList()
+    {
         VoucherRequest.getVoucherList(completion: { (response, statusCode) in
             self.vouhers.removeAllObjects()
             for voucher in response{
@@ -100,23 +123,19 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
                         self.vouhers.add(voucher)
                     }
                 }else{
-                     self.vouhers.add(voucher)
+                    self.vouhers.add(voucher)
                 }
             }
-            
             if self.vouhers.count == 0{
                 self.tableView.isHidden = true
             }else {
                 self.tableView.isHidden = false
             }
             self.tableView.reloadData()
+            self.stopAnimating(nil)
         }) { (error) in
-            
+            self.stopAnimating(nil)
         }
-        
-        //  ConfigRequest.getConfig(configType: "wallet", completion: { (statuCode, response) in
-        
-        // }) { (error) in }
     }
     
     
@@ -345,5 +364,40 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
             
         }
         return nil
+    }
+}
+
+
+extension WalletViewController{
+    func createAnimationLoader(){
+        self.view.backgroundColor = UIColor(red: CGFloat(237 / 255.0), green: CGFloat(85 / 255.0), blue: CGFloat(101 / 255.0), alpha: 1)
+        
+        let cols = 4
+        let rows = 8
+        let cellWidth = Int(self.view.frame.width / CGFloat(cols))
+        let cellHeight = Int(self.view.frame.height / CGFloat(rows))
+        (NVActivityIndicatorType.ballPulse.rawValue ... NVActivityIndicatorType.circleStrokeSpin.rawValue).forEach {
+            let x = ($0 - 1) % cols * cellWidth
+            let y = ($0 - 1) / cols * cellHeight
+            let frame = CGRect(x: x, y: y, width: cellWidth, height: cellHeight)
+            let activityIndicatorView = NVActivityIndicatorView(frame: frame,
+                                                                type: NVActivityIndicatorType(rawValue: $0)!)
+            let animationTypeLabel = UILabel(frame: frame)
+            
+            animationTypeLabel.text = String($0)
+            animationTypeLabel.sizeToFit()
+            animationTypeLabel.textColor = UIColor.white
+            animationTypeLabel.frame.origin.x += 5
+            animationTypeLabel.frame.origin.y += CGFloat(cellHeight) - animationTypeLabel.frame.size.height
+            
+            activityIndicatorView.padding = 20
+            if $0 == NVActivityIndicatorType.orbit.rawValue {
+                activityIndicatorView.padding = 0
+            }
+            self.view.addSubview(activityIndicatorView)
+            self.view.addSubview(animationTypeLabel)
+            activityIndicatorView.startAnimating()
+            
+        }
     }
 }
