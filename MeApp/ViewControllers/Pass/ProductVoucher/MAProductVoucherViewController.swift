@@ -197,6 +197,8 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
         self.present(safariVC, animated: true, completion: nil)
         safariVC.delegate = self
     }
+    
+    
 }
 
 extension MAProductVoucherViewController: MKMapViewDelegate{
