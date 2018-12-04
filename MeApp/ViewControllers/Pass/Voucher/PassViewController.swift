@@ -74,7 +74,7 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        self.tabBarController?.tabBar.isHidden = true
+        self.tabBarController?.tabBar.isHidden = true
         let transactionsArray = NSMutableArray()
         transactionsArray.addObjects(from: voucher.transactions)
         transactionsArray.addObjects(from: voucher.productVoucher!)
@@ -170,6 +170,7 @@ extension PassViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if self.transactions.count > 8{
         if isFirstCellVisible(){
             self.heightConstraint.constant = 322
             UIView.animate(withDuration: 0.5) {
@@ -181,6 +182,7 @@ extension PassViewController: UITableViewDataSource, UITableViewDelegate{
                 self.view.layoutIfNeeded()
             }
         }
+    }
     }
 }
 
