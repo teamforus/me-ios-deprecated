@@ -26,8 +26,6 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
     func closePinCodeView(typeClose: typeClose) {
         
     }
-    @IBOutlet weak var profileIconImage: UIImageView!
-    @IBOutlet weak var profileIcon: ShadowButton!
     let reachability = Reachability()!
     @IBOutlet weak var tableView: UITableView!
     var walletCase : WalletCase! = WalletCase.token
@@ -43,6 +41,7 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" && UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil{
             var appearance = ALAppearance()
             appearance.image = UIImage(named: "lock")!
@@ -52,11 +51,7 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
             appearance.delegate = self
             
             AppLocker.present(with: .validate, and: appearance, withController: self)
-            
         }
-        // profile icon round
-        
-        
         walletCase = WalletCase.passes
         
         //        segmentView.layer.cornerRadius = 8.0
@@ -95,18 +90,11 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        activityIndicatorView = NVActivityIndicatorView(frame: CGRect(x: self.view.center.x - 50, y: self.view.center.y - 50, width: 100, height: 100), type: .ballScaleMultiple, color: #colorLiteral(red: 0.1918309331, green: 0.3696506619, blue: 0.9919955134, alpha: 1), padding: 20)
-//        self.view.addSubview(activityIndicatorView)
-//        activityIndicatorView.startAnimating()
-       
         IndentityRequest.requestIndentiy(completion: { (identityAddress, statuCode) in
             Crashlytics.sharedInstance().setUserIdentifier(identityAddress.address)
         }) { (error) in
             
         }
-        
-        
-        
         getVoucherList()
         //  ConfigRequest.getConfig(configType: "wallet", completion: { (statuCode, response) in
         
@@ -120,12 +108,6 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
             self.view.setNeedsDisplay()
             self.view.layoutSubviews()
         }
-        
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-       
     }
     
     func getVoucherList()
@@ -184,14 +166,12 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToKindPaket"{
+            
             let passVC = segue.destination as! MAGeneralPassViewController
             (passVC.contentViewController as! PassViewController).voucher = self.vouhers[(self.tableView.indexPathForSelectedRow?.row)!] as? Voucher
             (passVC.bottomViewController as! MABottomVoucherViewController).voucher = self.vouhers[(self.tableView.indexPathForSelectedRow?.row)!] as? Voucher
-        }else if segue.identifier == "goToProfile"{
-            let profileVC = segue.destination as! MAMyProfileViewController
-            (profileVC.contentViewController as! MAContentProfileViewController).isCloseButtonHide = false
-        }
-        else if segue.identifier == "goToVoucherProduct"{
+        }else if segue.identifier == "goToVoucherProduct"{
+            
             let passVC = segue.destination as! MAContenProductVoucherViewController
             (passVC.contentViewController as! MAProductVoucherViewController).voucher = self.vouhers[(self.tableView.indexPathForSelectedRow?.row)!] as? Voucher
             (passVC.bottomViewController as! MABottomProductViewController).voucher = self.vouhers[(self.tableView.indexPathForSelectedRow?.row)!] as? Voucher
@@ -237,71 +217,27 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var cell : UITableViewCell! = nil
-        
-        switch walletCase {
-        case .token?:
-            let cellWalletSecond = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! WalletSecondTableViewCell
-            if indexPath.row == 0{
-                cellWalletSecond.priceLabel.text = "10,509876"
-                cellWalletSecond.typeCoinLabel.text = "ETH"
-            } else if indexPath.row == 1{
-                cellWalletSecond.priceLabel.text = "200,85"
-                cellWalletSecond.typeCoinLabel.text = "BAT"
-                cellWalletSecond.typeCoinImageView.image = UIImage.init(named: "bat")
-            }else if indexPath.row == 2{
-                cellWalletSecond.priceLabel.text = "225,57"
-                cellWalletSecond.typeCoinLabel.text = "ERC-20 Token"
-                cellWalletSecond.typeCoinImageView.image = UIImage.init(named: "erc")
-            }
-            
-            cell = cellWalletSecond
-            break
-            
-        case .assets?:
-            let cellWalletOwner = tableView.dequeueReusableCell(withIdentifier: "cell3", for: indexPath) as! MAWalletOwnerTableViewCell
-            cellWalletOwner.delegate = self
-            cellWalletOwner.headNameLabel.text = "APPARTEMENT"
-            cellWalletOwner.productNameLabel.text = "Groningen"
-            cellWalletOwner.marcLabel.text = "Ulgersmaweg 35, 9731BK"
-            
-            cell = cellWalletOwner
-            break
-        case .passes?:
-            let cellWallet = tableView.dequeueReusableCell(withIdentifier: "cell4", for: indexPath) as! MAWaletVoucherTableViewCell
-            //            cellWallet.delegate = self
-            cellWallet.selectionStyle = .none
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MAWaletVoucherTableViewCell
+            cell.selectionStyle = .none
             let voucher = self.vouhers[indexPath.row] as! Voucher
          
             if voucher.product != nil{
-               cellWallet.usedVoucherLabel.isHidden = true
-                cellWallet.voucherTitleLabel.text = voucher.product?.name
-                cellWallet.priceLabel.text = "€\(voucher.product?.price ?? "0.0")" 
+               cell.usedVoucherLabel.isHidden = true
+                cell.voucherTitleLabel.text = voucher.product?.name
+                cell.priceLabel.text = "€\(voucher.product?.price ?? "0.0")"
                 if voucher.product?.photo != nil {
-                cellWallet.voucherImage.sd_setImage(with: URL(string: voucher.product?.photo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+                cell.voucherImage.sd_setImage(with: URL(string: voucher.product?.photo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
                 }
             }else{
-                cellWallet.voucherTitleLabel.text = voucher.found.name
-                cellWallet.usedVoucherLabel.isHidden = true
-                cellWallet.priceLabel.text = "€\(voucher.amount ?? "0.0")"
+                cell.voucherTitleLabel.text = voucher.found.name
+                cell.usedVoucherLabel.isHidden = true
+                cell.priceLabel.text = "€\(voucher.amount ?? "0.0")"
                if voucher.found.logo != nil{
-                    cellWallet.voucherImage.sd_setImage(with: URL(string: voucher.found.logo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+                    cell.voucherImage.sd_setImage(with: URL(string: voucher.found.logo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
                 }
             }
-            cellWallet.organizationNameLabel.text = voucher.found.organization.name
-            cell = cellWallet
-        default:
-            let cellWallet = tableView.dequeueReusableCell(withIdentifier: "cell4", for: indexPath) as! MAWaletVoucherTableViewCell
-            cellWallet.delegate = self
-            if indexPath.row == 0{
-                cellWallet.voucherTitleLabel.text = "Kindpakket"
-                cellWallet.priceLabel.text = "€ 122,67"
-            }else if indexPath.row == 1{
-                cellWallet.voucherTitleLabel.text = "Meedoen"
-                cellWallet.voucherImage.image = #imageLiteral(resourceName: "Logo-Nijmgen-4-3")
-            }
-            cell = cellWallet
-        }
+            cell.organizationNameLabel.text = voucher.found.organization.name
+        
         return cell
     }
     
