@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4F7E2DD8CA0FF700E1A7492DA01667A1"
+               BlueprintIdentifier = "02E09C145BB3BCC73BB3D1FAD870F0BC"
                BuildableName = "UICheckbox.bundle"
                BlueprintName = "UICheckbox.Swift-UICheckbox"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4F7E2DD8CA0FF700E1A7492DA01667A1"
+            BlueprintIdentifier = "02E09C145BB3BCC73BB3D1FAD870F0BC"
             BuildableName = "UICheckbox.bundle"
             BlueprintName = "UICheckbox.Swift-UICheckbox"
             ReferencedContainer = "container:Pods.xcodeproj">

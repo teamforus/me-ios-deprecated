@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import UICheckbox_Swift
 import BWWalkthrough
 import Reachability
 
