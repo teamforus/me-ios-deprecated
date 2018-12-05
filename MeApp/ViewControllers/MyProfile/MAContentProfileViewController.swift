@@ -51,14 +51,14 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getRecordList()
-        switchFaceID.transform = CGAffineTransform(scaleX: 1.0, y: 1.0);
+        switchFaceID.transform = CGAffineTransform(scaleX: 1.0, y: 0.90);
         if let thumbView =  (switchFaceID.subviews[0].subviews[3] as? UIImageView) {
-            thumbView.transform = CGAffineTransform(scaleX:0.73, y: 0.73)
+            thumbView.transform = CGAffineTransform(scaleX:0.73, y: 0.83)
         }
         
-        switchScannert.transform = CGAffineTransform(scaleX: 1.0, y: 1.0);
+        switchScannert.transform = CGAffineTransform(scaleX: 1.0, y: 0.90);
         if let thumbView =  (switchScannert.subviews[0].subviews[3] as? UIImageView) {
-            thumbView.transform = CGAffineTransform(scaleX:0.73, y: 0.73)
+            thumbView.transform = CGAffineTransform(scaleX:0.73, y: 0.83)
         }
        
 //        switchFaceID.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
