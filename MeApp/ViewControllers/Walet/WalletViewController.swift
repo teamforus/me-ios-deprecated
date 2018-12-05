@@ -91,11 +91,11 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        IndentityRequest.requestIndentiy(completion: { (identityAddress, statuCode) in
-            Crashlytics.sharedInstance().setUserIdentifier(identityAddress.address)
-        }) { (error) in
-            
-        }
+//        IndentityRequest.requestIndentiy(completion: { (identityAddress, statuCode) in
+//            Crashlytics.sharedInstance().setUserIdentifier(identityAddress.address)
+//        }) { (error) in
+//            
+//        }
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         self.title = "Voucher"
         if #available(iOS 11.0, *) {
