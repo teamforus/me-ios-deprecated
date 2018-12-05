@@ -25,9 +25,6 @@ class MARecordsViewController: MABaseViewController, BWWalkthroughViewController
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
-        //        self.navigationController?.setNavigationBarHidden(false, animated: true)
-        //        self.title = "Eigenschappen"
-        //        self.navigationController?.navigationBar.prefersLargeTitles = true
         self.getRecordList()
     }
     

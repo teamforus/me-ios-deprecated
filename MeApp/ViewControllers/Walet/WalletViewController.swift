@@ -32,6 +32,7 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
     @IBOutlet weak var segmentView: UIView!
     var vouhers: NSMutableArray! = NSMutableArray()
     var activityIndicatorView: NVActivityIndicatorView!
+    @IBOutlet weak var emptyTextLabe: UILabel!
     
     //    @IBOutlet weak var voiceButton: VoiceButtonView!
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en"))!
@@ -41,7 +42,7 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+      
         if UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" && UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil{
             var appearance = ALAppearance()
             appearance.image = UIImage(named: "lock")!
@@ -95,6 +96,16 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
         }) { (error) in
             
         }
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.title = "Voucher"
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+            self.navigationController?.navigationItem.largeTitleDisplayMode = .automatic
+            self.tableView.contentInset = UIEdgeInsets(top: 1, left: 0, bottom: 0, right: 0)
+            
+        } else {
+            // Fallback on earlier versions
+        }
         getVoucherList()
         //  ConfigRequest.getConfig(configType: "wallet", completion: { (statuCode, response) in
         
@@ -121,12 +132,13 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
                     }
                 }else{
                     self.vouhers.add(voucher)
+                    
                 }
             }
             if self.vouhers.count == 0{
-                self.tableView.isHidden = true
+                self.emptyTextLabe.isHidden = false
             }else {
-                self.tableView.isHidden = false
+                self.emptyTextLabe.isHidden = true
             }
             self.tableView.reloadData()
             self.stopAnimating(nil)

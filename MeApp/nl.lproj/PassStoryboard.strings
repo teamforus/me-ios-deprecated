@@ -148,3 +148,13 @@
 
 /* Class = "UILabel"; text = "Email to me"; ObjectID = "IzK-iS-COA"; */
 "IzK-iS-COA.text" = "E-mail naar mij";
+
+/* Class = "UILabel"; text = "Aanbieder"; ObjectID = "yeb-Mt-QKn"; */
+"yeb-Mt-QKn.text" = "Aanbieder";
+
+/* Class = "UILabel"; text = "Adres"; ObjectID = "nRf-2Y-aRP"; */
+"nRf-2Y-aRP.text" = "Adres";
+
+/* Class = "UILabel"; text = "Telefoonnummer"; ObjectID = "IJF-vQ-NDk"; */
+"IJF-vQ-NDk.text" = "Telefoonnummer";
+
