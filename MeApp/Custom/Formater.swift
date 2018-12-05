@@ -15,7 +15,7 @@ extension Date {
         let dateFormater = DateFormatter()
         dateFormater.dateFormat = "dd.MM.yyyy HH:mm"
         let dateString = dateFormater.string(from: self)
-        return dateString
+        return dateString 
     }
     
      func dateFormaterFromDateShort() -> String  {
@@ -65,7 +65,7 @@ extension String{
         let dateFormater = DateFormatter()
         dateFormater.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let date = dateFormater.date(from: self)
-        dateFormater.dateFormat = "dd MMM, HH:mm"
+        dateFormater.dateFormat = "d MMMM, HH:mm"
         let dateString = dateFormater.string(from: date!)
         return dateString
     }

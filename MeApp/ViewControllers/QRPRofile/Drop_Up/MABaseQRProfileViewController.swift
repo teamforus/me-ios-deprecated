@@ -19,8 +19,11 @@ class MABaseQRProfileViewController: ISHPullUpViewController {
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        
         commonInit()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .default
     }
     
     private func commonInit() {

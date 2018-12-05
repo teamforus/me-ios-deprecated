@@ -141,7 +141,7 @@
 "0ve-pB-Qlv.text" = "Today";
 
 /* Class = "UILabel"; text = "Created"; ObjectID = "jCA-Qb-qHj"; */
-"Fs4-N2-tE5" = "Activated";
+"DtA-Lk-8vv.text" = "Activated";
 
 /* Class = "UILabel"; text = "Created"; ObjectID = "JN2-pl-xhh"; */
 "jCA-Qb-qHj.text" = "Created";
@@ -149,3 +149,17 @@
 /* Class = "UILabel"; text = "Email to me"; ObjectID = "IzK-iS-COA"; */
 "IzK-iS-COA.text" = "E-mail to me";
 
+/* Class = "UILabel"; text = "Provider"; ObjectID = "yeb-Mt-QKn"; */
+"yeb-Mt-QKn.text" = "Provider";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "nRf-2Y-aRP"; */
+"nRf-2Y-aRP.text" = "Address";
+
+/* Class = "UILabel"; text = "Telephone"; ObjectID = "IJF-vQ-NDk"; */
+"IJF-vQ-NDk.text" = "Telephone";
+
+/* Class = "UIButton"; normalTitle = "Voucher Info"; ObjectID = "6OY-uF-Osa"; */
+"UaN-NG-yFo.normalTitle" = "E-mail for me";
+
+/* Class = "UIButton"; normalTitle = "Voucher Info"; ObjectID = "6OY-uF-Osa"; */
+"70G-HG-SBb.normalTitle" = "E-mail for me";

@@ -66,3 +66,15 @@
 "Press settings to give an access or cancel to close this window." = "Press settings to give an access or cancel to close this window.";
 "Settings" = "Settings";
 "Scanning successfully!" = "QR-code was recognized";
+"Address" = "Address";
+"Copy address" = "Copy address";
+"Copied to clipboard" = "Copied to clipboard";
+"Transaction" = "Transaction";
+"Product voucher" = "Product voucher";
+"Would you like to send us your feedback by e-mail?" = "Would you like to send us your feedback by e-mail?";
+"Confirm" = "Confirm";
+"My feedback about the Me app" = "My feedback about the Me app";
+"Question from Me user" = "Question from Me user";
+"Mail services are not available" = "Mail services are not available";
+"Send the voucher to your email?" = "Send the voucher to your email?";
+"No phone number" = "No phone number";

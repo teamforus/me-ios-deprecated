@@ -13,6 +13,8 @@ import Alamofire
 import Reachability
 import Presentr
 import AssistantKit
+import Crashlytics
+import MessageUI
 
 class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -22,6 +24,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     @IBOutlet weak var faceIdImage: UIImageView!
     @IBOutlet weak var bottonConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var supportEmailButton: UIButton!
     @IBOutlet weak var switchScannert: UISwitch!
     @IBOutlet weak var heightBottomViewConstraint: NSLayoutConstraint!
     @IBOutlet weak var faceIdLabel: UILabel!
@@ -50,12 +53,12 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         self.getRecordList()
         switchFaceID.transform = CGAffineTransform(scaleX: 1.0, y: 0.90);
         if let thumbView =  (switchFaceID.subviews[0].subviews[3] as? UIImageView) {
-            thumbView.transform = CGAffineTransform(scaleX:0.73, y: 0.8)
+            thumbView.transform = CGAffineTransform(scaleX:0.73, y: 0.83)
         }
         
         switchScannert.transform = CGAffineTransform(scaleX: 1.0, y: 0.90);
         if let thumbView =  (switchScannert.subviews[0].subviews[3] as? UIImageView) {
-            thumbView.transform = CGAffineTransform(scaleX:0.73, y: 0.8)
+            thumbView.transform = CGAffineTransform(scaleX:0.73, y: 0.83)
         }
        
 //        switchFaceID.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -63,6 +66,11 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         //        UserDefaults.standard.synchronize()
         //        updateIndentity()
     }
+    
+    @IBAction func crash(_ sender: Any) {
+        Crashlytics.sharedInstance().crash()
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -158,6 +166,27 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         }
         return false
     }
+    
+    @IBAction func feedBack(_ sender: Any) {
+        let alert: UIAlertController
+        alert = UIAlertController(title: "", message: "Would you like to send us your feedback by e-mail?".localized(), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Confirm".localized(), style: .default, handler: { (action) in
+            if MFMailComposeViewController.canSendMail() {
+                let composeVC = MFMailComposeViewController()
+                composeVC.mailComposeDelegate = self
+                composeVC.setToRecipients(["feedback@forus.io"])
+                composeVC.setSubject("My feedback about the Me app".localized())
+                composeVC.setMessageBody("", isHTML: false)
+                self.present(composeVC, animated: true, completion: nil)
+            }else{
+                AlertController.showWarning(withText: "Mail services are not available".localized(), vc: self)
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .default, handler: { (action) in
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -309,6 +338,13 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
                 self.present(navigationController, animated: true, completion: nil)
             }
         }
+    }
+}
+
+extension MAContentProfileViewController: MFMailComposeViewControllerDelegate{
+    func mailComposeController(_ controller: MFMailComposeViewController,
+                               didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }
 

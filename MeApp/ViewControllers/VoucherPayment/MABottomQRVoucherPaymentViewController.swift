@@ -30,6 +30,7 @@ class MABottomQRVoucherPaymentViewController: MABaseViewController , ISHPullUpSi
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.isHidden = true
+        
         topView.layer.cornerRadius = 14.0
         rootView.layer.cornerRadius = 14.0
         rootView.layer.shadowColor = UIColor.black.cgColor
@@ -60,6 +61,8 @@ class MABottomQRVoucherPaymentViewController: MABaseViewController , ISHPullUpSi
         }
         self.rootView.frame = rect
     }
+    
+    
     
     @objc func toglePullUpView(){
         //        if pullUpController.state == .expanded{

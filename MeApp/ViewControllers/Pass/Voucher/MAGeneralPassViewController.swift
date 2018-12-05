@@ -21,6 +21,10 @@ class MAGeneralPassViewController: ISHPullUpViewController {
         commonInit()
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .default
+    }
+    
     private func commonInit() {
         let storyBoard = UIStoryboard(name: "PassStoryboard", bundle: nil)
         let contentVC = storyBoard.instantiateViewController(withIdentifier: "contentPass") as! PassViewController
@@ -30,7 +34,7 @@ class MAGeneralPassViewController: ISHPullUpViewController {
         bottomVC.pullUpController = self
         sizingDelegate = bottomVC
         stateDelegate = bottomVC
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "hideTapBar"), object: nil)
+//        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "hideTapBar"), object: nil)
     }
 
 }
