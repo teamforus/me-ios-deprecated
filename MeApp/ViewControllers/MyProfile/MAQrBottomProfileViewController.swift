@@ -39,7 +39,7 @@ class MAQrBottomProfileViewController: MABaseViewController, ISHPullUpSizingDele
         rootView.layer.shadowRadius = 23 / 2
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture))
         topView.addGestureRecognizer(tapGesture)
-        NotificationCenter.default.addObserver(self, selector: #selector(toglePullUpView), name: Notification.Name("togleStateWindow"), object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(toglePullUpView), name: Notification.Name("togleStateWindow"), object: nil)
         var rect: CGRect = self.rootView.frame
         let screen = Device.screen
         switch screen {
