@@ -169,7 +169,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     
     @IBAction func feedBack(_ sender: Any) {
         let alert: UIAlertController
-        alert = UIAlertController(title: "", message: "Do you realy want to send an e-mail?".localized(), preferredStyle: .alert)
+        alert = UIAlertController(title: "", message: "Would you like to send us your feedback by e-mail?".localized(), preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Confirm".localized(), style: .default, handler: { (action) in
             if MFMailComposeViewController.canSendMail() {
                 let composeVC = MFMailComposeViewController()

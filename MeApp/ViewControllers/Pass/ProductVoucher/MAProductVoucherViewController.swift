@@ -92,7 +92,7 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
     
     @objc func Tap() {
         let alert: UIAlertController
-        alert = UIAlertController(title: "", message: "Do you realy want to send an e-mail?".localized(), preferredStyle: .alert)
+        alert = UIAlertController(title: "", message: "Send the voucher to your email?".localized(), preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Confirm".localized(), style: .default, handler: { (action) in
             if MFMailComposeViewController.canSendMail() {
                 let composeVC = MFMailComposeViewController()
