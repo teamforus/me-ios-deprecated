@@ -111,10 +111,16 @@
 "xtY-8m-Mw2.title" = "Item 2";
 
 /* Class = "UILabel"; text = "E-mail naar mij"; ObjectID = "h9H-Tx-Cte"; */
-"z7n-A7-brV.text" = " E-mail naar mij";
+"z7n-A7-brV.text" = "E-mail naar mij";
 
 /* Class = "UIButton"; normalTitle = "Voucher Info"; ObjectID = "6OY-uF-Osa"; */
 "6OY-uF-Osa.normalTitle" = "Voucher Info";
+
+/* Class = "UIButton"; normalTitle = "Voucher Info"; ObjectID = "6OY-uF-Osa"; */
+"UaN-NG-yFo.normalTitle" = "E-mail naar mij";
+
+/* Class = "UIButton"; normalTitle = "Voucher Info"; ObjectID = "6OY-uF-Osa"; */
+"70G-HG-SBb.normalTitle" = "E-mail naar mij";
 
 /* Class = "UILabel"; text = "Hier is je persoonlijke QR-Code"; ObjectID = "sOe-ep-azG"; */
 "sOe-ep-azG.text" = "Dit is je persoonlijke QR-Code.";
@@ -141,7 +147,7 @@
 "0ve-pB-Qlv.text" = "Vandaag";
 
 /* Class = "UILabel"; text = "Aangemaakt"; ObjectID = "jCA-Qb-qHj"; */
-"Fs4-N2-tE5.text" = "Geactiveerd";
+"DtA-Lk-8vv.text" = "Geactiveerd";
 
 /* Class = "UILabel"; text = "Aangemaakt"; ObjectID = "JN2-pl-xhh"; */
 "jCA-Qb-qHj.text" = "Aangemaakt";
