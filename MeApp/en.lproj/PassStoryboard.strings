@@ -157,3 +157,9 @@
 
 /* Class = "UILabel"; text = "Telephone"; ObjectID = "IJF-vQ-NDk"; */
 "IJF-vQ-NDk.text" = "Telephone";
+
+/* Class = "UIButton"; normalTitle = "Voucher Info"; ObjectID = "6OY-uF-Osa"; */
+"UaN-NG-yFo.normalTitle" = "E-mail for me";
+
+/* Class = "UIButton"; normalTitle = "Voucher Info"; ObjectID = "6OY-uF-Osa"; */
+"70G-HG-SBb.normalTitle" = "E-mail for me";
