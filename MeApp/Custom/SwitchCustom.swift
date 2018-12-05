@@ -4,8 +4,8 @@ import UIKit
 class UISwitchCustom: UISwitch {
     @IBInspectable var OffTint: UIColor? {
         didSet {
-            self.tintColor = .white
-            self.layer.cornerRadius = 14
+            self.tintColor = OffTint
+            self.layer.cornerRadius = self.frame.height / 2
             self.backgroundColor = OffTint
         }
     }

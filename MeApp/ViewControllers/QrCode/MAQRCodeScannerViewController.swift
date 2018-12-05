@@ -25,9 +25,18 @@ class MAQRCodeScannerViewController: HSScanViewController , HSScanViewController
     
     func scanFinished(scanResult: ScanResult, error: String?) {
         if self.reachablity.connection != .none{
-            
-            // login with QR
-            if scanResult.scanResultString?.range(of:"authToken") != nil {
+//            if scanResult.scanResultString?.range(of: BaseURL.getBaseURL()) == nil {
+//                self.scanWorker.stop()
+//                let alert: UIAlertController
+//                alert = UIAlertController(title: "Error!".localized(), message: "Unknown QR-code!".localized(), preferredStyle: .alert)
+//                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+//                    self.scanWorker.start()
+//                }))
+//                self.present(alert, animated: true, completion: nil)
+//            }
+//            // login with QR
+//            else
+                if scanResult.scanResultString?.range(of:"authToken") != nil {
                 self.scanWorker.start()
                 var token = scanResult.scanResultString?.components(separatedBy: ":")
                 self.authorizeToken(token: token![1])
@@ -153,14 +162,25 @@ class MAQRCodeScannerViewController: HSScanViewController , HSScanViewController
     }
     
     func authorizeToken(token:String){
-        let alert: UIAlertController
-        alert = UIAlertController(title: "Success!".localized(), message: "Scanning successfully!".localized(), preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-            self.scanWorker.start()
-        }))
-        self.present(alert, animated: true, completion: nil)
+       
         let parameter: Parameters = ["auth_token" : token]
         AuthorizeTokenRequest.authorizeToken(parameter: parameter, completion: { (response, statusCode) in
+            if response.success == nil {
+                self.scanWorker.stop()
+                let alert: UIAlertController
+                alert = UIAlertController(title: "Error!".localized(), message: "Unknown QR-code!".localized(), preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                    self.scanWorker.start()
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }else{
+                let alert: UIAlertController
+                alert = UIAlertController(title: "Success!".localized(), message: "Scanning successfully!".localized(), preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                    self.scanWorker.start()
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }
         }, failure: { (error) in
             AlertController.showError(vc:self)
         })
@@ -193,7 +213,6 @@ class MAQRCodeScannerViewController: HSScanViewController , HSScanViewController
                     }else{
                         AlertController.showWarningWithTitle(title:"Error!".localized(), text: "This product voucher is used!".localized(), vc: self)
                     }
-                    
                     
                 }else{
                     AlertController.showWarning(withText: "Sorry you do not meet the criteria for this voucher".localized(), vc: self)
@@ -269,6 +288,27 @@ extension UIViewController {
             toastLabel.removeFromSuperview()
             toastLabel2.removeFromSuperview()
             toastButton.removeFromSuperview()
+        })
+    }
+    
+    func showSimpleToast(message : String) {
+        
+        let toastLabel = UILabel(frame: CGRect(x: 15, y: self.view.frame.size.height-100, width: self.view.frame.size.width - 30, height: 35))
+        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        toastLabel.textColor = UIColor.white
+        toastLabel.textAlignment = .center;
+        toastLabel.font = UIFont(name: "GoogleSans-Regular", size: 11.0)
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 10;
+        toastLabel.clipsToBounds  =  true
+        
+        
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 5.0, delay: 0.9, options: .curveEaseOut, animations: {
+            toastLabel.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
         })
     }
     

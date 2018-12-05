@@ -47,7 +47,7 @@ class TransactionViewController: MABasePopUpViewController {
         orgnizationNameLabel.text = transaction.organization.name
         companyNameLabel.text = transaction.organization.name
         if transaction.product != nil {
-            voucherLabel.text = transaction.product.productCategory.name
+//            voucherLabel.text = transaction.product.productCategory.name
         }
         priceTransactionLabel.text = "- \(transaction.amount!) €"
         dateCreatedLabel.text = transaction.created_at.dateFormaterNormalDate()

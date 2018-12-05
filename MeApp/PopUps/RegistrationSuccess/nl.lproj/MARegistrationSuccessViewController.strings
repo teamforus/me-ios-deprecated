@@ -3,7 +3,7 @@
 "3Zf-ST-Jmi.text" = "Success!";
 
 /* Class = "UILabel"; text = "The voucher has been sent to email."; ObjectID = "Z7D-vz-4qZ"; */
-"Z7D-vz-4qZ.text" = "De voucher is verzonden naar email.";
+"Z7D-vz-4qZ.text" = "De voucher is verzonden per mail.";
 
 /* Class = "UIButton"; normalTitle = "OK"; ObjectID = "z2G-BI-KvI"; */
 "z2G-BI-KvI.normalTitle" = "OK";

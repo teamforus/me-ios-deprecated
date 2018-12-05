@@ -111,7 +111,7 @@
 "xtY-8m-Mw2.title" = "Item 2";
 
 /* Class = "UILabel"; text = "E-mail naar mij"; ObjectID = "h9H-Tx-Cte"; */
-"z7n-A7-brV.text" = " Stuur per mail";
+"z7n-A7-brV.text" = " E-mail naar mij";
 
 /* Class = "UIButton"; normalTitle = "Voucher Info"; ObjectID = "6OY-uF-Osa"; */
 "6OY-uF-Osa.normalTitle" = "Voucher Info";
@@ -147,4 +147,14 @@
 "jCA-Qb-qHj.text" = "Aangemaakt";
 
 /* Class = "UILabel"; text = "Email to me"; ObjectID = "IzK-iS-COA"; */
-"IzK-iS-COA.text" = "Stuur per mail";
+"IzK-iS-COA.text" = "E-mail naar mij";
+
+/* Class = "UILabel"; text = "Aanbieder"; ObjectID = "yeb-Mt-QKn"; */
+"yeb-Mt-QKn.text" = "Aanbieder";
+
+/* Class = "UILabel"; text = "Adres"; ObjectID = "nRf-2Y-aRP"; */
+"nRf-2Y-aRP.text" = "Adres";
+
+/* Class = "UILabel"; text = "Telefoonnummer"; ObjectID = "IJF-vQ-NDk"; */
+"IJF-vQ-NDk.text" = "Telefoonnummer";
+

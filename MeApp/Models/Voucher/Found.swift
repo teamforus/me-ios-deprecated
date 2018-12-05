@@ -13,6 +13,7 @@ struct Found{
     var id: Int!
     var name: String!
     var state: String!
+    var url_webshop: String?
     var organization: Organization!
     var productCategories: Array<ProductCategory>!
     var logo: Logo!
@@ -27,6 +28,7 @@ extension Found: JSONDecodable{
         organization = try decoder.decode("organization")
         productCategories = try decoder.decode("product_categories")
         logo = try decoder.decode("logo")
+        url_webshop = try decoder.decode("url_webshop")
         
     }
 }

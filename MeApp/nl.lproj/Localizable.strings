@@ -66,3 +66,15 @@
 "Press settings to give an access or cancel to close this window." = "Druk op instellingen om toegang te geven of druk op annuleren om dit venster te sluiten.";
 "Settings" = "Instellingen";
 "Scanning successfully!" = "Het scannen van de QR-code is gelukt";
+"Address" = "Adres";
+"Copy address" = "Adres kopiëren";
+"Copied to clipboard" = "Gekopieerd";
+"Transaction" = "Betaald";
+"Product voucher" = "Aanbiending";
+"Would you like to send us your feedback by e-mail?" = "Wilt u ons verbeterpunten per mail versturen?";
+"Confirm" = "Bevestig";
+"My feedback about the Me app" = "Mijn feedback over Me";
+"Question from Me user" = "Vraag van Me-gebruiker";
+"Mail services are not available" = "E-mailservices zijn niet beschikbaar";
+"Send the voucher to your email?" = "Wilt u de voucher naar uw e-mailadres sturen?";
+"No phone number" = "Geen telefoonnummer";

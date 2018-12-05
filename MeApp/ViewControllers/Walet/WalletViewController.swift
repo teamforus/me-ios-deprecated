@@ -12,24 +12,27 @@ import SwipeCellKit
 import CoreData
 import Speech
 import Reachability
+import Crashlytics
 import SDWebImage
+import NVActivityIndicatorView
+
 enum WalletCase {
     case token
     case assets
     case passes
 }
 
-class WalletViewController: MABaseViewController, AppLockerDelegate{
+class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityIndicatorViewable{
     func closePinCodeView(typeClose: typeClose) {
         
     }
-    @IBOutlet weak var profileIconImage: UIImageView!
-    @IBOutlet weak var profileIcon: ShadowButton!
     let reachability = Reachability()!
     @IBOutlet weak var tableView: UITableView!
     var walletCase : WalletCase! = WalletCase.token
     @IBOutlet weak var segmentView: UIView!
     var vouhers: NSMutableArray! = NSMutableArray()
+    var activityIndicatorView: NVActivityIndicatorView!
+    @IBOutlet weak var emptyTextLabe: UILabel!
     
     //    @IBOutlet weak var voiceButton: VoiceButtonView!
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en"))!
@@ -39,6 +42,7 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      
         if UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" && UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil{
             var appearance = ALAppearance()
             appearance.image = UIImage(named: "lock")!
@@ -49,9 +53,6 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
             
             AppLocker.present(with: .validate, and: appearance, withController: self)
         }
-        // profile icon round
-        
-        
         walletCase = WalletCase.passes
         
         //        segmentView.layer.cornerRadius = 8.0
@@ -79,11 +80,49 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
                 UserDefaults.standard.synchronize()
             }
         } catch{}
+        
+        let size = CGSize(width: 60, height: 60)
+        
+        startAnimating(size, message: "Loading...", type: NVActivityIndicatorType(rawValue: 32)!, color: #colorLiteral(red: 0.1918309331, green: 0.3696506619, blue: 0.9919955134, alpha: 1), textColor: .white, fadeInAnimation: nil)
+        getVoucherList()
     }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = false
+        IndentityRequest.requestIndentiy(completion: { (identityAddress, statuCode) in
+            Crashlytics.sharedInstance().setUserIdentifier(identityAddress.address)
+        }) { (error) in
+            
+        }
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.title = "Voucher"
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+            self.navigationController?.navigationItem.largeTitleDisplayMode = .automatic
+            self.tableView.contentInset = UIEdgeInsets(top: 1, left: 0, bottom: 0, right: 0)
+            
+        } else {
+            // Fallback on earlier versions
+        }
+        getVoucherList()
+        //  ConfigRequest.getConfig(configType: "wallet", completion: { (statuCode, response) in
+        
+        // }) { (error) in }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIView.animate(withDuration: 0.3) {
+            self.tabBarController?.tabBar.isHidden = false
+            self.view.setNeedsDisplay()
+            self.view.layoutSubviews()
+        }
+    }
+    
+    func getVoucherList()
+    {
         VoucherRequest.getVoucherList(completion: { (response, statusCode) in
             self.vouhers.removeAllObjects()
             for voucher in response{
@@ -92,23 +131,20 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
                         self.vouhers.add(voucher)
                     }
                 }else{
-                     self.vouhers.add(voucher)
+                    self.vouhers.add(voucher)
+                    
                 }
             }
-            
             if self.vouhers.count == 0{
-                self.tableView.isHidden = true
+                self.emptyTextLabe.isHidden = false
             }else {
-                self.tableView.isHidden = false
+                self.emptyTextLabe.isHidden = true
             }
             self.tableView.reloadData()
+            self.stopAnimating(nil)
         }) { (error) in
-            
+            self.stopAnimating(nil)
         }
-        
-        //  ConfigRequest.getConfig(configType: "wallet", completion: { (statuCode, response) in
-        
-        // }) { (error) in }
     }
     
     
@@ -142,14 +178,12 @@ class WalletViewController: MABaseViewController, AppLockerDelegate{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToKindPaket"{
+            
             let passVC = segue.destination as! MAGeneralPassViewController
             (passVC.contentViewController as! PassViewController).voucher = self.vouhers[(self.tableView.indexPathForSelectedRow?.row)!] as? Voucher
             (passVC.bottomViewController as! MABottomVoucherViewController).voucher = self.vouhers[(self.tableView.indexPathForSelectedRow?.row)!] as? Voucher
-        }else if segue.identifier == "goToProfile"{
-            let profileVC = segue.destination as! MAMyProfileViewController
-            (profileVC.contentViewController as! MAContentProfileViewController).isCloseButtonHide = false
-        }
-        else if segue.identifier == "goToVoucherProduct"{
+        }else if segue.identifier == "goToVoucherProduct"{
+            
             let passVC = segue.destination as! MAContenProductVoucherViewController
             (passVC.contentViewController as! MAProductVoucherViewController).voucher = self.vouhers[(self.tableView.indexPathForSelectedRow?.row)!] as? Voucher
             (passVC.bottomViewController as! MABottomProductViewController).voucher = self.vouhers[(self.tableView.indexPathForSelectedRow?.row)!] as? Voucher
@@ -195,73 +229,27 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var cell : UITableViewCell! = nil
-        
-        switch walletCase {
-        case .token?:
-            let cellWalletSecond = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! WalletSecondTableViewCell
-            if indexPath.row == 0{
-                cellWalletSecond.priceLabel.text = "10,509876"
-                cellWalletSecond.typeCoinLabel.text = "ETH"
-            } else if indexPath.row == 1{
-                cellWalletSecond.priceLabel.text = "200,85"
-                cellWalletSecond.typeCoinLabel.text = "BAT"
-                cellWalletSecond.typeCoinImageView.image = UIImage.init(named: "bat")
-            }else if indexPath.row == 2{
-                cellWalletSecond.priceLabel.text = "225,57"
-                cellWalletSecond.typeCoinLabel.text = "ERC-20 Token"
-                cellWalletSecond.typeCoinImageView.image = UIImage.init(named: "erc")
-            }
-            
-            cell = cellWalletSecond
-            break
-            
-        case .assets?:
-            let cellWalletOwner = tableView.dequeueReusableCell(withIdentifier: "cell3", for: indexPath) as! MAWalletOwnerTableViewCell
-            cellWalletOwner.delegate = self
-            cellWalletOwner.headNameLabel.text = "APPARTEMENT"
-            cellWalletOwner.productNameLabel.text = "Groningen"
-            cellWalletOwner.marcLabel.text = "Ulgersmaweg 35, 9731BK"
-            
-            cell = cellWalletOwner
-            break
-        case .passes?:
-            let cellWallet = tableView.dequeueReusableCell(withIdentifier: "cell4", for: indexPath) as! MAWaletVoucherTableViewCell
-            //            cellWallet.delegate = self
-            cellWallet.selectionStyle = .none
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MAWaletVoucherTableViewCell
+            cell.selectionStyle = .none
             let voucher = self.vouhers[indexPath.row] as! Voucher
          
             if voucher.product != nil{
-               cellWallet.usedVoucherLabel.isHidden = true
-                cellWallet.voucherTitleLabel.text = voucher.product?.name
-                cellWallet.priceLabel.text = "€\(voucher.product?.price ?? "0.0")" 
+               cell.usedVoucherLabel.isHidden = true
+                cell.voucherTitleLabel.text = voucher.product?.name
+                cell.priceLabel.text = "€\(voucher.product?.price ?? "0.0")"
                 if voucher.product?.photo != nil {
-                cellWallet.voucherImage.sd_setImage(with: URL(string: voucher.product?.photo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+                cell.voucherImage.sd_setImage(with: URL(string: voucher.product?.photo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
                 }
             }else{
-                cellWallet.voucherTitleLabel.text = voucher.found.name
-                cellWallet.usedVoucherLabel.isHidden = true
-                cellWallet.priceLabel.text = "€\(voucher.amount ?? "0.0")"
+                cell.voucherTitleLabel.text = voucher.found.name
+                cell.usedVoucherLabel.isHidden = true
+                cell.priceLabel.text = "€\(voucher.amount ?? "0.0")"
                if voucher.found.logo != nil{
-                    cellWallet.voucherImage.sd_setImage(with: URL(string: voucher.found.logo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+                    cell.voucherImage.sd_setImage(with: URL(string: voucher.found.logo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
                 }
             }
-            
-            
-            cellWallet.organizationNameLabel.text = voucher.found.organization.name
-            cell = cellWallet
-        default:
-            let cellWallet = tableView.dequeueReusableCell(withIdentifier: "cell4", for: indexPath) as! MAWaletVoucherTableViewCell
-            cellWallet.delegate = self
-            if indexPath.row == 0{
-                cellWallet.voucherTitleLabel.text = "Kindpakket"
-                cellWallet.priceLabel.text = "€ 122,67"
-            }else if indexPath.row == 1{
-                cellWallet.voucherTitleLabel.text = "Meedoen"
-                cellWallet.voucherImage.image = #imageLiteral(resourceName: "Logo-Nijmgen-4-3")
-            }
-            cell = cellWallet
-        }
+            cell.organizationNameLabel.text = voucher.found.organization.name
+        
         return cell
     }
     
@@ -339,5 +327,40 @@ extension WalletViewController: UITableViewDelegate,UITableViewDataSource,SwipeT
             
         }
         return nil
+    }
+}
+
+
+extension WalletViewController{
+    func createAnimationLoader(){
+        self.view.backgroundColor = UIColor(red: CGFloat(237 / 255.0), green: CGFloat(85 / 255.0), blue: CGFloat(101 / 255.0), alpha: 1)
+        
+        let cols = 4
+        let rows = 8
+        let cellWidth = Int(self.view.frame.width / CGFloat(cols))
+        let cellHeight = Int(self.view.frame.height / CGFloat(rows))
+        (NVActivityIndicatorType.ballPulse.rawValue ... NVActivityIndicatorType.circleStrokeSpin.rawValue).forEach {
+            let x = ($0 - 1) % cols * cellWidth
+            let y = ($0 - 1) / cols * cellHeight
+            let frame = CGRect(x: x, y: y, width: cellWidth, height: cellHeight)
+            let activityIndicatorView = NVActivityIndicatorView(frame: frame,
+                                                                type: NVActivityIndicatorType(rawValue: $0)!)
+            let animationTypeLabel = UILabel(frame: frame)
+            
+            animationTypeLabel.text = String($0)
+            animationTypeLabel.sizeToFit()
+            animationTypeLabel.textColor = UIColor.white
+            animationTypeLabel.frame.origin.x += 5
+            animationTypeLabel.frame.origin.y += CGFloat(cellHeight) - animationTypeLabel.frame.size.height
+            
+            activityIndicatorView.padding = 20
+            if $0 == NVActivityIndicatorType.orbit.rawValue {
+                activityIndicatorView.padding = 0
+            }
+            self.view.addSubview(activityIndicatorView)
+            self.view.addSubview(animationTypeLabel)
+            activityIndicatorView.startAnimating()
+            
+        }
     }
 }

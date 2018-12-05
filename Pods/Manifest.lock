@@ -7,8 +7,6 @@ PODS:
   - Crashlytics (3.10.2):
     - Fabric (~> 1.7.7)
   - CryptoSwift (0.10.0)
-  - DropDown (2.3.1)
-  - ExpandableCell (1.2.2)
   - Fabric (1.7.7)
   - Firebase/Core (5.9.0):
     - Firebase/CoreOnly
@@ -58,11 +56,15 @@ PODS:
   - IQKeyboardManagerSwift (5.0.7)
   - ISHPullUp (1.0.7)
   - JSONCodable (3.0.1)
+  - MarqueeLabel/Swift (3.2.0)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - NVActivityIndicatorView (4.4.0):
+    - NVActivityIndicatorView/Presenter (= 4.4.0)
+  - NVActivityIndicatorView/Presenter (4.4.0)
   - Presentr (1.3)
   - PromiseKit/CorePromise (6.2.8)
   - QRCodeReader.swift (9.0.1)
@@ -73,7 +75,6 @@ PODS:
   - SDWebImage/Core (4.4.2)
   - secp256k1.swift (0.1.4)
   - SkyFloatingLabelTextField (3.4.0)
-  - swiftScan (1.1.5)
   - SwipeCellKit (2.0.1)
   - UICheckbox.Swift (1.0.0)
   - Web3 (0.1.1):
@@ -98,20 +99,19 @@ DEPENDENCIES:
   - AssistantKit
   - BWWalkthrough
   - Crashlytics
-  - DropDown
-  - ExpandableCell
   - Fabric
   - Firebase/Core
   - IQKeyboardManagerSwift
   - ISHPullUp
   - JSONCodable
+  - MarqueeLabel/Swift
+  - NVActivityIndicatorView
   - Presentr
   - QRCodeReader.swift
   - ReachabilitySwift
   - ScrollableSegmentedControl (~> 1.3.0)
   - SDWebImage
   - SkyFloatingLabelTextField
-  - swiftScan
   - SwipeCellKit
   - UICheckbox.Swift
   - Web3
@@ -136,8 +136,6 @@ SPEC CHECKSUMS:
   BWWalkthrough: 6b18dc688ff6b7168383fee07fe199ccaad7e9f7
   Crashlytics: 0360624eea1c978a743feddb2fb1ef8b37fb7a0d
   CryptoSwift: 6c778d69282bed3b4e975ff97a79d074f20bb011
-  DropDown: 20499c7b2731b0d21609af924e47c7677a2be50d
-  ExpandableCell: f2d99f9ae03a8c393e268adddaeb7f6d2525a76e
   Fabric: bda89e242bce1b7b8ab264248cf3407774ce0095
   Firebase: 383fa29aca93e371cab776b48a5c66544d3c2003
   FirebaseAnalytics: 831f1f127f4a75698e9875a87bf7e2668730d953
@@ -149,7 +147,9 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 30fb3a61de1af53a95e02b80fb54ed0a19d5ede5
   ISHPullUp: eaa91bef06270264e1f923bc764705173d341495
   JSONCodable: bd8616ae881befe2b82fbbf56d98b2dd377ac662
+  MarqueeLabel: 440a502b91a9179bd98f9fff00ba1150650a1c0e
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  NVActivityIndicatorView: ec7440a57af2450319d3a4181cca7da6fc127064
   Presentr: 3f0825a42cb32ecd8fc6b6d0b0de87d7d0b42482
   PromiseKit: 6788ce1a0ed5448b83d4aaf56b9fc49fb7647d32
   QRCodeReader.swift: 96292a5612fbc2fd9a0b26f93fa5164c8d02f59d
@@ -158,12 +158,11 @@ SPEC CHECKSUMS:
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   secp256k1.swift: a7e7a214f6db6ce5db32cc6b2b45e5c4dd633634
   SkyFloatingLabelTextField: 703aa1420b697392b1e7dba25571180dde018477
-  swiftScan: bc6dbf74e6a579c45a861691afc44628d8d9f6ab
   SwipeCellKit: 76888d93d1843dc568fdf38fff21b15dbbcf6b28
   UICheckbox.Swift: 85715689206fac5bae38b308f19c2a3e00442c3b
   Web3: 1f0c38c8508b8487948af1cb597653b018f4b5d3
   web3swift: 9cf4ccef0c7f7e9f9abb3bc5867789b928800af6
 
-PODFILE CHECKSUM: 5f7434d857c4845b302c868808722b6c20cadc60
+PODFILE CHECKSUM: ff8786fe69d7376325eea486c88695dbf9c9d35e
 
 COCOAPODS: 1.4.0

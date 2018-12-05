@@ -9,16 +9,15 @@
 import UIKit
 
 class TabBarController: UITabBarController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        self.addCenterButton(withImage: UIImage.init(named: "qrButton")!, highlightImage: UIImage.init(named: "qrButton")!)
+        
+        //        self.addCenterButton(withImage: UIImage.init(named: "qrButton")!, highlightImage: UIImage.init(named: "qrButton")!)
         self.tabBar.barTintColor = UIColor.white
         let largerRedTextSelectAttributes = [NSAttributedStringKey.font: UIFont(name: "GoogleSans-Medium", size: 10.0),
                                              NSAttributedStringKey.foregroundColor: UIColor.white]
         self.tabBarItem.setTitleTextAttributes(largerRedTextSelectAttributes as Any as? [NSAttributedStringKey : Any], for: .normal)
-       
+        
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(hideTapBar),
@@ -41,7 +40,7 @@ class TabBarController: UITabBarController {
             self.selectedViewController = self.viewControllers?[Int(i)]
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -50,6 +49,7 @@ class TabBarController: UITabBarController {
         super.viewDidLayoutSubviews()
         self.tabBar.invalidateIntrinsicContentSize()
     }
+    
     
     func addCenterButton(withImage buttonImage : UIImage, highlightImage: UIImage) {
         
@@ -89,5 +89,28 @@ class TabBarController: UITabBarController {
             item.title = ""
         }
     }
+    
+}
 
+extension UITabBarController{
+    func setTabBarVisible(visible:Bool, duration: TimeInterval, animated:Bool) {
+        var frame = self.view.bounds;
+        if visible {
+            frame.size.height += self.tabBar.bounds.size.height;
+        }else{
+            if UserDefaults.standard.bool(forKey: "isFirstOpened"){
+                frame.size.height -= self.tabBar.bounds.size.height;
+            }
+            UserDefaults.standard.set(true, forKey: "isFirstOpened")
+        }
+        UIView.animate(withDuration: 0.3) {
+            self.view.frame = frame
+            self.view.layoutIfNeeded()
+        }
+        
+    }
+    
+    func tabBarIsVisible() ->Bool {
+        return self.tabBar.frame.origin.y < view.bounds.height
+    }
 }

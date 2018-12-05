@@ -27,7 +27,7 @@
 "BUj-xf-lgk.text" = "Registreren";
 
 /* Class = "UILabel"; text = "New profiel"; ObjectID = "CtM-Fv-Z9R"; */
-"CtM-Fv-Z9R.text" = "Indentiteit";
+"CtM-Fv-Z9R.text" = "Nieuw Profiel";
 
 /* Class = "UITextField"; placeholder = "Family Name"; ObjectID = "DMr-He-WGt"; */
 "DMr-He-WGt.placeholder" = "Achternaam";
@@ -57,7 +57,7 @@
 "L2x-vd-lfS.placeholder" = "E-mail";
 
 /* Class = "UILabel"; text = "Welkom bij Me"; ObjectID = "Nuw-gS-LZ8"; */
-"Nuw-gS-LZ8.text" = "Welkom bij Me";
+"Nuw-gS-LZ8.text" = "Welcome to Me";
 
 /* Class = "UILabel"; text = "Please enter your e-mail address in order to receive your login details."; ObjectID = "OJO-WQ-zli"; */
 "OJO-WQ-zli.text" = "Vul je e-mailadres om inloggegevens te ontvangen.";

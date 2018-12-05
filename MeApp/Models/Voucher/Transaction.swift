@@ -16,7 +16,7 @@ struct Transactions {
     var amount: String!
     var adress: String!
     var organization: Organization!
-    var product: Product!
+    var product: ProductVoucher!
     var created_at: String!
 }
 
@@ -74,7 +74,7 @@ class TransactionVoucherRequest {
             "Accept": "application/json",
             "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"
         ]
-        Alamofire.request(BaseURL.baseURL(url: "platform/vouchers/\(identityAdress)/transactions"), method: .get, parameters:nil,encoding: JSONEncoding.default, headers: headers).responseJSON {
+        Alamofire.request(BaseURL.baseURL(url: "platform/vouchers/" + identityAdress + "/transactions"), method: .get, parameters:nil,encoding: JSONEncoding.default, headers: headers).responseJSON {
             response in
             switch response.result {
             case .success:

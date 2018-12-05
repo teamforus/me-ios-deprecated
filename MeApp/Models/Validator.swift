@@ -88,6 +88,7 @@ struct Organization{
     var email: String?
     var phone: String?
     var kvk: String?
+    var logo: Logo?
     var btw: String?
 }
 
@@ -102,6 +103,7 @@ extension Organization: JSONDecodable{
         email = try decoder.decode("email")
         phone = try decoder.decode("phone")
         kvk = try decoder.decode("kvk")
+        logo = try decoder.decode("logo")
         btw = try decoder.decode("btw")
     }
 }
@@ -118,6 +120,7 @@ extension Organization: JSONEncodable{
             try encoder.encode(phone, key:"phone")
             try encoder.encode(kvk, key:"kvk")
             try encoder.encode(btw, key:"btw")
+            try encoder.encode(btw, key:"logo")
         })
     }
 }
