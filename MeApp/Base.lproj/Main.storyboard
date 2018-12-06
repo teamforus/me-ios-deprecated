@@ -903,7 +903,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1671.2" y="1593.5532233883059"/>
+            <point key="canvasLocation" x="-2630" y="1594"/>
         </scene>
         <!--Botom Qr Profile View Controller-->
         <scene sceneID="6Jw-HM-cFe">
@@ -1118,7 +1118,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dSh-Gv-GrK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-788" y="1593.5532233883059"/>
+            <point key="canvasLocation" x="-681" y="1594"/>
         </scene>
         <!--Pssword Enable View Controller-->
         <scene sceneID="Gcn-1E-nAS">
@@ -1212,12 +1212,106 @@
             </objects>
             <point key="canvasLocation" x="144.80000000000001" y="1593.5532233883059"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="rU8-kZ-uve">
+            <objects>
+                <viewController id="YYh-Rs-2A3" customClass="ViewController" customModule="TestConstraint" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x5c-Fc-f7t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTu-R0-ICr" customClass="ShadowButton" customModule="Me" customModuleProvider="target">
+                                <rect key="frame" x="31" y="589.5" width="315" height="54.5"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.38431372549999998" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54.5" id="LXO-ag-iFQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="14"/>
+                                <state key="normal" title="INLOGCODE AANMAKEN">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedShadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="7bU-1G-HW3">
+                                <rect key="frame" x="14" y="24" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXC-yC-Zqx">
+                                <rect key="frame" x="14" y="20" width="41" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCp-An-roB">
+                                <rect key="frame" x="17" y="40" width="341" height="97"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="97" id="X7F-dK-1eo"/>
+                                </constraints>
+                                <string key="text">Verify 
+your account</string>
+                                <fontDescription key="fontDescription" name="GoogleSans-Medium" family="Google Sans" pointSize="36"/>
+                                <color key="textColor" red="0.18039215689999999" green="0.1960784314" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illustration" translatesAutoresizingMaskIntoConstraints="NO" id="C0b-cp-v0y">
+                                <rect key="frame" x="0.0" y="159" width="375" height="348"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5k-At-E38">
+                                <rect key="frame" x="30" y="487.5" width="322" height="61.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61.5" id="mNa-fM-ruD"/>
+                                </constraints>
+                                <string key="text">Welcome to Me, *Name Surname ! 
+Before we get started, please confirm your email address.</string>
+                                <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="OTu-R0-ICr" firstAttribute="top" secondItem="l5k-At-E38" secondAttribute="bottom" constant="40.5" id="2fx-jr-hNv"/>
+                            <constraint firstItem="C0b-cp-v0y" firstAttribute="leading" secondItem="wYs-OA-le3" secondAttribute="leading" id="41t-1S-VG3"/>
+                            <constraint firstItem="C0b-cp-v0y" firstAttribute="top" secondItem="mCp-An-roB" secondAttribute="bottom" constant="22" id="4Sr-4H-03D"/>
+                            <constraint firstItem="OTu-R0-ICr" firstAttribute="leading" secondItem="wYs-OA-le3" secondAttribute="leading" constant="31" id="BWL-2M-inE"/>
+                            <constraint firstItem="wYs-OA-le3" firstAttribute="trailing" secondItem="mCp-An-roB" secondAttribute="trailing" constant="17" id="Jzm-I0-PAk"/>
+                            <constraint firstItem="wYs-OA-le3" firstAttribute="trailing" secondItem="l5k-At-E38" secondAttribute="trailing" constant="23" id="Rdu-6g-hH5"/>
+                            <constraint firstItem="mCp-An-roB" firstAttribute="leading" secondItem="wYs-OA-le3" secondAttribute="leading" constant="17" id="TTd-oU-J9d"/>
+                            <constraint firstItem="C0b-cp-v0y" firstAttribute="trailing" secondItem="wYs-OA-le3" secondAttribute="trailing" id="V7a-CZ-GSh"/>
+                            <constraint firstItem="wYs-OA-le3" firstAttribute="trailing" secondItem="OTu-R0-ICr" secondAttribute="trailing" constant="29" id="eMb-NB-jKO"/>
+                            <constraint firstItem="mCp-An-roB" firstAttribute="top" secondItem="wYs-OA-le3" secondAttribute="top" constant="20" id="jGv-VQ-oRL"/>
+                            <constraint firstItem="l5k-At-E38" firstAttribute="leading" secondItem="wYs-OA-le3" secondAttribute="leading" constant="30" id="kyA-o0-hJz"/>
+                            <constraint firstItem="wYs-OA-le3" firstAttribute="bottom" secondItem="OTu-R0-ICr" secondAttribute="bottom" constant="23" id="oPB-NX-TSm"/>
+                            <constraint firstItem="l5k-At-E38" firstAttribute="bottom" secondItem="C0b-cp-v0y" secondAttribute="bottom" constant="42" id="wzf-sI-Cy0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wYs-OA-le3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LZf-Tl-5nk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1679.2" y="1593.5532233883059"/>
+        </scene>
     </scenes>
     <resources>
         <image name="back" width="24" height="24"/>
         <image name="closeIcon" width="24" height="24"/>
         <image name="faceId" width="85" height="85"/>
         <image name="fill1Copy" width="100" height="85"/>
+        <image name="illustration" width="375" height="349"/>
         <image name="proper" width="14" height="14"/>
         <image name="qrCode" width="178" height="178"/>
         <image name="qrImage2" width="16" height="16"/>
@@ -1225,6 +1319,6 @@
         <image name="tick" width="104" height="104"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sb3-cC-tEC"/>
+        <segue reference="Xwa-sU-bYn"/>
     </inferredMetricsTieBreakers>
 </document>

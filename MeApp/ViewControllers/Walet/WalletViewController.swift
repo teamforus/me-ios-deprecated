@@ -222,14 +222,14 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource, Swip
         if voucher.product != nil {
             cell.usedVoucherLabel.isHidden = true
             cell.voucherTitleLabel.text = voucher.product?.name
-            cell.priceLabel.text = "€\(voucher.product?.price ?? "0.0")"
+            cell.priceLabel.text = "€ \(voucher.product?.price ?? "0.0")"
             if voucher.product?.photo != nil {
                 cell.voucherImage.sd_setImage(with: URL(string: voucher.product?.photo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
             }
         } else {
             cell.voucherTitleLabel.text = voucher.found.name
             cell.usedVoucherLabel.isHidden = true
-            cell.priceLabel.text = "€\(voucher.amount ?? "0.0")"
+            cell.priceLabel.text = "€ \(voucher.amount ?? "0.0")"
             if voucher.found.logo != nil {
                 cell.voucherImage.sd_setImage(with: URL(string: voucher.found.logo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
             }
