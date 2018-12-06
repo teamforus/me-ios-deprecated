@@ -57,7 +57,7 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
         self.voucherTitleLabel.text = voucher.product?.name
         voucherTitleLabel.type = .continuous
         self.priceLabel.text = "€ " + (voucher.product?.price)!
-        imageQR.generateQRCode(from: "{ \"type\": \"voucher\",\"value\": \"\(voucher.address!)\" }")
+        imageQR.generateQRCode(from: "{\"type\": \"voucher\",\"value\": \"\(voucher.address!)\" }")
         organizationName.text = voucher.product?.organization.name
         
         if voucher.product?.organization.logo != nil{

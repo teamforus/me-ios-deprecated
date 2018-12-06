@@ -65,6 +65,8 @@
 		653181B3213010E70001D24E /* MAContentProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653181B2213010E70001D24E /* MAContentProfileViewController.swift */; };
 		653181B721301B8E0001D24E /* MAGeneralPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653181B621301B8E0001D24E /* MAGeneralPassViewController.swift */; };
 		653181B921301D280001D24E /* MABottomVoucherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653181B821301D280001D24E /* MABottomVoucherViewController.swift */; };
+		653813C221B96CA80099EE37 /* CreateRecord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653813C421B96CA80099EE37 /* CreateRecord.storyboard */; };
+		653813CB21B96FA70099EE37 /* ProductVoucher.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653813CD21B96FA70099EE37 /* ProductVoucher.storyboard */; };
 		653982752133FC5B003B87FC /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653982742133FC5B003B87FC /* RoundImageView.swift */; };
 		6539827921342638003B87FC /* MASuccessEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6539827821342638003B87FC /* MASuccessEmailViewController.swift */; };
 		653BB0E9215515300059AE0C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653BB0E8215515300059AE0C /* Config.swift */; };
@@ -348,6 +350,12 @@
 		653181B2213010E70001D24E /* MAContentProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAContentProfileViewController.swift; sourceTree = "<group>"; };
 		653181B621301B8E0001D24E /* MAGeneralPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAGeneralPassViewController.swift; sourceTree = "<group>"; };
 		653181B821301D280001D24E /* MABottomVoucherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MABottomVoucherViewController.swift; sourceTree = "<group>"; };
+		653813C321B96CA80099EE37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CreateRecord.storyboard; sourceTree = "<group>"; };
+		653813C621B96CAD0099EE37 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/CreateRecord.strings; sourceTree = "<group>"; };
+		653813C821B96CAF0099EE37 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/CreateRecord.strings; sourceTree = "<group>"; };
+		653813CC21B96FA70099EE37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ProductVoucher.storyboard; sourceTree = "<group>"; };
+		653813D221B96FD10099EE37 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ProductVoucher.strings; sourceTree = "<group>"; };
+		653813D321B96FD50099EE37 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/ProductVoucher.strings; sourceTree = "<group>"; };
 		653982742133FC5B003B87FC /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
 		6539827821342638003B87FC /* MASuccessEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MASuccessEmailViewController.swift; sourceTree = "<group>"; };
 		653BB0E8215515300059AE0C /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -1022,8 +1030,10 @@
 				65509472213D4F36007532BE /* Main.storyboard */,
 				6550946B213D4D29007532BE /* Tabs.storyboard */,
 				65509479213D4F4F007532BE /* PassStoryboard.storyboard */,
+				653813CD21B96FA70099EE37 /* ProductVoucher.storyboard */,
 				6576A0BF21933EC7007B3D9D /* VoucherPayment.storyboard */,
 				65509480213D5017007532BE /* NewProfile.storyboard */,
+				653813C421B96CA80099EE37 /* CreateRecord.storyboard */,
 				65509487213D5105007532BE /* Profile.storyboard */,
 				65E3363E20E645B600C0512B /* KRScrollView.swift */,
 				65BFF47120C1A61B00F64215 /* VoiceButton */,
@@ -1674,6 +1684,7 @@
 				65A51FD420B3012C0010DB33 /* SF-Pro-Display-Medium.otf in Resources */,
 				651F7064214682FD008D087A /* TransactionViewController.xib in Resources */,
 				65A51FCD20B3012C0010DB33 /* SF-Pro-Display-SemiboldItalic.otf in Resources */,
+				653813C221B96CA80099EE37 /* CreateRecord.storyboard in Resources */,
 				6579634C20E4D49E001CF29D /* NunitoSans-ExtraLightItalic.ttf in Resources */,
 				65A51FCE20B3012C0010DB33 /* SF-Pro-Text-Heavy.otf in Resources */,
 				65A51FE020B3012C0010DB33 /* SF-Pro-Display-Black.otf in Resources */,
@@ -1752,6 +1763,7 @@
 				65A51FE520B3012C0010DB33 /* SF-Pro-Display-ThinItalic.otf in Resources */,
 				65B89AB120B43A3D0024DC51 /* MAValidationViewController.xib in Resources */,
 				65A51FDB20B3012C0010DB33 /* SF-Pro-Display-HeavyItalic.otf in Resources */,
+				653813CB21B96FA70099EE37 /* ProductVoucher.storyboard in Resources */,
 				6550947E213D5017007532BE /* NewProfile.storyboard in Resources */,
 				6579633E20E4D49D001CF29D /* NunitoSans-LightItalic.ttf in Resources */,
 				65B89AC520B44B1B0024DC51 /* MAShareVaucherViewController.xib in Resources */,
@@ -2209,6 +2221,26 @@
 				651F706A21468300008D087A /* nl */,
 			);
 			name = TransactionViewController.xib;
+			sourceTree = "<group>";
+		};
+		653813C421B96CA80099EE37 /* CreateRecord.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				653813C321B96CA80099EE37 /* Base */,
+				653813C621B96CAD0099EE37 /* en */,
+				653813C821B96CAF0099EE37 /* nl */,
+			);
+			name = CreateRecord.storyboard;
+			sourceTree = "<group>";
+		};
+		653813CD21B96FA70099EE37 /* ProductVoucher.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				653813CC21B96FA70099EE37 /* Base */,
+				653813D221B96FD10099EE37 /* en */,
+				653813D321B96FD50099EE37 /* nl */,
+			);
+			name = ProductVoucher.storyboard;
 			sourceTree = "<group>";
 		};
 		65509467213D3C1E007532BE /* Localizable.strings */ = {

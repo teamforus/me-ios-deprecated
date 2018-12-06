@@ -34,7 +34,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k1y-7h-c3v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1360" y="219"/>
+            <point key="canvasLocation" x="-1303" y="217"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="XoZ-Gs-GHp">
@@ -366,7 +366,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rPn-ry-jA5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-503.19999999999999" y="208.24587706146929"/>
+            <point key="canvasLocation" x="-503" y="218"/>
         </scene>
         <!--BottomQR Voucher Payment View Controller-->
         <scene sceneID="i6E-Ji-edE">
@@ -475,22 +475,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yNa-C8-9uA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-503" y="875"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Oz1-xd-p9w">
-            <objects>
-                <viewController id="4Oy-0r-wrB" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fvf-N5-rXC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="gH6-j7-Nu0"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8In-se-b3m" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1132" y="392"/>
+            <point key="canvasLocation" x="-503" y="839"/>
         </scene>
     </scenes>
     <resources>

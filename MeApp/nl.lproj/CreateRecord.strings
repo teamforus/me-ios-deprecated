@@ -1,0 +1,51 @@
+
+/* Class = "UILabel"; text = "E-mail"; ObjectID = "2jb-Gf-jhF"; */
+"2jb-Gf-jhF.text" = "E-mail";
+
+/* Class = "UILabel"; text = "Select the category under which the new record type should be added."; ObjectID = "3lB-Gh-dvm"; */
+"3lB-Gh-dvm.text" = "Kies een categorie voor de eigenschap";
+
+/* Class = "UILabel"; text = "Select the category under which the new record type should be added."; ObjectID = "4aj-jZ-D9K"; */
+"4aj-jZ-D9K.text" = "Kies een categorie voor de eigenschap";
+
+/* Class = "UILabel"; text = "Choose Category"; ObjectID = "5Z5-l3-RsJ"; */
+"5Z5-l3-RsJ.text" = "Kies categorie";
+
+/* Class = "UITextView"; text = "Text"; ObjectID = "8Bt-M3-AM7"; */
+"8Bt-M3-AM7.text" = "Tekst";
+
+/* Class = "UILabel"; text = "Nieuwe Eigenschappen"; ObjectID = "DbK-WU-q3r"; */
+"DbK-WU-q3r.text" = "Nieuwe Eigenschappen";
+
+/* Class = "UIButton"; normalTitle = "Persoonlijk"; ObjectID = "FdY-2V-2Ef"; */
+"FdY-2V-2Ef.normalTitle" = "Persoonlijk";
+
+/* Class = "UIButton"; normalTitle = "Next step"; ObjectID = "Fib-Ls-m0U"; */
+"Fib-Ls-m0U.normalTitle" = "Volgende";
+
+/* Class = "UIButton"; normalTitle = "Given Name"; ObjectID = "K2d-ly-Yt9"; */
+"K2d-ly-Yt9.normalTitle" = "Voornaam";
+
+/* Class = "UILabel"; text = "Create the text or value for the current record"; ObjectID = "aba-TL-MXG"; */
+"aba-TL-MXG.text" = "Vul een teskt of waarde in voor de huidige eigenschap";
+
+/* Class = "UIButton"; normalTitle = "BEVESTIG"; ObjectID = "cDh-Zx-wcG"; */
+"cDh-Zx-wcG.normalTitle" = "BEVESTIG";
+
+/* Class = "UILabel"; text = "Nieuwe Eigenschappen"; ObjectID = "dd2-BV-cPM"; */
+"dd2-BV-cPM.text" = "Nieuwe Eigenschappen";
+
+/* Class = "UIButton"; normalTitle = "Persoonlijk"; ObjectID = "hld-sk-69x"; */
+"hld-sk-69x.normalTitle" = "Persoonlijk";
+
+/* Class = "UILabel"; text = "Persoonlijk"; ObjectID = "is3-6l-c6l"; */
+"is3-6l-c6l.text" = "Persoonlijk";
+
+/* Class = "UILabel"; text = "Vul een waarde in"; ObjectID = "ndB-dt-gG7"; */
+"ndB-dt-gG7.text" = "Vul een waarde in";
+
+/* Class = "UILabel"; text = "Nieuwe Eigenschappen"; ObjectID = "pjN-jM-utv"; */
+"pjN-jM-utv.text" = "Nieuwe Eigenschappen";
+
+/* Class = "UILabel"; text = "Choose Type"; ObjectID = "qQU-sB-Slv"; */
+"qQU-sB-Slv.text" = "Kies type";

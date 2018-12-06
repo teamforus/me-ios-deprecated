@@ -37,7 +37,7 @@ class MABottomProductViewController: MABaseViewController , ISHPullUpSizingDeleg
         rootView.layer.shadowOffset = CGSize(width: 0, height: -2)
         rootView.layer.shadowOpacity = 0.2
         rootView.layer.shadowRadius = 23 / 2
-        self.qrCodeImageView.generateQRCode(from: "{ \"type\": \"voucher\",\"value\": \"\(voucher.address!)\" }")
+        self.qrCodeImageView.generateQRCode(from: "{\"type\": \"voucher\",\"value\": \"\(voucher.address!)\" }")
         //        self.qrCodeImageView.generateQRCode(from: "{ \"type\": \"auth_token\",\"value\”:\”cd66db60cde7f133bf122db07fdd534bd3ab4d04f9d93af4516c279f4dd1cbb6\“ }")
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture))
         topView.addGestureRecognizer(tapGesture)
