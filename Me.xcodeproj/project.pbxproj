@@ -78,7 +78,7 @@
 		65509465213D3C1E007532BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65509467213D3C1E007532BE /* Localizable.strings */; };
 		65509469213D4D29007532BE /* Tabs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6550946B213D4D29007532BE /* Tabs.storyboard */; };
 		65509470213D4F36007532BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65509472213D4F36007532BE /* Main.storyboard */; };
-		65509477213D4F4F007532BE /* PassStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65509479213D4F4F007532BE /* PassStoryboard.storyboard */; };
+		65509477213D4F4F007532BE /* Product.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65509479213D4F4F007532BE /* Product.storyboard */; };
 		6550947E213D5017007532BE /* NewProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65509480213D5017007532BE /* NewProfile.storyboard */; };
 		65509485213D5105007532BE /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65509487213D5105007532BE /* Profile.storyboard */; };
 		6556375420B6DE8300E45487 /* PopupWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6556374720B6DE7F00E45487 /* PopupWindowManager.swift */; };
@@ -371,9 +371,9 @@
 		6550946D213D4D30007532BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Tabs.strings; sourceTree = "<group>"; };
 		6550946F213D4D33007532BE /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Tabs.strings; sourceTree = "<group>"; };
 		65509471213D4F36007532BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		65509478213D4F4F007532BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PassStoryboard.storyboard; sourceTree = "<group>"; };
-		6550947B213D4F53007532BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PassStoryboard.strings; sourceTree = "<group>"; };
-		6550947D213D4F55007532BE /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/PassStoryboard.strings; sourceTree = "<group>"; };
+		65509478213D4F4F007532BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Product.storyboard; sourceTree = "<group>"; };
+		6550947B213D4F53007532BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Product.strings; sourceTree = "<group>"; };
+		6550947D213D4F55007532BE /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Product.strings; sourceTree = "<group>"; };
 		6550947F213D5017007532BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/NewProfile.storyboard; sourceTree = "<group>"; };
 		65509482213D501C007532BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/NewProfile.strings; sourceTree = "<group>"; };
 		65509484213D50A2007532BE /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/NewProfile.strings; sourceTree = "<group>"; };
@@ -1029,7 +1029,7 @@
 				65B89A8E20B3344C0024DC51 /* ViewControllers */,
 				65509472213D4F36007532BE /* Main.storyboard */,
 				6550946B213D4D29007532BE /* Tabs.storyboard */,
-				65509479213D4F4F007532BE /* PassStoryboard.storyboard */,
+				65509479213D4F4F007532BE /* Product.storyboard */,
 				653813CD21B96FA70099EE37 /* ProductVoucher.storyboard */,
 				6576A0BF21933EC7007B3D9D /* VoucherPayment.storyboard */,
 				65509480213D5017007532BE /* NewProfile.storyboard */,
@@ -1670,7 +1670,7 @@
 				65A51FCC20B3012C0010DB33 /* SF-Pro-Display-Thin.otf in Resources */,
 				6500425920DB97E40092CCDA /* OpenSans-Light.ttf in Resources */,
 				6500425820DB97E40092CCDA /* OpenSans-SemiBold.ttf in Resources */,
-				65509477213D4F4F007532BE /* PassStoryboard.storyboard in Resources */,
+				65509477213D4F4F007532BE /* Product.storyboard in Resources */,
 				65A51FDA20B3012C0010DB33 /* SF-Pro-Display-MediumItalic.otf in Resources */,
 				65BB7C402112EF380073352C /* GoogleSans-Regular.ttf in Resources */,
 				65A51FE720B3012C0010DB33 /* SF-Pro-Text-Medium.otf in Resources */,
@@ -2272,14 +2272,14 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		65509479213D4F4F007532BE /* PassStoryboard.storyboard */ = {
+		65509479213D4F4F007532BE /* Product.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				65509478213D4F4F007532BE /* Base */,
 				6550947B213D4F53007532BE /* en */,
 				6550947D213D4F55007532BE /* nl */,
 			);
-			name = PassStoryboard.storyboard;
+			name = Product.storyboard;
 			sourceTree = "<group>";
 		};
 		65509480213D5017007532BE /* NewProfile.storyboard */ = {

@@ -77,8 +77,8 @@
 /* Class = "UILabel"; text = "RMinds"; ObjectID = "hwW-K7-8bM"; */
 "hwW-K7-8bM.text" = "RMinds";
 
-/* Class = "UILabel"; text = "Geschiedenis"; ObjectID = "i1G-qE-89v"; */
-"i1G-qE-89v.text" = "History";
+/* Class = "UILabel"; text = "Geschiedenis"; ObjectID = "cdz-lX-1KZ"; */
+"cdz-lX-1KZ.text" = "History";
 
 /* Class = "UILabel"; text = "+2,76"; ObjectID = "jA4-iO-fF3"; */
 "jA4-iO-fF3.text" = "+2,76";

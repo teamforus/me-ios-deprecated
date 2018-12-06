@@ -140,8 +140,8 @@
 /* Class = "UILabel"; text = "Voucher"; ObjectID = "bls-5D-nMA"; */
 "bls-5D-nMA.text" = "Voucher";
 
-/* Class = "UILabel"; text = "Geschiedenis"; ObjectID = "i1G-qE-89v"; */
-"i1G-qE-89v.text" = "Geschiedenis";
+/* Class = "UILabel"; text = "Geschiedenis"; ObjectID = "cdz-lX-1KZ"; */
+"cdz-lX-1KZ.text" = "Geschiedenis";
 
 /* Class = "UILabel"; text = "Vandaag"; ObjectID = "0ve-pB-Qlv"; */
 "0ve-pB-Qlv.text" = "Vandaag";
