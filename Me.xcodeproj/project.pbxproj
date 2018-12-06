@@ -1018,7 +1018,6 @@
 				65BFF47120C1A61B00F64215 /* VoiceButton */,
 				65FC865D20B5D8F5001FECA5 /* Extension */,
 				65D39D1520DC057200CA4E41 /* Library */,
-				658BBA51211094BE0098E2AC /* AppLocker */,
 				65A51FF320B333D10010DB33 /* PopUps */,
 				65467FA620B82370009E99CC /* Models */,
 				65467FA820B823B9009E99CC /* Suporting Files */,
@@ -1231,7 +1230,6 @@
 				6527C6FB20D1626900009704 /* ValidationRequest */,
 				6528F01A20E51BF700DD19C1 /* FirstPage */,
 				65E3364020E6BA0300C0512B /* LogimEmail */,
-				65AC33002102123300633187 /* PagesCategory */,
 				656F198B210604B800923DAF /* Personal */,
 				65A5A9B9210B64F600CF1C45 /* CreateNewIdentity */,
 				653181B4213017A30001D24E /* MyProfile */,
@@ -1243,6 +1241,7 @@
 		65B89A9520B408CC0024DC51 /* Records */ = {
 			isa = PBXGroup;
 			children = (
+				65AC33002102123300633187 /* PagesCategory */,
 				65B89A9320B408C00024DC51 /* MARecordsViewController.swift */,
 			);
 			path = Records;
@@ -1364,6 +1363,7 @@
 		65BD691721246BD40098CF9F /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				658BBA51211094BE0098E2AC /* AppLocker */,
 				65DC02212138314B00FDD4A3 /* Formater.swift */,
 				650FA29420F79CD200997261 /* ShadowButton.swift */,
 				65AC32F52101D9E500633187 /* CustomCornerUIView.swift */,
