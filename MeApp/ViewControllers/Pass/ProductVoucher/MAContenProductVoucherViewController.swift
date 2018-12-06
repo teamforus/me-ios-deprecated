@@ -26,7 +26,7 @@ class MAContenProductVoucherViewController: ISHPullUpViewController {
     }
     
     private func commonInit() {
-        let storyBoard = UIStoryboard(name: "PassStoryboard", bundle: nil)
+        let storyBoard = UIStoryboard(name: "ProductVoucher", bundle: nil)
         let contentVC = storyBoard.instantiateViewController(withIdentifier: "productVoucher") as! MAProductVoucherViewController
         let bottomVC = storyBoard.instantiateViewController(withIdentifier: "bottomQRProduct") as! MABottomProductViewController
         contentViewController = contentVC

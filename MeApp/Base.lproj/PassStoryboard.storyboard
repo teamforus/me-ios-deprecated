@@ -619,30 +619,6 @@
             </objects>
             <point key="canvasLocation" x="-519.20000000000005" y="829.38530734632695"/>
         </scene>
-        <!--productVoucher-->
-        <scene sceneID="1yO-AG-n6c">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="productVoucher" storyboardName="ProductVoucher" referencedIdentifier="productVoucher" id="yAH-uW-47U" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pwX-E2-vTL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-519" y="1723"/>
-        </scene>
-        <!--contentProduct-->
-        <scene sceneID="xbU-oG-J9R">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="contentProduct" storyboardName="ProductVoucher" referencedIdentifier="contentProduct" id="hC8-fO-xLX" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vdj-nc-hzq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1361" y="1663"/>
-        </scene>
-        <!--bottomQRProduct-->
-        <scene sceneID="iIF-Lv-2Gj">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="bottomQRProduct" storyboardName="ProductVoucher" referencedIdentifier="bottomQRProduct" id="jkq-Fc-aID" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="agk-in-cAA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-519" y="2393"/>
-        </scene>
     </scenes>
     <resources>
         <image name="1" width="24" height="24"/>

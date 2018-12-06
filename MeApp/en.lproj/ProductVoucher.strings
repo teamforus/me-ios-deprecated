@@ -3,7 +3,7 @@
 "5vp-xG-Gy2.text" = "Product Voucher";
 
 /* Class = "UIButton"; normalTitle = "E-mail naar mij"; ObjectID = "70G-HG-SBb"; */
-"70G-HG-SBb.normalTitle" = "E-mail naar mij";
+"70G-HG-SBb.normalTitle" = "E-mail to me";
 
 /* Class = "UIButton"; normalTitle = "info@rminds.nl"; ObjectID = "9jn-fs-YMX"; */
 "9jn-fs-YMX.normalTitle" = "info@rminds.nl";
@@ -15,7 +15,7 @@
 "IJF-vQ-NDk.text" = "Telephone";
 
 /* Class = "UILabel"; text = "Hier is je persoonlijke QR-Code"; ObjectID = "WIf-wb-p3w"; */
-"WIf-wb-p3w.text" = "Hier is je persoonlijke QR-Code";
+"WIf-wb-p3w.text" = "This is your Voucher’s QR-code.";
 
 /* Class = "UILabel"; text = "QR-CODE"; ObjectID = "XqO-BA-5qB"; */
 "XqO-BA-5qB.text" = "QR-CODE";
@@ -39,7 +39,7 @@
 "nRf-2Y-aRP.text" = "Address";
 
 /* Class = "UILabel"; text = "Laat iemanduw persoonlijke QR-code scannen om u valuta, bezit of vouchers te sturen"; ObjectID = "raD-LX-S2B"; */
-"raD-LX-S2B.text" = "Laat iemanduw persoonlijke QR-code scannen om u valuta, bezit of vouchers te sturen";
+"raD-LX-S2B.text" = "Let the shopkeeper scan it to make a payment from your voucher.";
 
 /* Class = "UITabBarItem"; title = "Item 2"; ObjectID = "uL9-BC-d3b"; */
 "uL9-BC-d3b.title" = "Item 2";
