@@ -36,7 +36,7 @@ class MAValidatorsViewController: MABaseViewController {
                 AlertController.showError(vc:self)
             }
         }else{
-             self.categoryNameLabel.text = "Persoonlijk"
+             self.categoryNameLabel.text = "Personl".localized()
         }
         }else{
             AlertController.showInternetUnable(vc: self)

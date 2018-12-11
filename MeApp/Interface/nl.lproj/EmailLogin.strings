@@ -1,0 +1,24 @@
+
+/* Class = "UILabel"; text = "Inloggen"; ObjectID = "1ya-1g-6TI"; */
+"1ya-1g-6TI.text" = "Inloggen";
+
+/* Class = "UILabel"; text = "Inloggen via E-mail"; ObjectID = "Acz-7X-ucB"; */
+"Acz-7X-ucB.text" = "Inloggen via E-mail";
+
+/* Class = "UIButton"; normalTitle = "BEVESTIG"; ObjectID = "Fac-xa-KgH"; */
+"Fac-xa-KgH.normalTitle" = "BEVESTIG";
+
+/* Class = "UITextField"; placeholder = "E-mail"; ObjectID = "L2x-vd-lfS"; */
+"L2x-vd-lfS.placeholder" = "E-mail";
+
+/* Class = "UILabel"; text = "Vul je e-mailadres in om inloggevens te ontvangen"; ObjectID = "OJO-WQ-zli"; */
+"OJO-WQ-zli.text" = "Vul je e-mailadres in om inloggevens te ontvangen.";
+
+/* Class = "UIButton"; normalTitle = "OPEN MAIL APP"; ObjectID = "lGB-BZ-Lqb"; */
+"lGB-BZ-Lqb.normalTitle" = "OPEN MAIL APP";
+
+/* Class = "UIButton"; normalTitle = "ANNULEER"; ObjectID = "lMC-Xp-5ur"; */
+"lMC-Xp-5ur.normalTitle" = "ANNULEER";
+
+/* Class = "UILabel"; text = "Er is een e-mail naar je verstuurd"; ObjectID = "yVG-jI-CFB"; */
+"yVG-jI-CFB.text" = "Er is een e-mail naar je toegestuurd.";

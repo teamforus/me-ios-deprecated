@@ -1,0 +1,33 @@
+
+/* Class = "UILabel"; text = "Vul onderstaande gegevens in om een identiteit aan te maken, druk vervolgens op identiteit toevoegen"; ObjectID = "BGx-Ya-lC9"; */
+"BGx-Ya-lC9.text" = "Vul onderstaande gegevens in om een profiel aan te maken.";
+
+/* Class = "UILabel"; text = "Jouw identiteit"; ObjectID = "CtM-Fv-Z9R"; */
+"CtM-Fv-Z9R.text" = "Jouw identiteit";
+
+/* Class = "UITextField"; placeholder = "Achternaam"; ObjectID = "DMr-He-WGt"; */
+"DMr-He-WGt.placeholder" = "Achternaam";
+
+/* Class = "UIButton"; normalTitle = "INLOGCODE AANMAKEN"; ObjectID = "OTu-R0-ICr"; */
+"OTu-R0-ICr.normalTitle" = "INLOGCODE AANMAKEN";
+
+/* Class = "UILabel"; text = "Me"; ObjectID = "PzA-yq-3Ed"; */
+"PzA-yq-3Ed.text" = "Me";
+
+/* Class = "UIButton"; normalTitle = "PROFIEL TOEVOEGEN"; ObjectID = "dBa-Wv-3m9"; */
+"dBa-Wv-3m9.normalTitle" = "PROFIEL TOEVOEGEN";
+
+/* Class = "UITextField"; placeholder = "Primary e-mail*"; ObjectID = "jMT-7s-AAr"; */
+"jMT-7s-AAr.placeholder" = "E-mailadres*";
+
+/* Class = "UILabel"; text = "Welcome to Me, *Name Surname ! \nBefore we get started, please confirm your email address."; ObjectID = "l5k-At-E38"; */
+"l5k-At-E38.text" = "Welcome to Me, *Name Surname ! \nBefore we get started, please confirm your email address.";
+
+/* Class = "UILabel"; text = "Verify \nyour account"; ObjectID = "mCp-An-roB"; */
+"mCp-An-roB.text" = "Verify \nyour account";
+
+/* Class = "UITextField"; placeholder = "Voornaam"; ObjectID = "vwf-mA-VNp"; */
+"vwf-mA-VNp.placeholder" = "Voornaam";
+
+/* Class = "UITextField"; placeholder = "Confirm e-mail*"; ObjectID = "yi8-tc-XIf"; */
+"yi8-tc-XIf.placeholder" = "Herhaal email";

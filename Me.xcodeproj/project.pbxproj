@@ -40,6 +40,9 @@
 		6510D87D20CAEF1400D85BAE /* Web3Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6510D87C20CAEF1400D85BAE /* Web3Provider.swift */; };
 		651826E720DD1D8200B8963A /* MABaseQRProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651826E620DD1D8200B8963A /* MABaseQRProfileViewController.swift */; };
 		651826EC20DD1DAF00B8963A /* MABotomQrProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651826EB20DD1DAF00B8963A /* MABotomQrProfileViewController.swift */; };
+		651A131E21BFB9E0006C19CA /* NewIdentity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 651A132021BFB9E0006C19CA /* NewIdentity.storyboard */; };
+		651A132721BFBBA0006C19CA /* EmailLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 651A132921BFBBA0006C19CA /* EmailLogin.storyboard */; };
+		651A133021BFC678006C19CA /* LoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 651A133221BFC678006C19CA /* LoginPage.storyboard */; };
 		651B5A8C21789DC100C23204 /* MAContenProductVoucherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651B5A8B21789DC100C23204 /* MAContenProductVoucherViewController.swift */; };
 		651B5A8E2178A06900C23204 /* MABottomProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651B5A8D2178A06900C23204 /* MABottomProductViewController.swift */; };
 		651CADD32174957C000E3E37 /* MAProductVoucherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651CADD22174957C000E3E37 /* MAProductVoucherViewController.swift */; };
@@ -314,6 +317,15 @@
 		6510D87C20CAEF1400D85BAE /* Web3Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Web3Provider.swift; sourceTree = "<group>"; };
 		651826E620DD1D8200B8963A /* MABaseQRProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MABaseQRProfileViewController.swift; sourceTree = "<group>"; };
 		651826EB20DD1DAF00B8963A /* MABotomQrProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MABotomQrProfileViewController.swift; sourceTree = "<group>"; };
+		651A131F21BFB9E0006C19CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/NewIdentity.storyboard; sourceTree = "<group>"; };
+		651A132221BFB9E3006C19CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/NewIdentity.strings; sourceTree = "<group>"; };
+		651A132421BFB9E5006C19CA /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/NewIdentity.strings; sourceTree = "<group>"; };
+		651A132821BFBBA0006C19CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/EmailLogin.storyboard; sourceTree = "<group>"; };
+		651A132B21BFBD79006C19CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/EmailLogin.strings; sourceTree = "<group>"; };
+		651A132D21BFBD7B006C19CA /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/EmailLogin.strings; sourceTree = "<group>"; };
+		651A133121BFC678006C19CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LoginPage.storyboard; sourceTree = "<group>"; };
+		651A133421BFC67D006C19CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LoginPage.strings; sourceTree = "<group>"; };
+		651A133621BFC74D006C19CA /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/LoginPage.strings; sourceTree = "<group>"; };
 		651B5A8B21789DC100C23204 /* MAContenProductVoucherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAContenProductVoucherViewController.swift; sourceTree = "<group>"; };
 		651B5A8D2178A06900C23204 /* MABottomProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MABottomProductViewController.swift; sourceTree = "<group>"; };
 		651CADD22174957C000E3E37 /* MAProductVoucherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAProductVoucherViewController.swift; sourceTree = "<group>"; };
@@ -704,6 +716,24 @@
 			path = LoginWithQR;
 			sourceTree = "<group>";
 		};
+		651A133721BFD5DA006C19CA /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				65509472213D4F36007532BE /* Main.storyboard */,
+				651A133221BFC678006C19CA /* LoginPage.storyboard */,
+				651A132921BFBBA0006C19CA /* EmailLogin.storyboard */,
+				651A132021BFB9E0006C19CA /* NewIdentity.storyboard */,
+				6550946B213D4D29007532BE /* Tabs.storyboard */,
+				65509479213D4F4F007532BE /* Product.storyboard */,
+				653813CD21B96FA70099EE37 /* ProductVoucher.storyboard */,
+				6576A0BF21933EC7007B3D9D /* VoucherPayment.storyboard */,
+				65509480213D5017007532BE /* NewProfile.storyboard */,
+				653813C421B96CA80099EE37 /* CreateRecord.storyboard */,
+				65509487213D5105007532BE /* Profile.storyboard */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
 		651B5A8A21789CC200C23204 /* ProductVoucher */ = {
 			isa = PBXGroup;
 			children = (
@@ -1006,14 +1036,7 @@
 				65BD691721246BD40098CF9F /* Custom */,
 				65D764E020B73933007D7B9D /* Helper */,
 				65B89A8E20B3344C0024DC51 /* ViewControllers */,
-				65509472213D4F36007532BE /* Main.storyboard */,
-				6550946B213D4D29007532BE /* Tabs.storyboard */,
-				65509479213D4F4F007532BE /* Product.storyboard */,
-				653813CD21B96FA70099EE37 /* ProductVoucher.storyboard */,
-				6576A0BF21933EC7007B3D9D /* VoucherPayment.storyboard */,
-				65509480213D5017007532BE /* NewProfile.storyboard */,
-				653813C421B96CA80099EE37 /* CreateRecord.storyboard */,
-				65509487213D5105007532BE /* Profile.storyboard */,
+				651A133721BFD5DA006C19CA /* Interface */,
 				65E3363E20E645B600C0512B /* KRScrollView.swift */,
 				65BFF47120C1A61B00F64215 /* VoiceButton */,
 				65FC865D20B5D8F5001FECA5 /* Extension */,
@@ -1649,6 +1672,7 @@
 				6500425920DB97E40092CCDA /* OpenSans-Light.ttf in Resources */,
 				6500425820DB97E40092CCDA /* OpenSans-SemiBold.ttf in Resources */,
 				65509477213D4F4F007532BE /* Product.storyboard in Resources */,
+				651A132721BFBBA0006C19CA /* EmailLogin.storyboard in Resources */,
 				65A51FDA20B3012C0010DB33 /* SF-Pro-Display-MediumItalic.otf in Resources */,
 				65BB7C402112EF380073352C /* GoogleSans-Regular.ttf in Resources */,
 				65A51FE720B3012C0010DB33 /* SF-Pro-Text-Medium.otf in Resources */,
@@ -1669,6 +1693,7 @@
 				65BFF47B20C1A61C00F64215 /* VoiceButtonAssets.xcassets in Resources */,
 				65A51FE920B3012C0010DB33 /* SF-Pro-Text-SemiboldItalic.otf in Resources */,
 				651F7056214682C7008D087A /* MATransactionBlueViewController.xib in Resources */,
+				651A131E21BFB9E0006C19CA /* NewIdentity.storyboard in Resources */,
 				65B89AAC20B4363D0024DC51 /* MAEmailForMeViewController.xib in Resources */,
 				65B89ABB20B442C60024DC51 /* MAFailValidationViewController.xib in Resources */,
 				6500425B20DB97E40092CCDA /* OpenSans-ExtraBold.ttf in Resources */,
@@ -1719,6 +1744,7 @@
 				6500425C20DB97E40092CCDA /* OpenSans-LightItalic.ttf in Resources */,
 				6568CDA82190A873003E5F0C /* MAConfirmationTransactionViewController.xib in Resources */,
 				65ACC3802191DA67001D15DC /* AppLocker.xib in Resources */,
+				651A133021BFC678006C19CA /* LoginPage.storyboard in Resources */,
 				65B89AB620B43FA50024DC51 /* MAValidationSuccessViewController.xib in Resources */,
 				65A51FE320B3012C0010DB33 /* SF-Pro-Text-Semibold.otf in Resources */,
 				6500426020DB97E40092CCDA /* LICENSE.txt in Resources */,
@@ -2159,6 +2185,36 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		651A132021BFB9E0006C19CA /* NewIdentity.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				651A131F21BFB9E0006C19CA /* Base */,
+				651A132221BFB9E3006C19CA /* en */,
+				651A132421BFB9E5006C19CA /* nl */,
+			);
+			name = NewIdentity.storyboard;
+			sourceTree = "<group>";
+		};
+		651A132921BFBBA0006C19CA /* EmailLogin.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				651A132821BFBBA0006C19CA /* Base */,
+				651A132B21BFBD79006C19CA /* en */,
+				651A132D21BFBD7B006C19CA /* nl */,
+			);
+			name = EmailLogin.storyboard;
+			sourceTree = "<group>";
+		};
+		651A133221BFC678006C19CA /* LoginPage.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				651A133121BFC678006C19CA /* Base */,
+				651A133421BFC67D006C19CA /* en */,
+				651A133621BFC74D006C19CA /* nl */,
+			);
+			name = LoginPage.storyboard;
+			sourceTree = "<group>";
+		};
 		651F705121468141008D087A /* MASignUpViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

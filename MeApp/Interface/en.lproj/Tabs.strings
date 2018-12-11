@@ -1,0 +1,78 @@
+
+/* Class = "UILabel"; text = "Nieuwe"; ObjectID = "0RO-Fr-8TE"; */
+"0RO-Fr-8TE.text" = "New";
+
+/* Class = "UITabBarItem"; title = "Vouchers"; ObjectID = "0sK-og-sJQ"; */
+"0sK-og-sJQ.title" = "Vouchers";
+
+/* Class = "UILabel"; text = "5 records"; ObjectID = "2oP-0e-z3e"; */
+"2oP-0e-z3e.text" = "5 records";
+
+/* Class = "UIButton"; normalTitle = "New record"; ObjectID = "6Ll-lD-Zrb"; */
+"6Ll-lD-Zrb.normalTitle" = "New record";
+
+/* Class = "UILabel"; text = "Request"; ObjectID = "6mM-3T-qfG"; */
+"6mM-3T-qfG.text" = "Request";
+
+/* Class = "UITabBarItem"; title = "My Records"; ObjectID = "7le-DV-ctU"; */
+"7le-DV-ctU.title" = "Profile";
+
+/* Class = "UILabel"; text = "300 €"; ObjectID = "9C1-7W-qbu"; */
+"9C1-7W-qbu.text" = "300 €";
+
+/* Class = "UILabel"; text = "Ulgersmaweg 35, 9731BK"; ObjectID = "9br-Zf-gru"; */
+"9br-Zf-gru.text" = "Ulgersmaweg 35, 9731BK";
+
+/* Class = "UILabel"; text = "Voornaam"; ObjectID = "GCG-V7-S8z"; */
+"GCG-V7-S8z.text" = "First Name";
+
+/* Class = "UILabel"; text = "You have no vouchers yet"; ObjectID = "KKt-19-VeG"; */
+"KKt-19-VeG.text" = "You don't have any vouchers yet";
+
+/* Class = "UILabel"; text = "5 records"; ObjectID = "Lw5-t1-Wd1"; */
+"Lw5-t1-Wd1.text" = "5 records";
+
+/* Class = "UILabel"; text = "225,50"; ObjectID = "Mhk-eA-rgD"; */
+"Mhk-eA-rgD.text" = "225,50";
+
+/* Class = "UILabel"; text = "OFFICE"; ObjectID = "Nsu-ze-VqX"; */
+"Nsu-ze-VqX.text" = "OFFICE";
+
+/* Class = "UILabel"; text = "Vouchers"; ObjectID = "P1l-mS-jj2"; */
+"P1l-mS-jj2.text" = "Vouchers";
+
+/* Class = "UILabel"; text = "2 dagen geldig"; ObjectID = "PaZ-DR-I5J"; */
+"PaZ-DR-I5J.text" = "2 days valid";
+
+/* Class = "UILabel"; text = "Zend"; ObjectID = "Rsx-qJ-ODf"; */
+"Rsx-qJ-ODf.text" = "Send";
+
+/* Class = "UILabel"; text = "18 tagen geldig"; ObjectID = "ZYv-E9-UR4"; */
+"ZYv-E9-UR4.text" = "18 days valid";
+
+/* Class = "UITabBarItem"; title = "QR"; ObjectID = "a2M-XK-0VC"; */
+"a2M-XK-0VC.title" = "QR";
+
+/* Class = "UIButton"; normalTitle = "All"; ObjectID = "dLb-D5-Eme"; */
+"dLb-D5-Eme.normalTitle" = "All";
+
+/* Class = "UILabel"; text = "Groningen"; ObjectID = "dfC-3B-tRm"; */
+"dfC-3B-tRm.text" = "Groningen";
+
+/* Class = "UILabel"; text = "My Records"; ObjectID = "eT6-gv-AkQ"; */
+"eT6-gv-AkQ.text" = "Records";
+
+/* Class = "UILabel"; text = "E-mail"; ObjectID = "hcM-rM-dYg"; */
+"hcM-rM-dYg.text" = "E-mail";
+
+/* Class = "UILabel"; text = "Favourites"; ObjectID = "nQs-aP-PJ9"; */
+"nQs-aP-PJ9.text" = "Favourites";
+
+/* Class = "UILabel"; text = "Used"; ObjectID = "BUr-0Z-7e9"; */
+"BUr-0Z-7e9.text" = "Used";
+
+/* Class = "UILabel"; text = "Kindpakket"; ObjectID = "s5P-PY-YuN"; */
+"s5P-PY-YuN.text" = "Kindpakket";
+
+/* Class = "UITabBarItem"; title = "My Records"; ObjectID = "vmo-CF-lCr"; */
+"vmo-CF-lCr.title" = "Profile";

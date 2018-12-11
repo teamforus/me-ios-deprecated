@@ -28,10 +28,6 @@ class MASuccessEmailViewController: MABaseViewController, AppLockerDelegate {
             selector: #selector(authorizeToken(notifcation:)),
             name: NSNotification.Name(rawValue: "authorizeToken"),
             object: nil)
-    
-//        if UserDefaults.standard.string(forKey: "auth_token") != ""{
-//            self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.authorizeToken), userInfo: nil, repeats: true)
-//        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,21 +45,15 @@ class MASuccessEmailViewController: MABaseViewController, AppLockerDelegate {
     }
     
     @objc func authorizeToken(notifcation: Notification){
-//        Status.checkStatus(accessToken: notifcation.userInfo?["authToken"] as! String, completion: { (code, message) in
-//            if code == 200 {
-//                if message == "active"{
-//                    //check if user exist or no
-//                    self.checkPassCode()
-//                }
-//            }
-//        }) { (error) in
-//            AlertController.showError(vc:self)
-//        }
         AuthorizationEmailRequest.authorizeEmailToken(token: notifcation.userInfo?["authToken"] as! String, completion: { (response, statusCode) in
-            self.updateOldIndentity()
-            self.saveNewIdentity(accessToken: response.accessToken, email: self.email)
-            self.getCurrentUser(accessToken: response.accessToken)
-            self.performSegue(withIdentifier: "goToWalet", sender: nil)
+            if response.accessToken != nil {
+                self.updateOldIndentity()
+                self.saveNewIdentity(accessToken: response.accessToken, email: self.email)
+                self.getCurrentUser(accessToken: response.accessToken)
+                self.performSegue(withIdentifier: "goToWalet", sender: nil)
+            }else{
+                AlertController.showWarning(withText: "Please try to send email again.".localized(), vc: self)
+            }
         }) { (error) in
         }
     }
@@ -95,44 +85,6 @@ class MASuccessEmailViewController: MABaseViewController, AppLockerDelegate {
                 } catch {
                     print("Failed saving")
                 }
-            }
-        } catch{
-            
-        }
-    }
-    
-    func checkPassCode(){
-        let context = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        fetchRequest.predicate = NSPredicate(format:"primaryEmail == %@", email)
-        
-        do{
-            let results = try context.fetch(fetchRequest) as? [NSManagedObject]
-            if results?.count != 0 {
-                let user = results![0] as! User
-                if user.pinCode != nil || user.pinCode != "" {
-                    UserDefaults.standard.set(user.pinCode, forKey: ALConstants.kPincode)
-                    var appearance = ALAppearance()
-                    appearance.image = UIImage(named: "lock")!
-                    appearance.title = "Inlogcode"
-                    appearance.subtitle = "Maak een inlogcode aan"
-                    appearance.isSensorsEnabled = true
-                    appearance.cancelIsVissible = true
-                    appearance.delegate = self
-                    
-                    AppLocker.present(with: .validate, and: appearance, withController: self)
-                }
-            }else{
-                UserDefaults.standard.set("", forKey: ALConstants.kPincode)
-                var appearance = ALAppearance()
-                appearance.image = UIImage(named: "lock")!
-                appearance.title = "Inlogcode"
-                appearance.subtitle = "Maak een inlogcode aan"
-                appearance.isSensorsEnabled = true
-                appearance.cancelIsVissible = true
-                appearance.delegate = self
-                
-                AppLocker.present(with: .create, and: appearance, withController: self)
             }
         } catch{
             
@@ -171,7 +123,7 @@ class MASuccessEmailViewController: MABaseViewController, AppLockerDelegate {
     }
     
     func closePinCodeView(typeClose: typeClose) {
-      
+        
     }
     
     @IBAction func cancel(_ sender: Any) {
