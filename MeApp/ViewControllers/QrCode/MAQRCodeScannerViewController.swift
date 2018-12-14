@@ -11,7 +11,10 @@ import Alamofire
 import Reachability
 import Presentr
 
-class MAQRCodeScannerViewController: HSScanViewController , HSScanViewControllerDelegate {
+class MAQRCodeScannerViewController: HSScanViewController , HSScanViewControllerDelegate, AppLockerDelegate {
+    func closePinCodeView(typeClose: typeClose) {
+    }
+    
     
     var addressVoucher: String!
     let reachablity = Reachability()!
@@ -96,12 +99,26 @@ class MAQRCodeScannerViewController: HSScanViewController , HSScanViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if UserDefaults.standard.bool(forKey: "isStartFromScanner"){
+            if UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" && UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil {
+                var appearance = ALAppearance()
+                appearance.image = UIImage(named: "lock")!
+                appearance.title = "Enter login code".localized()
+                appearance.isSensorsEnabled = true
+                appearance.cancelIsVissible = false
+                appearance.delegate = self
+                
+                AppLocker.present(with: .validate, and: appearance, withController: self)
+            }
+        }
+        
         self.delegate = self
         self.scanCodeTypes  = [.qr]
         ScanPermission.authorizeCamera { (isAuthorized) in
             if !isAuthorized{
                 let alert: UIAlertController
-                alert = UIAlertController(title: "Camera permission request was denied.".localized(), message: "Press settings to give an access or cancel to close this window.".localized(), preferredStyle: .alert)
+                alert = UIAlertController(title: "Camera permission reuest was denied.".localized(), message: "Press settings to give an access or cancel to close this window.".localized(), preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .default, handler: { (action) in
                     self.dismiss(animated: true, completion: nil)
                 }))

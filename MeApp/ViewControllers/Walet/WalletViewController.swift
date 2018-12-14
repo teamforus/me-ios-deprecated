@@ -25,7 +25,7 @@ enum WalletCase {
 class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityIndicatorViewable {
     func closePinCodeView(typeClose: typeClose) {
     }
-
+    
     let reachability = Reachability()!
     @IBOutlet var tableView: UITableView!
     var walletCase: WalletCase! = WalletCase.token
@@ -33,27 +33,28 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
     var vouhers: NSMutableArray! = NSMutableArray()
     var activityIndicatorView: NVActivityIndicatorView!
     @IBOutlet var emptyTextLabe: UILabel!
-
+    
     //    @IBOutlet weak var voiceButton: VoiceButtonView!
     @IBOutlet var segmentedControl: HBSegmentedControl!
     let largerRedTextSelectAttributes = [NSAttributedStringKey.font: UIFont(name: "GoogleSans-Medium", size: 14.0),
                                          NSAttributedStringKey.foregroundColor: UIColor.white]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" && UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil {
-            var appearance = ALAppearance()
-            appearance.image = UIImage(named: "lock")!
-            appearance.title = "Enter login code".localized()
-            appearance.isSensorsEnabled = true
-            appearance.cancelIsVissible = false
-            appearance.delegate = self
-
-            AppLocker.present(with: .validate, and: appearance, withController: self)
+        if !UserDefaults.standard.bool(forKey: "isStartFromScanner"){
+            if UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" && UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil {
+                var appearance = ALAppearance()
+                appearance.image = UIImage(named: "lock")!
+                appearance.title = "Enter login code".localized()
+                appearance.isSensorsEnabled = true
+                appearance.cancelIsVissible = false
+                appearance.delegate = self
+                
+                AppLocker.present(with: .validate, and: appearance, withController: self)
+            }
         }
         walletCase = WalletCase.passes
-
+        
         //        segmentView.layer.cornerRadius = 8.0
         //        tableView.setContentOffset(CGPoint(x: 0, y: 44), animated: true)
         //        segmentedControl.items = ["Valuta", "Bezit", "Vouchers"]
@@ -79,36 +80,36 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
                 UserDefaults.standard.synchronize()
             }
         } catch {}
-
+        
         let size = CGSize(width: 60, height: 60)
-
+        
         startAnimating(size, message: "Loading...", type: NVActivityIndicatorType(rawValue: 32)!, color: #colorLiteral(red: 0.1918309331, green: 0.3696506619, blue: 0.9919955134, alpha: 1), textColor: .black, fadeInAnimation: nil)
         getVoucherList()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        IndentityRequest.requestIndentiy(completion: { (identityAddress, statuCode) in
-//            Crashlytics.sharedInstance().setUserIdentifier(identityAddress.address)
-//        }) { (error) in
-//
-//        }
+        //        IndentityRequest.requestIndentiy(completion: { (identityAddress, statuCode) in
+        //            Crashlytics.sharedInstance().setUserIdentifier(identityAddress.address)
+        //        }) { (error) in
+        //
+        //        }
         navigationController?.setNavigationBarHidden(false, animated: true)
         title = "Voucher"
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.prefersLargeTitles = true
             self.navigationController?.navigationItem.largeTitleDisplayMode = .automatic
             self.tableView.contentInset = UIEdgeInsets(top: 1, left: 0, bottom: 0, right: 0)
-
+            
         } else {
             // Fallback on earlier versions
         }
         getVoucherList()
         //  ConfigRequest.getConfig(configType: "wallet", completion: { (statuCode, response) in
-
+        
         // }) { (error) in }
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         UIView.animate(withDuration: 0.3) {
@@ -117,7 +118,7 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
             self.view.layoutSubviews()
         }
     }
-
+    
     func getVoucherList() {
         VoucherRequest.getVoucherList(completion: { response, _ in
             self.vouhers.removeAllObjects()
@@ -141,15 +142,15 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
             self.stopAnimating(nil)
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
     @IBAction func dismissKeyboard(_ sender: Any) {
         view.endEditing(true)
     }
-
+    
     //    @objc func segmentSelected(sender:HBSegmentedControl) {
     //        print("Segment at index \(sender.selectedIndex)  selected")
     //        if (sender.selectedIndex == 0 ){
@@ -167,7 +168,7 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
     @IBAction func logout(_ sender: Any) {
         logOut()
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToKindPaket" {
             let passVC = segue.destination as! MAGeneralPassViewController
@@ -186,15 +187,15 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
 extension WalletViewController: VoiceButtonDelegate {
     func updateSpeechText(_ text: String) {
     }
-
+    
     func startedRecording() {
         print("")
     }
-
+    
     func stoppedRecording() {
         print("")
     }
-
+    
     func notifyError(_ error: String) {
         print(error)
     }
@@ -206,19 +207,19 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource, Swip
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if walletCase == .passes {
             return vouhers.count
         }
         return 3
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MAWaletVoucherTableViewCell
         cell.selectionStyle = .none
         let voucher = vouhers[indexPath.row] as! Voucher
-
+        
         if voucher.product != nil {
             cell.usedVoucherLabel.isHidden = true
             cell.voucherTitleLabel.text = voucher.product?.name
@@ -235,10 +236,10 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource, Swip
             }
         }
         cell.organizationNameLabel.text = voucher.found.organization.name
-
+        
         return cell
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let voucher = vouhers[indexPath.row] as! Voucher
         if voucher.product != nil {
@@ -264,7 +265,7 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource, Swip
         //        self.performSegue(withIdentifier: "goToKindPaket", sender: self)
         tableView.deselectRow(at: indexPath, animated: false)
     }
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch walletCase {
         case .token?:
@@ -276,9 +277,9 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource, Swip
         }
         return 142
     }
-
+    
     // MARK: SwipeTableViewCellDelegate
-
+    
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         let transctionAction = SwipeAction(style: .default, title: "Transaction") { _, _ in
         }
@@ -286,28 +287,28 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource, Swip
         transctionAction.textColor = UIColor.lightGray
         transctionAction.image = UIImage(named: "transactionIcon")
         transctionAction.font = UIFont(name: "SFUIText-Bold", size: 10.0)
-
+        
         let deleteAction = SwipeAction(style: .destructive, title: "Delete") { _, _ in
         }
         deleteAction.backgroundColor = UIColor(red: 239 / 255, green: 239 / 255, blue: 244 / 255, alpha: 1.0)
         deleteAction.textColor = UIColor.lightGray
         deleteAction.image = UIImage(named: "removeIcon")
         deleteAction.font = UIFont(name: "SFUIText-Bold", size: 10.0)
-
+        
         switch walletCase {
         case .token?: break
         case .assets?:
             if orientation == .right {
                 return [deleteAction, transctionAction]
             }
-
+            
         case .passes?:
             if orientation == .left {
                 return [transctionAction]
             } else {
                 return [deleteAction]
             }
-
+            
         default: break
         }
         return nil
@@ -317,7 +318,7 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource, Swip
 extension WalletViewController {
     func createAnimationLoader() {
         view.backgroundColor = UIColor(red: CGFloat(237 / 255.0), green: CGFloat(85 / 255.0), blue: CGFloat(101 / 255.0), alpha: 1)
-
+        
         let cols = 4
         let rows = 8
         let cellWidth = Int(view.frame.width / CGFloat(cols))
@@ -329,13 +330,13 @@ extension WalletViewController {
             let activityIndicatorView = NVActivityIndicatorView(frame: frame,
                                                                 type: NVActivityIndicatorType(rawValue: $0)!)
             let animationTypeLabel = UILabel(frame: frame)
-
+            
             animationTypeLabel.text = String($0)
             animationTypeLabel.sizeToFit()
             animationTypeLabel.textColor = UIColor.white
             animationTypeLabel.frame.origin.x += 5
             animationTypeLabel.frame.origin.y += CGFloat(cellHeight) - animationTypeLabel.frame.size.height
-
+            
             activityIndicatorView.padding = 20
             if $0 == NVActivityIndicatorType.orbit.rawValue {
                 activityIndicatorView.padding = 0
