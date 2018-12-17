@@ -60,8 +60,8 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         if let thumbView =  (switchScannert.subviews[0].subviews[3] as? UIImageView) {
             thumbView.transform = CGAffineTransform(scaleX:0.73, y: 0.83)
         }
-       
-//        switchFaceID.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
+        //        switchFaceID.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         //        UserDefaults.standard.set("0000", forKey: ALConstants.kPincode)
         //        UserDefaults.standard.synchronize()
         //        updateIndentity()
@@ -96,8 +96,14 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
             switchScannert.isOn = false
         }
         
-         self.layoutBottom()
+        self.layoutBottom()
         closeUIButton.isHidden = isCloseButtonHide ?? true
+        
+        if !devicePasscodeSet(){
+            turnOnOffFaceId.isHidden = true
+            heightButtonsView.constant = 200
+        }
+        
         if UserDefaults.standard.bool(forKey: "isWithTouchID"){
             switchFaceID.isOn = true
         }else {
@@ -112,7 +118,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         let buildAppNumber: AnyObject? = Bundle.main.infoDictionary?["CFBundleVersion"] as AnyObject
         
         appVersionLabel.text = (versionApp as? String)! + " - dev - " + (buildAppNumber as? String)!
-//        CFBundleVersion
+        //        CFBundleVersion
     }
     
     func getRecordList(){
@@ -120,7 +126,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
             let mutableString = NSMutableString()
             for record in response{
                 if (record as! Record).key == "given_name"{
-                     mutableString.append((record as! Record).value)
+                    mutableString.append((record as! Record).value)
                 }else if (record as! Record).key == "primary_email" {
                     self.profileEmailLabel.text = (record as! Record).value
                 }else if (record as! Record).key == "family_name" {
@@ -137,20 +143,20 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     // layout constrint
     
     func layoutBottom(){
-       
+        
         let screen = Device.screen
         switch screen {
         case .inches_4_0:
-           // rect.size.height = 440
+            // rect.size.height = 440
             break
         case .inches_4_7:
-           // rect.size.height = 500
+            // rect.size.height = 500
             break
         case .inches_5_5:
             self.heightBottomViewConstraint.constant = 280
             break
         case .inches_5_8:
-           self.heightBottomViewConstraint.constant = 300
+            self.heightBottomViewConstraint.constant = 300
             break
         default:
             break
@@ -165,6 +171,53 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
             return (context.canEvaluatePolicy(LAPolicy.deviceOwnerAuthentication, error: nil) && context.biometryType == .faceID)
         }
         return false
+    }
+    
+    private func devicePasscodeSet() -> Bool {
+        //checks to see if devices (not apps) passcode has been set
+        return LAContext().canEvaluatePolicy(.deviceOwnerAuthentication, error: nil)
+    }
+    
+    func errorMessageForLAErrorCode( errorCode:Int ) -> String{
+        
+        var message = ""
+        
+        switch errorCode {
+            
+        case LAError.appCancel.rawValue:
+            message = "Authentication was cancelled by application"
+            
+        case LAError.authenticationFailed.rawValue:
+            message = "The user failed to provide valid credentials"
+            
+        case LAError.invalidContext.rawValue:
+            message = "The context is invalid"
+            
+        case LAError.passcodeNotSet.rawValue:
+            message = "Passcode is not set on the device"
+            
+        case LAError.systemCancel.rawValue:
+            message = "Authentication was cancelled by the system"
+            
+        case LAError.touchIDLockout.rawValue:
+            message = "Too many failed attempts."
+            
+        case LAError.touchIDNotAvailable.rawValue:
+            message = "TouchID is not available on the device"
+            
+        case LAError.userCancel.rawValue:
+            message = "The user did cancel"
+            
+        case LAError.userFallback.rawValue:
+            message = "The user chose to use the fallback"
+            
+        default:
+            message = "Did not find error code on LAError object"
+            
+        }
+        
+        return message
+        
     }
     
     @IBAction func feedBack(_ sender: Any) {
@@ -228,7 +281,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
                 
                 AppLocker.present(with: .change, and: appearance, withController: self)
             }else{
-//                UserDefaults.standard.set("", forKey: ALConstants.kPincode)
+                //                UserDefaults.standard.set("", forKey: ALConstants.kPincode)
                 var appearance = ALAppearance()
                 appearance.image = UIImage(named: "lock")!
                 appearance.title = "Login code".localized()
@@ -278,8 +331,8 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         self.presenter.transitionType = nil
         self.presenter.dismissTransitionType = nil
         self.presenter.dismissOnTap = true
-         presenter.dismissAnimated = true
-//        self.presenter.keyboardTranslationType = .compress
+        presenter.dismissAnimated = true
+        //        self.presenter.keyboardTranslationType = .compress
         self.customPresentViewController(self.presenter, viewController: popupTransction, animated: true, completion: nil)
     }
     
@@ -320,15 +373,15 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     func closePinCodeView(typeClose: typeClose) {
         updateIndentity()
         if typeClose == .change {
-//            let parameters: Parameters = ["pin_code" : UserDefaults.standard.string(forKey: ALConstants.kPincode)!,
-//                                          "old_pin_code" : UserShared.shared.currentUser.pinCode ?? ""]
-//            RequestNewIndetity.updatePinCode(parameters: parameters, completion: { (response, statusCode) in
-//                if statusCode == 401{
-//                    //                    self.logOut()
-//                }
-//
-//            }) { (error) in
-//            }
+            //            let parameters: Parameters = ["pin_code" : UserDefaults.standard.string(forKey: ALConstants.kPincode)!,
+            //                                          "old_pin_code" : UserShared.shared.currentUser.pinCode ?? ""]
+            //            RequestNewIndetity.updatePinCode(parameters: parameters, completion: { (response, statusCode) in
+            //                if statusCode == 401{
+            //                    //                    self.logOut()
+            //                }
+            //
+            //            }) { (error) in
+            //            }
         }else if typeClose == .delete{
             if !deletePasscode{
                 let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
