@@ -7,6 +7,7 @@ PODS:
   - Crashlytics (3.10.2):
     - Fabric (~> 1.7.7)
   - CryptoSwift (0.10.0)
+  - DropDown (2.3.12)
   - Fabric (1.7.7)
   - Firebase/Core (5.9.0):
     - Firebase/CoreOnly
@@ -99,6 +100,7 @@ DEPENDENCIES:
   - AssistantKit
   - BWWalkthrough
   - Crashlytics
+  - DropDown
   - Fabric
   - Firebase/Core
   - IQKeyboardManagerSwift
@@ -136,6 +138,7 @@ SPEC CHECKSUMS:
   BWWalkthrough: 6b18dc688ff6b7168383fee07fe199ccaad7e9f7
   Crashlytics: 0360624eea1c978a743feddb2fb1ef8b37fb7a0d
   CryptoSwift: 6c778d69282bed3b4e975ff97a79d074f20bb011
+  DropDown: 0bcc278799ec11a3d34ce1aac9367fbbaf5423d9
   Fabric: bda89e242bce1b7b8ab264248cf3407774ce0095
   Firebase: 383fa29aca93e371cab776b48a5c66544d3c2003
   FirebaseAnalytics: 831f1f127f4a75698e9875a87bf7e2668730d953
@@ -163,6 +166,6 @@ SPEC CHECKSUMS:
   Web3: 1f0c38c8508b8487948af1cb597653b018f4b5d3
   web3swift: 9cf4ccef0c7f7e9f9abb3bc5867789b928800af6
 
-PODFILE CHECKSUM: ff8786fe69d7376325eea486c88695dbf9c9d35e
+PODFILE CHECKSUM: a0c6c353df75142caf6730a8dabeda70cc9c12ea
 
 COCOAPODS: 1.4.0

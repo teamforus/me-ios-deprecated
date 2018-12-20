@@ -14,9 +14,6 @@
 /* Class = "UILabel"; text = "Telephone"; ObjectID = "IJF-vQ-NDk"; */
 "IJF-vQ-NDk.text" = "Telefoonnummer";
 
-/* Class = "UILabel"; text = "Hier is je persoonlijke QR-Code"; ObjectID = "WIf-wb-p3w"; */
-"WIf-wb-p3w.text" = "Dit is je persoonlijke QR-Code.";
-
 /* Class = "UILabel"; text = "QR-CODE"; ObjectID = "XqO-BA-5qB"; */
 "XqO-BA-5qB.text" = "QR-CODE";
 

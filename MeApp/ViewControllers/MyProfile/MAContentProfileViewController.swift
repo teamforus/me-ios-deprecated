@@ -16,6 +16,10 @@ import AssistantKit
 import Crashlytics
 import MessageUI
 
+
+
+
+
 class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     @IBOutlet weak var closeUIButton: UIButton!
@@ -23,6 +27,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     @IBOutlet weak var switchFaceID: UISwitch!
     @IBOutlet weak var faceIdImage: UIImageView!
     @IBOutlet weak var bottonConstraint: NSLayoutConstraint!
+    @IBOutlet weak var chooseOrganizationButton: UIButton!
     
     @IBOutlet weak var supportEmailButton: UIButton!
     @IBOutlet weak var switchScannert: UISwitch!
@@ -30,6 +35,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     @IBOutlet weak var faceIdLabel: UILabel!
     @IBOutlet weak var profileNameLabel: UILabel!
     @IBOutlet weak var profileEmailLabel: UILabel!
+    var organization: Organization!
     @IBOutlet weak var passcodeLabel: UILabel!
     @IBOutlet weak var appVersionLabel: UILabel!
     @IBOutlet weak var turnOnOffFaceId: CustomCornerUIView!
@@ -38,6 +44,9 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     @IBOutlet weak var verticalSpacingFaceIdLogin: NSLayoutConstraint!
     @IBOutlet weak var heightButtonsView: NSLayoutConstraint!
     var deletePasscode: Bool = false
+    
+    
+    
     
     let reachability = Reachability()!
     let presenter: Presentr = {
@@ -71,10 +80,13 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         Crashlytics.sharedInstance().crash()
     }
     
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        let popOverVC = PopUpOrganizationsViewController(nibName: "PopUpOrganizationsViewController", bundle: nil)
+        popOverVC.delegate = self
+        self.addChildViewController(popOverVC)
+        popOverVC.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 102)
+        self.view.addSubview(popOverVC.view)
         if UserDefaults.standard.string(forKey: ALConstants.kPincode) == "" || UserDefaults.standard.string(forKey: ALConstants.kPincode) == nil{
             turnOffPascodeView.isHidden = true
             turnOnOffFaceId.isHidden = true
@@ -82,8 +94,8 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
             heightButtonsView.constant = 130
             verticalSpacingFaceIdLogin.constant = 10
         }else{
-            heightButtonsView.constant = 270
-            verticalSpacingFaceIdLogin.constant = 82
+            heightButtonsView.constant = 249
+            verticalSpacingFaceIdLogin.constant = 66
             turnOffPascodeView.isHidden = false
             turnOnOffFaceId.isHidden = false
             passcodeLabel.text = "Change passcode".localized()
@@ -153,10 +165,10 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
             // rect.size.height = 500
             break
         case .inches_5_5:
-            self.heightBottomViewConstraint.constant = 280
+            self.heightBottomViewConstraint.constant = 260
             break
         case .inches_5_8:
-            self.heightBottomViewConstraint.constant = 300
+            self.heightBottomViewConstraint.constant = 210
             break
         default:
             break
@@ -222,7 +234,11 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     
     @IBAction func feedBack(_ sender: Any) {
         let alert: UIAlertController
-        alert = UIAlertController(title: "", message: "Would you like to send us your feedback by e-mail?".localized(), preferredStyle: .alert)
+        alert = UIAlertController(title: "Support", message: "Would you like to send us your feedback by e-mail?".localized(), preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .default, handler: { (action) in
+        }))
+        
         alert.addAction(UIAlertAction(title: "Confirm".localized(), style: .default, handler: { (action) in
             if MFMailComposeViewController.canSendMail() {
                 let composeVC = MFMailComposeViewController()
@@ -235,8 +251,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
                 AlertController.showWarning(withText: "Mail services are not available".localized(), vc: self)
             }
         }))
-        alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .default, handler: { (action) in
-        }))
+        
         self.present(alert, animated: true, completion: nil)
     }
     
@@ -398,6 +413,12 @@ extension MAContentProfileViewController: MFMailComposeViewControllerDelegate{
     func mailComposeController(_ controller: MFMailComposeViewController,
                                didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension MAContentProfileViewController: OrganizationListDelegate{
+    func selectedOrganization(organization: Organization) {
+        self.organization = organization
     }
 }
 

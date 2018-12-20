@@ -122,9 +122,6 @@
 /* Class = "UIButton"; normalTitle = "Voucher Info"; ObjectID = "6OY-uF-Osa"; */
 "70G-HG-SBb.normalTitle" = "E-mail naar mij";
 
-/* Class = "UILabel"; text = "Hier is je persoonlijke QR-Code"; ObjectID = "sOe-ep-azG"; */
-"sOe-ep-azG.text" = "Dit is je persoonlijke QR-Code.";
-
 /* Class = "UILabel"; text = "Laat iemanduw persoonlijke QR-code scannen om u valuta, bezit of vouchers te sturen"; ObjectID = "ufX-dC-Zqj"; */
 "ufX-dC-Zqj.text" = "Laat de aanbieder deze QR-Code scannen om een betaling te kunnen doen.";
 

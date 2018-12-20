@@ -116,9 +116,6 @@
 /* Class = "UIButton"; normalTitle = "Voucher Info"; ObjectID = "6OY-uF-Osa"; */
 "6OY-uF-Osa.normalTitle" = "Voucher Info";
 
-/* Class = "UILabel"; text = "This is your personal QR code"; ObjectID = "sOe-ep-azG"; */
-"sOe-ep-azG.text" = "This is your Voucher’s QR-code.";
-
 /* Class = "UILabel"; text = "Let someone scan your personal QR code to send your currency, property or vouchers"; ObjectID = "ufX-dC-Zqj"; */
 "ufX-dC-Zqj.text" = "Let the shopkeeper scan it to make a payment from your voucher.";
 

@@ -173,7 +173,11 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
     
     @IBAction func showEmailToMe(_ sender: Any) {
         let alert: UIAlertController
-        alert = UIAlertController(title: "", message: "Send the voucher to your email?".localized(), preferredStyle: .alert)
+        alert = UIAlertController(title: "E-mail to me".localized(), message: "Send the voucher to your email?".localized(), preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .default, handler: { (action) in
+        }))
+        
         alert.addAction(UIAlertAction(title: "Confirm".localized(), style: .default, handler: { (action) in
             VoucherRequest.sendEmailToVoucher(address: self.voucher.address, completion: { (statusCode) in
                 let popupTransction =  MARegistrationSuccessViewController(nibName: "MARegistrationSuccessViewController", bundle: nil)
@@ -186,14 +190,13 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
                 
             }
         }))
-        alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .default, handler: { (action) in
-        }))
+        
         self.present(alert, animated: true, completion: nil)
       
     }
     
     @IBAction func showInfo(_ sender: Any) {
-        let safariVC = SFSafariViewController(url: URL(string: voucher.found.url_webshop!)!)
+        let safariVC = SFSafariViewController(url: URL(string: voucher.found.url_webshop! + "/product/\(voucher.product?.id! ?? 0)")!)
         self.present(safariVC, animated: true, completion: nil)
         safariVC.delegate = self
     }

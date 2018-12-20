@@ -94,12 +94,12 @@ class TabBarController: UITabBarController {
 
 extension UITabBarController{
     func setTabBarVisible(visible:Bool, duration: TimeInterval, animated:Bool) {
-        var frame = self.view.bounds;
+        var frame = self.view.bounds
         if visible {
-            frame.size.height += self.tabBar.bounds.size.height;
+            frame.size.height += self.tabBar.bounds.size.height
         }else{
             if UserDefaults.standard.bool(forKey: "isFirstOpened"){
-                frame.size.height -= self.tabBar.bounds.size.height;
+                frame.size.height -= self.tabBar.bounds.size.height
             }
             UserDefaults.standard.set(true, forKey: "isFirstOpened")
         }
