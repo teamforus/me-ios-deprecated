@@ -28,16 +28,10 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
     
     let reachability = Reachability()!
     @IBOutlet var tableView: UITableView!
-    var walletCase: WalletCase! = WalletCase.token
     @IBOutlet var segmentView: UIView!
     var vouhers: NSMutableArray! = NSMutableArray()
     var activityIndicatorView: NVActivityIndicatorView!
     @IBOutlet var emptyTextLabe: UILabel!
-    
-    //    @IBOutlet weak var voiceButton: VoiceButtonView!
-    @IBOutlet var segmentedControl: HBSegmentedControl!
-    let largerRedTextSelectAttributes = [NSAttributedStringKey.font: UIFont(name: "GoogleSans-Medium", size: 14.0),
-                                         NSAttributedStringKey.foregroundColor: UIColor.white]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,21 +47,9 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
                 AppLocker.present(with: .validate, and: appearance, withController: self)
             }
         }
-        walletCase = WalletCase.passes
-        
-        //        segmentView.layer.cornerRadius = 8.0
-        //        tableView.setContentOffset(CGPoint(x: 0, y: 44), animated: true)
-        //        segmentedControl.items = ["Valuta", "Bezit", "Vouchers"]
-        //        segmentedControl.selectedIndex = 0
-        //        segmentedControl.font = UIFont(name: "GoogleSans-Medium", size: 14)
-        //        segmentedControl.unselectedLabelColor = #colorLiteral(red: 0.631372549, green: 0.6509803922, blue: 0.6784313725, alpha: 1)
-        //        segmentedControl.selectedLabelColor = #colorLiteral(red: 0.2078431373, green: 0.3921568627, blue: 0.968627451, alpha: 1)
-        //        segmentedControl.addTarget(self, action: #selector(self.segmentSelected(sender:)), for: .valueChanged)
-        //        segmentedControl.borderColor = .clear
-        tableView.keyboardDismissMode = .onDrag
-        Web3Provider.getBalance()
-        Service.sendContract { _, _ in
-        }
+//        Web3Provider.getBalance()
+//        Service.sendContract { _, _ in
+//        }
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
@@ -105,9 +87,6 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
             // Fallback on earlier versions
         }
         getVoucherList()
-        //  ConfigRequest.getConfig(configType: "wallet", completion: { (statuCode, response) in
-        
-        // }) { (error) in }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -151,24 +130,6 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
         view.endEditing(true)
     }
     
-    //    @objc func segmentSelected(sender:HBSegmentedControl) {
-    //        print("Segment at index \(sender.selectedIndex)  selected")
-    //        if (sender.selectedIndex == 0 ){
-    //            walletCase = WalletCase.token
-    //            self.tableView.reloadData()
-    //        }else if (sender.selectedIndex == 1){
-    //            walletCase = WalletCase.assets
-    //            self.tableView.reloadData()
-    //        }else if (sender.selectedIndex == 2){
-    //            walletCase = WalletCase.passes
-    //            self.tableView.reloadData()
-    //        }
-    //
-    //    }
-    @IBAction func logout(_ sender: Any) {
-        logOut()
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToKindPaket" {
             let passVC = segue.destination as! MAGeneralPassViewController
@@ -182,25 +143,6 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
     }
 }
 
-// MARK: - VoiceButtonDelegate
-
-extension WalletViewController: VoiceButtonDelegate {
-    func updateSpeechText(_ text: String) {
-    }
-    
-    func startedRecording() {
-        print("")
-    }
-    
-    func stoppedRecording() {
-        print("")
-    }
-    
-    func notifyError(_ error: String) {
-        print(error)
-    }
-}
-
 // MARK: UITableViewDelegate
 
 extension WalletViewController: UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate {
@@ -209,33 +151,13 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource, Swip
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if walletCase == .passes {
             return vouhers.count
-        }
-        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MAWaletVoucherTableViewCell
         cell.selectionStyle = .none
-        let voucher = vouhers[indexPath.row] as! Voucher
-        
-        if voucher.product != nil {
-            cell.usedVoucherLabel.isHidden = true
-            cell.voucherTitleLabel.text = voucher.product?.name
-            cell.priceLabel.text = "€ \(voucher.product?.price ?? "0.0")"
-            if voucher.product?.photo != nil {
-                cell.voucherImage.sd_setImage(with: URL(string: voucher.product?.photo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
-            }
-        } else {
-            cell.voucherTitleLabel.text = voucher.found.name
-            cell.usedVoucherLabel.isHidden = true
-            cell.priceLabel.text = "€ \(voucher.amount ?? "0.0")"
-            if voucher.found.logo != nil {
-                cell.voucherImage.sd_setImage(with: URL(string: voucher.found.logo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
-            }
-        }
-        cell.organizationNameLabel.text = voucher.found.organization.name
+        cell.voucher = vouhers[indexPath.row] as? Voucher
         
         return cell
     }
@@ -247,35 +169,7 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource, Swip
         } else {
             performSegue(withIdentifier: "goToKindPaket", sender: nil)
         }
-        //        if segmentedControl.selectedIndex == 1 {
-        //            //            let popOverVC = TransactionViewController(nibName: "TransactionViewController", bundle: nil)
-        //            //            self.addChildViewController(popOverVC)
-        //            //            popOverVC.view.frame = self.view.frame
-        //            //            popOverVC.isVisisbeTabBar = true
-        //            //            self.view.addSubview(popOverVC.view)
-        //            //            popOverVC.didMove(toParentViewController: self)
-        //            let alert: UIAlertController
-        //            alert = UIAlertController(title: "", message: "Comming Soon!", preferredStyle: .alert)
-        //            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-        //            }))
-        //            self.present(alert, animated: true, completion: nil)
-        //        }else if segmentedControl.selectedIndex == 2{
-        //            self.performSegue(withIdentifier: "goToKindPaket", sender: self)
-        //        }
-        //        self.performSegue(withIdentifier: "goToKindPaket", sender: self)
         tableView.deselectRow(at: indexPath, animated: false)
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch walletCase {
-        case .token?:
-            return 130
-        case .passes?:
-            return 130
-        default:
-            break
-        }
-        return 142
     }
     
     // MARK: SwipeTableViewCellDelegate
@@ -295,23 +189,12 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource, Swip
         deleteAction.image = UIImage(named: "removeIcon")
         deleteAction.font = UIFont(name: "SFUIText-Bold", size: 10.0)
         
-        switch walletCase {
-        case .token?: break
-        case .assets?:
-            if orientation == .right {
-                return [deleteAction, transctionAction]
-            }
-            
-        case .passes?:
             if orientation == .left {
                 return [transctionAction]
             } else {
                 return [deleteAction]
             }
-            
-        default: break
-        }
-        return nil
+        
     }
 }
 

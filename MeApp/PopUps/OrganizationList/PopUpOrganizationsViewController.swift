@@ -8,10 +8,6 @@
 
 import UIKit
 
-enum TypeClose: Int {
-    case show = 0
-    case close = 1
-}
 protocol OrganizationListDelegate: class {
     func selectedOrganization(organization: Organization)
 }
@@ -29,7 +25,6 @@ class PopUpOrganizationsViewController: UIViewController {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "OrganizationTableViewCell", bundle: nil), forCellReuseIdentifier: "OrganizationTableViewCell")
         self.getOrganizationList()
-        NotificationCenter.default.addObserver(self, selector: #selector(dissmisAnimte(_:)), name: Notification.Name("RemoveAnimateView"), object: nil)
     }
     
     func getOrganizationList(){
@@ -40,29 +35,23 @@ class PopUpOrganizationsViewController: UIViewController {
         }) { (error) in }
     }
     
-    @IBAction func dissmisAnimte(_ sender: Any) {
-        
-    }
-    
     func animateOrganizationList(){
         if !dropDownIsVisible{
-            UIView.animate(withDuration: 0.4) {
-                self.arrowImageView.layer.transform = CATransform3DRotate(CATransform3DIdentity, CGFloat(180 * Double.pi / 180), 1, 0, 0)
-                var frame = self.view.frame
-                frame.size.height = self.screenSize.height
-                self.view.frame = frame
-                self.viewDidLayoutSubviews()
-            }
+            didExpandView(screenHeight: self.screenSize.height)
             dropDownIsVisible = true
         }else{
-            UIView.animate(withDuration: 0.4) {
-                self.arrowImageView.layer.transform = CATransform3DRotate(CATransform3DIdentity, CGFloat(180 * Double.pi / 180), 0, 0, 0)
-                var frame = self.view.frame
-                frame.size.height = 102
-                self.view.frame = frame
-                self.viewWillLayoutSubviews()
-            }
+            didExpandView(screenHeight: 102)
             dropDownIsVisible = false
+        }
+    }
+    
+    func didExpandView(screenHeight: CGFloat){
+        UIView.animate(withDuration: 0.4) {
+            self.arrowImageView.layer.transform = CATransform3DRotate(CATransform3DIdentity, CGFloat(180 * Double.pi / 180), 0, 0, 0)
+            var frame = self.view.frame
+            frame.size.height = 102
+            self.view.frame = frame
+            self.viewWillLayoutSubviews()
         }
     }
     
@@ -83,13 +72,9 @@ extension PopUpOrganizationsViewController: UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OrganizationTableViewCell", for: indexPath) as! OrganizationTableViewCell
-        let organization = organizations[indexPath.row] as! Organization
-        cell.organization = organization
-        cell.organizationNameLabel.text = organization.name ?? ""
+        cell.organization = organizations[indexPath.row] as? Organization
         cell.delegate = self
-        if organization.logo != nil {
-            cell.organizationImageView.sd_setImage(with: URL(string: organization.logo!.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
-        }
+        
         return cell
     }
     

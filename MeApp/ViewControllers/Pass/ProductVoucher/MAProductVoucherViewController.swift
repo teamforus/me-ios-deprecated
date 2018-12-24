@@ -76,17 +76,13 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
         if let longitudeValue = self.voucher.offices?.first?.lon, let lon = Double(longitudeValue) {
             long = lon
         }
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(goToQRReader))
         imageQR.isUserInteractionEnabled = true
-        imageQR.addGestureRecognizer(tapGestureRecognizer)
-        let tapGestureRecognizerMap = UITapGestureRecognizer(target: self, action: #selector(goToMap))
-        mapView.addGestureRecognizer(tapGestureRecognizerMap)
+        imageQR.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToQRReader)))
+        mapView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToMap)))
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(Tap))
-        let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(Long))
-        tapGesture.numberOfTapsRequired = 1
-        organizationEmailAddress.addGestureRecognizer(tapGesture)
-        organizationEmailAddress.addGestureRecognizer(longGesture)
+        //organizationLabel gesture
+        organizationEmailAddress.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(Tap)))
+        organizationEmailAddress.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(Long)))
         
     }
     
@@ -117,14 +113,15 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
     }
     
     @objc func goToMap(){
-        
-        
-        //        self.performSegue(withIdentifier: "goToMap", sender: nil)
         let actionSheet = UIAlertController.init(title: "Address".localized(), message: nil, preferredStyle: .actionSheet)
+        
+        //open apple maps
         actionSheet.addAction(UIAlertAction.init(title: "Open in Apple Maps", style: UIAlertActionStyle.default, handler: { (action) in
             
             self.openMapForPlace(lattitude: self.latitude, longitude: self.long)
         }))
+        
+        //open google maps
         actionSheet.addAction(UIAlertAction.init(title: "Open in Google Maps", style: UIAlertActionStyle.default, handler: { (action) in
             if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!))
             {
@@ -138,6 +135,8 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
                 })
             }
         }))
+        
+        //copy to clipboard
         actionSheet.addAction(UIAlertAction.init(title: "Copy address".localized(), style: UIAlertActionStyle.default, handler: { (action) in
             UIPasteboard.general.string = self.voucher.offices?.first?.address
             self.showSimpleToast(message: "Copied to clipboard".localized())
@@ -152,7 +151,6 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
         NotificationCenter.default.post(name: Notification.Name("togleStateWindow"), object: nil)
     }
     
-    
     @IBAction func callPhone(_ sender: Any) {
         guard let number = URL(string: "tel://" + (voucher.offices?.first?.phone!)!) else { return }
         UIApplication.shared.open(number)
@@ -161,22 +159,17 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
-//        let circle = MKCircle(center: CLLocationCoordinate2D(latitude:latitude , longitude: long),
-//                              radius: 1000 as CLLocationDistance)
         let viewRegion = MKCoordinateRegionMakeWithDistance( CLLocationCoordinate2D(latitude:latitude , longitude: long), 5000, 5000)
         self.mapView.setRegion(viewRegion, animated: false)
         mapView.region = viewRegion
-//        self.mapView.add(circle)
         self.mapView.addAnnotation(setAnnotation(lattitude: latitude, longitude: long))
     }
-    
     
     @IBAction func showEmailToMe(_ sender: Any) {
         let alert: UIAlertController
         alert = UIAlertController(title: "E-mail to me".localized(), message: "Send the voucher to your email?".localized(), preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .default, handler: { (action) in
-        }))
+        alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .default, handler: { (action) in }))
         
         alert.addAction(UIAlertAction(title: "Confirm".localized(), style: .default, handler: { (action) in
             VoucherRequest.sendEmailToVoucher(address: self.voucher.address, completion: { (statusCode) in
@@ -186,22 +179,16 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
                 self.presenter.dismissTransitionType = nil
                 self.presenter.keyboardTranslationType = .compress
                 self.customPresentViewController(self.presenter, viewController: popupTransction, animated: true, completion: nil)
-            }) { (error) in
-                
-            }
+            }) { (error) in }
         }))
-        
         self.present(alert, animated: true, completion: nil)
-      
     }
     
     @IBAction func showInfo(_ sender: Any) {
-        let safariVC = SFSafariViewController(url: URL(string: voucher.found.url_webshop! + "/product/\(voucher.product?.id! ?? 0)")!)
-        self.present(safariVC, animated: true, completion: nil)
+        let safariVC = SFSafariViewController(url: URL(string: voucher.found.url_webshop! + "product/\(voucher.product?.id! ?? 0)")!)
         safariVC.delegate = self
+        self.present(safariVC, animated: true, completion: nil)
     }
-    
-    
 }
 
 extension MAProductVoucherViewController: MKMapViewDelegate{

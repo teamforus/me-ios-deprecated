@@ -252,7 +252,6 @@
 		65DCA0B9213311970051F6A3 /* MAContentPersonalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DCA0B8213311970051F6A3 /* MAContentPersonalDetailViewController.swift */; };
 		65E3363F20E645B600C0512B /* KRScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E3363E20E645B600C0512B /* KRScrollView.swift */; };
 		65E3800B2139270E0094385D /* MAAboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E3800A2139270E0094385D /* MAAboutMeViewController.swift */; };
-		65E3800D213927310094385D /* MAAboutMeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65E3800C213927310094385D /* MAAboutMeViewController.xib */; };
 		65E88DF421354FE7006D45C0 /* Vouchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E88DF321354FE7006D45C0 /* Vouchers.swift */; };
 		65E88DF621355066006D45C0 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E88DF521355066006D45C0 /* Transaction.swift */; };
 		65E88DFA213551BA006D45C0 /* Found.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E88DF9213551BA006D45C0 /* Found.swift */; };
@@ -266,6 +265,7 @@
 		65FC866420B5DF81001FECA5 /* MASwitchProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC866220B5DF81001FECA5 /* MASwitchProfileTableViewCell.swift */; };
 		65FC866820B5EB2A001FECA5 /* MAAddProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC866620B5EB2A001FECA5 /* MAAddProfileTableViewCell.swift */; };
 		65FC866920B5EB2A001FECA5 /* MAAddProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65FC866720B5EB2A001FECA5 /* MAAddProfileTableViewCell.xib */; };
+		65FE69DB21D0E15A00881FF0 /* MAAboutMeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65FE69DD21D0E15A00881FF0 /* MAAboutMeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -585,7 +585,6 @@
 		65DCA0B8213311970051F6A3 /* MAContentPersonalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAContentPersonalDetailViewController.swift; sourceTree = "<group>"; };
 		65E3363E20E645B600C0512B /* KRScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KRScrollView.swift; sourceTree = "<group>"; };
 		65E3800A2139270E0094385D /* MAAboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAAboutMeViewController.swift; sourceTree = "<group>"; };
-		65E3800C213927310094385D /* MAAboutMeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAAboutMeViewController.xib; sourceTree = "<group>"; };
 		65E88DF321354FE7006D45C0 /* Vouchers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vouchers.swift; sourceTree = "<group>"; };
 		65E88DF521355066006D45C0 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		65E88DF9213551BA006D45C0 /* Found.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Found.swift; sourceTree = "<group>"; };
@@ -599,6 +598,9 @@
 		65FC866220B5DF81001FECA5 /* MASwitchProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MASwitchProfileTableViewCell.swift; sourceTree = "<group>"; };
 		65FC866620B5EB2A001FECA5 /* MAAddProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAAddProfileTableViewCell.swift; sourceTree = "<group>"; };
 		65FC866720B5EB2A001FECA5 /* MAAddProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAAddProfileTableViewCell.xib; sourceTree = "<group>"; };
+		65FE69DC21D0E15A00881FF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MAAboutMeViewController.xib; sourceTree = "<group>"; };
+		65FE69DF21D0E16A00881FF0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MAAboutMeViewController.strings; sourceTree = "<group>"; };
+		65FE69E121D0E17100881FF0 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/MAAboutMeViewController.strings; sourceTree = "<group>"; };
 		89068B526C15FBF4653D8F95 /* Pods-Me.demo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Me.demo.xcconfig"; path = "Pods/Target Support Files/Pods-Me/Pods-Me.demo.xcconfig"; sourceTree = "<group>"; };
 		C6A3E44B1D4BFF2E2A9A7B22 /* Pods-MeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeTests/Pods-MeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C73E5FFD9B9A70CCD8C4D26F /* Pods-Me.alpha.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Me.alpha.xcconfig"; path = "Pods/Target Support Files/Pods-Me/Pods-Me.alpha.xcconfig"; sourceTree = "<group>"; };
@@ -1474,7 +1476,7 @@
 			isa = PBXGroup;
 			children = (
 				65E3800A2139270E0094385D /* MAAboutMeViewController.swift */,
-				65E3800C213927310094385D /* MAAboutMeViewController.xib */,
+				65FE69DD21D0E15A00881FF0 /* MAAboutMeViewController.xib */,
 			);
 			path = About;
 			sourceTree = "<group>";
@@ -1742,7 +1744,7 @@
 				65509469213D4D29007532BE /* Tabs.storyboard in Resources */,
 				65A51FDD20B3012C0010DB33 /* SF-Pro-Display-UltralightItalic.otf in Resources */,
 				65509485213D5105007532BE /* Profile.storyboard in Resources */,
-				65E3800D213927310094385D /* MAAboutMeViewController.xib in Resources */,
+				65FE69DB21D0E15A00881FF0 /* MAAboutMeViewController.xib in Resources */,
 				65BB7C3E2112EF380073352C /* GoogleSans-Bold.ttf in Resources */,
 				65BB7C412112EF380073352C /* GoogleSans-MediumItalic.ttf in Resources */,
 				65A51FD020B3012C0010DB33 /* SF-Pro-Display-Light.otf in Resources */,
@@ -2439,6 +2441,16 @@
 			);
 			name = AppLocker.xib;
 			path = Source/AppLocker;
+			sourceTree = "<group>";
+		};
+		65FE69DD21D0E15A00881FF0 /* MAAboutMeViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65FE69DC21D0E15A00881FF0 /* Base */,
+				65FE69DF21D0E16A00881FF0 /* en */,
+				65FE69E121D0E17100881FF0 /* nl */,
+			);
+			name = MAAboutMeViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

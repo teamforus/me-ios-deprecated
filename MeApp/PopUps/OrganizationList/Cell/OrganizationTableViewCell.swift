@@ -18,7 +18,14 @@ class OrganizationTableViewCell: UITableViewCell {
     @IBOutlet var organizationImageView: UIImageView!
     @IBOutlet var organizationNameLabel: UILabel!
     weak var delegate: OrganizationTableViewCellDelegate!
-    var organization: Organization!
+    var organization: Organization? {
+        didSet{
+            self.organizationNameLabel.text = organization?.name
+            if organization?.logo != nil {
+                self.organizationImageView.sd_setImage(with: URL(string: organization?.logo!.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,7 +36,7 @@ class OrganizationTableViewCell: UITableViewCell {
     }
     
     @IBAction func selectOrganization(_ sender: Any) {
-        delegate.selectedOrganization(organization: organization)
+        delegate.selectedOrganization(organization: organization!)
     }
     
 }

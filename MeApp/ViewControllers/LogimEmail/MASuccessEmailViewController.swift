@@ -19,10 +19,6 @@ class MASuccessEmailViewController: MABaseViewController, AppLockerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(authorizeToken(notifcation:)),
@@ -39,9 +35,7 @@ class MASuccessEmailViewController: MABaseViewController, AppLockerDelegate {
         if UIApplication.shared.canOpenURL(mailURL as URL) {
             UIApplication.shared.open(mailURL as URL, options: [:],
                                       completionHandler: {
-                                        (success) in
-            })
-        }
+                                        (success) in }) }
     }
     
     @objc func authorizeToken(notifcation: Notification){
@@ -54,8 +48,7 @@ class MASuccessEmailViewController: MABaseViewController, AppLockerDelegate {
             }else{
                 AlertController.showWarning(withText: "Please try to send email again.".localized(), vc: self)
             }
-        }) { (error) in
-        }
+        }) { (error) in }
     }
     
     func saveNewIdentity(accessToken: String, email: String){
@@ -86,9 +79,7 @@ class MASuccessEmailViewController: MABaseViewController, AppLockerDelegate {
                     print("Failed saving")
                 }
             }
-        } catch{
-            
-        }
+        } catch{}
     }
     
     func updateOldIndentity(){
@@ -105,9 +96,7 @@ class MASuccessEmailViewController: MABaseViewController, AppLockerDelegate {
                     print("Failed saving")
                 }
             }
-        } catch{
-            
-        }
+        } catch{}
     }
     
     func getCurrentUser(accessToken: String!){
@@ -117,19 +106,13 @@ class MASuccessEmailViewController: MABaseViewController, AppLockerDelegate {
         do{
             let results = try context.fetch(fetchRequest) as? [User]
             UserShared.shared.currentUser = results![0]
-        } catch{
-            
-        }
+        } catch{}
     }
     
-    func closePinCodeView(typeClose: typeClose) {
-        
-    }
+    func closePinCodeView(typeClose: typeClose) {}
     
     @IBAction func cancel(_ sender: Any) {
         UserDefaults.standard.setValue("", forKeyPath: "auth_token")
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
 }

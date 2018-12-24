@@ -18,20 +18,10 @@ class MAAboutMeViewController: MABasePopUpViewController, SFSafariViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabel.text = titleDetail
-        descriptionLabel.text = descriptionDetail
-        let underlineAttriString = NSMutableAttributedString(string: descriptionDetail)
-        let range = (descriptionDetail as NSString).range(of: "https://zuidhorn.forus.io")
-        underlineAttriString.addAttribute(NSAttributedStringKey.underlineStyle, value: NSUnderlineStyle.styleSingle.rawValue, range: range)
-        descriptionLabel.attributedText = underlineAttriString
-        let tap = UITapGestureRecognizer(target: self, action: #selector(tapLabel(gesture:)))
-        descriptionLabel.isUserInteractionEnabled = true
-        descriptionLabel.addGestureRecognizer(tap)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
    @objc func tapLabel(gesture: UITapGestureRecognizer) {
@@ -42,9 +32,7 @@ class MAAboutMeViewController: MABasePopUpViewController, SFSafariViewController
             let safariVC = SFSafariViewController(url: URL(string: "https://zuidhorn.forus.io")!)
             self.present(safariVC, animated: true, completion: nil)
             safariVC.delegate = self
-        } else {
-            print("Tapped none")
-        }
+        } else { }
     }
 
 }
