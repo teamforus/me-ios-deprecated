@@ -199,8 +199,10 @@ class VoucherRequest {
                 if let json = response.result.value {
                     
                     if (json as AnyObject).count != 0 && (json as AnyObject).count != 5 {
+                        if response.response?.statusCode == 200{
                         transaction = try! Voucher(object: (json as AnyObject)["data"] as! JSONObject)
                         completion(transaction, (response.response?.statusCode)!)
+                        }
                     }else{
                         completion(Voucher(), (response.response?.statusCode)!)
                     }
