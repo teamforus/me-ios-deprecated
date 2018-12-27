@@ -33,8 +33,6 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
     var response: Code!
     weak var pullUpController: ISHPullUpViewController!
     let reachability = Reachability()!
-    
-    
     var newIndetity: NewIdentity!
     let presenter: Presentr = {
         let presenter = Presentr(presentationType: .alert)
@@ -112,34 +110,8 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
         performSegue(withIdentifier: "goToWalet", sender: self)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    
-
-    @IBAction func loginWithPinCode(_ sender: Any) {
-        let popupTransction =  MASignUpViewController(nibName: "MASignUpViewController", bundle: nil)
-        popupTransction.delegate = self
-        presenter.presentationType = .popup
-        presenter.transitionType = nil
-        presenter.dismissTransitionType = nil
-        presenter.keyboardTranslationType = .compress
-        customPresentViewController(presenter, viewController: popupTransction, animated: true, completion: nil)
-    }
-    
-    @IBAction func loginWithEmail(_ sender: Any) {
-        let popupTransction =  MARegistrationViewController(nibName: "MARegistrationViewController", bundle: nil)
-        popupTransction.delegate = self
-        presenter.presentationType = .popup
-        presenter.transitionType = nil
-        presenter.dismissTransitionType = nil
-        presenter.keyboardTranslationType = .compress
-        customPresentViewController(presenter, viewController: popupTransction, animated: true, completion: nil)
     }
     
     func confirmPinCode(_ controller: MASignUpViewController, pinCode: String) {
@@ -164,7 +136,6 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
             presenter.keyboardTranslationType = .compress
             customPresentViewController(presenter, viewController: popupTransction, animated: true, completion: nil)
         }
-        
     }
     
     func saveNewIdentity(accessToken: String){
@@ -172,7 +143,6 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
         let entity = NSEntityDescription.entity(forEntityName: "User", in: context)
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         fetchRequest.predicate = NSPredicate(format:"accessToken == %@", accessToken)
-        
         do{
             let results = try context.fetch(fetchRequest) as? [NSManagedObject]
             if results?.count == 0 {
@@ -204,7 +174,6 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         fetchRequest.predicate = NSPredicate(format:"currentUser == YES")
-        
         do{
             let results = try context.fetch(fetchRequest) as? [NSManagedObject]
             if results?.count != 0 {
@@ -225,7 +194,6 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         fetchRequest.predicate = NSPredicate(format:"accessToken == %@", accessToken)
-        
         do{
             let results = try context.fetch(fetchRequest) as? [User]
             UserShared.shared.currentUser = results![0]

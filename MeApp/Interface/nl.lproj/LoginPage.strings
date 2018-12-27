@@ -1,0 +1,39 @@
+
+/* Class = "UIButton"; normalTitle = "ADD ANOTHER DEVICE"; ObjectID = "4Dt-bS-lP0"; */
+"4Dt-bS-lP0.normalTitle" = "ANDER APPARAAT TOEVOEGEN";
+
+/* Class = "UILabel"; text = "• "; ObjectID = "8zW-oS-p8r"; */
+"8zW-oS-p8r.text" = "• ";
+
+/* Class = "UILabel"; text = "Scan deze QR-code met een ander apparaat waar je al op bent ingelogd"; ObjectID = "DtX-5r-B9k"; */
+"DtX-5r-B9k.text" = "Scan deze QR-code met een ander apparaat waar je al op bent ingelogd";
+
+/* Class = "UILabel"; text = "• "; ObjectID = "M3N-ym-wqr"; */
+"M3N-ym-wqr.text" = "• ";
+
+/* Class = "UILabel"; text = "Me"; ObjectID = "OeK-ez-ebj"; */
+"OeK-ez-ebj.text" = "Me";
+
+/* Class = "UILabel"; text = "• "; ObjectID = "Qtf-7J-8hn"; */
+"Qtf-7J-8hn.text" = "• ";
+
+/* Class = "UILabel"; text = "• "; ObjectID = "R3P-Ms-O6C"; */
+"R3P-Ms-O6C.text" = "• ";
+
+/* Class = "UILabel"; text = "• "; ObjectID = "WKO-We-Whg"; */
+"WKO-We-Whg.text" = "• ";
+
+/* Class = "UILabel"; text = "Registreren"; ObjectID = "Wgk-tC-3BB"; */
+"Wgk-tC-3BB.text" = "Inloggen";
+
+/* Class = "UILabel"; text = "Authorization code"; ObjectID = "YAw-Y3-qc2"; */
+"YAw-Y3-qc2.text" = "Autorisatie code.";
+
+/* Class = "UIButton"; normalTitle = "INLOGGEN VIA E-MAIL"; ObjectID = "YV7-Gb-SHc"; */
+"YV7-Gb-SHc.normalTitle" = "INLOGGEN VIA E-MAIL";
+
+/* Class = "UILabel"; text = "Log in to the webshop, click on your profile, then authorize device and enter this code."; ObjectID = "cdy-dX-r9O"; */
+"cdy-dX-r9O.text" = "Log in op de webshop, klik op je profiel en klik op autoriseer apparaat en vul deze code in.";
+
+/* Class = "UILabel"; text = "QR-CODE"; ObjectID = "n1c-Qc-rxI"; */
+"n1c-Qc-rxI.text" = "QR-CODE";

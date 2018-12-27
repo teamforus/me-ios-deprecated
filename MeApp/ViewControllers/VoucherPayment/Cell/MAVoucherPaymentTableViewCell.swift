@@ -10,16 +10,18 @@ import UIKit
 
 class MAVoucherPaymentTableViewCell: UITableViewCell {
     @IBOutlet weak var categoryNameLabel: UILabel!
+    var organization: AllowedProductCategories? {
+        didSet{
+            categoryNameLabel.text = organization?.name
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-
+    
 }

@@ -81,7 +81,6 @@ class MACreateNewIdentityViewController: MABaseViewController {
         let entity = NSEntityDescription.entity(forEntityName: "User", in: context)
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         fetchRequest.predicate = NSPredicate(format:"primaryEmail == %@", emailSkyFloatingTextField.text!)
-        
         do{
             let results = try context.fetch(fetchRequest) as? [NSManagedObject]
             if results?.count == 0 {
@@ -92,50 +91,40 @@ class MACreateNewIdentityViewController: MABaseViewController {
                 newUser.setValue(accessToken, forKey: "accessToken")
                 newUser.setValue(givenNameField.text, forKey: "firstName")
                 newUser.setValue(familyNameField.text, forKey: "lastName")
-                
                 do {
                     try context.save()
                 } catch {
                     print("Failed saving")
                 }
             }
-        } catch{
-            
-        }
+        } catch{}
     }
     
     func updateOldIndentity(){
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         fetchRequest.predicate = NSPredicate(format:"currentUser == YES")
-        
         do{
             let results = try context.fetch(fetchRequest) as? [NSManagedObject]
             if results?.count != 0 {
                 results![0].setValue(false, forKey: "currentUser")
-                
                 do {
                     try context.save()
                 } catch {
                     print("Failed saving")
                 }
             }
-        } catch{
-            
-        }
+        } catch{}
     }
     
     func getCurrentUser(primaryEmai: String!){
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         fetchRequest.predicate = NSPredicate(format:"primaryEmail == %@", emailSkyFloatingTextField.text!)
-        
         do{
             let results = try context.fetch(fetchRequest) as? [User]
             UserShared.shared.currentUser = results![0]
-        } catch{
-            
-        }
+        } catch{}
     }
     
     @IBAction func validateEmailField(textField:SkyFloatingLabelTextField) {

@@ -11,7 +11,9 @@ import Alamofire
 import Reachability
 import Presentr
 
-class MAQRCodeScannerViewController: HSScanViewController , HSScanViewControllerDelegate {
+class MAQRCodeScannerViewController: HSScanViewController , HSScanViewControllerDelegate, AppLockerDelegate {
+    func closePinCodeView(typeClose: typeClose) {
+    }
     
     var addressVoucher: String!
     let reachablity = Reachability()!
@@ -25,34 +27,6 @@ class MAQRCodeScannerViewController: HSScanViewController , HSScanViewController
     
     func scanFinished(scanResult: ScanResult, error: String?) {
         if self.reachablity.connection != .none{
-//            if scanResult.scanResultString?.range(of: BaseURL.getBaseURL()) == nil {
-//                self.scanWorker.stop()
-//                let alert: UIAlertController
-//                alert = UIAlertController(title: "Error!".localized(), message: "Unknown QR-code!".localized(), preferredStyle: .alert)
-//                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-//                    self.scanWorker.start()
-//                }))
-//                self.present(alert, animated: true, completion: nil)
-//            }
-//            // login with QR
-//            else
-                if scanResult.scanResultString?.range(of:"authToken") != nil {
-                self.scanWorker.start()
-                var token = scanResult.scanResultString?.components(separatedBy: ":")
-                self.authorizeToken(token: token![1])
-                
-                // validate record
-            }else if scanResult.scanResultString?.range(of:"uuids") != nil{
-                
-                var token = scanResult.scanResultString?.components(separatedBy: ":")
-                self.readValidationToken(code: (token?[1])!)
-                
-                // make transaction
-            }else if(scanResult.scanResultString?.range(of:"vouchers") != nil){
-                var token = scanResult.scanResultString?.components(separatedBy: ":")
-                self.getProviderConfirm(address: (token?[1])!)
-                
-            } else {
                 let data = scanResult.scanResultString?.data(using: .utf8)!
                 do {
                     if let jsonArray = try JSONSerialization.jsonObject(with: data!, options : .allowFragments) as? Dictionary<String,Any>
@@ -87,7 +61,7 @@ class MAQRCodeScannerViewController: HSScanViewController , HSScanViewController
                     }))
                      self.present(alert, animated: true, completion: nil)
                 }
-            }
+            
         }else{
             AlertController.showInternetUnable(vc: self)
         }
@@ -96,14 +70,26 @@ class MAQRCodeScannerViewController: HSScanViewController , HSScanViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if UserDefaults.standard.bool(forKey: "isStartFromScanner"){
+            if UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" && UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil {
+                var appearance = ALAppearance()
+                appearance.image = UIImage(named: "lock")!
+                appearance.title = "Enter login code".localized()
+                appearance.isSensorsEnabled = true
+                appearance.cancelIsVissible = false
+                appearance.delegate = self
+                
+                AppLocker.present(with: .validate, and: appearance, withController: self)
+            }
+        }
+        
         self.delegate = self
         self.scanCodeTypes  = [.qr]
         ScanPermission.authorizeCamera { (isAuthorized) in
             if !isAuthorized{
                 let alert: UIAlertController
-                alert = UIAlertController(title: "Camera permission request was denied.".localized(), message: "Press settings to give an access or cancel to close this window.".localized(), preferredStyle: .alert)
+                alert = UIAlertController(title: "Camera permission reuest was denied.".localized(), message: "Press settings to give an access or cancel to close this window.".localized(), preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .default, handler: { (action) in
-                    self.dismiss(animated: true, completion: nil)
                 }))
                 
                 alert.addAction(UIAlertAction(title: "Settings".localized(), style: .default, handler: { (action) in
@@ -191,15 +177,6 @@ class MAQRCodeScannerViewController: HSScanViewController , HSScanViewController
         VoucherRequest.getProvider(identityAdress: address, completion: { (voucher, statusCode) in
             if statusCode != 403{
                 if voucher.allowedOrganizations?.count != 0 && voucher.allowedOrganizations?.count  != nil {
-                    
-                    //            let popupTransction =  MAShareVaucherViewController(nibName: "MAShareVaucherViewController", bundle: nil)
-                    //            popupTransction.voucher = voucher
-                    //            self.presenter.presentationType = .popup
-                    //            self.presenter.transitionType = nil
-                    //            self.presenter.dismissTransitionType = nil
-                    //            self.presenter.keyboardTranslationType = .compress
-                    //            self.customPresentViewController(self.presenter, viewController: popupTransction, animated: true, completion: nil)
-                    
                     self.voucher = voucher
                     if voucher.amount != "0.00"{
                         self.performSegue(withIdentifier: "goToVoucherPayment", sender: nil)
