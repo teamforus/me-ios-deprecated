@@ -90,7 +90,6 @@ class MAQRCodeScannerViewController: HSScanViewController , HSScanViewController
                 let alert: UIAlertController
                 alert = UIAlertController(title: "Camera permission reuest was denied.".localized(), message: "Press settings to give an access or cancel to close this window.".localized(), preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .default, handler: { (action) in
-                    self.dismiss(animated: true, completion: nil)
                 }))
                 
                 alert.addAction(UIAlertAction(title: "Settings".localized(), style: .default, handler: { (action) in
