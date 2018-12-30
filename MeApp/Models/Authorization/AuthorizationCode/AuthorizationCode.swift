@@ -12,7 +12,7 @@ import Alamofire
 
 struct Code {
     var accessTokenCode: String!
-    var authCode: Int!
+    var authCode: String!
 }
 
 extension Code: JSONDecodable{
