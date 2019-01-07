@@ -73,7 +73,6 @@
 		6539827921342638003B87FC /* MASuccessEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6539827821342638003B87FC /* MASuccessEmailViewController.swift */; };
 		653BB0E9215515300059AE0C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653BB0E8215515300059AE0C /* Config.swift */; };
 		653C25AE21CA31C60068599D /* PopUpOrganizationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653C25AC21CA31C60068599D /* PopUpOrganizationsViewController.swift */; };
-		653C25AF21CA31C60068599D /* PopUpOrganizationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 653C25AD21CA31C60068599D /* PopUpOrganizationsViewController.xib */; };
 		653C25B621CA33870068599D /* OrganizationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653C25B421CA33870068599D /* OrganizationTableViewCell.swift */; };
 		653C25B721CA33870068599D /* OrganizationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 653C25B521CA33870068599D /* OrganizationTableViewCell.xib */; };
 		65467FA520B821E7009E99CC /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65467FA420B821E7009E99CC /* Authorization.swift */; };
@@ -196,6 +195,7 @@
 		65AC330821023B8B00633187 /* MAPersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AC330721023B8B00633187 /* MAPersonalViewController.swift */; };
 		65AC330A21023E7000633187 /* MAPersonalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AC330921023E7000633187 /* MAPersonalTableViewCell.swift */; };
 		65ACC3802191DA67001D15DC /* AppLocker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65ACC3822191DA67001D15DC /* AppLocker.xib */; };
+		65B6318821E40D590011B4DD /* PopUpOrganizationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65B6318A21E40D590011B4DD /* PopUpOrganizationsViewController.xib */; };
 		65B89A8D20B3342E0024DC51 /* MATransactionRedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89A8B20B3342E0024DC51 /* MATransactionRedViewController.swift */; };
 		65B89A9120B334860024DC51 /* MATransactionBlueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89A8F20B334860024DC51 /* MATransactionBlueViewController.swift */; };
 		65B89A9420B408C00024DC51 /* MARecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B89A9320B408C00024DC51 /* MARecordsViewController.swift */; };
@@ -374,7 +374,6 @@
 		6539827821342638003B87FC /* MASuccessEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MASuccessEmailViewController.swift; sourceTree = "<group>"; };
 		653BB0E8215515300059AE0C /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		653C25AC21CA31C60068599D /* PopUpOrganizationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpOrganizationsViewController.swift; sourceTree = "<group>"; };
-		653C25AD21CA31C60068599D /* PopUpOrganizationsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpOrganizationsViewController.xib; sourceTree = "<group>"; };
 		653C25B421CA33870068599D /* OrganizationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationTableViewCell.swift; sourceTree = "<group>"; };
 		653C25B521CA33870068599D /* OrganizationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrganizationTableViewCell.xib; sourceTree = "<group>"; };
 		65467FA420B821E7009E99CC /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
@@ -528,6 +527,9 @@
 		65ACC3812191DA67001D15DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AppLocker.xib; sourceTree = "<group>"; };
 		65ACC3842191DA6A001D15DC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AppLocker.strings; sourceTree = "<group>"; };
 		65ACC3862191DA6C001D15DC /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/AppLocker.strings; sourceTree = "<group>"; };
+		65B6318921E40D590011B4DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PopUpOrganizationsViewController.xib; sourceTree = "<group>"; };
+		65B6318C21E40D5E0011B4DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PopUpOrganizationsViewController.strings; sourceTree = "<group>"; };
+		65B6318E21E40D610011B4DD /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/PopUpOrganizationsViewController.strings; sourceTree = "<group>"; };
 		65B89A8B20B3342E0024DC51 /* MATransactionRedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MATransactionRedViewController.swift; sourceTree = "<group>"; };
 		65B89A8F20B334860024DC51 /* MATransactionBlueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MATransactionBlueViewController.swift; sourceTree = "<group>"; };
 		65B89A9320B408C00024DC51 /* MARecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MARecordsViewController.swift; sourceTree = "<group>"; };
@@ -1031,7 +1033,7 @@
 			isa = PBXGroup;
 			children = (
 				653C25AC21CA31C60068599D /* PopUpOrganizationsViewController.swift */,
-				653C25AD21CA31C60068599D /* PopUpOrganizationsViewController.xib */,
+				65B6318A21E40D590011B4DD /* PopUpOrganizationsViewController.xib */,
 				65A405A921CA86E50014EFA3 /* Cell */,
 			);
 			path = OrganizationList;
@@ -1761,7 +1763,7 @@
 				65828720217DC9E3008979C6 /* GoogleService-Info.plist in Resources */,
 				658BBA552110954C0098E2AC /* backspaceBlue@3x.png in Resources */,
 				6579634A20E4D49E001CF29D /* NunitoSans-Black.ttf in Resources */,
-				653C25AF21CA31C60068599D /* PopUpOrganizationsViewController.xib in Resources */,
+				65B6318821E40D590011B4DD /* PopUpOrganizationsViewController.xib in Resources */,
 				6504473520C0410400D040B9 /* MASwitchProfileTableViewCell.xib in Resources */,
 				6500426220DB97E40092CCDA /* OpenSans-BoldItalic.ttf in Resources */,
 				65A51FD720B3012C0010DB33 /* SF-Pro-Display-Semibold.otf in Resources */,
@@ -2441,6 +2443,16 @@
 			);
 			name = AppLocker.xib;
 			path = Source/AppLocker;
+			sourceTree = "<group>";
+		};
+		65B6318A21E40D590011B4DD /* PopUpOrganizationsViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65B6318921E40D590011B4DD /* Base */,
+				65B6318C21E40D5E0011B4DD /* en */,
+				65B6318E21E40D610011B4DD /* nl */,
+			);
+			name = PopUpOrganizationsViewController.xib;
 			sourceTree = "<group>";
 		};
 		65FE69DD21D0E15A00881FF0 /* MAAboutMeViewController.xib */ = {
