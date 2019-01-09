@@ -70,7 +70,7 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
             AuthorizationCodeRequest.createAuthorizationCode(completion: { (response, statusCode) in
                 if response.authCode != nil{
                     self.response = response
-                    let stringCode: String = "\(response.authCode!)"
+                    let stringCode: String = "\(response.exchange_token!)"
                     if stringCode.count == 6{
                         self.digit1UILabel.text = String(stringCode[0])
                         self.digit2UILabel.text = String(stringCode[1])
@@ -78,7 +78,7 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
                         self.digit4UILabel.text = String(stringCode[3])
                         self.digit5UILabel.text = String(stringCode[4])
                         self.digit6UILabel.text = String(stringCode[5])
-                        UserDefaults.standard.setValue(response.authCode, forKey: "auth_code")
+                        UserDefaults.standard.setValue(response.exchange_token, forKey: "auth_code")
                         self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.checkAuthorizeToken), userInfo: nil, repeats: true)
                     }
                 }

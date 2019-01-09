@@ -13,6 +13,7 @@ import Alamofire
 struct Code {
     var accessTokenCode: String!
     var authCode: String!
+    var exchange_token: String!
 }
 
 extension Code: JSONDecodable{
@@ -28,6 +29,7 @@ extension Code: JSONEncodable{
         return try JSONEncoder.create({ (encoder) -> Void in
             try encoder.encode(accessTokenCode, key:"access_token")
             try encoder.encode(authCode, key:"auth_code")
+            try encoder.encode(authCode, key:"exchange_token")
         })
     }
 }
