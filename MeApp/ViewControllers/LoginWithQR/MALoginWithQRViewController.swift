@@ -66,44 +66,7 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
             }
         } catch{}
         
-        if reachability.connection != .none{
-            AuthorizationCodeRequest.createAuthorizationCode(completion: { (response, statusCode) in
-                if response.authCode != nil{
-                    self.response = response
-                    let stringCode: String = "\(response.exchange_token!)"
-                    if stringCode.count == 6{
-                        self.digit1UILabel.text = String(stringCode[0])
-                        self.digit2UILabel.text = String(stringCode[1])
-                        self.digit3UILabel.text = String(stringCode[2])
-                        self.digit4UILabel.text = String(stringCode[3])
-                        self.digit5UILabel.text = String(stringCode[4])
-                        self.digit6UILabel.text = String(stringCode[5])
-                        UserDefaults.standard.setValue(response.exchange_token, forKey: "auth_code")
-                        self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.checkAuthorizeToken), userInfo: nil, repeats: true)
-                    }
-                }
-            }) { (error) in
-                AlertController.showError(vc:self)
-            }
-        }else{
-            AlertController.showInternetUnable(vc: self)
-        }
-    }
-    
-    @objc func checkAuthorizeToken(){
-        Status.checkStatus(accessToken: response.accessTokenCode, completion: { (code, message) in
-            if code == 200 {
-                if message == "active"{
-                    self.timer.invalidate()
-                    self.updateOldIndentity()
-                    self.saveNewIdentity(accessToken: self.response.accessTokenCode)
-                    self.getCurrentUser(accessToken: self.response.accessTokenCode)
-                    self.performSegue(withIdentifier: "goToWalet", sender: nil)
-                }
-            }
-        }) { (error) in
-            AlertController.showError(vc:self)
-        }
+        getPinCode()
     }
     
     @objc func goToWalet(){
@@ -170,37 +133,52 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
         }
     }
     
-    func updateOldIndentity(){
-        let context = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        fetchRequest.predicate = NSPredicate(format:"currentUser == YES")
-        do{
-            let results = try context.fetch(fetchRequest) as? [NSManagedObject]
-            if results?.count != 0 {
-                results![0].setValue(false, forKey: "currentUser")
-                
-                do {
-                    try context.save()
-                } catch {
-                    print("Failed saving")
+ 
+    
+   
+    
+}
+
+extension MALoginWithQRViewController{
+    
+    fileprivate func getPinCode(){
+        if reachability.connection != .none{
+            AuthorizationCodeRequest.createAuthorizationCode(completion: { (response, statusCode) in
+                if response.authCode != nil{
+                    self.response = response
+                    let stringCode: String = "\(response.authCode!)"
+                    if stringCode.count == 6{
+                        self.digit1UILabel.text = String(stringCode[0])
+                        self.digit2UILabel.text = String(stringCode[1])
+                        self.digit3UILabel.text = String(stringCode[2])
+                        self.digit4UILabel.text = String(stringCode[3])
+                        self.digit5UILabel.text = String(stringCode[4])
+                        self.digit6UILabel.text = String(stringCode[5])
+                        UserDefaults.standard.setValue(response.exchange_token, forKey: "auth_code")
+                        self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.checkAuthorizeToken), userInfo: nil, repeats: true)
+                    }
+                }
+            }) { (error) in
+                AlertController.showError(vc:self)
+            }
+        }else{
+            AlertController.showInternetUnable(vc: self)
+        }
+    }
+    
+    @objc func checkAuthorizeToken(){
+        Status.checkStatus(accessToken: response.accessTokenCode, completion: { (code, message) in
+            if code == 200 {
+                if message == "active"{
+                    self.timer.invalidate()
+                    self.updateOldIndentity()
+                    self.saveNewIdentity(accessToken: self.response.accessTokenCode)
+                    self.getCurrentUserByToken(accessToken: self.response.accessTokenCode)
+                    self.performSegue(withIdentifier: "goToWalet", sender: nil)
                 }
             }
-        } catch{
-            
+        }) { (error) in
+            AlertController.showError(vc:self)
         }
     }
-    
-    func getCurrentUser(accessToken: String!){
-        let context = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        fetchRequest.predicate = NSPredicate(format:"accessToken == %@", accessToken)
-        do{
-            let results = try context.fetch(fetchRequest) as? [User]
-            UserShared.shared.currentUser = results![0]
-            
-        } catch{
-            
-        }
-    }
-    
 }

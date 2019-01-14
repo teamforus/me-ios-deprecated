@@ -12,8 +12,8 @@ import Alamofire
 
 struct Code {
     var accessTokenCode: String!
-    var authCode: String!
-    var exchange_token: String!
+    var authCode: Int!
+    var exchange_token: Int!
 }
 
 extension Code: JSONDecodable{

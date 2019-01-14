@@ -145,6 +145,7 @@
 		658D410121A2ECA600CA4F10 /* HSDefaultScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658D40FD21A2ECA600CA4F10 /* HSDefaultScanView.swift */; };
 		658D410221A2ECA600CA4F10 /* HSScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658D40FE21A2ECA600CA4F10 /* HSScanViewController.swift */; };
 		658D410421A2EE1700CA4F10 /* MAQRCodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658D410321A2EE1700CA4F10 /* MAQRCodeScannerViewController.swift */; };
+		659D3F2821E8B3660096F847 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659D3F2721E8B3660096F847 /* CoreDataManager.swift */; };
 		65A30B9721C917E4000A635B /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A30B9621C917E4000A635B /* Organization.swift */; };
 		65A51F6B20B2FFF10010DB33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A51F6A20B2FFF10010DB33 /* AppDelegate.swift */; };
 		65A51F7320B2FFF20010DB33 /* MeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65A51F7120B2FFF20010DB33 /* MeApp.xcdatamodeld */; };
@@ -468,6 +469,7 @@
 		658D40FD21A2ECA600CA4F10 /* HSDefaultScanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSDefaultScanView.swift; sourceTree = "<group>"; };
 		658D40FE21A2ECA600CA4F10 /* HSScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSScanViewController.swift; sourceTree = "<group>"; };
 		658D410321A2EE1700CA4F10 /* MAQRCodeScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAQRCodeScannerViewController.swift; sourceTree = "<group>"; };
+		659D3F2721E8B3660096F847 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		659EBA6321258A7400162445 /* MeApp 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MeApp 2.xcdatamodel"; sourceTree = "<group>"; };
 		65A30B9621C917E4000A635B /* Organization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Organization.swift; sourceTree = "<group>"; };
 		65A51F6720B2FFF10010DB33 /* Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Me.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1092,6 +1094,7 @@
 				65A51F7120B2FFF20010DB33 /* MeApp.xcdatamodeld */,
 				65B89AD320B48B9B0024DC51 /* MeApp-Swift.h */,
 				65C0B21F210F3ACF00FBC254 /* UserShared.swift */,
+				659D3F2721E8B3660096F847 /* CoreDataManager.swift */,
 			);
 			path = MeApp;
 			sourceTree = "<group>";
@@ -2161,6 +2164,7 @@
 				65467FB020B86C57009E99CC /* MALoginWithQRViewController.swift in Sources */,
 				6556375A20B6DE8300E45487 /* PopupViewContainable.swift in Sources */,
 				657B074620D27F2B0093930E /* MAWalletOwnerTableViewCell.swift in Sources */,
+				659D3F2821E8B3660096F847 /* CoreDataManager.swift in Sources */,
 				65588FFA21146B7600806C9E /* MAWaletVoucherTableViewCell.swift in Sources */,
 				65DCA0B9213311970051F6A3 /* MAContentPersonalDetailViewController.swift in Sources */,
 				65AC32FB2102016500633187 /* MAChooseCategoryViewController.swift in Sources */,

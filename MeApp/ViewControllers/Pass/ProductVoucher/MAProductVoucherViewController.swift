@@ -41,6 +41,10 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+    
+    func setupView() {
         if voucher.found.url_webshop == nil {
             self.infoButton.isHidden = true
         }
@@ -61,7 +65,7 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
         organizationName.text = voucher.product?.organization.name
         
         if voucher.product?.organization.logo != nil{
-        organizationIcon.sd_setImage(with: URL(string: voucher.product?.organization.logo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+            organizationIcon.sd_setImage(with: URL(string: voucher.product?.organization.logo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
         }else{
             organizationIcon.image = UIImage(named: "Resting")
         }
@@ -84,26 +88,33 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
         organizationEmailAddress.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(Tap)))
         organizationEmailAddress.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(Long)))
         
+        let viewRegion = MKCoordinateRegionMakeWithDistance( CLLocationCoordinate2D(latitude:latitude , longitude: long), 5000, 5000)
+        self.mapView.setRegion(viewRegion, animated: false)
+        mapView.region = viewRegion
+        self.mapView.addAnnotation(setAnnotation(lattitude: latitude, longitude: long))
     }
     
     @objc func Tap() {
-        let alert: UIAlertController
-        alert = UIAlertController(title: "", message: "Send the voucher to your email?".localized(), preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Confirm".localized(), style: .default, handler: { (action) in
-            if MFMailComposeViewController.canSendMail() {
-                let composeVC = MFMailComposeViewController()
-                composeVC.mailComposeDelegate = self
-                composeVC.setToRecipients([(self.voucher.offices?.first?.organization.email)!])
-                composeVC.setSubject("Question from Me user".localized())
-                composeVC.setMessageBody("", isHTML: false)
-                self.present(composeVC, animated: true, completion: nil)
-            }else{
-                AlertController.showWarning(withText: "Mail services are not available".localized(), vc: self)
-            }
-        }))
-        alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .default, handler: { (action) in
-        }))
-        self.present(alert, animated: true, completion: nil)
+        
+        AlertController.showAlertActions(vc: self,
+                                         title: "E-mail to me".localized(),
+                                         detail: "Send the voucher to your email?".localized(),
+                                         cancelTitle: "Cancel".localized(),
+                                         confirmTitle: "Confirm".localized())
+        { (action) in
+            VoucherRequest.sendEmailToVoucher(address: self.voucher.address, completion: { (statusCode) in
+                if MFMailComposeViewController.canSendMail() {
+                    let composeVC = MFMailComposeViewController()
+                    composeVC.mailComposeDelegate = self
+                    composeVC.setToRecipients([(self.voucher.offices?.first?.organization.email)!])
+                    composeVC.setSubject("Question from Me user".localized())
+                    composeVC.setMessageBody("", isHTML: false)
+                    self.present(composeVC, animated: true, completion: nil)
+                }else{
+                    AlertController.showWarning(withText: "Mail services are not available".localized(), vc: self)
+                }
+            }) { (error) in }
+        }
      
     }
     
@@ -159,29 +170,25 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
-        let viewRegion = MKCoordinateRegionMakeWithDistance( CLLocationCoordinate2D(latitude:latitude , longitude: long), 5000, 5000)
-        self.mapView.setRegion(viewRegion, animated: false)
-        mapView.region = viewRegion
-        self.mapView.addAnnotation(setAnnotation(lattitude: latitude, longitude: long))
+
     }
     
     @IBAction func showEmailToMe(_ sender: Any) {
-        let alert: UIAlertController
-        alert = UIAlertController(title: "E-mail to me".localized(), message: "Send the voucher to your email?".localized(), preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .default, handler: { (action) in }))
-        
-        alert.addAction(UIAlertAction(title: "Confirm".localized(), style: .default, handler: { (action) in
+        AlertController.showAlertActions(vc: self,
+                                         title: "E-mail to me".localized(),
+                                         detail: "Send the voucher to your email?".localized(),
+                                         cancelTitle: "Cancel".localized(),
+                                         confirmTitle: "Confirm".localized())
+        { (action) in
             VoucherRequest.sendEmailToVoucher(address: self.voucher.address, completion: { (statusCode) in
-                let popupTransction =  MARegistrationSuccessViewController(nibName: "MARegistrationSuccessViewController", bundle: nil)
+                let popupTransction = MARegistrationSuccessViewController(nibName: "MARegistrationSuccessViewController", bundle: nil)
                 self.presenter.presentationType = .popup
                 self.presenter.transitionType = nil
                 self.presenter.dismissTransitionType = nil
                 self.presenter.keyboardTranslationType = .compress
                 self.customPresentViewController(self.presenter, viewController: popupTransction, animated: true, completion: nil)
             }) { (error) in }
-        }))
-        self.present(alert, animated: true, completion: nil)
+        }
     }
     
     @IBAction func showInfo(_ sender: Any) {

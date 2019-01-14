@@ -47,21 +47,11 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
                 AppLocker.present(with: .validate, and: appearance, withController: self)
             }
         }
-//        Web3Provider.getBalance()
-//        Service.sendContract { _, _ in
-//        }
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        fetchRequest.predicate = NSPredicate(format: "currentUser == YES")
-        do {
-            let results = try context.fetch(fetchRequest) as? [User]
-            if results?.count != 0 {
-                UserShared.shared.currentUser = results![0]
-                UserDefaults.standard.set(UserShared.shared.currentUser.pinCode, forKey: ALConstants.kPincode)
-                UserDefaults.standard.synchronize()
-            }
-        } catch {}
+        //        Web3Provider.getBalance()
+        //        Service.sendContract { _, _ in
+        //        }
+        getCurrentUser()
+        
         
         let size = CGSize(width: 60, height: 60)
         
@@ -151,7 +141,7 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource, Swip
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return vouhers.count
+        return vouhers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -189,11 +179,11 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource, Swip
         deleteAction.image = UIImage(named: "removeIcon")
         deleteAction.font = UIFont(name: "SFUIText-Bold", size: 10.0)
         
-            if orientation == .left {
-                return [transctionAction]
-            } else {
-                return [deleteAction]
-            }
+        if orientation == .left {
+            return [transctionAction]
+        } else {
+            return [deleteAction]
+        }
         
     }
 }

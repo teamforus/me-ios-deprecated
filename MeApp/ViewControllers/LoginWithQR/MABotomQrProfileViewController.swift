@@ -113,7 +113,7 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
                     self.timer.invalidate()
                     self.updateOldIndentity()
                     self.saveNewIdentity(accessToken: self.authorizeToken.accessToken)
-                    self.getCurrentUser(accessToken: self.authorizeToken.accessToken)
+                    self.getCurrentUserByToken(accessToken: self.authorizeToken.accessToken)
                     NotificationCenter.default.post(name: Notification.Name("TokenIsValidate"), object: nil)
                 }
             }
@@ -140,41 +140,6 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
                     print("Failed saving")
                 }
             }
-        } catch{
-            
-        }
-    }
-    
-    func updateOldIndentity(){
-        let context = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        fetchRequest.predicate = NSPredicate(format:"currentUser == YES")
-        
-        do{
-            let results = try context.fetch(fetchRequest) as? [NSManagedObject]
-            if results?.count != 0 {
-                results![0].setValue(false, forKey: "currentUser")
-                
-                do {
-                    try context.save()
-                } catch {
-                    print("Failed saving")
-                }
-            }
-        } catch{
-            
-        }
-    }
-    
-    func getCurrentUser(accessToken: String!){
-        let context = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        fetchRequest.predicate = NSPredicate(format:"accessToken == %@", accessToken)
-        
-        do{
-            let results = try context.fetch(fetchRequest) as? [User]
-            UserShared.shared.currentUser = results![0]
-            
         } catch{
             
         }

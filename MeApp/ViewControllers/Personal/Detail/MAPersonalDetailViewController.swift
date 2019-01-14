@@ -121,8 +121,8 @@ extension MAPersonalDetailViewController: UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell2", for: indexPath) as! MAValidatorCellTableViewCell
-        let validator = record.validations[indexPath.row] 
-        cell.nameValidator.text = validator.identityAddress
+        cell.validator = record.validations[indexPath.row] 
+       
         return cell
     }
     

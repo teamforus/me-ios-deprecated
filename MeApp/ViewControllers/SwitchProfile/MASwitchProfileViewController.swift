@@ -26,6 +26,10 @@ class MASwitchProfileViewController: MABaseViewController,MASwitchProfilePopUpVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+    
+    fileprivate func setupView(){
         viewBodyQR.layer.cornerRadius = 9.0
         viewBodyQR.layer.shadowColor = UIColor.black.cgColor
         viewBodyQR.layer.shadowOffset = CGSize(width: 0, height: 20)
@@ -45,7 +49,7 @@ class MASwitchProfileViewController: MABaseViewController,MASwitchProfilePopUpVi
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
-        UIApplication.shared.statusBarStyle = .lightContent
+        self.setStatusBarStyle(.lightContent)
         profileName.text = "\(UserShared.shared.currentUser.firstName!) \(UserShared.shared.currentUser.lastName!)"
     }
     
@@ -146,5 +150,14 @@ class MASwitchProfileViewController: MABaseViewController,MASwitchProfilePopUpVi
             }
         }
         
+    }
+}
+
+
+extension UIViewController{
+    func setStatusBarStyle(_ style: UIStatusBarStyle) {
+        if let statusBar = UIApplication.shared.value(forKey: "statusBar") as? UIView {
+            statusBar.setValue(style == .lightContent ? UIColor.white : .black, forKey: "foregroundColor")
+        }
     }
 }

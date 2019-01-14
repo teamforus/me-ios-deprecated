@@ -31,7 +31,11 @@ class MABottomProductViewController: MABaseViewController , ISHPullUpSizingDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                self.view.isHidden = true
+        setupView()
+    }
+    
+    fileprivate func setupView(){
+        self.view.isHidden = true
         topView.layer.cornerRadius = 14.0
         rootView.layer.cornerRadius = 14.0
         rootView.layer.shadowColor = UIColor.black.cgColor
@@ -82,61 +86,6 @@ class MABottomProductViewController: MABaseViewController , ISHPullUpSizingDeleg
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-    }
-    
-    func saveNewIdentity(accessToken: String){
-        let context = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "User", in: context)
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        fetchRequest.predicate = NSPredicate(format:"accessToken == %@", accessToken)
-        do{
-            let results = try context.fetch(fetchRequest) as? [NSManagedObject]
-            if results?.count == 0 {
-                let newUser = NSManagedObject(entity: entity!, insertInto: context)
-                newUser.setValue(true, forKey: "currentUser")
-                newUser.setValue(accessToken, forKey: "accessToken")
-                do {
-                    try context.save()
-                } catch {
-                    print("Failed saving")
-                }
-            }
-        } catch{
-            
-        }
-    }
-    
-    func updateOldIndentity(){
-        let context = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        fetchRequest.predicate = NSPredicate(format:"currentUser == YES")
-        do{
-            let results = try context.fetch(fetchRequest) as? [NSManagedObject]
-            if results?.count == 0 {
-                results![0].setValue(false, forKey: "currentUser")
-                
-                do {
-                    try context.save()
-                } catch {
-                    print("Failed saving")
-                }
-            }
-        } catch{
-            
-        }
-    }
-    
-    func getCurrentUser(accessToken: String!){
-        let context = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        fetchRequest.predicate = NSPredicate(format:"accessToken == %@", accessToken)
-        do{
-            let results = try context.fetch(fetchRequest) as? [User]
-            UserShared.shared.currentUser = results![0]
-            
-        } catch{
-            
-        }
     }
     
     @objc private dynamic func handleTapGesture(gesture: UITapGestureRecognizer) {

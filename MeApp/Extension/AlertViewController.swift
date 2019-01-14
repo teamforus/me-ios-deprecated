@@ -97,6 +97,18 @@ class AlertController: UIAlertController {
         vc.present(alert, animated: true, completion: nil)
     }
     
+    static func showAlertActions(vc: UIViewController, title: String, detail: String, cancelTitle: String, confirmTitle: String, handler: ((UIAlertAction) -> Void)?){
+        let alert: UIAlertController
+        alert = UIAlertController(title: title, message: detail, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: cancelTitle, style: .default, handler: { (action) in
+        }))
+        
+        alert.addAction(UIAlertAction(title: confirmTitle, style: .default, handler: handler))
+        
+        vc.present(alert, animated: true, completion: nil)
+    }
+    
     private func newLinesCount(for imageView: UIImageView) -> CGFloat {
         return ceil(imageView.bounds.height / lineHeight)
     }

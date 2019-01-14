@@ -38,12 +38,17 @@ class MASuccessEmailViewController: MABaseViewController, AppLockerDelegate {
                                         (success) in }) }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     @objc func authorizeToken(notifcation: Notification){
         AuthorizationEmailRequest.authorizeEmailToken(token: notifcation.userInfo?["authToken"] as! String, completion: { (response, statusCode) in
             if response.accessToken != nil {
                 self.updateOldIndentity()
                 self.saveNewIdentity(accessToken: response.accessToken, email: self.email)
-                self.getCurrentUser(accessToken: response.accessToken)
+                self.getCurrentUserByToken(accessToken: response.accessToken)
                 self.performSegue(withIdentifier: "goToWalet", sender: nil)
             }else{
                 AlertController.showWarning(withText: "Please try to send email again.".localized(), vc: self)
@@ -79,33 +84,6 @@ class MASuccessEmailViewController: MABaseViewController, AppLockerDelegate {
                     print("Failed saving")
                 }
             }
-        } catch{}
-    }
-    
-    func updateOldIndentity(){
-        let context = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        fetchRequest.predicate = NSPredicate(format:"currentUser == YES")
-        do{
-            let results = try context.fetch(fetchRequest) as? [NSManagedObject]
-            if results?.count != 0 {
-                results![0].setValue(false, forKey: "currentUser")
-                do {
-                    try context.save()
-                } catch {
-                    print("Failed saving")
-                }
-            }
-        } catch{}
-    }
-    
-    func getCurrentUser(accessToken: String!){
-        let context = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        fetchRequest.predicate = NSPredicate(format:"accessToken == %@", accessToken)
-        do{
-            let results = try context.fetch(fetchRequest) as? [User]
-            UserShared.shared.currentUser = results![0]
         } catch{}
     }
     

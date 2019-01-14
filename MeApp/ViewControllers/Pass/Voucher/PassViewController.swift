@@ -40,6 +40,11 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+    
+    func setupView(){
+        
         organizationLabel.text = voucher.found.organization.name
         if voucher.found.url_webshop == nil {
             self.smallerAmount.isHidden = true
@@ -58,15 +63,7 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
         imageQR.isUserInteractionEnabled = true
         smallerAmount.layer.cornerRadius = 9.0
         emailMeButton.layer.cornerRadius = 9.0
-    }
-    
-    
-    @objc func goToQRReader(){
-        NotificationCenter.default.post(name: Notification.Name("togleStateWindow"), object: nil)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        
         self.tabBarController?.tabBar.isHidden = true
         let transactionsArray = NSMutableArray()
         transactionsArray.addObjects(from: voucher.transactions)
@@ -74,31 +71,32 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
         self.transactions.addObjects(from: transactionsArray.sorted(by: { ($0 as! Transactions).created_at.compare(($1 as! Transactions).created_at) == .orderedDescending}))
     }
     
+    @objc func goToQRReader(){
+        NotificationCenter.default.post(name: Notification.Name("togleStateWindow"), object: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
     @IBAction func showEmailToMe(_ sender: Any) {
-        let alert: UIAlertController
-        alert = UIAlertController(title: "E-mail to me".localized(), message: "Send the voucher to your email?".localized(), preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .default, handler: { (action) in
-        }))
-        
-        alert.addAction(UIAlertAction(title: "Confirm".localized(), style: .default, handler: { (action) in
-            VoucherRequest.sendEmailToVoucher(address: self.voucher.address, completion: { (statusCode) in
-                let popupTransction =  MARegistrationSuccessViewController(nibName: "MARegistrationSuccessViewController", bundle: nil)
-                self.presenter.presentationType = .popup
-                self.presenter.transitionType = nil
-                self.presenter.dismissTransitionType = nil
-                self.presenter.keyboardTranslationType = .compress
-                self.customPresentViewController(self.presenter, viewController: popupTransction, animated: true, completion: nil)
-            }) { (error) in
-                
-            }
-        }))
-        
-        self.present(alert, animated: true, completion: nil)
+        AlertController.showAlertActions(vc: self,
+                                         title: "E-mail to me".localized(),
+                                         detail: "Send the voucher to your email?".localized(),
+                                         cancelTitle: "Cancel".localized(),
+                                         confirmTitle: "Confirm".localized())
+                                         { (action) in
+                                            VoucherRequest.sendEmailToVoucher(address: self.voucher.address, completion: { (statusCode) in
+                                                
+                                                let popupTransction = MARegistrationSuccessViewController(nibName: "MARegistrationSuccessViewController", bundle: nil)
+                                                self.presenter.presentationType = .popup
+                                                self.presenter.transitionType = nil
+                                                self.presenter.dismissTransitionType = nil
+                                                self.presenter.keyboardTranslationType = .compress
+                                                self.customPresentViewController(self.presenter, viewController: popupTransction, animated: true, completion: nil)
+                                            }) { (error) in }
+                                         }
     }
     
     @IBAction func showAmmount(_ sender: Any) {
