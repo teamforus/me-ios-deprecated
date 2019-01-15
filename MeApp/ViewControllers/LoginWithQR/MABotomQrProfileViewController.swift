@@ -112,36 +112,13 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
                 if message == "active"{
                     self.timer.invalidate()
                     self.updateOldIndentity()
-                    self.saveNewIdentity(accessToken: self.authorizeToken.accessToken)
+                    self.saveNewIdentity(primaryEmail: "", accessToken: self.authorizeToken.accessToken, givenName: "", familyName: "")
                     self.getCurrentUserByToken(accessToken: self.authorizeToken.accessToken)
                     NotificationCenter.default.post(name: Notification.Name("TokenIsValidate"), object: nil)
                 }
             }
         }) { (error) in
             AlertController.showError(vc:self)
-        }
-    }
-    
-    func saveNewIdentity(accessToken: String){
-        let context = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "User", in: context)
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        fetchRequest.predicate = NSPredicate(format:"accessToken == %@", accessToken)
-        
-        do{
-            let results = try context.fetch(fetchRequest) as? [NSManagedObject]
-            if results?.count == 0 {
-                let newUser = NSManagedObject(entity: entity!, insertInto: context)
-                newUser.setValue(true, forKey: "currentUser")
-                newUser.setValue(accessToken, forKey: "accessToken")
-                do {
-                    try context.save()
-                } catch {
-                    print("Failed saving")
-                }
-            }
-        } catch{
-            
         }
     }
     

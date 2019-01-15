@@ -27,6 +27,7 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
     @IBOutlet weak var digit5UILabel: UILabel!
     @IBOutlet weak var digit6UILabel: UILabel!
     @IBOutlet weak var constraintBottom: NSLayoutConstraint!
+    var labels: [UILabel]!
     
     var timer : Timer! = Timer()
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -46,6 +47,11 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+    
+    fileprivate func setupView(){
+        labels = [digit1UILabel, digit2UILabel, digit3UILabel, digit4UILabel, digit5UILabel, digit6UILabel]
         let screen = Device.screen
         switch screen {
         case .inches_5_8:
@@ -55,16 +61,8 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
             break
         }
         NotificationCenter.default.addObserver(self, selector: #selector(goToWalet), name: Notification.Name("TokenIsValidate"), object: nil)
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        fetchRequest.predicate = NSPredicate(format:"currentUser == YES")
-        do{
-            let results = try context.fetch(fetchRequest) as? [User]
-            if results?.count != 0 {
-                UserShared.shared.currentUser = results![0]
-            }
-        } catch{}
+        
+        getCurrentUser()
         
         getPinCode()
     }
@@ -101,39 +99,11 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
         }
     }
     
-    func saveNewIdentity(accessToken: String){
-        let context = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "User", in: context)
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        fetchRequest.predicate = NSPredicate(format:"accessToken == %@", accessToken)
-        do{
-            let results = try context.fetch(fetchRequest) as? [NSManagedObject]
-            if results?.count == 0 {
-                let newUser = NSManagedObject(entity: entity!, insertInto: context)
-                newUser.setValue(true, forKey: "currentUser")
-                newUser.setValue(accessToken, forKey: "accessToken")
-                newUser.setValue(UserDefaults.standard.string(forKey: ALConstants.kPincode), forKey: "pinCode")
-                do {
-                    try context.save()
-                } catch {
-                    print("Failed saving")
-                }
-            }else{
-                results![0].setValue(accessToken, forKey: "accessToken")
-                results![0].setValue(true, forKey: "currentUser")
-                results![0].setValue(UserDefaults.standard.string(forKey: ALConstants.kPincode), forKey: "pinCode")
-                do {
-                    try context.save()
-                } catch {
-                    print("Failed saving")
-                }
-            }
-        } catch{
-            
-        }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
     }
     
- 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToWalet"{
             let barVC = segue.destination as? TabBarController
@@ -142,8 +112,6 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
             vc?.firstTimeEnter = true
         }
     }
-   
-    
 }
 
 extension MALoginWithQRViewController{
@@ -155,12 +123,11 @@ extension MALoginWithQRViewController{
                     self.response = response
                     let stringCode: String = "\(response.authCode!)"
                     if stringCode.count == 6{
-                        self.digit1UILabel.text = String(stringCode[0])
-                        self.digit2UILabel.text = String(stringCode[1])
-                        self.digit3UILabel.text = String(stringCode[2])
-                        self.digit4UILabel.text = String(stringCode[3])
-                        self.digit5UILabel.text = String(stringCode[4])
-                        self.digit6UILabel.text = String(stringCode[5])
+                        var counter: Int = 0
+                        self.labels.forEach({ (label) in
+                            label.text = String(stringCode[counter])
+                            counter += 1
+                        })
                         UserDefaults.standard.setValue(response.exchange_token, forKey: "auth_code")
                         self.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.checkAuthorizeToken), userInfo: nil, repeats: true)
                     }
@@ -179,7 +146,7 @@ extension MALoginWithQRViewController{
                 if message == "active"{
                     self.timer.invalidate()
                     self.updateOldIndentity()
-                    self.saveNewIdentity(accessToken: self.response.accessTokenCode)
+                    self.saveNewIdentity(primaryEmail: "", accessToken: self.response.accessTokenCode, givenName: "", familyName: "")
                     self.getCurrentUserByToken(accessToken: self.response.accessTokenCode)
                     self.performSegue(withIdentifier: "goToWalet", sender: nil)
                 }
