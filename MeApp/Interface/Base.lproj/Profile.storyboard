@@ -143,7 +143,6 @@
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
                                                                     <action selector="checkStartFromScreen:" destination="LGi-pg-qjE" eventType="valueChanged" id="aI8-cc-dRQ"/>
-                                                                    <action selector="crashReportAddressEnable:" destination="LGi-pg-qjE" eventType="valueChanged" id="JeN-rj-7ch"/>
                                                                 </connections>
                                                             </view>
                                                         </subviews>
@@ -263,7 +262,6 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
-                                                                    <action selector="crashReportAddressEnable:" destination="LGi-pg-qjE" eventType="valueChanged" id="Shq-6t-k8A"/>
                                                                     <action selector="faceIdEnable:" destination="LGi-pg-qjE" eventType="valueChanged" id="4OD-7Q-HKF"/>
                                                                 </connections>
                                                             </view>

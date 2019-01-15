@@ -92,25 +92,20 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
         if UserDefaults.standard.bool(forKey: "ISENABLESENDADDRESS"){
             IndentityRequest.requestIndentiy(completion: { (identityAddress, statuCode) in
                 Crashlytics.sharedInstance().setUserIdentifier(identityAddress.address)
-            }) { (error) in
-                
-            }
+            }) { (error) in }
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: true)
+        self.tabBarController?.tabBar.isHidden = false
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         getVoucherList()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        UIView.animate(withDuration: 0.3) {
-            self.tabBarController?.tabBar.isHidden = false
-            self.view.setNeedsDisplay()
-            self.view.layoutSubviews()
-        }
+      
     }
     
     func getVoucherList() {
