@@ -67,6 +67,8 @@
 		653181B3213010E70001D24E /* MAContentProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653181B2213010E70001D24E /* MAContentProfileViewController.swift */; };
 		653181B721301B8E0001D24E /* MAGeneralPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653181B621301B8E0001D24E /* MAGeneralPassViewController.swift */; };
 		653181B921301D280001D24E /* MABottomVoucherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653181B821301D280001D24E /* MABottomVoucherViewController.swift */; };
+		6536FA8521EDDE8D00C3C0D1 /* MACrashConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6536FA8321EDDE8D00C3C0D1 /* MACrashConfirmViewController.swift */; };
+		6536FA8721EDE0D400C3C0D1 /* MACrashConfirmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6536FA8921EDE0D400C3C0D1 /* MACrashConfirmViewController.xib */; };
 		653813C221B96CA80099EE37 /* CreateRecord.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653813C421B96CA80099EE37 /* CreateRecord.storyboard */; };
 		653813CB21B96FA70099EE37 /* ProductVoucher.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653813CD21B96FA70099EE37 /* ProductVoucher.storyboard */; };
 		653982752133FC5B003B87FC /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653982742133FC5B003B87FC /* RoundImageView.swift */; };
@@ -365,6 +367,10 @@
 		653181B2213010E70001D24E /* MAContentProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAContentProfileViewController.swift; sourceTree = "<group>"; };
 		653181B621301B8E0001D24E /* MAGeneralPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAGeneralPassViewController.swift; sourceTree = "<group>"; };
 		653181B821301D280001D24E /* MABottomVoucherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MABottomVoucherViewController.swift; sourceTree = "<group>"; };
+		6536FA8321EDDE8D00C3C0D1 /* MACrashConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MACrashConfirmViewController.swift; sourceTree = "<group>"; };
+		6536FA8821EDE0D400C3C0D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MACrashConfirmViewController.xib; sourceTree = "<group>"; };
+		6536FA8B21EDE0D700C3C0D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MACrashConfirmViewController.strings; sourceTree = "<group>"; };
+		6536FA8D21EDE0DC00C3C0D1 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/MACrashConfirmViewController.strings; sourceTree = "<group>"; };
 		653813C321B96CA80099EE37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/CreateRecord.storyboard; sourceTree = "<group>"; };
 		653813C621B96CAD0099EE37 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/CreateRecord.strings; sourceTree = "<group>"; };
 		653813C821B96CAF0099EE37 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/CreateRecord.strings; sourceTree = "<group>"; };
@@ -1216,6 +1222,8 @@
 				651CF24621891CB40088F9D5 /* ConfirmationTransaction */,
 				651CF24B21891F760088F9D5 /* ApprovePayment */,
 				65A405A821CA86D50014EFA3 /* OrganizationList */,
+				6536FA8321EDDE8D00C3C0D1 /* MACrashConfirmViewController.swift */,
+				6536FA8921EDE0D400C3C0D1 /* MACrashConfirmViewController.xib */,
 			);
 			path = PopUps;
 			sourceTree = "<group>";
@@ -1761,6 +1769,7 @@
 				651F705D214682F5008D087A /* MATransactionRedViewController.xib in Resources */,
 				65A51FDC20B3012C0010DB33 /* SF-Pro-Display-Ultralight.otf in Resources */,
 				65A51FD920B3012C0010DB33 /* SF-Pro-Text-Bold.otf in Resources */,
+				6536FA8721EDE0D400C3C0D1 /* MACrashConfirmViewController.xib in Resources */,
 				65828720217DC9E3008979C6 /* GoogleService-Info.plist in Resources */,
 				658BBA552110954C0098E2AC /* backspaceBlue@3x.png in Resources */,
 				6579634A20E4D49E001CF29D /* NunitoSans-Black.ttf in Resources */,
@@ -1888,6 +1897,7 @@
 				"${BUILT_PRODUCTS_DIR}/JSONCodable/JSONCodable.framework",
 				"${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/PWSwitch/PWSwitch.framework",
 				"${BUILT_PRODUCTS_DIR}/Presentr/Presentr.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
@@ -1916,6 +1926,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONCodable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PWSwitch.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Presentr.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
@@ -2067,6 +2078,7 @@
 				6504472E20C03DAB00D040B9 /* MASwitchProfilePopUpViewController.swift in Sources */,
 				65A51FA720B300EA0010DB33 /* PassTableViewCell.swift in Sources */,
 				65FC866820B5EB2A001FECA5 /* MAAddProfileTableViewCell.swift in Sources */,
+				6536FA8521EDDE8D00C3C0D1 /* MACrashConfirmViewController.swift in Sources */,
 				65B89AAB20B4363D0024DC51 /* MAEmailForMeViewController.swift in Sources */,
 				651B5A8E2178A06900C23204 /* MABottomProductViewController.swift in Sources */,
 				65A51FA820B300EA0010DB33 /* PassViewController.swift in Sources */,
@@ -2305,6 +2317,16 @@
 				651F706A21468300008D087A /* nl */,
 			);
 			name = TransactionViewController.xib;
+			sourceTree = "<group>";
+		};
+		6536FA8921EDE0D400C3C0D1 /* MACrashConfirmViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6536FA8821EDE0D400C3C0D1 /* Base */,
+				6536FA8B21EDE0D700C3C0D1 /* en */,
+				6536FA8D21EDE0DC00C3C0D1 /* nl */,
+			);
+			name = MACrashConfirmViewController.xib;
 			sourceTree = "<group>";
 		};
 		653813C421B96CA80099EE37 /* CreateRecord.storyboard */ = {

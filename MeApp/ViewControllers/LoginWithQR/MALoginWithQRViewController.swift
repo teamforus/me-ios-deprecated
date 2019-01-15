@@ -134,7 +134,14 @@ class MALoginWithQRViewController: MABaseViewController, MARegistrationViewContr
     }
     
  
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToWalet"{
+            let barVC = segue.destination as? TabBarController
+            let nVC = barVC!.viewControllers![0] as? HiddenNavBarNavigationController
+            let vc = nVC?.topViewController as? WalletViewController
+            vc?.firstTimeEnter = true
+        }
+    }
    
     
 }

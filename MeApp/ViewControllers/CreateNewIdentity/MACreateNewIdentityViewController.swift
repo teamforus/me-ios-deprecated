@@ -116,8 +116,12 @@ class MACreateNewIdentityViewController: MABaseViewController {
             creatPassVC.primaryEmail = emailSkyFloatingTextField.text
             creatPassVC.givenName = givenNameField.text
             creatPassVC.familyName = familyNameField.text
+        }else  if segue.identifier == "goToWalet"{
+            let barVC = segue.destination as? TabBarController
+            let nVC = barVC!.viewControllers![0] as? HiddenNavBarNavigationController
+            let vc = nVC?.topViewController as? WalletViewController
+            vc?.firstTimeEnter = true
         }
     }
-    
     
 }
