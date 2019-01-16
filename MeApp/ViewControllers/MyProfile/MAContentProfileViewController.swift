@@ -122,8 +122,12 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         }
         let versionApp: AnyObject? = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as AnyObject
         let buildAppNumber: AnyObject? = Bundle.main.infoDictionary?["CFBundleVersion"] as AnyObject
+        #if (DEBUG || ALPHA || DEMO)
+        self.appVersionLabel.text = (versionApp as? String)! + " (" + (buildAppNumber as? String)! + ")"
+        #else
+        self.appVersionLabel.text = (versionApp as? String)!
+        #endif
         
-        appVersionLabel.text = (versionApp as? String)! + " - dev - " + (buildAppNumber as? String)!
     }
     
     func getRecordList(){
