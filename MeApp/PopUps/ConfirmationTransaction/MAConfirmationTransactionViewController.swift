@@ -78,10 +78,22 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
     }
     
     @IBAction func requestTransaction(_ sender: Any) {
-        if voucher.product == nil {
-            didMakeTransactionConfirmRequest(organizationId: voucher.allowedOrganizations!.first?.id ?? 0, amount: amount.replacingOccurrences(of: ",", with: "."))
-        }else{
-            didMakeTransactionConfirmRequest(organizationId: voucher.product?.organization.id ?? 0, amount: voucher.amount ?? "0.0")
+        if UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" && UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil {
+            var appearance = ALAppearance()
+            appearance.image = UIImage(named: "lock")!
+            appearance.title = "Enter login code".localized()
+            appearance.isSensorsEnabled = true
+            appearance.cancelIsVissible = false
+            appearance.delegate = self
+            
+            AppLocker.present(with: .validate, and: appearance, withController: self)
+            
+        }else {
+            if voucher.product == nil {
+                didMakeTransactionConfirmRequest(organizationId: voucher.allowedOrganizations!.first?.id ?? 0, amount: amount.replacingOccurrences(of: ",", with: "."))
+            }else{
+                didMakeTransactionConfirmRequest(organizationId: voucher.product?.organization.id ?? 0, amount: voucher.amount ?? "0.0")
+            }
         }
     }
     
@@ -110,9 +122,22 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
     
 }
 
+extension MAConfirmationTransactionViewController: AppLockerDelegate{
+    
+    func closePinCodeView(typeClose: typeClose) {
+        if typeClose == .validate{
+            if voucher.product == nil {
+                didMakeTransactionConfirmRequest(organizationId: voucher.allowedOrganizations!.first?.id ?? 0, amount: amount.replacingOccurrences(of: ",", with: "."))
+            }else{
+                didMakeTransactionConfirmRequest(organizationId: voucher.product?.organization.id ?? 0, amount: voucher.amount ?? "0.0")
+            }
+        }
+    }
+}
+
 extension UIViewController{
     
-     func getLanguageISO() -> String {
+    func getLanguageISO() -> String {
         return Locale.current.languageCode!
     }
 }

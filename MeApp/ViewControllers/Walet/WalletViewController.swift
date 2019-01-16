@@ -15,6 +15,7 @@ import SDWebImage
 import Speech
 import SwipeCellKit
 import UIKit
+import Presentr
 
 enum WalletCase {
     case token
@@ -32,9 +33,30 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
     var vouhers: NSMutableArray! = NSMutableArray()
     var activityIndicatorView: NVActivityIndicatorView!
     @IBOutlet var emptyTextLabe: UILabel!
+    var firstTimeEnter: Bool!
+    let presenter: Presentr = {
+        let presenter = Presentr(presentationType: .alert)
+        presenter.transitionType = TransitionType.coverHorizontalFromRight
+        presenter.dismissOnSwipe = true
+        return presenter
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+    
+    fileprivate func setupView(){
+        title = "Voucher"
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+            self.navigationController?.navigationItem.largeTitleDisplayMode = .automatic
+            self.tableView.contentInset = UIEdgeInsets(top: 1, left: 0, bottom: 0, right: 0)
+            
+        } else {
+            // Fallback on earlier versions
+        }
+        
         if !UserDefaults.standard.bool(forKey: "isStartFromScanner"){
             if UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" && UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil {
                 var appearance = ALAppearance()
@@ -47,55 +69,43 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
                 AppLocker.present(with: .validate, and: appearance, withController: self)
             }
         }
-//        Web3Provider.getBalance()
-//        Service.sendContract { _, _ in
-//        }
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        fetchRequest.predicate = NSPredicate(format: "currentUser == YES")
-        do {
-            let results = try context.fetch(fetchRequest) as? [User]
-            if results?.count != 0 {
-                UserShared.shared.currentUser = results![0]
-                UserDefaults.standard.set(UserShared.shared.currentUser.pinCode, forKey: ALConstants.kPincode)
-                UserDefaults.standard.synchronize()
-            }
-        } catch {}
+        //        Web3Provider.getBalance()
+        //        Service.sendContract { _, _ in
+        //        }
+        getCurrentUser()
+        
+        if firstTimeEnter != nil{
+            let popupTransction =  MACrashConfirmViewController(nibName: "MACrashConfirmViewController", bundle: nil)
+            self.presenter.presentationType = .popup
+            self.presenter.transitionType = nil
+            self.presenter.dismissTransitionType = nil
+            self.presenter.keyboardTranslationType = .compress
+            self.customPresentViewController(self.presenter, viewController: popupTransction, animated: true, completion: nil)
+        }
+        
         
         let size = CGSize(width: 60, height: 60)
         
         startAnimating(size, message: "Loading...", type: NVActivityIndicatorType(rawValue: 32)!, color: #colorLiteral(red: 0.1918309331, green: 0.3696506619, blue: 0.9919955134, alpha: 1), textColor: .black, fadeInAnimation: nil)
         getVoucherList()
+        
+        if UserDefaults.standard.bool(forKey: "ISENABLESENDADDRESS"){
+            IndentityRequest.requestIndentiy(completion: { (identityAddress, statuCode) in
+                Crashlytics.sharedInstance().setUserIdentifier(identityAddress.address)
+            }) { (error) in }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //        IndentityRequest.requestIndentiy(completion: { (identityAddress, statuCode) in
-        //            Crashlytics.sharedInstance().setUserIdentifier(identityAddress.address)
-        //        }) { (error) in
-        //
-        //        }
-        navigationController?.setNavigationBarHidden(false, animated: true)
-        title = "Voucher"
-        if #available(iOS 11.0, *) {
-            self.navigationController?.navigationBar.prefersLargeTitles = true
-            self.navigationController?.navigationItem.largeTitleDisplayMode = .automatic
-            self.tableView.contentInset = UIEdgeInsets(top: 1, left: 0, bottom: 0, right: 0)
-            
-        } else {
-            // Fallback on earlier versions
-        }
+        self.tabBarController?.tabBar.isHidden = false
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         getVoucherList()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        UIView.animate(withDuration: 0.3) {
-            self.tabBarController?.tabBar.isHidden = false
-            self.view.setNeedsDisplay()
-            self.view.layoutSubviews()
-        }
+      
     }
     
     func getVoucherList() {
@@ -151,7 +161,7 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource, Swip
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return vouhers.count
+        return vouhers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -189,11 +199,11 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource, Swip
         deleteAction.image = UIImage(named: "removeIcon")
         deleteAction.font = UIFont(name: "SFUIText-Bold", size: 10.0)
         
-            if orientation == .left {
-                return [transctionAction]
-            } else {
-                return [deleteAction]
-            }
+        if orientation == .left {
+            return [transctionAction]
+        } else {
+            return [deleteAction]
+        }
         
     }
 }

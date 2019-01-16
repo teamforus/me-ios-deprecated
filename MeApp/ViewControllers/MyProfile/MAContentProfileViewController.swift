@@ -15,7 +15,7 @@ import Presentr
 import AssistantKit
 import Crashlytics
 import MessageUI
-
+import PWSwitch
 
 
 
@@ -24,13 +24,14 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     @IBOutlet weak var closeUIButton: UIButton!
     var isCloseButtonHide: Bool!
-    @IBOutlet weak var switchFaceID: UISwitch!
+    @IBOutlet weak var switchFaceID: PWSwitch!
+    @IBOutlet weak var enableCrashAddress: PWSwitch!
     @IBOutlet weak var faceIdImage: UIImageView!
     @IBOutlet weak var bottonConstraint: NSLayoutConstraint!
     @IBOutlet weak var chooseOrganizationButton: UIButton!
     
     @IBOutlet weak var supportEmailButton: UIButton!
-    @IBOutlet weak var switchScannert: UISwitch!
+    @IBOutlet weak var switchScannert: PWSwitch!
     @IBOutlet weak var heightBottomViewConstraint: NSLayoutConstraint!
     @IBOutlet weak var faceIdLabel: UILabel!
     @IBOutlet weak var profileNameLabel: UILabel!
@@ -60,14 +61,6 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getRecordList()
-        
-        let item  = [switchFaceID, switchScannert]
-        item.forEach { (switchThumb) in
-            switchThumb?.transform = CGAffineTransform(scaleX: 1.0, y: 0.90);
-            if let switchThumb =  (switchThumb?.subviews[0].subviews[3] as? UIImageView) {
-                switchThumb.transform = CGAffineTransform(scaleX:0.73, y: 0.83)
-            }
-        }
     }
     
     @IBAction func crash(_ sender: Any) {
@@ -98,9 +91,9 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         
        
         if UserDefaults.standard.bool(forKey: "isStartFromScanner"){
-            switchScannert.isOn = true
+            switchScannert.setOn(true, animated: true)
         }else {
-            switchScannert.isOn = false
+            switchScannert.setOn(false, animated: true)
         }
         
         self.layoutBottom()
@@ -112,9 +105,15 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         }
         
         if UserDefaults.standard.bool(forKey: "isWithTouchID"){
-            switchFaceID.isOn = true
+            switchFaceID.setOn(true, animated: true)
         }else {
-            switchFaceID.isOn = false
+            switchFaceID.setOn(false, animated: true)
+        }
+        
+        if UserDefaults.standard.bool(forKey: "ISENABLESENDADDRESS"){
+            enableCrashAddress.setOn(true, animated: true)
+        }else {
+            enableCrashAddress.setOn(false, animated: true)
         }
         
         if !faceIDAvailable(){
@@ -216,21 +215,30 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func checkStartFromScreen(_ sender: UISwitch) {
-        if sender.isOn{
+    @IBAction func checkStartFromScreen(_ sender: PWSwitch) {
+        if sender.on{
             UserDefaults.standard.set(true, forKey: "isStartFromScanner")
         }else{
             UserDefaults.standard.set(false, forKey: "isStartFromScanner")
         }
     }
     
-    @IBAction func faceIdEnable(_ sender: Any) {
-        if (sender as! UISwitch).isOn{
+    @IBAction func faceIdEnable(_ sender: PWSwitch) {
+        if sender.on{
             UserDefaults.standard.set(true, forKey: "isWithTouchID")
         }else{
             UserDefaults.standard.set(false, forKey: "isWithTouchID")
         }
     }
+    
+    @IBAction func crashReportAddressEnable(_ sender: PWSwitch) {
+        if sender.on{
+            UserDefaults.standard.set(true, forKey: "ISENABLESENDADDRESS")
+        }else{
+            UserDefaults.standard.set(false, forKey: "ISENABLESENDADDRESS")
+        }
+    }
+    
     
     func didChooseAppLocker(title: String, subTitle: String, mode: ALMode){
         var appearance = ALAppearance()

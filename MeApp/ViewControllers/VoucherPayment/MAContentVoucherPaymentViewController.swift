@@ -43,6 +43,10 @@ class MAContentVoucherPaymentViewController: MABaseViewController, MAConfirmatio
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+    
+    fileprivate func setupView(){
         qrImageViewBody.layer.shadowColor = UIColor.black.cgColor
         qrImageViewBody.layer.shadowOffset = CGSize(width: 0, height: 5)
         qrImageViewBody.layer.shadowOpacity = 0.1
@@ -52,12 +56,12 @@ class MAContentVoucherPaymentViewController: MABaseViewController, MAConfirmatio
         if voucher.product != nil {
             paketTitle.text = voucher.product?.name
             organizationNameLabel.text = voucher.product?.organization.name
-           if voucher.product?.photo != nil {
-            qrCodeImageView.sd_setImage(with: URL(string: voucher.product?.photo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
-             organizationLogo.sd_setImage(with: URL(string: voucher.product?.photo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+            if voucher.product?.photo != nil {
+                qrCodeImageView.sd_setImage(with: URL(string: voucher.product?.photo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+                organizationLogo.sd_setImage(with: URL(string: voucher.product?.photo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
             }else{
                 qrCodeImageView.image = UIImage(named: "Resting")
-             organizationLogo.image = UIImage(named: "face24Px")
+                organizationLogo.image = UIImage(named: "face24Px")
             }
         }else{
             paketTitle.text = voucher.found.name

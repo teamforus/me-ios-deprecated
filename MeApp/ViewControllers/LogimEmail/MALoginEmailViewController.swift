@@ -54,7 +54,7 @@ class MALoginEmailViewController: MABaseViewController {
                                                                     UserDefaults.standard.setValue(response.accessToken, forKeyPath: "auth_token")
                                                                     self.performSegue(withIdentifier: "goToSuccessMail", sender: self)
                                                                 }else {
-                                                                     AlertController.showWarning(withText: "This email does not exist".localized(), vc: self)
+                                                                    AlertController.showWarning(withText: "This email does not exist".localized(), vc: self)
                                                                 }
                     }, failure: { (error) in
                         AlertController.showWarning(withText: "Something went wrong, please try again…".localized(), vc: self)

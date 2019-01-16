@@ -161,27 +161,31 @@ class VoucherRequest {
             "Accept": "application/json",
             "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"
         ]
-        Alamofire.request(BaseURL.baseURL(url: "platform/vouchers"), method: .get, parameters:nil,encoding: JSONEncoding.default, headers: headers).responseJSON {
-            response in
-            switch response.result {
-            case .success:
-                if let json = response.result.value {
-                    if (json as AnyObject)["message"]! == nil {
-                        let voucherList: NSMutableArray = NSMutableArray()
-                        if (json as AnyObject).count != 0 {
-                            for voucherItem in (json as AnyObject)["data"] as! Array<Any>{
-                                let voucher = try! Voucher(object: voucherItem as! JSONObject)
-                                voucherList.add(voucher)
+        DispatchQueue.global(qos: .userInteractive).async {
+            Alamofire.request(BaseURL.baseURL(url: "platform/vouchers"), method: .get, parameters:nil,encoding: JSONEncoding.default, headers: headers).responseJSON {
+                response in
+                switch response.result {
+                case .success:
+                    if let json = response.result.value {
+                        if (json as AnyObject)["message"]! == nil {
+                            let voucherList: NSMutableArray = NSMutableArray()
+                            if (json as AnyObject).count != 0 {
+                                for voucherItem in (json as AnyObject)["data"] as! Array<Any>{
+                                    let voucher = try! Voucher(object: voucherItem as! JSONObject)
+                                    voucherList.add(voucher)
+                                }
+                            }
+                            DispatchQueue.main.async {
+                                completion(voucherList, (response.response?.statusCode)!)
                             }
                         }
-                        completion(voucherList, (response.response?.statusCode)!)
+                        
                     }
+                    break
+                case .failure(let error):
                     
+                    failure(error)
                 }
-                break
-            case .failure(let error):
-                
-                failure(error)
             }
         }
     }

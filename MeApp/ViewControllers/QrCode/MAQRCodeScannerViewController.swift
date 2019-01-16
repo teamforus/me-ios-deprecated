@@ -70,6 +70,10 @@ class MAQRCodeScannerViewController: HSScanViewController , HSScanViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+    
+    fileprivate func setupView(){
         if UserDefaults.standard.bool(forKey: "isStartFromScanner"){
             if UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" && UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil {
                 var appearance = ALAppearance()
@@ -87,15 +91,15 @@ class MAQRCodeScannerViewController: HSScanViewController , HSScanViewController
         self.scanCodeTypes  = [.qr]
         ScanPermission.authorizeCamera { (isAuthorized) in
             if !isAuthorized{
-                let alert: UIAlertController
-                alert = UIAlertController(title: "Camera permission reuest was denied.".localized(), message: "Press settings to give an access or cancel to close this window.".localized(), preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .default, handler: { (action) in
-                }))
                 
-                alert.addAction(UIAlertAction(title: "Settings".localized(), style: .default, handler: { (action) in
-                    ScanPermission.goToSystemSetting()
-                }))
-                self.present(alert, animated: true, completion: nil)
+                AlertController.showAlertActions(vc: self,
+                                                 title: "Camera permission request was denied.".localized(),
+                                                 detail: "Press settings to give an access or cancel to close this window.".localized(),
+                                                 cancelTitle: "Cancel".localized(),
+                                                 confirmTitle: "Settings".localized(),
+                                                 handler: { (action) in
+                                                    ScanPermission.goToSystemSetting()
+                })
             }
         }
     }
@@ -103,10 +107,7 @@ class MAQRCodeScannerViewController: HSScanViewController , HSScanViewController
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
-    }
-    
-       override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        self.setStatusBarStyle(.lightContent)
     }
     
     func readValidationToken(code:String){

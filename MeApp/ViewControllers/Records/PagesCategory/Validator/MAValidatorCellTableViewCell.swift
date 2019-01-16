@@ -12,6 +12,11 @@ class MAValidatorCellTableViewCell: UITableViewCell {
     @IBOutlet weak var nameValidator: UILabel!
     @IBOutlet weak var descriptionValidator: UILabel!
     @IBOutlet weak var iconValidator: UIImageView!
+    var validator: Validations!{
+        didSet{
+             self.nameValidator.text = validator.identityAddress
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

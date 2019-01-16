@@ -50,8 +50,8 @@ class MACreateNewIdentityViewController: MABaseViewController {
                                                             }
                                                             if response.errors == nil && response.accessToken != nil{
                                                                 self.updateOldIndentity()
-                                                                self.saveNewIdentity(accessToken: response.accessToken)
-                                                                self.getCurrentUser(primaryEmai: self.emailSkyFloatingTextField.text)
+                                                                self.saveNewIdentity(primaryEmail: self.emailSkyFloatingTextField.text!, accessToken: response.accessToken, givenName: self.givenNameField.text!, familyName: self.familyNameField.text!)
+                                                                self.getCurrentUser(primaryEmail: self.emailSkyFloatingTextField.text)
                                                                 RecordCategoryRequest.createRecordCategory(completion: { (response, statusCode) in
                                                                     
                                                                 }) { (error) in
@@ -74,58 +74,7 @@ class MACreateNewIdentityViewController: MABaseViewController {
         }
     }
     
-    // MARK: - CoreDataManaged
     
-    func saveNewIdentity(accessToken: String){
-        let context = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "User", in: context)
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        fetchRequest.predicate = NSPredicate(format:"primaryEmail == %@", emailSkyFloatingTextField.text!)
-        do{
-            let results = try context.fetch(fetchRequest) as? [NSManagedObject]
-            if results?.count == 0 {
-                let newUser = NSManagedObject(entity: entity!, insertInto: context)
-                newUser.setValue(emailSkyFloatingTextField.text, forKey: "primaryEmail")
-                newUser.setValue(true, forKey: "currentUser")
-                newUser.setValue("", forKey: "pinCode")
-                newUser.setValue(accessToken, forKey: "accessToken")
-                newUser.setValue(givenNameField.text, forKey: "firstName")
-                newUser.setValue(familyNameField.text, forKey: "lastName")
-                do {
-                    try context.save()
-                } catch {
-                    print("Failed saving")
-                }
-            }
-        } catch{}
-    }
-    
-    func updateOldIndentity(){
-        let context = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        fetchRequest.predicate = NSPredicate(format:"currentUser == YES")
-        do{
-            let results = try context.fetch(fetchRequest) as? [NSManagedObject]
-            if results?.count != 0 {
-                results![0].setValue(false, forKey: "currentUser")
-                do {
-                    try context.save()
-                } catch {
-                    print("Failed saving")
-                }
-            }
-        } catch{}
-    }
-    
-    func getCurrentUser(primaryEmai: String!){
-        let context = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        fetchRequest.predicate = NSPredicate(format:"primaryEmail == %@", emailSkyFloatingTextField.text!)
-        do{
-            let results = try context.fetch(fetchRequest) as? [User]
-            UserShared.shared.currentUser = results![0]
-        } catch{}
-    }
     
     @IBAction func validateEmailField(textField:SkyFloatingLabelTextField) {
         if textField == emailSkyFloatingTextField{
@@ -167,8 +116,12 @@ class MACreateNewIdentityViewController: MABaseViewController {
             creatPassVC.primaryEmail = emailSkyFloatingTextField.text
             creatPassVC.givenName = givenNameField.text
             creatPassVC.familyName = familyNameField.text
+        }else  if segue.identifier == "goToWalet"{
+            let barVC = segue.destination as? TabBarController
+            let nVC = barVC!.viewControllers![0] as? HiddenNavBarNavigationController
+            let vc = nVC?.topViewController as? WalletViewController
+            vc?.firstTimeEnter = true
         }
     }
-    
     
 }
