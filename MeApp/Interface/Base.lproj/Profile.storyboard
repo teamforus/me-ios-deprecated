@@ -91,6 +91,14 @@
                                                         <rect key="frame" x="17" y="117" width="64" height="64"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uga-B6-Abm">
+                                                        <rect key="frame" x="216" y="162" width="159" height="31"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Press for crash the app"/>
+                                                        <connections>
+                                                            <action selector="crash:" destination="LGi-pg-qjE" eventType="touchUpInside" id="VdC-3D-idO"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -468,6 +476,7 @@
                         <outlet property="bottonConstraint" destination="Upy-On-k4N" id="ioV-qZ-GLK"/>
                         <outlet property="changePasscodeView" destination="gkg-fA-sZu" id="W0W-rc-ena"/>
                         <outlet property="closeUIButton" destination="Vgc-gt-tFS" id="rGl-5g-B9i"/>
+                        <outlet property="crashButton" destination="Uga-B6-Abm" id="P2H-Pv-ueK"/>
                         <outlet property="enableCrashAddress" destination="zxA-o9-Ok2" id="Mxm-Ef-j6O"/>
                         <outlet property="faceIdImage" destination="iAC-og-Xvt" id="baO-Lb-zHJ"/>
                         <outlet property="faceIdLabel" destination="mcu-8u-YwG" id="ysA-j8-j2x"/>

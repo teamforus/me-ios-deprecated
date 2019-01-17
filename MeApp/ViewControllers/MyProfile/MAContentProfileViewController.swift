@@ -45,6 +45,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     @IBOutlet weak var verticalSpacingFaceIdLogin: NSLayoutConstraint!
     @IBOutlet weak var heightButtonsView: NSLayoutConstraint!
     var deletePasscode: Bool = false
+    @IBOutlet weak var crashButton: UIButton!
     
     
     
@@ -63,9 +64,6 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         self.getRecordList()
     }
     
-    @IBAction func crash(_ sender: Any) {
-        Crashlytics.sharedInstance().crash()
-    }
     
     func didUpdateButtonStackView(isHiddeButtons: Bool, heigthConstant: CGFloat, verticalConstant: CGFloat){
         heightButtonsView.constant = heigthConstant
@@ -76,6 +74,11 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        #if (DEBUG || ALPHA || DEMO)
+        self.crashButton.isHidden = false
+        #else
+        self.crashButton.isHidden = true
+        #endif
         let popOverVC = PopUpOrganizationsViewController(nibName: "PopUpOrganizationsViewController", bundle: nil)
         popOverVC.delegate = self
         self.addChildViewController(popOverVC)
@@ -326,6 +329,11 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
             }
         }
     }
+    
+    @IBAction func crash(_ sender: Any) {
+        Crashlytics.sharedInstance().crash()
+    }
+    
 }
 
 extension MAContentProfileViewController: MFMailComposeViewControllerDelegate{

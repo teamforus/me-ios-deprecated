@@ -50,7 +50,7 @@ class MAQRCodeScannerViewController: HSScanViewController , HSScanViewController
                         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
                             self.scanWorker.start()
                         }))
-                         self.present(alert, animated: true, completion: nil)
+                         self.present(alert, animated: true)
                     }
                 } catch _ as NSError {
                     self.scanWorker.stop()
@@ -59,7 +59,7 @@ class MAQRCodeScannerViewController: HSScanViewController , HSScanViewController
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
                         self.scanWorker.start()
                     }))
-                     self.present(alert, animated: true, completion: nil)
+                     self.present(alert, animated: true)
                 }
             
         }else{
@@ -141,7 +141,7 @@ class MAQRCodeScannerViewController: HSScanViewController , HSScanViewController
             alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .cancel, handler: { (action) in
                 self.scanWorker.start()
             }))
-            self.present(alert, animated: true, completion: nil)
+            self.present(alert, animated: true)
             
         }, failure: { (error) in
             self.scanWorker.start()
@@ -159,14 +159,14 @@ class MAQRCodeScannerViewController: HSScanViewController , HSScanViewController
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
                     self.scanWorker.start()
                 }))
-                self.present(alert, animated: true, completion: nil)
+                self.present(alert, animated: true)
             }else{
                 let alert: UIAlertController
                 alert = UIAlertController(title: "Success!".localized(), message: "Scanning successfully!".localized(), preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
                     self.scanWorker.start()
                 }))
-                self.present(alert, animated: true, completion: nil)
+                self.present(alert, animated: true)
             }
         }, failure: { (error) in
             AlertController.showError(vc:self)
