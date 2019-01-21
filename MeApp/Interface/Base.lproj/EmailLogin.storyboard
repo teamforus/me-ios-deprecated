@@ -80,7 +80,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YrC-wb-Dox">
-                                                <rect key="frame" x="14" y="9" width="41" height="30"/>
+                                                <rect key="frame" x="0.0" y="9" width="55" height="41"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <connections>
                                                     <action selector="back:" destination="VwV-oF-jRp" eventType="touchUpInside" id="W0y-Uz-AKw"/>

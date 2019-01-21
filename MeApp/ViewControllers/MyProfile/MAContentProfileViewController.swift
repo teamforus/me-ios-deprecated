@@ -82,7 +82,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         let popOverVC = PopUpOrganizationsViewController(nibName: "PopUpOrganizationsViewController", bundle: nil)
         popOverVC.delegate = self
         self.addChildViewController(popOverVC)
-        popOverVC.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 102)
+        popOverVC.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 85)
         self.view.addSubview(popOverVC.view)
         if UserDefaults.standard.string(forKey: ALConstants.kPincode) == "" || UserDefaults.standard.string(forKey: ALConstants.kPincode) == nil{
             passcodeLabel.text = "Create passcode".localized()
@@ -92,14 +92,14 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
             self.didUpdateButtonStackView(isHiddeButtons: false, heigthConstant: 249, verticalConstant: 66)
         }
         
-        let switches = [switchFaceID, switchScannert, enableCrashAddress]
-        
-        switches.forEach { (switchObj) in
-            switchObj!.transform = CGAffineTransform(scaleX: 1.0, y: 0.90);
-            if let thumbView =  (switchObj!.subviews[0].subviews[3] as? UIImageView) {
-                thumbView.transform = CGAffineTransform(scaleX:0.73, y: 0.83)
-            }
-        }
+//        let switches = [switchFaceID, switchScannert, enableCrashAddress]
+//
+//        switches.forEach { (switchObj) in
+//            switchObj!.transform = CGAffineTransform(scaleX: 1.0, y: 0.90);
+//            if let thumbView =  (switchObj!.subviews[0].subviews[3] as? UIImageView) {
+//                thumbView.transform = CGAffineTransform(scaleX:0.73, y: 0.83)
+//            }
+//        }
         
         
         

@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class MAConfirmationSignUpViewController: UIViewController {
+class MAConfirmationSignUpViewController: MABaseViewController {
     @IBOutlet weak var labelDetail: UILabel!
     var primaryEmail: String!
     var givenName: String!
@@ -17,7 +17,7 @@ class MAConfirmationSignUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        labelDetail.text = "Welcome to Me," + givenName + " " + familyName + "! " + "Before we get started, please confirm your email address.".localized()
+        labelDetail.text = "Welcome to Me, " + givenName + " " + familyName + "! " + "Before we get started, please confirm your email address.".localized()
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(authorizeToken(notifcation:)),
@@ -45,6 +45,15 @@ class MAConfirmationSignUpViewController: UIViewController {
                 AlertController.showWarning(withText: "Please try to send email again.".localized(), vc: self)
             }
         }) { (error) in }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToWalet"{
+            let barVC = segue.destination as? TabBarController
+            let nVC = barVC!.viewControllers![0] as? HiddenNavBarNavigationController
+            let vc = nVC?.topViewController as? WalletViewController
+            vc?.firstTimeEnter = true
+        }
     }
 
 }

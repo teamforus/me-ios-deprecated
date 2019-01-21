@@ -3,13 +3,13 @@
 "BGx-Ya-lC9.text" = "Vul onderstaande gegevens in om een profiel aan te maken.";
 
 /* Class = "UILabel"; text = "Jouw identiteit"; ObjectID = "CtM-Fv-Z9R"; */
-"CtM-Fv-Z9R.text" = "Jouw identiteit";
+"CtM-Fv-Z9R.text" = "Nieuw profiel";
 
 /* Class = "UITextField"; placeholder = "Achternaam"; ObjectID = "DMr-He-WGt"; */
 "DMr-He-WGt.placeholder" = "Achternaam";
 
 /* Class = "UIButton"; normalTitle = "INLOGCODE AANMAKEN"; ObjectID = "OTu-R0-ICr"; */
-"OTu-R0-ICr.normalTitle" = "INLOGCODE AANMAKEN";
+"OTu-R0-ICr.normalTitle" = "OPEN MAIL APP";
 
 /* Class = "UILabel"; text = "Me"; ObjectID = "PzA-yq-3Ed"; */
 "PzA-yq-3Ed.text" = "Me";
@@ -24,7 +24,7 @@
 "l5k-At-E38.text" = "Welcome to Me, *Name Surname ! \nBefore we get started, please confirm your email address.";
 
 /* Class = "UILabel"; text = "Verify \nyour account"; ObjectID = "mCp-An-roB"; */
-"mCp-An-roB.text" = "Verifieer \nyuw account";
+"mCp-An-roB.text" = "Verifieer \nuw account";
 
 /* Class = "UITextField"; placeholder = "Voornaam"; ObjectID = "vwf-mA-VNp"; */
 "vwf-mA-VNp.placeholder" = "Voornaam";

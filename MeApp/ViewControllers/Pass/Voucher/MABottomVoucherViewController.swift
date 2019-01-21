@@ -16,6 +16,7 @@ class MABottomVoucherViewController: MABaseViewController, ISHPullUpSizingDelega
     @IBOutlet private weak var handleView: ISHPullUpHandleView!
     @IBOutlet private weak var rootView: UIView!
     @IBOutlet private weak var topView: UIView!
+    @IBOutlet weak var voucherTitleLabel: UILabel!
     var voucher: Voucher!
     @IBOutlet private weak var buttonLock: UIButton?
     @IBOutlet weak var qrCodeImageView: UIImageView!
@@ -40,7 +41,8 @@ class MABottomVoucherViewController: MABaseViewController, ISHPullUpSizingDelega
         rootView.layer.shadowOpacity = 0.2
         rootView.layer.shadowRadius = 23 / 2
          self.qrCodeImageView.generateQRCode(from: "{ \"type\": \"voucher\",\"value\": \"\(voucher.address!)\" }")
-        titleQRCodeLabel.text = "This is your".localized() + " " + voucher.found.name + " " + "voucher in the form of a QR-code".localized()
+        voucherTitleLabel.text = voucher.found.name
+        titleQRCodeLabel.text = "This is your vouchers QR-code.".localized()
 //        self.qrCodeImageView.generateQRCode(from: "{ \"type\": \"auth_token\",\"value\”:\”cd66db60cde7f133bf122db07fdd534bd3ab4d04f9d93af4516c279f4dd1cbb6\“ }")
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture))
         topView.addGestureRecognizer(tapGesture)
