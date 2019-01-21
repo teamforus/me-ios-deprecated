@@ -281,7 +281,7 @@ open class PWSwitch: UIControl {
             thumbBoundsAnimation.fromValue = NSValue(cgRect: getThumbOffRect())
             thumbBoundsAnimation.toValue = NSValue(cgRect: getThumbOffPushRect())
             thumbBoundsAnimation.fillMode = kCAFillModeForwards
-            thumbBoundsAnimation.duration = 0.25
+            thumbBoundsAnimation.duration = 0
             thumbBoundsAnimation.isRemovedOnCompletion = false
             
             let thumbPosAnimation = CABasicAnimation(keyPath: "position")
@@ -289,7 +289,7 @@ open class PWSwitch: UIControl {
             thumbPosAnimation.fromValue = NSValue(cgPoint: getThumbOnPos())
             thumbPosAnimation.toValue = NSValue(cgPoint: getThumbOnPushPos())
             thumbPosAnimation.fillMode = kCAFillModeForwards
-            thumbPosAnimation.duration = 0.25
+            thumbPosAnimation.duration = 0
             thumbPosAnimation.isRemovedOnCompletion = false
             
             let thumbBorderColorAnimation = CABasicAnimation(keyPath: "borderColor")
@@ -297,7 +297,7 @@ open class PWSwitch: UIControl {
             thumbBorderColorAnimation.fromValue = thumbOnBorderColor.cgColor
             thumbBorderColorAnimation.toValue = thumbOnBorderColor.cgColor
             thumbBorderColorAnimation.fillMode = kCAFillModeForwards
-            thumbBorderColorAnimation.duration = 0.25
+            thumbBorderColorAnimation.duration = 0
             thumbBorderColorAnimation.isRemovedOnCompletion = false
             
             let thumbFillColorAnimation = CABasicAnimation(keyPath: "backgroundColor")
@@ -305,11 +305,11 @@ open class PWSwitch: UIControl {
             thumbFillColorAnimation.fromValue = thumbOnFillColor.cgColor
             thumbFillColorAnimation.toValue = thumbOnFillColor.cgColor
             thumbFillColorAnimation.fillMode = kCAFillModeForwards
-            thumbFillColorAnimation.duration = 0.25
+            thumbFillColorAnimation.duration = 0
             thumbFillColorAnimation.isRemovedOnCompletion = false
             
             let animThumbGroup = CAAnimationGroup()
-            animThumbGroup.duration = 0.25
+            animThumbGroup.duration = 0
             animThumbGroup.fillMode = kCAFillModeForwards
             animThumbGroup.isRemovedOnCompletion = false
             animThumbGroup.animations = [thumbBoundsAnimation, thumbPosAnimation, thumbBorderColorAnimation, thumbFillColorAnimation]
@@ -323,7 +323,7 @@ open class PWSwitch: UIControl {
             bgBorderAnimation.fromValue = 1
             bgBorderAnimation.toValue = frame.height / 2
             bgBorderAnimation.fillMode = kCAFillModeForwards
-            bgBorderAnimation.duration = 0.25
+            bgBorderAnimation.duration = 0
             bgBorderAnimation.isRemovedOnCompletion = false
             
             let bgBorderColorAnimation = CABasicAnimation(keyPath: "borderColor")
@@ -331,11 +331,11 @@ open class PWSwitch: UIControl {
             bgBorderColorAnimation.fromValue = trackOffBorderColor.cgColor
             bgBorderColorAnimation.toValue = trackOffPushBorderColor.cgColor
             bgBorderColorAnimation.fillMode = kCAFillModeForwards
-            bgBorderColorAnimation.duration = 0.25
+            bgBorderColorAnimation.duration = 0
             bgBorderColorAnimation.isRemovedOnCompletion = false
             
             let animGroup = CAAnimationGroup()
-            animGroup.duration = 0.25
+            animGroup.duration = 0
             animGroup.fillMode = kCAFillModeForwards
             animGroup.isRemovedOnCompletion = false
             animGroup.animations = [bgBorderColorAnimation]
@@ -351,7 +351,7 @@ open class PWSwitch: UIControl {
             thumbBoundsAnimation.fromValue = NSValue(cgRect: getThumbOffRect())
             thumbBoundsAnimation.toValue = NSValue(cgRect: getThumbOffPushRect())
             thumbBoundsAnimation.fillMode = kCAFillModeForwards
-            thumbBoundsAnimation.duration = 0.25
+            thumbBoundsAnimation.duration = 0
             thumbBoundsAnimation.isRemovedOnCompletion = false
             
             let thumbPosAnimation = CABasicAnimation(keyPath: "position")
@@ -359,7 +359,7 @@ open class PWSwitch: UIControl {
             thumbPosAnimation.fromValue = NSValue(cgPoint: getThumbOffPos())
             thumbPosAnimation.toValue = NSValue(cgPoint: getThumbOffPushPos())
             thumbPosAnimation.fillMode = kCAFillModeForwards
-            thumbPosAnimation.duration = 0.25
+            thumbPosAnimation.duration = 0
             thumbPosAnimation.isRemovedOnCompletion = false
             
             let thumbBorderColorAnimation = CABasicAnimation(keyPath: "borderColor")
@@ -367,11 +367,11 @@ open class PWSwitch: UIControl {
             thumbBorderColorAnimation.fromValue = thumbOffBorderColor.cgColor
             thumbBorderColorAnimation.toValue = thumbOffPushBorderColor.cgColor
             thumbBorderColorAnimation.fillMode = kCAFillModeForwards
-            thumbBorderColorAnimation.duration = 0.25
+            thumbBorderColorAnimation.duration = 0
             thumbBorderColorAnimation.isRemovedOnCompletion = false
             
             let animThumbGroup = CAAnimationGroup()
-            animThumbGroup.duration = 0.25
+            animThumbGroup.duration = 0
             animThumbGroup.fillMode = kCAFillModeForwards
             animThumbGroup.isRemovedOnCompletion = false
             animThumbGroup.animations = [thumbBoundsAnimation, thumbPosAnimation, thumbBorderColorAnimation]
@@ -402,7 +402,7 @@ open class PWSwitch: UIControl {
                 thumbBoundsAnimation.fromValue = NSValue(cgRect: getThumbOffPushRect())
                 thumbBoundsAnimation.toValue = NSValue(cgRect: getThumbOffRect())
                 thumbBoundsAnimation.fillMode = kCAFillModeForwards
-                thumbBoundsAnimation.duration = 0.25
+                thumbBoundsAnimation.duration = 0
                 thumbBoundsAnimation.isRemovedOnCompletion = false
                 
                 let thumbPosAnimation = CABasicAnimation(keyPath: "position")
@@ -410,7 +410,7 @@ open class PWSwitch: UIControl {
                 thumbPosAnimation.fromValue = NSValue(cgPoint: getThumbOnPushPos())
                 thumbPosAnimation.toValue = NSValue(cgPoint: getThumbOnPos())
                 thumbPosAnimation.fillMode = kCAFillModeForwards
-                thumbPosAnimation.duration = 0.25
+                thumbPosAnimation.duration = 0
                 thumbPosAnimation.isRemovedOnCompletion = false
                 
                 
@@ -419,7 +419,7 @@ open class PWSwitch: UIControl {
                 thumbBorderColorAnimation.fromValue = thumbOnBorderColor.cgColor
                 thumbBorderColorAnimation.toValue = thumbOnBorderColor.cgColor
                 thumbBorderColorAnimation.fillMode = kCAFillModeForwards
-                thumbBorderColorAnimation.duration = 0.25
+                thumbBorderColorAnimation.duration = 0
                 thumbBorderColorAnimation.isRemovedOnCompletion = false
                 
                 let thumbFillColorAnimation = CABasicAnimation(keyPath: "backgroundColor")
@@ -427,11 +427,11 @@ open class PWSwitch: UIControl {
                 thumbFillColorAnimation.fromValue = thumbOnFillColor.cgColor
                 thumbFillColorAnimation.toValue = thumbOnFillColor.cgColor
                 thumbFillColorAnimation.fillMode = kCAFillModeForwards
-                thumbFillColorAnimation.duration = 0.25
+                thumbFillColorAnimation.duration = 0
                 thumbFillColorAnimation.isRemovedOnCompletion = false
                 
                 let animThumbGroup = CAAnimationGroup()
-                animThumbGroup.duration = 0.25
+                animThumbGroup.duration = 0
                 animThumbGroup.fillMode = kCAFillModeForwards
                 animThumbGroup.isRemovedOnCompletion = false
                 animThumbGroup.animations = [thumbBoundsAnimation, thumbPosAnimation, thumbBorderColorAnimation, thumbFillColorAnimation]
@@ -445,7 +445,7 @@ open class PWSwitch: UIControl {
                 bgBorderAnimation.fromValue = frame.height / 2
                 bgBorderAnimation.toValue = 1
                 bgBorderAnimation.fillMode = kCAFillModeForwards
-                bgBorderAnimation.duration = 0.25
+                bgBorderAnimation.duration = 0
                 bgBorderAnimation.isRemovedOnCompletion = false
                 
                 let bgBorderColorAnimation = CABasicAnimation(keyPath: "borderColor")
@@ -453,11 +453,11 @@ open class PWSwitch: UIControl {
                 bgBorderColorAnimation.fromValue = trackOffPushBorderColor.cgColor
                 bgBorderColorAnimation.toValue = trackOffBorderColor.cgColor
                 bgBorderColorAnimation.fillMode = kCAFillModeForwards
-                bgBorderColorAnimation.duration = 0.25
+                bgBorderColorAnimation.duration = 0
                 bgBorderColorAnimation.isRemovedOnCompletion = false
                 
                 let animGroup = CAAnimationGroup()
-                animGroup.duration = 0.25
+                animGroup.duration = 0
                 animGroup.fillMode = kCAFillModeForwards
                 animGroup.isRemovedOnCompletion = false
                 animGroup.animations = [bgBorderColorAnimation]
@@ -474,7 +474,7 @@ open class PWSwitch: UIControl {
                 thumbBoundsAnimation.fromValue = NSValue(cgRect: getThumbOffPushRect())
                 thumbBoundsAnimation.toValue = NSValue(cgRect: getThumbOffRect())
                 thumbBoundsAnimation.fillMode = kCAFillModeForwards
-                thumbBoundsAnimation.duration = 0.25
+                thumbBoundsAnimation.duration = 0
                 thumbBoundsAnimation.isRemovedOnCompletion = false
                 
                 let thumbPosAnimation = CABasicAnimation(keyPath: "position")
@@ -482,7 +482,7 @@ open class PWSwitch: UIControl {
                 thumbPosAnimation.fromValue = NSValue(cgPoint: getThumbOffPushPos())
                 thumbPosAnimation.toValue = NSValue(cgPoint: getThumbOffPos())
                 thumbPosAnimation.fillMode = kCAFillModeForwards
-                thumbPosAnimation.duration = 0.25
+                thumbPosAnimation.duration = 0
                 thumbPosAnimation.isRemovedOnCompletion = false
                 
                 let thumbBorderColorAnimation = CABasicAnimation(keyPath: "borderColor")
@@ -490,11 +490,11 @@ open class PWSwitch: UIControl {
                 thumbBorderColorAnimation.fromValue = thumbOffPushBorderColor.cgColor
                 thumbBorderColorAnimation.toValue = thumbOffBorderColor.cgColor
                 thumbBorderColorAnimation.fillMode = kCAFillModeForwards
-                thumbBorderColorAnimation.duration = 0.25
+                thumbBorderColorAnimation.duration = 0
                 thumbBorderColorAnimation.isRemovedOnCompletion = false
                 
                 let animThumbGroup = CAAnimationGroup()
-                animThumbGroup.duration = 0.25
+                animThumbGroup.duration = 0
                 animThumbGroup.fillMode = kCAFillModeForwards
                 animThumbGroup.isRemovedOnCompletion = false
                 animThumbGroup.animations = [thumbBoundsAnimation, thumbPosAnimation, thumbBorderColorAnimation]
@@ -511,7 +511,7 @@ open class PWSwitch: UIControl {
         bgBorderAnimation.fromValue = frame.height / 2
         bgBorderAnimation.toValue = 1
         bgBorderAnimation.fillMode = kCAFillModeForwards
-        bgBorderAnimation.duration = 0.25
+        bgBorderAnimation.duration = 0
         bgBorderAnimation.isRemovedOnCompletion = false
         
         let bgBorderColorAnimation = CABasicAnimation(keyPath: "borderColor")
@@ -519,7 +519,7 @@ open class PWSwitch: UIControl {
         bgBorderColorAnimation.fromValue = trackOnBorderColor.cgColor
         bgBorderColorAnimation.toValue = trackOffBorderColor.cgColor
         bgBorderColorAnimation.fillMode = kCAFillModeForwards
-        bgBorderColorAnimation.duration = 0.25
+        bgBorderColorAnimation.duration = 0
         bgBorderColorAnimation.isRemovedOnCompletion = false
         
         let bgFillColorAnimation = CABasicAnimation(keyPath: "backgroundColor")
@@ -527,11 +527,11 @@ open class PWSwitch: UIControl {
         bgFillColorAnimation.fromValue = trackOnFillColor.cgColor
         bgFillColorAnimation.toValue = trackOffFillColor.cgColor
         bgFillColorAnimation.fillMode = kCAFillModeForwards
-        bgFillColorAnimation.duration = 0.25
+        bgFillColorAnimation.duration = 0
         bgFillColorAnimation.isRemovedOnCompletion = false
         
         let animGroup = CAAnimationGroup()
-        animGroup.duration = 0.25
+        animGroup.duration = 0
         animGroup.fillMode = kCAFillModeForwards
         animGroup.isRemovedOnCompletion = false
         animGroup.animations = [bgBorderColorAnimation, bgFillColorAnimation]
@@ -548,7 +548,7 @@ open class PWSwitch: UIControl {
         thumbBoundsAnimation.fromValue = NSValue(cgRect: getThumbOffPushRect())
         thumbBoundsAnimation.toValue = NSValue(cgRect: getThumbOffRect())
         thumbBoundsAnimation.fillMode = kCAFillModeForwards
-        thumbBoundsAnimation.duration = 0.25
+        thumbBoundsAnimation.duration = 0
         thumbBoundsAnimation.isRemovedOnCompletion = false
         
         let thumbPosAnimation = CABasicAnimation(keyPath: "position")
@@ -556,7 +556,7 @@ open class PWSwitch: UIControl {
         thumbPosAnimation.fromValue = NSValue(cgPoint: getThumbOnPushPos())
         thumbPosAnimation.toValue = NSValue(cgPoint: getThumbOffPos())
         thumbPosAnimation.fillMode = kCAFillModeForwards
-        thumbPosAnimation.duration = 0.25
+        thumbPosAnimation.duration = 0
         thumbPosAnimation.isRemovedOnCompletion = false
         
         let thumbBorderColorAnimation = CABasicAnimation(keyPath: "borderColor")
@@ -564,7 +564,7 @@ open class PWSwitch: UIControl {
         thumbBorderColorAnimation.fromValue = thumbOnBorderColor.cgColor
         thumbBorderColorAnimation.toValue = thumbOffBorderColor.cgColor
         thumbBorderColorAnimation.fillMode = kCAFillModeForwards
-        thumbBorderColorAnimation.duration = 0.25
+        thumbBorderColorAnimation.duration = 0
         thumbBorderColorAnimation.isRemovedOnCompletion = false
         
         let thumbFillColorAnimation = CABasicAnimation(keyPath: "backgroundColor")
@@ -572,11 +572,11 @@ open class PWSwitch: UIControl {
         thumbFillColorAnimation.fromValue = thumbOnFillColor.cgColor
         thumbFillColorAnimation.toValue = thumbOffFillColor.cgColor
         thumbFillColorAnimation.fillMode = kCAFillModeForwards
-        thumbFillColorAnimation.duration = 0.25
+        thumbFillColorAnimation.duration = 0
         thumbFillColorAnimation.isRemovedOnCompletion = false
         
         let animThumbGroup = CAAnimationGroup()
-        animThumbGroup.duration = 0.25
+        animThumbGroup.duration = 0
         animThumbGroup.fillMode = kCAFillModeForwards
         animThumbGroup.isRemovedOnCompletion = false
         animThumbGroup.animations = [thumbBoundsAnimation, thumbPosAnimation, thumbBorderColorAnimation, thumbFillColorAnimation]
@@ -593,7 +593,7 @@ open class PWSwitch: UIControl {
         bgBorderColorAnimation.fromValue = trackOffPushBorderColor.cgColor
         bgBorderColorAnimation.toValue = trackOnBorderColor.cgColor
         bgBorderColorAnimation.fillMode = kCAFillModeForwards
-        bgBorderColorAnimation.duration = 0.25
+        bgBorderColorAnimation.duration = 0
         bgBorderColorAnimation.isRemovedOnCompletion = false
         
         let bgFillColorAnimation = CABasicAnimation(keyPath: "backgroundColor")
@@ -601,11 +601,11 @@ open class PWSwitch: UIControl {
         bgFillColorAnimation.fromValue = trackOffFillColor.cgColor
         bgFillColorAnimation.toValue = trackOnFillColor.cgColor
         bgFillColorAnimation.fillMode = kCAFillModeForwards
-        bgFillColorAnimation.duration = 0.25
+        bgFillColorAnimation.duration = 0
         bgFillColorAnimation.isRemovedOnCompletion = false
         
         let animTrackGroup = CAAnimationGroup()
-        animTrackGroup.duration = 0.25
+        animTrackGroup.duration = 0
         animTrackGroup.fillMode = kCAFillModeForwards
         animTrackGroup.isRemovedOnCompletion = false
         animTrackGroup.animations = [bgBorderColorAnimation, bgFillColorAnimation]
@@ -617,7 +617,7 @@ open class PWSwitch: UIControl {
         thumbBoundsAnimation.fromValue = NSValue(cgRect: getThumbOffPushRect())
         thumbBoundsAnimation.toValue = NSValue(cgRect: getThumbOffRect())
         thumbBoundsAnimation.fillMode = kCAFillModeForwards
-        thumbBoundsAnimation.duration = 0.25
+        thumbBoundsAnimation.duration = 0
         thumbBoundsAnimation.isRemovedOnCompletion = false
         
         let thumbPosAnimation = CABasicAnimation(keyPath: "position")
@@ -625,7 +625,7 @@ open class PWSwitch: UIControl {
         thumbPosAnimation.fromValue = NSValue(cgPoint: getThumbOffPushPos())
         thumbPosAnimation.toValue = NSValue(cgPoint: getThumbOnPos())
         thumbPosAnimation.fillMode = kCAFillModeForwards
-        thumbPosAnimation.duration = 0.25
+        thumbPosAnimation.duration = 0
         thumbPosAnimation.isRemovedOnCompletion = false
         
         let thumbBorderColorAnimation = CABasicAnimation(keyPath: "borderColor")
@@ -633,7 +633,7 @@ open class PWSwitch: UIControl {
         thumbBorderColorAnimation.fromValue = thumbOffPushBorderColor.cgColor
         thumbBorderColorAnimation.toValue = thumbOnBorderColor.cgColor
         thumbBorderColorAnimation.fillMode = kCAFillModeForwards
-        thumbBorderColorAnimation.duration = 0.25
+        thumbBorderColorAnimation.duration = 0
         thumbBorderColorAnimation.isRemovedOnCompletion = false
         
         let thumbFillColorAnimation = CABasicAnimation(keyPath: "backgroundColor")
@@ -641,11 +641,11 @@ open class PWSwitch: UIControl {
         thumbFillColorAnimation.fromValue = thumbOffFillColor.cgColor
         thumbFillColorAnimation.toValue = thumbOnFillColor.cgColor
         thumbFillColorAnimation.fillMode = kCAFillModeForwards
-        thumbFillColorAnimation.duration = 0.25
+        thumbFillColorAnimation.duration = 0
         thumbFillColorAnimation.isRemovedOnCompletion = false
         
         let animThumbGroup = CAAnimationGroup()
-        animThumbGroup.duration = 0.25
+        animThumbGroup.duration = 0
         animThumbGroup.fillMode = kCAFillModeForwards
         animThumbGroup.isRemovedOnCompletion = false
         animThumbGroup.animations = [thumbBoundsAnimation, thumbPosAnimation, thumbBorderColorAnimation, thumbFillColorAnimation]
@@ -664,7 +664,7 @@ open class PWSwitch: UIControl {
                 bgBorderAnimation.fromValue = 1
                 bgBorderAnimation.toValue = frame.height / 2
                 bgBorderAnimation.fillMode = kCAFillModeForwards
-                bgBorderAnimation.duration = 0.25
+                bgBorderAnimation.duration = 0
                 bgBorderAnimation.isRemovedOnCompletion = false
                 
                 backLayer.add(bgBorderAnimation, forKey: "bgAnimation")

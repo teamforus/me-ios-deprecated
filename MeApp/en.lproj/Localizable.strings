@@ -75,10 +75,12 @@
 "Confirm" = "Confirm";
 "My feedback about the Me app" = "My feedback about the Me app";
 "Question from Me user" = "Question from Me user";
-"Mail services are not available" = "Mail services are not available";
+"Mail services are not available" = "Mail services are not available.";
 "Send the voucher to your email?" = "Send the voucher to your email?";
 "No phone number" = "No phone number";
 "Please try to send email again." = "Please try to send email again.";
 "E-mail to me" = "E-mail to me";
 "This is your" = "This is your";
 "voucher in the form of a QR-code" = "-voucher in the form of a QR-code";
+"Warning" = "Warning";
+"Before we get started, please confirm your email address." = "Before we get started, please confirm your email address.";

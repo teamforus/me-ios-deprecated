@@ -75,10 +75,12 @@
 "Confirm" = "Bevestig";
 "My feedback about the Me app" = "Mijn feedback over Me";
 "Question from Me user" = "Vraag van Me-gebruiker";
-"Mail services are not available" = "E-mailservices zijn niet beschikbaar";
+"Mail services are not available" = "U heeft geen mail-app ingesteld op uw apparaat.";
 "Send the voucher to your email?" = "Wilt u de voucher naar uw e-mailadres sturen?";
 "No phone number" = "Geen telefoonnummer";
 "Please try to send email again." = "Probeer nogmaals e-mail te verzenden.";
 "E-mail to me" = "E-mail naar mij";
 "This is your" = "Dit is uw";
 "voucher in the form of a QR-code" = "-voucher in de vorm van een QR-code";
+"Warning" = "Waarschuwing";
+"Before we get started, please confirm your email address." = "Controleer eerst uw e-mailadres om verder te gaan.";

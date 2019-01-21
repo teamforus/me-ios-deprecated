@@ -8,6 +8,7 @@
 
 import UIKit
 
+@IBDesignable
 class ShadowButton: UIButton {
 
     @IBInspectable var selectedShadowColor : UIColor = UIColor.black {

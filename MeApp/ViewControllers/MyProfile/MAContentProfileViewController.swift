@@ -24,14 +24,14 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     @IBOutlet weak var closeUIButton: UIButton!
     var isCloseButtonHide: Bool!
-    @IBOutlet weak var switchFaceID: PWSwitch!
-    @IBOutlet weak var enableCrashAddress: PWSwitch!
+    @IBOutlet weak var switchFaceID: UISwitch!
+    @IBOutlet weak var enableCrashAddress: UISwitch!
     @IBOutlet weak var faceIdImage: UIImageView!
     @IBOutlet weak var bottonConstraint: NSLayoutConstraint!
     @IBOutlet weak var chooseOrganizationButton: UIButton!
     
     @IBOutlet weak var supportEmailButton: UIButton!
-    @IBOutlet weak var switchScannert: PWSwitch!
+    @IBOutlet weak var switchScannert: UISwitch!
     @IBOutlet weak var heightBottomViewConstraint: NSLayoutConstraint!
     @IBOutlet weak var faceIdLabel: UILabel!
     @IBOutlet weak var profileNameLabel: UILabel!
@@ -45,6 +45,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     @IBOutlet weak var verticalSpacingFaceIdLogin: NSLayoutConstraint!
     @IBOutlet weak var heightButtonsView: NSLayoutConstraint!
     var deletePasscode: Bool = false
+    @IBOutlet weak var crashButton: UIButton!
     
     
     
@@ -63,9 +64,6 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         self.getRecordList()
     }
     
-    @IBAction func crash(_ sender: Any) {
-        Crashlytics.sharedInstance().crash()
-    }
     
     func didUpdateButtonStackView(isHiddeButtons: Bool, heigthConstant: CGFloat, verticalConstant: CGFloat){
         heightButtonsView.constant = heigthConstant
@@ -76,6 +74,11 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        #if (DEBUG || ALPHA || DEMO)
+        self.crashButton.isHidden = false
+        #else
+        self.crashButton.isHidden = true
+        #endif
         let popOverVC = PopUpOrganizationsViewController(nibName: "PopUpOrganizationsViewController", bundle: nil)
         popOverVC.delegate = self
         self.addChildViewController(popOverVC)
@@ -89,11 +92,22 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
             self.didUpdateButtonStackView(isHiddeButtons: false, heigthConstant: 249, verticalConstant: 66)
         }
         
+        let switches = [switchFaceID, switchScannert, enableCrashAddress]
+        
+        switches.forEach { (switchObj) in
+            switchObj!.transform = CGAffineTransform(scaleX: 1.0, y: 0.90);
+            if let thumbView =  (switchObj!.subviews[0].subviews[3] as? UIImageView) {
+                thumbView.transform = CGAffineTransform(scaleX:0.73, y: 0.83)
+            }
+        }
+        
+        
+        
        
         if UserDefaults.standard.bool(forKey: "isStartFromScanner"){
-            switchScannert.setOn(true, animated: true)
+            switchScannert.isOn = true
         }else {
-            switchScannert.setOn(false, animated: true)
+            switchScannert.isOn = false
         }
         
         self.layoutBottom()
@@ -105,15 +119,15 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         }
         
         if UserDefaults.standard.bool(forKey: "isWithTouchID"){
-            switchFaceID.setOn(true, animated: true)
+            switchFaceID.isOn = true
         }else {
-            switchFaceID.setOn(false, animated: true)
+            switchFaceID.isOn = false
         }
         
         if UserDefaults.standard.bool(forKey: "ISENABLESENDADDRESS"){
-            enableCrashAddress.setOn(true, animated: true)
+            enableCrashAddress.isOn = true
         }else {
-            enableCrashAddress.setOn(false, animated: true)
+            enableCrashAddress.isOn = false
         }
         
         if !faceIDAvailable(){
@@ -122,8 +136,12 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         }
         let versionApp: AnyObject? = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as AnyObject
         let buildAppNumber: AnyObject? = Bundle.main.infoDictionary?["CFBundleVersion"] as AnyObject
+        #if (DEBUG || ALPHA || DEMO)
+        self.appVersionLabel.text = (versionApp as? String)! + " (" + (buildAppNumber as? String)! + ")"
+        #else
+        self.appVersionLabel.text = (versionApp as? String)!
+        #endif
         
-        appVersionLabel.text = (versionApp as? String)! + " - dev - " + (buildAppNumber as? String)!
     }
     
     func getRecordList(){
@@ -215,24 +233,24 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func checkStartFromScreen(_ sender: PWSwitch) {
-        if sender.on{
+    @IBAction func checkStartFromScreen(_ sender: UISwitch) {
+        if sender.isOn{
             UserDefaults.standard.set(true, forKey: "isStartFromScanner")
         }else{
             UserDefaults.standard.set(false, forKey: "isStartFromScanner")
         }
     }
     
-    @IBAction func faceIdEnable(_ sender: PWSwitch) {
-        if sender.on{
+    @IBAction func faceIdEnable(_ sender: UISwitch) {
+        if sender.isOn{
             UserDefaults.standard.set(true, forKey: "isWithTouchID")
         }else{
             UserDefaults.standard.set(false, forKey: "isWithTouchID")
         }
     }
     
-    @IBAction func crashReportAddressEnable(_ sender: PWSwitch) {
-        if sender.on{
+    @IBAction func crashReportAddressEnable(_ sender: UISwitch) {
+        if sender.isOn{
             UserDefaults.standard.set(true, forKey: "ISENABLESENDADDRESS")
         }else{
             UserDefaults.standard.set(false, forKey: "ISENABLESENDADDRESS")
@@ -322,6 +340,11 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
             }
         }
     }
+    
+    @IBAction func crash(_ sender: Any) {
+        Crashlytics.sharedInstance().crash()
+    }
+    
 }
 
 extension MAContentProfileViewController: MFMailComposeViewControllerDelegate{
