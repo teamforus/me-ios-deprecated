@@ -24,7 +24,7 @@
 "l5k-At-E38.text" = "Welcome to Me, *Name Surname ! \nBefore we get started, please confirm your email address.";
 
 /* Class = "UILabel"; text = "Verify \nyour account"; ObjectID = "mCp-An-roB"; */
-"mCp-An-roB.text" = "Verifieer \nyuw account";
+"mCp-An-roB.text" = "Verifieer \nuw account";
 
 /* Class = "UITextField"; placeholder = "Voornaam"; ObjectID = "vwf-mA-VNp"; */
 "vwf-mA-VNp.placeholder" = "Voornaam";

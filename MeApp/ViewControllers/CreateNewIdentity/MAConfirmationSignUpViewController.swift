@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class MAConfirmationSignUpViewController: UIViewController {
+class MAConfirmationSignUpViewController: MABaseViewController {
     @IBOutlet weak var labelDetail: UILabel!
     var primaryEmail: String!
     var givenName: String!
