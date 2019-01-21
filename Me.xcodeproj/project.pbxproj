@@ -1083,14 +1083,9 @@
 			children = (
 				65A51F6A20B2FFF10010DB33 /* AppDelegate.swift */,
 				6504473E20C060E000D040B9 /* Validation.swift */,
-				65BD691721246BD40098CF9F /* Custom */,
-				65D764E020B73933007D7B9D /* Helper */,
+				65BD691721246BD40098CF9F /* Resource */,
 				65B89A8E20B3344C0024DC51 /* ViewControllers */,
 				651A133721BFD5DA006C19CA /* Interface */,
-				65E3363E20E645B600C0512B /* KRScrollView.swift */,
-				65BFF47120C1A61B00F64215 /* VoiceButton */,
-				65FC865D20B5D8F5001FECA5 /* Extension */,
-				65D39D1520DC057200CA4E41 /* Library */,
 				65A51FF320B333D10010DB33 /* PopUps */,
 				65467FA620B82370009E99CC /* Models */,
 				65467FA820B823B9009E99CC /* Suporting Files */,
@@ -1437,9 +1432,14 @@
 			path = "Google-Sans-Font";
 			sourceTree = "<group>";
 		};
-		65BD691721246BD40098CF9F /* Custom */ = {
+		65BD691721246BD40098CF9F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				65E3363E20E645B600C0512B /* KRScrollView.swift */,
+				65BFF47120C1A61B00F64215 /* VoiceButton */,
+				65FC865D20B5D8F5001FECA5 /* Extension */,
+				65D39D1520DC057200CA4E41 /* Library */,
+				65D764E020B73933007D7B9D /* Helper */,
 				658BBA51211094BE0098E2AC /* AppLocker */,
 				65DC02212138314B00FDD4A3 /* Formater.swift */,
 				650FA29420F79CD200997261 /* ShadowButton.swift */,
@@ -1450,7 +1450,7 @@
 				65D2B58A219AE30000EA5162 /* SwitchCustom.swift */,
 				65245CC321B55433002DA3BE /* PausedMarqueLabel.swift */,
 			);
-			path = Custom;
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		65BFF46620C16C1E00F64215 /* NewIdentity */ = {

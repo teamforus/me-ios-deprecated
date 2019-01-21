@@ -8,6 +8,7 @@
 
 import UIKit
 
+@IBDesignable
 class RoundImageView: UIImageView {
     
     override init(frame: CGRect) {

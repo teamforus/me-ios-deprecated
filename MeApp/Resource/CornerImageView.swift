@@ -1,15 +1,16 @@
 //
-//  CustomCornerUIView.swift
-//  MeApp
+//  CornerImageView.swift
+//  Me
 //
-//  Created by Tcacenco Daniel on 7/20/18.
-//  Copyright © 2018 Tcacenco Daniel. All rights reserved.
+//  Created by Tcacenco Daniel on 11/30/18.
+//  Copyright © 2018 Foundation Forus. All rights reserved.
 //
 
 import UIKit
 
-class CustomCornerUIView: UIView {
-
+@IBDesignable
+class CornerImageView: UIImageView {
+    
     @IBInspectable var selectedShadowColor : UIColor = UIColor.black {
         didSet {
             setSelectShadowColor()
@@ -42,12 +43,14 @@ class CustomCornerUIView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.layer.masksToBounds = false
+        self.clipsToBounds = false
+        self.layer.masksToBounds = true
     }
     
     required init(coder: NSCoder) {
         super.init(coder: coder)!
-        self.layer.masksToBounds = false
+        self.clipsToBounds = false
+        self.layer.masksToBounds = true
     }
     
     func setCornerRadius(){
@@ -69,6 +72,5 @@ class CustomCornerUIView: UIView {
     func setShadowRadius(){
         self.layer.shadowRadius = shadowRadius
     }
-
 
 }

@@ -14,7 +14,8 @@ class RequestNewIndetity{
     
     static func createnewIndentity(parameters: Parameters, completion: @escaping ((Response, Int) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
-            "Accept": "application/json"
+            "Accept": "application/json",
+            "Client-Type" : "app-me_app"
         ]
         Alamofire.request(BaseURL.baseURL(url: "identity"), method: .post, parameters: parameters,encoding: JSONEncoding.default, headers: headers).responseJSON {
             response in

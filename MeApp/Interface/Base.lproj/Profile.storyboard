@@ -122,37 +122,19 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cCm-5M-1h5" customClass="PWSwitch" customModule="PWSwitch">
-                                                                <rect key="frame" x="280" y="14" width="54" height="30"/>
+                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zj1-3k-ObU" customClass="UISwitchCustom" customModule="Me" customModuleProvider="target">
+                                                                <rect key="frame" x="285" y="14" width="49" height="31"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="onTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="color" keyPath="trackOffFillColor">
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="OffTint">
                                                                         <color key="value" red="0.84653598070000002" green="0.85825008150000004" blue="0.89555484060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="thumbDiameter">
-                                                                        <real key="value" value="22"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="color" keyPath="trackOnBorderColor">
-                                                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="color" keyPath="thumbOnBorderColor">
-                                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="color" keyPath="thumbOnFillColor">
-                                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="color" keyPath="trackOffBorderColor">
-                                                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                        <real key="value" value="14"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
-                                                                    <action selector="checkStartFromScreen:" destination="LGi-pg-qjE" eventType="valueChanged" id="aI8-cc-dRQ"/>
+                                                                    <action selector="checkStartFromScreen:" destination="LGi-pg-qjE" eventType="valueChanged" id="4bd-r9-rs3"/>
                                                                 </connections>
-                                                            </view>
+                                                            </switch>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -242,37 +224,19 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nfm-GY-zCB" customClass="PWSwitch" customModule="PWSwitch">
-                                                                <rect key="frame" x="280" y="13" width="54" height="30"/>
+                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zcC-Kx-3oz" customClass="UISwitchCustom" customModule="Me" customModuleProvider="target">
+                                                                <rect key="frame" x="287" y="13" width="49" height="31"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="onTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="color" keyPath="trackOffFillColor">
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="OffTint">
                                                                         <color key="value" red="0.84653598070000002" green="0.85825008150000004" blue="0.89555484060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="thumbDiameter">
-                                                                        <real key="value" value="22"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="color" keyPath="trackOnBorderColor">
-                                                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="color" keyPath="thumbOnBorderColor">
-                                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="color" keyPath="thumbOnFillColor">
-                                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="color" keyPath="trackOffBorderColor">
-                                                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                        <real key="value" value="14"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
-                                                                    <action selector="faceIdEnable:" destination="LGi-pg-qjE" eventType="valueChanged" id="4OD-7Q-HKF"/>
+                                                                    <action selector="faceIdEnable:" destination="LGi-pg-qjE" eventType="valueChanged" id="Tyx-V7-7iS"/>
                                                                 </connections>
-                                                            </view>
+                                                            </switch>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -310,37 +274,19 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zxA-o9-Ok2" customClass="PWSwitch" customModule="PWSwitch">
-                                                        <rect key="frame" x="279" y="12" width="54" height="30"/>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="alC-Qf-iop" customClass="UISwitchCustom" customModule="Me" customModuleProvider="target">
+                                                        <rect key="frame" x="288" y="14" width="49" height="31"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="onTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="trackOffFillColor">
-                                                                <color key="value" red="0.84653598070144653" green="0.85825008153915405" blue="0.89555484056472778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="thumbDiameter">
-                                                                <real key="value" value="22"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="trackOnBorderColor">
-                                                                <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="thumbOnBorderColor">
-                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="thumbOnFillColor">
-                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="trackOffBorderColor">
-                                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="14"/>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="OffTint">
+                                                                <color key="value" red="0.84653598070000002" green="0.85825008150000004" blue="0.89555484060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="crashReportAddressEnable:" destination="LGi-pg-qjE" eventType="valueChanged" id="YZB-Xj-0CT"/>
+                                                            <action selector="crashReportAddressEnable:" destination="LGi-pg-qjE" eventType="valueChanged" id="Qau-oN-xjz"/>
                                                         </connections>
-                                                    </view>
+                                                    </switch>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -477,7 +423,7 @@
                         <outlet property="changePasscodeView" destination="gkg-fA-sZu" id="W0W-rc-ena"/>
                         <outlet property="closeUIButton" destination="Vgc-gt-tFS" id="rGl-5g-B9i"/>
                         <outlet property="crashButton" destination="Uga-B6-Abm" id="P2H-Pv-ueK"/>
-                        <outlet property="enableCrashAddress" destination="zxA-o9-Ok2" id="Mxm-Ef-j6O"/>
+                        <outlet property="enableCrashAddress" destination="alC-Qf-iop" id="dk0-z1-GrC"/>
                         <outlet property="faceIdImage" destination="iAC-og-Xvt" id="baO-Lb-zHJ"/>
                         <outlet property="faceIdLabel" destination="mcu-8u-YwG" id="ysA-j8-j2x"/>
                         <outlet property="heightBottomViewConstraint" destination="x6P-Lc-F2M" id="YI6-0Y-fMk"/>
@@ -487,8 +433,8 @@
                         <outlet property="profileImage" destination="oal-H1-nuH" id="33M-CH-eMZ"/>
                         <outlet property="profileNameLabel" destination="Wfm-Qk-FJu" id="ZgP-Sh-KcM"/>
                         <outlet property="supportEmailButton" destination="Fxd-3S-5w0" id="efQ-gP-EES"/>
-                        <outlet property="switchFaceID" destination="Nfm-GY-zCB" id="Yf8-4F-y4x"/>
-                        <outlet property="switchScannert" destination="cCm-5M-1h5" id="4Gt-aN-goZ"/>
+                        <outlet property="switchFaceID" destination="zcC-Kx-3oz" id="mua-YR-VrR"/>
+                        <outlet property="switchScannert" destination="zj1-3k-ObU" id="vgU-ku-JS3"/>
                         <outlet property="turnOffPascodeView" destination="SbT-hx-NQg" id="b7u-sB-K5g"/>
                         <outlet property="turnOnOffFaceId" destination="3F5-pB-QVl" id="hYn-QR-rBl"/>
                         <outlet property="verticalSpacingFaceIdLogin" destination="VLh-RE-vTF" id="Qe8-0K-6Fh"/>

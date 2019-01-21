@@ -59,7 +59,7 @@ class MACreateNewIdentityViewController: MABaseViewController {
                                                                 }
                                                                 UserDefaults.standard.set(false, forKey: "PINCODEENABLED")
                                                                 UserDefaults.standard.set("", forKey: ALConstants.kPincode)
-                                                                self.performSegue(withIdentifier: "goToWalet", sender: self)
+//                                                                self.performSegue(withIdentifier: "goToWalet", sender: self)
                                                             }else {
                                                                  AlertController.showWarning(withText: "This email is already used".localized(), vc: self)
                                                             }
