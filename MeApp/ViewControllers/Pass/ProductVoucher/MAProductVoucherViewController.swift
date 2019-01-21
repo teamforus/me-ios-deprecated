@@ -80,8 +80,8 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
         if let longitudeValue = self.voucher.offices?.first?.lon, let lon = Double(longitudeValue) {
             long = lon
         }
-        imageQR.isUserInteractionEnabled = true
-        imageQR.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToQRReader)))
+        imageBodyView.isUserInteractionEnabled = true
+        imageBodyView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToQRReader)))
         mapView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToMap)))
         
         //organizationLabel gesture

@@ -59,8 +59,8 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
         imageBodyView.layer.shadowRadius = 10.0
         imageBodyView.clipsToBounds = false
         imageQR.generateQRCode(from: "{\"type\": \"voucher\",\"value\": \"\(voucher.address!)\" }")
-        imageQR.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToQRReader)))
-        imageQR.isUserInteractionEnabled = true
+        imageBodyView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToQRReader)))
+        imageBodyView.isUserInteractionEnabled = true
         smallerAmount.layer.cornerRadius = 9.0
         emailMeButton.layer.cornerRadius = 9.0
         
