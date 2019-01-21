@@ -3,7 +3,7 @@
 "BGx-Ya-lC9.text" = "Vul onderstaande gegevens in om een profiel aan te maken.";
 
 /* Class = "UILabel"; text = "Jouw identiteit"; ObjectID = "CtM-Fv-Z9R"; */
-"CtM-Fv-Z9R.text" = "Profiel aanmaken";
+"CtM-Fv-Z9R.text" = "Nieuw profiel";
 
 /* Class = "UITextField"; placeholder = "Achternaam"; ObjectID = "DMr-He-WGt"; */
 "DMr-He-WGt.placeholder" = "Achternaam";
