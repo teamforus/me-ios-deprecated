@@ -59,7 +59,7 @@ class MACreateNewIdentityViewController: MABaseViewController {
                                                                 }
                                                                 UserDefaults.standard.set(false, forKey: "PINCODEENABLED")
                                                                 UserDefaults.standard.set("", forKey: ALConstants.kPincode)
-//                                                                self.performSegue(withIdentifier: "goToWalet", sender: self)
+                                                                self.performSegue(withIdentifier: "goToConfirm", sender: self)
                                                             }else {
                                                                  AlertController.showWarning(withText: "This email is already used".localized(), vc: self)
                                                             }
@@ -111,8 +111,8 @@ class MACreateNewIdentityViewController: MABaseViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToPassword"{
-            let creatPassVC = segue.destination as! MACreatePasswordViewController
+        if segue.identifier == "goToConfirm"{
+            let creatPassVC = segue.destination as! MAConfirmationSignUpViewController
             creatPassVC.primaryEmail = emailSkyFloatingTextField.text
             creatPassVC.givenName = givenNameField.text
             creatPassVC.familyName = familyNameField.text

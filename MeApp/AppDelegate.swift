@@ -71,8 +71,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         print(url, options)
-        
+        if url.absoluteString.contains("meapp://identity-confirmation"){
+             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "authorizeTokenSignUp"), object: self, userInfo: ["authToken" : url.absoluteString.replacingOccurrences(of: "meapp://identity-confirmation?token=", with: "")])
+        }else if url.absoluteString.contains("meapp://identity-restore"){
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "authorizeToken"), object: self, userInfo: ["authToken" : url.absoluteString.replacingOccurrences(of: "meapp://identity-restore?token=", with: "")])
+        }
         return true
     }
 
