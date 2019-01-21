@@ -10,12 +10,14 @@ import UIKit
 import CoreData
 
 class MAConfirmationSignUpViewController: UIViewController {
+    @IBOutlet weak var labelDetail: UILabel!
     var primaryEmail: String!
     var givenName: String!
     var familyName: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        labelDetail.text = "Welcome to Me," + givenName + " " + familyName + "! " + "Before we get started, please confirm your email address.".localized()
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(authorizeToken(notifcation:)),
