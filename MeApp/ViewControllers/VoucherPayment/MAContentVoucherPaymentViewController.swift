@@ -43,6 +43,10 @@ class MAContentVoucherPaymentViewController: MABaseViewController, MAConfirmatio
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+    
+    fileprivate func setupView(){
         qrImageViewBody.layer.shadowColor = UIColor.black.cgColor
         qrImageViewBody.layer.shadowOffset = CGSize(width: 0, height: 5)
         qrImageViewBody.layer.shadowOpacity = 0.1
@@ -52,12 +56,12 @@ class MAContentVoucherPaymentViewController: MABaseViewController, MAConfirmatio
         if voucher.product != nil {
             paketTitle.text = voucher.product?.name
             organizationNameLabel.text = voucher.product?.organization.name
-           if voucher.product?.photo != nil {
-            qrCodeImageView.sd_setImage(with: URL(string: voucher.product?.photo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
-             organizationLogo.sd_setImage(with: URL(string: voucher.product?.photo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+            if voucher.product?.photo != nil {
+                qrCodeImageView.sd_setImage(with: URL(string: voucher.product?.photo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+                organizationLogo.sd_setImage(with: URL(string: voucher.product?.photo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
             }else{
                 qrCodeImageView.image = UIImage(named: "Resting")
-             organizationLogo.image = UIImage(named: "face24Px")
+                organizationLogo.image = UIImage(named: "face24Px")
             }
         }else{
             paketTitle.text = voucher.found.name
@@ -84,11 +88,9 @@ class MAContentVoucherPaymentViewController: MABaseViewController, MAConfirmatio
         }else{
             organizationVoucherName.text = voucher.found.organization.name ?? ""
         }
-        
     }
     
     @objc func dismissKeyboard(){
-        //        self.tabBarController?.selectedIndex = 1
         self.view.endEditing(true)
     }
     
@@ -122,13 +124,11 @@ class MAContentVoucherPaymentViewController: MABaseViewController, MAConfirmatio
     }
     
     @IBAction func checkAmount(_ sender: Any) {
-     
     }
     
     @IBAction func dismiss(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
 }
 
 extension MAContentVoucherPaymentViewController: UITableViewDelegate, UITableViewDataSource{
@@ -146,8 +146,7 @@ extension MAContentVoucherPaymentViewController: UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? MAVoucherPaymentTableViewCell
-        let productCategories = voucher.allowedProductCategories?[indexPath.row]
-        cell?.categoryNameLabel.text = productCategories?.name
+        cell?.organization = voucher.allowedProductCategories?[indexPath.row]
         return cell!
     }
 }

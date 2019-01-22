@@ -26,7 +26,7 @@ class MAContenProductVoucherViewController: ISHPullUpViewController {
     }
     
     private func commonInit() {
-        let storyBoard = UIStoryboard(name: "PassStoryboard", bundle: nil)
+        let storyBoard = UIStoryboard(name: "ProductVoucher", bundle: nil)
         let contentVC = storyBoard.instantiateViewController(withIdentifier: "productVoucher") as! MAProductVoucherViewController
         let bottomVC = storyBoard.instantiateViewController(withIdentifier: "bottomQRProduct") as! MABottomProductViewController
         contentViewController = contentVC
@@ -34,7 +34,6 @@ class MAContenProductVoucherViewController: ISHPullUpViewController {
         bottomVC.pullUpController = self
         sizingDelegate = bottomVC
         stateDelegate = bottomVC
-//        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "hideTapBar"), object: nil)
     }
 
 }

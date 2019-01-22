@@ -15,16 +15,27 @@ class MAWaletVoucherTableViewCell: SwipeTableViewCell {
     @IBOutlet weak var voucherImage: UIImageView!
     @IBOutlet weak var organizationNameLabel: UILabel!
     @IBOutlet weak var usedVoucherLabel: UILabel!
+    var voucher: Voucher? {
+        didSet{
+            self.voucherTitleLabel.text = voucher?.product != nil ? voucher?.product?.name : voucher?.found.name
+            self.organizationNameLabel.text = voucher?.found.organization.name
+            self.priceLabel.text = voucher?.product != nil ? "€ " + (voucher?.product?.price)! : "€ " + (voucher?.amount)!
+            if voucher?.product?.photo != nil || voucher?.found.logo != nil {
+                self.voucherImage.sd_setImage(with: URL(string: (voucher?.product != nil ? voucher?.product?.photo.sizes.thumbnail : voucher?.found.logo.sizes.thumbnail)!), placeholderImage: UIImage(named: "Resting"))
+                
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.usedVoucherLabel.isHidden = true
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }

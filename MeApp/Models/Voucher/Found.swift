@@ -37,6 +37,7 @@ struct ProductCategory {
     var id: Int!
     var key: String!
     var name: String!
+    var service: Int!
 }
 
 extension ProductCategory: JSONDecodable{
@@ -45,5 +46,6 @@ extension ProductCategory: JSONDecodable{
         id = try decoder.decode("id")
         key = try decoder.decode("key")
         name = try decoder.decode("name")
+        service = try decoder.decode("service")
     }
 }

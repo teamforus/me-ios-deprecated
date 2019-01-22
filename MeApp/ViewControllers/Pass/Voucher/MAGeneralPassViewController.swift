@@ -26,7 +26,7 @@ class MAGeneralPassViewController: ISHPullUpViewController {
     }
     
     private func commonInit() {
-        let storyBoard = UIStoryboard(name: "PassStoryboard", bundle: nil)
+        let storyBoard = UIStoryboard(name: "Product", bundle: nil)
         let contentVC = storyBoard.instantiateViewController(withIdentifier: "contentPass") as! PassViewController
         let bottomVC = storyBoard.instantiateViewController(withIdentifier: "bottomQRVoucher") as! MABottomVoucherViewController
         contentViewController = contentVC

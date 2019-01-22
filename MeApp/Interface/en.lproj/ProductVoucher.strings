@@ -1,0 +1,48 @@
+
+/* Class = "UILabel"; text = "Product Voucher"; ObjectID = "5vp-xG-Gy2"; */
+"5vp-xG-Gy2.text" = "Product Voucher";
+
+/* Class = "UIButton"; normalTitle = "E-mail naar mij"; ObjectID = "70G-HG-SBb"; */
+"70G-HG-SBb.normalTitle" = "E-mail to me";
+
+/* Class = "UIButton"; normalTitle = "info@rminds.nl"; ObjectID = "9jn-fs-YMX"; */
+"9jn-fs-YMX.normalTitle" = "info@rminds.nl";
+
+/* Class = "UILabel"; text = "Rocket Minds"; ObjectID = "G0X-Uc-bHQ"; */
+"G0X-Uc-bHQ.text" = "Rocket Minds";
+
+/* Class = "UILabel"; text = "Telephone"; ObjectID = "IJF-vQ-NDk"; */
+"IJF-vQ-NDk.text" = "Telephone";
+
+/* Class = "UILabel"; text = "QR-CODE"; ObjectID = "XqO-BA-5qB"; */
+"XqO-BA-5qB.text" = "QR-CODE";
+
+/* Class = "UILabel"; text = "0615261612"; ObjectID = "YH9-UF-qiI"; */
+"YH9-UF-qiI.text" = "0615261612";
+
+/* Class = "UILabel"; text = "Ulgersmaweg 35, 9731BK, Groningen"; ObjectID = "Zl3-Tm-R1i"; */
+"Zl3-Tm-R1i.text" = "Ulgersmaweg 35, 9731BK, Groningen";
+
+/* Class = "UILabel"; text = "Fiets"; ObjectID = "cNR-dO-sFI"; */
+"cNR-dO-sFI.text" = "Fiets";
+
+/* Class = "UIButton"; normalTitle = "Voucher Info"; ObjectID = "mAf-lc-wCk"; */
+"mAf-lc-wCk.normalTitle" = "Voucher Info";
+
+/* Class = "UILabel"; text = "NOT 2 DAGEN GELDIG VALID"; ObjectID = "nID-py-xHs"; */
+"nID-py-xHs.text" = "NOT 2 DAGEN GELDIG VALID";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "nRf-2Y-aRP"; */
+"nRf-2Y-aRP.text" = "Address";
+
+/* Class = "UILabel"; text = "Laat iemanduw persoonlijke QR-code scannen om u valuta, bezit of vouchers te sturen"; ObjectID = "raD-LX-S2B"; */
+"raD-LX-S2B.text" = "Let the shopkeeper scan it to make a payment from your voucher.";
+
+/* Class = "UITabBarItem"; title = "Item 2"; ObjectID = "uL9-BC-d3b"; */
+"uL9-BC-d3b.title" = "Item 2";
+
+/* Class = "UILabel"; text = "€ 300"; ObjectID = "xYe-Wn-EeV"; */
+"xYe-Wn-EeV.text" = "€ 300";
+
+/* Class = "UILabel"; text = "Provider"; ObjectID = "yeb-Mt-QKn"; */
+"yeb-Mt-QKn.text" = "Provider";

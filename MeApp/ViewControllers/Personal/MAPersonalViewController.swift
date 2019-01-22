@@ -23,14 +23,18 @@ class MAPersonalViewController: MABaseViewController, BWWalkthroughViewControlle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+       setupView()
+    }
+    
+    fileprivate func setupView(){
         self.tabBarController?.tabBar.isHidden = false
-         NotificationCenter.default.addObserver(self, selector: #selector(closePage), name: Notification.Name("CLOSESLIDEPAGE"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(closePage), name: Notification.Name("CLOSESLIDEPAGE"), object: nil)
         if reachablity.connection != .none{
             ConfigRequest.getConfig(configType: "records", completion: { (statuCode, response) in
                 
             }) { (error) in }
-        getRecordType()
-        getRecordList()
+            getRecordType()
+            getRecordList()
         }else {
             AlertController.showInternetUnable(vc: self)
         }
@@ -38,6 +42,11 @@ class MAPersonalViewController: MABaseViewController, BWWalkthroughViewControlle
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
     }
     
     @objc func closePage(){

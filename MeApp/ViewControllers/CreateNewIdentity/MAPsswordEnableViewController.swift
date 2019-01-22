@@ -91,7 +91,7 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
                                                         if response.errors == nil && response.accessToken != nil{
                                                             self.updateOldIndentity()
                                                             self.saveNewIdentity(accessToken: response.accessToken, pinCode:UserDefaults.standard.string(forKey: ALConstants.kPincode)!)
-                                                            self.getCurrentUser(primaryEmai: self.primaryEmail)
+                                                            self.getCurrentUser(primaryEmail: self.primaryEmail)
                                                             RecordCategoryRequest.createRecordCategory(completion: { (response, statusCode) in
                                                                 
                                                             }) { (error) in }
@@ -136,38 +136,6 @@ class MAPsswordEnableViewController: UIViewController, AppLockerDelegate {
                     print("Failed saving")
                 }
             }
-        } catch{
-            
-        }
-    }
-    
-    func updateOldIndentity(){
-        let context = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        fetchRequest.predicate = NSPredicate(format:"currentUser == YES")
-        
-        do{
-            let results = try context.fetch(fetchRequest) as? [NSManagedObject]
-            if results?.count != 0 {
-                results![0].setValue(false, forKey: "currentUser")
-                do {
-                    try context.save()
-                } catch {
-                    print("Failed saving")
-                }
-            }
-        } catch{
-            
-        }
-    }
-    
-    func getCurrentUser(primaryEmai: String!){
-        let context = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        fetchRequest.predicate = NSPredicate(format:"primaryEmail == %@", primaryEmail)
-        do{
-            let results = try context.fetch(fetchRequest) as? [User]
-            UserShared.shared.currentUser = results![0]
         } catch{
             
         }

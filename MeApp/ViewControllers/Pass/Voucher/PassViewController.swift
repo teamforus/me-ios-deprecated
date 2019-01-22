@@ -40,6 +40,11 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+    
+    func setupView(){
+        
         organizationLabel.text = voucher.found.organization.name
         if voucher.found.url_webshop == nil {
             self.smallerAmount.isHidden = true
@@ -53,27 +58,12 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
         imageBodyView.layer.shadowOpacity = 0.1
         imageBodyView.layer.shadowRadius = 10.0
         imageBodyView.clipsToBounds = false
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(goToQRReader))
-        imageQR.isUserInteractionEnabled = true
-        imageQR.generateQRCode(from: "{ \"type\": \"voucher\",\"value\": \"\(voucher.address!)\" }")
-        imageQR.addGestureRecognizer(tapGestureRecognizer)
+        imageQR.generateQRCode(from: "{\"type\": \"voucher\",\"value\": \"\(voucher.address!)\" }")
+        imageBodyView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToQRReader)))
+        imageBodyView.isUserInteractionEnabled = true
         smallerAmount.layer.cornerRadius = 9.0
         emailMeButton.layer.cornerRadius = 9.0
-    }
-    
-    
-    @objc func goToQRReader(){
-        //        self.tabBarController?.selectedIndex = 1
-        NotificationCenter.default.post(name: Notification.Name("togleStateWindow"), object: nil)
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
         
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
         let transactionsArray = NSMutableArray()
         transactionsArray.addObjects(from: voucher.transactions)
@@ -81,10 +71,8 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
         self.transactions.addObjects(from: transactionsArray.sorted(by: { ($0 as! Transactions).created_at.compare(($1 as! Transactions).created_at) == .orderedDescending}))
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-//        self.tabBarController?.tabBar.isHidden = true
-        
+    @objc func goToQRReader(){
+        NotificationCenter.default.post(name: Notification.Name("togleStateWindow"), object: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -92,23 +80,23 @@ class PassViewController: MABaseViewController, SFSafariViewControllerDelegate {
     }
     
     @IBAction func showEmailToMe(_ sender: Any) {
-        let alert: UIAlertController
-        alert = UIAlertController(title: "", message: "Send the voucher to your email?".localized(), preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Confirm".localized(), style: .default, handler: { (action) in
-            VoucherRequest.sendEmailToVoucher(address: self.voucher.address, completion: { (statusCode) in
-                let popupTransction =  MARegistrationSuccessViewController(nibName: "MARegistrationSuccessViewController", bundle: nil)
-                self.presenter.presentationType = .popup
-                self.presenter.transitionType = nil
-                self.presenter.dismissTransitionType = nil
-                self.presenter.keyboardTranslationType = .compress
-                self.customPresentViewController(self.presenter, viewController: popupTransction, animated: true, completion: nil)
-            }) { (error) in
-                
-            }
-        }))
-        alert.addAction(UIAlertAction(title: "Cancel".localized(), style: .default, handler: { (action) in
-        }))
-        self.present(alert, animated: true, completion: nil)
+        
+        AlertController.showAlertActions(vc: self,
+                                         title: "E-mail to me".localized(),
+                                         detail: "Send the voucher to your email?".localized(),
+                                         cancelTitle: "Cancel".localized(),
+                                         confirmTitle: "Confirm".localized())
+                                         { (action) in
+                                            VoucherRequest.sendEmailToVoucher(address: self.voucher.address, completion: { (statusCode) in
+                                                
+                                                let popupTransction = MARegistrationSuccessViewController(nibName: "MARegistrationSuccessViewController", bundle: nil)
+                                                self.presenter.presentationType = .popup
+                                                self.presenter.transitionType = nil
+                                                self.presenter.dismissTransitionType = nil
+                                                self.presenter.keyboardTranslationType = .compress
+                                                self.customPresentViewController(self.presenter, viewController: popupTransction, animated: true, completion: nil)
+                                            }) { (error) in }
+                                         }
     }
     
     @IBAction func showAmmount(_ sender: Any) {
@@ -131,63 +119,34 @@ extension PassViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PassTableViewCell
-        let transaction = self.transactions[indexPath.row] as! Transactions
-        
-        if transaction.product != nil {
-            cell.statusTransfer.text = "Product voucher".localized()
-            cell.companyTitle.text = transaction.product?.name
-            if transaction.product?.photo != nil {
-                cell.imageTransfer.sd_setImage(with: URL(string: transaction.product?.photo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
-            }else{
-                cell.imageTransfer.image = UIImage(named: "Resting")
-            }
-        }else{
-                cell.statusTransfer.text = "Transaction".localized()
-                cell.companyTitle.text = transaction.organization.name
-            if transaction.organization.logo != nil {
-                cell.imageTransfer.sd_setImage(with: URL(string: transaction.organization.logo?.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
-            }else{
-                cell.imageTransfer.image = UIImage(named: "Resting")
-            }
-        }
-            cell.priceLabel.text = "- \(transaction.amount!)"
-            cell.dateLabel.text = transaction.created_at.dateFormaterNormalDate()
-
-    
-        
+        cell.transaction = self.transactions[indexPath.row] as? Transactions
         cell.selectionStyle = .none
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //        let popOverVC = TransactionViewController(nibName: "TransactionViewController", bundle: nil)
-        //        popOverVC.transaction = self.transactions[indexPath.row] as? Transactions
-        //        self.addChildViewController(popOverVC)
-        //        popOverVC.view.frame = self.view.frame
-        //        self.view.addSubview(popOverVC.view)
-        //        popOverVC.didMove(toParentViewController: self)
-        //        tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if self.transactions.count > 8{
-        if isFirstCellVisible(){
-            self.heightConstraint.constant = 322
-            UIView.animate(withDuration: 0.5) {
-                self.view.layoutIfNeeded()
-            }
-        }else{
-            self.heightConstraint.constant = 60
-             UIView.animate(withDuration: 0.5) {
-                self.view.layoutIfNeeded()
-            }
-        }
-    }
+        didAnimateTransactioList()
     }
 }
 
 
 extension PassViewController{
+    func didAnimateTransactioList(){
+        if self.transactions.count > 8{
+            if isFirstCellVisible(){
+                self.heightConstraint.constant = 322
+                UIView.animate(withDuration: 0.5) {
+                    self.view.layoutIfNeeded()
+                }
+            }else{
+                self.heightConstraint.constant = 60
+                UIView.animate(withDuration: 0.5) {
+                    self.view.layoutIfNeeded()
+                }
+            }
+        }
+    }
+    
     func isFirstCellVisible() -> Bool{
         let indexes = tableView.indexPathsForVisibleRows
         for indexPath in indexes!{

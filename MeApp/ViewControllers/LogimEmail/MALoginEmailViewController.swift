@@ -53,11 +53,9 @@ class MALoginEmailViewController: MABaseViewController {
                                                                 if response.errors == nil {
                                                                     UserDefaults.standard.setValue(response.accessToken, forKeyPath: "auth_token")
                                                                     self.performSegue(withIdentifier: "goToSuccessMail", sender: self)
-                                                                    //
                                                                 }else {
-                                                                     AlertController.showWarning(withText: "This email does not exist".localized(), vc: self)
+                                                                    AlertController.showWarning(withText: "This email does not exist".localized(), vc: self)
                                                                 }
-                                                                
                     }, failure: { (error) in
                         AlertController.showWarning(withText: "Something went wrong, please try again…".localized(), vc: self)
                     })
@@ -67,7 +65,6 @@ class MALoginEmailViewController: MABaseViewController {
                 AlertController.showInternetUnable(vc: self)
             }
         }
-        
     }
     
     @IBAction func dismissKeyboard(_ sender: Any) {
@@ -82,5 +79,4 @@ class MALoginEmailViewController: MABaseViewController {
         let succesVC = segue.destination as! MASuccessEmailViewController
         succesVC.email = emailSkyTextField.text
     }
-    
 }

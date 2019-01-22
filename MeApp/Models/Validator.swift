@@ -79,51 +79,6 @@ extension Validator: JSONEncodable{
     }
 }
 
-struct Organization{
-    var id : Int?
-    var organizationId : Int?
-    var identityAddress : String?
-    var name: String?
-    var iban: String?
-    var email: String?
-    var phone: String?
-    var kvk: String?
-    var logo: Logo?
-    var btw: String?
-}
-
-extension Organization: JSONDecodable{
-    init(object: JSONObject) throws {
-        let decoder = JSONDecoder(object:object)
-        id = try decoder.decode("id")
-        organizationId = try decoder.decode("organization_id")
-        identityAddress = try decoder.decode("identity_address")
-        name = try decoder.decode("name")
-        iban = try decoder.decode("iban")
-        email = try decoder.decode("email")
-        phone = try decoder.decode("phone")
-        kvk = try decoder.decode("kvk")
-        logo = try decoder.decode("logo")
-        btw = try decoder.decode("btw")
-    }
-}
-
-extension Organization: JSONEncodable{
-    func toJSON() throws -> Any {
-        return try JSONEncoder.create({ (encoder) -> Void in
-            try encoder.encode(id, key:"id")
-            try encoder.encode(organizationId, key:"organization_id")
-            try encoder.encode(identityAddress, key:"identity_address")
-            try encoder.encode(name, key:"name")
-            try encoder.encode(iban, key:"iban")
-            try encoder.encode(email, key:"email")
-            try encoder.encode(phone, key:"phone")
-            try encoder.encode(kvk, key:"kvk")
-            try encoder.encode(btw, key:"btw")
-            try encoder.encode(btw, key:"logo")
-        })
-    }
-}
 
 struct Logo {
     var uid: Int!
