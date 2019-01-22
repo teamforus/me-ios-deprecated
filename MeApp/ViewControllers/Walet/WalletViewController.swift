@@ -99,7 +99,7 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         getVoucherList()
     }
     
