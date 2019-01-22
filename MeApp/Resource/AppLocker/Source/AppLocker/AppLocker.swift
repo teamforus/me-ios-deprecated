@@ -20,6 +20,7 @@ enum typeClose: Int {
     case validate = 2
     case delete = 3
     case change = 4
+    case logout = 5
 }
 
 public enum ALConstants {
@@ -62,6 +63,7 @@ public class AppLocker: UIViewController {
     @IBOutlet var pinIndicators: [Indicator]!
     weak var delegate: AppLockerDelegate!
     @IBOutlet weak var cancelButton: Button!
+    var isCancelButton: Bool!
     
     // MARK: - Pincode
     private let context = LAContext()
@@ -234,12 +236,24 @@ public class AppLocker: UIViewController {
         case ALConstants.button.cancel.rawValue:
             clearView()
             self.dismiss(animated: true, completion: nil)
-            delegate.closePinCodeView(typeClose: .cancel)
+            if isCancelButton == false{
+                delegate.closePinCodeView(typeClose: .logout)
+            }else{
+                delegate.closePinCodeView(typeClose: .cancel)
+            }
         default:
             drawing(isNeedClear: false, tag: sender.tag)
         }
     }
     
+    func logOutProfile(){
+        UserDefaults.standard.set("", forKey: ALConstants.kPincode)
+            let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let navigationController:HiddenNavBarNavigationController = storyboard.instantiateInitialViewController() as! HiddenNavBarNavigationController
+            let firstPageVC:UIViewController = storyboard.instantiateViewController(withIdentifier: "firstPage") as UIViewController
+            navigationController.viewControllers = [firstPageVC]
+            self.present(navigationController, animated: true, completion: nil)
+        }
 }
 
 // MARK: - CAAnimationDelegate
@@ -264,15 +278,14 @@ public extension AppLocker {
         //            return
         //        }
         //    }
-        if (config?.cancelIsVissible)!{
-            locker.cancelButton.isHidden = false
-        }else{
-            locker.cancelButton.isHidden = true
+        if (config?.cancelIsVissible)! == false{
+            locker.cancelButton.setTitle("Log out", for: .normal)
         }
         locker.messageLabel.text = config?.title ?? ""
         locker.submessageLabel.text = config?.subtitle ?? ""
         locker.view.backgroundColor = config?.color ?? .black
         locker.mode = mode
+        locker.isCancelButton = config?.cancelIsVissible
         locker.delegate = config?.delegate
         if config?.isSensorsEnabled ?? false {
             if UserDefaults.standard.bool(forKey: "isWithTouchID"){
