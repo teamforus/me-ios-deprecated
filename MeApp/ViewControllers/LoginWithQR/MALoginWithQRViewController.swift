@@ -146,7 +146,7 @@ extension MALoginWithQRViewController{
                 if message == "active"{
                     self.timer.invalidate()
                     self.updateOldIndentity()
-                    self.saveNewIdentity(primaryEmail: "", accessToken: self.response.accessTokenCode, givenName: "", familyName: "")
+                    self.saveNewIdentityByAccessToken(primaryEmail: "", accessToken: self.response.accessTokenCode, givenName: "", familyName: "")
                     self.getCurrentUserByToken(accessToken: self.response.accessTokenCode)
                     self.performSegue(withIdentifier: "goToWalet", sender: nil)
                 }
