@@ -77,7 +77,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         #if (DEBUG || ALPHA || DEV)
         self.crashButton.isHidden = false
         #else
-        self.crashButton.isHidden = true
+        self.crashButton.isHidden = false
         #endif
         let popOverVC = PopUpOrganizationsViewController(nibName: "PopUpOrganizationsViewController", bundle: nil)
         popOverVC.delegate = self
