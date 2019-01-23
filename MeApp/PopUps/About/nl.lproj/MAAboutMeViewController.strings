@@ -1,6 +1,6 @@
 
 /* Class = "UILabel"; text = "     • \tinloggen op applicaties;\n     • \tvouchers beheren;\n     • \tprofiel beheren;"; ObjectID = "3S4-oh-UAm"; */
-"3S4-oh-UAm.text" = "     • \tde Nijmegen webshop;\n     • \tde Westerkwartier webshop;\n     • \tde Forus generieke webshop; \tLater zullen meerdere shops en andere applicaties worden toegevoegd.";
+"3S4-oh-UAm.text" = "     • \tde Nijmegen webshop;\n     • \tde Westerkwartier webshop;\n     • \tde Forus generieke webshop; \n\tLater zullen meerdere shops en andere applicaties worden toegevoegd.";
 
 /* Class = "UILabel"; text = "De app Me werkt samen met het Forus platform en biedt de volgende mogelijkheden: "; ObjectID = "AVB-ln-PYc"; */
 "AVB-ln-PYc.text" = "Deze app werkt samen met:";
