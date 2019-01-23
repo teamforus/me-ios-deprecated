@@ -183,7 +183,7 @@ public class AppLocker: UIViewController {
             view.shake(delegate: self)
             view.backgroundColor = .red
             self.photoImageView.image = UIImage(named: "lockError")
-            if self.isFirstCreationStep == false {
+            if self.isCancelButton == true {
                 submessageLabel.text = "Codes don't match. Please try again".localized()
             }else{
                 submessageLabel.text = "Wrong passcode, please try again".localized()
