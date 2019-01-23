@@ -74,7 +74,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        #if (DEBUG || ALPHA || DEMO)
+        #if (DEBUG || ALPHA || DEV)
         self.crashButton.isHidden = false
         #else
         self.crashButton.isHidden = true
@@ -136,7 +136,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         }
         let versionApp: AnyObject? = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as AnyObject
         let buildAppNumber: AnyObject? = Bundle.main.infoDictionary?["CFBundleVersion"] as AnyObject
-        #if (DEBUG || ALPHA || DEMO)
+        #if (DEV || ALPHA || DEMO)
         self.appVersionLabel.text = (versionApp as? String)! + " (" + (buildAppNumber as? String)! + ")"
         #else
         self.appVersionLabel.text = (versionApp as? String)!

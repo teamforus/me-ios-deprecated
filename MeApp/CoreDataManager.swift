@@ -42,6 +42,36 @@ extension UIViewController{
         }
     }
     
+    func saveNewIdentityByAccessToken(primaryEmail: String, accessToken: String, givenName: String, familyName: String){
+        
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        let context = appDelegate!.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "User", in: context)
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        fetchRequest.predicate = NSPredicate(format:"accessToken == %@", accessToken)
+        
+        do{
+            let results = try context.fetch(fetchRequest) as? [NSManagedObject]
+            if results?.count == 0 {
+                let newUser = NSManagedObject(entity: entity!, insertInto: context)
+                newUser.setValue(primaryEmail, forKey: "primaryEmail")
+                newUser.setValue(true, forKey: "currentUser")
+                newUser.setValue("", forKey: "pinCode")
+                newUser.setValue(accessToken, forKey: "accessToken")
+                newUser.setValue(givenName, forKey: "firstName")
+                newUser.setValue(familyName, forKey: "lastName")
+                
+                do {
+                    try context.save()
+                } catch {
+                    print("Failed saving")
+                }
+            }
+        } catch{
+            
+        }
+    }
+    
     
     func updateOldIndentity(){
         let appDelegate = UIApplication.shared.delegate as? AppDelegate

@@ -1,15 +1,15 @@
 s
 /* Class = "UILabel"; text = "     • \tinloggen op applicaties;\n     • \tvouchers beheren;\n     • \tprofiel beheren;"; ObjectID = "3S4-oh-UAm"; */
-"3S4-oh-UAm.text" = "     • \tlog in to applications;\n     • \tmanage vouchers;\n     • \tmanage profile;";
+"3S4-oh-UAm.text" = "     • \tthe Nijmegen webshop;\n     • \tthe Westerkwartier webshop;\n     • \tthe Forus generic webshop; \tLater on several shops and applications will be added.";
 
 /* Class = "UILabel"; text = "De app Me werkt samen met het Forus platform en biedt de volgende mogelijkheden: "; ObjectID = "AVB-ln-PYc"; */
-"AVB-ln-PYc.text" = "Me works together with the Forus platform and offers the following possibilities:";
+"AVB-ln-PYc.text" = "This app works together with:";
 
 /* Class = "UILabel"; text = "Forus, 2018"; ObjectID = "PTm-5Z-QZ1"; */
 "PTm-5Z-QZ1.text" = "Forus, 2018";
 
 /* Class = "UILabel"; text = "De applicatie biedt een duidelijk overzicht van vouchers en makkelijke en veilige manier van inloggen zonder wachtwoord.\n\nDe applicatie functioneert als een generieke stadspas waarmee men zich kan identificeren aan Platform Forus en betalingen kan verrichten."; ObjectID = "ewS-x8-IaF"; */
-"ewS-x8-IaF.text" = "The application provides a clear overview of vouchers and an easy and secure way of logging in without a password.\n\nThe application functions as a generic client that can be used with Platform Forus to make payments.";
+"ewS-x8-IaF.text" = "This app is intended to store vouchers, make payments and log in to different applications.";
 
 /* Class = "UILabel"; text = "Me"; ObjectID = "mNw-S2-p7a"; */
 "mNw-S2-p7a.text" = "Me";

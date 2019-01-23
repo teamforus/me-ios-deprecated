@@ -24,8 +24,7 @@ enum WalletCase {
 }
 
 class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityIndicatorViewable {
-    func closePinCodeView(typeClose: typeClose) {
-    }
+   
     
     let reachability = Reachability()!
     @IBOutlet var tableView: UITableView!
@@ -99,7 +98,7 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         getVoucherList()
     }
     
@@ -206,6 +205,21 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource, Swip
         }
         
     }
+    
+    func closePinCodeView(typeClose: typeClose) {
+        if typeClose == .logout{
+            logOutProfile()
+        }
+    }
+    
+    func logOutProfile(){
+        UserDefaults.standard.set("", forKey: ALConstants.kPincode)
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let navigationController:HiddenNavBarNavigationController = storyboard.instantiateInitialViewController() as! HiddenNavBarNavigationController
+        let firstPageVC:UIViewController = storyboard.instantiateViewController(withIdentifier: "firstPage") as UIViewController
+        navigationController.viewControllers = [firstPageVC]
+        self.present(navigationController, animated: true, completion: nil)
+    }
 }
 
 extension WalletViewController {
@@ -239,4 +253,5 @@ extension WalletViewController {
             activityIndicatorView.startAnimating()
         }
     }
+    
 }
