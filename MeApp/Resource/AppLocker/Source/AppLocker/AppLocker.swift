@@ -279,7 +279,7 @@ public extension AppLocker {
         //        }
         //    }
         if (config?.cancelIsVissible)! == false{
-            locker.cancelButton.setTitle("Log out", for: .normal)
+            locker.cancelButton.setTitle("Log out".localized(), for: .normal)
         }
         locker.messageLabel.text = config?.title ?? ""
         locker.submessageLabel.text = config?.subtitle ?? ""
