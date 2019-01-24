@@ -112,7 +112,7 @@ class MABotomQrProfileViewController: UIViewController, ISHPullUpSizingDelegate,
                 if message == "active"{
                     self.timer.invalidate()
                     self.updateOldIndentity()
-                    self.saveNewIdentity(primaryEmail: "", accessToken: self.authorizeToken.accessToken, givenName: "", familyName: "")
+                    self.saveNewIdentityByAccessToken(primaryEmail: "", accessToken: self.authorizeToken.accessToken, givenName: "", familyName: "")
                     self.getCurrentUserByToken(accessToken: self.authorizeToken.accessToken)
                     NotificationCenter.default.post(name: Notification.Name("TokenIsValidate"), object: nil)
                 }
