@@ -1,4 +1,4 @@
-s
+
 /* Class = "UILabel"; text = "     • \tinloggen op applicaties;\n     • \tvouchers beheren;\n     • \tprofiel beheren;"; ObjectID = "3S4-oh-UAm"; */
 "3S4-oh-UAm.text" = "     • \tthe Nijmegen webshop;\n     • \tthe Westerkwartier webshop;\n     • \tthe Forus generic webshop;";
 
@@ -12,7 +12,7 @@ s
 "ewS-x8-IaF.text" = "This app is intended to store vouchers, make payments and log in to different applications.";
 
 /* Class = "UILabel"; text = "Later on several shops and applications will be added."; ObjectID = "dI9-Qd-6ap"; */
-"dI9-Qd-6ap.text" = "Later on several shops and applications will be added.";
+"dI9-Qd-6ap.text" = "Later several shops and applications will be added.";
 
 /* Class = "UILabel"; text = "Me"; ObjectID = "mNw-S2-p7a"; */
 "mNw-S2-p7a.text" = "Me";
