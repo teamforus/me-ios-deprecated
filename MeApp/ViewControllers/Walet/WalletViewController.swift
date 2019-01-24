@@ -85,7 +85,7 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
         
         let size = CGSize(width: 60, height: 60)
         
-        startAnimating(size, message: "Loading...", type: NVActivityIndicatorType(rawValue: 32)!, color: #colorLiteral(red: 0.1918309331, green: 0.3696506619, blue: 0.9919955134, alpha: 1), textColor: .black, fadeInAnimation: nil)
+        startAnimating(size, message: "Loading...".localized(), type: NVActivityIndicatorType(rawValue: 32)!, color: #colorLiteral(red: 0.1918309331, green: 0.3696506619, blue: 0.9919955134, alpha: 1), textColor: .black, fadeInAnimation: nil)
         getVoucherList()
         
         if UserDefaults.standard.bool(forKey: "ISENABLESENDADDRESS"){

@@ -63,6 +63,7 @@ public class AppLocker: UIViewController {
     @IBOutlet var pinIndicators: [Indicator]!
     weak var delegate: AppLockerDelegate!
     @IBOutlet weak var cancelButton: Button!
+    var vc: UIViewController!
     var isCancelButton: Bool!
     
     // MARK: - Pincode
@@ -235,10 +236,10 @@ public class AppLocker: UIViewController {
             drawing(isNeedClear: true)
         case ALConstants.button.cancel.rawValue:
             clearView()
-            self.dismiss(animated: true, completion: nil)
             if isCancelButton == false{
-                delegate.closePinCodeView(typeClose: .logout)
+                logOutProfile()
             }else{
+            self.dismiss(animated: true)
                 delegate.closePinCodeView(typeClose: .cancel)
             }
         default:
@@ -252,7 +253,11 @@ public class AppLocker: UIViewController {
             let navigationController:HiddenNavBarNavigationController = storyboard.instantiateInitialViewController() as! HiddenNavBarNavigationController
             let firstPageVC:UIViewController = storyboard.instantiateViewController(withIdentifier: "firstPage") as UIViewController
             navigationController.viewControllers = [firstPageVC]
-            self.present(navigationController, animated: true, completion: nil)
+        var vc = UIApplication.shared.keyWindow?.rootViewController
+        while ((vc?.presentedViewController) != nil) {
+            vc = vc?.presentedViewController
+        }
+            vc?.present(navigationController, animated: true, completion: nil)
         }
 }
 
@@ -282,6 +287,7 @@ public extension AppLocker {
             locker.cancelButton.setTitle("Log out".localized(), for: .normal)
         }
         locker.messageLabel.text = config?.title ?? ""
+        locker.vc = withController
         locker.submessageLabel.text = config?.subtitle ?? ""
         locker.view.backgroundColor = config?.color ?? .black
         locker.mode = mode
