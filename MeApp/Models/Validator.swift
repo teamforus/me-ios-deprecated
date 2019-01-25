@@ -85,7 +85,7 @@ struct Logo {
     var originalName: String!
     var type: String!
     var ext: String!
-    var sizes: Size!
+    var sizes: Size?
 }
 
 extension Logo: JSONDecodable{
@@ -100,7 +100,7 @@ extension Logo: JSONDecodable{
 }
 
 struct Size {
-    var thumbnail: String!
+    var thumbnail: String?
     var large: String!
 }
 

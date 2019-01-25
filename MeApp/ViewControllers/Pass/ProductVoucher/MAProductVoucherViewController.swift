@@ -65,7 +65,7 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
         organizationName.text = voucher.product?.organization.name
         
         if voucher.product?.organization.logo != nil{
-            organizationIcon.sd_setImage(with: URL(string: voucher.product?.organization.logo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+            organizationIcon.sd_setImage(with: URL(string: voucher.product?.organization.logo.sizes?.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
         }else{
             organizationIcon.image = UIImage(named: "Resting")
         }

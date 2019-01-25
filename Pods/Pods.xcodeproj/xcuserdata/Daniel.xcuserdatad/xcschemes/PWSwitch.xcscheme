@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0D8FADF8F1D20C287A02BB185805B13A"
+               BlueprintIdentifier = "400073D29B4297F34843D9F997B06AEF"
                BlueprintName = "PWSwitch"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "PWSwitch.framework">

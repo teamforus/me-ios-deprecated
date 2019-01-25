@@ -57,8 +57,8 @@ class MAContentVoucherPaymentViewController: MABaseViewController, MAConfirmatio
             paketTitle.text = voucher.product?.name
             organizationNameLabel.text = voucher.product?.organization.name
             if voucher.product?.photo != nil {
-                qrCodeImageView.sd_setImage(with: URL(string: voucher.product?.photo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
-                organizationLogo.sd_setImage(with: URL(string: voucher.product?.photo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+                qrCodeImageView.sd_setImage(with: URL(string: voucher.product?.photo?.sizes?.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+                organizationLogo.sd_setImage(with: URL(string: voucher.product?.photo?.sizes?.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
             }else{
                 qrCodeImageView.image = UIImage(named: "Resting")
                 organizationLogo.image = UIImage(named: "face24Px")
@@ -68,8 +68,8 @@ class MAContentVoucherPaymentViewController: MABaseViewController, MAConfirmatio
             organizationNameLabel.text = voucher.found.organization.name ?? ""
             organizationVoucherName.text = voucher.found.organization.name ?? ""
             if voucher.found.logo != nil{
-                qrCodeImageView.sd_setImage(with: URL(string: voucher.found.logo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
-                organizationLogo.sd_setImage(with: URL(string: voucher.found.logo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+                qrCodeImageView.sd_setImage(with: URL(string: voucher.found.logo.sizes?.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+                organizationLogo.sd_setImage(with: URL(string: voucher.found.logo.sizes?.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
             }else{
                 qrCodeImageView.image = UIImage(named: "Resting")
                 qrCodeImageView.image = UIImage(named: "face24Px")
