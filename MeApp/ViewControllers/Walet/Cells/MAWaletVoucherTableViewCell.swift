@@ -21,7 +21,7 @@ class MAWaletVoucherTableViewCell: SwipeTableViewCell {
             self.organizationNameLabel.text = voucher?.found.organization.name
             self.priceLabel.text = voucher?.product != nil ? "€ " + (voucher?.product?.price)! : "€ " + (voucher?.amount)!
             if voucher?.product?.photo != nil || voucher?.found.logo != nil {
-                self.voucherImage.sd_setImage(with: URL(string: (voucher?.product != nil ? voucher?.product?.photo.sizes.thumbnail : voucher?.found.logo.sizes.thumbnail)!), placeholderImage: UIImage(named: "Resting"))
+                self.voucherImage.sd_setImage(with: URL(string: (voucher?.product != nil ? voucher?.product?.photo?.sizes?.thumbnail : voucher?.found.logo.sizes?.thumbnail) ?? ""), placeholderImage: UIImage(named: "Resting"))
                 
             }
         }

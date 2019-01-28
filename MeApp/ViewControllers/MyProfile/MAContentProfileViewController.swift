@@ -74,6 +74,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setStatusBarStyle(.default)
         #if (DEMO || ALPHA || DEV)
         self.crashButton.isHidden = false
         #else

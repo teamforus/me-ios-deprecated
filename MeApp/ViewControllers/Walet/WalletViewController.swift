@@ -99,6 +99,7 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
         self.navigationController?.setNavigationBarHidden(false, animated: false)
+        setStatusBarStyle(.default)
         getVoucherList()
     }
     

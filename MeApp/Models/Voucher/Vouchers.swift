@@ -119,7 +119,7 @@ struct ProductVoucher {
     var organization: AllowedOrganizations!
     var organizationId: Int!
     var productCategoryId: Int!
-    var photo: Logo!
+    var photo: Logo?
 }
 
 extension ProductVoucher: JSONDecodable{
