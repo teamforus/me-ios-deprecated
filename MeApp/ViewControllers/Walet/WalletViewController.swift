@@ -93,6 +93,8 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
                 Crashlytics.sharedInstance().setUserIdentifier(identityAddress.address)
             }) { (error) in }
         }
+        
+        sendPushNotificationToke()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -103,9 +105,10 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
         getVoucherList()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-      
+    fileprivate func sendPushNotificationToke(){
+        IndentityRequest.sendTokenNotification(completion: { (user, statusCode) in
+            
+        }) { (error) in }
     }
     
     func getVoucherList() {
