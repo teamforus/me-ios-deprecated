@@ -94,7 +94,9 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
             }) { (error) in }
         }
         
-        sendPushNotificationToke()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.sendPushNotificationToke(notification:)),
+                                               name: Notification.Name("FCMToken"), object: nil)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -105,8 +107,9 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
         getVoucherList()
     }
     
-    fileprivate func sendPushNotificationToke(){
-        IndentityRequest.sendTokenNotification(completion: { (user, statusCode) in
+    @objc fileprivate func sendPushNotificationToke(notification: NSNotification){
+        guard let userInfo = notification.userInfo else {return}
+        IndentityRequest.sendTokenNotification(token: (userInfo["token"] as? String)! ,completion: { (user, statusCode) in
             
         }) { (error) in }
     }
