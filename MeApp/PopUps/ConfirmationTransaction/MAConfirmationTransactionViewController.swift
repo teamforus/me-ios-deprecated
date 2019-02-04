@@ -78,23 +78,12 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
     }
     
     @IBAction func requestTransaction(_ sender: Any) {
-        if UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" && UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil {
-            var appearance = ALAppearance()
-            appearance.image = UIImage(named: "lock")!
-            appearance.title = "Enter login code".localized()
-            appearance.isSensorsEnabled = true
-            appearance.cancelIsVissible = false
-            appearance.delegate = self
-            
-            AppLocker.present(with: .validate, and: appearance, withController: self)
-            
-        }else {
+        
             if voucher.product == nil {
                 didMakeTransactionConfirmRequest(organizationId: voucher.allowedOrganizations!.first?.id ?? 0, amount: amount.replacingOccurrences(of: ",", with: "."))
             }else{
                 didMakeTransactionConfirmRequest(organizationId: voucher.product?.organization.id ?? 0, amount: voucher.amount ?? "0.0")
             }
-        }
     }
     
     func didMakeTransactionConfirmRequest(organizationId: Int, amount: String){
