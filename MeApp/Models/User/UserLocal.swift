@@ -55,7 +55,7 @@ class IndentityRequest {
         }
     }
     
-    static func sendTokenNotification(completion: @escaping ((UserLocal, Int) -> Void), failure: @escaping ((Error) -> Void)){
+    static func sendTokenNotification(token: String ,completion: @escaping ((UserLocal, Int) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
             "Accept": "application/json",
             "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"

@@ -260,7 +260,6 @@
 		65E88DFA213551BA006D45C0 /* Found.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E88DF9213551BA006D45C0 /* Found.swift */; };
 		65F996E621FB6B2F0080E9C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65F996E521FB6B2F0080E9C3 /* GoogleService-Info.plist */; };
 		65FC85F820B56FA2001FECA5 /* MANavicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC85F720B56FA2001FECA5 /* MANavicationController.swift */; };
-		65FC85FA20B57642001FECA5 /* MAQRCodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC85F920B57642001FECA5 /* MAQRCodeReaderViewController.swift */; };
 		65FC85FE20B58426001FECA5 /* MAValidationQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC85FC20B58426001FECA5 /* MAValidationQRViewController.swift */; };
 		65FC85FF20B58426001FECA5 /* MAValidationQRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65FC85FD20B58426001FECA5 /* MAValidationQRViewController.xib */; };
 		65FC860620B5B340001FECA5 /* MASwitchProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC860520B5B340001FECA5 /* MASwitchProfileViewController.swift */; };
@@ -605,7 +604,6 @@
 		65F996ED21FB6EF20080E9C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		65F996F021FB78540080E9C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		65FC85F720B56FA2001FECA5 /* MANavicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MANavicationController.swift; sourceTree = "<group>"; };
-		65FC85F920B57642001FECA5 /* MAQRCodeReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAQRCodeReaderViewController.swift; sourceTree = "<group>"; };
 		65FC85FC20B58426001FECA5 /* MAValidationQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAValidationQRViewController.swift; sourceTree = "<group>"; };
 		65FC85FD20B58426001FECA5 /* MAValidationQRViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAValidationQRViewController.xib; sourceTree = "<group>"; };
 		65FC860520B5B340001FECA5 /* MASwitchProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MASwitchProfileViewController.swift; sourceTree = "<group>"; };
@@ -1606,7 +1604,6 @@
 		65FC85FB20B57646001FECA5 /* QrCode */ = {
 			isa = PBXGroup;
 			children = (
-				65FC85F920B57642001FECA5 /* MAQRCodeReaderViewController.swift */,
 				658D410321A2EE1700CA4F10 /* MAQRCodeScannerViewController.swift */,
 			);
 			path = QrCode;
@@ -2144,7 +2141,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65FC85FA20B57642001FECA5 /* MAQRCodeReaderViewController.swift in Sources */,
 				658BBA4321108D950098E2AC /* MAPsswordEnableViewController.swift in Sources */,
 				65A30B9721C917E4000A635B /* Organization.swift in Sources */,
 				65C0B208210EEB5400FBC254 /* AuthorizationToken.swift in Sources */,
