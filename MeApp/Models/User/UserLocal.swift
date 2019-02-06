@@ -62,7 +62,7 @@ class IndentityRequest {
         ]
         
         
-        Alamofire.request(BaseURL.baseURL(url: "platform/devices/register-push"), method: .post, parameters:["id": UserDefaults.standard.value(forKey: "TOKENDEVICENOTIFICATION")!] ,encoding: JSONEncoding.default, headers: headers).responseJSON {
+        Alamofire.request(BaseURL.baseURL(url: "platform/devices/register-push"), method: .post, parameters:["id": token] ,encoding: JSONEncoding.default, headers: headers).responseJSON {
             response in
             switch response.result {
             case .success:
