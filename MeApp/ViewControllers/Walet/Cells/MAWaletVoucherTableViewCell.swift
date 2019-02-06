@@ -19,7 +19,12 @@ class MAWaletVoucherTableViewCell: SwipeTableViewCell {
         didSet{
             self.voucherTitleLabel.text = voucher?.product != nil ? voucher?.product?.name : voucher?.found.name
             self.organizationNameLabel.text = voucher?.found.organization.name
-            self.priceLabel.text = voucher?.product != nil ? "€ " + (voucher?.product?.price)! : "€ " + (voucher?.amount)!
+            if voucher?.product != nil{
+                self.priceLabel.isHidden = true
+            }else{
+                self.priceLabel.isHidden = false
+                self.priceLabel.text = "€ " + (voucher?.amount)!
+            }
             if voucher?.product?.photo != nil || voucher?.found.logo != nil {
                 self.voucherImage.sd_setImage(with: URL(string: (voucher?.product != nil ? voucher?.product?.photo?.sizes?.thumbnail : voucher?.found.logo.sizes?.thumbnail) ?? ""), placeholderImage: UIImage(named: "Resting"))
                 
