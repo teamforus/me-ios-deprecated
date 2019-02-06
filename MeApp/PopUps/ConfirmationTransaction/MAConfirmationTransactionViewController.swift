@@ -39,9 +39,9 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
         super.viewDidLoad()
         if voucher.product != nil {
             if self.getLanguageISO() == "en"{
-                initTextLabels(title: "Confirm transaction", amount: "Are you sure you want to request")
+                initTextLabels(title: "Confirm transaction", amount: "Are you sure you want to confirm this transaction")
             }else if self.getLanguageISO() == "nl"{
-                initTextLabels(title: "Bevestig betaling", amount: "Wil je de transactie van €\(voucher.amount ?? "0.0") bevestigen?")
+                initTextLabels(title: "Bevestig betaling", amount: "Weet u zeker dat u deze transactie wil bevestigen ?")
             }
             var reactBodyView = bodyView.frame
             reactBodyView.size.height = reactBodyView.size.height - 36
