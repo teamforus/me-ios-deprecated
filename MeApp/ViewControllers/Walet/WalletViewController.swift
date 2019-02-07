@@ -109,7 +109,7 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
     
     @objc fileprivate func sendPushNotificationToke(notification: NSNotification){
         guard let userInfo = notification.userInfo else {return}
-        IndentityRequest.sendTokenNotification(token: (userInfo["token"] as? String)! ,completion: { (user, statusCode) in
+        IndentityRequest.sendTokenNotification(token: (userInfo["token"] as? String)! ,completion: { (statusCode) in
             
         }) { (error) in }
     }
