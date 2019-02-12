@@ -37,8 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = rootViewController
         }
         
-        FirebaseApp.configure()
-        Messaging.messaging().delegate = self
+//        FirebaseApp.configure()
+//        Messaging.messaging().delegate = self
         
         
         if #available(iOS 10.0, *) {
@@ -188,7 +188,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // If swizzling is disabled then this function must be implemented so that the APNs token can be paired to
     // the FCM registration token.
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        print("APNs token retrieved: \(deviceToken)")
+        let deviceTokenString = deviceToken.hexString
+        print("APNs token retrieved: \(deviceTokenString)")
         
         // With swizzling disabled you must set the APNs token here.
         // Messaging.messaging().apnsToken = deviceToken
@@ -236,27 +237,34 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
     }
 }
 
-extension AppDelegate : MessagingDelegate {
-    // [START refresh_token]
-    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
-        print("Firebase registration token: \(fcmToken)")
-
-        let dataDict:[String: String] = ["token": fcmToken]
-        NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
-        UserDefaults.standard.setValue(fcmToken, forKey: "TOKENPUSH")
-        UserDefaults.standard.synchronize()
+//extension AppDelegate : MessagingDelegate {
+//    // [START refresh_token]
+//    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+//        print("Firebase registration token: \(fcmToken)")
+//
+//        let dataDict:[String: String] = ["token": fcmToken]
 //        NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
-        // TODO: If necessary send token to application server.
-        // Note: This callback is fired at each app startup and whenever a new token is generated.
-    }
-    // [END refresh_token]
+//        UserDefaults.standard.setValue(fcmToken, forKey: "TOKENPUSH")
+//        UserDefaults.standard.synchronize()
+////        NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
+//        // TODO: If necessary send token to application server.
+//        // Note: This callback is fired at each app startup and whenever a new token is generated.
+//    }
+//    // [END refresh_token]
+//
+//    // [START ios_10_data_message]
+//    // Receive data messages on iOS 10+ directly from FCM (bypassing APNs) when the app is in the foreground.
+//    // To enable direct data messages, you can set Messaging.messaging().shouldEstablishDirectChannel to true.
+//    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
+//        print("Received data message: \(remoteMessage.appData)")
+//    }
+//    // [END ios_10_data_message]
+//}
 
-    // [START ios_10_data_message]
-    // Receive data messages on iOS 10+ directly from FCM (bypassing APNs) when the app is in the foreground.
-    // To enable direct data messages, you can set Messaging.messaging().shouldEstablishDirectChannel to true.
-    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
-        print("Received data message: \(remoteMessage.appData)")
+
+extension Data {
+    var hexString: String {
+        let hexString = map { String(format: "%02.2hhx", $0) }.joined()
+        return hexString
     }
-    // [END ios_10_data_message]
 }
-
