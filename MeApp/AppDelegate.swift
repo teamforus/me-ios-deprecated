@@ -190,7 +190,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         let deviceTokenString = deviceToken.hexString
         print("APNs token retrieved: \(deviceTokenString)")
-        
+        let dataDict:[String: String] = ["token": deviceTokenString]
+                NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
+                UserDefaults.standard.setValue(deviceTokenString, forKey: "TOKENPUSH")
+                UserDefaults.standard.synchronize()
         // With swizzling disabled you must set the APNs token here.
         // Messaging.messaging().apnsToken = deviceToken
     }
