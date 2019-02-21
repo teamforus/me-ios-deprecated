@@ -55,21 +55,17 @@ class IndentityRequest {
         }
     }
     
-    static func sendTokenNotification(token: String ,completion: @escaping ((UserLocal, Int) -> Void), failure: @escaping ((Error) -> Void)){
+    static func sendTokenNotification(token: String ,completion: @escaping ((Int) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
             "Accept": "application/json",
             "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"
         ]
         
-        
-        Alamofire.request(BaseURL.baseURL(url: "platform/devices/register-push"), method: .post, parameters:["id": UserDefaults.standard.value(forKey: "TOKENDEVICENOTIFICATION")!] ,encoding: JSONEncoding.default, headers: headers).responseJSON {
+        Alamofire.request(BaseURL.baseURL(url: "platform/devices/register-push"), method: .post, parameters:["id": token] ,encoding: JSONEncoding.default, headers: headers).responseData {
             response in
             switch response.result {
             case .success:
-                if let json = response.result.value {
-                    let idenntityAddress = try! UserLocal(object: json as! JSONObject)
-                    completion(idenntityAddress, (response.response?.statusCode)!)
-                }
+                    completion((response.response?.statusCode)!)
                 break
             case .failure(let error):
                 

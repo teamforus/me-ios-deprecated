@@ -105,11 +105,18 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         setStatusBarStyle(.default)
         getVoucherList()
+        let notifMessage: [String: Any] = [
+            "to" : "fcm token you need to send the notification",
+            "notification" :
+                ["title" : "title you want to display", "body": "content you need to display", "badge" : 1, "sound" : "default"]
+        ]
+        
+        sendPushNotification(notData: notifMessage)
     }
     
     @objc fileprivate func sendPushNotificationToke(notification: NSNotification){
         guard let userInfo = notification.userInfo else {return}
-        IndentityRequest.sendTokenNotification(token: (userInfo["token"] as? String)! ,completion: { (user, statusCode) in
+        IndentityRequest.sendTokenNotification(token: (userInfo["token"] as? String)! ,completion: { (statusCode) in
             
         }) { (error) in }
     }
@@ -261,4 +268,32 @@ extension WalletViewController {
         }
     }
     
+}
+
+
+extension WalletViewController{
+    func sendPushNotification(notData: [String: Any]) {
+        let url = URL(string: "https://fcm.googleapis.com/fcm/send")!
+        var request = URLRequest(url: url)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("key=AAAAd3YHFHw:APA91bGQlkoMIc4n0fCMK2d6J0GpH-tqOeDOBGTj1c2xvEVUuc9Ap1-F7exHdDKeyE7FHQn1egXTWVLNq-0ePYg7S-oGJrlQCaNqbZhyTUwZBUeS6m0akbspfX8cPP_dxGBUWdllFDdB", forHTTPHeaderField: "Authorization")
+        request.httpMethod = "POST"
+        
+        request.httpBody = try? JSONSerialization.data(withJSONObject: notData, options: [])
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print(error ?? "")
+                return
+            }
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print(response ?? "")
+            }
+            
+            let responseString = String(data: data, encoding: .utf8)
+            print(responseString ?? "")
+        }
+        task.resume()
+    }
 }
