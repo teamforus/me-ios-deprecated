@@ -242,4 +242,20 @@ class VoucherRequest {
             }
         }
     }
+    
+    static func testRequest(){
+        let headers: HTTPHeaders = [
+            "Accept": "application/json"
+        ]
+        Alamofire.request("http://xyz.hcn.one:9500/test.php", method: .post, parameters:nil,encoding: JSONEncoding.default, headers: headers).responseJSON {
+            response in
+            switch response.result {
+            case .success:
+               
+                break
+            case .failure(let error): break
+                
+            }
+        }
+    }
 }
