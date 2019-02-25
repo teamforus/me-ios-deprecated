@@ -150,3 +150,27 @@ extension MAContentVoucherPaymentViewController: UITableViewDelegate, UITableVie
         return cell!
     }
 }
+
+
+extension MAContentVoucherPaymentViewController: UITextFieldDelegate{
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if(string == "," ){
+            let countdots = textField.text!.components(separatedBy: ",").count - 1
+            
+            if countdots > 0 && string == ","
+            {
+                return false
+            }
+        }else if (string == "." ){
+            let countdots = textField.text!.components(separatedBy: ".").count - 1
+            
+            if countdots > 0 && string == "."
+            {
+                return false
+            }
+        }
+        return true
+    }
+    
+}
