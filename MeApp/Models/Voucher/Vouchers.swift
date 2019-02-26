@@ -25,6 +25,7 @@ struct Voucher {
     var product: ProductVoucher?
     var productVoucher: Array<Transactions>?
     var offices: Array<Office>?
+    var expireAt: ExpireAt?
 }
 
 extension Voucher: JSONDecodable{
@@ -44,6 +45,7 @@ extension Voucher: JSONDecodable{
         createdAt = try decoder.decode("created_at")
         productVoucher = try decoder.decode("product_vouchers")
         offices = try decoder.decode("offices")
+        expireAt = try decoder.decode("expire_at")
     }
 }
 
@@ -154,6 +156,19 @@ extension AllowedProductCategories: JSONDecodable{
     }
 }
 
+struct ExpireAt {
+    var date: String?
+    var timeZone: String?
+}
+
+extension ExpireAt: JSONDecodable{
+    init(object: JSONObject) throws {
+        let decoder = JSONDecoder(object: object)
+        date = try decoder.decode("date")
+        timeZone = try decoder.decode("timezone")
+    }
+}
+
 class VoucherRequest {
     
     static func getVoucherList(completion: @escaping ((NSMutableArray, Int) -> Void), failure: @escaping ((Error) -> Void)){
@@ -172,7 +187,12 @@ class VoucherRequest {
                             if (json as AnyObject).count != 0 {
                                 for voucherItem in (json as AnyObject)["data"] as! Array<Any>{
                                     let voucher = try! Voucher(object: voucherItem as! JSONObject)
+//                                    Date.dateFormaterFromServer(date: voucher.expireAt?.date)
+                                    
+//                                    let expriderDate: Date! = date.dateFormaterFromServer(date: voucher.expireAt?.date)
+                                    if Date().dateFormaterFromServer(dateString: voucher.expireAt?.date ?? "") >= Date(){
                                     voucherList.add(voucher)
+                                    }
                                 }
                             }
                             DispatchQueue.main.async {
