@@ -198,8 +198,9 @@ class VoucherRequest {
                             DispatchQueue.main.async {
                                 completion(voucherList, (response.response?.statusCode)!)
                             }
+                        }else{
+                        completion(NSMutableArray(), (response.response?.statusCode)!)
                         }
-                        
                     }
                     break
                 case .failure(let error):

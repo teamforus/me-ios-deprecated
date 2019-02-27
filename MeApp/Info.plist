@@ -30,7 +30,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>8</string>
+	<string>10</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -46,6 +46,8 @@
 		</array>
 	</dict>
 	<key>FirebaseAppDelegateProxyEnabled</key>
+	<false/>
+	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
@@ -63,11 +65,11 @@
 	<key>NSCameraUsageDescription</key>
 	<string>De camera wordt gebruikt om QR-Codes te scannen</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Your microphone will be used to record your speech when you press the &quot;Start Recording&quot; button.</string>
+	<string>Your microphone will be used to record your speech when you press the "Start Recording" button.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>The Photo Library could be used to cache the images from the API to display vouchers and QR-Codes</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>Speech recognition will be used to determine which words you speak into this device&apos;s microphone.</string>
+	<string>Speech recognition will be used to determine which words you speak into this device's microphone.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>SF-Pro-Display.otf</string>
@@ -99,8 +101,6 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false/>
-	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 </dict>
 </plist>

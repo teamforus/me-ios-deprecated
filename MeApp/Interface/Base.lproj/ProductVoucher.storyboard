@@ -255,7 +255,6 @@
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="os0-wt-is5">
                                                                 <rect key="frame" x="0.0" y="0.0" width="360" height="72"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                <state key="normal" title="Button"/>
                                                                 <connections>
                                                                     <action selector="callPhone:" destination="4Js-Uf-82V" eventType="touchUpInside" id="7KC-gd-12I"/>
                                                                 </connections>

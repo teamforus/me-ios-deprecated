@@ -155,19 +155,33 @@ extension MAContentVoucherPaymentViewController: UITableViewDelegate, UITableVie
 extension MAContentVoucherPaymentViewController: UITextFieldDelegate{
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if(string == "," ){
-            let countdots = textField.text!.components(separatedBy: ",").count - 1
+        var dotString = ""
+        if self.getLanguageISO() == "en"{
             
-            if countdots > 0 && string == ","
-            {
-                return false
-            }
-        }else if (string == "." ){
-            let countdots = textField.text!.components(separatedBy: ".").count - 1
+            dotString = "."
             
-            if countdots > 0 && string == "."
-            {
-                return false
+        }else if self.getLanguageISO() == "nl" {
+            
+            dotString = ","
+        }
+        
+        if let text = textField.text {
+            let isDeleteKey = string.isEmpty
+            
+            if !isDeleteKey {
+                if text.contains(dotString) {
+                    let countdots = textField.text!.components(separatedBy: dotString).count - 1
+                    
+                    if countdots > 0 && string == dotString
+                    {
+                        return false
+                    }
+                    
+                    if text.components(separatedBy: dotString)[1].count == 2 {
+                        
+                        return false
+                    }
+                }
             }
         }
         return true
