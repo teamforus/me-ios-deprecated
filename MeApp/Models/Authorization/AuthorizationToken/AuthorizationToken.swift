@@ -74,6 +74,27 @@ class AuthorizeTokenRequest {
             }
         }
     }
+    
+    static func removeToken(parameter: Parameters, completion: @escaping (( Int) -> Void), failure: @escaping ((Error) -> Void)){
+        let headers: HTTPHeaders = [
+            "Accept": "application/json",
+            "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"
+        ]
+        Alamofire.request(BaseURL.baseURL(url: "platform/devices/delete-push"), method: .delete, parameters:parameter, encoding: JSONEncoding.default, headers: headers).responseData {
+            response in
+            switch response.result {
+            case .success:
+                if let json = response.result.value {
+                    
+                    completion((response.response?.statusCode)!)
+                }
+                break
+            case .failure(let error):
+                
+                failure(error)
+            }
+        }
+    }
 }
 
 

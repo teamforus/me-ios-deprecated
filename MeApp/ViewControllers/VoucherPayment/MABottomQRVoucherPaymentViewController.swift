@@ -63,7 +63,6 @@ class MABottomQRVoucherPaymentViewController: MABaseViewController , ISHPullUpSi
     }
     
     
-    
     @objc func toglePullUpView(){
         //        if pullUpController.state == .expanded{
         //            self.view.isHidden = true

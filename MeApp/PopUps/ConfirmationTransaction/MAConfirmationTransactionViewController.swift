@@ -105,7 +105,7 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
                 self.present(alert, animated: true, completion: nil)
                 
             }else if statusCode == 422 {
-                AlertController.showWarning(withText: "Voucher not have enough funds", vc: self)
+                AlertController.showWarning(withText: "Voucher not have enough funds".localized(), vc: self)
             } }) { (error) in }
     }
     

@@ -31,7 +31,7 @@ class Validation: NSObject {
     
     static public func validateFieldEmpty(textField: SkyFloatingLabelTextField) -> Bool{
         if textField.text == "" {
-             textField.errorMessage = "Field is empty"
+             textField.errorMessage = "Field is empty".localized()
             return false
         }else {
              textField.errorMessage = nil

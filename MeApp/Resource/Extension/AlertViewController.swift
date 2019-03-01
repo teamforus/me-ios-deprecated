@@ -91,7 +91,7 @@ class AlertController: UIAlertController {
     
     static func showInternetUnable(vc: UIViewController){
         let alert: UIAlertController
-        alert = UIAlertController(title: "Warning", message: "No Internet Conecction", preferredStyle: .alert)
+        alert = UIAlertController(title: "Warning".localized(), message: "No Internet Conecction".localized(), preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
         }))
         vc.present(alert, animated: true, completion: nil)

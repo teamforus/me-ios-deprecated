@@ -18,11 +18,12 @@ import FirebaseMessaging
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
     let gcmMessageIDKey = "gcm.message_id"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        VoucherRequest.testRequest()
         UserDefaults.standard.set(false, forKey: "isFirstOpened")
 //              Fabric.sharedSDK().debug = true
         #if DEBUG
@@ -57,6 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         application.registerForRemoteNotifications()
+//        application.unregisterForRemoteNotifications()
         
         return true
     }
@@ -193,8 +195,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("APNs token retrieved: \(deviceTokenString)")
         let dataDict:[String: String] = ["token": deviceTokenString]
                 NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
-                UserDefaults.standard.setValue(deviceTokenString, forKey: "TOKENPUSH")
-                UserDefaults.standard.synchronize()
+        UserDefaults.standard.setValue(deviceTokenString, forKey: "TOKENPUSH")
+        UserDefaults.standard.synchronize()
+        
         // With swizzling disabled you must set the APNs token here.
         // Messaging.messaging().apnsToken = deviceToken
     }
