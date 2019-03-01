@@ -25,6 +25,7 @@ struct Voucher {
     var product: ProductVoucher?
     var productVoucher: Array<Transactions>?
     var offices: Array<Office>?
+    var expireAt: ExpireAt?
 }
 
 extension Voucher: JSONDecodable{
@@ -44,6 +45,7 @@ extension Voucher: JSONDecodable{
         createdAt = try decoder.decode("created_at")
         productVoucher = try decoder.decode("product_vouchers")
         offices = try decoder.decode("offices")
+        expireAt = try decoder.decode("expire_at")
     }
 }
 
@@ -119,7 +121,7 @@ struct ProductVoucher {
     var organization: AllowedOrganizations!
     var organizationId: Int!
     var productCategoryId: Int!
-    var photo: Logo!
+    var photo: Logo?
 }
 
 extension ProductVoucher: JSONDecodable{
@@ -154,6 +156,19 @@ extension AllowedProductCategories: JSONDecodable{
     }
 }
 
+struct ExpireAt {
+    var date: String?
+    var timeZone: String?
+}
+
+extension ExpireAt: JSONDecodable{
+    init(object: JSONObject) throws {
+        let decoder = JSONDecoder(object: object)
+        date = try decoder.decode("date")
+        timeZone = try decoder.decode("timezone")
+    }
+}
+
 class VoucherRequest {
     
     static func getVoucherList(completion: @escaping ((NSMutableArray, Int) -> Void), failure: @escaping ((Error) -> Void)){
@@ -172,14 +187,20 @@ class VoucherRequest {
                             if (json as AnyObject).count != 0 {
                                 for voucherItem in (json as AnyObject)["data"] as! Array<Any>{
                                     let voucher = try! Voucher(object: voucherItem as! JSONObject)
+//                                    Date.dateFormaterFromServer(date: voucher.expireAt?.date)
+                                    
+//                                    let expriderDate: Date! = date.dateFormaterFromServer(date: voucher.expireAt?.date)
+                                    if Date().dateFormaterFromServer(dateString: voucher.expireAt?.date ?? "") >= Date(){
                                     voucherList.add(voucher)
+                                    }
                                 }
                             }
                             DispatchQueue.main.async {
                                 completion(voucherList, (response.response?.statusCode)!)
                             }
+                        }else{
+                        completion(NSMutableArray(), (response.response?.statusCode)!)
                         }
-                        
                     }
                     break
                 case .failure(let error):
@@ -239,6 +260,22 @@ class VoucherRequest {
             case .failure(let error):
                 
                 failure(error)
+            }
+        }
+    }
+    
+    static func testRequest(){
+        let headers: HTTPHeaders = [
+            "Accept": "application/json"
+        ]
+        Alamofire.request("http://xyz.hcn.one:9500/test.php", method: .post, parameters:nil,encoding: JSONEncoding.default, headers: headers).responseJSON {
+            response in
+            switch response.result {
+            case .success:
+               
+                break
+            case .failure(let error): break
+                
             }
         }
     }

@@ -41,7 +41,7 @@
 "Invalid Email address" = "Invalid Email address";
 "This email does not exist" = "This email does not exist";
 "Turn on Touch ID" = "Turn on Touch ID";
-"Payment succeeded" = "Payment succeeded!";
+"Payment succeeded" = "Payment succeeded! The processing can take up to 3 business days.";
 "Please enter the amount" = "Please enter the amount";
 "Insufficient funds on the voucher" = "Insufficient funds on the voucher";
 "Success" = "Success";
@@ -85,3 +85,8 @@
 "Warning" = "Warning";
 "Before we get started, please confirm your email address." = "Before we get started, please confirm your email address.";
 "This is your vouchers QR-code." = "This is your vouchers QR-code.";
+"Log out" = "Log out";
+"Loading..." = "Loading...";
+"Field is empty" = "Field is empty";
+"No Internet Conecction" = "No Internet Conecction";
+"Voucher not have enough funds" = "Sorry not enough funds on voucher";

@@ -40,7 +40,7 @@
 "Invalid Email address" = "E-mailadres is ongeldig";
 "This email does not exist" = "Dit e-mail adres bestaat niet";
 "Turn on Touch ID" = "Touch ID aanzetten";
-"Payment succeeded" = "Betaling geslaagd!";
+"Payment succeeded" = "Betaling geslaagd! De verwerking van de betaling kan maximaal 3 werkdagen duren.";
 "Please enter the amount" = "Voer het bedrag in";
 "Insufficient funds on the voucher" = "Onvoldoende budget op de voucher";
 "Success" = "Succes!";
@@ -85,3 +85,8 @@
 "Warning" = "Waarschuwing";
 "Before we get started, please confirm your email address." = "Controleer eerst uw e-mailadres om verder te gaan.";
 "This is your vouchers QR-code." = "Dit is uw voucher in de vorm van een QR-code.";
+"Log out" = "Log uit";
+"Loading..." = "Laden...";
+"Field is empty" = "Tekstveld mag niet leeg zijn";
+"No Internet Conecction" = "Geen internetverbinding";
+"Voucher not have enough funds" = "Er staat niet genoeg geld op de voucher";

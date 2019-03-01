@@ -22,7 +22,7 @@ class OrganizationTableViewCell: UITableViewCell {
         didSet{
             self.organizationNameLabel.text = organization?.name
             if organization?.logo != nil {
-                self.organizationImageView.sd_setImage(with: URL(string: organization?.logo!.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+                self.organizationImageView.sd_setImage(with: URL(string: organization?.logo!.sizes?.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
             }
         }
     }

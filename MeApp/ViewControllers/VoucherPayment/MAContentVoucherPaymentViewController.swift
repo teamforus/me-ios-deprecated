@@ -57,8 +57,8 @@ class MAContentVoucherPaymentViewController: MABaseViewController, MAConfirmatio
             paketTitle.text = voucher.product?.name
             organizationNameLabel.text = voucher.product?.organization.name
             if voucher.product?.photo != nil {
-                qrCodeImageView.sd_setImage(with: URL(string: voucher.product?.photo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
-                organizationLogo.sd_setImage(with: URL(string: voucher.product?.photo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+                qrCodeImageView.sd_setImage(with: URL(string: voucher.product?.photo?.sizes?.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+                organizationLogo.sd_setImage(with: URL(string: voucher.product?.photo?.sizes?.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
             }else{
                 qrCodeImageView.image = UIImage(named: "Resting")
                 organizationLogo.image = UIImage(named: "face24Px")
@@ -68,8 +68,8 @@ class MAContentVoucherPaymentViewController: MABaseViewController, MAConfirmatio
             organizationNameLabel.text = voucher.found.organization.name ?? ""
             organizationVoucherName.text = voucher.found.organization.name ?? ""
             if voucher.found.logo != nil{
-                qrCodeImageView.sd_setImage(with: URL(string: voucher.found.logo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
-                organizationLogo.sd_setImage(with: URL(string: voucher.found.logo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+                qrCodeImageView.sd_setImage(with: URL(string: voucher.found.logo.sizes?.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+                organizationLogo.sd_setImage(with: URL(string: voucher.found.logo.sizes?.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
             }else{
                 qrCodeImageView.image = UIImage(named: "Resting")
                 qrCodeImageView.image = UIImage(named: "face24Px")
@@ -149,4 +149,42 @@ extension MAContentVoucherPaymentViewController: UITableViewDelegate, UITableVie
         cell?.organization = voucher.allowedProductCategories?[indexPath.row]
         return cell!
     }
+}
+
+
+extension MAContentVoucherPaymentViewController: UITextFieldDelegate{
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        var dotString = ""
+        if self.getLanguageISO() == "en"{
+            
+            dotString = "."
+            
+        }else if self.getLanguageISO() == "nl" {
+            
+            dotString = ","
+        }
+        
+        if let text = textField.text {
+            let isDeleteKey = string.isEmpty
+            
+            if !isDeleteKey {
+                if text.contains(dotString) {
+                    let countdots = textField.text!.components(separatedBy: dotString).count - 1
+                    
+                    if countdots > 0 && string == dotString
+                    {
+                        return false
+                    }
+                    
+                    if text.components(separatedBy: dotString)[1].count == 2 {
+                        
+                        return false
+                    }
+                }
+            }
+        }
+        return true
+    }
+    
 }

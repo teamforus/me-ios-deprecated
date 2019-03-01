@@ -18,6 +18,13 @@ extension Date {
         return dateString 
     }
     
+    func dateFormaterFromServer(dateString: String) -> Date  {
+        let dateFormater = DateFormatter()
+        dateFormater.dateFormat = "yyyy-MM-dd HH:mm:ss.SSSSSS"
+        let date = dateFormater.date(from: dateString)
+        return date!
+    }
+    
      func dateFormaterFromDateShort() -> String  {
         let dateFormater = DateFormatter()
         dateFormater.dateFormat = "dd.MM.yyyy"

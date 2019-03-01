@@ -60,12 +60,12 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
         
         self.voucherTitleLabel.text = voucher.product?.name
         voucherTitleLabel.type = .continuous
-        self.priceLabel.text = "€ " + (voucher.product?.price)!
+        self.priceLabel.text = "€ " + (voucher.amount)!
         imageQR.generateQRCode(from: "{\"type\": \"voucher\",\"value\": \"\(voucher.address!)\" }")
         organizationName.text = voucher.product?.organization.name
         
         if voucher.product?.organization.logo != nil{
-            organizationIcon.sd_setImage(with: URL(string: voucher.product?.organization.logo.sizes.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+            organizationIcon.sd_setImage(with: URL(string: voucher.product?.organization.logo.sizes?.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
         }else{
             organizationIcon.image = UIImage(named: "Resting")
         }

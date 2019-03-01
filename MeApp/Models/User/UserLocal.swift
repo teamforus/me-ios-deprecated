@@ -54,5 +54,24 @@ class IndentityRequest {
             }
         }
     }
+    
+    static func sendTokenNotification(token: String ,completion: @escaping ((Int) -> Void), failure: @escaping ((Error) -> Void)){
+        let headers: HTTPHeaders = [
+            "Accept": "application/json",
+            "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"
+        ]
+        
+        Alamofire.request(BaseURL.baseURL(url: "platform/devices/register-push"), method: .post, parameters:["id": token] ,encoding: JSONEncoding.default, headers: headers).responseData {
+            response in
+            switch response.result {
+            case .success:
+                    completion((response.response?.statusCode)!)
+                break
+            case .failure(let error):
+                
+                failure(error)
+            }
+        }
+    }
 
 }

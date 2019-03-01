@@ -74,7 +74,8 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        #if (DEBUG || ALPHA || DEMO)
+        setStatusBarStyle(.default)
+        #if ( ALPHA || DEV)
         self.crashButton.isHidden = false
         #else
         self.crashButton.isHidden = true
@@ -136,7 +137,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         }
         let versionApp: AnyObject? = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as AnyObject
         let buildAppNumber: AnyObject? = Bundle.main.infoDictionary?["CFBundleVersion"] as AnyObject
-        #if (DEBUG || ALPHA || DEMO)
+        #if (DEV || ALPHA || DEMO)
         self.appVersionLabel.text = (versionApp as? String)! + " (" + (buildAppNumber as? String)! + ")"
         #else
         self.appVersionLabel.text = (versionApp as? String)!
@@ -283,7 +284,11 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     }
     
     @IBAction func logOut(_ sender: Any) {
-        self.logOutProfile()
+        if reachability.connection != .none{
+        AuthorizeTokenRequest.removeToken(parameter: ["id" : UserDefaults.standard.string(forKey: "TOKENPUSH")!], completion: { (statusCode) in
+            self.logOutProfile()
+        }) { (error) in }
+        }
     }
     
     func logOutProfile(){
@@ -332,11 +337,16 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         updateIndentity()
         if typeClose == .delete{
             if !deletePasscode{
-                let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let navigationController:HiddenNavBarNavigationController = storyboard.instantiateInitialViewController() as! HiddenNavBarNavigationController
-                let firstPageVC: UIViewController = storyboard.instantiateViewController(withIdentifier: "firstPage") as UIViewController
-                navigationController.viewControllers = [firstPageVC]
-                self.present(navigationController, animated: true, completion: nil)
+                if reachability.connection != .none{
+                    AuthorizeTokenRequest.removeToken(parameter: ["id" : UserDefaults.standard.string(forKey: "TOKENPUSH")!], completion: { (statusCode) in
+                        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let navigationController:HiddenNavBarNavigationController = storyboard.instantiateInitialViewController() as! HiddenNavBarNavigationController
+                        let firstPageVC: UIViewController = storyboard.instantiateViewController(withIdentifier: "firstPage") as UIViewController
+                        navigationController.viewControllers = [firstPageVC]
+                        self.present(navigationController, animated: true, completion: nil)
+                    }) { (error) in }
+               
+                }
             }
         }
     }

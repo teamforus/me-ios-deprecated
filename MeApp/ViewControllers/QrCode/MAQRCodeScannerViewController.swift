@@ -63,6 +63,7 @@ class MAQRCodeScannerViewController: HSScanViewController , HSScanViewController
                 }
             
         }else{
+            self.scanWorker.start()
             AlertController.showInternetUnable(vc: self)
         }
     }

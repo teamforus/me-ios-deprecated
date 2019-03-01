@@ -24,8 +24,7 @@ enum WalletCase {
 }
 
 class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityIndicatorViewable {
-    func closePinCodeView(typeClose: typeClose) {
-    }
+   
     
     let reachability = Reachability()!
     @IBOutlet var tableView: UITableView!
@@ -86,7 +85,7 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
         
         let size = CGSize(width: 60, height: 60)
         
-        startAnimating(size, message: "Loading...", type: NVActivityIndicatorType(rawValue: 32)!, color: #colorLiteral(red: 0.1918309331, green: 0.3696506619, blue: 0.9919955134, alpha: 1), textColor: .black, fadeInAnimation: nil)
+        startAnimating(size, message: "Loading...".localized(), type: NVActivityIndicatorType(rawValue: 32)!, color: #colorLiteral(red: 0.1918309331, green: 0.3696506619, blue: 0.9919955134, alpha: 1), textColor: .black, fadeInAnimation: nil)
         getVoucherList()
         
         if UserDefaults.standard.bool(forKey: "ISENABLESENDADDRESS"){
@@ -94,18 +93,32 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
                 Crashlytics.sharedInstance().setUserIdentifier(identityAddress.address)
             }) { (error) in }
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.sendPushNotificationToke(notification:)),
+                                               name: Notification.Name("FCMToken"), object: nil)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        setStatusBarStyle(.default)
         getVoucherList()
+        let notifMessage: [String: Any] = [
+            "to" : "fcm token you need to send the notification",
+            "notification" :
+                ["title" : "title you want to display", "body": "content you need to display", "badge" : 1, "sound" : "default"]
+        ]
+        
+        sendPushNotification(notData: notifMessage)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-      
+    @objc fileprivate func sendPushNotificationToke(notification: NSNotification){
+        guard let userInfo = notification.userInfo else {return}
+        IndentityRequest.sendTokenNotification(token: (userInfo["token"] as? String)! ,completion: { (statusCode) in
+            
+        }) { (error) in }
     }
     
     func getVoucherList() {
@@ -206,6 +219,21 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource, Swip
         }
         
     }
+    
+    func closePinCodeView(typeClose: typeClose) {
+        if typeClose == .logout{
+            logOutProfile()
+        }
+    }
+    
+    func logOutProfile(){
+        UserDefaults.standard.set("", forKey: ALConstants.kPincode)
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let navigationController:HiddenNavBarNavigationController = storyboard.instantiateInitialViewController() as! HiddenNavBarNavigationController
+        let firstPageVC:UIViewController = storyboard.instantiateViewController(withIdentifier: "firstPage") as UIViewController
+        navigationController.viewControllers = [firstPageVC]
+        self.present(navigationController, animated: true, completion: nil)
+    }
 }
 
 extension WalletViewController {
@@ -238,5 +266,34 @@ extension WalletViewController {
             self.view.addSubview(animationTypeLabel)
             activityIndicatorView.startAnimating()
         }
+    }
+    
+}
+
+
+extension WalletViewController{
+    func sendPushNotification(notData: [String: Any]) {
+        let url = URL(string: "https://fcm.googleapis.com/fcm/send")!
+        var request = URLRequest(url: url)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("key=AAAAd3YHFHw:APA91bGQlkoMIc4n0fCMK2d6J0GpH-tqOeDOBGTj1c2xvEVUuc9Ap1-F7exHdDKeyE7FHQn1egXTWVLNq-0ePYg7S-oGJrlQCaNqbZhyTUwZBUeS6m0akbspfX8cPP_dxGBUWdllFDdB", forHTTPHeaderField: "Authorization")
+        request.httpMethod = "POST"
+        
+        request.httpBody = try? JSONSerialization.data(withJSONObject: notData, options: [])
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print(error ?? "")
+                return
+            }
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print(response ?? "")
+            }
+            
+            let responseString = String(data: data, encoding: .utf8)
+            print(responseString ?? "")
+        }
+        task.resume()
     }
 }

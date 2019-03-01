@@ -128,7 +128,6 @@
 		6579634B20E4D49E001CF29D /* NunitoSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579633C20E4D49C001CF29D /* NunitoSans-ExtraBoldItalic.ttf */; };
 		6579634C20E4D49E001CF29D /* NunitoSans-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6579633D20E4D49C001CF29D /* NunitoSans-ExtraLightItalic.ttf */; };
 		657B074620D27F2B0093930E /* MAWalletOwnerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657B074520D27F2B0093930E /* MAWalletOwnerTableViewCell.swift */; };
-		65828720217DC9E3008979C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6582871F217DC9E1008979C6 /* GoogleService-Info.plist */; };
 		658370AE2126C357008D76A9 /* MACreatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658370AD2126C357008D76A9 /* MACreatePasswordViewController.swift */; };
 		658370B02126DAB3008D76A9 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658370AF2126DAB3008D76A9 /* Validator.swift */; };
 		658BBA4321108D950098E2AC /* MAPsswordEnableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658BBA4221108D950098E2AC /* MAPsswordEnableViewController.swift */; };
@@ -259,8 +258,8 @@
 		65E88DF421354FE7006D45C0 /* Vouchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E88DF321354FE7006D45C0 /* Vouchers.swift */; };
 		65E88DF621355066006D45C0 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E88DF521355066006D45C0 /* Transaction.swift */; };
 		65E88DFA213551BA006D45C0 /* Found.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E88DF9213551BA006D45C0 /* Found.swift */; };
+		65F996E621FB6B2F0080E9C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65F996E521FB6B2F0080E9C3 /* GoogleService-Info.plist */; };
 		65FC85F820B56FA2001FECA5 /* MANavicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC85F720B56FA2001FECA5 /* MANavicationController.swift */; };
-		65FC85FA20B57642001FECA5 /* MAQRCodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC85F920B57642001FECA5 /* MAQRCodeReaderViewController.swift */; };
 		65FC85FE20B58426001FECA5 /* MAValidationQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC85FC20B58426001FECA5 /* MAValidationQRViewController.swift */; };
 		65FC85FF20B58426001FECA5 /* MAValidationQRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65FC85FD20B58426001FECA5 /* MAValidationQRViewController.xib */; };
 		65FC860620B5B340001FECA5 /* MASwitchProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC860520B5B340001FECA5 /* MASwitchProfileViewController.swift */; };
@@ -456,7 +455,6 @@
 		6579633C20E4D49C001CF29D /* NunitoSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		6579633D20E4D49C001CF29D /* NunitoSans-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		657B074520D27F2B0093930E /* MAWalletOwnerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAWalletOwnerTableViewCell.swift; sourceTree = "<group>"; };
-		6582871F217DC9E1008979C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		658370AA2126AD4B008D76A9 /* MeApp 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MeApp 3.xcdatamodel"; sourceTree = "<group>"; };
 		658370AD2126C357008D76A9 /* MACreatePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MACreatePasswordViewController.swift; sourceTree = "<group>"; };
 		658370AF2126DAB3008D76A9 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
@@ -600,8 +598,12 @@
 		65E88DF321354FE7006D45C0 /* Vouchers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vouchers.swift; sourceTree = "<group>"; };
 		65E88DF521355066006D45C0 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		65E88DF9213551BA006D45C0 /* Found.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Found.swift; sourceTree = "<group>"; };
+		65F996D521FB4E4A0080E9C3 /* Me.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Me.entitlements; sourceTree = "<group>"; };
+		65F996E521FB6B2F0080E9C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		65F996EA21FB6BDE0080E9C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		65F996ED21FB6EF20080E9C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		65F996F021FB78540080E9C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		65FC85F720B56FA2001FECA5 /* MANavicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MANavicationController.swift; sourceTree = "<group>"; };
-		65FC85F920B57642001FECA5 /* MAQRCodeReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAQRCodeReaderViewController.swift; sourceTree = "<group>"; };
 		65FC85FC20B58426001FECA5 /* MAValidationQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAValidationQRViewController.swift; sourceTree = "<group>"; };
 		65FC85FD20B58426001FECA5 /* MAValidationQRViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAValidationQRViewController.xib; sourceTree = "<group>"; };
 		65FC860520B5B340001FECA5 /* MASwitchProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MASwitchProfileViewController.swift; sourceTree = "<group>"; };
@@ -1061,6 +1063,7 @@
 		65A51F5E20B2FFF10010DB33 = {
 			isa = PBXGroup;
 			children = (
+				65F996D521FB4E4A0080E9C3 /* Me.entitlements */,
 				65A51F6920B2FFF10010DB33 /* MeApp */,
 				65A51F8120B2FFF40010DB33 /* MeAppTests */,
 				65A51F8C20B2FFF40010DB33 /* MeAppUITests */,
@@ -1092,7 +1095,7 @@
 				65467FA620B82370009E99CC /* Models */,
 				65467FA820B823B9009E99CC /* Suporting Files */,
 				65A51F7920B2FFF40010DB33 /* Info.plist */,
-				6582871F217DC9E1008979C6 /* GoogleService-Info.plist */,
+				65F996E821FB6BBE0080E9C3 /* Firebase */,
 				65A51F7420B2FFF40010DB33 /* Assets.xcassets */,
 				65509467213D3C1E007532BE /* Localizable.strings */,
 				65A51F7620B2FFF40010DB33 /* LaunchScreen.storyboard */,
@@ -1555,10 +1558,52 @@
 			path = Voucher;
 			sourceTree = "<group>";
 		};
+		65F996E821FB6BBE0080E9C3 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				65F996EC21FB6BE20080E9C3 /* Dev */,
+				65F996E921FB6BC60080E9C3 /* Prod */,
+				65F996EF21FB6EF50080E9C3 /* Demo */,
+				65F996F221FB785A0080E9C3 /* Alpha */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		65F996E921FB6BC60080E9C3 /* Prod */ = {
+			isa = PBXGroup;
+			children = (
+				65F996E521FB6B2F0080E9C3 /* GoogleService-Info.plist */,
+			);
+			path = Prod;
+			sourceTree = "<group>";
+		};
+		65F996EC21FB6BE20080E9C3 /* Dev */ = {
+			isa = PBXGroup;
+			children = (
+				65F996EA21FB6BDE0080E9C3 /* GoogleService-Info.plist */,
+			);
+			path = Dev;
+			sourceTree = "<group>";
+		};
+		65F996EF21FB6EF50080E9C3 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				65F996ED21FB6EF20080E9C3 /* GoogleService-Info.plist */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		65F996F221FB785A0080E9C3 /* Alpha */ = {
+			isa = PBXGroup;
+			children = (
+				65F996F021FB78540080E9C3 /* GoogleService-Info.plist */,
+			);
+			path = Alpha;
+			sourceTree = "<group>";
+		};
 		65FC85FB20B57646001FECA5 /* QrCode */ = {
 			isa = PBXGroup;
 			children = (
-				65FC85F920B57642001FECA5 /* MAQRCodeReaderViewController.swift */,
 				658D410321A2EE1700CA4F10 /* MAQRCodeScannerViewController.swift */,
 			);
 			path = QrCode;
@@ -1623,6 +1668,7 @@
 				459C5C9C67EFFECA9922D370 /* [CP] Embed Pods Frameworks */,
 				CB419101B2DDB60284B9E65E /* [CP] Copy Pods Resources */,
 				65F79DBB213FCB24002DAEAA /* ShellScript */,
+				65F996E721FB6BA00080E9C3 /* Setup Firebase Environment GoogleService-Info.plist */,
 			);
 			buildRules = (
 			);
@@ -1687,6 +1733,14 @@
 				TargetAttributes = {
 					65A51F6620B2FFF10010DB33 = {
 						CreatedOnToolsVersion = 9.3.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					65A51F7D20B2FFF40010DB33 = {
 						CreatedOnToolsVersion = 9.3.1;
@@ -1767,6 +1821,7 @@
 				6504472F20C03DAB00D040B9 /* MASwitchProfilePopUpViewController.xib in Resources */,
 				6579634820E4D49E001CF29D /* NunitoSans-Bold.ttf in Resources */,
 				6579634220E4D49D001CF29D /* NunitoSans-BlackItalic.ttf in Resources */,
+				65F996E621FB6B2F0080E9C3 /* GoogleService-Info.plist in Resources */,
 				65A51FCF20B3012C0010DB33 /* SF-Pro-Display-RegularItalic.otf in Resources */,
 				6500425F20DB97E40092CCDA /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				6576A0BD21933EC7007B3D9D /* VoucherPayment.storyboard in Resources */,
@@ -1775,7 +1830,6 @@
 				65A51FDC20B3012C0010DB33 /* SF-Pro-Display-Ultralight.otf in Resources */,
 				65A51FD920B3012C0010DB33 /* SF-Pro-Text-Bold.otf in Resources */,
 				6536FA8721EDE0D400C3C0D1 /* MACrashConfirmViewController.xib in Resources */,
-				65828720217DC9E3008979C6 /* GoogleService-Info.plist in Resources */,
 				658BBA552110954C0098E2AC /* backspaceBlue@3x.png in Resources */,
 				6579634A20E4D49E001CF29D /* NunitoSans-Black.ttf in Resources */,
 				659DB79921F0DFC3006DF696 /* PopUpOrganizationsViewController.xib in Resources */,
@@ -1895,7 +1949,6 @@
 				"${BUILT_PRODUCTS_DIR}/BWWalkthrough/BWWalkthrough.framework",
 				"${BUILT_PRODUCTS_DIR}/BigInt.swift/BigInt.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ISHPullUp/ISHPullUp.framework",
@@ -1905,6 +1958,7 @@
 				"${BUILT_PRODUCTS_DIR}/PWSwitch/PWSwitch.framework",
 				"${BUILT_PRODUCTS_DIR}/Presentr/Presentr.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -1924,7 +1978,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BWWalkthrough.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BigInt.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ISHPullUp.framework",
@@ -1934,6 +1987,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PWSwitch.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Presentr.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -1977,6 +2031,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" fe3a4b53f20261187b2c79dcd278c3ef76e6a7de c89db981be291d8532a9a5e30a2399da0badfcc0e7e0001543aa59f3b397d351\n";
+		};
+		65F996E721FB6BA00080E9C3 /* Setup Firebase Environment GoogleService-Info.plist */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Setup Firebase Environment GoogleService-Info.plist";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Name of the resource we're selectively copying\nGOOGLESERVICE_INFO_PLIST=GoogleService-Info.plist\n\n# Get references to dev and prod versions of the GoogleService-Info.plist\n# NOTE: These should only live on the file system and should NOT be part of the target (since we'll be adding them to the target manually)\nGOOGLESERVICE_INFO_DEV=${PROJECT_DIR}/MeApp/Firebase/Dev/${GOOGLESERVICE_INFO_PLIST}\nGOOGLESERVICE_INFO_DEMO=${PROJECT_DIR}/MeApp/Firebase/Demo/${GOOGLESERVICE_INFO_PLIST}\nGOOGLESERVICE_INFO_ALPHA=${PROJECT_DIR}/MeApp/Firebase/Alpha/${GOOGLESERVICE_INFO_PLIST}\nGOOGLESERVICE_INFO_PROD=${PROJECT_DIR}/MeApp/Firebase/Prod/${GOOGLESERVICE_INFO_PLIST}\n\n# Make sure the dev version of GoogleService-Info.plist exists\necho \"Looking for ${GOOGLESERVICE_INFO_PLIST} in ${GOOGLESERVICE_INFO_DEV}\"\nif [ ! -f $GOOGLESERVICE_INFO_DEV ]\nthen\necho \"No Development GoogleService-Info.plist found. Please ensure it's in the proper directory.\"\nexit 1\nfi\n\n# Make sure the prod version of GoogleService-Info.plist exists\necho \"Looking for ${GOOGLESERVICE_INFO_PLIST} in ${GOOGLESERVICE_INFO_PROD}\"\nif [ ! -f $GOOGLESERVICE_INFO_PROD ]\nthen\necho \"No Production GoogleService-Info.plist found. Please ensure it's in the proper directory.\"\nexit 1\nfi\n\n# Make sure the prod version of GoogleService-Info.plist exists\necho \"Looking for ${GOOGLESERVICE_INFO_PLIST} in ${GOOGLESERVICE_INFO_ALPHA}\"\nif [ ! -f $GOOGLESERVICE_INFO_ALPHA ]\nthen\necho \"No Production GoogleService-Info.plist found. Please ensure it's in the proper directory.\"\nexit 1\nfi\n\n# Make sure the prod version of GoogleService-Info.plist exists\necho \"Looking for ${GOOGLESERVICE_INFO_PLIST} in ${GOOGLESERVICE_INFO_DEMO}\"\nif [ ! -f $GOOGLESERVICE_INFO_DEMO ]\nthen\necho \"No Production GoogleService-Info.plist found. Please ensure it's in the proper directory.\"\nexit 1\nfi\n\n# Get a reference to the destination location for the GoogleService-Info.plist\nPLIST_DESTINATION=${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\necho \"Will copy ${GOOGLESERVICE_INFO_PLIST} to final destination: ${PLIST_DESTINATION}\"\n\n# Copy over the prod GoogleService-Info.plist for Release builds\nif [ \"${CONFIGURATION}\" == \"Release\" ]\nthen\necho \"Using ${GOOGLESERVICE_INFO_PROD}\"\ncp \"${GOOGLESERVICE_INFO_PROD}\" \"${PLIST_DESTINATION}\"\n\nfi\n\nif [ \"${CONFIGURATION}\" == \"Debug\" ]\nthen\necho \"Using ${GOOGLESERVICE_INFO_DEV}\"\ncp \"${GOOGLESERVICE_INFO_DEV}\" \"${PLIST_DESTINATION}\"\n\nfi\n\nif [ \"${CONFIGURATION}\" == \"Alpha\" ]\nthen\necho \"Using ${GOOGLESERVICE_INFO_ALPHA}\"\ncp \"${GOOGLESERVICE_INFO_ALPHA}\" \"${PLIST_DESTINATION}\"\n\nfi\n\nif [ \"${CONFIGURATION}\" == \"Demo\" ]\nthen\necho \"Using ${GOOGLESERVICE_INFO_DEMO}\"\ncp \"${GOOGLESERVICE_INFO_DEMO}\" \"${PLIST_DESTINATION}\"\n\nfi\n";
 		};
 		CB419101B2DDB60284B9E65E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2072,7 +2144,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65FC85FA20B57642001FECA5 /* MAQRCodeReaderViewController.swift in Sources */,
 				658BBA4321108D950098E2AC /* MAPsswordEnableViewController.swift in Sources */,
 				65A30B9721C917E4000A635B /* Organization.swift in Sources */,
 				65C0B208210EEB5400FBC254 /* AuthorizationToken.swift in Sources */,
@@ -2567,6 +2638,7 @@
 			baseConfigurationReference = C73E5FFD9B9A70CCD8C4D26F /* Pods-Me.alpha.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon.Alpha;
+				CODE_SIGN_ENTITLEMENTS = Me.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FNTR3V85ZM;
 				ENABLE_BITCODE = NO;
@@ -2750,6 +2822,7 @@
 			baseConfigurationReference = E8E32A731CFDBC0B1D33B95E /* Pods-Me.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon.Dev;
+				CODE_SIGN_ENTITLEMENTS = Me.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FNTR3V85ZM;
 				ENABLE_BITCODE = NO;
@@ -2760,7 +2833,7 @@
 					"@executable_path/Frameworks",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = io.forus.me.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = io.forus.me.develop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEV;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -2775,6 +2848,7 @@
 			baseConfigurationReference = 26211F1256A5A5B771490E96 /* Pods-Me.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Me.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = FNTR3V85ZM;
@@ -2943,6 +3017,7 @@
 			baseConfigurationReference = 89068B526C15FBF4653D8F95 /* Pods-Me.demo.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon.Demo;
+				CODE_SIGN_ENTITLEMENTS = Me.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FNTR3V85ZM;
 				ENABLE_BITCODE = NO;

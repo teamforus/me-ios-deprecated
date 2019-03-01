@@ -39,9 +39,9 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
         super.viewDidLoad()
         if voucher.product != nil {
             if self.getLanguageISO() == "en"{
-                initTextLabels(title: "Confirm transaction", amount: "Are you sure you want to request €\(voucher.product?.price ?? "0.0")?")
+                initTextLabels(title: "Confirm transaction", amount: "Are you sure you want to confirm this transaction")
             }else if self.getLanguageISO() == "nl"{
-                initTextLabels(title: "Bevestig betaling", amount: "Wil je de transactie van €\(voucher.product?.price ?? "0.0") bevestigen?")
+                initTextLabels(title: "Bevestig betaling", amount: "Weet u zeker dat u deze transactie wil bevestigen ?")
             }
             var reactBodyView = bodyView.frame
             reactBodyView.size.height = reactBodyView.size.height - 36
@@ -78,23 +78,12 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
     }
     
     @IBAction func requestTransaction(_ sender: Any) {
-        if UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" && UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil {
-            var appearance = ALAppearance()
-            appearance.image = UIImage(named: "lock")!
-            appearance.title = "Enter login code".localized()
-            appearance.isSensorsEnabled = true
-            appearance.cancelIsVissible = false
-            appearance.delegate = self
-            
-            AppLocker.present(with: .validate, and: appearance, withController: self)
-            
-        }else {
+        
             if voucher.product == nil {
                 didMakeTransactionConfirmRequest(organizationId: voucher.allowedOrganizations!.first?.id ?? 0, amount: amount.replacingOccurrences(of: ",", with: "."))
             }else{
                 didMakeTransactionConfirmRequest(organizationId: voucher.product?.organization.id ?? 0, amount: voucher.amount ?? "0.0")
             }
-        }
     }
     
     func didMakeTransactionConfirmRequest(organizationId: Int, amount: String){
@@ -116,7 +105,7 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
                 self.present(alert, animated: true, completion: nil)
                 
             }else if statusCode == 422 {
-                AlertController.showWarning(withText: "Voucher not have enough funds", vc: self)
+                AlertController.showWarning(withText: "Voucher not have enough funds".localized(), vc: self)
             } }) { (error) in }
     }
     
