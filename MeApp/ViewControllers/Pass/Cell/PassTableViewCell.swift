@@ -21,7 +21,6 @@ class PassTableViewCell: UITableViewCell {
             self.statusTransfer.text = transaction?.product != nil ? "Product voucher".localized() : "Transaction".localized()
             self.companyTitle.text = transaction?.product != nil ? transaction?.product?.name : transaction?.organization.name
         
-            
             if transaction?.product != nil {
                 if transaction?.product.photo != nil {
                     self.imageTransfer.sd_setImage(with: URL(string: transaction?.product.photo?.sizes?.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
@@ -31,7 +30,6 @@ class PassTableViewCell: UITableViewCell {
                     self.imageTransfer.sd_setImage(with: URL(string: transaction?.organization.logo?.sizes?.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
                 }
             }
-            
             
             self.priceLabel.text = "- \(transaction?.amount! ?? "0.0")"
             self.dateLabel.text = transaction?.created_at.dateFormaterNormalDate()
