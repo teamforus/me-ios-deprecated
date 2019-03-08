@@ -9,12 +9,13 @@
 import UIKit
 import Presentr
 import Alamofire
+import NVActivityIndicatorView
 
 protocol MAConfirmationTransactionViewControllerDelegate: class {
     func paymentSucceded()
 }
 
-class MAConfirmationTransactionViewController: MABasePopUpViewController {
+class MAConfirmationTransactionViewController: MABasePopUpViewController, NVActivityIndicatorViewable {
     @IBOutlet weak var requestButton: ShadowButton!
     var tabController: UITabBarController!
     @IBOutlet weak var titleLabel: UILabel!
@@ -78,7 +79,8 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
     }
     
     @IBAction func requestTransaction(_ sender: Any) {
-        
+        let size = CGSize(width: 60, height: 60)
+        startAnimating(size, message: "Loading...".localized(), type: NVActivityIndicatorType(rawValue: 32)!, color: #colorLiteral(red: 0.1918309331, green: 0.3696506619, blue: 0.9919955134, alpha: 1), textColor: .black, fadeInAnimation: nil)
             if voucher.product == nil {
                 didMakeTransactionConfirmRequest(organizationId: voucher.allowedOrganizations!.first?.id ?? 0, amount: amount.replacingOccurrences(of: ",", with: "."))
             }else{
@@ -92,6 +94,7 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController {
             "amount" : amount,
             "note" : note ?? ""]
         TransactionVoucherRequest.makeTransaction(parameters: parameters, identityAdress: addressVoucher, completion: { (transaction, statusCode) in
+            self.stopAnimating(nil)
             if statusCode == 201{
                 let alert: UIAlertController
                 alert = UIAlertController(title: "Success".localized(), message: "Payment succeeded".localized(), preferredStyle: .alert)
