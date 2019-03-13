@@ -57,8 +57,8 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController, NVActi
                 initTextLabels(title: "Bevestig transactie", amount: "Is het bedrag van €\(amount.replacingOccurrences(of: ",", with: ".")) correct?")
             }
             if Double(amount.replacingOccurrences(of: ",", with: "."))! > amountVoucher{
-                requestButton.isEnabled = false
-                requestButton.backgroundColor = #colorLiteral(red: 0.7646217346, green: 0.764754355, blue: 0.7646133304, alpha: 1)
+                requestButton.isEnabled = true
+//                requestButton.backgroundColor = #colorLiteral(red: 0.7646217346, green: 0.764754355, blue: 0.7646133304, alpha: 1)
                 if self.getLanguageISO() == "en"{
                     insuficientAmountLabel.text = String(format:"Insufficient funds on the voucher. Please, request extra payment of"+"€%.02f", aditionalAmount)
                 }else if self.getLanguageISO() == "nl"{
