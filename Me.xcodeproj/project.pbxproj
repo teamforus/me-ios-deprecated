@@ -258,6 +258,8 @@
 		65E88DF421354FE7006D45C0 /* Vouchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E88DF321354FE7006D45C0 /* Vouchers.swift */; };
 		65E88DF621355066006D45C0 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E88DF521355066006D45C0 /* Transaction.swift */; };
 		65E88DFA213551BA006D45C0 /* Found.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E88DF9213551BA006D45C0 /* Found.swift */; };
+		65E91F2622391BBA0092F4C9 /* AllowedOrganizationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E91F2422391BBA0092F4C9 /* AllowedOrganizationsViewController.swift */; };
+		65E91F2722391BBA0092F4C9 /* AllowedOrganizationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65E91F2522391BBA0092F4C9 /* AllowedOrganizationsViewController.xib */; };
 		65F996E621FB6B2F0080E9C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65F996E521FB6B2F0080E9C3 /* GoogleService-Info.plist */; };
 		65FC85F820B56FA2001FECA5 /* MANavicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC85F720B56FA2001FECA5 /* MANavicationController.swift */; };
 		65FC85FE20B58426001FECA5 /* MAValidationQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC85FC20B58426001FECA5 /* MAValidationQRViewController.swift */; };
@@ -598,6 +600,8 @@
 		65E88DF321354FE7006D45C0 /* Vouchers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vouchers.swift; sourceTree = "<group>"; };
 		65E88DF521355066006D45C0 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		65E88DF9213551BA006D45C0 /* Found.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Found.swift; sourceTree = "<group>"; };
+		65E91F2422391BBA0092F4C9 /* AllowedOrganizationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowedOrganizationsViewController.swift; sourceTree = "<group>"; };
+		65E91F2522391BBA0092F4C9 /* AllowedOrganizationsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllowedOrganizationsViewController.xib; sourceTree = "<group>"; };
 		65F996D521FB4E4A0080E9C3 /* Me.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Me.entitlements; sourceTree = "<group>"; };
 		65F996E521FB6B2F0080E9C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		65F996EA21FB6BDE0080E9C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -1224,8 +1228,9 @@
 				651CF24621891CB40088F9D5 /* ConfirmationTransaction */,
 				651CF24B21891F760088F9D5 /* ApprovePayment */,
 				65A405A821CA86D50014EFA3 /* OrganizationList */,
-				6536FA8321EDDE8D00C3C0D1 /* MACrashConfirmViewController.swift */,
-				6536FA8921EDE0D400C3C0D1 /* MACrashConfirmViewController.xib */,
+				65CE2E7B22391BEF005F27B8 /* ConfirmCrashClientAddress */,
+				65E91F2422391BBA0092F4C9 /* AllowedOrganizationsViewController.swift */,
+				65E91F2522391BBA0092F4C9 /* AllowedOrganizationsViewController.xib */,
 			);
 			path = PopUps;
 			sourceTree = "<group>";
@@ -1507,6 +1512,15 @@
 				65CC8C00218077D30084AA34 /* MARequesterPaymentPopUpViewController.xib */,
 			);
 			path = RequesterPayment;
+			sourceTree = "<group>";
+		};
+		65CE2E7B22391BEF005F27B8 /* ConfirmCrashClientAddress */ = {
+			isa = PBXGroup;
+			children = (
+				6536FA8321EDDE8D00C3C0D1 /* MACrashConfirmViewController.swift */,
+				6536FA8921EDE0D400C3C0D1 /* MACrashConfirmViewController.xib */,
+			);
+			path = ConfirmCrashClientAddress;
 			sourceTree = "<group>";
 		};
 		65D39D1520DC057200CA4E41 /* Library */ = {
@@ -1828,6 +1842,7 @@
 				6579634920E4D49E001CF29D /* NunitoSans-SemiBold.ttf in Resources */,
 				651F705D214682F5008D087A /* MATransactionRedViewController.xib in Resources */,
 				65A51FDC20B3012C0010DB33 /* SF-Pro-Display-Ultralight.otf in Resources */,
+				65E91F2722391BBA0092F4C9 /* AllowedOrganizationsViewController.xib in Resources */,
 				65A51FD920B3012C0010DB33 /* SF-Pro-Text-Bold.otf in Resources */,
 				6536FA8721EDE0D400C3C0D1 /* MACrashConfirmViewController.xib in Resources */,
 				658BBA552110954C0098E2AC /* backspaceBlue@3x.png in Resources */,
@@ -2262,6 +2277,7 @@
 				65DC02222138314C00FDD4A3 /* Formater.swift in Sources */,
 				6556376020B6FB9100E45487 /* UITextField+PlaceholderColor.swift in Sources */,
 				65AC32F62101D9E500633187 /* CustomCornerUIView.swift in Sources */,
+				65E91F2622391BBA0092F4C9 /* AllowedOrganizationsViewController.swift in Sources */,
 				658D410121A2ECA600CA4F10 /* HSDefaultScanView.swift in Sources */,
 				65BD691921246C420098CF9F /* StatusView.swift in Sources */,
 				655E6DB721AE9C7D001644DA /* MAMapViewViewController.swift in Sources */,
