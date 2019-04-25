@@ -92,7 +92,7 @@ public class JSONDecoder {
     /// returns `nil` if invalid format (i.e. no brackets or contents not an `Int`)
     internal func parseArrayIndex(_ key:String) -> Int? {
         var chars = key.characters
-        let first = chars.popFirst()
+        let first = chars.first
         let last = chars.popLast()
         if first == "[" && last == "]" {
             return Int(String(chars))
@@ -369,5 +369,22 @@ public class JSONDecoder {
             throw JSONDecodableError.transformerFailedError(key: key)
         }
         return result
+    }
+}
+
+extension Collection where SubSequence == Self {
+    /// Removes and returns the first element of the collection.
+    ///
+    /// - Returns: The first element of the collection if the collection is
+    ///   not empty; otherwise, `nil`.
+    ///
+    /// - Complexity: O(1)
+    @inlinable
+    public mutating func popFirst() -> Element? {
+        // TODO: swift-3-indexing-model - review the following
+        guard !isEmpty else { return nil }
+        let element = first!
+        self = self[index(after: startIndex)..<endIndex]
+        return element
     }
 }

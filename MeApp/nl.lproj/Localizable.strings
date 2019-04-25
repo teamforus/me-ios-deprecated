@@ -90,3 +90,7 @@
 "Field is empty" = "Tekstveld mag niet leeg zijn";
 "No Internet Conecction" = "Geen internetverbinding";
 "Voucher not have enough funds" = "Er staat niet genoeg geld op de voucher";
+"This voucher expires on " = "Gebruik deze voucher voor ";
+"Used" = "Gebruikt";
+"Expired" = "Verlopen";
+"You sure you wan't to login this device?" = "Weet je zeker dat je op dit apparaat wilt inloggen?";

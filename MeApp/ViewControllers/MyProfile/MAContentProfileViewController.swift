@@ -80,11 +80,11 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         #else
         self.crashButton.isHidden = true
         #endif
-        let popOverVC = PopUpOrganizationsViewController(nibName: "PopUpOrganizationsViewController", bundle: nil)
-        popOverVC.delegate = self
-        self.addChildViewController(popOverVC)
-        popOverVC.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 85)
-        self.view.addSubview(popOverVC.view)
+        // let popOverVC = PopUpOrganizationsViewController(nibName: "PopUpOrganizationsViewController", bundle: nil)
+        // popOverVC.delegate = self
+        // self.addChildViewController(popOverVC)
+        // popOverVC.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 85)
+        // self.view.addSubview(popOverVC.view)
         if UserDefaults.standard.string(forKey: ALConstants.kPincode) == "" || UserDefaults.standard.string(forKey: ALConstants.kPincode) == nil{
             passcodeLabel.text = "Create passcode".localized()
             self.didUpdateButtonStackView(isHiddeButtons: true, heigthConstant: 130, verticalConstant: 10)
@@ -93,18 +93,18 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
             self.didUpdateButtonStackView(isHiddeButtons: false, heigthConstant: 249, verticalConstant: 66)
         }
         
-//        let switches = [switchFaceID, switchScannert, enableCrashAddress]
-//
-//        switches.forEach { (switchObj) in
-//            switchObj!.transform = CGAffineTransform(scaleX: 1.0, y: 0.90);
-//            if let thumbView =  (switchObj!.subviews[0].subviews[3] as? UIImageView) {
-//                thumbView.transform = CGAffineTransform(scaleX:0.73, y: 0.83)
-//            }
-//        }
+        //        let switches = [switchFaceID, switchScannert, enableCrashAddress]
+        //
+        //        switches.forEach { (switchObj) in
+        //            switchObj!.transform = CGAffineTransform(scaleX: 1.0, y: 0.90);
+        //            if let thumbView =  (switchObj!.subviews[0].subviews[3] as? UIImageView) {
+        //                thumbView.transform = CGAffineTransform(scaleX:0.73, y: 0.83)
+        //            }
+        //        }
         
         
         
-       
+        
         if UserDefaults.standard.bool(forKey: "isStartFromScanner"){
             switchScannert.isOn = true
         }else {
@@ -112,7 +112,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
         }
         
         self.layoutBottom()
-        closeUIButton.isHidden = isCloseButtonHide ?? true
+        // closeUIButton.isHidden = isCloseButtonHide ?? true
         
         if !devicePasscodeSet(){
             turnOnOffFaceId.isHidden = true
@@ -285,9 +285,13 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
     
     @IBAction func logOut(_ sender: Any) {
         if reachability.connection != .none{
-        AuthorizeTokenRequest.removeToken(parameter: ["id" : UserDefaults.standard.string(forKey: "TOKENPUSH")!], completion: { (statusCode) in
-            self.logOutProfile()
-        }) { (error) in }
+            if UserDefaults.standard.string(forKey: "TOKENPUSH") != nil {
+                AuthorizeTokenRequest.removeToken(parameter: ["id" : UserDefaults.standard.string(forKey: "TOKENPUSH")!], completion: { (statusCode) in
+                    self.logOutProfile()
+                }) { (error) in }
+            }else {
+                self.logOutProfile()
+            }
         }
     }
     
@@ -345,7 +349,7 @@ class MAContentProfileViewController: MABaseViewController, AppLockerDelegate {
                         navigationController.viewControllers = [firstPageVC]
                         self.present(navigationController, animated: true, completion: nil)
                     }) { (error) in }
-               
+                    
                 }
             }
         }

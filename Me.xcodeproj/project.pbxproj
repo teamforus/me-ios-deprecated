@@ -58,6 +58,7 @@
 		6527C6F820D1579C00009704 /* MAValidationRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6527C6F720D1579C00009704 /* MAValidationRequestViewController.swift */; };
 		6528F01920E51BEF00DD19C1 /* MAFirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6528F01820E51BEF00DD19C1 /* MAFirstPageViewController.swift */; };
 		6528F01E20E53F3D00DD19C1 /* MALoginEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6528F01D20E53F3D00DD19C1 /* MALoginEmailViewController.swift */; };
+		652CA3222271B377009CB901 /* Records.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652CA3242271B377009CB901 /* Records.storyboard */; };
 		652D910C216DF33900F04D2E /* MABaseVoucherPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652D910B216DF33900F04D2E /* MABaseVoucherPaymentViewController.swift */; };
 		652D910E216DF40B00F04D2E /* MAContentVoucherPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652D910D216DF40B00F04D2E /* MAContentVoucherPaymentViewController.swift */; };
 		652D9110216DF43000F04D2E /* MABottomQRVoucherPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652D910F216DF43000F04D2E /* MABottomQRVoucherPaymentViewController.swift */; };
@@ -76,7 +77,6 @@
 		653BB0E9215515300059AE0C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653BB0E8215515300059AE0C /* Config.swift */; };
 		653C25AE21CA31C60068599D /* PopUpOrganizationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653C25AC21CA31C60068599D /* PopUpOrganizationsViewController.swift */; };
 		653C25B621CA33870068599D /* OrganizationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653C25B421CA33870068599D /* OrganizationTableViewCell.swift */; };
-		653C25B721CA33870068599D /* OrganizationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 653C25B521CA33870068599D /* OrganizationTableViewCell.xib */; };
 		65467FA520B821E7009E99CC /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65467FA420B821E7009E99CC /* Authorization.swift */; };
 		65467FAD20B829C0009E99CC /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65467FAC20B829C0009E99CC /* Record.swift */; };
 		65467FB020B86C57009E99CC /* MALoginWithQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65467FAF20B86C57009E99CC /* MALoginWithQRViewController.swift */; };
@@ -248,6 +248,7 @@
 		65C9F3F521F5EC5C006F38A9 /* MAConfirmationSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9F3F421F5EC5C006F38A9 /* MAConfirmationSignUpViewController.swift */; };
 		65CC8C01218077D30084AA34 /* MARequesterPaymentPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CC8BFF218077D30084AA34 /* MARequesterPaymentPopUpViewController.swift */; };
 		65CC8C02218077D30084AA34 /* MARequesterPaymentPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65CC8C00218077D30084AA34 /* MARequesterPaymentPopUpViewController.xib */; };
+		65CE2E7E223937D8005F27B8 /* OrganizationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65CE2E80223937D8005F27B8 /* OrganizationTableViewCell.xib */; };
 		65D2B58B219AE30000EA5162 /* SwitchCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D2B58A219AE30000EA5162 /* SwitchCustom.swift */; };
 		65D5CDE821B1341500EB855A /* CornerImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D5CDE721B1341400EB855A /* CornerImageView.swift */; };
 		65DC02222138314C00FDD4A3 /* Formater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DC02212138314B00FDD4A3 /* Formater.swift */; };
@@ -258,6 +259,8 @@
 		65E88DF421354FE7006D45C0 /* Vouchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E88DF321354FE7006D45C0 /* Vouchers.swift */; };
 		65E88DF621355066006D45C0 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E88DF521355066006D45C0 /* Transaction.swift */; };
 		65E88DFA213551BA006D45C0 /* Found.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E88DF9213551BA006D45C0 /* Found.swift */; };
+		65E91F2622391BBA0092F4C9 /* AllowedOrganizationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E91F2422391BBA0092F4C9 /* AllowedOrganizationsViewController.swift */; };
+		65E91F2722391BBA0092F4C9 /* AllowedOrganizationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65E91F2522391BBA0092F4C9 /* AllowedOrganizationsViewController.xib */; };
 		65F996E621FB6B2F0080E9C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65F996E521FB6B2F0080E9C3 /* GoogleService-Info.plist */; };
 		65FC85F820B56FA2001FECA5 /* MANavicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC85F720B56FA2001FECA5 /* MANavicationController.swift */; };
 		65FC85FE20B58426001FECA5 /* MAValidationQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC85FC20B58426001FECA5 /* MAValidationQRViewController.swift */; };
@@ -358,6 +361,9 @@
 		6527C6F720D1579C00009704 /* MAValidationRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAValidationRequestViewController.swift; sourceTree = "<group>"; };
 		6528F01820E51BEF00DD19C1 /* MAFirstPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAFirstPageViewController.swift; sourceTree = "<group>"; };
 		6528F01D20E53F3D00DD19C1 /* MALoginEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MALoginEmailViewController.swift; sourceTree = "<group>"; };
+		652CA3232271B377009CB901 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Records.storyboard; sourceTree = "<group>"; };
+		652CA3262271B3A7009CB901 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Records.strings; sourceTree = "<group>"; };
+		652CA3282271B3AA009CB901 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Records.strings; sourceTree = "<group>"; };
 		652D910B216DF33900F04D2E /* MABaseVoucherPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MABaseVoucherPaymentViewController.swift; sourceTree = "<group>"; };
 		652D910D216DF40B00F04D2E /* MAContentVoucherPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAContentVoucherPaymentViewController.swift; sourceTree = "<group>"; };
 		652D910F216DF43000F04D2E /* MABottomQRVoucherPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MABottomQRVoucherPaymentViewController.swift; sourceTree = "<group>"; };
@@ -382,7 +388,6 @@
 		653BB0E8215515300059AE0C /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		653C25AC21CA31C60068599D /* PopUpOrganizationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpOrganizationsViewController.swift; sourceTree = "<group>"; };
 		653C25B421CA33870068599D /* OrganizationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationTableViewCell.swift; sourceTree = "<group>"; };
-		653C25B521CA33870068599D /* OrganizationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrganizationTableViewCell.xib; sourceTree = "<group>"; };
 		65467FA420B821E7009E99CC /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
 		65467FAC20B829C0009E99CC /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		65467FAF20B86C57009E99CC /* MALoginWithQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MALoginWithQRViewController.swift; sourceTree = "<group>"; };
@@ -588,6 +593,9 @@
 		65C9F3F421F5EC5C006F38A9 /* MAConfirmationSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAConfirmationSignUpViewController.swift; sourceTree = "<group>"; };
 		65CC8BFF218077D30084AA34 /* MARequesterPaymentPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MARequesterPaymentPopUpViewController.swift; sourceTree = "<group>"; };
 		65CC8C00218077D30084AA34 /* MARequesterPaymentPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MARequesterPaymentPopUpViewController.xib; sourceTree = "<group>"; };
+		65CE2E7F223937D8005F27B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/OrganizationTableViewCell.xib; sourceTree = "<group>"; };
+		65CE2E82223937DB005F27B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/OrganizationTableViewCell.strings; sourceTree = "<group>"; };
+		65CE2E84223937DF005F27B8 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/OrganizationTableViewCell.strings; sourceTree = "<group>"; };
 		65D2B58A219AE30000EA5162 /* SwitchCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCustom.swift; sourceTree = "<group>"; };
 		65D5CDE721B1341400EB855A /* CornerImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerImageView.swift; sourceTree = "<group>"; };
 		65DC02212138314B00FDD4A3 /* Formater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formater.swift; sourceTree = "<group>"; };
@@ -598,6 +606,8 @@
 		65E88DF321354FE7006D45C0 /* Vouchers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vouchers.swift; sourceTree = "<group>"; };
 		65E88DF521355066006D45C0 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		65E88DF9213551BA006D45C0 /* Found.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Found.swift; sourceTree = "<group>"; };
+		65E91F2422391BBA0092F4C9 /* AllowedOrganizationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowedOrganizationsViewController.swift; sourceTree = "<group>"; };
+		65E91F2522391BBA0092F4C9 /* AllowedOrganizationsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllowedOrganizationsViewController.xib; sourceTree = "<group>"; };
 		65F996D521FB4E4A0080E9C3 /* Me.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Me.entitlements; sourceTree = "<group>"; };
 		65F996E521FB6B2F0080E9C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		65F996EA21FB6BDE0080E9C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -754,6 +764,7 @@
 				653813CD21B96FA70099EE37 /* ProductVoucher.storyboard */,
 				6576A0BF21933EC7007B3D9D /* VoucherPayment.storyboard */,
 				65509480213D5017007532BE /* NewProfile.storyboard */,
+				652CA3242271B377009CB901 /* Records.storyboard */,
 				653813C421B96CA80099EE37 /* CreateRecord.storyboard */,
 				65509487213D5105007532BE /* Profile.storyboard */,
 			);
@@ -1055,7 +1066,7 @@
 			isa = PBXGroup;
 			children = (
 				653C25B421CA33870068599D /* OrganizationTableViewCell.swift */,
-				653C25B521CA33870068599D /* OrganizationTableViewCell.xib */,
+				65CE2E80223937D8005F27B8 /* OrganizationTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1224,8 +1235,9 @@
 				651CF24621891CB40088F9D5 /* ConfirmationTransaction */,
 				651CF24B21891F760088F9D5 /* ApprovePayment */,
 				65A405A821CA86D50014EFA3 /* OrganizationList */,
-				6536FA8321EDDE8D00C3C0D1 /* MACrashConfirmViewController.swift */,
-				6536FA8921EDE0D400C3C0D1 /* MACrashConfirmViewController.xib */,
+				65CE2E7B22391BEF005F27B8 /* ConfirmCrashClientAddress */,
+				65E91F2422391BBA0092F4C9 /* AllowedOrganizationsViewController.swift */,
+				65E91F2522391BBA0092F4C9 /* AllowedOrganizationsViewController.xib */,
 			);
 			path = PopUps;
 			sourceTree = "<group>";
@@ -1509,6 +1521,15 @@
 			path = RequesterPayment;
 			sourceTree = "<group>";
 		};
+		65CE2E7B22391BEF005F27B8 /* ConfirmCrashClientAddress */ = {
+			isa = PBXGroup;
+			children = (
+				6536FA8321EDDE8D00C3C0D1 /* MACrashConfirmViewController.swift */,
+				6536FA8921EDE0D400C3C0D1 /* MACrashConfirmViewController.xib */,
+			);
+			path = ConfirmCrashClientAddress;
+			sourceTree = "<group>";
+		};
 		65D39D1520DC057200CA4E41 /* Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -1666,7 +1687,6 @@
 				65A51F6420B2FFF10010DB33 /* Frameworks */,
 				65A51F6520B2FFF10010DB33 /* Resources */,
 				459C5C9C67EFFECA9922D370 /* [CP] Embed Pods Frameworks */,
-				CB419101B2DDB60284B9E65E /* [CP] Copy Pods Resources */,
 				65F79DBB213FCB24002DAEAA /* ShellScript */,
 				65F996E721FB6BA00080E9C3 /* Setup Firebase Environment GoogleService-Info.plist */,
 			);
@@ -1687,8 +1707,6 @@
 				65A51F7A20B2FFF40010DB33 /* Sources */,
 				65A51F7B20B2FFF40010DB33 /* Frameworks */,
 				65A51F7C20B2FFF40010DB33 /* Resources */,
-				524D49D9B5153A2D5611B0AC /* [CP] Embed Pods Frameworks */,
-				F85BE9F9DD73F591EDA2143B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1708,8 +1726,6 @@
 				65A51F8520B2FFF40010DB33 /* Sources */,
 				65A51F8620B2FFF40010DB33 /* Frameworks */,
 				65A51F8720B2FFF40010DB33 /* Resources */,
-				211259FC4B8ACFEB7C07B773 /* [CP] Embed Pods Frameworks */,
-				1930843B490EE58155FE6350 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1793,6 +1809,7 @@
 				6500425A20DB97E40092CCDA /* OpenSans-Italic.ttf in Resources */,
 				65509465213D3C1E007532BE /* Localizable.strings in Resources */,
 				65A51FD320B3012C0010DB33 /* SF-Pro-Display-Bold.otf in Resources */,
+				652CA3222271B377009CB901 /* Records.storyboard in Resources */,
 				65FC85FF20B58426001FECA5 /* MAValidationQRViewController.xib in Resources */,
 				65A51FD420B3012C0010DB33 /* SF-Pro-Display-Medium.otf in Resources */,
 				651F7064214682FD008D087A /* TransactionViewController.xib in Resources */,
@@ -1828,6 +1845,7 @@
 				6579634920E4D49E001CF29D /* NunitoSans-SemiBold.ttf in Resources */,
 				651F705D214682F5008D087A /* MATransactionRedViewController.xib in Resources */,
 				65A51FDC20B3012C0010DB33 /* SF-Pro-Display-Ultralight.otf in Resources */,
+				65E91F2722391BBA0092F4C9 /* AllowedOrganizationsViewController.xib in Resources */,
 				65A51FD920B3012C0010DB33 /* SF-Pro-Text-Bold.otf in Resources */,
 				6536FA8721EDE0D400C3C0D1 /* MACrashConfirmViewController.xib in Resources */,
 				658BBA552110954C0098E2AC /* backspaceBlue@3x.png in Resources */,
@@ -1880,7 +1898,7 @@
 				65A51FE520B3012C0010DB33 /* SF-Pro-Display-ThinItalic.otf in Resources */,
 				65B89AB120B43A3D0024DC51 /* MAValidationViewController.xib in Resources */,
 				65A51FDB20B3012C0010DB33 /* SF-Pro-Display-HeavyItalic.otf in Resources */,
-				653C25B721CA33870068599D /* OrganizationTableViewCell.xib in Resources */,
+				65CE2E7E223937D8005F27B8 /* OrganizationTableViewCell.xib in Resources */,
 				653813CB21B96FA70099EE37 /* ProductVoucher.storyboard in Resources */,
 				6550947E213D5017007532BE /* NewProfile.storyboard in Resources */,
 				6579633E20E4D49D001CF29D /* NunitoSans-LightItalic.ttf in Resources */,
@@ -1906,43 +1924,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1930843B490EE58155FE6350 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MeUITests/Pods-MeUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		211259FC4B8ACFEB7C07B773 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MeUITests/Pods-MeUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		459C5C9C67EFFECA9922D370 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Me/Pods-Me-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Me/Pods-Me-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlertBar/AlertBar.framework",
 				"${BUILT_PRODUCTS_DIR}/AssistantKit/AssistantKit.framework",
@@ -2001,22 +1989,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Me/Pods-Me-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		524D49D9B5153A2D5611B0AC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MeTests/Pods-MeTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Me/Pods-Me-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		65F79DBB213FCB24002DAEAA /* ShellScript */ = {
@@ -2049,24 +2022,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Name of the resource we're selectively copying\nGOOGLESERVICE_INFO_PLIST=GoogleService-Info.plist\n\n# Get references to dev and prod versions of the GoogleService-Info.plist\n# NOTE: These should only live on the file system and should NOT be part of the target (since we'll be adding them to the target manually)\nGOOGLESERVICE_INFO_DEV=${PROJECT_DIR}/MeApp/Firebase/Dev/${GOOGLESERVICE_INFO_PLIST}\nGOOGLESERVICE_INFO_DEMO=${PROJECT_DIR}/MeApp/Firebase/Demo/${GOOGLESERVICE_INFO_PLIST}\nGOOGLESERVICE_INFO_ALPHA=${PROJECT_DIR}/MeApp/Firebase/Alpha/${GOOGLESERVICE_INFO_PLIST}\nGOOGLESERVICE_INFO_PROD=${PROJECT_DIR}/MeApp/Firebase/Prod/${GOOGLESERVICE_INFO_PLIST}\n\n# Make sure the dev version of GoogleService-Info.plist exists\necho \"Looking for ${GOOGLESERVICE_INFO_PLIST} in ${GOOGLESERVICE_INFO_DEV}\"\nif [ ! -f $GOOGLESERVICE_INFO_DEV ]\nthen\necho \"No Development GoogleService-Info.plist found. Please ensure it's in the proper directory.\"\nexit 1\nfi\n\n# Make sure the prod version of GoogleService-Info.plist exists\necho \"Looking for ${GOOGLESERVICE_INFO_PLIST} in ${GOOGLESERVICE_INFO_PROD}\"\nif [ ! -f $GOOGLESERVICE_INFO_PROD ]\nthen\necho \"No Production GoogleService-Info.plist found. Please ensure it's in the proper directory.\"\nexit 1\nfi\n\n# Make sure the prod version of GoogleService-Info.plist exists\necho \"Looking for ${GOOGLESERVICE_INFO_PLIST} in ${GOOGLESERVICE_INFO_ALPHA}\"\nif [ ! -f $GOOGLESERVICE_INFO_ALPHA ]\nthen\necho \"No Production GoogleService-Info.plist found. Please ensure it's in the proper directory.\"\nexit 1\nfi\n\n# Make sure the prod version of GoogleService-Info.plist exists\necho \"Looking for ${GOOGLESERVICE_INFO_PLIST} in ${GOOGLESERVICE_INFO_DEMO}\"\nif [ ! -f $GOOGLESERVICE_INFO_DEMO ]\nthen\necho \"No Production GoogleService-Info.plist found. Please ensure it's in the proper directory.\"\nexit 1\nfi\n\n# Get a reference to the destination location for the GoogleService-Info.plist\nPLIST_DESTINATION=${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\necho \"Will copy ${GOOGLESERVICE_INFO_PLIST} to final destination: ${PLIST_DESTINATION}\"\n\n# Copy over the prod GoogleService-Info.plist for Release builds\nif [ \"${CONFIGURATION}\" == \"Release\" ]\nthen\necho \"Using ${GOOGLESERVICE_INFO_PROD}\"\ncp \"${GOOGLESERVICE_INFO_PROD}\" \"${PLIST_DESTINATION}\"\n\nfi\n\nif [ \"${CONFIGURATION}\" == \"Debug\" ]\nthen\necho \"Using ${GOOGLESERVICE_INFO_DEV}\"\ncp \"${GOOGLESERVICE_INFO_DEV}\" \"${PLIST_DESTINATION}\"\n\nfi\n\nif [ \"${CONFIGURATION}\" == \"Alpha\" ]\nthen\necho \"Using ${GOOGLESERVICE_INFO_ALPHA}\"\ncp \"${GOOGLESERVICE_INFO_ALPHA}\" \"${PLIST_DESTINATION}\"\n\nfi\n\nif [ \"${CONFIGURATION}\" == \"Demo\" ]\nthen\necho \"Using ${GOOGLESERVICE_INFO_DEMO}\"\ncp \"${GOOGLESERVICE_INFO_DEMO}\" \"${PLIST_DESTINATION}\"\n\nfi\n";
-		};
-		CB419101B2DDB60284B9E65E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MeApp/Pods-MeApp-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/TrustWeb3Provider/TrustWeb3Provider.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TrustWeb3Provider.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Me/Pods-Me-resources.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		ED92827ACBB464997F9E69D2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2120,21 +2075,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F85BE9F9DD73F591EDA2143B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MeTests/Pods-MeTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2262,6 +2202,7 @@
 				65DC02222138314C00FDD4A3 /* Formater.swift in Sources */,
 				6556376020B6FB9100E45487 /* UITextField+PlaceholderColor.swift in Sources */,
 				65AC32F62101D9E500633187 /* CustomCornerUIView.swift in Sources */,
+				65E91F2622391BBA0092F4C9 /* AllowedOrganizationsViewController.swift in Sources */,
 				658D410121A2ECA600CA4F10 /* HSDefaultScanView.swift in Sources */,
 				65BD691921246C420098CF9F /* StatusView.swift in Sources */,
 				655E6DB721AE9C7D001644DA /* MAMapViewViewController.swift in Sources */,
@@ -2394,6 +2335,16 @@
 				651F706A21468300008D087A /* nl */,
 			);
 			name = TransactionViewController.xib;
+			sourceTree = "<group>";
+		};
+		652CA3242271B377009CB901 /* Records.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				652CA3232271B377009CB901 /* Base */,
+				652CA3262271B3A7009CB901 /* en */,
+				652CA3282271B3AA009CB901 /* nl */,
+			);
+			name = Records.storyboard;
 			sourceTree = "<group>";
 		};
 		6536FA8921EDE0D400C3C0D1 /* MACrashConfirmViewController.xib */ = {
@@ -2554,6 +2505,16 @@
 			);
 			name = AppLocker.xib;
 			path = Source/AppLocker;
+			sourceTree = "<group>";
+		};
+		65CE2E80223937D8005F27B8 /* OrganizationTableViewCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65CE2E7F223937D8005F27B8 /* Base */,
+				65CE2E82223937DB005F27B8 /* en */,
+				65CE2E84223937DF005F27B8 /* nl */,
+			);
+			name = OrganizationTableViewCell.xib;
 			sourceTree = "<group>";
 		};
 		65FE69DD21D0E15A00881FF0 /* MAAboutMeViewController.xib */ = {

@@ -21,6 +21,7 @@ class MABottomVoucherViewController: MABaseViewController, ISHPullUpSizingDelega
     @IBOutlet private weak var buttonLock: UIButton?
     @IBOutlet weak var qrCodeImageView: UIImageView!
     @IBOutlet weak var titleQRCodeLabel: UILabel!
+    @IBOutlet weak var expiredLabel: UILabel!
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     var timer : Timer! = Timer()
     var authorizeToken: AuthorizeToken!
@@ -43,6 +44,7 @@ class MABottomVoucherViewController: MABaseViewController, ISHPullUpSizingDelega
          self.qrCodeImageView.generateQRCode(from: "{ \"type\": \"voucher\",\"value\": \"\(voucher.address!)\" }")
         voucherTitleLabel.text = voucher.found.name
         titleQRCodeLabel.text = "This is your vouchers QR-code.".localized()
+        expiredLabel.text = "This voucher expires on ".localized() + (voucher.expireAt?.date?.dateFormaterExpireDate())!
 //        self.qrCodeImageView.generateQRCode(from: "{ \"type\": \"auth_token\",\"value\”:\”cd66db60cde7f133bf122db07fdd534bd3ab4d04f9d93af4516c279f4dd1cbb6\“ }")
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture))
         topView.addGestureRecognizer(tapGesture)

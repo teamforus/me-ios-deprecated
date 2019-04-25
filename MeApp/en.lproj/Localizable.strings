@@ -90,3 +90,7 @@
 "Field is empty" = "Field is empty";
 "No Internet Conecction" = "No Internet Conecction";
 "Voucher not have enough funds" = "Sorry not enough funds on voucher";
+"This voucher expires on " = "This voucher expires on ";
+"Used" = "Used";
+"Expired" = "Expired";
+"You sure you wan't to login this device?" = "You sure you wan't to login this device?";

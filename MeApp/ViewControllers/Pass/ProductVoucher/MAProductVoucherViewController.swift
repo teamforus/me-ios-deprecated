@@ -33,6 +33,7 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
     var transactions: NSMutableArray! = NSMutableArray()
     @IBOutlet weak var kindPaketQRView: UIView!
     @IBOutlet weak var imageQR: UIImageView!
+    var locations: NSMutableString!
     let presenter: Presentr = {
         let presenter = Presentr(presentationType: .alert)
         presenter.transitionType = TransitionType.coverHorizontalFromRight
@@ -88,10 +89,24 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
         organizationEmailAddress.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(Tap)))
         organizationEmailAddress.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(Long)))
         
-        let viewRegion = MKCoordinateRegionMakeWithDistance( CLLocationCoordinate2D(latitude:latitude , longitude: long), 5000, 5000)
+        let viewRegion = MKCoordinateRegionMakeWithDistance( CLLocationCoordinate2D(latitude:latitude , longitude: long), 10000, 10000)
         self.mapView.setRegion(viewRegion, animated: false)
         mapView.region = viewRegion
-        self.mapView.addAnnotation(setAnnotation(lattitude: latitude, longitude: long))
+        
+        
+        voucher.offices?.forEach({ (office) in
+            var latitude: Double!
+            var longitude: Double!
+            if let latitudeValue = office.lat, let lat = Double(latitudeValue) {
+                latitude = lat
+            }
+            if let longitudeValue = office.lon, let lon = Double(longitudeValue) {
+                longitude = lon
+            }
+            self.mapView.addAnnotation(setAnnotation(lattitude: latitude, longitude: longitude))
+            locations.append("\(self.latitude!),\(self.long!)/")
+        })
+        
     }
     
     @objc func Tap() {
@@ -137,12 +152,12 @@ class MAProductVoucherViewController: MABaseViewController, SFSafariViewControll
             if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!))
             {
                 UIApplication.shared.open(URL(string:
-                    "comgooglemaps://?saddr=&daddr=\(self.latitude!),\(self.long!)&directionsmode=driving")!, options: [:], completionHandler: { (succes) in
+                    "comgooglemaps://?saddr=&daddr=\(self.latitude!),\(self.long!)")!, options: [:], completionHandler: { (succes) in
                 })
             } else if (UIApplication.shared.canOpenURL(URL(string:"https://maps.google.com")!))
             {
                 UIApplication.shared.open(URL(string:
-                    "https://maps.google.com/?q=@\(self.latitude!),\(self.long!)")!, options: [:], completionHandler: { (succes) in
+                    "https://maps.google.com/?q=\(self.latitude!),\(self.long!)")!, options: [:], completionHandler: { (succes) in
                 })
             }
         }))

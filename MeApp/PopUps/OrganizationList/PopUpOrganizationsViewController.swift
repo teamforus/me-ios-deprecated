@@ -61,6 +61,10 @@ class PopUpOrganizationsViewController: UIViewController {
 }
 
 extension PopUpOrganizationsViewController: UITableViewDelegate, UITableViewDataSource, OrganizationTableViewCellDelegate{
+    func didSelectAllowedOrganization(organization: AllowedOrganizations) {
+        
+    }
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

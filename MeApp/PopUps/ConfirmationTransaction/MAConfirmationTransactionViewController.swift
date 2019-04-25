@@ -20,6 +20,7 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController, NVActi
     var tabController: UITabBarController!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var insuficientAmountLabel: UILabel!
+    var selectedAllowerdOrganization: AllowedOrganizations!
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var bodyView: CustomCornerUIView!
     weak var delegate: MAConfirmationTransactionViewControllerDelegate!
@@ -57,8 +58,8 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController, NVActi
                 initTextLabels(title: "Bevestig transactie", amount: "Is het bedrag van €\(amount.replacingOccurrences(of: ",", with: ".")) correct?")
             }
             if Double(amount.replacingOccurrences(of: ",", with: "."))! > amountVoucher{
-                requestButton.isEnabled = false
-                requestButton.backgroundColor = #colorLiteral(red: 0.7646217346, green: 0.764754355, blue: 0.7646133304, alpha: 1)
+                requestButton.isEnabled = true
+//                requestButton.backgroundColor = #colorLiteral(red: 0.7646217346, green: 0.764754355, blue: 0.7646133304, alpha: 1)
                 if self.getLanguageISO() == "en"{
                     insuficientAmountLabel.text = String(format:"Insufficient funds on the voucher. Please, request extra payment of"+"€%.02f", aditionalAmount)
                 }else if self.getLanguageISO() == "nl"{
@@ -80,9 +81,9 @@ class MAConfirmationTransactionViewController: MABasePopUpViewController, NVActi
     
     @IBAction func requestTransaction(_ sender: Any) {
         let size = CGSize(width: 60, height: 60)
-        startAnimating(size, message: "Loading...".localized(), type: NVActivityIndicatorType(rawValue: 32)!, color: #colorLiteral(red: 0.1918309331, green: 0.3696506619, blue: 0.9919955134, alpha: 1), textColor: .black, fadeInAnimation: nil)
+        startAnimating(size, message: "Loading...".localized(), type: NVActivityIndicatorType(rawValue: 32)!, color: #colorLiteral(red: 0.1918309331, green: 0.3696506619, blue: 0.9919955134, alpha: 1), textColor: .white, fadeInAnimation: nil)
             if voucher.product == nil {
-                didMakeTransactionConfirmRequest(organizationId: voucher.allowedOrganizations!.first?.id ?? 0, amount: amount.replacingOccurrences(of: ",", with: "."))
+                didMakeTransactionConfirmRequest(organizationId: selectedAllowerdOrganization.id ?? 0, amount: amount.replacingOccurrences(of: ",", with: "."))
             }else{
                 didMakeTransactionConfirmRequest(organizationId: voucher.product?.organization.id ?? 0, amount: voucher.amount ?? "0.0")
             }

@@ -25,6 +25,18 @@ class MAWaletVoucherTableViewCell: SwipeTableViewCell {
                 self.priceLabel.isHidden = false
                 self.priceLabel.text = "€ " + (voucher?.amount)!
             }
+            
+            if voucher?.transactions != nil{
+                usedVoucherLabel.isHidden = false
+                usedVoucherLabel.text = "Used".localized()
+            } else {
+                self.usedVoucherLabel.isHidden = true
+            }
+            if Date().dateFormaterFromServer(dateString: voucher?.expireAt?.date ?? "") <= Date(){
+                usedVoucherLabel.textColor = .lightGray
+                usedVoucherLabel.text = "Expired".localized()
+            }
+            
             if voucher?.product?.photo != nil || voucher?.found.logo != nil {
                 self.voucherImage.sd_setImage(with: URL(string: (voucher?.product != nil ? voucher?.product?.photo?.sizes?.thumbnail : voucher?.found.logo.sizes?.thumbnail) ?? ""), placeholderImage: UIImage(named: "Resting"))
                 
@@ -34,7 +46,7 @@ class MAWaletVoucherTableViewCell: SwipeTableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.usedVoucherLabel.isHidden = true
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

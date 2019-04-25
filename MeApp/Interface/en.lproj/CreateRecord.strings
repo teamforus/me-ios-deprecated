@@ -15,16 +15,16 @@
 "8Bt-M3-AM7.text" = "Text";
 
 /* Class = "UILabel"; text = "Nieuwe Eigenschappen"; ObjectID = "DbK-WU-q3r"; */
-"DbK-WU-q3r.text" = "Nieuwe Eigenschappen";
+"DbK-WU-q3r.text" = "New Record";
 
 /* Class = "UIButton"; normalTitle = "Persoonlijk"; ObjectID = "FdY-2V-2Ef"; */
-"FdY-2V-2Ef.normalTitle" = "Persoonlijk";
+"FdY-2V-2Ef.normalTitle" = "Personal";
 
 /* Class = "UIButton"; normalTitle = "Next step"; ObjectID = "Fib-Ls-m0U"; */
 "Fib-Ls-m0U.normalTitle" = "Next step";
 
 /* Class = "UIButton"; normalTitle = "Given Name"; ObjectID = "K2d-ly-Yt9"; */
-"K2d-ly-Yt9.normalTitle" = "Given Name";
+"K2d-ly-Yt9.normalTitle" = "Last Name";
 
 /* Class = "UILabel"; text = "Create the text or value for the current record"; ObjectID = "aba-TL-MXG"; */
 "aba-TL-MXG.text" = "Create the text or value for the current record";
@@ -33,19 +33,19 @@
 "cDh-Zx-wcG.normalTitle" = "SUBMIT";
 
 /* Class = "UILabel"; text = "Nieuwe Eigenschappen"; ObjectID = "dd2-BV-cPM"; */
-"dd2-BV-cPM.text" = "Nieuwe Eigenschappen";
+"dd2-BV-cPM.text" = "New Record";
 
 /* Class = "UIButton"; normalTitle = "Persoonlijk"; ObjectID = "hld-sk-69x"; */
-"hld-sk-69x.normalTitle" = "Persoonlijk";
+"hld-sk-69x.normalTitle" = "Personal";
 
 /* Class = "UILabel"; text = "Persoonlijk"; ObjectID = "is3-6l-c6l"; */
-"is3-6l-c6l.text" = "Persoonlijk";
+"is3-6l-c6l.text" = "Personal";
 
 /* Class = "UILabel"; text = "Enter the value"; ObjectID = "ndB-dt-gG7"; */
 "ndB-dt-gG7.text" = "Enter the value";
 
 /* Class = "UILabel"; text = "Nieuwe Eigenschappen"; ObjectID = "pjN-jM-utv"; */
-"pjN-jM-utv.text" = "Nieuwe Eigenschappen";
+"pjN-jM-utv.text" = "New Record";
 
 /* Class = "UILabel"; text = "Choose Type"; ObjectID = "qQU-sB-Slv"; */
 "qQU-sB-Slv.text" = "Choose Type";

@@ -23,7 +23,7 @@ PODS:
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
     - GoogleUtilities/MethodSwizzler (~> 5.2)
     - GoogleUtilities/Network (~> 5.2)
-    - GoogleUtilities/NSData+zlib (~> 5.2)
+    - "GoogleUtilities/NSData+zlib (~> 5.2)"
     - nanopb (~> 0.3)
   - FirebaseCore (5.1.4):
     - GoogleUtilities/Logger (~> 5.2)
@@ -41,7 +41,7 @@ PODS:
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
     - GoogleUtilities/MethodSwizzler (~> 5.2)
     - GoogleUtilities/Network (~> 5.2)
-    - GoogleUtilities/NSData+zlib (~> 5.2)
+    - "GoogleUtilities/NSData+zlib (~> 5.2)"
     - nanopb (~> 0.3)
   - GoogleUtilities/AppDelegateSwizzler (5.3.0):
     - GoogleUtilities/Environment
@@ -54,9 +54,9 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/Network (5.3.0):
     - GoogleUtilities/Logger
-    - GoogleUtilities/NSData+zlib
+    - "GoogleUtilities/NSData+zlib"
     - GoogleUtilities/Reachability
-  - GoogleUtilities/NSData+zlib (5.3.0)
+  - "GoogleUtilities/NSData+zlib (5.3.0)"
   - GoogleUtilities/Reachability (5.3.0):
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (5.3.0):
@@ -130,6 +130,44 @@ DEPENDENCIES:
   - Web3/PromiseKit
   - web3swift (from `https://github.com/MercuryProtocol/web3.swift.git`, branch `master`)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlertBar
+    - AssistantKit
+    - BigInt.swift
+    - BWWalkthrough
+    - Crashlytics
+    - CryptoSwift
+    - Fabric
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseCore
+    - FirebaseInstanceID
+    - FirebaseMessaging
+    - Geth
+    - GoogleAppMeasurement
+    - GoogleUtilities
+    - IQKeyboardManagerSwift
+    - ISHPullUp
+    - JSONCodable
+    - MarqueeLabel
+    - nanopb
+    - NVActivityIndicatorView
+    - Presentr
+    - PromiseKit
+    - Protobuf
+    - PWSwitch
+    - QRCodeReader.swift
+    - ReachabilitySwift
+    - ScrollableSegmentedControl
+    - SDWebImage
+    - secp256k1.swift
+    - SkyFloatingLabelTextField
+    - SwipeCellKit
+    - UICheckbox.Swift
+    - Web3
+
 EXTERNAL SOURCES:
   web3swift:
     :branch: master
@@ -180,4 +218,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 2ec7bfddd4a534ceca84aa83d617fa9bc5001b50
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.6.1

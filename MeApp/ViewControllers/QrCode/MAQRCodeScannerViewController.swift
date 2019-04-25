@@ -150,28 +150,35 @@ class MAQRCodeScannerViewController: HSScanViewController , HSScanViewController
     }
     
     func authorizeToken(token:String){
+        let alertController: UIAlertController = UIAlertController(title: "Login QR", message: "You sure you wan't to login this device?".localized() , preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "YES", style: .default, handler: { (action) in
+            let parameter: Parameters = ["auth_token" : token]
+            AuthorizeTokenRequest.authorizeToken(parameter: parameter, completion: { (response, statusCode) in
+                if response.success == nil {
+                    self.scanWorker.stop()
+                    let alert: UIAlertController
+                    alert = UIAlertController(title: "Error!".localized(), message: "Unknown QR-code!".localized(), preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                        self.scanWorker.start()
+                    }))
+                    self.present(alert, animated: true)
+                }else{
+                    let alert: UIAlertController
+                    alert = UIAlertController(title: "Success!".localized(), message: "Scanning successfully!".localized(), preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                        self.scanWorker.start()
+                    }))
+                    self.present(alert, animated: true)
+                }
+            }, failure: { (error) in
+                AlertController.showError(vc:self)
+            })
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "NO", style: .cancel))
+        
+        self.present(alertController, animated: true)
        
-        let parameter: Parameters = ["auth_token" : token]
-        AuthorizeTokenRequest.authorizeToken(parameter: parameter, completion: { (response, statusCode) in
-            if response.success == nil {
-                self.scanWorker.stop()
-                let alert: UIAlertController
-                alert = UIAlertController(title: "Error!".localized(), message: "Unknown QR-code!".localized(), preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                    self.scanWorker.start()
-                }))
-                self.present(alert, animated: true)
-            }else{
-                let alert: UIAlertController
-                alert = UIAlertController(title: "Success!".localized(), message: "Scanning successfully!".localized(), preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                    self.scanWorker.start()
-                }))
-                self.present(alert, animated: true)
-            }
-        }, failure: { (error) in
-            AlertController.showError(vc:self)
-        })
     }
     
     func getProviderConfirm(address:String){

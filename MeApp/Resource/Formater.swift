@@ -77,6 +77,15 @@ extension String{
         return dateString
     }
     
+    func dateFormaterExpireDate() -> String  {
+        let dateFormater = DateFormatter()
+        dateFormater.dateFormat = "yyyy-MM-dd HH:mm:ss.SSSSSS"
+        let date = dateFormater.date(from: self)
+        dateFormater.dateFormat = "d MMMM yyyy"
+        let dateString = dateFormater.string(from: date!)
+        return dateString
+    }
+    
     func dateFormaterForServer() -> String  {
         let dateFormater = DateFormatter()
         dateFormater.dateFormat = "yyyy-MM-dd HH:mm:ss"

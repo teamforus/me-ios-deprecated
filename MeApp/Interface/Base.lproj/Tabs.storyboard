@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dkF-Rx-zlv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dkF-Rx-zlv">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="130" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c0d-Ce-cj1">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="158" width="375" height="509"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
@@ -69,8 +69,8 @@
                                                             <color key="textColor" red="0.20784313730000001" green="0.3921568627" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Used" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUr-0Z-7e9">
-                                                            <rect key="frame" x="273" y="78" width="50" height="21"/>
+                                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Used" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUr-0Z-7e9">
+                                                            <rect key="frame" x="215" y="78" width="108" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="GoogleSans-Regular" family="Google Sans" pointSize="15"/>
                                                             <color key="textColor" red="0.98387008909999996" green="0.63834285739999996" blue="0.1010637954" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -118,8 +118,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Voucher" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNC-xq-rF0">
+                                <rect key="frame" x="20" y="84" width="197" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GoogleSans-Bold" family="Google Sans" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ay3-GT-PDy" customClass="ShadowButton" customModule="Me" customModuleProvider="target">
+                                <rect key="frame" x="311" y="84" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="UpV-uM-8ja" kind="presentation" id="6Cc-Lj-Ogk"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="userpick" translatesAutoresizingMaskIntoConstraints="NO" id="Q1E-CJ-4LA" customClass="RoundImageView" customModule="Me" customModuleProvider="target">
+                                <rect key="frame" x="311" y="84" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="Ssc-Pg-orb"/>
                     </view>
@@ -134,6 +157,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y34-xr-kxu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2208.8000000000002" y="1027.736131934033"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="JEq-Ze-aWf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="UpV-uM-8ja" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lx8-dt-Axg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3026" y="896"/>
         </scene>
         <!--Product-->
         <scene sceneID="SgK-Kj-ld3">
@@ -151,10 +182,10 @@
             </objects>
             <point key="canvasLocation" x="3071" y="1068"/>
         </scene>
-        <!--Profile-->
+        <!--Records-->
         <scene sceneID="3HN-tU-oBk">
             <objects>
-                <viewControllerPlaceholder storyboardName="Profile" id="zMH-cq-qpS" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Records" id="zMH-cq-qpS" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="fPu-YC-xJb"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Zi-ns-Rdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -211,13 +242,12 @@
         <!--Eigendom-->
         <scene sceneID="BPr-tX-tBw">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="98d-kJ-Qib" customClass="HiddenNavBarNavigationController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="98d-kJ-Qib" customClass="HiddenNavBarNavigationController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Eigendom" image="wallet" id="0sK-og-sJQ">
                         <color key="badgeColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="xeo-3W-iP7">
-                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -229,11 +259,11 @@
             </objects>
             <point key="canvasLocation" x="820" y="1028"/>
         </scene>
-        <!--Profile-->
+        <!--Records-->
         <scene sceneID="Wdm-Yc-gpO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S76-wR-HhB" customClass="HiddenNavBarNavigationController" customModule="Me" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="activeBlue" id="7le-DV-ctU"/>
+                    <tabBarItem key="tabBarItem" title="Records" image="records" id="7le-DV-ctU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mKl-8Q-pNZ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -251,8 +281,9 @@
     </scenes>
     <resources>
         <image name="Resting" width="210" height="210"/>
-        <image name="activeBlue" width="30" height="26"/>
         <image name="iconGrey" width="30" height="26"/>
+        <image name="records" width="30" height="26"/>
+        <image name="userpick" width="40" height="40"/>
         <image name="wallet" width="30" height="26"/>
     </resources>
 </document>

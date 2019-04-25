@@ -46,15 +46,15 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
     }
     
     fileprivate func setupView(){
-        title = "Voucher"
-        if #available(iOS 11.0, *) {
-            self.navigationController?.navigationBar.prefersLargeTitles = true
-            self.navigationController?.navigationItem.largeTitleDisplayMode = .automatic
-            self.tableView.contentInset = UIEdgeInsets(top: 1, left: 0, bottom: 0, right: 0)
+       // title = "Voucher"
+       // if #available(iOS 11.0, *) {
+       //     self.navigationController?.navigationBar.prefersLargeTitles = true
+       //     self.navigationController?.navigationItem.largeTitleDisplayMode = .automatic
+       //     self.tableView.contentInset = UIEdgeInsets(top: 1, left: 0, bottom: 0, right: 0)
             
-        } else {
+      //  } else {
             // Fallback on earlier versions
-        }
+      //  }
         
         if !UserDefaults.standard.bool(forKey: "isStartFromScanner"){
             if UserDefaults.standard.string(forKey: ALConstants.kPincode) != "" && UserDefaults.standard.string(forKey: ALConstants.kPincode) != nil {
@@ -102,7 +102,6 @@ class WalletViewController: MABaseViewController, AppLockerDelegate, NVActivityI
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
         setStatusBarStyle(.default)
         getVoucherList()
         let notifMessage: [String: Any] = [

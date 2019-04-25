@@ -1,0 +1,84 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "0Cv-6O-zPn"; */
+"0Cv-6O-zPn.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "LAAT QR-CODE ZIEN"; ObjectID = "0Yt-5I-kar"; */
+"0Yt-5I-kar.normalTitle" = "Show QR-Code";
+
+/* Class = "UILabel"; text = "First Name"; ObjectID = "28q-KG-5w3"; */
+"28q-KG-5w3.text" = "First Name";
+
+/* Class = "UILabel"; text = "Given Name"; ObjectID = "2zc-3O-uqN"; */
+"2zc-3O-uqN.text" = "Given Name";
+
+/* Class = "UILabel"; text = "This record has no validations yet"; ObjectID = "56v-yg-5yx"; */
+"56v-yg-5yx.text" = "This record has no validations yet";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "7JE-gh-lLI"; */
+"7JE-gh-lLI.text" = "Label";
+
+/* Class = "UILabel"; text = "First Name"; ObjectID = "AXs-Zb-iLb"; */
+"AXs-Zb-iLb.text" = "First Name";
+
+/* Class = "UILabel"; text = "3"; ObjectID = "CYH-D3-OSp"; */
+"CYH-D3-OSp.text" = "3";
+
+/* Class = "UILabel"; text = "validation"; ObjectID = "F1y-0p-Ypk"; */
+"F1y-0p-Ypk.text" = "validation";
+
+/* Class = "UILabel"; text = "Laat iemanduw persoonlijke QR-code scannen om u valuta, bezit of vouchers te sturen"; ObjectID = "N9p-O8-dgq"; */
+"N9p-O8-dgq.text" = "Let the shopkeeper scan it to make a validtion to your record.";
+
+/* Class = "UILabel"; text = "Jamal"; ObjectID = "NhD-Qn-Wnv"; */
+"NhD-Qn-Wnv.text" = "Jamal";
+
+/* Class = "UIButton"; normalTitle = "Voornaam"; ObjectID = "RZP-wx-3I1"; */
+"RZP-wx-3I1.normalTitle" = "First Name";
+
+/* Class = "UILabel"; text = "Eigenschap detail"; ObjectID = "U6i-vc-zyn"; */
+"U6i-vc-zyn.text" = "Record detail";
+
+/* Class = "UILabel"; text = "QR-CODE"; ObjectID = "YOF-h3-RaC"; */
+"YOF-h3-RaC.text" = "QR-CODE";
+
+/* Class = "UILabel"; text = "Kies de categorie waaraan de nieuwe eigenschap toegevoegd wordt."; ObjectID = "b1N-ll-yH3"; */
+"b1N-ll-yH3.text" = "Choose the category under.";
+
+/* Class = "UIButton"; normalTitle = "VALIDATE LATER"; ObjectID = "bgi-tW-Unc"; */
+"bgi-tW-Unc.normalTitle" = "VALIDATE LATER";
+
+/* Class = "UILabel"; text = "Choose validator"; ObjectID = "eFn-QP-8av"; */
+"eFn-QP-8av.text" = "Choose validator";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "jQc-lX-daK"; */
+"jQc-lX-daK.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "NEW RECORDS"; ObjectID = "lRD-hc-x9h"; */
+"lRD-hc-x9h.normalTitle" = "NEW RECORDS";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "nk3-xD-csg"; */
+"nk3-xD-csg.text" = "Label";
+
+/* Class = "UILabel"; text = "This is your personal QR code"; ObjectID = "o7W-hX-nDi"; */
+"o7W-hX-nDi.text" = "This is your personal QR code";
+
+/* Class = "UILabel"; text = "New records"; ObjectID = "sKS-Cm-Bgg"; */
+"sKS-Cm-Bgg.text" = "New records";
+
+/* Class = "UIButton"; normalTitle = "Jamal"; ObjectID = "sSb-ks-ZOt"; */
+"sSb-ks-ZOt.normalTitle" = "Jamal";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "se2-5z-wiV"; */
+"se2-5z-wiV.text" = "Label";
+
+/* Class = "UILabel"; text = "Jamal"; ObjectID = "tN4-Ok-MNM"; */
+"tN4-Ok-MNM.text" = "Jamal";
+
+/* Class = "UILabel"; text = "Personal"; ObjectID = "uSu-EK-7Tc"; */
+"uSu-EK-7Tc.text" = "Personal";
+
+/* Class = "UILabel"; text = "This record has no validations yet"; ObjectID = "wyc-6b-07I"; */
+"wyc-6b-07I.text" = "This record has no validations yet";
+
+/* Class = "UIButton"; normalTitle = "Delete record"; ObjectID = "yWK-uC-SPq"; */
+"yWK-uC-SPq.normalTitle" = "Delete record";

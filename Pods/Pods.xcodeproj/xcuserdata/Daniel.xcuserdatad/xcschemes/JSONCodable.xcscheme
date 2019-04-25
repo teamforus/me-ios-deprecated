@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E1361B0D4077E393665279457C67408F"
+               BlueprintIdentifier = "DBE06C22F1FE8426E11C8475A317F21A"
+               BuildableName = "JSONCodable.framework"
                BlueprintName = "JSONCodable"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "JSONCodable.framework">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

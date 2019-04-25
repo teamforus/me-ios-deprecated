@@ -24,13 +24,14 @@ class MAPersonalViewController: MABaseViewController, BWWalkthroughViewControlle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
        setupView()
+        setStatusBarStyle(.default)
     }
     
     fileprivate func setupView(){
         self.tabBarController?.tabBar.isHidden = false
         NotificationCenter.default.addObserver(self, selector: #selector(closePage), name: Notification.Name("CLOSESLIDEPAGE"), object: nil)
         if reachablity.connection != .none{
-            ConfigRequest.getConfig(configType: "records", completion: { (statuCode, response) in
+            ConfigRequest.getConfig(configType: "records", completion: { (statuCode) in
                 
             }) { (error) in }
             getRecordType()
@@ -46,7 +47,7 @@ class MAPersonalViewController: MABaseViewController, BWWalkthroughViewControlle
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        NotificationCenter.default.removeObserver(self)
+//        NotificationCenter.default.removeObserver(self)
     }
     
     @objc func closePage(){
@@ -102,7 +103,7 @@ class MAPersonalViewController: MABaseViewController, BWWalkthroughViewControlle
     }
     
     @IBAction func createRecord(_ sender: Any) {
-        let stb = UIStoryboard(name: "NewProfile", bundle: nil)
+        let stb = UIStoryboard(name: "CreateRecord", bundle: nil)
         walkthrough = stb.instantiateViewController(withIdentifier: "walk") as? BWWalkthroughViewController
         let pageOne = stb.instantiateViewController(withIdentifier: "types")
         let pageTwo = stb.instantiateViewController(withIdentifier: "text")

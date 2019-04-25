@@ -14,6 +14,9 @@ import IQKeyboardManagerSwift
 import SDWebImage
 
 class MAContentVoucherPaymentViewController: MABaseViewController, MAConfirmationTransactionViewControllerDelegate {
+    
+    @IBOutlet weak var roundedImage: UIImageView!
+    @IBOutlet weak var chooseOrganizationButton: UIButton!
     @IBOutlet weak var noteView: CustomCornerUIView!
     @IBOutlet weak var amountView: CustomCornerUIView!
     @IBOutlet weak var paketTitle: UILabel!
@@ -30,6 +33,7 @@ class MAContentVoucherPaymentViewController: MABaseViewController, MAConfirmatio
     @IBOutlet weak var organizationVoucherName: UILabel!
     @IBOutlet weak var organizationLogo: UIImageView!
     fileprivate var returnKeyHandler : IQKeyboardReturnKeyHandler!
+    var selectedAllowerdOrganization: AllowedOrganizations!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var amount: UITextField!
     @IBOutlet weak var noteSkyTextField: UITextField!
@@ -54,6 +58,8 @@ class MAContentVoucherPaymentViewController: MABaseViewController, MAConfirmatio
         qrImageViewBody.clipsToBounds = false
         IQKeyboardManager.sharedManager().enable = true
         if voucher.product != nil {
+            roundedImage.isHidden = true
+            chooseOrganizationButton.isHidden = true
             paketTitle.text = voucher.product?.name
             organizationNameLabel.text = voucher.product?.organization.name
             if voucher.product?.photo != nil {
@@ -65,11 +71,12 @@ class MAContentVoucherPaymentViewController: MABaseViewController, MAConfirmatio
             }
         }else{
             paketTitle.text = voucher.found.name
-            organizationNameLabel.text = voucher.found.organization.name ?? ""
+            organizationNameLabel.text =  voucher.allowedOrganizations?.first?.name ?? ""
             organizationVoucherName.text = voucher.found.organization.name ?? ""
+            selectedAllowerdOrganization = voucher.allowedOrganizations?.first
             if voucher.found.logo != nil{
-                qrCodeImageView.sd_setImage(with: URL(string: voucher.found.logo.sizes?.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
-                organizationLogo.sd_setImage(with: URL(string: voucher.found.logo.sizes?.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+                qrCodeImageView.sd_setImage(with: URL(string: voucher.found?.logo?.sizes?.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+                organizationLogo.sd_setImage(with: URL(string: voucher.allowedOrganizations?.first?.logo?.sizes?.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
             }else{
                 qrCodeImageView.image = UIImage(named: "Resting")
                 qrCodeImageView.image = UIImage(named: "face24Px")
@@ -98,6 +105,17 @@ class MAContentVoucherPaymentViewController: MABaseViewController, MAConfirmatio
         AlertController.showSuccess(withText: "Payment succeeded".localized(), vc: self)
     }
     
+    @IBAction func chooseOrganization(_ sender: Any) {
+        let popOverVC = AllowedOrganizationsViewController(nibName: "AllowedOrganizationsViewController", bundle: nil)
+        popOverVC.allowedOrganizations = self.voucher.allowedOrganizations
+        popOverVC.delegate = self
+        popOverVC.selectedOrganizations = selectedAllowerdOrganization
+        self.addChildViewController(popOverVC)
+        popOverVC.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
+        self.view.addSubview(popOverVC.view)
+    }
+    
+    
     @IBAction func send(_ sender: Any) {
         if voucher.product != nil{
             goToTrnasctionConfirm()
@@ -113,6 +131,7 @@ class MAContentVoucherPaymentViewController: MABaseViewController, MAConfirmatio
         self.presenter.presentationType = .popup
         popupTransction.voucher = voucher
         popupTransction.tabController = tabController
+        popupTransction.selectedAllowerdOrganization = selectedAllowerdOrganization
         popupTransction.addressVoucher = addressVoucher
         popupTransction.delegate = self
         popupTransction.amount = amount.text
@@ -148,6 +167,15 @@ extension MAContentVoucherPaymentViewController: UITableViewDelegate, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? MAVoucherPaymentTableViewCell
         cell?.organization = voucher.allowedProductCategories?[indexPath.row]
         return cell!
+    }
+}
+
+extension MAContentVoucherPaymentViewController: AllowedOrganizationsViewControllerDelegate{
+    func didSelectAllowedOrganization(organization: AllowedOrganizations) {
+        selectedAllowerdOrganization = organization
+        organizationNameLabel.text = organization.name
+        organizationLogo.sd_setImage(with: URL(string: organization.logo?.sizes?.thumbnail ?? ""), placeholderImage: UIImage(named: "Resting"))
+        
     }
 }
 

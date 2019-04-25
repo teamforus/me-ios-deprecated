@@ -80,7 +80,7 @@ extension RecordCategoriesConfig: JSONDecodable{
 
 class ConfigRequest{
     
-    static func getConfig(configType: String,completion: @escaping ((Int, String) -> Void), failure: @escaping ((Error) -> Void)){
+    static func getConfig(configType: String,completion: @escaping ((Int) -> Void), failure: @escaping ((Error) -> Void)){
         let headers: HTTPHeaders = [
             "Accept": "application/json",
             "Authorization" : "Bearer \(UserShared.shared.currentUser.accessToken!)"
@@ -92,7 +92,7 @@ class ConfigRequest{
             case .success:
                 
                 if response.result.value != nil {
-                    completion((response.response?.statusCode)!,(response.result.value as AnyObject)["message"] as! String)
+                    completion((response.response?.statusCode)!)
                 }
                 break
             case .failure(let error):

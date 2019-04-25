@@ -25,7 +25,7 @@ class MAContentPersonalDetailViewController: ISHPullUpViewController {
     }
     
     private func commonInit() {
-        let storyBoard = UIStoryboard(name: "NewProfile", bundle: nil)
+        let storyBoard = UIStoryboard(name: "Records", bundle: nil)
         let contentVC = storyBoard.instantiateViewController(withIdentifier: "personalDetail") as! MAPersonalDetailViewController
         contentVC.record = record
         let bottomVC = storyBoard.instantiateViewController(withIdentifier: "bottomPersonal") as! MABottomPersonalQRViewController

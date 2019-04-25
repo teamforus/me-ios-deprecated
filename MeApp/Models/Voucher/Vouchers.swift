@@ -57,6 +57,7 @@ struct Office {
     var organization: Organization!
     var lat: String?
     var photo: Logo!
+    var schedule: [Schedule]?
 }
 
 extension Office: JSONDecodable{
@@ -69,6 +70,26 @@ extension Office: JSONDecodable{
         lat = try decoder.decode("lat")
         photo = try decoder.decode("photo")
         organization = try decoder.decode("organization")
+        schedule = try decoder.decode("schedule")
+    }
+}
+
+struct Schedule {
+    var id: Int?
+    var officeId: Int?
+    var week_day: Int?
+    var startTime: String?
+    var endTime: String?
+}
+
+extension Schedule: JSONDecodable{
+    init(object: JSONObject) throws {
+        let decoder = JSONDecoder(object:object)
+        id = try decoder.decode("id")
+        officeId = try decoder.decode("office_id")
+        week_day = try decoder.decode("week_day")
+        startTime = try decoder.decode("start_time")
+        endTime = try decoder.decode("end_time")
     }
 }
 
@@ -190,9 +211,9 @@ class VoucherRequest {
 //                                    Date.dateFormaterFromServer(date: voucher.expireAt?.date)
                                     
 //                                    let expriderDate: Date! = date.dateFormaterFromServer(date: voucher.expireAt?.date)
-                                    if Date().dateFormaterFromServer(dateString: voucher.expireAt?.date ?? "") >= Date(){
+                                    
                                     voucherList.add(voucher)
-                                    }
+                                    
                                 }
                             }
                             DispatchQueue.main.async {

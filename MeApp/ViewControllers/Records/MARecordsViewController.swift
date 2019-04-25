@@ -26,6 +26,12 @@ class MARecordsViewController: MABaseViewController, BWWalkthroughViewController
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
         self.getRecordList()
+        setStatusBarStyle(.default)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.removeObserver(self)
     }
     
     func getRecordList(){
@@ -63,7 +69,7 @@ class MARecordsViewController: MABaseViewController, BWWalkthroughViewController
     }
     
     @IBAction func createRecord(_ sender: Any) {
-        let stb = UIStoryboard(name: "NewProfile", bundle: nil)
+        let stb = UIStoryboard(name: "CreateRecord", bundle: nil)
         let walkthrough = stb.instantiateViewController(withIdentifier: "walk") as! BWWalkthroughViewController
         let page_zero = stb.instantiateViewController(withIdentifier: "categories")
         let pageOne = stb.instantiateViewController(withIdentifier: "types")
