@@ -75,6 +75,13 @@ public class ScanWorker: NSObject, AVCaptureMetadataOutputObjectsDelegate {
         videoPreviewLayer?.frame = frame
         videoPreView.layer.insertSublayer(videoPreviewLayer!, at: 0)
         
+        let scanFrame = videoPreView.frame.width - 44 * 2
+        
+        let view = UIView(frame: CGRect(x: 44 , y: videoPreView.frame.height / 2.0 - scanFrame / 2.0 - 10, width: scanFrame, height: scanFrame))
+        
+        videoPreView.bringSubview(toFront: view)
+        
+        
         if captureDevice.isFocusPointOfInterestSupported && captureDevice.isFocusModeSupported(.continuousAutoFocus) {
             do {
                 try captureDevice.lockForConfiguration()
